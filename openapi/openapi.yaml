@@ -12975,6 +12975,7 @@ paths:
     get:
       description: Retrieves the key for the given Id.
       operationId: retrieveKeyWithId
+      x-speakeasy-usage-example: true
       parameters:
       - name: keyId
         in: path
