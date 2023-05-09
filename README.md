@@ -1,4 +1,13 @@
-# speakeasy-sdks/fusionauth
+<div align="center">
+    <img src="https://github.com/speakeasy-sdks/fusionauth-ts/assets/6267663/c7f37cf0-163b-4245-a27e-88330f8e24aa" width="350px">
+    <h1>Typescript SDK</h1>
+   <p>Auth. Built for Devs, by Devs</p>
+   <a href="https://fusionauth.io/docs/"><img src="https://img.shields.io/static/v1?label=Docs&message=API Ref&color=000&style=for-the-badge" /></a>
+   <a href="https://github.com/speakeasy-sdks/fusionauth-ts/actions"><img src="https://img.shields.io/github/actions/workflow/status/speakeasy-sdks/fusionauth-ts/speakeasy_sdk_generation.yml?style=for-the-badge" /></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" /></a>
+  <a href="https://github.com/speakeasy-sdks/fusionauth-ts/releases"><img src="https://img.shields.io/github/v/release/speakeasy-sdks/fusionauth-ts?sort=semver&style=for-the-badge" /></a>
+</div>
+
 
 <!-- Start SDK Installation -->
 ## SDK Installation
