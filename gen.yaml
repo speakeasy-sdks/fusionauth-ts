@@ -1,0 +1,9 @@
+configVersion: 1.0.0
+generation:
+  telemetryEnabled: false
+  sdkClassName: SDK
+  singleOpPerTag: true
+go:
+  maxMethodParams: 4
+  version: 0.6.0
+  packageName: github.com/speakeasy-sdks/template-sdk
