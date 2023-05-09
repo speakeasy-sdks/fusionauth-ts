@@ -22,7 +22,7 @@ jobs:
     with:
       speakeasy_version: latest
       openapi_docs: |
-        - location: ./openapi/openapi.yaml
+        - ./openapi/openapi.yaml
       languages: |-
         - typescript
       mode: pr
