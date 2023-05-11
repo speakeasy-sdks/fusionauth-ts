@@ -36,7 +36,7 @@ const sdk = new SDK({
   },
 });
 
-sdk.retrieveKeyWithId("123abc5").then((res: RetrieveKeyWithIdResponse) => {
+sdk.retrieveKeyWithId("corrupti").then((res: RetrieveKeyWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
