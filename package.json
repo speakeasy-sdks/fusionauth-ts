@@ -1,6 +1,6 @@
 {
   "name": "speakeasy-sdks/fusionauth",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Speakeasy",
   "scripts": {
     "prepare": "tsc --build"
