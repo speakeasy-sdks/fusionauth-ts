@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { TransactionTypeEnum } from "./transactiontypeenum";
+import { TransactionType } from "./transactiontype";
 import { UserActionOption } from "./useractionoption";
 import { Expose, Type } from "class-transformer";
 
@@ -86,7 +86,7 @@ export class UserAction extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "transactionType" })
-  transactionType?: TransactionTypeEnum;
+  transactionType?: TransactionType;
 
   @SpeakeasyMetadata()
   @Expose({ name: "userEmailingEnabled" })

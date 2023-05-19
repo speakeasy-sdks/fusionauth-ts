@@ -12,7 +12,7 @@ import { FamilyConfiguration } from "./familyconfiguration";
 import { JWTConfiguration } from "./jwtconfiguration";
 import { MaximumPasswordAge } from "./maximumpasswordage";
 import { MinimumPasswordAge } from "./minimumpasswordage";
-import { ObjectStateEnum } from "./objectstateenum";
+import { ObjectState } from "./objectstate";
 import { PasswordEncryptionConfiguration } from "./passwordencryptionconfiguration";
 import { PasswordValidationRules } from "./passwordvalidationrules";
 import { TenantAccessControlConfiguration } from "./tenantaccesscontrolconfiguration";
@@ -195,7 +195,7 @@ export class Tenant extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "state" })
-  state?: ObjectStateEnum;
+  state?: ObjectState;
 
   @SpeakeasyMetadata()
   @Expose({ name: "themeId" })

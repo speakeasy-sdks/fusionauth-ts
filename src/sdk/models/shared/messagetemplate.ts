@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { MessageTypeEnum } from "./messagetypeenum";
+import { MessageType } from "./messagetype";
 import { Expose } from "class-transformer";
 
 /**
@@ -38,5 +38,5 @@ export class MessageTemplate extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: MessageTypeEnum;
+  type?: MessageType;
 }

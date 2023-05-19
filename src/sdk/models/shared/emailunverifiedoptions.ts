@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { UnverifiedBehaviorEnum } from "./unverifiedbehaviorenum";
+import { UnverifiedBehavior } from "./unverifiedbehavior";
 import { Expose } from "class-transformer";
 
 export class EmailUnverifiedOptions extends SpeakeasyBase {
@@ -13,5 +13,5 @@ export class EmailUnverifiedOptions extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "behavior" })
-  behavior?: UnverifiedBehaviorEnum;
+  behavior?: UnverifiedBehavior;
 }

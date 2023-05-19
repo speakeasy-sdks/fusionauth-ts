@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { CanonicalizationMethodEnum } from "./canonicalizationmethodenum";
+import { CanonicalizationMethod } from "./canonicalizationmethod";
 import { LoginHintConfiguration } from "./loginhintconfiguration";
 import { SAMLv2AssertionConfiguration } from "./samlv2assertionconfiguration";
 import { SAMLv2IdpInitiatedConfiguration } from "./samlv2idpinitiatedconfiguration";
@@ -92,5 +92,5 @@ export class SAMLv2IdentityProvider extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "xmlSignatureC14nMethod" })
-  xmlSignatureC14nMethod?: CanonicalizationMethodEnum;
+  xmlSignatureC14nMethod?: CanonicalizationMethod;
 }

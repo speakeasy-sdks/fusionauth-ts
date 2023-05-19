@@ -17,12 +17,12 @@ import { JWTConfiguration } from "./jwtconfiguration";
 import { LambdaConfiguration } from "./lambdaconfiguration";
 import { LoginConfiguration } from "./loginconfiguration";
 import { OAuth2Configuration } from "./oauth2configuration";
-import { ObjectStateEnum } from "./objectstateenum";
+import { ObjectState } from "./objectstate";
 import { PasswordlessConfiguration } from "./passwordlessconfiguration";
 import { RegistrationConfiguration } from "./registrationconfiguration";
 import { RegistrationUnverifiedOptions } from "./registrationunverifiedoptions";
 import { SAMLv2Configuration } from "./samlv2configuration";
-import { VerificationStrategyEnum } from "./verificationstrategyenum";
+import { VerificationStrategy } from "./verificationstrategy";
 import { Expose, Type } from "class-transformer";
 
 export class Application extends SpeakeasyBase {
@@ -147,7 +147,7 @@ export class Application extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "state" })
-  state?: ObjectStateEnum;
+  state?: ObjectState;
 
   @SpeakeasyMetadata()
   @Expose({ name: "tenantId" })
@@ -168,7 +168,7 @@ export class Application extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "verificationStrategy" })
-  verificationStrategy?: VerificationStrategyEnum;
+  verificationStrategy?: VerificationStrategy;
 
   @SpeakeasyMetadata()
   @Expose({ name: "verifyRegistration" })

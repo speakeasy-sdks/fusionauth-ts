@@ -3,8 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { LambdaEngineTypeEnum } from "./lambdaenginetypeenum";
-import { LambdaTypeEnum } from "./lambdatypeenum";
+import { LambdaEngineType } from "./lambdaenginetype";
+import { LambdaType } from "./lambdatype";
 import { Expose } from "class-transformer";
 
 /**
@@ -21,7 +21,7 @@ export class Lambda extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "engineType" })
-  engineType?: LambdaEngineTypeEnum;
+  engineType?: LambdaEngineType;
 
   @SpeakeasyMetadata()
   @Expose({ name: "id" })
@@ -50,5 +50,5 @@ export class Lambda extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: LambdaTypeEnum;
+  type?: LambdaType;
 }

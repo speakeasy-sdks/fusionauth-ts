@@ -4,8 +4,8 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { CertificateInformation } from "./certificateinformation";
-import { KeyAlgorithmEnum } from "./keyalgorithmenum";
-import { KeyTypeEnum } from "./keytypeenum";
+import { KeyAlgorithm } from "./keyalgorithm";
+import { KeyType } from "./keytype";
 import { Expose, Type } from "class-transformer";
 
 /**
@@ -14,7 +14,7 @@ import { Expose, Type } from "class-transformer";
 export class Key extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "algorithm" })
-  algorithm?: KeyAlgorithmEnum;
+  algorithm?: KeyAlgorithm;
 
   @SpeakeasyMetadata()
   @Expose({ name: "certificate" })
@@ -84,5 +84,5 @@ export class Key extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: KeyTypeEnum;
+  type?: KeyType;
 }

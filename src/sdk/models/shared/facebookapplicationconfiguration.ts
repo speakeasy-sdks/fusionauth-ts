@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { IdentityProviderLoginMethodEnum } from "./identityproviderloginmethodenum";
+import { IdentityProviderLoginMethod } from "./identityproviderloginmethod";
 import { Expose } from "class-transformer";
 
 export class FacebookApplicationConfiguration extends SpeakeasyBase {
@@ -33,7 +33,7 @@ export class FacebookApplicationConfiguration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "loginMethod" })
-  loginMethod?: IdentityProviderLoginMethodEnum;
+  loginMethod?: IdentityProviderLoginMethod;
 
   @SpeakeasyMetadata()
   @Expose({ name: "permissions" })

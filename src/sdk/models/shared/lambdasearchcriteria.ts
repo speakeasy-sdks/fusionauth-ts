@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { LambdaTypeEnum } from "./lambdatypeenum";
+import { LambdaType } from "./lambdatype";
 import { Expose } from "class-transformer";
 
 /**
@@ -35,5 +35,5 @@ export class LambdaSearchCriteria extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: LambdaTypeEnum;
+  type?: LambdaType;
 }

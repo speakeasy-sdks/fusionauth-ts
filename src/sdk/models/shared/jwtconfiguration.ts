@@ -3,9 +3,9 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { RefreshTokenExpirationPolicyEnum } from "./refreshtokenexpirationpolicyenum";
+import { RefreshTokenExpirationPolicy } from "./refreshtokenexpirationpolicy";
 import { RefreshTokenRevocationPolicy } from "./refreshtokenrevocationpolicy";
-import { RefreshTokenUsagePolicyEnum } from "./refreshtokenusagepolicyenum";
+import { RefreshTokenUsagePolicy } from "./refreshtokenusagepolicy";
 import { Expose, Type } from "class-transformer";
 
 /**
@@ -26,7 +26,7 @@ export class JWTConfiguration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "refreshTokenExpirationPolicy" })
-  refreshTokenExpirationPolicy?: RefreshTokenExpirationPolicyEnum;
+  refreshTokenExpirationPolicy?: RefreshTokenExpirationPolicy;
 
   @SpeakeasyMetadata()
   @Expose({ name: "refreshTokenRevocationPolicy" })
@@ -39,7 +39,7 @@ export class JWTConfiguration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "refreshTokenUsagePolicy" })
-  refreshTokenUsagePolicy?: RefreshTokenUsagePolicyEnum;
+  refreshTokenUsagePolicy?: RefreshTokenUsagePolicy;
 
   @SpeakeasyMetadata()
   @Expose({ name: "timeToLiveInSeconds" })

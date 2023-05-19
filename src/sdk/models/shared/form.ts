@@ -4,7 +4,7 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { FormStep } from "./formstep";
-import { FormTypeEnum } from "./formtypeenum";
+import { FormType } from "./formtype";
 import { Expose, Type } from "class-transformer";
 
 export class Form extends SpeakeasyBase {
@@ -41,5 +41,5 @@ export class Form extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: FormTypeEnum;
+  type?: FormType;
 }

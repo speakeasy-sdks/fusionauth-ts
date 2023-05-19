@@ -3,8 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { AttestationTypeEnum } from "./attestationtypeenum";
-import { CoseAlgorithmIdentifierEnum } from "./cosealgorithmidentifierenum";
+import { AttestationType } from "./attestationtype";
+import { CoseAlgorithmIdentifier } from "./cosealgorithmidentifier";
 import { Expose } from "class-transformer";
 
 /**
@@ -16,14 +16,14 @@ export class WebAuthnCredential extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "algorithm" })
-  algorithm?: CoseAlgorithmIdentifierEnum;
+  algorithm?: CoseAlgorithmIdentifier;
 
   /**
    * Used to indicate what type of attestation was included in the authenticator response for a given WebAuthn credential at the time it was created
    */
   @SpeakeasyMetadata()
   @Expose({ name: "attestationType" })
-  attestationType?: AttestationTypeEnum;
+  attestationType?: AttestationType;
 
   @SpeakeasyMetadata()
   @Expose({ name: "authenticatorSupportsUserVerification" })

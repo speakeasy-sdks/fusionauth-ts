@@ -3,13 +3,13 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { CaptchaMethodEnum } from "./captchamethodenum";
+import { CaptchaMethod } from "./captchamethod";
 import { Expose } from "class-transformer";
 
 export class TenantCaptchaConfiguration extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "captchaMethod" })
-  captchaMethod?: CaptchaMethodEnum;
+  captchaMethod?: CaptchaMethod;
 
   @SpeakeasyMetadata()
   @Expose({ name: "enabled" })

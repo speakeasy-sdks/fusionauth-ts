@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { ContentStatusEnum } from "./contentstatusenum";
+import { ContentStatus } from "./contentstatus";
 import { Expose } from "class-transformer";
 
 /**
@@ -79,7 +79,7 @@ export class UserRegistration extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "usernameStatus" })
-  usernameStatus?: ContentStatusEnum;
+  usernameStatus?: ContentStatus;
 
   @SpeakeasyMetadata()
   @Expose({ name: "verified" })

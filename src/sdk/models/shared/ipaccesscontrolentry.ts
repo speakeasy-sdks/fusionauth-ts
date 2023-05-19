@@ -3,13 +3,13 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { IPAccessControlEntryActionEnum } from "./ipaccesscontrolentryactionenum";
+import { IPAccessControlEntryAction } from "./ipaccesscontrolentryaction";
 import { Expose } from "class-transformer";
 
 export class IPAccessControlEntry extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "action" })
-  action?: IPAccessControlEntryActionEnum;
+  action?: IPAccessControlEntryAction;
 
   @SpeakeasyMetadata()
   @Expose({ name: "endIPAddress" })

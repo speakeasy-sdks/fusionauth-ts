@@ -3,8 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { OAuthErrorReasonEnum } from "./oautherrorreasonenum";
-import { OAuthErrorTypeEnum } from "./oautherrortypeenum";
+import { OAuthErrorReason } from "./oautherrorreason";
+import { OAuthErrorType } from "./oautherrortype";
 import { TwoFactorMethod } from "./twofactormethod";
 import { Expose, Type } from "class-transformer";
 
@@ -18,7 +18,7 @@ export class OAuthError extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "error" })
-  error?: OAuthErrorTypeEnum;
+  error?: OAuthErrorType;
 
   @SpeakeasyMetadata()
   @Expose({ name: "error_description" })
@@ -26,7 +26,7 @@ export class OAuthError extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "error_reason" })
-  errorReason?: OAuthErrorReasonEnum;
+  errorReason?: OAuthErrorReason;
 
   @SpeakeasyMetadata()
   @Expose({ name: "error_uri" })

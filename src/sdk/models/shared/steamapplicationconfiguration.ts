@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { SteamAPIModeEnum } from "./steamapimodeenum";
+import { SteamAPIMode } from "./steamapimode";
 import { Expose } from "class-transformer";
 
 export class SteamApplicationConfiguration extends SpeakeasyBase {
@@ -12,7 +12,7 @@ export class SteamApplicationConfiguration extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "apiMode" })
-  apiMode?: SteamAPIModeEnum;
+  apiMode?: SteamAPIMode;
 
   @SpeakeasyMetadata()
   @Expose({ name: "buttonText" })

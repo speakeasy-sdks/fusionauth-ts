@@ -3,9 +3,9 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { BreachedPasswordStatusEnum } from "./breachedpasswordstatusenum";
-import { ChangePasswordReasonEnum } from "./changepasswordreasonenum";
-import { ContentStatusEnum } from "./contentstatusenum";
+import { BreachedPasswordStatus } from "./breachedpasswordstatus";
+import { ChangePasswordReason } from "./changepasswordreason";
+import { ContentStatus } from "./contentstatus";
 import { GroupMember } from "./groupmember";
 import { UserRegistration } from "./userregistration";
 import { UserTwoFactorConfiguration } from "./usertwofactorconfiguration";
@@ -35,7 +35,7 @@ export class User extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "breachedPasswordStatus" })
-  breachedPasswordStatus?: BreachedPasswordStatusEnum;
+  breachedPasswordStatus?: BreachedPasswordStatus;
 
   @SpeakeasyMetadata()
   @Expose({ name: "cleanSpeakId" })
@@ -132,7 +132,7 @@ export class User extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "passwordChangeReason" })
-  passwordChangeReason?: ChangePasswordReasonEnum;
+  passwordChangeReason?: ChangePasswordReason;
 
   @SpeakeasyMetadata()
   @Expose({ name: "passwordChangeRequired" })
@@ -187,7 +187,7 @@ export class User extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "usernameStatus" })
-  usernameStatus?: ContentStatusEnum;
+  usernameStatus?: ContentStatus;
 
   @SpeakeasyMetadata()
   @Expose({ name: "verified" })

@@ -3,8 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { LoginIdTypeEnum } from "./loginidtypeenum";
-import { RegistrationTypeEnum } from "./registrationtypeenum";
+import { LoginIdType } from "./loginidtype";
+import { RegistrationType } from "./registrationtype";
 import { Requirable } from "./requirable";
 import { Expose, Type } from "class-transformer";
 
@@ -55,7 +55,7 @@ export class RegistrationConfiguration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "loginIdType" })
-  loginIdType?: LoginIdTypeEnum;
+  loginIdType?: LoginIdType;
 
   /**
    * Something that can be required and thus also optional. This currently extends Enableable because anything that is  requireoptional is almost always enableable as well.
@@ -75,5 +75,5 @@ export class RegistrationConfiguration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: RegistrationTypeEnum;
+  type?: RegistrationType;
 }

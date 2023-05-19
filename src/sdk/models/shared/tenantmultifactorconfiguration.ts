@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { MultiFactorAuthenticatorMethod } from "./multifactorauthenticatormethod";
 import { MultiFactorEmailMethod } from "./multifactoremailmethod";
-import { MultiFactorLoginPolicyEnum } from "./multifactorloginpolicyenum";
+import { MultiFactorLoginPolicy } from "./multifactorloginpolicy";
 import { MultiFactorSMSMethod } from "./multifactorsmsmethod";
 import { Expose, Type } from "class-transformer";
 
@@ -22,7 +22,7 @@ export class TenantMultiFactorConfiguration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "loginPolicy" })
-  loginPolicy?: MultiFactorLoginPolicyEnum;
+  loginPolicy?: MultiFactorLoginPolicy;
 
   @SpeakeasyMetadata()
   @Expose({ name: "sms" })

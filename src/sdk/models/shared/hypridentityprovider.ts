@@ -8,9 +8,9 @@ import {
   SpeakeasyMetadata,
 } from "../../../internal/utils";
 import { HYPRApplicationConfiguration } from "./hyprapplicationconfiguration";
-import { IdentityProviderLinkingStrategyEnum } from "./identityproviderlinkingstrategyenum";
+import { IdentityProviderLinkingStrategy } from "./identityproviderlinkingstrategy";
 import { IdentityProviderTenantConfiguration } from "./identityprovidertenantconfiguration";
-import { IdentityProviderTypeEnum } from "./identityprovidertypeenum";
+import { IdentityProviderType } from "./identityprovidertype";
 import { ProviderLambdaConfiguration } from "./providerlambdaconfiguration";
 import { Expose, Transform, Type } from "class-transformer";
 
@@ -65,7 +65,7 @@ export class HYPRIdentityProvider extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "linkingStrategy" })
-  linkingStrategy?: IdentityProviderLinkingStrategyEnum;
+  linkingStrategy?: IdentityProviderLinkingStrategy;
 
   @SpeakeasyMetadata()
   @Expose({ name: "name" })
@@ -98,5 +98,5 @@ export class HYPRIdentityProvider extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: IdentityProviderTypeEnum;
+  type?: IdentityProviderType;
 }

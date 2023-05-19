@@ -4,9 +4,9 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { EmailHeader } from "./emailheader";
-import { EmailSecurityTypeEnum } from "./emailsecuritytypeenum";
+import { EmailSecurityType } from "./emailsecuritytype";
 import { EmailUnverifiedOptions } from "./emailunverifiedoptions";
-import { VerificationStrategyEnum } from "./verificationstrategyenum";
+import { VerificationStrategy } from "./verificationstrategy";
 import { Expose, Type } from "class-transformer";
 
 export class EmailConfiguration extends SpeakeasyBase {
@@ -89,7 +89,7 @@ export class EmailConfiguration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "security" })
-  security?: EmailSecurityTypeEnum;
+  security?: EmailSecurityType;
 
   @SpeakeasyMetadata()
   @Expose({ name: "setPasswordEmailTemplateId" })
@@ -118,7 +118,7 @@ export class EmailConfiguration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "verificationStrategy" })
-  verificationStrategy?: VerificationStrategyEnum;
+  verificationStrategy?: VerificationStrategy;
 
   @SpeakeasyMetadata()
   @Expose({ name: "verifyEmail" })

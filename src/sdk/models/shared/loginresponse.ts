@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { ChangePasswordReasonEnum } from "./changepasswordreasonenum";
+import { ChangePasswordReason } from "./changepasswordreason";
 import { LoginPreventedResponse } from "./loginpreventedresponse";
 import { TwoFactorMethod } from "./twofactormethod";
 import { User } from "./user";
@@ -24,7 +24,7 @@ export class LoginResponse extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "changePasswordReason" })
-  changePasswordReason?: ChangePasswordReasonEnum;
+  changePasswordReason?: ChangePasswordReason;
 
   @SpeakeasyMetadata()
   @Expose({ name: "configurableMethods" })

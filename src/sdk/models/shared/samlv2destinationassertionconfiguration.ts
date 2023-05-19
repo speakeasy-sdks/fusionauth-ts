@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { SAMLv2DestinationAssertionPolicyEnum } from "./samlv2destinationassertionpolicyenum";
+import { SAMLv2DestinationAssertionPolicy } from "./samlv2destinationassertionpolicy";
 import { Expose } from "class-transformer";
 
 export class SAMLv2DestinationAssertionConfiguration extends SpeakeasyBase {
@@ -13,5 +13,5 @@ export class SAMLv2DestinationAssertionConfiguration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "policy" })
-  policy?: SAMLv2DestinationAssertionPolicyEnum;
+  policy?: SAMLv2DestinationAssertionPolicy;
 }

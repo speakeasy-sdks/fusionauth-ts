@@ -4,7 +4,7 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { GoogleIdentityProviderProperties } from "./googleidentityproviderproperties";
-import { IdentityProviderLoginMethodEnum } from "./identityproviderloginmethodenum";
+import { IdentityProviderLoginMethod } from "./identityproviderloginmethod";
 import { Expose, Type } from "class-transformer";
 
 export class GoogleApplicationConfiguration extends SpeakeasyBase {
@@ -30,7 +30,7 @@ export class GoogleApplicationConfiguration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "loginMethod" })
-  loginMethod?: IdentityProviderLoginMethodEnum;
+  loginMethod?: IdentityProviderLoginMethod;
 
   /**
    * Google social login provider parameters.

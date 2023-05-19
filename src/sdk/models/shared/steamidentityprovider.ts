@@ -7,11 +7,11 @@ import {
   SpeakeasyBase,
   SpeakeasyMetadata,
 } from "../../../internal/utils";
-import { IdentityProviderLinkingStrategyEnum } from "./identityproviderlinkingstrategyenum";
+import { IdentityProviderLinkingStrategy } from "./identityproviderlinkingstrategy";
 import { IdentityProviderTenantConfiguration } from "./identityprovidertenantconfiguration";
-import { IdentityProviderTypeEnum } from "./identityprovidertypeenum";
+import { IdentityProviderType } from "./identityprovidertype";
 import { ProviderLambdaConfiguration } from "./providerlambdaconfiguration";
-import { SteamAPIModeEnum } from "./steamapimodeenum";
+import { SteamAPIMode } from "./steamapimode";
 import { SteamApplicationConfiguration } from "./steamapplicationconfiguration";
 import { Expose, Transform, Type } from "class-transformer";
 
@@ -24,7 +24,7 @@ export class SteamIdentityProvider extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "apiMode" })
-  apiMode?: SteamAPIModeEnum;
+  apiMode?: SteamAPIMode;
 
   @SpeakeasyMetadata({ elemType: SteamApplicationConfiguration })
   @Expose({ name: "applicationConfiguration" })
@@ -84,7 +84,7 @@ export class SteamIdentityProvider extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "linkingStrategy" })
-  linkingStrategy?: IdentityProviderLinkingStrategyEnum;
+  linkingStrategy?: IdentityProviderLinkingStrategy;
 
   @SpeakeasyMetadata()
   @Expose({ name: "name" })
@@ -113,7 +113,7 @@ export class SteamIdentityProvider extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: IdentityProviderTypeEnum;
+  type?: IdentityProviderType;
 
   @SpeakeasyMetadata()
   @Expose({ name: "webAPIKey" })

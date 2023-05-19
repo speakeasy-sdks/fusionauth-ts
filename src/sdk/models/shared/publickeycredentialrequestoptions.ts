@@ -4,7 +4,7 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { PublicKeyCredentialDescriptor } from "./publickeycredentialdescriptor";
-import { UserVerificationRequirementEnum } from "./userverificationrequirementenum";
+import { UserVerificationRequirement } from "./userverificationrequirement";
 import { Expose, Type } from "class-transformer";
 
 /**
@@ -33,5 +33,5 @@ export class PublicKeyCredentialRequestOptions extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "userVerification" })
-  userVerification?: UserVerificationRequirementEnum;
+  userVerification?: UserVerificationRequirement;
 }

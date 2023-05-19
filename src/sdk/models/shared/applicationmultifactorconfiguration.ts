@@ -3,9 +3,9 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { ApplicationMultiFactorTrustPolicyEnum } from "./applicationmultifactortrustpolicyenum";
+import { ApplicationMultiFactorTrustPolicy } from "./applicationmultifactortrustpolicy";
 import { MultiFactorEmailTemplate } from "./multifactoremailtemplate";
-import { MultiFactorLoginPolicyEnum } from "./multifactorloginpolicyenum";
+import { MultiFactorLoginPolicy } from "./multifactorloginpolicy";
 import { MultiFactorSMSTemplate } from "./multifactorsmstemplate";
 import { Expose, Type } from "class-transformer";
 
@@ -17,7 +17,7 @@ export class ApplicationMultiFactorConfiguration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "loginPolicy" })
-  loginPolicy?: MultiFactorLoginPolicyEnum;
+  loginPolicy?: MultiFactorLoginPolicy;
 
   @SpeakeasyMetadata()
   @Expose({ name: "sms" })
@@ -26,5 +26,5 @@ export class ApplicationMultiFactorConfiguration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "trustPolicy" })
-  trustPolicy?: ApplicationMultiFactorTrustPolicyEnum;
+  trustPolicy?: ApplicationMultiFactorTrustPolicy;
 }

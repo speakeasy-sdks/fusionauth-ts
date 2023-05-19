@@ -8,10 +8,10 @@ import {
   SpeakeasyMetadata,
 } from "../../../internal/utils";
 import { ExternalJWTApplicationConfiguration } from "./externaljwtapplicationconfiguration";
-import { IdentityProviderLinkingStrategyEnum } from "./identityproviderlinkingstrategyenum";
+import { IdentityProviderLinkingStrategy } from "./identityproviderlinkingstrategy";
 import { IdentityProviderOauth2Configuration } from "./identityprovideroauth2configuration";
 import { IdentityProviderTenantConfiguration } from "./identityprovidertenantconfiguration";
-import { IdentityProviderTypeEnum } from "./identityprovidertypeenum";
+import { IdentityProviderType } from "./identityprovidertype";
 import { ProviderLambdaConfiguration } from "./providerlambdaconfiguration";
 import { Expose, Transform, Type } from "class-transformer";
 
@@ -91,7 +91,7 @@ export class ExternalJWTIdentityProvider extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "linkingStrategy" })
-  linkingStrategy?: IdentityProviderLinkingStrategyEnum;
+  linkingStrategy?: IdentityProviderLinkingStrategy;
 
   @SpeakeasyMetadata()
   @Expose({ name: "name" })
@@ -121,7 +121,7 @@ export class ExternalJWTIdentityProvider extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: IdentityProviderTypeEnum;
+  type?: IdentityProviderType;
 
   @SpeakeasyMetadata()
   @Expose({ name: "uniqueIdentityClaim" })

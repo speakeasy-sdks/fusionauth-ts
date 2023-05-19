@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { ConnectorTypeEnum } from "./connectortypeenum";
+import { ConnectorType } from "./connectortype";
 import { Expose } from "class-transformer";
 
 /**
@@ -45,5 +45,5 @@ export class BaseConnectorConfiguration extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: ConnectorTypeEnum;
+  type?: ConnectorType;
 }

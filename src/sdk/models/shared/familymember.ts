@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { FamilyRoleEnum } from "./familyroleenum";
+import { FamilyRole } from "./familyrole";
 import { Expose } from "class-transformer";
 
 /**
@@ -34,7 +34,7 @@ export class FamilyMember extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "role" })
-  role?: FamilyRoleEnum;
+  role?: FamilyRole;
 
   @SpeakeasyMetadata()
   @Expose({ name: "userId" })

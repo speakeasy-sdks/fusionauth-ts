@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { AttestationConveyancePreferenceEnum } from "./attestationconveyancepreferenceenum";
+import { AttestationConveyancePreference } from "./attestationconveyancepreference";
 import { AuthenticatorSelectionCriteria } from "./authenticatorselectioncriteria";
 import { PublicKeyCredentialDescriptor } from "./publickeycredentialdescriptor";
 import { PublicKeyCredentialParameters } from "./publickeycredentialparameters";
@@ -21,7 +21,7 @@ export class PublicKeyCredentialCreationOptions extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "attestation" })
-  attestation?: AttestationConveyancePreferenceEnum;
+  attestation?: AttestationConveyancePreference;
 
   /**
    * Used by the Relying Party to specify their requirements for authenticator attributes. Fields use the deprecated "resident key" terminology to refer  to client-side discoverable credentials to maintain backwards compatibility with WebAuthn Level 1.

@@ -4,7 +4,7 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { IdentityProviderOauth2Configuration } from "./identityprovideroauth2configuration";
-import { IdentityProviderTypeEnum } from "./identityprovidertypeenum";
+import { IdentityProviderType } from "./identityprovidertype";
 import { Expose, Type } from "class-transformer";
 
 export class IdentityProviderDetails extends SpeakeasyBase {
@@ -31,5 +31,5 @@ export class IdentityProviderDetails extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: IdentityProviderTypeEnum;
+  type?: IdentityProviderType;
 }

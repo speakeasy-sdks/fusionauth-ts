@@ -389,7 +389,7 @@ Adds a user to an existing family. The family id must be specified.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { AddUserToFamilyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FamilyRoleEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -413,7 +413,7 @@ sdk.sdk.addUserToFamilyWithId("labore", {
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     owner: false,
-    role: FamilyRoleEnum.Teen,
+    role: FamilyRole.Teen,
     userId: "fa563e25-16fe-44c8-b711-e5b7fd2ed028",
   },
 }, "natus").then((res: AddUserToFamilyWithIdResponse) => {
@@ -679,7 +679,7 @@ Complete a WebAuthn authentication ceremony by validating the signature against 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CompleteWebAuthnAssertionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { AttestationTypeEnum, CoseAlgorithmIdentifierEnum, DeviceTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { AttestationType, CoseAlgorithmIdentifier, DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -735,7 +735,7 @@ sdk.sdk.completeWebAuthnAssertionWithId({
       lastAccessedAddress: "adipisci",
       lastAccessedInstant: 1659380719000,
       name: "Ernest Labadie",
-      type: DeviceTypeEnum.Laptop,
+      type: DeviceType.Laptop,
     },
     scopes: [
       "temporibus",
@@ -766,11 +766,11 @@ Complete a WebAuthn authentication ceremony by validating the signature against 
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CompleteWebAuthnLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  DeviceTypeEnum,
-  TOTPAlgorithmEnum,
+  BreachedPasswordStatus,
+  ChangePasswordReason,
+  ContentStatus,
+  DeviceType,
+  TOTPAlgorithm,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -821,7 +821,7 @@ sdk.sdk.completeWebAuthnLoginWithId({
       lastAccessedAddress: "dolorum",
       lastAccessedInstant: 1659380719000,
       name: "Caleb Goldner",
-      type: DeviceTypeEnum.Laptop,
+      type: DeviceType.Laptop,
     },
     scopes: [
       "voluptatem",
@@ -851,7 +851,7 @@ Complete a WebAuthn registration ceremony by validating the client request and s
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CompleteWebAuthnRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { AttestationTypeEnum, CoseAlgorithmIdentifierEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { AttestationType, CoseAlgorithmIdentifier } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -1002,22 +1002,22 @@ Creates an application. You can optionally specify an Id for the application, if
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateApplicationResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  ApplicationMultiFactorTrustPolicyEnum,
-  CanonicalizationMethodEnum,
-  ClientAuthenticationPolicyEnum,
-  LoginIdTypeEnum,
-  LogoutBehaviorEnum,
-  MultiFactorLoginPolicyEnum,
-  Oauth2AuthorizedURLValidationPolicyEnum,
-  ObjectStateEnum,
-  ProofKeyForCodeExchangePolicyEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  RegistrationTypeEnum,
-  SAMLLogoutBehaviorEnum,
-  UnverifiedBehaviorEnum,
-  VerificationStrategyEnum,
-  XMLSignatureLocationEnum,
+  ApplicationMultiFactorTrustPolicy,
+  CanonicalizationMethod,
+  ClientAuthenticationPolicy,
+  LoginIdType,
+  LogoutBehavior,
+  MultiFactorLoginPolicy,
+  Oauth2AuthorizedURLValidationPolicy,
+  ObjectState,
+  ProofKeyForCodeExchangePolicy,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  RegistrationType,
+  SAMLLogoutBehavior,
+  UnverifiedBehavior,
+  VerificationStrategy,
+  XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -1087,14 +1087,14 @@ sdk.sdk.createApplication({
       accessTokenKeyId: "575f1400-e764-4ad7-b34e-c1b781b36a08",
       enabled: false,
       idTokenKeyId: "088d100e-fada-4200-af04-22eb2164cf9a",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicyEnum.SlidingWindow,
+      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
       refreshTokenTimeToLiveInMinutes: 520678,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicyEnum.Reusable,
+      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
       timeToLiveInSeconds: 397919,
     },
     lambdaConfiguration: {
@@ -1113,11 +1113,11 @@ sdk.sdk.createApplication({
       email: {
         templateId: "7a512624-3835-4bbc-85a2-3a45cefc5fde",
       },
-      loginPolicy: MultiFactorLoginPolicyEnum.Disabled,
+      loginPolicy: MultiFactorLoginPolicy.Disabled,
       sms: {
         templateId: "0a0ce216-9e51-4001-9c6d-c5e34762799b",
       },
-      trustPolicy: ApplicationMultiFactorTrustPolicyEnum.None,
+      trustPolicy: ApplicationMultiFactorTrustPolicy.None,
     },
     name: "Rickey Waters",
     oauthConfiguration: {
@@ -1130,8 +1130,8 @@ sdk.sdk.createApplication({
         "libero",
         "nam",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicyEnum.AllowWildcards,
-      clientAuthenticationPolicy: ClientAuthenticationPolicyEnum.NotRequiredWhenUsingPKCE,
+      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.AllowWildcards,
+      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequiredWhenUsingPKCE,
       clientId: "quod",
       clientSecret: "id",
       debug: false,
@@ -1141,9 +1141,9 @@ sdk.sdk.createApplication({
         "nesciunt",
       ],
       generateRefreshTokens: false,
-      logoutBehavior: LogoutBehaviorEnum.AllApplications,
+      logoutBehavior: LogoutBehavior.AllApplications,
       logoutURL: "nemo",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicyEnum.NotRequiredWhenUsingClientAuthentication,
+      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequiredWhenUsingClientAuthentication,
       requireClientAuthentication: false,
       requireRegistration: false,
     },
@@ -1170,7 +1170,7 @@ sdk.sdk.createApplication({
         enabled: false,
         required: false,
       },
-      loginIdType: LoginIdTypeEnum.Email,
+      loginIdType: LoginIdType.Email,
       middleName: {
         enabled: false,
         required: false,
@@ -1179,7 +1179,7 @@ sdk.sdk.createApplication({
         enabled: false,
         required: false,
       },
-      type: RegistrationTypeEnum.Advanced,
+      type: RegistrationType.Advanced,
     },
     registrationDeletePolicy: {
       unverified: {
@@ -1243,7 +1243,7 @@ sdk.sdk.createApplication({
       issuer: "sed",
       keyId: "dfe13db4-f62c-4ba3-b894-1aebc0b80a69",
       logout: {
-        behavior: SAMLLogoutBehaviorEnum.AllParticipants,
+        behavior: SAMLLogoutBehavior.AllParticipants,
         defaultVerificationKeyId: "4d3b2ecf-cc8f-4895-810f-5dd3d6fa1804",
         keyId: "e54c82f1-68a3-463c-8873-e484380b1f6b",
         requireSignedRequests: false,
@@ -1251,23 +1251,23 @@ sdk.sdk.createApplication({
           enabled: false,
           keyId: "8ca275a6-0a04-4c49-9cc6-99171b51c1bd",
           url: "facilis",
-          xmlSignatureC14nMethod: CanonicalizationMethodEnum.Exclusive,
+          xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
         },
-        xmlSignatureC14nMethod: CanonicalizationMethodEnum.InclusiveWithComments,
+        xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
       },
       logoutURL: "delectus",
       requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethodEnum.ExclusiveWithComments,
-      xmlSignatureLocation: XMLSignatureLocationEnum.Response,
+      xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
+      xmlSignatureLocation: XMLSignatureLocation.Response,
     },
-    state: ObjectStateEnum.Inactive,
+    state: ObjectState.Inactive,
     tenantId: "88ebdfc4-ccca-499b-87fc-0b2dce10873e",
     themeId: "42b006d6-7887-48ba-8581-a58208c54fef",
     unverified: {
-      behavior: UnverifiedBehaviorEnum.Gated,
+      behavior: UnverifiedBehavior.Gated,
     },
     verificationEmailTemplateId: "9c95f2ea-c556-45d3-87cf-ee81206e2813",
-    verificationStrategy: VerificationStrategyEnum.FormField,
+    verificationStrategy: VerificationStrategy.FormField,
     verifyRegistration: false,
     webAuthnConfiguration: {
       bootstrapWorkflow: {
@@ -1336,22 +1336,22 @@ Creates a new role for an application. You must specify the id of the applicatio
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateApplicationRoleResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  ApplicationMultiFactorTrustPolicyEnum,
-  CanonicalizationMethodEnum,
-  ClientAuthenticationPolicyEnum,
-  LoginIdTypeEnum,
-  LogoutBehaviorEnum,
-  MultiFactorLoginPolicyEnum,
-  Oauth2AuthorizedURLValidationPolicyEnum,
-  ObjectStateEnum,
-  ProofKeyForCodeExchangePolicyEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  RegistrationTypeEnum,
-  SAMLLogoutBehaviorEnum,
-  UnverifiedBehaviorEnum,
-  VerificationStrategyEnum,
-  XMLSignatureLocationEnum,
+  ApplicationMultiFactorTrustPolicy,
+  CanonicalizationMethod,
+  ClientAuthenticationPolicy,
+  LoginIdType,
+  LogoutBehavior,
+  MultiFactorLoginPolicy,
+  Oauth2AuthorizedURLValidationPolicy,
+  ObjectState,
+  ProofKeyForCodeExchangePolicy,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  RegistrationType,
+  SAMLLogoutBehavior,
+  UnverifiedBehavior,
+  VerificationStrategy,
+  XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -1425,14 +1425,14 @@ sdk.sdk.createApplicationRole("reiciendis", {
       accessTokenKeyId: "844eded8-5a90-465e-a28b-dfc2032b6c87",
       enabled: false,
       idTokenKeyId: "9923b7e1-3584-4f7a-a12c-6891f82ce115",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicyEnum.Fixed,
+      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.Fixed,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
       refreshTokenTimeToLiveInMinutes: 82396,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicyEnum.Reusable,
+      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
       timeToLiveInSeconds: 151497,
     },
     lambdaConfiguration: {
@@ -1451,11 +1451,11 @@ sdk.sdk.createApplicationRole("reiciendis", {
       email: {
         templateId: "1bd8fb7a-0a11-46ce-b23d-4097fa30e9af",
       },
-      loginPolicy: MultiFactorLoginPolicyEnum.Enabled,
+      loginPolicy: MultiFactorLoginPolicy.Enabled,
       sms: {
         templateId: "25b29122-030d-483f-9aeb-7799d22e8c1f",
       },
-      trustPolicy: ApplicationMultiFactorTrustPolicyEnum.This,
+      trustPolicy: ApplicationMultiFactorTrustPolicy.This,
     },
     name: "Erika Farrell III",
     oauthConfiguration: {
@@ -1471,8 +1471,8 @@ sdk.sdk.createApplicationRole("reiciendis", {
         "commodi",
         "maxime",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicyEnum.AllowWildcards,
-      clientAuthenticationPolicy: ClientAuthenticationPolicyEnum.NotRequiredWhenUsingPKCE,
+      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.AllowWildcards,
+      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequiredWhenUsingPKCE,
       clientId: "consequuntur",
       clientSecret: "possimus",
       debug: false,
@@ -1483,9 +1483,9 @@ sdk.sdk.createApplicationRole("reiciendis", {
         "hic",
       ],
       generateRefreshTokens: false,
-      logoutBehavior: LogoutBehaviorEnum.AllApplications,
+      logoutBehavior: LogoutBehavior.AllApplications,
       logoutURL: "illo",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicyEnum.NotRequiredWhenUsingClientAuthentication,
+      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequiredWhenUsingClientAuthentication,
       requireClientAuthentication: false,
       requireRegistration: false,
     },
@@ -1512,7 +1512,7 @@ sdk.sdk.createApplicationRole("reiciendis", {
         enabled: false,
         required: false,
       },
-      loginIdType: LoginIdTypeEnum.Username,
+      loginIdType: LoginIdType.Username,
       middleName: {
         enabled: false,
         required: false,
@@ -1521,7 +1521,7 @@ sdk.sdk.createApplicationRole("reiciendis", {
         enabled: false,
         required: false,
       },
-      type: RegistrationTypeEnum.Advanced,
+      type: RegistrationType.Advanced,
     },
     registrationDeletePolicy: {
       unverified: {
@@ -1586,7 +1586,7 @@ sdk.sdk.createApplicationRole("reiciendis", {
       issuer: "sint",
       keyId: "5b8bcf24-db95-4969-b352-f74533994d78",
       logout: {
-        behavior: SAMLLogoutBehaviorEnum.OnlyOriginator,
+        behavior: SAMLLogoutBehavior.OnlyOriginator,
         defaultVerificationKeyId: "e3b6e938-9f5a-4bb7-b662-550a28382ac4",
         keyId: "83afd231-5bba-4650-964e-06f5bf6ae591",
         requireSignedRequests: false,
@@ -1594,23 +1594,23 @@ sdk.sdk.createApplicationRole("reiciendis", {
           enabled: false,
           keyId: "bc8bdef3-612b-463c-a05f-da840774a68a",
           url: "sint",
-          xmlSignatureC14nMethod: CanonicalizationMethodEnum.Inclusive,
+          xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
         },
-        xmlSignatureC14nMethod: CanonicalizationMethodEnum.Exclusive,
+        xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
       },
       logoutURL: "ad",
       requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethodEnum.InclusiveWithComments,
-      xmlSignatureLocation: XMLSignatureLocationEnum.Assertion,
+      xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
+      xmlSignatureLocation: XMLSignatureLocation.Assertion,
     },
-    state: ObjectStateEnum.Inactive,
+    state: ObjectState.Inactive,
     tenantId: "6b6f66fe-f020-4e9f-843b-4257b992c8db",
     themeId: "da6a61ef-a219-4825-8fd0-a9eba47f7d3e",
     unverified: {
-      behavior: UnverifiedBehaviorEnum.Gated,
+      behavior: UnverifiedBehavior.Gated,
     },
     verificationEmailTemplateId: "049640d6-a183-41c8-badf-596fdf1ad837",
-    verificationStrategy: VerificationStrategyEnum.FormField,
+    verificationStrategy: VerificationStrategy.FormField,
     verifyRegistration: false,
     webAuthnConfiguration: {
       bootstrapWorkflow: {
@@ -1682,22 +1682,22 @@ Creates a new role for an application. You must specify the id of the applicatio
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  ApplicationMultiFactorTrustPolicyEnum,
-  CanonicalizationMethodEnum,
-  ClientAuthenticationPolicyEnum,
-  LoginIdTypeEnum,
-  LogoutBehaviorEnum,
-  MultiFactorLoginPolicyEnum,
-  Oauth2AuthorizedURLValidationPolicyEnum,
-  ObjectStateEnum,
-  ProofKeyForCodeExchangePolicyEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  RegistrationTypeEnum,
-  SAMLLogoutBehaviorEnum,
-  UnverifiedBehaviorEnum,
-  VerificationStrategyEnum,
-  XMLSignatureLocationEnum,
+  ApplicationMultiFactorTrustPolicy,
+  CanonicalizationMethod,
+  ClientAuthenticationPolicy,
+  LoginIdType,
+  LogoutBehavior,
+  MultiFactorLoginPolicy,
+  Oauth2AuthorizedURLValidationPolicy,
+  ObjectState,
+  ProofKeyForCodeExchangePolicy,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  RegistrationType,
+  SAMLLogoutBehavior,
+  UnverifiedBehavior,
+  VerificationStrategy,
+  XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -1783,14 +1783,14 @@ sdk.sdk.createApplicationRoleWithId("ad", "sapiente", {
       accessTokenKeyId: "7771e7fd-0740-409e-b8d2-9de1dd7097b5",
       enabled: false,
       idTokenKeyId: "da08c57f-a6c7-48a2-96e1-9bafeca61914",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicyEnum.SlidingWindow,
+      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
       refreshTokenTimeToLiveInMinutes: 541046,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicyEnum.Reusable,
+      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
       timeToLiveInSeconds: 300727,
     },
     lambdaConfiguration: {
@@ -1809,11 +1809,11 @@ sdk.sdk.createApplicationRoleWithId("ad", "sapiente", {
       email: {
         templateId: "f8bf8221-1253-459d-9838-7f7a79cd72cd",
       },
-      loginPolicy: MultiFactorLoginPolicyEnum.Disabled,
+      loginPolicy: MultiFactorLoginPolicy.Disabled,
       sms: {
         templateId: "484da217-29f2-4ac4-9ef5-725f1169ac1e",
       },
-      trustPolicy: ApplicationMultiFactorTrustPolicyEnum.Any,
+      trustPolicy: ApplicationMultiFactorTrustPolicy.Any,
     },
     name: "Paulette Legros",
     oauthConfiguration: {
@@ -1823,8 +1823,8 @@ sdk.sdk.createApplicationRoleWithId("ad", "sapiente", {
       authorizedRedirectURLs: [
         "neque",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicyEnum.ExactMatch,
-      clientAuthenticationPolicy: ClientAuthenticationPolicyEnum.Required,
+      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.ExactMatch,
+      clientAuthenticationPolicy: ClientAuthenticationPolicy.Required,
       clientId: "labore",
       clientSecret: "repellat",
       debug: false,
@@ -1836,9 +1836,9 @@ sdk.sdk.createApplicationRoleWithId("ad", "sapiente", {
         "officia",
       ],
       generateRefreshTokens: false,
-      logoutBehavior: LogoutBehaviorEnum.RedirectOnly,
+      logoutBehavior: LogoutBehavior.RedirectOnly,
       logoutURL: "perspiciatis",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicyEnum.NotRequired,
+      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequired,
       requireClientAuthentication: false,
       requireRegistration: false,
     },
@@ -1865,7 +1865,7 @@ sdk.sdk.createApplicationRoleWithId("ad", "sapiente", {
         enabled: false,
         required: false,
       },
-      loginIdType: LoginIdTypeEnum.Email,
+      loginIdType: LoginIdType.Email,
       middleName: {
         enabled: false,
         required: false,
@@ -1874,7 +1874,7 @@ sdk.sdk.createApplicationRoleWithId("ad", "sapiente", {
         enabled: false,
         required: false,
       },
-      type: RegistrationTypeEnum.Basic,
+      type: RegistrationType.Basic,
     },
     registrationDeletePolicy: {
       unverified: {
@@ -1929,7 +1929,7 @@ sdk.sdk.createApplicationRoleWithId("ad", "sapiente", {
       issuer: "libero",
       keyId: "ce247b76-84ef-4f50-926d-71cffbd0eb74",
       logout: {
-        behavior: SAMLLogoutBehaviorEnum.OnlyOriginator,
+        behavior: SAMLLogoutBehavior.OnlyOriginator,
         defaultVerificationKeyId: "8421953b-44bd-43c4-b159-d33e5953c001",
         keyId: "139863aa-41e6-4c31-8c2f-1fcb51c9a41f",
         requireSignedRequests: false,
@@ -1937,23 +1937,23 @@ sdk.sdk.createApplicationRoleWithId("ad", "sapiente", {
           enabled: false,
           keyId: "fbe9cbd7-95ee-465e-876c-c7abf616ea5c",
           url: "molestiae",
-          xmlSignatureC14nMethod: CanonicalizationMethodEnum.Exclusive,
+          xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
         },
-        xmlSignatureC14nMethod: CanonicalizationMethodEnum.ExclusiveWithComments,
+        xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
       },
       logoutURL: "modi",
       requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethodEnum.Exclusive,
-      xmlSignatureLocation: XMLSignatureLocationEnum.Response,
+      xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
+      xmlSignatureLocation: XMLSignatureLocation.Response,
     },
-    state: ObjectStateEnum.Active,
+    state: ObjectState.Active,
     tenantId: "4b90f2e0-9d19-4d2f-82f9-e2e105944b93",
     themeId: "5d237a72-f908-449d-aaed-4aecb7537cd9",
     unverified: {
-      behavior: UnverifiedBehaviorEnum.Allow,
+      behavior: UnverifiedBehavior.Allow,
     },
     verificationEmailTemplateId: "22c9ff57-491a-4abf-a2e7-61f0ca4d456e",
-    verificationStrategy: VerificationStrategyEnum.FormField,
+    verificationStrategy: VerificationStrategy.FormField,
     verifyRegistration: false,
     webAuthnConfiguration: {
       bootstrapWorkflow: {
@@ -2014,22 +2014,22 @@ Creates an application. You can optionally specify an Id for the application, if
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  ApplicationMultiFactorTrustPolicyEnum,
-  CanonicalizationMethodEnum,
-  ClientAuthenticationPolicyEnum,
-  LoginIdTypeEnum,
-  LogoutBehaviorEnum,
-  MultiFactorLoginPolicyEnum,
-  Oauth2AuthorizedURLValidationPolicyEnum,
-  ObjectStateEnum,
-  ProofKeyForCodeExchangePolicyEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  RegistrationTypeEnum,
-  SAMLLogoutBehaviorEnum,
-  UnverifiedBehaviorEnum,
-  VerificationStrategyEnum,
-  XMLSignatureLocationEnum,
+  ApplicationMultiFactorTrustPolicy,
+  CanonicalizationMethod,
+  ClientAuthenticationPolicy,
+  LoginIdType,
+  LogoutBehavior,
+  MultiFactorLoginPolicy,
+  Oauth2AuthorizedURLValidationPolicy,
+  ObjectState,
+  ProofKeyForCodeExchangePolicy,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  RegistrationType,
+  SAMLLogoutBehavior,
+  UnverifiedBehavior,
+  VerificationStrategy,
+  XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -2115,14 +2115,14 @@ sdk.sdk.createApplicationWithId("inventore", {
       accessTokenKeyId: "caba8da4-127d-4d59-bff4-711aa1bc74b8",
       enabled: false,
       idTokenKeyId: "6cecc74f-77b4-4848-bd6a-6f0441d2c3b8",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicyEnum.Fixed,
+      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.Fixed,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
       refreshTokenTimeToLiveInMinutes: 511921,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicyEnum.Reusable,
+      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
       timeToLiveInSeconds: 594020,
     },
     lambdaConfiguration: {
@@ -2141,11 +2141,11 @@ sdk.sdk.createApplicationWithId("inventore", {
       email: {
         templateId: "c5670ef4-2bd3-4c9f-9cc5-03f6c39bcd0a",
       },
-      loginPolicy: MultiFactorLoginPolicyEnum.Enabled,
+      loginPolicy: MultiFactorLoginPolicy.Enabled,
       sms: {
         templateId: "290f957f-3851-489a-97ef-807aae03f33c",
       },
-      trustPolicy: ApplicationMultiFactorTrustPolicyEnum.This,
+      trustPolicy: ApplicationMultiFactorTrustPolicy.This,
     },
     name: "Lindsay Zemlak",
     oauthConfiguration: {
@@ -2158,8 +2158,8 @@ sdk.sdk.createApplicationWithId("inventore", {
       authorizedRedirectURLs: [
         "soluta",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicyEnum.ExactMatch,
-      clientAuthenticationPolicy: ClientAuthenticationPolicyEnum.Required,
+      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.ExactMatch,
+      clientAuthenticationPolicy: ClientAuthenticationPolicy.Required,
       clientId: "commodi",
       clientSecret: "a",
       debug: false,
@@ -2168,9 +2168,9 @@ sdk.sdk.createApplicationWithId("inventore", {
         "eum",
       ],
       generateRefreshTokens: false,
-      logoutBehavior: LogoutBehaviorEnum.AllApplications,
+      logoutBehavior: LogoutBehavior.AllApplications,
       logoutURL: "expedita",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicyEnum.NotRequired,
+      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequired,
       requireClientAuthentication: false,
       requireRegistration: false,
     },
@@ -2197,7 +2197,7 @@ sdk.sdk.createApplicationWithId("inventore", {
         enabled: false,
         required: false,
       },
-      loginIdType: LoginIdTypeEnum.Username,
+      loginIdType: LoginIdType.Username,
       middleName: {
         enabled: false,
         required: false,
@@ -2206,7 +2206,7 @@ sdk.sdk.createApplicationWithId("inventore", {
         enabled: false,
         required: false,
       },
-      type: RegistrationTypeEnum.Advanced,
+      type: RegistrationType.Advanced,
     },
     registrationDeletePolicy: {
       unverified: {
@@ -2243,7 +2243,7 @@ sdk.sdk.createApplicationWithId("inventore", {
       issuer: "reiciendis",
       keyId: "a796206b-ef2b-40a3-a42c-1aa010e9aac2",
       logout: {
-        behavior: SAMLLogoutBehaviorEnum.OnlyOriginator,
+        behavior: SAMLLogoutBehavior.OnlyOriginator,
         defaultVerificationKeyId: "9135586d-18f9-4f97-a4bf-ad2bf7d67ca8",
         keyId: "4ad99b41-d612-4435-b187-0cf68b03ad42",
         requireSignedRequests: false,
@@ -2251,23 +2251,23 @@ sdk.sdk.createApplicationWithId("inventore", {
           enabled: false,
           keyId: "1bd43d1f-0cb0-4a00-83eb-22d9b3a70d94",
           url: "voluptatibus",
-          xmlSignatureC14nMethod: CanonicalizationMethodEnum.Inclusive,
+          xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
         },
-        xmlSignatureC14nMethod: CanonicalizationMethodEnum.Inclusive,
+        xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
       },
       logoutURL: "iure",
       requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethodEnum.ExclusiveWithComments,
-      xmlSignatureLocation: XMLSignatureLocationEnum.Assertion,
+      xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
+      xmlSignatureLocation: XMLSignatureLocation.Assertion,
     },
-    state: ObjectStateEnum.PendingDelete,
+    state: ObjectState.PendingDelete,
     tenantId: "57d1fedc-2050-4d38-9c3c-e185472f9ee6",
     themeId: "9166a8be-3444-4eac-8b3a-2875c6c1fe60",
     unverified: {
-      behavior: UnverifiedBehaviorEnum.Allow,
+      behavior: UnverifiedBehavior.Allow,
     },
     verificationEmailTemplateId: "d07d2a9c-87ae-450c-9666-1a1d9136a7e8",
-    verificationStrategy: VerificationStrategyEnum.FormField,
+    verificationStrategy: VerificationStrategy.FormField,
     verifyRegistration: false,
     webAuthnConfiguration: {
       bootstrapWorkflow: {
@@ -2412,7 +2412,7 @@ Creates a connector.  You can optionally specify an Id for the connector, if not
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateConnectorResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConnectorTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { ConnectorType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -2435,7 +2435,7 @@ sdk.sdk.createConnector({
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     name: "Mrs. Molly Ziemann",
-    type: ConnectorTypeEnum.FusionAuth,
+    type: ConnectorType.FusionAuth,
   },
 }).then((res: CreateConnectorResponse) => {
   if (res.statusCode == 200) {
@@ -2453,7 +2453,7 @@ Creates a connector.  You can optionally specify an Id for the connector, if not
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConnectorTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { ConnectorType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -2485,7 +2485,7 @@ sdk.sdk.createConnectorWithId("aut", {
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     name: "Israel Johns DDS",
-    type: ConnectorTypeEnum.Generic,
+    type: ConnectorType.Generic,
   },
 }).then((res: CreateConnectorWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -3503,7 +3503,7 @@ Creates a family with the user id in the request as the owner and sole member of
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateFamilyResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FamilyRoleEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -3528,7 +3528,7 @@ sdk.sdk.createFamily({
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     owner: false,
-    role: FamilyRoleEnum.Child,
+    role: FamilyRole.Child,
     userId: "23b93e34-316c-4f55-b431-3553ccf1c204",
   },
 }, "placeat").then((res: CreateFamilyResponse) => {
@@ -3547,7 +3547,7 @@ Creates a family with the user id in the request as the owner and sole member of
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateFamilyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FamilyRoleEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -3578,7 +3578,7 @@ sdk.sdk.createFamilyWithId("labore", {
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     owner: false,
-    role: FamilyRoleEnum.Child,
+    role: FamilyRole.Child,
     userId: "d3b901e0-952b-4bb4-8bb1-9f713d95a416",
   },
 }, "molestias").then((res: CreateFamilyWithIdResponse) => {
@@ -3597,7 +3597,7 @@ Creates a form.  You can optionally specify an Id for the form, if not provided 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateFormResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FormTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -3639,7 +3639,7 @@ sdk.sdk.createForm({
         ],
       },
     ],
-    type: FormTypeEnum.Registration,
+    type: FormType.Registration,
   },
 }).then((res: CreateFormResponse) => {
   if (res.statusCode == 200) {
@@ -3657,7 +3657,7 @@ Creates a form field.  You can optionally specify an Id for the form, if not pro
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateFormFieldResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FormControlEnum, FormDataTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { FormControl, FormDataType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -3669,7 +3669,7 @@ sdk.sdk.createFormField({
   field: {
     confirm: false,
     consentId: "80840c69-ef68-4e45-88ad-dfac75450043",
-    control: FormControlEnum.Checkbox,
+    control: FormControl.Checkbox,
     data: {
       "eum": {
         "amet": "quia",
@@ -3700,7 +3700,7 @@ sdk.sdk.createFormField({
       "nemo",
     ],
     required: false,
-    type: FormDataTypeEnum.String,
+    type: FormDataType.String,
     validator: {
       enabled: false,
       expression: "illum",
@@ -3710,7 +3710,7 @@ sdk.sdk.createFormField({
     {
       confirm: false,
       consentId: "e0b4a4a4-253c-4302-9711-f42c7e7dc548",
-      control: FormControlEnum.Textarea,
+      control: FormControl.Textarea,
       data: {
         "sit": {
           "recusandae": "numquam",
@@ -3741,7 +3741,7 @@ sdk.sdk.createFormField({
         "ipsa",
       ],
       required: false,
-      type: FormDataTypeEnum.Consent,
+      type: FormDataType.Consent,
       validator: {
         enabled: false,
         expression: "maiores",
@@ -3764,7 +3764,7 @@ Creates a form field.  You can optionally specify an Id for the form, if not pro
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FormControlEnum, FormDataTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { FormControl, FormDataType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -3776,7 +3776,7 @@ sdk.sdk.createFormFieldWithId("itaque", {
   field: {
     confirm: false,
     consentId: "c31c5082-4d18-49a3-aa6b-2d27eb707aa6",
-    control: FormControlEnum.Checkbox,
+    control: FormControl.Checkbox,
     data: {
       "voluptatum": {
         "officiis": "dolore",
@@ -3813,7 +3813,7 @@ sdk.sdk.createFormFieldWithId("itaque", {
       "autem",
     ],
     required: false,
-    type: FormDataTypeEnum.Date,
+    type: FormDataType.Date,
     validator: {
       enabled: false,
       expression: "ad",
@@ -3823,7 +3823,7 @@ sdk.sdk.createFormFieldWithId("itaque", {
     {
       confirm: false,
       consentId: "4dbaf94a-7c98-4f13-af28-db2cf2bf4f3d",
-      control: FormControlEnum.Text,
+      control: FormControl.Text,
       data: {
         "amet": {
           "ea": "fugiat",
@@ -3857,7 +3857,7 @@ sdk.sdk.createFormFieldWithId("itaque", {
         "tempore",
       ],
       required: false,
-      type: FormDataTypeEnum.Number,
+      type: FormDataType.Number,
       validator: {
         enabled: false,
         expression: "ex",
@@ -3866,7 +3866,7 @@ sdk.sdk.createFormFieldWithId("itaque", {
     {
       confirm: false,
       consentId: "fbfec932-af68-413d-a5bf-ecec2dd6916f",
-      control: FormControlEnum.Radio,
+      control: FormControl.Radio,
       data: {
         "minus": {
           "quibusdam": "assumenda",
@@ -3902,7 +3902,7 @@ sdk.sdk.createFormFieldWithId("itaque", {
         "cupiditate",
       ],
       required: false,
-      type: FormDataTypeEnum.String,
+      type: FormDataType.String,
       validator: {
         enabled: false,
         expression: "nobis",
@@ -3925,7 +3925,7 @@ Creates a form.  You can optionally specify an Id for the form, if not provided 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FormTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -3972,7 +3972,7 @@ sdk.sdk.createFormWithId("repellendus", {
         ],
       },
     ],
-    type: FormTypeEnum.Registration,
+    type: FormType.Registration,
   },
 }).then((res: CreateFormWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -4061,12 +4061,7 @@ Creates a member in a group.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateGroupMembersWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -4092,7 +4087,7 @@ sdk.sdk.createGroupMembersWithId({
         active: false,
         birthDate: "2007-12-03",
         breachedPasswordLastCheckedInstant: 1659380719000,
-        breachedPasswordStatus: BreachedPasswordStatusEnum.None,
+        breachedPasswordStatus: BreachedPasswordStatus.None,
         cleanSpeakId: "dbeceff7-c4b1-456e-9278-275eea768174",
         connectorId: "68063f79-9b79-456c-8b0f-a0bb20a40e7c",
         data: {
@@ -4128,7 +4123,7 @@ sdk.sdk.createGroupMembersWithId({
         mobilePhone: "unde",
         parentEmail: "et",
         password: "cum",
-        passwordChangeReason: ChangePasswordReasonEnum.Administrative,
+        passwordChangeReason: ChangePasswordReason.Administrative,
         passwordChangeRequired: false,
         passwordLastUpdateInstant: 1659380719000,
         preferredLanguages: [
@@ -4172,7 +4167,7 @@ sdk.sdk.createGroupMembersWithId({
               "eligendi": "facere",
             },
             username: "Kenneth63",
-            usernameStatus: ContentStatusEnum.Rejected,
+            usernameStatus: ContentStatus.Rejected,
             verified: false,
           },
           {
@@ -4208,7 +4203,7 @@ sdk.sdk.createGroupMembersWithId({
               "a": "maxime",
             },
             username: "Reed.Boyer",
-            usernameStatus: ContentStatusEnum.Pending,
+            usernameStatus: ContentStatus.Pending,
             verified: false,
           },
           {
@@ -4250,7 +4245,7 @@ sdk.sdk.createGroupMembersWithId({
               "quisquam": "quas",
             },
             username: "Helen.Halvorson",
-            usernameStatus: ContentStatusEnum.Active,
+            usernameStatus: ContentStatus.Active,
             verified: false,
           },
           {
@@ -4298,7 +4293,7 @@ sdk.sdk.createGroupMembersWithId({
               "libero": "tempore",
             },
             username: "Jazmyne37",
-            usernameStatus: ContentStatusEnum.Active,
+            usernameStatus: ContentStatus.Active,
             verified: false,
           },
         ],
@@ -4309,7 +4304,7 @@ sdk.sdk.createGroupMembersWithId({
           methods: [
             {
               authenticator: {
-                algorithm: TOTPAlgorithmEnum.HmacSha1,
+                algorithm: TOTPAlgorithm.HmacSha1,
                 codeLength: 455674,
                 timeStep: 70555,
               },
@@ -4322,7 +4317,7 @@ sdk.sdk.createGroupMembersWithId({
             },
             {
               authenticator: {
-                algorithm: TOTPAlgorithmEnum.HmacSha512,
+                algorithm: TOTPAlgorithm.HmacSha512,
                 codeLength: 816935,
                 timeStep: 870071,
               },
@@ -4341,7 +4336,7 @@ sdk.sdk.createGroupMembersWithId({
         },
         uniqueUsername: "sunt",
         username: "Zula90",
-        usernameStatus: ContentStatusEnum.Active,
+        usernameStatus: ContentStatus.Active,
         verified: false,
       },
       userId: "a23394a6-8cc8-40d3-8ff7-2164d0a91fe9",
@@ -4374,7 +4369,7 @@ sdk.sdk.createGroupMembersWithId({
         active: false,
         birthDate: "2007-12-03",
         breachedPasswordLastCheckedInstant: 1659380719000,
-        breachedPasswordStatus: BreachedPasswordStatusEnum.ExactMatch,
+        breachedPasswordStatus: BreachedPasswordStatus.ExactMatch,
         cleanSpeakId: "9c7e23ec-b060-4465-ae23-a3d6c657e9de",
         connectorId: "8f7f002d-1986-4aa9-9d3a-1d32329e4583",
         data: {
@@ -4406,7 +4401,7 @@ sdk.sdk.createGroupMembersWithId({
         mobilePhone: "aliquid",
         parentEmail: "ea",
         password: "vel",
-        passwordChangeReason: ChangePasswordReasonEnum.Expired,
+        passwordChangeReason: ChangePasswordReason.Expired,
         passwordChangeRequired: false,
         passwordLastUpdateInstant: 1659380719000,
         preferredLanguages: [
@@ -4452,7 +4447,7 @@ sdk.sdk.createGroupMembersWithId({
               "saepe": "quo",
             },
             username: "Chaz_Hamill",
-            usernameStatus: ContentStatusEnum.Active,
+            usernameStatus: ContentStatus.Active,
             verified: false,
           },
         ],
@@ -4463,7 +4458,7 @@ sdk.sdk.createGroupMembersWithId({
           methods: [
             {
               authenticator: {
-                algorithm: TOTPAlgorithmEnum.HmacSha1,
+                algorithm: TOTPAlgorithm.HmacSha1,
                 codeLength: 777563,
                 timeStep: 319467,
               },
@@ -4483,7 +4478,7 @@ sdk.sdk.createGroupMembersWithId({
         },
         uniqueUsername: "quam",
         username: "Neha_Denesik",
-        usernameStatus: ContentStatusEnum.Pending,
+        usernameStatus: ContentStatus.Pending,
         verified: false,
       },
       userId: "afabc986-e241-4e43-b234-2417d13e3f62",
@@ -4514,7 +4509,7 @@ sdk.sdk.createGroupMembersWithId({
         active: false,
         birthDate: "2007-12-03",
         breachedPasswordLastCheckedInstant: 1659380719000,
-        breachedPasswordStatus: BreachedPasswordStatusEnum.ExactMatch,
+        breachedPasswordStatus: BreachedPasswordStatus.ExactMatch,
         cleanSpeakId: "3935f377-ac5c-49b7-a93b-6a3c523105e7",
         connectorId: "c34cab0e-cb81-42a6-a148-944a8e908507",
         data: {
@@ -4548,7 +4543,7 @@ sdk.sdk.createGroupMembersWithId({
         mobilePhone: "aperiam",
         parentEmail: "et",
         password: "ad",
-        passwordChangeReason: ChangePasswordReasonEnum.Expired,
+        passwordChangeReason: ChangePasswordReason.Expired,
         passwordChangeRequired: false,
         passwordLastUpdateInstant: 1659380719000,
         preferredLanguages: [
@@ -4595,7 +4590,7 @@ sdk.sdk.createGroupMembersWithId({
               "reiciendis": "doloribus",
             },
             username: "Avery_Hagenes79",
-            usernameStatus: ContentStatusEnum.Active,
+            usernameStatus: ContentStatus.Active,
             verified: false,
           },
         ],
@@ -4606,7 +4601,7 @@ sdk.sdk.createGroupMembersWithId({
           methods: [
             {
               authenticator: {
-                algorithm: TOTPAlgorithmEnum.HmacSha1,
+                algorithm: TOTPAlgorithm.HmacSha1,
                 codeLength: 127394,
                 timeStep: 852547,
               },
@@ -4624,7 +4619,7 @@ sdk.sdk.createGroupMembersWithId({
         },
         uniqueUsername: "rerum",
         username: "Katelin_Denesik",
-        usernameStatus: ContentStatusEnum.Pending,
+        usernameStatus: ContentStatus.Pending,
         verified: false,
       },
       userId: "030660f0-24c7-49b4-8c64-c2b3a32c488a",
@@ -4656,7 +4651,7 @@ sdk.sdk.createGroupMembersWithId({
         active: false,
         birthDate: "2007-12-03",
         breachedPasswordLastCheckedInstant: 1659380719000,
-        breachedPasswordStatus: BreachedPasswordStatusEnum.None,
+        breachedPasswordStatus: BreachedPasswordStatus.None,
         cleanSpeakId: "83279b71-9d1c-4ea6-b3d8-6e3b35e49a31",
         connectorId: "35778ce5-4cac-4b0e-bea9-75045bacf63b",
         data: {
@@ -4687,7 +4682,7 @@ sdk.sdk.createGroupMembersWithId({
         mobilePhone: "accusantium",
         parentEmail: "quo",
         password: "id",
-        passwordChangeReason: ChangePasswordReasonEnum.Administrative,
+        passwordChangeReason: ChangePasswordReason.Administrative,
         passwordChangeRequired: false,
         passwordLastUpdateInstant: 1659380719000,
         preferredLanguages: [
@@ -4745,7 +4740,7 @@ sdk.sdk.createGroupMembersWithId({
               "doloremque": "et",
             },
             username: "Reed_Miller",
-            usernameStatus: ContentStatusEnum.Active,
+            usernameStatus: ContentStatus.Active,
             verified: false,
           },
           {
@@ -4779,7 +4774,7 @@ sdk.sdk.createGroupMembersWithId({
               "officiis": "sit",
             },
             username: "Melyssa_Ledner",
-            usernameStatus: ContentStatusEnum.Rejected,
+            usernameStatus: ContentStatus.Rejected,
             verified: false,
           },
         ],
@@ -4790,7 +4785,7 @@ sdk.sdk.createGroupMembersWithId({
           methods: [
             {
               authenticator: {
-                algorithm: TOTPAlgorithmEnum.HmacSha256,
+                algorithm: TOTPAlgorithm.HmacSha256,
                 codeLength: 141113,
                 timeStep: 609454,
               },
@@ -4810,7 +4805,7 @@ sdk.sdk.createGroupMembersWithId({
         },
         uniqueUsername: "laborum",
         username: "Adrian_Lemke",
-        usernameStatus: ContentStatusEnum.Active,
+        usernameStatus: ContentStatus.Active,
         verified: false,
       },
       userId: "2184439b-3de8-4756-8cce-470cd2147b6e",
@@ -4909,7 +4904,7 @@ Creates an IP Access Control List. You can optionally specify an Id on this crea
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateIPAccessControlListResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { IPAccessControlEntryActionEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { IPAccessControlEntryAction } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -4936,7 +4931,7 @@ sdk.sdk.createIPAccessControlList({
     },
     entries: [
       {
-        action: IPAccessControlEntryActionEnum.Allow,
+        action: IPAccessControlEntryAction.Allow,
         endIPAddress: "quam",
         startIPAddress: "incidunt",
       },
@@ -4962,7 +4957,7 @@ Creates an IP Access Control List. You can optionally specify an Id on this crea
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateIPAccessControlListWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { IPAccessControlEntryActionEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { IPAccessControlEntryAction } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -4986,17 +4981,17 @@ sdk.sdk.createIPAccessControlListWithId("eius", {
     },
     entries: [
       {
-        action: IPAccessControlEntryActionEnum.Block,
+        action: IPAccessControlEntryAction.Block,
         endIPAddress: "adipisci",
         startIPAddress: "libero",
       },
       {
-        action: IPAccessControlEntryActionEnum.Block,
+        action: IPAccessControlEntryAction.Block,
         endIPAddress: "in",
         startIPAddress: "tempore",
       },
       {
-        action: IPAccessControlEntryActionEnum.Allow,
+        action: IPAccessControlEntryAction.Allow,
         endIPAddress: "molestiae",
         startIPAddress: "eaque",
       },
@@ -5023,13 +5018,13 @@ Creates an identity provider. You can optionally specify an Id for the identity 
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateIdentityProviderResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  CanonicalizationMethodEnum,
-  ClientAuthenticationMethodEnum,
-  IdentityProviderLinkingStrategyEnum,
-  IdentityProviderLoginMethodEnum,
-  IdentityProviderTypeEnum,
-  SAMLv2DestinationAssertionPolicyEnum,
-  SteamAPIModeEnum,
+  CanonicalizationMethod,
+  ClientAuthenticationMethod,
+  IdentityProviderLinkingStrategy,
+  IdentityProviderLoginMethod,
+  IdentityProviderType,
+  SAMLv2DestinationAssertionPolicy,
+  SteamAPIMode,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -5045,7 +5040,7 @@ sdk.sdk.createIdentityProvider({
         alternates: [
           "harum",
         ],
-        policy: SAMLv2DestinationAssertionPolicyEnum.Enabled,
+        policy: SAMLv2DestinationAssertionPolicy.Enabled,
       },
     },
     buttonImageURL: "quas",
@@ -5074,7 +5069,7 @@ sdk.sdk.createIdentityProvider({
     uniqueIdClaim: "aliquid",
     useNameIdForEmail: false,
     usernameClaim: "perferendis",
-    xmlSignatureC14nMethod: CanonicalizationMethodEnum.Exclusive,
+    xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
   },
 }).then((res: CreateIdentityProviderResponse) => {
   if (res.statusCode == 200) {
@@ -5093,13 +5088,13 @@ Creates an identity provider. You can optionally specify an Id for the identity 
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  CanonicalizationMethodEnum,
-  ClientAuthenticationMethodEnum,
-  IdentityProviderLinkingStrategyEnum,
-  IdentityProviderLoginMethodEnum,
-  IdentityProviderTypeEnum,
-  SAMLv2DestinationAssertionPolicyEnum,
-  SteamAPIModeEnum,
+  CanonicalizationMethod,
+  ClientAuthenticationMethod,
+  IdentityProviderLinkingStrategy,
+  IdentityProviderLoginMethod,
+  IdentityProviderType,
+  SAMLv2DestinationAssertionPolicy,
+  SteamAPIMode,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -5117,7 +5112,7 @@ sdk.sdk.createIdentityProviderWithId("non", {
           "sunt",
           "id",
         ],
-        policy: SAMLv2DestinationAssertionPolicyEnum.Disabled,
+        policy: SAMLv2DestinationAssertionPolicy.Disabled,
       },
     },
     buttonImageURL: "ab",
@@ -5145,7 +5140,7 @@ sdk.sdk.createIdentityProviderWithId("non", {
     uniqueIdClaim: "nemo",
     useNameIdForEmail: false,
     usernameClaim: "veritatis",
-    xmlSignatureC14nMethod: CanonicalizationMethodEnum.ExclusiveWithComments,
+    xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
   },
 }).then((res: CreateIdentityProviderWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -5163,7 +5158,7 @@ Creates a Lambda. You can optionally specify an Id for the lambda, if not provid
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateLambdaResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { LambdaEngineTypeEnum, LambdaTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -5175,12 +5170,12 @@ sdk.sdk.createLambda({
   lambda: {
     body: "enim",
     debug: false,
-    engineType: LambdaEngineTypeEnum.GraalJS,
+    engineType: LambdaEngineType.GraalJS,
     id: "b158ca91-42f0-4526-b2b3-1cad692ffc87",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     name: "Mrs. Bernice Bednar",
-    type: LambdaTypeEnum.SonyPSNReconcile,
+    type: LambdaType.SonyPSNReconcile,
   },
 }).then((res: CreateLambdaResponse) => {
   if (res.statusCode == 200) {
@@ -5198,7 +5193,7 @@ Creates a Lambda. You can optionally specify an Id for the lambda, if not provid
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { LambdaEngineTypeEnum, LambdaTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -5210,12 +5205,12 @@ sdk.sdk.createLambdaWithId("pariatur", {
   lambda: {
     body: "velit",
     debug: false,
-    engineType: LambdaEngineTypeEnum.Nashorn,
+    engineType: LambdaEngineType.Nashorn,
     id: "934e036f-5c38-4866-8f69-85530a2e2aed",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     name: "Candace Orn",
-    type: LambdaTypeEnum.TwitterReconcile,
+    type: LambdaType.TwitterReconcile,
   },
 }).then((res: CreateLambdaWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -5281,7 +5276,7 @@ Creates an message template. You can optionally specify an Id for the template, 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateMessageTemplateResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessageTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -5314,7 +5309,7 @@ sdk.sdk.createMessageTemplate({
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     name: "Eva Feest",
-    type: MessageTypeEnum.Sms,
+    type: MessageType.Sms,
   },
 }).then((res: CreateMessageTemplateResponse) => {
   if (res.statusCode == 200) {
@@ -5332,7 +5327,7 @@ Creates an message template. You can optionally specify an Id for the template, 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessageTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -5365,7 +5360,7 @@ sdk.sdk.createMessageTemplateWithId("placeat", {
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     name: "Mrs. Leroy Jaskolski",
-    type: MessageTypeEnum.Sms,
+    type: MessageType.Sms,
   },
 }).then((res: CreateMessageTemplateWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -5383,7 +5378,7 @@ Creates a messenger.  You can optionally specify an Id for the messenger, if not
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateMessengerResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessengerTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { MessengerType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -5412,7 +5407,7 @@ sdk.sdk.createMessenger({
     lastUpdateInstant: 1659380719000,
     name: "Sherri Auer",
     transport: "quos",
-    type: MessengerTypeEnum.Twilio,
+    type: MessengerType.Twilio,
   },
 }).then((res: CreateMessengerResponse) => {
   if (res.statusCode == 200) {
@@ -5430,7 +5425,7 @@ Creates a messenger.  You can optionally specify an Id for the messenger, if not
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessengerTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { MessengerType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -5452,7 +5447,7 @@ sdk.sdk.createMessengerWithId("sunt", {
     lastUpdateInstant: 1659380719000,
     name: "Ms. Ora Thompson",
     transport: "reprehenderit",
-    type: MessengerTypeEnum.Kafka,
+    type: MessengerType.Kafka,
   },
 }).then((res: CreateMessengerWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -5471,23 +5466,23 @@ Creates a tenant. You can optionally specify an Id for the tenant, if not provid
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateTenantResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  AuthenticatorAttachmentPreferenceEnum,
-  BreachActionEnum,
-  BreachMatchModeEnum,
-  CaptchaMethodEnum,
-  EmailSecurityTypeEnum,
-  ExpiryUnitEnum,
-  MultiFactorLoginPolicyEnum,
-  ObjectStateEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  SecureGeneratorTypeEnum,
-  TOTPAlgorithmEnum,
-  TransactionTypeEnum,
-  UniqueUsernameStrategyEnum,
-  UnverifiedBehaviorEnum,
-  UserVerificationRequirementEnum,
-  VerificationStrategyEnum,
+  AuthenticatorAttachmentPreference,
+  BreachAction,
+  BreachMatchMode,
+  CaptchaMethod,
+  EmailSecurityType,
+  ExpiryUnit,
+  MultiFactorLoginPolicy,
+  ObjectState,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  SecureGeneratorType,
+  TOTPAlgorithm,
+  TransactionType,
+  UniqueUsernameStrategy,
+  UnverifiedBehavior,
+  UserVerificationRequirement,
+  VerificationStrategy,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -5540,7 +5535,7 @@ sdk.sdk.createTenant({
       uiIPAccessControlListId: "0acaca64-5de9-4867-951a-9cce61ec2c79",
     },
     captchaConfiguration: {
-      captchaMethod: CaptchaMethodEnum.HCaptcha,
+      captchaMethod: CaptchaMethod.HCaptcha,
       enabled: false,
       secretKey: "consectetur",
       siteKey: "excepturi",
@@ -5685,17 +5680,17 @@ sdk.sdk.createTenant({
       passwordlessEmailTemplateId: "ccc6a2f0-f5b9-4d3c-b11a-7687d3100e8e",
       port: 150725,
       properties: "cum",
-      security: EmailSecurityTypeEnum.Ssl,
+      security: EmailSecurityType.Ssl,
       setPasswordEmailTemplateId: "b0d746d2-a7c7-4d1e-a0e7-9fa9bbe5f179",
       twoFactorMethodAddEmailTemplateId: "f650b1e7-07e7-4e43-9671-3bacce072abd",
       twoFactorMethodRemoveEmailTemplateId: "61918d27-9c10-4c18-916f-d78be2621272",
       unverified: {
         allowEmailChangeWhenGated: false,
-        behavior: UnverifiedBehaviorEnum.Allow,
+        behavior: UnverifiedBehavior.Allow,
       },
       username: "Britney_Lowe35",
       verificationEmailTemplateId: "03962867-e72b-43a6-9024-b157f9bb6ef7",
-      verificationStrategy: VerificationStrategyEnum.ClickableLink,
+      verificationStrategy: VerificationStrategy.ClickableLink,
       verifyEmail: false,
       verifyEmailWhenChanged: false,
     },
@@ -5703,15 +5698,15 @@ sdk.sdk.createTenant({
       events: {
         "ad": {
           enabled: false,
-          transactionType: TransactionTypeEnum.None,
+          transactionType: TransactionType.None,
         },
         "voluptatum": {
           enabled: false,
-          transactionType: TransactionTypeEnum.SimpleMajority,
+          transactionType: TransactionType.SimpleMajority,
         },
         "sunt": {
           enabled: false,
-          transactionType: TransactionTypeEnum.AbsoluteMajority,
+          transactionType: TransactionType.AbsoluteMajority,
         },
       },
     },
@@ -5719,51 +5714,51 @@ sdk.sdk.createTenant({
       authorizationGrantIdTimeToLiveInSeconds: 599722,
       changePasswordIdGenerator: {
         length: 592279,
-        type: SecureGeneratorTypeEnum.RandomAlpha,
+        type: SecureGeneratorType.RandomAlpha,
       },
       changePasswordIdTimeToLiveInSeconds: 375101,
       deviceCodeTimeToLiveInSeconds: 422212,
       deviceUserCodeIdGenerator: {
         length: 89246,
-        type: SecureGeneratorTypeEnum.RandomAlpha,
+        type: SecureGeneratorType.RandomAlpha,
       },
       emailVerificationIdGenerator: {
         length: 498586,
-        type: SecureGeneratorTypeEnum.RandomAlphaNumeric,
+        type: SecureGeneratorType.RandomAlphaNumeric,
       },
       emailVerificationIdTimeToLiveInSeconds: 918704,
       emailVerificationOneTimeCodeGenerator: {
         length: 959082,
-        type: SecureGeneratorTypeEnum.RandomDigits,
+        type: SecureGeneratorType.RandomDigits,
       },
       externalAuthenticationIdTimeToLiveInSeconds: 416745,
       oneTimePasswordTimeToLiveInSeconds: 530871,
       passwordlessLoginGenerator: {
         length: 721629,
-        type: SecureGeneratorTypeEnum.RandomBytes,
+        type: SecureGeneratorType.RandomBytes,
       },
       passwordlessLoginTimeToLiveInSeconds: 769788,
       pendingAccountLinkTimeToLiveInSeconds: 759464,
       registrationVerificationIdGenerator: {
         length: 707359,
-        type: SecureGeneratorTypeEnum.RandomDigits,
+        type: SecureGeneratorType.RandomDigits,
       },
       registrationVerificationIdTimeToLiveInSeconds: 534610,
       registrationVerificationOneTimeCodeGenerator: {
         length: 171195,
-        type: SecureGeneratorTypeEnum.RandomDigits,
+        type: SecureGeneratorType.RandomDigits,
       },
       samlv2AuthNRequestIdTimeToLiveInSeconds: 716005,
       setupPasswordIdGenerator: {
         length: 269101,
-        type: SecureGeneratorTypeEnum.RandomAlpha,
+        type: SecureGeneratorType.RandomAlpha,
       },
       setupPasswordIdTimeToLiveInSeconds: 594801,
       trustTokenTimeToLiveInSeconds: 517683,
       twoFactorIdTimeToLiveInSeconds: 370447,
       twoFactorOneTimeCodeIdGenerator: {
         length: 4558,
-        type: SecureGeneratorTypeEnum.RandomAlphaNumeric,
+        type: SecureGeneratorType.RandomAlphaNumeric,
       },
       twoFactorOneTimeCodeIdTimeToLiveInSeconds: 855665,
       twoFactorTrustIdTimeToLiveInSeconds: 166395,
@@ -5775,7 +5770,7 @@ sdk.sdk.createTenant({
         onPasswordReset: false,
       },
       actionDuration: 667444,
-      actionDurationUnit: ExpiryUnitEnum.Minutes,
+      actionDurationUnit: ExpiryUnit.Minutes,
       emailUser: false,
       resetCountInSeconds: 933228,
       tooManyAttempts: 566495,
@@ -5804,14 +5799,14 @@ sdk.sdk.createTenant({
       accessTokenKeyId: "778a74ba-aa28-432b-b658-62d2a31f9b14",
       enabled: false,
       idTokenKeyId: "aa6bdec7-f444-4232-a9a5-dee1acd72a89",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicyEnum.SlidingWindow,
+      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
       refreshTokenTimeToLiveInMinutes: 530259,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicyEnum.Reusable,
+      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
       timeToLiveInSeconds: 698348,
     },
     lambdaConfiguration: {
@@ -5837,7 +5832,7 @@ sdk.sdk.createTenant({
     },
     multiFactorConfiguration: {
       authenticator: {
-        algorithm: TOTPAlgorithmEnum.HmacSha1,
+        algorithm: TOTPAlgorithm.HmacSha1,
         codeLength: 507658,
         enabled: false,
         timeStep: 467579,
@@ -5846,7 +5841,7 @@ sdk.sdk.createTenant({
         enabled: false,
         templateId: "b51eb5fd-30bf-4e03-890c-f20254a95904",
       },
-      loginPolicy: MultiFactorLoginPolicyEnum.Disabled,
+      loginPolicy: MultiFactorLoginPolicy.Disabled,
       sms: {
         enabled: false,
         messengerId: "cb462d6b-c991-47f9-8e47-92b979a413d6",
@@ -5865,9 +5860,9 @@ sdk.sdk.createTenant({
     passwordValidationRules: {
       breachDetection: {
         enabled: false,
-        matchMode: BreachMatchModeEnum.Medium,
+        matchMode: BreachMatchMode.Medium,
         notifyUserEmailTemplateId: "30be37b0-e8fb-4c48-9dc7-e69b53510505",
-        onLogin: BreachActionEnum.Off,
+        onLogin: BreachAction.Off,
       },
       maxLength: 120524,
       minLength: 284389,
@@ -5932,7 +5927,7 @@ sdk.sdk.createTenant({
     ssoConfiguration: {
       deviceTrustTimeToLiveInSeconds: 504346,
     },
-    state: ObjectStateEnum.PendingDelete,
+    state: ObjectState.PendingDelete,
     themeId: "efccb69d-541b-44b3-93f3-566625bea322",
     userDeletePolicy: {
       unverified: {
@@ -5945,21 +5940,21 @@ sdk.sdk.createTenant({
         enabled: false,
         numberOfDigits: 76002,
         separator: "temporibus",
-        strategy: UniqueUsernameStrategyEnum.OnCollision,
+        strategy: UniqueUsernameStrategy.OnCollision,
       },
     },
     webAuthnConfiguration: {
       bootstrapWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreferenceEnum.CrossPlatform,
+        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.CrossPlatform,
         enabled: false,
-        userVerificationRequirement: UserVerificationRequirementEnum.Required,
+        userVerificationRequirement: UserVerificationRequirement.Required,
       },
       debug: false,
       enabled: false,
       reauthenticationWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreferenceEnum.Platform,
+        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.Platform,
         enabled: false,
-        userVerificationRequirement: UserVerificationRequirementEnum.Preferred,
+        userVerificationRequirement: UserVerificationRequirement.Preferred,
       },
       relyingPartyId: "optio",
       relyingPartyName: "voluptas",
@@ -5987,23 +5982,23 @@ Creates a tenant. You can optionally specify an Id for the tenant, if not provid
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  AuthenticatorAttachmentPreferenceEnum,
-  BreachActionEnum,
-  BreachMatchModeEnum,
-  CaptchaMethodEnum,
-  EmailSecurityTypeEnum,
-  ExpiryUnitEnum,
-  MultiFactorLoginPolicyEnum,
-  ObjectStateEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  SecureGeneratorTypeEnum,
-  TOTPAlgorithmEnum,
-  TransactionTypeEnum,
-  UniqueUsernameStrategyEnum,
-  UnverifiedBehaviorEnum,
-  UserVerificationRequirementEnum,
-  VerificationStrategyEnum,
+  AuthenticatorAttachmentPreference,
+  BreachAction,
+  BreachMatchMode,
+  CaptchaMethod,
+  EmailSecurityType,
+  ExpiryUnit,
+  MultiFactorLoginPolicy,
+  ObjectState,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  SecureGeneratorType,
+  TOTPAlgorithm,
+  TransactionType,
+  UniqueUsernameStrategy,
+  UnverifiedBehavior,
+  UserVerificationRequirement,
+  VerificationStrategy,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -6055,7 +6050,7 @@ sdk.sdk.createTenantWithId("repudiandae", {
       uiIPAccessControlListId: "efb8af68-49d2-4b99-8043-63a0964c0538",
     },
     captchaConfiguration: {
-      captchaMethod: CaptchaMethodEnum.GoogleRecaptchaV3,
+      captchaMethod: CaptchaMethod.GoogleRecaptchaV3,
       enabled: false,
       secretKey: "ea",
       siteKey: "eveniet",
@@ -6159,17 +6154,17 @@ sdk.sdk.createTenantWithId("repudiandae", {
       passwordlessEmailTemplateId: "ea0672d6-b73a-434c-a434-cdb3149a19f2",
       port: 339239,
       properties: "sed",
-      security: EmailSecurityTypeEnum.None,
+      security: EmailSecurityType.None,
       setPasswordEmailTemplateId: "78a18a4b-0dae-4d4b-9cf0-616ee9227575",
       twoFactorMethodAddEmailTemplateId: "bd60daa0-e149-4cd1-8cdd-362bbf923900",
       twoFactorMethodRemoveEmailTemplateId: "15f26899-cf4f-4feb-9bec-50318a81eb01",
       unverified: {
         allowEmailChangeWhenGated: false,
-        behavior: UnverifiedBehaviorEnum.Gated,
+        behavior: UnverifiedBehavior.Gated,
       },
       username: "Charley_Mohr",
       verificationEmailTemplateId: "7b456a85-5e50-488c-8a32-6341acccca66",
-      verificationStrategy: VerificationStrategyEnum.ClickableLink,
+      verificationStrategy: VerificationStrategy.ClickableLink,
       verifyEmail: false,
       verifyEmailWhenChanged: false,
     },
@@ -6177,19 +6172,19 @@ sdk.sdk.createTenantWithId("repudiandae", {
       events: {
         "dolore": {
           enabled: false,
-          transactionType: TransactionTypeEnum.SuperMajority,
+          transactionType: TransactionType.SuperMajority,
         },
         "deleniti": {
           enabled: false,
-          transactionType: TransactionTypeEnum.Any,
+          transactionType: TransactionType.Any,
         },
         "iste": {
           enabled: false,
-          transactionType: TransactionTypeEnum.Any,
+          transactionType: TransactionType.Any,
         },
         "minus": {
           enabled: false,
-          transactionType: TransactionTypeEnum.None,
+          transactionType: TransactionType.None,
         },
       },
     },
@@ -6197,51 +6192,51 @@ sdk.sdk.createTenantWithId("repudiandae", {
       authorizationGrantIdTimeToLiveInSeconds: 719737,
       changePasswordIdGenerator: {
         length: 227638,
-        type: SecureGeneratorTypeEnum.RandomDigits,
+        type: SecureGeneratorType.RandomDigits,
       },
       changePasswordIdTimeToLiveInSeconds: 694279,
       deviceCodeTimeToLiveInSeconds: 743991,
       deviceUserCodeIdGenerator: {
         length: 165566,
-        type: SecureGeneratorTypeEnum.RandomDigits,
+        type: SecureGeneratorType.RandomDigits,
       },
       emailVerificationIdGenerator: {
         length: 233015,
-        type: SecureGeneratorTypeEnum.RandomAlphaNumeric,
+        type: SecureGeneratorType.RandomAlphaNumeric,
       },
       emailVerificationIdTimeToLiveInSeconds: 202052,
       emailVerificationOneTimeCodeGenerator: {
         length: 689770,
-        type: SecureGeneratorTypeEnum.RandomDigits,
+        type: SecureGeneratorType.RandomDigits,
       },
       externalAuthenticationIdTimeToLiveInSeconds: 111913,
       oneTimePasswordTimeToLiveInSeconds: 783111,
       passwordlessLoginGenerator: {
         length: 836578,
-        type: SecureGeneratorTypeEnum.RandomBytes,
+        type: SecureGeneratorType.RandomBytes,
       },
       passwordlessLoginTimeToLiveInSeconds: 678419,
       pendingAccountLinkTimeToLiveInSeconds: 350295,
       registrationVerificationIdGenerator: {
         length: 711897,
-        type: SecureGeneratorTypeEnum.RandomAlphaNumeric,
+        type: SecureGeneratorType.RandomAlphaNumeric,
       },
       registrationVerificationIdTimeToLiveInSeconds: 487429,
       registrationVerificationOneTimeCodeGenerator: {
         length: 278943,
-        type: SecureGeneratorTypeEnum.RandomAlpha,
+        type: SecureGeneratorType.RandomAlpha,
       },
       samlv2AuthNRequestIdTimeToLiveInSeconds: 41535,
       setupPasswordIdGenerator: {
         length: 428114,
-        type: SecureGeneratorTypeEnum.RandomAlpha,
+        type: SecureGeneratorType.RandomAlpha,
       },
       setupPasswordIdTimeToLiveInSeconds: 567510,
       trustTokenTimeToLiveInSeconds: 424322,
       twoFactorIdTimeToLiveInSeconds: 789791,
       twoFactorOneTimeCodeIdGenerator: {
         length: 434685,
-        type: SecureGeneratorTypeEnum.RandomDigits,
+        type: SecureGeneratorType.RandomDigits,
       },
       twoFactorOneTimeCodeIdTimeToLiveInSeconds: 423827,
       twoFactorTrustIdTimeToLiveInSeconds: 875896,
@@ -6253,7 +6248,7 @@ sdk.sdk.createTenantWithId("repudiandae", {
         onPasswordReset: false,
       },
       actionDuration: 834845,
-      actionDurationUnit: ExpiryUnitEnum.Minutes,
+      actionDurationUnit: ExpiryUnit.Minutes,
       emailUser: false,
       resetCountInSeconds: 518898,
       tooManyAttempts: 634549,
@@ -6282,14 +6277,14 @@ sdk.sdk.createTenantWithId("repudiandae", {
       accessTokenKeyId: "ed7470fc-48c2-482b-8716-c27f6b175780",
       enabled: false,
       idTokenKeyId: "304c40ac-2b4a-4d82-94fd-e37724350ed8",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicyEnum.Fixed,
+      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.Fixed,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
       refreshTokenTimeToLiveInMinutes: 679675,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicyEnum.Reusable,
+      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
       timeToLiveInSeconds: 962525,
     },
     lambdaConfiguration: {
@@ -6315,7 +6310,7 @@ sdk.sdk.createTenantWithId("repudiandae", {
     },
     multiFactorConfiguration: {
       authenticator: {
-        algorithm: TOTPAlgorithmEnum.HmacSha1,
+        algorithm: TOTPAlgorithm.HmacSha1,
         codeLength: 215727,
         enabled: false,
         timeStep: 125944,
@@ -6324,7 +6319,7 @@ sdk.sdk.createTenantWithId("repudiandae", {
         enabled: false,
         templateId: "f2c19dbf-7111-4a96-9f21-523e37136521",
       },
-      loginPolicy: MultiFactorLoginPolicyEnum.Enabled,
+      loginPolicy: MultiFactorLoginPolicy.Enabled,
       sms: {
         enabled: false,
         messengerId: "a6e596aa-41b9-4e20-93ae-8c315325b5e0",
@@ -6343,9 +6338,9 @@ sdk.sdk.createTenantWithId("repudiandae", {
     passwordValidationRules: {
       breachDetection: {
         enabled: false,
-        matchMode: BreachMatchModeEnum.High,
+        matchMode: BreachMatchMode.High,
         notifyUserEmailTemplateId: "103d0830-ac4d-4070-84e3-96e562c5ccb1",
-        onLogin: BreachActionEnum.RecordOnly,
+        onLogin: BreachAction.RecordOnly,
       },
       maxLength: 220719,
       minLength: 468227,
@@ -6420,7 +6415,7 @@ sdk.sdk.createTenantWithId("repudiandae", {
     ssoConfiguration: {
       deviceTrustTimeToLiveInSeconds: 228813,
     },
-    state: ObjectStateEnum.Inactive,
+    state: ObjectState.Inactive,
     themeId: "fb30a414-aa29-44d6-8c08-a2ec1a807151",
     userDeletePolicy: {
       unverified: {
@@ -6433,21 +6428,21 @@ sdk.sdk.createTenantWithId("repudiandae", {
         enabled: false,
         numberOfDigits: 249506,
         separator: "ullam",
-        strategy: UniqueUsernameStrategyEnum.Always,
+        strategy: UniqueUsernameStrategy.Always,
       },
     },
     webAuthnConfiguration: {
       bootstrapWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreferenceEnum.CrossPlatform,
+        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.CrossPlatform,
         enabled: false,
-        userVerificationRequirement: UserVerificationRequirementEnum.Discouraged,
+        userVerificationRequirement: UserVerificationRequirement.Discouraged,
       },
       debug: false,
       enabled: false,
       reauthenticationWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreferenceEnum.Any,
+        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.Any,
         enabled: false,
-        userVerificationRequirement: UserVerificationRequirementEnum.Preferred,
+        userVerificationRequirement: UserVerificationRequirement.Preferred,
       },
       relyingPartyId: "commodi",
       relyingPartyName: "at",
@@ -6676,7 +6671,7 @@ Exchanges an OAuth authorization code and code_verifier for an access token. Mak
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateTokenResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { OAuthErrorReasonEnum, OAuthErrorTypeEnum, TokenTypeEnum, TOTPAlgorithmEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { OAuthErrorReason, OAuthErrorType, TokenType, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -6700,12 +6695,7 @@ Creates a user. You can optionally specify an Id for the user, if not provided o
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateUserResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -6758,7 +6748,7 @@ sdk.sdk.createUser({
     active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatusEnum.None,
+    breachedPasswordStatus: BreachedPasswordStatus.None,
     cleanSpeakId: "101c138b-4629-423d-90f7-51b287a33a86",
     connectorId: "cc3adf85-271a-4065-b902-4bd09d0fc60d",
     data: {
@@ -6815,7 +6805,7 @@ sdk.sdk.createUser({
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.PasswordOnly,
+          breachedPasswordStatus: BreachedPasswordStatus.PasswordOnly,
           cleanSpeakId: "c1e04d2a-ceb0-4cde-80e8-ecf818a9303e",
           connectorId: "93f00a18-b21f-406d-8d17-852d28be1db0",
           data: {
@@ -6845,7 +6835,7 @@ sdk.sdk.createUser({
           mobilePhone: "explicabo",
           parentEmail: "tempore",
           password: "est",
-          passwordChangeReason: ChangePasswordReasonEnum.Validation,
+          passwordChangeReason: ChangePasswordReason.Validation,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -6901,7 +6891,7 @@ sdk.sdk.createUser({
                 "corrupti": "reprehenderit",
               },
               username: "Vanessa.Koepp",
-              usernameStatus: ContentStatusEnum.Rejected,
+              usernameStatus: ContentStatus.Rejected,
               verified: false,
             },
             {
@@ -6947,7 +6937,7 @@ sdk.sdk.createUser({
                 "earum": "sit",
               },
               username: "Annabell.OKeefe43",
-              usernameStatus: ContentStatusEnum.Rejected,
+              usernameStatus: ContentStatus.Rejected,
               verified: false,
             },
             {
@@ -6979,7 +6969,7 @@ sdk.sdk.createUser({
                 "eaque": "accusantium",
               },
               username: "Cordia19",
-              usernameStatus: ContentStatusEnum.Active,
+              usernameStatus: ContentStatus.Active,
               verified: false,
             },
           ],
@@ -6990,7 +6980,7 @@ sdk.sdk.createUser({
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha256,
+                  algorithm: TOTPAlgorithm.HmacSha256,
                   codeLength: 656898,
                   timeStep: 943764,
                 },
@@ -7003,7 +6993,7 @@ sdk.sdk.createUser({
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha512,
+                  algorithm: TOTPAlgorithm.HmacSha512,
                   codeLength: 545503,
                   timeStep: 411133,
                 },
@@ -7016,7 +7006,7 @@ sdk.sdk.createUser({
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 902511,
                   timeStep: 973020,
                 },
@@ -7035,7 +7025,7 @@ sdk.sdk.createUser({
           },
           uniqueUsername: "repellendus",
           username: "Loren26",
-          usernameStatus: ContentStatusEnum.Rejected,
+          usernameStatus: ContentStatus.Rejected,
           verified: false,
         },
         userId: "94468999-94dc-4953-b426-6c0e500fc742",
@@ -7071,7 +7061,7 @@ sdk.sdk.createUser({
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.ExactMatch,
+          breachedPasswordStatus: BreachedPasswordStatus.ExactMatch,
           cleanSpeakId: "3a8f8c1e-639e-461d-bf23-53545dbfd69d",
           connectorId: "854ee495-6d86-41c1-be03-a43817586546",
           data: {
@@ -7107,7 +7097,7 @@ sdk.sdk.createUser({
           mobilePhone: "officiis",
           parentEmail: "vero",
           password: "eligendi",
-          passwordChangeReason: ChangePasswordReasonEnum.Validation,
+          passwordChangeReason: ChangePasswordReason.Validation,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -7149,7 +7139,7 @@ sdk.sdk.createUser({
                 "esse": "esse",
               },
               username: "Maeve_Veum5",
-              usernameStatus: ContentStatusEnum.Rejected,
+              usernameStatus: ContentStatus.Rejected,
               verified: false,
             },
           ],
@@ -7160,7 +7150,7 @@ sdk.sdk.createUser({
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha512,
+                  algorithm: TOTPAlgorithm.HmacSha512,
                   codeLength: 54890,
                   timeStep: 372634,
                 },
@@ -7173,7 +7163,7 @@ sdk.sdk.createUser({
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 142067,
                   timeStep: 88663,
                 },
@@ -7193,7 +7183,7 @@ sdk.sdk.createUser({
           },
           uniqueUsername: "doloribus",
           username: "Arno.Mayert41",
-          usernameStatus: ContentStatusEnum.Rejected,
+          usernameStatus: ContentStatus.Rejected,
           verified: false,
         },
         userId: "fbf04c4b-a168-458a-a373-848982d1f8e9",
@@ -7214,7 +7204,7 @@ sdk.sdk.createUser({
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.SubAddressMatch,
+          breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
           cleanSpeakId: "1cdb3e7c-e0c3-40a7-987d-b981664a0f26",
           connectorId: "4f689726-a926-4b6e-b375-c38034f8e42d",
           data: {
@@ -7257,7 +7247,7 @@ sdk.sdk.createUser({
           mobilePhone: "odit",
           parentEmail: "modi",
           password: "sed",
-          passwordChangeReason: ChangePasswordReasonEnum.Administrative,
+          passwordChangeReason: ChangePasswordReason.Administrative,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -7306,7 +7296,7 @@ sdk.sdk.createUser({
                 "hic": "aut",
               },
               username: "Khalil48",
-              usernameStatus: ContentStatusEnum.Active,
+              usernameStatus: ContentStatus.Active,
               verified: false,
             },
             {
@@ -7342,7 +7332,7 @@ sdk.sdk.createUser({
                 "itaque": "corrupti",
               },
               username: "Sarah_Jacobson",
-              usernameStatus: ContentStatusEnum.Rejected,
+              usernameStatus: ContentStatus.Rejected,
               verified: false,
             },
             {
@@ -7375,7 +7365,7 @@ sdk.sdk.createUser({
                 "dolores": "illum",
               },
               username: "Providenci.McLaughlin90",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
           ],
@@ -7386,7 +7376,7 @@ sdk.sdk.createUser({
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 610802,
                   timeStep: 925944,
                 },
@@ -7399,7 +7389,7 @@ sdk.sdk.createUser({
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha256,
+                  algorithm: TOTPAlgorithm.HmacSha256,
                   codeLength: 398812,
                   timeStep: 167940,
                 },
@@ -7420,7 +7410,7 @@ sdk.sdk.createUser({
           },
           uniqueUsername: "non",
           username: "Hollie.Schoen",
-          usernameStatus: ContentStatusEnum.Pending,
+          usernameStatus: ContentStatus.Pending,
           verified: false,
         },
         userId: "8608d2de-ba95-4cf1-9994-5c5c14573f90",
@@ -7430,7 +7420,7 @@ sdk.sdk.createUser({
     mobilePhone: "possimus",
     parentEmail: "dolore",
     password: "fuga",
-    passwordChangeReason: ChangePasswordReasonEnum.Expired,
+    passwordChangeReason: ChangePasswordReason.Expired,
     passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
@@ -7480,7 +7470,7 @@ sdk.sdk.createUser({
           "temporibus": "aut",
         },
         username: "Shayna41",
-        usernameStatus: ContentStatusEnum.Rejected,
+        usernameStatus: ContentStatus.Rejected,
         verified: false,
       },
       {
@@ -7514,7 +7504,7 @@ sdk.sdk.createUser({
           "fuga": "quidem",
         },
         username: "Arianna95",
-        usernameStatus: ContentStatusEnum.Rejected,
+        usernameStatus: ContentStatus.Rejected,
         verified: false,
       },
       {
@@ -7557,7 +7547,7 @@ sdk.sdk.createUser({
           "corrupti": "possimus",
         },
         username: "Amaya_Hirthe56",
-        usernameStatus: ContentStatusEnum.Pending,
+        usernameStatus: ContentStatus.Pending,
         verified: false,
       },
       {
@@ -7599,7 +7589,7 @@ sdk.sdk.createUser({
           "omnis": "a",
         },
         username: "Veronica57",
-        usernameStatus: ContentStatusEnum.Rejected,
+        usernameStatus: ContentStatus.Rejected,
         verified: false,
       },
     ],
@@ -7610,7 +7600,7 @@ sdk.sdk.createUser({
       methods: [
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha256,
+            algorithm: TOTPAlgorithm.HmacSha256,
             codeLength: 345718,
             timeStep: 427549,
           },
@@ -7623,7 +7613,7 @@ sdk.sdk.createUser({
         },
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha1,
+            algorithm: TOTPAlgorithm.HmacSha1,
             codeLength: 66042,
             timeStep: 427535,
           },
@@ -7636,7 +7626,7 @@ sdk.sdk.createUser({
         },
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha256,
+            algorithm: TOTPAlgorithm.HmacSha256,
             codeLength: 708953,
             timeStep: 105727,
           },
@@ -7649,7 +7639,7 @@ sdk.sdk.createUser({
         },
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha256,
+            algorithm: TOTPAlgorithm.HmacSha256,
             codeLength: 223520,
             timeStep: 903578,
           },
@@ -7669,7 +7659,7 @@ sdk.sdk.createUser({
     },
     uniqueUsername: "cum",
     username: "Jaunita_Feil96",
-    usernameStatus: ContentStatusEnum.Rejected,
+    usernameStatus: ContentStatus.Rejected,
     verified: false,
   },
 }, "saepe").then((res: CreateUserResponse) => {
@@ -7688,7 +7678,7 @@ Creates a user action. This action cannot be taken on a user until this call suc
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateUserActionResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { TransactionTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -7724,7 +7714,7 @@ sdk.sdk.createUserAction({
     sendEndEvent: false,
     startEmailTemplateId: "48aafabd-a028-4e65-8230-924d345419bb",
     temporal: false,
-    transactionType: TransactionTypeEnum.AbsoluteMajority,
+    transactionType: TransactionType.AbsoluteMajority,
     userEmailingEnabled: false,
     userNotificationsEnabled: false,
   },
@@ -7816,7 +7806,7 @@ Creates a user action. This action cannot be taken on a user until this call suc
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { TransactionTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -7868,7 +7858,7 @@ sdk.sdk.createUserActionWithId("aperiam", {
     sendEndEvent: false,
     startEmailTemplateId: "4a0bdeb4-4fc0-4aaa-8c22-b908256b16e7",
     temporal: false,
-    transactionType: TransactionTypeEnum.None,
+    transactionType: TransactionType.None,
     userEmailingEnabled: false,
     userNotificationsEnabled: false,
   },
@@ -7888,7 +7878,7 @@ Creates a single User consent.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateUserConsentResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConsentStatusEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -7959,7 +7949,7 @@ sdk.sdk.createUserConsent({
     id: "e29d4e54-3c4d-4a5a-a4e8-bdc470843fe0",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    status: ConsentStatusEnum.Revoked,
+    status: ConsentStatus.Revoked,
     userId: "1a2fbffe-931a-478c-8264-cab51b2c0d08",
     values: [
       "voluptas",
@@ -7984,7 +7974,7 @@ Creates a single User consent.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConsentStatusEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -8039,7 +8029,7 @@ sdk.sdk.createUserConsentWithId("qui", {
     id: "11837652-62c2-4d81-b59a-f09933473ccb",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    status: ConsentStatusEnum.Active,
+    status: ConsentStatus.Active,
     userId: "911d2669-ffa9-4c8f-a1e7-7baca845249e",
     values: [
       "totam",
@@ -8202,12 +8192,7 @@ Creates a user. You can optionally specify an Id for the user, if not provided o
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -8256,7 +8241,7 @@ sdk.sdk.createUserWithId("alias", {
     active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatusEnum.PasswordOnly,
+    breachedPasswordStatus: BreachedPasswordStatus.PasswordOnly,
     cleanSpeakId: "b0672c18-1652-4d11-954d-59103a86fb6d",
     connectorId: "6b4482db-adf2-4ffd-a03c-399b2fc3a558",
     data: {
@@ -8302,7 +8287,7 @@ sdk.sdk.createUserWithId("alias", {
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.SubAddressMatch,
+          breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
           cleanSpeakId: "2712db5a-5fb1-4ca9-a1d5-e0011bd4d2ff",
           connectorId: "fd1a6552-4dde-4adf-8b1a-8ec2fde30306",
           data: {
@@ -8338,7 +8323,7 @@ sdk.sdk.createUserWithId("alias", {
           mobilePhone: "et",
           parentEmail: "voluptatibus",
           password: "placeat",
-          passwordChangeReason: ChangePasswordReasonEnum.Breached,
+          passwordChangeReason: ChangePasswordReason.Breached,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -8384,7 +8369,7 @@ sdk.sdk.createUserWithId("alias", {
                 "voluptatem": "harum",
               },
               username: "Dominique63",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
             {
@@ -8424,7 +8409,7 @@ sdk.sdk.createUserWithId("alias", {
                 "est": "ab",
               },
               username: "Lindsey.Stanton",
-              usernameStatus: ContentStatusEnum.Rejected,
+              usernameStatus: ContentStatus.Rejected,
               verified: false,
             },
             {
@@ -8470,7 +8455,7 @@ sdk.sdk.createUserWithId("alias", {
                 "vero": "totam",
               },
               username: "Martin73",
-              usernameStatus: ContentStatusEnum.Active,
+              usernameStatus: ContentStatus.Active,
               verified: false,
             },
             {
@@ -8505,7 +8490,7 @@ sdk.sdk.createUserWithId("alias", {
                 "commodi": "doloremque",
               },
               username: "Francis68",
-              usernameStatus: ContentStatusEnum.Rejected,
+              usernameStatus: ContentStatus.Rejected,
               verified: false,
             },
           ],
@@ -8516,7 +8501,7 @@ sdk.sdk.createUserWithId("alias", {
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha256,
+                  algorithm: TOTPAlgorithm.HmacSha256,
                   codeLength: 391010,
                   timeStep: 337514,
                 },
@@ -8529,7 +8514,7 @@ sdk.sdk.createUserWithId("alias", {
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha512,
+                  algorithm: TOTPAlgorithm.HmacSha512,
                   codeLength: 523047,
                   timeStep: 364171,
                 },
@@ -8547,7 +8532,7 @@ sdk.sdk.createUserWithId("alias", {
           },
           uniqueUsername: "neque",
           username: "Deshaun12",
-          usernameStatus: ContentStatusEnum.Active,
+          usernameStatus: ContentStatus.Active,
           verified: false,
         },
         userId: "178e0763-b4fc-47b4-ba02-3edcd221ee3f",
@@ -8567,7 +8552,7 @@ sdk.sdk.createUserWithId("alias", {
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.PasswordOnly,
+          breachedPasswordStatus: BreachedPasswordStatus.PasswordOnly,
           cleanSpeakId: "77708dae-092b-4704-b119-5944dc7f113e",
           connectorId: "7df636c9-2ba3-434c-a89e-71b32ce5a13b",
           data: {
@@ -8610,7 +8595,7 @@ sdk.sdk.createUserWithId("alias", {
           mobilePhone: "ex",
           parentEmail: "totam",
           password: "expedita",
-          passwordChangeReason: ChangePasswordReasonEnum.Validation,
+          passwordChangeReason: ChangePasswordReason.Validation,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -8654,7 +8639,7 @@ sdk.sdk.createUserWithId("alias", {
                 "corporis": "molestias",
               },
               username: "Rose_Luettgen",
-              usernameStatus: ContentStatusEnum.Active,
+              usernameStatus: ContentStatus.Active,
               verified: false,
             },
             {
@@ -8703,7 +8688,7 @@ sdk.sdk.createUserWithId("alias", {
                 "recusandae": "tempore",
               },
               username: "Joseph88",
-              usernameStatus: ContentStatusEnum.Rejected,
+              usernameStatus: ContentStatus.Rejected,
               verified: false,
             },
             {
@@ -8737,7 +8722,7 @@ sdk.sdk.createUserWithId("alias", {
                 "sequi": "officiis",
               },
               username: "Ari_Sipes",
-              usernameStatus: ContentStatusEnum.Rejected,
+              usernameStatus: ContentStatus.Rejected,
               verified: false,
             },
             {
@@ -8769,7 +8754,7 @@ sdk.sdk.createUserWithId("alias", {
                 "at": "quae",
               },
               username: "Jason23",
-              usernameStatus: ContentStatusEnum.Active,
+              usernameStatus: ContentStatus.Active,
               verified: false,
             },
           ],
@@ -8780,7 +8765,7 @@ sdk.sdk.createUserWithId("alias", {
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha512,
+                  algorithm: TOTPAlgorithm.HmacSha512,
                   codeLength: 846367,
                   timeStep: 32,
                 },
@@ -8793,7 +8778,7 @@ sdk.sdk.createUserWithId("alias", {
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha256,
+                  algorithm: TOTPAlgorithm.HmacSha256,
                   codeLength: 644684,
                   timeStep: 336103,
                 },
@@ -8812,7 +8797,7 @@ sdk.sdk.createUserWithId("alias", {
           },
           uniqueUsername: "hic",
           username: "Alison.Johnston67",
-          usernameStatus: ContentStatusEnum.Active,
+          usernameStatus: ContentStatus.Active,
           verified: false,
         },
         userId: "f7496557-2292-4dee-ab88-5bfd123b4f56",
@@ -8822,7 +8807,7 @@ sdk.sdk.createUserWithId("alias", {
     mobilePhone: "doloribus",
     parentEmail: "quia",
     password: "ipsum",
-    passwordChangeReason: ChangePasswordReasonEnum.Validation,
+    passwordChangeReason: ChangePasswordReason.Validation,
     passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
@@ -8862,7 +8847,7 @@ sdk.sdk.createUserWithId("alias", {
           "fugiat": "placeat",
         },
         username: "Baylee.Beatty",
-        usernameStatus: ContentStatusEnum.Active,
+        usernameStatus: ContentStatus.Active,
         verified: false,
       },
       {
@@ -8898,7 +8883,7 @@ sdk.sdk.createUserWithId("alias", {
           "quis": "labore",
         },
         username: "Emelia_Feeney",
-        usernameStatus: ContentStatusEnum.Active,
+        usernameStatus: ContentStatus.Active,
         verified: false,
       },
     ],
@@ -8909,7 +8894,7 @@ sdk.sdk.createUserWithId("alias", {
       methods: [
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha512,
+            algorithm: TOTPAlgorithm.HmacSha512,
             codeLength: 356994,
             timeStep: 973458,
           },
@@ -8930,7 +8915,7 @@ sdk.sdk.createUserWithId("alias", {
     },
     uniqueUsername: "distinctio",
     username: "Chance.Schuster38",
-    usernameStatus: ContentStatusEnum.Rejected,
+    usernameStatus: ContentStatus.Rejected,
     verified: false,
   },
 }, "temporibus").then((res: CreateUserWithIdResponse) => {
@@ -10210,7 +10195,7 @@ Generate a new RSA or EC key pair or an HMAC secret.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { GenerateKeyResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { KeyAlgorithmEnum, KeyTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -10220,7 +10205,7 @@ const sdk = new SDK({
 
 sdk.sdk.generateKey({
   key: {
-    algorithm: KeyAlgorithmEnum.Rs512,
+    algorithm: KeyAlgorithm.Rs512,
     certificate: "rerum",
     certificateInformation: {
       issuer: "soluta",
@@ -10246,7 +10231,7 @@ sdk.sdk.generateKey({
     privateKey: "vero",
     publicKey: "atque",
     secret: "libero",
-    type: KeyTypeEnum.Hmac,
+    type: KeyType.Hmac,
   },
 }).then((res: GenerateKeyResponse) => {
   if (res.statusCode == 200) {
@@ -10264,7 +10249,7 @@ Generate a new RSA or EC key pair or an HMAC secret.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { GenerateKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { KeyAlgorithmEnum, KeyTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -10274,7 +10259,7 @@ const sdk = new SDK({
 
 sdk.sdk.generateKeyWithId("vero", {
   key: {
-    algorithm: KeyAlgorithmEnum.Es512,
+    algorithm: KeyAlgorithm.Es512,
     certificate: "nisi",
     certificateInformation: {
       issuer: "officia",
@@ -10300,7 +10285,7 @@ sdk.sdk.generateKeyWithId("vero", {
     privateKey: "voluptatum",
     publicKey: "inventore",
     secret: "voluptas",
-    type: KeyTypeEnum.Rsa,
+    type: KeyType.Rsa,
   },
 }).then((res: GenerateKeyWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -10365,11 +10350,11 @@ Handles login via third-parties including Social login, external OAuth and OpenI
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { IdentityProviderLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  DeviceTypeEnum,
-  TOTPAlgorithmEnum,
+  BreachedPasswordStatus,
+  ChangePasswordReason,
+  ContentStatus,
+  DeviceType,
+  TOTPAlgorithm,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -10401,7 +10386,7 @@ sdk.sdk.identityProviderLoginWithId({
       lastAccessedAddress: "nisi",
       lastAccessedInstant: 1659380719000,
       name: "Delbert Bradtke",
-      type: DeviceTypeEnum.Tv,
+      type: DeviceType.Tv,
     },
     scopes: [
       "numquam",
@@ -10427,7 +10412,7 @@ Import an existing RSA or EC key pair or an HMAC secret.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { ImportKeyResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { KeyAlgorithmEnum, KeyTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -10437,7 +10422,7 @@ const sdk = new SDK({
 
 sdk.sdk.importKey({
   key: {
-    algorithm: KeyAlgorithmEnum.Hs512,
+    algorithm: KeyAlgorithm.Hs512,
     certificate: "quo",
     certificateInformation: {
       issuer: "commodi",
@@ -10463,7 +10448,7 @@ sdk.sdk.importKey({
     privateKey: "aliquid",
     publicKey: "quidem",
     secret: "ex",
-    type: KeyTypeEnum.Hmac,
+    type: KeyType.Hmac,
   },
 }).then((res: ImportKeyResponse) => {
   if (res.statusCode == 200) {
@@ -10481,7 +10466,7 @@ Import an existing RSA or EC key pair or an HMAC secret.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { ImportKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { KeyAlgorithmEnum, KeyTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -10491,7 +10476,7 @@ const sdk = new SDK({
 
 sdk.sdk.importKeyWithId("autem", {
   key: {
-    algorithm: KeyAlgorithmEnum.Rs256,
+    algorithm: KeyAlgorithm.Rs256,
     certificate: "rerum",
     certificateInformation: {
       issuer: "sed",
@@ -10517,7 +10502,7 @@ sdk.sdk.importKeyWithId("autem", {
     privateKey: "odit",
     publicKey: "blanditiis",
     secret: "saepe",
-    type: KeyTypeEnum.Hmac,
+    type: KeyType.Hmac,
   },
 }).then((res: ImportKeyWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -10535,7 +10520,7 @@ Bulk imports refresh tokens. This request performs minimal validation and runs b
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { ImportRefreshTokensWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { DeviceTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -10586,7 +10571,7 @@ sdk.sdk.importRefreshTokensWithId({
           lastAccessedAddress: "atque",
           lastAccessedInstant: 1659380719000,
           name: "Lila Lang",
-          type: DeviceTypeEnum.Browser,
+          type: DeviceType.Browser,
         },
         scopes: [
           "nostrum",
@@ -10629,7 +10614,7 @@ sdk.sdk.importRefreshTokensWithId({
           lastAccessedAddress: "explicabo",
           lastAccessedInstant: 1659380719000,
           name: "Shirley Rohan",
-          type: DeviceTypeEnum.Laptop,
+          type: DeviceType.Laptop,
         },
         scopes: [
           "ex",
@@ -10673,7 +10658,7 @@ sdk.sdk.importRefreshTokensWithId({
           lastAccessedAddress: "illo",
           lastAccessedInstant: 1659380719000,
           name: "Domingo Kozey",
-          type: DeviceTypeEnum.Unknown,
+          type: DeviceType.Unknown,
         },
         scopes: [
           "dolorem",
@@ -10736,7 +10721,7 @@ sdk.sdk.importRefreshTokensWithId({
           lastAccessedAddress: "amet",
           lastAccessedInstant: 1659380719000,
           name: "Mrs. Dana Klocko",
-          type: DeviceTypeEnum.Tablet,
+          type: DeviceType.Tablet,
         },
         scopes: [
           "ipsa",
@@ -10766,12 +10751,7 @@ Bulk imports users. This request performs minimal validation and runs batch inse
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { ImportUsersWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -10824,7 +10804,7 @@ sdk.sdk.importUsersWithId({
       active: false,
       birthDate: "2007-12-03",
       breachedPasswordLastCheckedInstant: 1659380719000,
-      breachedPasswordStatus: BreachedPasswordStatusEnum.SubAddressMatch,
+      breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
       cleanSpeakId: "50e8c0c4-f3e1-46a3-a03a-4aee87418d65",
       connectorId: "e23728ea-3308-47ce-822d-cf4dbc840552",
       data: {
@@ -10869,7 +10849,7 @@ sdk.sdk.importUsersWithId({
             active: false,
             birthDate: "2007-12-03",
             breachedPasswordLastCheckedInstant: 1659380719000,
-            breachedPasswordStatus: BreachedPasswordStatusEnum.SubAddressMatch,
+            breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
             cleanSpeakId: "c96bb288-d4e1-4cd3-9ecb-bd979b8e690a",
             connectorId: "9383b239-70bd-4d98-a954-679762a1325d",
             data: {
@@ -10904,7 +10884,7 @@ sdk.sdk.importUsersWithId({
             mobilePhone: "nam",
             parentEmail: "ad",
             password: "praesentium",
-            passwordChangeReason: ChangePasswordReasonEnum.Breached,
+            passwordChangeReason: ChangePasswordReason.Breached,
             passwordChangeRequired: false,
             passwordLastUpdateInstant: 1659380719000,
             preferredLanguages: [
@@ -10952,7 +10932,7 @@ sdk.sdk.importUsersWithId({
                   "neque": "quod",
                 },
                 username: "Agustina.Connelly",
-                usernameStatus: ContentStatusEnum.Pending,
+                usernameStatus: ContentStatus.Pending,
                 verified: false,
               },
               {
@@ -10988,7 +10968,7 @@ sdk.sdk.importUsersWithId({
                   "ab": "nisi",
                 },
                 username: "Rosalee.Cassin82",
-                usernameStatus: ContentStatusEnum.Rejected,
+                usernameStatus: ContentStatus.Rejected,
                 verified: false,
               },
             ],
@@ -10999,7 +10979,7 @@ sdk.sdk.importUsersWithId({
               methods: [
                 {
                   authenticator: {
-                    algorithm: TOTPAlgorithmEnum.HmacSha512,
+                    algorithm: TOTPAlgorithm.HmacSha512,
                     codeLength: 380305,
                     timeStep: 90205,
                   },
@@ -11012,7 +10992,7 @@ sdk.sdk.importUsersWithId({
                 },
                 {
                   authenticator: {
-                    algorithm: TOTPAlgorithmEnum.HmacSha256,
+                    algorithm: TOTPAlgorithm.HmacSha256,
                     codeLength: 374860,
                     timeStep: 636406,
                   },
@@ -11025,7 +11005,7 @@ sdk.sdk.importUsersWithId({
                 },
                 {
                   authenticator: {
-                    algorithm: TOTPAlgorithmEnum.HmacSha512,
+                    algorithm: TOTPAlgorithm.HmacSha512,
                     codeLength: 114512,
                     timeStep: 439756,
                   },
@@ -11046,7 +11026,7 @@ sdk.sdk.importUsersWithId({
             },
             uniqueUsername: "mollitia",
             username: "Carson_Gleason",
-            usernameStatus: ContentStatusEnum.Pending,
+            usernameStatus: ContentStatus.Pending,
             verified: false,
           },
           userId: "e4b9a29d-4c4a-472e-a166-8068b90b2f68",
@@ -11072,7 +11052,7 @@ sdk.sdk.importUsersWithId({
             active: false,
             birthDate: "2007-12-03",
             breachedPasswordLastCheckedInstant: 1659380719000,
-            breachedPasswordStatus: BreachedPasswordStatusEnum.CommonPassword,
+            breachedPasswordStatus: BreachedPasswordStatus.CommonPassword,
             cleanSpeakId: "4813115a-02ee-4886-bf1b-94694866d0ad",
             connectorId: "18b1f3f5-3593-490c-8a96-8bbc933f80cc",
             data: {
@@ -11102,7 +11082,7 @@ sdk.sdk.importUsersWithId({
             mobilePhone: "ratione",
             parentEmail: "quae",
             password: "tempore",
-            passwordChangeReason: ChangePasswordReasonEnum.Expired,
+            passwordChangeReason: ChangePasswordReason.Expired,
             passwordChangeRequired: false,
             passwordLastUpdateInstant: 1659380719000,
             preferredLanguages: [
@@ -11157,7 +11137,7 @@ sdk.sdk.importUsersWithId({
                   "perferendis": "sequi",
                 },
                 username: "Ruben99",
-                usernameStatus: ContentStatusEnum.Rejected,
+                usernameStatus: ContentStatus.Rejected,
                 verified: false,
               },
               {
@@ -11196,7 +11176,7 @@ sdk.sdk.importUsersWithId({
                   "similique": "reprehenderit",
                 },
                 username: "Reginald.Denesik44",
-                usernameStatus: ContentStatusEnum.Active,
+                usernameStatus: ContentStatus.Active,
                 verified: false,
               },
               {
@@ -11243,7 +11223,7 @@ sdk.sdk.importUsersWithId({
                   "quaerat": "error",
                 },
                 username: "Myah_Krajcik27",
-                usernameStatus: ContentStatusEnum.Active,
+                usernameStatus: ContentStatus.Active,
                 verified: false,
               },
             ],
@@ -11254,7 +11234,7 @@ sdk.sdk.importUsersWithId({
               methods: [
                 {
                   authenticator: {
-                    algorithm: TOTPAlgorithmEnum.HmacSha256,
+                    algorithm: TOTPAlgorithm.HmacSha256,
                     codeLength: 925786,
                     timeStep: 872432,
                   },
@@ -11267,7 +11247,7 @@ sdk.sdk.importUsersWithId({
                 },
                 {
                   authenticator: {
-                    algorithm: TOTPAlgorithmEnum.HmacSha256,
+                    algorithm: TOTPAlgorithm.HmacSha256,
                     codeLength: 456403,
                     timeStep: 565531,
                   },
@@ -11286,7 +11266,7 @@ sdk.sdk.importUsersWithId({
             },
             uniqueUsername: "ipsam",
             username: "Christa_Collier3",
-            usernameStatus: ContentStatusEnum.Rejected,
+            usernameStatus: ContentStatus.Rejected,
             verified: false,
           },
           userId: "a68b0e52-289b-46f6-b270-2f948ba3823a",
@@ -11308,7 +11288,7 @@ sdk.sdk.importUsersWithId({
             active: false,
             birthDate: "2007-12-03",
             breachedPasswordLastCheckedInstant: 1659380719000,
-            breachedPasswordStatus: BreachedPasswordStatusEnum.PasswordOnly,
+            breachedPasswordStatus: BreachedPasswordStatus.PasswordOnly,
             cleanSpeakId: "268f63a8-db17-4391-a3e3-d0709257e44d",
             connectorId: "6045084c-8e1e-4cd8-a752-46dc934fb4d0",
             data: {
@@ -11342,7 +11322,7 @@ sdk.sdk.importUsersWithId({
             mobilePhone: "nisi",
             parentEmail: "corrupti",
             password: "reprehenderit",
-            passwordChangeReason: ChangePasswordReasonEnum.Expired,
+            passwordChangeReason: ChangePasswordReason.Expired,
             passwordChangeRequired: false,
             passwordLastUpdateInstant: 1659380719000,
             preferredLanguages: [
@@ -11394,7 +11374,7 @@ sdk.sdk.importUsersWithId({
                   "error": "nemo",
                 },
                 username: "Ismael29",
-                usernameStatus: ContentStatusEnum.Rejected,
+                usernameStatus: ContentStatus.Rejected,
                 verified: false,
               },
               {
@@ -11424,7 +11404,7 @@ sdk.sdk.importUsersWithId({
                   "repellendus": "et",
                 },
                 username: "Asha24",
-                usernameStatus: ContentStatusEnum.Pending,
+                usernameStatus: ContentStatus.Pending,
                 verified: false,
               },
             ],
@@ -11435,7 +11415,7 @@ sdk.sdk.importUsersWithId({
               methods: [
                 {
                   authenticator: {
-                    algorithm: TOTPAlgorithmEnum.HmacSha256,
+                    algorithm: TOTPAlgorithm.HmacSha256,
                     codeLength: 62994,
                     timeStep: 939212,
                   },
@@ -11454,7 +11434,7 @@ sdk.sdk.importUsersWithId({
             },
             uniqueUsername: "repudiandae",
             username: "Queen.Vandervort",
-            usernameStatus: ContentStatusEnum.Active,
+            usernameStatus: ContentStatus.Active,
             verified: false,
           },
           userId: "26195064-685d-4213-ba43-7e16c2c7e099",
@@ -11464,7 +11444,7 @@ sdk.sdk.importUsersWithId({
       mobilePhone: "laborum",
       parentEmail: "possimus",
       password: "architecto",
-      passwordChangeReason: ChangePasswordReasonEnum.Breached,
+      passwordChangeReason: ChangePasswordReason.Breached,
       passwordChangeRequired: false,
       passwordLastUpdateInstant: 1659380719000,
       preferredLanguages: [
@@ -11507,7 +11487,7 @@ sdk.sdk.importUsersWithId({
             "voluptatibus": "est",
           },
           username: "Hassan55",
-          usernameStatus: ContentStatusEnum.Pending,
+          usernameStatus: ContentStatus.Pending,
           verified: false,
         },
         {
@@ -11548,7 +11528,7 @@ sdk.sdk.importUsersWithId({
             "deserunt": "omnis",
           },
           username: "Russell0",
-          usernameStatus: ContentStatusEnum.Pending,
+          usernameStatus: ContentStatus.Pending,
           verified: false,
         },
         {
@@ -11581,7 +11561,7 @@ sdk.sdk.importUsersWithId({
             "facilis": "nobis",
           },
           username: "Jonas_Hane",
-          usernameStatus: ContentStatusEnum.Rejected,
+          usernameStatus: ContentStatus.Rejected,
           verified: false,
         },
         {
@@ -11621,7 +11601,7 @@ sdk.sdk.importUsersWithId({
             "nisi": "ipsam",
           },
           username: "Jerod80",
-          usernameStatus: ContentStatusEnum.Pending,
+          usernameStatus: ContentStatus.Pending,
           verified: false,
         },
       ],
@@ -11632,7 +11612,7 @@ sdk.sdk.importUsersWithId({
         methods: [
           {
             authenticator: {
-              algorithm: TOTPAlgorithmEnum.HmacSha1,
+              algorithm: TOTPAlgorithm.HmacSha1,
               codeLength: 763436,
               timeStep: 313465,
             },
@@ -11650,7 +11630,7 @@ sdk.sdk.importUsersWithId({
       },
       uniqueUsername: "odio",
       username: "Fidel_Schuster",
-      usernameStatus: ContentStatusEnum.Pending,
+      usernameStatus: ContentStatus.Pending,
       verified: false,
     },
   ],
@@ -11671,7 +11651,7 @@ Import a WebAuthn credential
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { ImportWebAuthnCredentialWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { AttestationTypeEnum, CoseAlgorithmIdentifierEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { AttestationType, CoseAlgorithmIdentifier } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -11682,8 +11662,8 @@ const sdk = new SDK({
 sdk.sdk.importWebAuthnCredentialWithId({
   credentials: [
     {
-      algorithm: CoseAlgorithmIdentifierEnum.Ps256,
-      attestationType: AttestationTypeEnum.AnonymizationCa,
+      algorithm: CoseAlgorithmIdentifier.Ps256,
+      attestationType: AttestationType.AnonymizationCa,
       authenticatorSupportsUserVerification: false,
       credentialId: "at",
       data: {
@@ -11708,8 +11688,8 @@ sdk.sdk.importWebAuthnCredentialWithId({
       userId: "a40e3c77-7572-4806-8efc-f6bdccf809f7",
     },
     {
-      algorithm: CoseAlgorithmIdentifierEnum.Ps384,
-      attestationType: AttestationTypeEnum.AttestationCa,
+      algorithm: CoseAlgorithmIdentifier.Ps384,
+      attestationType: AttestationType.AttestationCa,
       authenticatorSupportsUserVerification: false,
       credentialId: "optio",
       data: {
@@ -11748,8 +11728,8 @@ sdk.sdk.importWebAuthnCredentialWithId({
       userId: "333d57e9-0844-4319-a380-e2959c4d0a66",
     },
     {
-      algorithm: CoseAlgorithmIdentifierEnum.Es512,
-      attestationType: AttestationTypeEnum.AnonymizationCa,
+      algorithm: CoseAlgorithmIdentifier.Es512,
+      attestationType: AttestationType.AnonymizationCa,
       authenticatorSupportsUserVerification: false,
       credentialId: "eos",
       data: {
@@ -11794,7 +11774,7 @@ Inspect an access token issued by FusionAuth.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { IntrospectAccessTokenWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { OAuthErrorReasonEnum, OAuthErrorTypeEnum, TOTPAlgorithmEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { OAuthErrorReason, OAuthErrorType, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -11841,12 +11821,7 @@ Sends a ping to FusionAuth indicating that the user was automatically logged int
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { LoginPingWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -11871,11 +11846,11 @@ Sends a ping to FusionAuth indicating that the user was automatically logged int
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { LoginPingWithRequestWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  DeviceTypeEnum,
-  TOTPAlgorithmEnum,
+  BreachedPasswordStatus,
+  ChangePasswordReason,
+  ContentStatus,
+  DeviceType,
+  TOTPAlgorithm,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -11899,7 +11874,7 @@ sdk.sdk.loginPingWithRequestWithId({
       lastAccessedAddress: "adipisci",
       lastAccessedInstant: 1659380719000,
       name: "Lucille Schuppe",
-      type: DeviceTypeEnum.Mobile,
+      type: DeviceType.Mobile,
     },
     scopes: [
       "distinctio",
@@ -11926,11 +11901,11 @@ Authenticates a user to FusionAuth.   This API optionally requires an API key. S
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { LoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  DeviceTypeEnum,
-  TOTPAlgorithmEnum,
+  BreachedPasswordStatus,
+  ChangePasswordReason,
+  ContentStatus,
+  DeviceType,
+  TOTPAlgorithm,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -11958,7 +11933,7 @@ sdk.sdk.loginWithId({
       lastAccessedAddress: "quo",
       lastAccessedInstant: 1659380719000,
       name: "Earnest Jaskolski",
-      type: DeviceTypeEnum.Mobile,
+      type: DeviceType.Mobile,
     },
     scopes: [
       "velit",
@@ -11987,7 +11962,7 @@ Retrieves the identity provider for the given domain. A 200 response code indica
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { LookupIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ClientAuthenticationMethodEnum, IdentityProviderTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { ClientAuthenticationMethod, IdentityProviderType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -12091,11 +12066,11 @@ Complete a login request using a passwordless code
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { PasswordlessLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  DeviceTypeEnum,
-  TOTPAlgorithmEnum,
+  BreachedPasswordStatus,
+  ChangePasswordReason,
+  ContentStatus,
+  DeviceType,
+  TOTPAlgorithm,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -12132,7 +12107,7 @@ sdk.sdk.passwordlessLoginWithId({
       lastAccessedAddress: "sit",
       lastAccessedInstant: 1659380719000,
       name: "Gloria Zieme",
-      type: DeviceTypeEnum.Laptop,
+      type: DeviceType.Laptop,
     },
     scopes: [
       "expedita",
@@ -12158,22 +12133,22 @@ Updates, via PATCH, the application role with the given id for the application.
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { PatchApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  ApplicationMultiFactorTrustPolicyEnum,
-  CanonicalizationMethodEnum,
-  ClientAuthenticationPolicyEnum,
-  LoginIdTypeEnum,
-  LogoutBehaviorEnum,
-  MultiFactorLoginPolicyEnum,
-  Oauth2AuthorizedURLValidationPolicyEnum,
-  ObjectStateEnum,
-  ProofKeyForCodeExchangePolicyEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  RegistrationTypeEnum,
-  SAMLLogoutBehaviorEnum,
-  UnverifiedBehaviorEnum,
-  VerificationStrategyEnum,
-  XMLSignatureLocationEnum,
+  ApplicationMultiFactorTrustPolicy,
+  CanonicalizationMethod,
+  ClientAuthenticationPolicy,
+  LoginIdType,
+  LogoutBehavior,
+  MultiFactorLoginPolicy,
+  Oauth2AuthorizedURLValidationPolicy,
+  ObjectState,
+  ProofKeyForCodeExchangePolicy,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  RegistrationType,
+  SAMLLogoutBehavior,
+  UnverifiedBehavior,
+  VerificationStrategy,
+  XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -12242,14 +12217,14 @@ sdk.sdk.patchApplicationRoleWithId("illo", "sapiente", {
       accessTokenKeyId: "23b7560d-f3e2-4573-b24d-c7d7bef215f4",
       enabled: false,
       idTokenKeyId: "27be7e86-6b5b-49d9-8b2b-a0d83adc0e05",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicyEnum.SlidingWindow,
+      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
       refreshTokenTimeToLiveInMinutes: 393805,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicyEnum.Reusable,
+      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
       timeToLiveInSeconds: 98852,
     },
     lambdaConfiguration: {
@@ -12268,11 +12243,11 @@ sdk.sdk.patchApplicationRoleWithId("illo", "sapiente", {
       email: {
         templateId: "edcf29d6-3826-464e-b53b-13db0c1c69ff",
       },
-      loginPolicy: MultiFactorLoginPolicyEnum.Disabled,
+      loginPolicy: MultiFactorLoginPolicy.Disabled,
       sms: {
         templateId: "56f117f5-1aaf-4a3a-aaf7-ccdb6bfb3b21",
       },
-      trustPolicy: ApplicationMultiFactorTrustPolicyEnum.None,
+      trustPolicy: ApplicationMultiFactorTrustPolicy.None,
     },
     name: "Alvin Mosciski",
     oauthConfiguration: {
@@ -12284,8 +12259,8 @@ sdk.sdk.patchApplicationRoleWithId("illo", "sapiente", {
       authorizedRedirectURLs: [
         "voluptates",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicyEnum.ExactMatch,
-      clientAuthenticationPolicy: ClientAuthenticationPolicyEnum.NotRequired,
+      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.ExactMatch,
+      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequired,
       clientId: "numquam",
       clientSecret: "magnam",
       debug: false,
@@ -12296,9 +12271,9 @@ sdk.sdk.patchApplicationRoleWithId("illo", "sapiente", {
         "architecto",
       ],
       generateRefreshTokens: false,
-      logoutBehavior: LogoutBehaviorEnum.AllApplications,
+      logoutBehavior: LogoutBehavior.AllApplications,
       logoutURL: "saepe",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicyEnum.NotRequiredWhenUsingClientAuthentication,
+      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequiredWhenUsingClientAuthentication,
       requireClientAuthentication: false,
       requireRegistration: false,
     },
@@ -12325,7 +12300,7 @@ sdk.sdk.patchApplicationRoleWithId("illo", "sapiente", {
         enabled: false,
         required: false,
       },
-      loginIdType: LoginIdTypeEnum.Email,
+      loginIdType: LoginIdType.Email,
       middleName: {
         enabled: false,
         required: false,
@@ -12334,7 +12309,7 @@ sdk.sdk.patchApplicationRoleWithId("illo", "sapiente", {
         enabled: false,
         required: false,
       },
-      type: RegistrationTypeEnum.Advanced,
+      type: RegistrationType.Advanced,
     },
     registrationDeletePolicy: {
       unverified: {
@@ -12387,7 +12362,7 @@ sdk.sdk.patchApplicationRoleWithId("illo", "sapiente", {
       issuer: "aspernatur",
       keyId: "410ba920-8c78-4258-bbdc-cc80442d11b4",
       logout: {
-        behavior: SAMLLogoutBehaviorEnum.AllParticipants,
+        behavior: SAMLLogoutBehavior.AllParticipants,
         defaultVerificationKeyId: "d631be5b-1e70-451f-8500-2b4832ae6731",
         keyId: "81439173-1768-4204-b889-7b3aa7cc804f",
         requireSignedRequests: false,
@@ -12395,23 +12370,23 @@ sdk.sdk.patchApplicationRoleWithId("illo", "sapiente", {
           enabled: false,
           keyId: "633b640b-a784-45ee-ba10-0e532f49f573",
           url: "officia",
-          xmlSignatureC14nMethod: CanonicalizationMethodEnum.InclusiveWithComments,
+          xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
         },
-        xmlSignatureC14nMethod: CanonicalizationMethodEnum.InclusiveWithComments,
+        xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
       },
       logoutURL: "minus",
       requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethodEnum.Exclusive,
-      xmlSignatureLocation: XMLSignatureLocationEnum.Assertion,
+      xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
+      xmlSignatureLocation: XMLSignatureLocation.Assertion,
     },
-    state: ObjectStateEnum.Inactive,
+    state: ObjectState.Inactive,
     tenantId: "2c5ecd75-738c-4046-a21d-87e546c91e27",
     themeId: "4a4d8113-de71-4945-a113-c304be5316c8",
     unverified: {
-      behavior: UnverifiedBehaviorEnum.Allow,
+      behavior: UnverifiedBehavior.Allow,
     },
     verificationEmailTemplateId: "1936801b-1a60-47c2-acca-3d563d30e041",
-    verificationStrategy: VerificationStrategyEnum.ClickableLink,
+    verificationStrategy: VerificationStrategy.ClickableLink,
     verifyRegistration: false,
     webAuthnConfiguration: {
       bootstrapWorkflow: {
@@ -12479,22 +12454,22 @@ Updates, via PATCH, the application with the given Id.
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { PatchApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  ApplicationMultiFactorTrustPolicyEnum,
-  CanonicalizationMethodEnum,
-  ClientAuthenticationPolicyEnum,
-  LoginIdTypeEnum,
-  LogoutBehaviorEnum,
-  MultiFactorLoginPolicyEnum,
-  Oauth2AuthorizedURLValidationPolicyEnum,
-  ObjectStateEnum,
-  ProofKeyForCodeExchangePolicyEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  RegistrationTypeEnum,
-  SAMLLogoutBehaviorEnum,
-  UnverifiedBehaviorEnum,
-  VerificationStrategyEnum,
-  XMLSignatureLocationEnum,
+  ApplicationMultiFactorTrustPolicy,
+  CanonicalizationMethod,
+  ClientAuthenticationPolicy,
+  LoginIdType,
+  LogoutBehavior,
+  MultiFactorLoginPolicy,
+  Oauth2AuthorizedURLValidationPolicy,
+  ObjectState,
+  ProofKeyForCodeExchangePolicy,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  RegistrationType,
+  SAMLLogoutBehavior,
+  UnverifiedBehavior,
+  VerificationStrategy,
+  XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -12568,14 +12543,14 @@ sdk.sdk.patchApplicationWithId("officia", {
       accessTokenKeyId: "2a4c30b4-9e22-47e7-a0ab-c22226ba4c6f",
       enabled: false,
       idTokenKeyId: "47af09aa-d5f5-4b93-9cec-98544e08f28b",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicyEnum.SlidingWindow,
+      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
       refreshTokenTimeToLiveInMinutes: 843993,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicyEnum.OneTimeUse,
+      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.OneTimeUse,
       timeToLiveInSeconds: 808121,
     },
     lambdaConfiguration: {
@@ -12594,11 +12569,11 @@ sdk.sdk.patchApplicationWithId("officia", {
       email: {
         templateId: "c2a9c9ea-6e0e-4dc5-ae7b-48283f83c6d7",
       },
-      loginPolicy: MultiFactorLoginPolicyEnum.Required,
+      loginPolicy: MultiFactorLoginPolicy.Required,
       sms: {
         templateId: "73d7c9e0-3fa3-4868-9619-2a96380573eb",
       },
-      trustPolicy: ApplicationMultiFactorTrustPolicyEnum.Any,
+      trustPolicy: ApplicationMultiFactorTrustPolicy.Any,
     },
     name: "David Kuhlman",
     oauthConfiguration: {
@@ -12608,8 +12583,8 @@ sdk.sdk.patchApplicationWithId("officia", {
       authorizedRedirectURLs: [
         "quos",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicyEnum.AllowWildcards,
-      clientAuthenticationPolicy: ClientAuthenticationPolicyEnum.NotRequired,
+      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.AllowWildcards,
+      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequired,
       clientId: "aliquid",
       clientSecret: "aut",
       debug: false,
@@ -12618,9 +12593,9 @@ sdk.sdk.patchApplicationWithId("officia", {
         "similique",
       ],
       generateRefreshTokens: false,
-      logoutBehavior: LogoutBehaviorEnum.AllApplications,
+      logoutBehavior: LogoutBehavior.AllApplications,
       logoutURL: "quidem",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicyEnum.NotRequiredWhenUsingClientAuthentication,
+      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequiredWhenUsingClientAuthentication,
       requireClientAuthentication: false,
       requireRegistration: false,
     },
@@ -12647,7 +12622,7 @@ sdk.sdk.patchApplicationWithId("officia", {
         enabled: false,
         required: false,
       },
-      loginIdType: LoginIdTypeEnum.Email,
+      loginIdType: LoginIdType.Email,
       middleName: {
         enabled: false,
         required: false,
@@ -12656,7 +12631,7 @@ sdk.sdk.patchApplicationWithId("officia", {
         enabled: false,
         required: false,
       },
-      type: RegistrationTypeEnum.Advanced,
+      type: RegistrationType.Advanced,
     },
     registrationDeletePolicy: {
       unverified: {
@@ -12691,7 +12666,7 @@ sdk.sdk.patchApplicationWithId("officia", {
       issuer: "quisquam",
       keyId: "cec330b4-ec47-4291-8a49-78b87c53216b",
       logout: {
-        behavior: SAMLLogoutBehaviorEnum.AllParticipants,
+        behavior: SAMLLogoutBehavior.AllParticipants,
         defaultVerificationKeyId: "a6b57c8e-1f33-4a10-8e5d-abc8345f9486",
         keyId: "ca1528ed-1886-459b-83f5-1c85df4eb2f9",
         requireSignedRequests: false,
@@ -12699,23 +12674,23 @@ sdk.sdk.patchApplicationWithId("officia", {
           enabled: false,
           keyId: "126d4d74-0877-4a47-9599-a0767e4038a8",
           url: "commodi",
-          xmlSignatureC14nMethod: CanonicalizationMethodEnum.Exclusive,
+          xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
         },
-        xmlSignatureC14nMethod: CanonicalizationMethodEnum.InclusiveWithComments,
+        xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
       },
       logoutURL: "quasi",
       requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethodEnum.ExclusiveWithComments,
-      xmlSignatureLocation: XMLSignatureLocationEnum.Assertion,
+      xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
+      xmlSignatureLocation: XMLSignatureLocation.Assertion,
     },
-    state: ObjectStateEnum.Active,
+    state: ObjectState.Active,
     tenantId: "837500c4-e6dc-48ae-8b07-2f11a802a1d3",
     themeId: "29b1d1dd-86f7-4536-a7f5-eac60682c9fc",
     unverified: {
-      behavior: UnverifiedBehaviorEnum.Gated,
+      behavior: UnverifiedBehavior.Gated,
     },
     verificationEmailTemplateId: "5ce07e73-f61d-48bd-8894-39ff35030527",
-    verificationStrategy: VerificationStrategyEnum.FormField,
+    verificationStrategy: VerificationStrategy.FormField,
     verifyRegistration: false,
     webAuthnConfiguration: {
       bootstrapWorkflow: {
@@ -12775,7 +12750,7 @@ Updates, via PATCH, the connector with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { PatchConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConnectorTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { ConnectorType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -12807,7 +12782,7 @@ sdk.sdk.patchConnectorWithId("architecto", {
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     name: "Gene Haley",
-    type: ConnectorTypeEnum.Generic,
+    type: ConnectorType.Generic,
   },
 }).then((res: PatchConnectorWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -13119,13 +13094,13 @@ Updates, via PATCH, the identity provider with the given Id.
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { PatchIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  CanonicalizationMethodEnum,
-  ClientAuthenticationMethodEnum,
-  IdentityProviderLinkingStrategyEnum,
-  IdentityProviderLoginMethodEnum,
-  IdentityProviderTypeEnum,
-  SAMLv2DestinationAssertionPolicyEnum,
-  SteamAPIModeEnum,
+  CanonicalizationMethod,
+  ClientAuthenticationMethod,
+  IdentityProviderLinkingStrategy,
+  IdentityProviderLoginMethod,
+  IdentityProviderType,
+  SAMLv2DestinationAssertionPolicy,
+  SteamAPIMode,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -13142,7 +13117,7 @@ sdk.sdk.patchIdentityProviderWithId("tempore", {
           "eaque",
           "distinctio",
         ],
-        policy: SAMLv2DestinationAssertionPolicyEnum.AllowAlternates,
+        policy: SAMLv2DestinationAssertionPolicy.AllowAlternates,
       },
     },
     buttonImageURL: "accusantium",
@@ -13170,7 +13145,7 @@ sdk.sdk.patchIdentityProviderWithId("tempore", {
     uniqueIdClaim: "ipsa",
     useNameIdForEmail: false,
     usernameClaim: "impedit",
-    xmlSignatureC14nMethod: CanonicalizationMethodEnum.InclusiveWithComments,
+    xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
   },
 }).then((res: PatchIdentityProviderWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -13234,7 +13209,7 @@ Updates, via PATCH, the lambda with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { PatchLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { LambdaEngineTypeEnum, LambdaTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -13246,12 +13221,12 @@ sdk.sdk.patchLambdaWithId("eos", {
   lambda: {
     body: "libero",
     debug: false,
-    engineType: LambdaEngineTypeEnum.Nashorn,
+    engineType: LambdaEngineType.Nashorn,
     id: "041bdfe4-d8bb-41b7-ad41-80b77ee7bde4",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     name: "Claude Blanda",
-    type: LambdaTypeEnum.FacebookReconcile,
+    type: LambdaType.FacebookReconcile,
   },
 }).then((res: PatchLambdaWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -13269,7 +13244,7 @@ Updates, via PATCH, the message template with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { PatchMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessageTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -13291,7 +13266,7 @@ sdk.sdk.patchMessageTemplateWithId("pariatur", {
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     name: "Everett Daugherty",
-    type: MessageTypeEnum.Sms,
+    type: MessageType.Sms,
   },
 }).then((res: PatchMessageTemplateWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -13309,7 +13284,7 @@ Updates, via PATCH, the messenger with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { PatchMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessengerTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { MessengerType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -13345,7 +13320,7 @@ sdk.sdk.patchMessengerWithId("fugiat", {
     lastUpdateInstant: 1659380719000,
     name: "Stacey Breitenberg",
     transport: "modi",
-    type: MessengerTypeEnum.Kafka,
+    type: MessengerType.Kafka,
   },
 }).then((res: PatchMessengerWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -13363,12 +13338,7 @@ Updates, via PATCH, the registration for the user with the given id and the appl
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { PatchRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -13438,7 +13408,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
       "tenetur": "placeat",
     },
     username: "Marcelino.Homenick2",
-    usernameStatus: ContentStatusEnum.Pending,
+    usernameStatus: ContentStatus.Pending,
     verified: false,
   },
   sendSetPasswordEmail: false,
@@ -13448,7 +13418,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
     active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatusEnum.CommonPassword,
+    breachedPasswordStatus: BreachedPasswordStatus.CommonPassword,
     cleanSpeakId: "826ad0bd-4129-49e6-8e9c-af89f21a26b9",
     connectorId: "59a2ac9d-7fb4-469e-a1ef-d2839031657c",
     data: {
@@ -13498,7 +13468,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.ExactMatch,
+          breachedPasswordStatus: BreachedPasswordStatus.ExactMatch,
           cleanSpeakId: "1d8f9142-bdef-44c9-b919-eb003267543b",
           connectorId: "42c7e903-dc8f-47c9-b7a7-db36b65c4f9c",
           data: {
@@ -13542,7 +13512,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
           mobilePhone: "vero",
           parentEmail: "perspiciatis",
           password: "suscipit",
-          passwordChangeReason: ChangePasswordReasonEnum.Validation,
+          passwordChangeReason: ChangePasswordReason.Validation,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -13594,7 +13564,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
                 "dolorum": "blanditiis",
               },
               username: "Macy.Luettgen79",
-              usernameStatus: ContentStatusEnum.Rejected,
+              usernameStatus: ContentStatus.Rejected,
               verified: false,
             },
             {
@@ -13628,7 +13598,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
                 "eos": "quasi",
               },
               username: "Serena25",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
             {
@@ -13669,7 +13639,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
                 "odio": "quod",
               },
               username: "Aurelio.Crona",
-              usernameStatus: ContentStatusEnum.Active,
+              usernameStatus: ContentStatus.Active,
               verified: false,
             },
             {
@@ -13711,7 +13681,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
                 "fugiat": "itaque",
               },
               username: "Hilma.Ziemann60",
-              usernameStatus: ContentStatusEnum.Active,
+              usernameStatus: ContentStatus.Active,
               verified: false,
             },
           ],
@@ -13722,7 +13692,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 682558,
                   timeStep: 1509,
                 },
@@ -13735,7 +13705,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 299494,
                   timeStep: 205319,
                 },
@@ -13748,7 +13718,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 824453,
                   timeStep: 421673,
                 },
@@ -13769,7 +13739,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
           },
           uniqueUsername: "perspiciatis",
           username: "Baylee_Torp",
-          usernameStatus: ContentStatusEnum.Pending,
+          usernameStatus: ContentStatus.Pending,
           verified: false,
         },
         userId: "aa791e4c-7260-4b56-ad35-8d797dbe0fbc",
@@ -13798,7 +13768,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.SubAddressMatch,
+          breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
           cleanSpeakId: "19d90a60-989d-4c35-9f6c-8662b908632c",
           connectorId: "11023c6e-e416-4d28-8a2e-4676be0a7ba5",
           data: {
@@ -13830,7 +13800,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
           mobilePhone: "et",
           parentEmail: "placeat",
           password: "dignissimos",
-          passwordChangeReason: ChangePasswordReasonEnum.Breached,
+          passwordChangeReason: ChangePasswordReason.Breached,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -13885,7 +13855,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
                 "provident": "hic",
               },
               username: "Matilda_Sporer",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
           ],
@@ -13896,7 +13866,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 858261,
                   timeStep: 207779,
                 },
@@ -13916,7 +13886,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
           },
           uniqueUsername: "earum",
           username: "Alana85",
-          usernameStatus: ContentStatusEnum.Active,
+          usernameStatus: ContentStatus.Active,
           verified: false,
         },
         userId: "604a7de7-0896-4514-a9e6-14be4b47a027",
@@ -13926,7 +13896,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
     mobilePhone: "accusamus",
     parentEmail: "optio",
     password: "culpa",
-    passwordChangeReason: ChangePasswordReasonEnum.Expired,
+    passwordChangeReason: ChangePasswordReason.Expired,
     passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
@@ -13975,7 +13945,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
           "quod": "consectetur",
         },
         username: "Javon36",
-        usernameStatus: ContentStatusEnum.Rejected,
+        usernameStatus: ContentStatus.Rejected,
         verified: false,
       },
       {
@@ -14004,7 +13974,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
           "recusandae": "incidunt",
         },
         username: "Orin.Reichert",
-        usernameStatus: ContentStatusEnum.Active,
+        usernameStatus: ContentStatus.Active,
         verified: false,
       },
     ],
@@ -14015,7 +13985,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
       methods: [
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha1,
+            algorithm: TOTPAlgorithm.HmacSha1,
             codeLength: 493731,
             timeStep: 748246,
           },
@@ -14028,7 +13998,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
         },
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha512,
+            algorithm: TOTPAlgorithm.HmacSha512,
             codeLength: 91018,
             timeStep: 51089,
           },
@@ -14041,7 +14011,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
         },
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha256,
+            algorithm: TOTPAlgorithm.HmacSha256,
             codeLength: 975361,
             timeStep: 925829,
           },
@@ -14062,7 +14032,7 @@ sdk.sdk.patchRegistrationWithId("magnam", {
     },
     uniqueUsername: "similique",
     username: "Linda55",
-    usernameStatus: ContentStatusEnum.Pending,
+    usernameStatus: ContentStatus.Pending,
     verified: false,
   },
 }, "harum").then((res: PatchRegistrationWithIdResponse) => {
@@ -14081,7 +14051,7 @@ Updates, via PATCH, the system configuration.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { PatchSystemConfigurationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { HTTPMethodEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { HTTPMethod } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -14106,9 +14076,9 @@ sdk.sdk.patchSystemConfigurationWithId({
         "quia",
       ],
       allowedMethods: [
-        HTTPMethodEnum.Options,
-        HTTPMethodEnum.Delete,
-        HTTPMethodEnum.Patch,
+        HTTPMethod.Options,
+        HTTPMethod.Delete,
+        HTTPMethod.Patch,
       ],
       allowedOrigins: [
         "earum",
@@ -14168,23 +14138,23 @@ Updates, via PATCH, the tenant with the given Id.
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { PatchTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  AuthenticatorAttachmentPreferenceEnum,
-  BreachActionEnum,
-  BreachMatchModeEnum,
-  CaptchaMethodEnum,
-  EmailSecurityTypeEnum,
-  ExpiryUnitEnum,
-  MultiFactorLoginPolicyEnum,
-  ObjectStateEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  SecureGeneratorTypeEnum,
-  TOTPAlgorithmEnum,
-  TransactionTypeEnum,
-  UniqueUsernameStrategyEnum,
-  UnverifiedBehaviorEnum,
-  UserVerificationRequirementEnum,
-  VerificationStrategyEnum,
+  AuthenticatorAttachmentPreference,
+  BreachAction,
+  BreachMatchMode,
+  CaptchaMethod,
+  EmailSecurityType,
+  ExpiryUnit,
+  MultiFactorLoginPolicy,
+  ObjectState,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  SecureGeneratorType,
+  TOTPAlgorithm,
+  TransactionType,
+  UniqueUsernameStrategy,
+  UnverifiedBehavior,
+  UserVerificationRequirement,
+  VerificationStrategy,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -14241,7 +14211,7 @@ sdk.sdk.patchTenantWithId("soluta", {
       uiIPAccessControlListId: "712cd3d2-7249-4beb-b77f-424df546e657",
     },
     captchaConfiguration: {
-      captchaMethod: CaptchaMethodEnum.HCaptcha,
+      captchaMethod: CaptchaMethod.HCaptcha,
       enabled: false,
       secretKey: "vel",
       siteKey: "numquam",
@@ -14330,17 +14300,17 @@ sdk.sdk.patchTenantWithId("soluta", {
       passwordlessEmailTemplateId: "2f35fb1d-b2ef-4895-b6a3-4fe630a2a2e3",
       port: 898322,
       properties: "dolores",
-      security: EmailSecurityTypeEnum.None,
+      security: EmailSecurityType.None,
       setPasswordEmailTemplateId: "5031c7eb-3aa4-4939-90d3-4461df8c12b1",
       twoFactorMethodAddEmailTemplateId: "4c280184-b258-4182-b311-f39d277228dd",
       twoFactorMethodRemoveEmailTemplateId: "b8e0fb2c-c04e-4f83-b5f4-7b55e39232bf",
       unverified: {
         allowEmailChangeWhenGated: false,
-        behavior: UnverifiedBehaviorEnum.Gated,
+        behavior: UnverifiedBehavior.Gated,
       },
       username: "Sunny.Koelpin87",
       verificationEmailTemplateId: "7f759c39-c195-4c04-b75c-a1f2fa720ff1",
-      verificationStrategy: VerificationStrategyEnum.ClickableLink,
+      verificationStrategy: VerificationStrategy.ClickableLink,
       verifyEmail: false,
       verifyEmailWhenChanged: false,
     },
@@ -14348,7 +14318,7 @@ sdk.sdk.patchTenantWithId("soluta", {
       events: {
         "quisquam": {
           enabled: false,
-          transactionType: TransactionTypeEnum.Any,
+          transactionType: TransactionType.Any,
         },
       },
     },
@@ -14356,51 +14326,51 @@ sdk.sdk.patchTenantWithId("soluta", {
       authorizationGrantIdTimeToLiveInSeconds: 10677,
       changePasswordIdGenerator: {
         length: 761880,
-        type: SecureGeneratorTypeEnum.RandomAlphaNumeric,
+        type: SecureGeneratorType.RandomAlphaNumeric,
       },
       changePasswordIdTimeToLiveInSeconds: 626195,
       deviceCodeTimeToLiveInSeconds: 333289,
       deviceUserCodeIdGenerator: {
         length: 600114,
-        type: SecureGeneratorTypeEnum.RandomAlpha,
+        type: SecureGeneratorType.RandomAlpha,
       },
       emailVerificationIdGenerator: {
         length: 519831,
-        type: SecureGeneratorTypeEnum.RandomDigits,
+        type: SecureGeneratorType.RandomDigits,
       },
       emailVerificationIdTimeToLiveInSeconds: 626355,
       emailVerificationOneTimeCodeGenerator: {
         length: 75840,
-        type: SecureGeneratorTypeEnum.RandomAlphaNumeric,
+        type: SecureGeneratorType.RandomAlphaNumeric,
       },
       externalAuthenticationIdTimeToLiveInSeconds: 246956,
       oneTimePasswordTimeToLiveInSeconds: 232964,
       passwordlessLoginGenerator: {
         length: 511933,
-        type: SecureGeneratorTypeEnum.RandomAlphaNumeric,
+        type: SecureGeneratorType.RandomAlphaNumeric,
       },
       passwordlessLoginTimeToLiveInSeconds: 866681,
       pendingAccountLinkTimeToLiveInSeconds: 336097,
       registrationVerificationIdGenerator: {
         length: 38183,
-        type: SecureGeneratorTypeEnum.RandomAlpha,
+        type: SecureGeneratorType.RandomAlpha,
       },
       registrationVerificationIdTimeToLiveInSeconds: 897655,
       registrationVerificationOneTimeCodeGenerator: {
         length: 92845,
-        type: SecureGeneratorTypeEnum.RandomDigits,
+        type: SecureGeneratorType.RandomDigits,
       },
       samlv2AuthNRequestIdTimeToLiveInSeconds: 76004,
       setupPasswordIdGenerator: {
         length: 315922,
-        type: SecureGeneratorTypeEnum.RandomAlphaNumeric,
+        type: SecureGeneratorType.RandomAlphaNumeric,
       },
       setupPasswordIdTimeToLiveInSeconds: 690211,
       trustTokenTimeToLiveInSeconds: 635320,
       twoFactorIdTimeToLiveInSeconds: 927991,
       twoFactorOneTimeCodeIdGenerator: {
         length: 299798,
-        type: SecureGeneratorTypeEnum.RandomDigits,
+        type: SecureGeneratorType.RandomDigits,
       },
       twoFactorOneTimeCodeIdTimeToLiveInSeconds: 800693,
       twoFactorTrustIdTimeToLiveInSeconds: 401443,
@@ -14412,7 +14382,7 @@ sdk.sdk.patchTenantWithId("soluta", {
         onPasswordReset: false,
       },
       actionDuration: 486587,
-      actionDurationUnit: ExpiryUnitEnum.Weeks,
+      actionDurationUnit: ExpiryUnit.Weeks,
       emailUser: false,
       resetCountInSeconds: 25419,
       tooManyAttempts: 798390,
@@ -14441,14 +14411,14 @@ sdk.sdk.patchTenantWithId("soluta", {
       accessTokenKeyId: "45fb9b49-c8b6-4fdf-bc30-f00dac7f38b1",
       enabled: false,
       idTokenKeyId: "2078a16e-d36b-41bc-a1a0-3366acd9150c",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicyEnum.Fixed,
+      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.Fixed,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
       refreshTokenTimeToLiveInMinutes: 114443,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicyEnum.OneTimeUse,
+      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.OneTimeUse,
       timeToLiveInSeconds: 201632,
     },
     lambdaConfiguration: {
@@ -14474,7 +14444,7 @@ sdk.sdk.patchTenantWithId("soluta", {
     },
     multiFactorConfiguration: {
       authenticator: {
-        algorithm: TOTPAlgorithmEnum.HmacSha256,
+        algorithm: TOTPAlgorithm.HmacSha256,
         codeLength: 649666,
         enabled: false,
         timeStep: 874443,
@@ -14483,7 +14453,7 @@ sdk.sdk.patchTenantWithId("soluta", {
         enabled: false,
         templateId: "dd29f12b-a207-4e23-9dcc-765905fc45da",
       },
-      loginPolicy: MultiFactorLoginPolicyEnum.Required,
+      loginPolicy: MultiFactorLoginPolicy.Required,
       sms: {
         enabled: false,
         messengerId: "9bbe0cc1-3aa4-4420-ab51-a9b8f13c6c36",
@@ -14502,9 +14472,9 @@ sdk.sdk.patchTenantWithId("soluta", {
     passwordValidationRules: {
       breachDetection: {
         enabled: false,
-        matchMode: BreachMatchModeEnum.Medium,
+        matchMode: BreachMatchMode.Medium,
         notifyUserEmailTemplateId: "91dc2e1b-4acc-4f79-9511-c2d8634d5b1b",
-        onLogin: BreachActionEnum.RecordOnly,
+        onLogin: BreachAction.RecordOnly,
       },
       maxLength: 129508,
       minLength: 996730,
@@ -14573,7 +14543,7 @@ sdk.sdk.patchTenantWithId("soluta", {
     ssoConfiguration: {
       deviceTrustTimeToLiveInSeconds: 901074,
     },
-    state: ObjectStateEnum.PendingDelete,
+    state: ObjectState.PendingDelete,
     themeId: "809ce306-6dee-46e4-9358-d584e5873794",
     userDeletePolicy: {
       unverified: {
@@ -14586,21 +14556,21 @@ sdk.sdk.patchTenantWithId("soluta", {
         enabled: false,
         numberOfDigits: 311543,
         separator: "soluta",
-        strategy: UniqueUsernameStrategyEnum.Always,
+        strategy: UniqueUsernameStrategy.Always,
       },
     },
     webAuthnConfiguration: {
       bootstrapWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreferenceEnum.Platform,
+        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.Platform,
         enabled: false,
-        userVerificationRequirement: UserVerificationRequirementEnum.Required,
+        userVerificationRequirement: UserVerificationRequirement.Required,
       },
       debug: false,
       enabled: false,
       reauthenticationWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreferenceEnum.CrossPlatform,
+        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.CrossPlatform,
         enabled: false,
-        userVerificationRequirement: UserVerificationRequirementEnum.Preferred,
+        userVerificationRequirement: UserVerificationRequirement.Preferred,
       },
       relyingPartyId: "veniam",
       relyingPartyName: "fugiat",
@@ -14757,7 +14727,7 @@ Updates, via PATCH, the user action with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { PatchUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { TransactionTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -14800,7 +14770,7 @@ sdk.sdk.patchUserActionWithId("illum", {
     sendEndEvent: false,
     startEmailTemplateId: "3022e5bd-bee9-4f2a-99f8-52def3cafc09",
     temporal: false,
-    transactionType: TransactionTypeEnum.Any,
+    transactionType: TransactionType.Any,
     userEmailingEnabled: false,
     userNotificationsEnabled: false,
   },
@@ -14820,7 +14790,7 @@ Updates, via PATCH, a single User consent by Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { PatchUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConsentStatusEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -14897,7 +14867,7 @@ sdk.sdk.patchUserConsentWithId("asperiores", {
     id: "2272680a-3d19-4ac2-8053-d4a433e5f38b",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    status: ConsentStatusEnum.Revoked,
+    status: ConsentStatus.Revoked,
     userId: "ff3bd9f3-7dd4-418b-8d99-cc4ee9c944de",
     values: [
       "saepe",
@@ -14919,12 +14889,7 @@ Updates, via PATCH, the user with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { PatchUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -14969,7 +14934,7 @@ sdk.sdk.patchUserWithId("impedit", {
     active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatusEnum.PasswordOnly,
+    breachedPasswordStatus: BreachedPasswordStatus.PasswordOnly,
     cleanSpeakId: "fe7b08d6-7a02-4878-b942-0835728fb96c",
     connectorId: "739893da-ebcd-4441-94d8-add3608a6857",
     data: {
@@ -15015,7 +14980,7 @@ sdk.sdk.patchUserWithId("impedit", {
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.None,
+          breachedPasswordStatus: BreachedPasswordStatus.None,
           cleanSpeakId: "4b3e4e10-9e6e-4cfc-8e21-19758d190d20",
           connectorId: "6f672c42-a65f-4077-a69c-70a6bf345b2f",
           data: {
@@ -15059,7 +15024,7 @@ sdk.sdk.patchUserWithId("impedit", {
           mobilePhone: "officia",
           parentEmail: "ea",
           password: "expedita",
-          passwordChangeReason: ChangePasswordReasonEnum.Validation,
+          passwordChangeReason: ChangePasswordReason.Validation,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -15097,7 +15062,7 @@ sdk.sdk.patchUserWithId("impedit", {
                 "nobis": "minus",
               },
               username: "Ansel_Predovic",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
             {
@@ -15143,7 +15108,7 @@ sdk.sdk.patchUserWithId("impedit", {
                 "repudiandae": "corrupti",
               },
               username: "Bernice.Sporer37",
-              usernameStatus: ContentStatusEnum.Active,
+              usernameStatus: ContentStatus.Active,
               verified: false,
             },
             {
@@ -15187,7 +15152,7 @@ sdk.sdk.patchUserWithId("impedit", {
                 "mollitia": "veritatis",
               },
               username: "Tess45",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
           ],
@@ -15198,7 +15163,7 @@ sdk.sdk.patchUserWithId("impedit", {
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 588722,
                   timeStep: 300329,
                 },
@@ -15216,7 +15181,7 @@ sdk.sdk.patchUserWithId("impedit", {
           },
           uniqueUsername: "at",
           username: "Donny76",
-          usernameStatus: ContentStatusEnum.Rejected,
+          usernameStatus: ContentStatus.Rejected,
           verified: false,
         },
         userId: "feeb1614-9a3f-4ec6-ac94-0fc121469161",
@@ -15226,7 +15191,7 @@ sdk.sdk.patchUserWithId("impedit", {
     mobilePhone: "impedit",
     parentEmail: "consectetur",
     password: "rem",
-    passwordChangeReason: ChangePasswordReasonEnum.Administrative,
+    passwordChangeReason: ChangePasswordReason.Administrative,
     passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
@@ -15265,7 +15230,7 @@ sdk.sdk.patchUserWithId("impedit", {
           "aliquid": "in",
         },
         username: "Velva.Swift",
-        usernameStatus: ContentStatusEnum.Active,
+        usernameStatus: ContentStatus.Active,
         verified: false,
       },
       {
@@ -15303,7 +15268,7 @@ sdk.sdk.patchUserWithId("impedit", {
           "laboriosam": "autem",
         },
         username: "Anais.Schroeder94",
-        usernameStatus: ContentStatusEnum.Active,
+        usernameStatus: ContentStatus.Active,
         verified: false,
       },
     ],
@@ -15314,7 +15279,7 @@ sdk.sdk.patchUserWithId("impedit", {
       methods: [
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha256,
+            algorithm: TOTPAlgorithm.HmacSha256,
             codeLength: 688943,
             timeStep: 790735,
           },
@@ -15327,7 +15292,7 @@ sdk.sdk.patchUserWithId("impedit", {
         },
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha256,
+            algorithm: TOTPAlgorithm.HmacSha256,
             codeLength: 288177,
             timeStep: 435623,
           },
@@ -15340,7 +15305,7 @@ sdk.sdk.patchUserWithId("impedit", {
         },
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha1,
+            algorithm: TOTPAlgorithm.HmacSha1,
             codeLength: 780004,
             timeStep: 656250,
           },
@@ -15360,7 +15325,7 @@ sdk.sdk.patchUserWithId("impedit", {
     },
     uniqueUsername: "eveniet",
     username: "Rogelio_Collins95",
-    usernameStatus: ContentStatusEnum.Pending,
+    usernameStatus: ContentStatus.Pending,
     verified: false,
   },
 }, "odit").then((res: PatchUserWithIdResponse) => {
@@ -15380,11 +15345,11 @@ Reconcile a User to FusionAuth using JWT issued from another Identity Provider.
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { ReconcileJWTWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  DeviceTypeEnum,
-  TOTPAlgorithmEnum,
+  BreachedPasswordStatus,
+  ChangePasswordReason,
+  ContentStatus,
+  DeviceType,
+  TOTPAlgorithm,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -15427,7 +15392,7 @@ sdk.sdk.reconcileJWTWithId({
       lastAccessedAddress: "libero",
       lastAccessedInstant: 1659380719000,
       name: "Harry Daniel Jr.",
-      type: DeviceTypeEnum.Other,
+      type: DeviceType.Other,
     },
     scopes: [
       "quaerat",
@@ -15454,12 +15419,7 @@ Registers a user for an application. If you provide the User and the UserRegistr
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RegisterResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -15527,7 +15487,7 @@ sdk.sdk.register({
       "maiores": "itaque",
     },
     username: "Cornell.Kutch",
-    usernameStatus: ContentStatusEnum.Active,
+    usernameStatus: ContentStatus.Active,
     verified: false,
   },
   sendSetPasswordEmail: false,
@@ -15537,7 +15497,7 @@ sdk.sdk.register({
     active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatusEnum.PasswordOnly,
+    breachedPasswordStatus: BreachedPasswordStatus.PasswordOnly,
     cleanSpeakId: "bc3cd5fd-667f-4ca7-8118-98d634735812",
     connectorId: "e217458c-e6be-4d21-a92e-303ecf62d0a5",
     data: {
@@ -15577,7 +15537,7 @@ sdk.sdk.register({
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.PasswordOnly,
+          breachedPasswordStatus: BreachedPasswordStatus.PasswordOnly,
           cleanSpeakId: "301edc4e-ade4-4878-a677-3a797d8f36ff",
           connectorId: "3acbf60b-3d29-4910-933e-6f77be6e8d12",
           data: {
@@ -15614,7 +15574,7 @@ sdk.sdk.register({
           mobilePhone: "nisi",
           parentEmail: "autem",
           password: "natus",
-          passwordChangeReason: ChangePasswordReasonEnum.Expired,
+          passwordChangeReason: ChangePasswordReason.Expired,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -15665,7 +15625,7 @@ sdk.sdk.register({
                 "ducimus": "unde",
               },
               username: "Rebekah.Reynolds",
-              usernameStatus: ContentStatusEnum.Active,
+              usernameStatus: ContentStatus.Active,
               verified: false,
             },
             {
@@ -15712,7 +15672,7 @@ sdk.sdk.register({
                 "eligendi": "omnis",
               },
               username: "Giovani54",
-              usernameStatus: ContentStatusEnum.Active,
+              usernameStatus: ContentStatus.Active,
               verified: false,
             },
             {
@@ -15757,7 +15717,7 @@ sdk.sdk.register({
                 "nesciunt": "et",
               },
               username: "Joan.Schmeler25",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
             {
@@ -15803,7 +15763,7 @@ sdk.sdk.register({
                 "fugiat": "similique",
               },
               username: "Hermann_Bode58",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
           ],
@@ -15814,7 +15774,7 @@ sdk.sdk.register({
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 874245,
                   timeStep: 425123,
                 },
@@ -15827,7 +15787,7 @@ sdk.sdk.register({
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 949126,
                   timeStep: 79634,
                 },
@@ -15840,7 +15800,7 @@ sdk.sdk.register({
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha512,
+                  algorithm: TOTPAlgorithm.HmacSha512,
                   codeLength: 726565,
                   timeStep: 897232,
                 },
@@ -15853,7 +15813,7 @@ sdk.sdk.register({
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 183286,
                   timeStep: 107087,
                 },
@@ -15871,7 +15831,7 @@ sdk.sdk.register({
           },
           uniqueUsername: "perferendis",
           username: "Catherine.Conroy",
-          usernameStatus: ContentStatusEnum.Rejected,
+          usernameStatus: ContentStatus.Rejected,
           verified: false,
         },
         userId: "f19f9274-8287-4798-9cbd-61d15a963455",
@@ -15881,7 +15841,7 @@ sdk.sdk.register({
     mobilePhone: "unde",
     parentEmail: "ratione",
     password: "rerum",
-    passwordChangeReason: ChangePasswordReasonEnum.Validation,
+    passwordChangeReason: ChangePasswordReason.Validation,
     passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
@@ -15926,7 +15886,7 @@ sdk.sdk.register({
           "sapiente": "voluptatum",
         },
         username: "Laron50",
-        usernameStatus: ContentStatusEnum.Active,
+        usernameStatus: ContentStatus.Active,
         verified: false,
       },
     ],
@@ -15937,7 +15897,7 @@ sdk.sdk.register({
       methods: [
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha512,
+            algorithm: TOTPAlgorithm.HmacSha512,
             codeLength: 786231,
             timeStep: 174973,
           },
@@ -15956,7 +15916,7 @@ sdk.sdk.register({
     },
     uniqueUsername: "nostrum",
     username: "Keara94",
-    usernameStatus: ContentStatusEnum.Active,
+    usernameStatus: ContentStatus.Active,
     verified: false,
   },
 }, "doloribus").then((res: RegisterResponse) => {
@@ -15975,12 +15935,7 @@ Registers a user for an application. If you provide the User and the UserRegistr
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RegisterWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -16049,7 +16004,7 @@ sdk.sdk.registerWithId("voluptatibus", {
       "similique": "consequuntur",
     },
     username: "Leatha_Hamill19",
-    usernameStatus: ContentStatusEnum.Rejected,
+    usernameStatus: ContentStatus.Rejected,
     verified: false,
   },
   sendSetPasswordEmail: false,
@@ -16059,7 +16014,7 @@ sdk.sdk.registerWithId("voluptatibus", {
     active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatusEnum.ExactMatch,
+    breachedPasswordStatus: BreachedPasswordStatus.ExactMatch,
     cleanSpeakId: "922fa7b9-e84c-4a7f-a77c-e17af28b97a8",
     connectorId: "9e5af607-e8fa-4712-ba79-146df92f206d",
     data: {
@@ -16114,7 +16069,7 @@ sdk.sdk.registerWithId("voluptatibus", {
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.PasswordOnly,
+          breachedPasswordStatus: BreachedPasswordStatus.PasswordOnly,
           cleanSpeakId: "52dbdc74-8e1c-42ae-a1fc-d28df65ddd6c",
           connectorId: "961e3342-e2dc-4fd9-bd3b-bbd1aa502870",
           data: {
@@ -16158,7 +16113,7 @@ sdk.sdk.registerWithId("voluptatibus", {
           mobilePhone: "aliquam",
           parentEmail: "voluptas",
           password: "maiores",
-          passwordChangeReason: ChangePasswordReasonEnum.Breached,
+          passwordChangeReason: ChangePasswordReason.Breached,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -16205,7 +16160,7 @@ sdk.sdk.registerWithId("voluptatibus", {
                 "asperiores": "reprehenderit",
               },
               username: "Stuart7",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
             {
@@ -16241,7 +16196,7 @@ sdk.sdk.registerWithId("voluptatibus", {
                 "sapiente": "tempora",
               },
               username: "Lance51",
-              usernameStatus: ContentStatusEnum.Active,
+              usernameStatus: ContentStatus.Active,
               verified: false,
             },
             {
@@ -16287,7 +16242,7 @@ sdk.sdk.registerWithId("voluptatibus", {
                 "ratione": "consectetur",
               },
               username: "Aliya_Tromp20",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
           ],
@@ -16298,7 +16253,7 @@ sdk.sdk.registerWithId("voluptatibus", {
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha512,
+                  algorithm: TOTPAlgorithm.HmacSha512,
                   codeLength: 161798,
                   timeStep: 925053,
                 },
@@ -16316,7 +16271,7 @@ sdk.sdk.registerWithId("voluptatibus", {
           },
           uniqueUsername: "quaerat",
           username: "Loyce17",
-          usernameStatus: ContentStatusEnum.Active,
+          usernameStatus: ContentStatus.Active,
           verified: false,
         },
         userId: "bfaa8c45-ed48-46a1-b2bc-8ff5e6ec5477",
@@ -16334,7 +16289,7 @@ sdk.sdk.registerWithId("voluptatibus", {
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.CommonPassword,
+          breachedPasswordStatus: BreachedPasswordStatus.CommonPassword,
           cleanSpeakId: "0ef5e2ee-d0f7-44e4-9124-4bfd94e9adde",
           connectorId: "17b36f7e-58c6-4d4e-b294-052a1f82e638",
           data: {
@@ -16382,7 +16337,7 @@ sdk.sdk.registerWithId("voluptatibus", {
           mobilePhone: "itaque",
           parentEmail: "voluptates",
           password: "laborum",
-          passwordChangeReason: ChangePasswordReasonEnum.Expired,
+          passwordChangeReason: ChangePasswordReason.Expired,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -16424,7 +16379,7 @@ sdk.sdk.registerWithId("voluptatibus", {
                 "optio": "neque",
               },
               username: "Cloyd_Goyette69",
-              usernameStatus: ContentStatusEnum.Rejected,
+              usernameStatus: ContentStatus.Rejected,
               verified: false,
             },
           ],
@@ -16435,7 +16390,7 @@ sdk.sdk.registerWithId("voluptatibus", {
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 861914,
                   timeStep: 926671,
                 },
@@ -16455,7 +16410,7 @@ sdk.sdk.registerWithId("voluptatibus", {
           },
           uniqueUsername: "repudiandae",
           username: "Abe37",
-          usernameStatus: ContentStatusEnum.Pending,
+          usernameStatus: ContentStatus.Pending,
           verified: false,
         },
         userId: "55d820d1-8a4c-4ba2-af30-348436827dc6",
@@ -16493,7 +16448,7 @@ sdk.sdk.registerWithId("voluptatibus", {
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.None,
+          breachedPasswordStatus: BreachedPasswordStatus.None,
           cleanSpeakId: "25a9d987-6fcf-4bdd-ade0-3493c158536a",
           connectorId: "a71155d9-f5a1-4243-ac6b-a7dda6d15025",
           data: {
@@ -16530,7 +16485,7 @@ sdk.sdk.registerWithId("voluptatibus", {
           mobilePhone: "minus",
           parentEmail: "ea",
           password: "autem",
-          passwordChangeReason: ChangePasswordReasonEnum.Validation,
+          passwordChangeReason: ChangePasswordReason.Validation,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -16574,7 +16529,7 @@ sdk.sdk.registerWithId("voluptatibus", {
                 "cupiditate": "sequi",
               },
               username: "Naomi.Towne66",
-              usernameStatus: ContentStatusEnum.Rejected,
+              usernameStatus: ContentStatus.Rejected,
               verified: false,
             },
             {
@@ -16612,7 +16567,7 @@ sdk.sdk.registerWithId("voluptatibus", {
                 "dolores": "consequatur",
               },
               username: "Garnet_Kemmer",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
             {
@@ -16651,7 +16606,7 @@ sdk.sdk.registerWithId("voluptatibus", {
                 "enim": "aperiam",
               },
               username: "Price44",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
           ],
@@ -16662,7 +16617,7 @@ sdk.sdk.registerWithId("voluptatibus", {
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 937230,
                   timeStep: 713970,
                 },
@@ -16675,7 +16630,7 @@ sdk.sdk.registerWithId("voluptatibus", {
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha256,
+                  algorithm: TOTPAlgorithm.HmacSha256,
                   codeLength: 126449,
                   timeStep: 506656,
                 },
@@ -16688,7 +16643,7 @@ sdk.sdk.registerWithId("voluptatibus", {
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha256,
+                  algorithm: TOTPAlgorithm.HmacSha256,
                   codeLength: 511180,
                   timeStep: 294259,
                 },
@@ -16701,7 +16656,7 @@ sdk.sdk.registerWithId("voluptatibus", {
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha256,
+                  algorithm: TOTPAlgorithm.HmacSha256,
                   codeLength: 184836,
                   timeStep: 385965,
                 },
@@ -16722,7 +16677,7 @@ sdk.sdk.registerWithId("voluptatibus", {
           },
           uniqueUsername: "sit",
           username: "Myrtle68",
-          usernameStatus: ContentStatusEnum.Pending,
+          usernameStatus: ContentStatus.Pending,
           verified: false,
         },
         userId: "75f76fc5-a84c-4648-98e2-920611998f5f",
@@ -16744,7 +16699,7 @@ sdk.sdk.registerWithId("voluptatibus", {
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.CommonPassword,
+          breachedPasswordStatus: BreachedPasswordStatus.CommonPassword,
           cleanSpeakId: "0c6046ec-0edb-4f29-a283-65d43faed96b",
           connectorId: "b009f072-8580-4b7f-8746-d8346e849ae2",
           data: {
@@ -16780,7 +16735,7 @@ sdk.sdk.registerWithId("voluptatibus", {
           mobilePhone: "id",
           parentEmail: "ratione",
           password: "provident",
-          passwordChangeReason: ChangePasswordReasonEnum.Breached,
+          passwordChangeReason: ChangePasswordReason.Breached,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -16825,7 +16780,7 @@ sdk.sdk.registerWithId("voluptatibus", {
                 "aliquam": "nulla",
               },
               username: "Eden.Larkin",
-              usernameStatus: ContentStatusEnum.Active,
+              usernameStatus: ContentStatus.Active,
               verified: false,
             },
             {
@@ -16876,7 +16831,7 @@ sdk.sdk.registerWithId("voluptatibus", {
                 "quibusdam": "et",
               },
               username: "Raegan_Hackett57",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
             {
@@ -16910,7 +16865,7 @@ sdk.sdk.registerWithId("voluptatibus", {
                 "deserunt": "reprehenderit",
               },
               username: "Ned91",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
             {
@@ -16951,7 +16906,7 @@ sdk.sdk.registerWithId("voluptatibus", {
                 "maxime": "unde",
               },
               username: "Ladarius18",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
           ],
@@ -16962,7 +16917,7 @@ sdk.sdk.registerWithId("voluptatibus", {
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha256,
+                  algorithm: TOTPAlgorithm.HmacSha256,
                   codeLength: 858637,
                   timeStep: 655564,
                 },
@@ -16975,7 +16930,7 @@ sdk.sdk.registerWithId("voluptatibus", {
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha256,
+                  algorithm: TOTPAlgorithm.HmacSha256,
                   codeLength: 914101,
                   timeStep: 676151,
                 },
@@ -16996,7 +16951,7 @@ sdk.sdk.registerWithId("voluptatibus", {
           },
           uniqueUsername: "maiores",
           username: "Jocelyn.Green",
-          usernameStatus: ContentStatusEnum.Rejected,
+          usernameStatus: ContentStatus.Rejected,
           verified: false,
         },
         userId: "718658fb-10fc-4e6e-b669-c9c9601d750e",
@@ -17006,7 +16961,7 @@ sdk.sdk.registerWithId("voluptatibus", {
     mobilePhone: "qui",
     parentEmail: "optio",
     password: "occaecati",
-    passwordChangeReason: ChangePasswordReasonEnum.Administrative,
+    passwordChangeReason: ChangePasswordReason.Administrative,
     passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
@@ -17056,7 +17011,7 @@ sdk.sdk.registerWithId("voluptatibus", {
           "quo": "distinctio",
         },
         username: "Dusty_Steuber20",
-        usernameStatus: ContentStatusEnum.Active,
+        usernameStatus: ContentStatus.Active,
         verified: false,
       },
       {
@@ -17099,7 +17054,7 @@ sdk.sdk.registerWithId("voluptatibus", {
           "saepe": "quod",
         },
         username: "Vada84",
-        usernameStatus: ContentStatusEnum.Active,
+        usernameStatus: ContentStatus.Active,
         verified: false,
       },
       {
@@ -17139,7 +17094,7 @@ sdk.sdk.registerWithId("voluptatibus", {
           "magnam": "harum",
         },
         username: "Alfonso_Price",
-        usernameStatus: ContentStatusEnum.Pending,
+        usernameStatus: ContentStatus.Pending,
         verified: false,
       },
     ],
@@ -17150,7 +17105,7 @@ sdk.sdk.registerWithId("voluptatibus", {
       methods: [
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha512,
+            algorithm: TOTPAlgorithm.HmacSha512,
             codeLength: 477671,
             timeStep: 515802,
           },
@@ -17163,7 +17118,7 @@ sdk.sdk.registerWithId("voluptatibus", {
         },
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha1,
+            algorithm: TOTPAlgorithm.HmacSha1,
             codeLength: 879544,
             timeStep: 953209,
           },
@@ -17176,7 +17131,7 @@ sdk.sdk.registerWithId("voluptatibus", {
         },
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha256,
+            algorithm: TOTPAlgorithm.HmacSha256,
             codeLength: 590931,
             timeStep: 34610,
           },
@@ -17197,7 +17152,7 @@ sdk.sdk.registerWithId("voluptatibus", {
     },
     uniqueUsername: "minus",
     username: "Morris_Beatty65",
-    usernameStatus: ContentStatusEnum.Active,
+    usernameStatus: ContentStatus.Active,
     verified: false,
   },
 }, "voluptatibus").then((res: RegisterWithIdResponse) => {
@@ -17311,22 +17266,22 @@ Retrieves the application for the given id or all of the applications if the id 
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveApplicationResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  ApplicationMultiFactorTrustPolicyEnum,
-  CanonicalizationMethodEnum,
-  ClientAuthenticationPolicyEnum,
-  LoginIdTypeEnum,
-  LogoutBehaviorEnum,
-  MultiFactorLoginPolicyEnum,
-  Oauth2AuthorizedURLValidationPolicyEnum,
-  ObjectStateEnum,
-  ProofKeyForCodeExchangePolicyEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  RegistrationTypeEnum,
-  SAMLLogoutBehaviorEnum,
-  UnverifiedBehaviorEnum,
-  VerificationStrategyEnum,
-  XMLSignatureLocationEnum,
+  ApplicationMultiFactorTrustPolicy,
+  CanonicalizationMethod,
+  ClientAuthenticationPolicy,
+  LoginIdType,
+  LogoutBehavior,
+  MultiFactorLoginPolicy,
+  Oauth2AuthorizedURLValidationPolicy,
+  ObjectState,
+  ProofKeyForCodeExchangePolicy,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  RegistrationType,
+  SAMLLogoutBehavior,
+  UnverifiedBehavior,
+  VerificationStrategy,
+  XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -17352,22 +17307,22 @@ Retrieves the application for the given id or all of the applications if the id 
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  ApplicationMultiFactorTrustPolicyEnum,
-  CanonicalizationMethodEnum,
-  ClientAuthenticationPolicyEnum,
-  LoginIdTypeEnum,
-  LogoutBehaviorEnum,
-  MultiFactorLoginPolicyEnum,
-  Oauth2AuthorizedURLValidationPolicyEnum,
-  ObjectStateEnum,
-  ProofKeyForCodeExchangePolicyEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  RegistrationTypeEnum,
-  SAMLLogoutBehaviorEnum,
-  UnverifiedBehaviorEnum,
-  VerificationStrategyEnum,
-  XMLSignatureLocationEnum,
+  ApplicationMultiFactorTrustPolicy,
+  CanonicalizationMethod,
+  ClientAuthenticationPolicy,
+  LoginIdType,
+  LogoutBehavior,
+  MultiFactorLoginPolicy,
+  Oauth2AuthorizedURLValidationPolicy,
+  ObjectState,
+  ProofKeyForCodeExchangePolicy,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  RegistrationType,
+  SAMLLogoutBehavior,
+  UnverifiedBehavior,
+  VerificationStrategy,
+  XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -17415,7 +17370,7 @@ Retrieves the connector with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConnectorTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { ConnectorType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -17652,7 +17607,7 @@ Retrieves a single event log for the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveEventLogWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { EventLogTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { EventLogType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -17676,7 +17631,7 @@ Retrieves all the families that a user belongs to.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveFamiliesWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FamilyRoleEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -17700,7 +17655,7 @@ Retrieves all the members of a family by the unique Family Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveFamilyMembersByFamilyIdWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FamilyRoleEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -17724,7 +17679,7 @@ Retrieves the form field with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FormControlEnum, FormDataTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { FormControl, FormDataType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -17748,7 +17703,7 @@ Retrieves the form with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FormTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -17795,7 +17750,7 @@ Retrieves the IP Access Control List with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveIPAccessControlListWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { IPAccessControlEntryActionEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { IPAccessControlEntryAction } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -17911,7 +17866,7 @@ Retrieves the key for the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { KeyAlgorithmEnum, KeyTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -17935,7 +17890,7 @@ Retrieves the lambda for the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { LambdaEngineTypeEnum, LambdaTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -17959,7 +17914,7 @@ Retrieves all the lambdas for the provided type.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveLambdasByTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { LambdaEngineTypeEnum, LambdaTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -17983,7 +17938,7 @@ Retrieves the message template for the given Id. If you don't specify the id, th
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveMessageTemplateResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessageTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18007,7 +17962,7 @@ Creates a preview of the message template provided in the request, normalized to
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveMessageTemplatePreviewWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessageTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18036,7 +17991,7 @@ sdk.sdk.retrieveMessageTemplatePreviewWithId({
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     name: "Victoria Douglas",
-    type: MessageTypeEnum.Sms,
+    type: MessageType.Sms,
   },
 }).then((res: RetrieveMessageTemplatePreviewWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -18054,7 +18009,7 @@ Retrieves the message template for the given Id. If you don't specify the id, th
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessageTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18078,7 +18033,7 @@ Retrieves the messenger with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessengerTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { MessengerType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18126,10 +18081,10 @@ Retrieves the Oauth2 configuration for the application for the given Application
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveOauthConfigurationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  ClientAuthenticationPolicyEnum,
-  LogoutBehaviorEnum,
-  Oauth2AuthorizedURLValidationPolicyEnum,
-  ProofKeyForCodeExchangePolicyEnum,
+  ClientAuthenticationPolicy,
+  LogoutBehavior,
+  Oauth2AuthorizedURLValidationPolicy,
+  ProofKeyForCodeExchangePolicy,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -18154,7 +18109,7 @@ Retrieves the password validation rules for a specific tenant.  This API does no
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrievePasswordValidationRulesWithTenantIdWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachActionEnum, BreachMatchModeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachAction, BreachMatchMode } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18178,12 +18133,7 @@ Retrieves all the children for the given parent email address.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrievePendingChildrenWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18207,7 +18157,7 @@ Retrieves a single refresh token by unique Id. This is not the same thing as the
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveRefreshTokenByIdWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { DeviceTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18231,7 +18181,7 @@ Retrieves the refresh tokens that belong to the user with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveRefreshTokensWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { DeviceTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18278,12 +18228,7 @@ Retrieves the user registration for the user with the given id and the given app
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18337,23 +18282,23 @@ Retrieves the tenant for the given Id.
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  AuthenticatorAttachmentPreferenceEnum,
-  BreachActionEnum,
-  BreachMatchModeEnum,
-  CaptchaMethodEnum,
-  EmailSecurityTypeEnum,
-  ExpiryUnitEnum,
-  MultiFactorLoginPolicyEnum,
-  ObjectStateEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  SecureGeneratorTypeEnum,
-  TOTPAlgorithmEnum,
-  TransactionTypeEnum,
-  UniqueUsernameStrategyEnum,
-  UnverifiedBehaviorEnum,
-  UserVerificationRequirementEnum,
-  VerificationStrategyEnum,
+  AuthenticatorAttachmentPreference,
+  BreachAction,
+  BreachMatchMode,
+  CaptchaMethod,
+  EmailSecurityType,
+  ExpiryUnit,
+  MultiFactorLoginPolicy,
+  ObjectState,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  SecureGeneratorType,
+  TOTPAlgorithm,
+  TransactionType,
+  UniqueUsernameStrategy,
+  UnverifiedBehavior,
+  UserVerificationRequirement,
+  VerificationStrategy,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -18447,12 +18392,7 @@ Retrieves the user for the given username. OR Retrieves the user by a verificati
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveUserResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18483,7 +18423,7 @@ Retrieves all the user actions that are currently inactive. OR Retrieves the use
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveUserActionResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { TransactionTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18553,7 +18493,7 @@ Retrieves the user action for the given Id. If you pass in null for the id, this
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { TransactionTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18646,7 +18586,7 @@ Retrieve a single User consent by Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConsentStatusEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18670,7 +18610,7 @@ Retrieves all the consents for a User.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveUserConsentsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConsentStatusEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18694,7 +18634,7 @@ Call the UserInfo endpoint to retrieve User Claims from the access token issued 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveUserInfoFromAccessTokenWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { OAuthErrorReasonEnum, OAuthErrorTypeEnum, TOTPAlgorithmEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { OAuthErrorReason, OAuthErrorType, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18741,12 +18681,7 @@ Retrieves the user for the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18770,7 +18705,7 @@ Retrieves the WebAuthn credential for the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveWebAuthnCredentialWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { AttestationTypeEnum, CoseAlgorithmIdentifierEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { AttestationType, CoseAlgorithmIdentifier } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18794,7 +18729,7 @@ Retrieves all WebAuthn credentials for the given user.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveWebAuthnCredentialsForUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { AttestationTypeEnum, CoseAlgorithmIdentifierEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { AttestationType, CoseAlgorithmIdentifier } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18911,22 +18846,22 @@ Searches applications with the specified criteria and pagination.
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchApplicationsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  ApplicationMultiFactorTrustPolicyEnum,
-  CanonicalizationMethodEnum,
-  ClientAuthenticationPolicyEnum,
-  LoginIdTypeEnum,
-  LogoutBehaviorEnum,
-  MultiFactorLoginPolicyEnum,
-  Oauth2AuthorizedURLValidationPolicyEnum,
-  ObjectStateEnum,
-  ProofKeyForCodeExchangePolicyEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  RegistrationTypeEnum,
-  SAMLLogoutBehaviorEnum,
-  UnverifiedBehaviorEnum,
-  VerificationStrategyEnum,
-  XMLSignatureLocationEnum,
+  ApplicationMultiFactorTrustPolicy,
+  CanonicalizationMethod,
+  ClientAuthenticationPolicy,
+  LoginIdType,
+  LogoutBehavior,
+  MultiFactorLoginPolicy,
+  Oauth2AuthorizedURLValidationPolicy,
+  ObjectState,
+  ProofKeyForCodeExchangePolicy,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  RegistrationType,
+  SAMLLogoutBehavior,
+  UnverifiedBehavior,
+  VerificationStrategy,
+  XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -18941,7 +18876,7 @@ sdk.sdk.searchApplicationsWithId({
     numberOfResults: 759090,
     orderBy: "error",
     startRow: 85417,
-    state: ObjectStateEnum.Inactive,
+    state: ObjectState.Inactive,
     tenantId: "a4929010-eeba-49a2-946d-574355b17ec4",
   },
 }).then((res: SearchApplicationsWithIdResponse) => {
@@ -19079,7 +19014,7 @@ Searches entities with the specified criteria and pagination.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchEntitiesWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { SortEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { Sort } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19100,7 +19035,7 @@ sdk.sdk.searchEntitiesWithId({
       {
         missing: "ipsam",
         name: "Melody O'Conner",
-        order: SortEnum.Asc,
+        order: Sort.Asc,
       },
     ],
   },
@@ -19182,7 +19117,7 @@ Searches the event logs with the specified criteria and pagination.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchEventLogsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { EventLogTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { EventLogType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19198,7 +19133,7 @@ sdk.sdk.searchEventLogsWithId({
     orderBy: "sapiente",
     start: 1659380719000,
     startRow: 980488,
-    type: EventLogTypeEnum.Debug,
+    type: EventLogType.Debug,
   },
 }).then((res: SearchEventLogsWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -19216,12 +19151,7 @@ Searches group members with the specified criteria and pagination.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchGroupMembersWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19285,7 +19215,7 @@ Searches the IP Access Control Lists with the specified criteria and pagination.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchIPAccessControlListsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { IPAccessControlEntryActionEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { IPAccessControlEntryAction } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19316,7 +19246,7 @@ Searches identity providers with the specified criteria and pagination.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchIdentityProvidersWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { IdentityProviderTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { IdentityProviderType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19331,7 +19261,7 @@ sdk.sdk.searchIdentityProvidersWithId({
     numberOfResults: 602886,
     orderBy: "aperiam",
     startRow: 778610,
-    type: IdentityProviderTypeEnum.Twitter,
+    type: IdentityProviderType.Twitter,
   },
 }).then((res: SearchIdentityProvidersWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -19349,7 +19279,7 @@ Searches keys with the specified criteria and pagination.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchKeysWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { KeyAlgorithmEnum, KeyTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19359,12 +19289,12 @@ const sdk = new SDK({
 
 sdk.sdk.searchKeysWithId({
   search: {
-    algorithm: KeyAlgorithmEnum.Rs384,
+    algorithm: KeyAlgorithm.Rs384,
     name: "Caroline Lebsack",
     numberOfResults: 679748,
     orderBy: "deserunt",
     startRow: 269528,
-    type: KeyTypeEnum.Hmac,
+    type: KeyType.Hmac,
   },
 }).then((res: SearchKeysWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -19382,7 +19312,7 @@ Searches lambdas with the specified criteria and pagination.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchLambdasWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { LambdaEngineTypeEnum, LambdaTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19397,7 +19327,7 @@ sdk.sdk.searchLambdasWithId({
     numberOfResults: 669269,
     orderBy: "vero",
     startRow: 832404,
-    type: LambdaTypeEnum.SelfServiceRegistrationValidation,
+    type: LambdaType.SelfServiceRegistrationValidation,
   },
 }).then((res: SearchLambdasWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -19450,23 +19380,23 @@ Searches tenants with the specified criteria and pagination.
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchTenantsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  AuthenticatorAttachmentPreferenceEnum,
-  BreachActionEnum,
-  BreachMatchModeEnum,
-  CaptchaMethodEnum,
-  EmailSecurityTypeEnum,
-  ExpiryUnitEnum,
-  MultiFactorLoginPolicyEnum,
-  ObjectStateEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  SecureGeneratorTypeEnum,
-  TOTPAlgorithmEnum,
-  TransactionTypeEnum,
-  UniqueUsernameStrategyEnum,
-  UnverifiedBehaviorEnum,
-  UserVerificationRequirementEnum,
-  VerificationStrategyEnum,
+  AuthenticatorAttachmentPreference,
+  BreachAction,
+  BreachMatchMode,
+  CaptchaMethod,
+  EmailSecurityType,
+  ExpiryUnit,
+  MultiFactorLoginPolicy,
+  ObjectState,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  SecureGeneratorType,
+  TOTPAlgorithm,
+  TransactionType,
+  UniqueUsernameStrategy,
+  UnverifiedBehavior,
+  UserVerificationRequirement,
+  VerificationStrategy,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -19561,12 +19491,7 @@ Retrieves the users for the given ids. If any id is invalid, it is ignored.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchUsersByIdsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19590,13 +19515,7 @@ Retrieves the users for the given search criteria and pagination.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchUsersByQueryWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  SortEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, Sort, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19619,17 +19538,17 @@ sdk.sdk.searchUsersByQueryWithId({
       {
         missing: "commodi",
         name: "John Klocko",
-        order: SortEnum.Asc,
+        order: Sort.Asc,
       },
       {
         missing: "quaerat",
         name: "Byron Gutkowski IV",
-        order: SortEnum.Desc,
+        order: Sort.Desc,
       },
       {
         missing: "fugit",
         name: "Alexandra Konopelski",
-        order: SortEnum.Desc,
+        order: Sort.Desc,
       },
     ],
   },
@@ -19869,7 +19788,7 @@ Begins a login request for a 3rd party login that requires user interaction such
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { StartIdentityProviderLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { DeviceTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19904,7 +19823,7 @@ sdk.sdk.startIdentityProviderLoginWithId({
       lastAccessedAddress: "aperiam",
       lastAccessedInstant: 1659380719000,
       name: "Mae Altenwerth",
-      type: DeviceTypeEnum.Other,
+      type: DeviceType.Other,
     },
     scopes: [
       "odio",
@@ -19999,7 +19918,7 @@ Start a Two-Factor login request by generating a two-factor identifier. This cod
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { StartTwoFactorLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { TOTPAlgorithmEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -20040,11 +19959,7 @@ Start a WebAuthn authentication ceremony by generating a new challenge for the u
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { StartWebAuthnLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  PublicKeyCredentialTypeEnum,
-  UserVerificationRequirementEnum,
-  WebAuthnWorkflowEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { PublicKeyCredentialType, UserVerificationRequirement, WebAuthnWorkflow } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -20063,7 +19978,7 @@ sdk.sdk.startWebAuthnLoginWithId({
     },
   },
   userId: "39ade331-cd7b-4cb3-8dd9-452bba33a020",
-  workflow: WebAuthnWorkflowEnum.Reauthentication,
+  workflow: WebAuthnWorkflow.Reauthentication,
 }).then((res: StartWebAuthnLoginWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -20081,13 +19996,13 @@ Start a WebAuthn registration ceremony by generating a new challenge for the use
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { StartWebAuthnRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  AttestationConveyancePreferenceEnum,
-  AuthenticatorAttachmentEnum,
-  CoseAlgorithmIdentifierEnum,
-  PublicKeyCredentialTypeEnum,
-  ResidentKeyRequirementEnum,
-  UserVerificationRequirementEnum,
-  WebAuthnWorkflowEnum,
+  AttestationConveyancePreference,
+  AuthenticatorAttachment,
+  CoseAlgorithmIdentifier,
+  PublicKeyCredentialType,
+  ResidentKeyRequirement,
+  UserVerificationRequirement,
+  WebAuthnWorkflow,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -20101,7 +20016,7 @@ sdk.sdk.startWebAuthnRegistrationWithId({
   name: "Deanna Lindgren",
   userAgent: "exercitationem",
   userId: "ceaa7e33-dabe-428f-b14a-5cdcc6ab97e9",
-  workflow: WebAuthnWorkflowEnum.Bootstrap,
+  workflow: WebAuthnWorkflow.Bootstrap,
 }).then((res: StartWebAuthnRegistrationWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -20119,11 +20034,11 @@ Complete login using a 2FA challenge
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { TwoFactorLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  DeviceTypeEnum,
-  TOTPAlgorithmEnum,
+  BreachedPasswordStatus,
+  ChangePasswordReason,
+  ContentStatus,
+  DeviceType,
+  TOTPAlgorithm,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -20148,7 +20063,7 @@ sdk.sdk.twoFactorLoginWithId({
       lastAccessedAddress: "blanditiis",
       lastAccessedInstant: 1659380719000,
       name: "Veronica Gulgowski",
-      type: DeviceTypeEnum.Desktop,
+      type: DeviceType.Desktop,
     },
     scopes: [
       "nesciunt",
@@ -20232,22 +20147,22 @@ Updates the application role with the given id for the application.
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  ApplicationMultiFactorTrustPolicyEnum,
-  CanonicalizationMethodEnum,
-  ClientAuthenticationPolicyEnum,
-  LoginIdTypeEnum,
-  LogoutBehaviorEnum,
-  MultiFactorLoginPolicyEnum,
-  Oauth2AuthorizedURLValidationPolicyEnum,
-  ObjectStateEnum,
-  ProofKeyForCodeExchangePolicyEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  RegistrationTypeEnum,
-  SAMLLogoutBehaviorEnum,
-  UnverifiedBehaviorEnum,
-  VerificationStrategyEnum,
-  XMLSignatureLocationEnum,
+  ApplicationMultiFactorTrustPolicy,
+  CanonicalizationMethod,
+  ClientAuthenticationPolicy,
+  LoginIdType,
+  LogoutBehavior,
+  MultiFactorLoginPolicy,
+  Oauth2AuthorizedURLValidationPolicy,
+  ObjectState,
+  ProofKeyForCodeExchangePolicy,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  RegistrationType,
+  SAMLLogoutBehavior,
+  UnverifiedBehavior,
+  VerificationStrategy,
+  XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -20314,14 +20229,14 @@ sdk.sdk.updateApplicationRoleWithId("ipsum", "beatae", {
       accessTokenKeyId: "6de1c76a-5f9d-4a24-ba82-bf667e0b2e08",
       enabled: false,
       idTokenKeyId: "3b704eaa-eeb0-42c4-b293-2b8ecb3aaf36",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicyEnum.SlidingWindow,
+      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
       refreshTokenTimeToLiveInMinutes: 949789,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicyEnum.Reusable,
+      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
       timeToLiveInSeconds: 928564,
     },
     lambdaConfiguration: {
@@ -20340,11 +20255,11 @@ sdk.sdk.updateApplicationRoleWithId("ipsum", "beatae", {
       email: {
         templateId: "38f8763b-24e8-4479-9386-525810deb188",
       },
-      loginPolicy: MultiFactorLoginPolicyEnum.Required,
+      loginPolicy: MultiFactorLoginPolicy.Required,
       sms: {
         templateId: "2814ec96-3e15-4440-9455-74090264409a",
       },
-      trustPolicy: ApplicationMultiFactorTrustPolicyEnum.This,
+      trustPolicy: ApplicationMultiFactorTrustPolicy.This,
     },
     name: "Walter Treutel",
     oauthConfiguration: {
@@ -20356,8 +20271,8 @@ sdk.sdk.updateApplicationRoleWithId("ipsum", "beatae", {
       authorizedRedirectURLs: [
         "deserunt",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicyEnum.AllowWildcards,
-      clientAuthenticationPolicy: ClientAuthenticationPolicyEnum.NotRequiredWhenUsingPKCE,
+      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.AllowWildcards,
+      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequiredWhenUsingPKCE,
       clientId: "nobis",
       clientSecret: "natus",
       debug: false,
@@ -20367,9 +20282,9 @@ sdk.sdk.updateApplicationRoleWithId("ipsum", "beatae", {
         "sed",
       ],
       generateRefreshTokens: false,
-      logoutBehavior: LogoutBehaviorEnum.RedirectOnly,
+      logoutBehavior: LogoutBehavior.RedirectOnly,
       logoutURL: "voluptatem",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicyEnum.Required,
+      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.Required,
       requireClientAuthentication: false,
       requireRegistration: false,
     },
@@ -20396,7 +20311,7 @@ sdk.sdk.updateApplicationRoleWithId("ipsum", "beatae", {
         enabled: false,
         required: false,
       },
-      loginIdType: LoginIdTypeEnum.Username,
+      loginIdType: LoginIdType.Username,
       middleName: {
         enabled: false,
         required: false,
@@ -20405,7 +20320,7 @@ sdk.sdk.updateApplicationRoleWithId("ipsum", "beatae", {
         enabled: false,
         required: false,
       },
-      type: RegistrationTypeEnum.Basic,
+      type: RegistrationType.Basic,
     },
     registrationDeletePolicy: {
       unverified: {
@@ -20441,7 +20356,7 @@ sdk.sdk.updateApplicationRoleWithId("ipsum", "beatae", {
       issuer: "eaque",
       keyId: "50bfdf65-d216-4f05-984b-7c4d62ce6125",
       logout: {
-        behavior: SAMLLogoutBehaviorEnum.OnlyOriginator,
+        behavior: SAMLLogoutBehavior.OnlyOriginator,
         defaultVerificationKeyId: "cb81d4d7-6985-49de-909d-6cf532b4c1b2",
         keyId: "1315eb9d-b0e0-4377-af16-87d718ede685",
         requireSignedRequests: false,
@@ -20449,23 +20364,23 @@ sdk.sdk.updateApplicationRoleWithId("ipsum", "beatae", {
           enabled: false,
           keyId: "9a91efa3-254b-4d9e-bfbd-d01c8849279b",
           url: "maiores",
-          xmlSignatureC14nMethod: CanonicalizationMethodEnum.Inclusive,
+          xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
         },
-        xmlSignatureC14nMethod: CanonicalizationMethodEnum.InclusiveWithComments,
+        xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
       },
       logoutURL: "explicabo",
       requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethodEnum.InclusiveWithComments,
-      xmlSignatureLocation: XMLSignatureLocationEnum.Assertion,
+      xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
+      xmlSignatureLocation: XMLSignatureLocation.Assertion,
     },
-    state: ObjectStateEnum.PendingDelete,
+    state: ObjectState.PendingDelete,
     tenantId: "9c9b5ea0-52bd-4125-932f-81f49ffb6c68",
     themeId: "797b257d-c50b-45f1-b0ed-652403f4afeb",
     unverified: {
-      behavior: UnverifiedBehaviorEnum.Allow,
+      behavior: UnverifiedBehavior.Allow,
     },
     verificationEmailTemplateId: "733403fb-b710-4213-a328-c6fdaf88e2e4",
-    verificationStrategy: VerificationStrategyEnum.FormField,
+    verificationStrategy: VerificationStrategy.FormField,
     verifyRegistration: false,
     webAuthnConfiguration: {
       bootstrapWorkflow: {
@@ -20538,22 +20453,22 @@ Updates the application with the given Id. OR Reactivates the application with t
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  ApplicationMultiFactorTrustPolicyEnum,
-  CanonicalizationMethodEnum,
-  ClientAuthenticationPolicyEnum,
-  LoginIdTypeEnum,
-  LogoutBehaviorEnum,
-  MultiFactorLoginPolicyEnum,
-  Oauth2AuthorizedURLValidationPolicyEnum,
-  ObjectStateEnum,
-  ProofKeyForCodeExchangePolicyEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  RegistrationTypeEnum,
-  SAMLLogoutBehaviorEnum,
-  UnverifiedBehaviorEnum,
-  VerificationStrategyEnum,
-  XMLSignatureLocationEnum,
+  ApplicationMultiFactorTrustPolicy,
+  CanonicalizationMethod,
+  ClientAuthenticationPolicy,
+  LoginIdType,
+  LogoutBehavior,
+  MultiFactorLoginPolicy,
+  Oauth2AuthorizedURLValidationPolicy,
+  ObjectState,
+  ProofKeyForCodeExchangePolicy,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  RegistrationType,
+  SAMLLogoutBehavior,
+  UnverifiedBehavior,
+  VerificationStrategy,
+  XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -20624,14 +20539,14 @@ sdk.sdk.updateApplicationWithId("officia", {
       accessTokenKeyId: "43e61435-07f9-4565-ad0e-8a0dff767842",
       enabled: false,
       idTokenKeyId: "2e0a9ec6-4f29-40bf-a503-46ec9219a364",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicyEnum.SlidingWindow,
+      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
       refreshTokenTimeToLiveInMinutes: 352570,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicyEnum.Reusable,
+      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
       timeToLiveInSeconds: 984665,
     },
     lambdaConfiguration: {
@@ -20650,11 +20565,11 @@ sdk.sdk.updateApplicationWithId("officia", {
       email: {
         templateId: "2d170708-37b0-406d-aa7e-901acfe6e6cd",
       },
-      loginPolicy: MultiFactorLoginPolicyEnum.Disabled,
+      loginPolicy: MultiFactorLoginPolicy.Disabled,
       sms: {
         templateId: "6ed7986f-2ef2-44b3-b12a-f612eafb72cd",
       },
-      trustPolicy: ApplicationMultiFactorTrustPolicyEnum.Any,
+      trustPolicy: ApplicationMultiFactorTrustPolicy.Any,
     },
     name: "Abraham White V",
     oauthConfiguration: {
@@ -20668,8 +20583,8 @@ sdk.sdk.updateApplicationWithId("officia", {
         "occaecati",
         "expedita",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicyEnum.ExactMatch,
-      clientAuthenticationPolicy: ClientAuthenticationPolicyEnum.Required,
+      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.ExactMatch,
+      clientAuthenticationPolicy: ClientAuthenticationPolicy.Required,
       clientId: "eos",
       clientSecret: "neque",
       debug: false,
@@ -20678,9 +20593,9 @@ sdk.sdk.updateApplicationWithId("officia", {
         "omnis",
       ],
       generateRefreshTokens: false,
-      logoutBehavior: LogoutBehaviorEnum.RedirectOnly,
+      logoutBehavior: LogoutBehavior.RedirectOnly,
       logoutURL: "laborum",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicyEnum.NotRequired,
+      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequired,
       requireClientAuthentication: false,
       requireRegistration: false,
     },
@@ -20707,7 +20622,7 @@ sdk.sdk.updateApplicationWithId("officia", {
         enabled: false,
         required: false,
       },
-      loginIdType: LoginIdTypeEnum.Email,
+      loginIdType: LoginIdType.Email,
       middleName: {
         enabled: false,
         required: false,
@@ -20716,7 +20631,7 @@ sdk.sdk.updateApplicationWithId("officia", {
         enabled: false,
         required: false,
       },
-      type: RegistrationTypeEnum.Advanced,
+      type: RegistrationType.Advanced,
     },
     registrationDeletePolicy: {
       unverified: {
@@ -20762,7 +20677,7 @@ sdk.sdk.updateApplicationWithId("officia", {
       issuer: "nisi",
       keyId: "b8b01294-790d-4823-9013-c01fca897ca7",
       logout: {
-        behavior: SAMLLogoutBehaviorEnum.OnlyOriginator,
+        behavior: SAMLLogoutBehavior.OnlyOriginator,
         defaultVerificationKeyId: "8e47c062-d8f9-42d1-9e30-4fd42e8d809a",
         keyId: "25da96a7-3a19-4abc-aaab-8052c91ad39a",
         requireSignedRequests: false,
@@ -20770,23 +20685,23 @@ sdk.sdk.updateApplicationWithId("officia", {
           enabled: false,
           keyId: "e0a1d0cd-3a8f-4ed0-bce5-1fdea988a071",
           url: "neque",
-          xmlSignatureC14nMethod: CanonicalizationMethodEnum.InclusiveWithComments,
+          xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
         },
-        xmlSignatureC14nMethod: CanonicalizationMethodEnum.ExclusiveWithComments,
+        xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
       },
       logoutURL: "deserunt",
       requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethodEnum.ExclusiveWithComments,
-      xmlSignatureLocation: XMLSignatureLocationEnum.Response,
+      xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
+      xmlSignatureLocation: XMLSignatureLocation.Response,
     },
-    state: ObjectStateEnum.PendingDelete,
+    state: ObjectState.PendingDelete,
     tenantId: "26c139c6-961b-484e-b9db-7cb05c6fb48b",
     themeId: "236fb3ef-e6d2-47c6-b839-d46a9b94e559",
     unverified: {
-      behavior: UnverifiedBehaviorEnum.Allow,
+      behavior: UnverifiedBehavior.Allow,
     },
     verificationEmailTemplateId: "aef233e7-8dd0-4c3f-9ee2-7990fbc8125a",
-    verificationStrategy: VerificationStrategyEnum.ClickableLink,
+    verificationStrategy: VerificationStrategy.ClickableLink,
     verifyRegistration: false,
     webAuthnConfiguration: {
       bootstrapWorkflow: {
@@ -20851,7 +20766,7 @@ Updates the connector with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConnectorTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { ConnectorType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -20884,7 +20799,7 @@ sdk.sdk.updateConnectorWithId("ipsa", {
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     name: "Madeline Schulist",
-    type: ConnectorTypeEnum.Generic,
+    type: ConnectorType.Generic,
   },
 }).then((res: UpdateConnectorWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -21424,7 +21339,7 @@ Updates the form field with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FormControlEnum, FormDataTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { FormControl, FormDataType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -21436,7 +21351,7 @@ sdk.sdk.updateFormFieldWithId("itaque", {
   field: {
     confirm: false,
     consentId: "3e24b0ae-36ba-4f5f-b1c3-d87ea5ddd18d",
-    control: FormControlEnum.Textarea,
+    control: FormControl.Textarea,
     data: {
       "dolorum": {
         "voluptas": "cum",
@@ -21455,7 +21370,7 @@ sdk.sdk.updateFormFieldWithId("itaque", {
       "culpa",
     ],
     required: false,
-    type: FormDataTypeEnum.Consent,
+    type: FormDataType.Consent,
     validator: {
       enabled: false,
       expression: "et",
@@ -21465,7 +21380,7 @@ sdk.sdk.updateFormFieldWithId("itaque", {
     {
       confirm: false,
       consentId: "1e0e79d8-6d38-402b-9769-5aa60c663444",
-      control: FormControlEnum.Textarea,
+      control: FormControl.Textarea,
       data: {
         "architecto": {
           "accusantium": "maxime",
@@ -21496,7 +21411,7 @@ sdk.sdk.updateFormFieldWithId("itaque", {
         "tempore",
       ],
       required: false,
-      type: FormDataTypeEnum.Consent,
+      type: FormDataType.Consent,
       validator: {
         enabled: false,
         expression: "in",
@@ -21505,7 +21420,7 @@ sdk.sdk.updateFormFieldWithId("itaque", {
     {
       confirm: false,
       consentId: "0c71df62-83e5-4439-ac86-d1772c754218",
-      control: FormControlEnum.Number,
+      control: FormControl.Number,
       data: {
         "dicta": {
           "harum": "dolor",
@@ -21531,7 +21446,7 @@ sdk.sdk.updateFormFieldWithId("itaque", {
         "commodi",
       ],
       required: false,
-      type: FormDataTypeEnum.Date,
+      type: FormDataType.Date,
       validator: {
         enabled: false,
         expression: "quisquam",
@@ -21554,7 +21469,7 @@ Updates the form with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FormTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -21589,7 +21504,7 @@ sdk.sdk.updateFormWithId("non", {
         ],
       },
     ],
-    type: FormTypeEnum.AdminRegistration,
+    type: FormType.AdminRegistration,
   },
 }).then((res: UpdateFormWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -21607,12 +21522,7 @@ Creates a member in a group.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateGroupMembersWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -21646,7 +21556,7 @@ sdk.sdk.updateGroupMembersWithId({
         active: false,
         birthDate: "2007-12-03",
         breachedPasswordLastCheckedInstant: 1659380719000,
-        breachedPasswordStatus: BreachedPasswordStatusEnum.PasswordOnly,
+        breachedPasswordStatus: BreachedPasswordStatus.PasswordOnly,
         cleanSpeakId: "c296525b-afde-4ca0-8585-559be8c52c07",
         connectorId: "8a92c982-e85d-43b7-871b-6442daa8b0e7",
         data: {
@@ -21677,7 +21587,7 @@ sdk.sdk.updateGroupMembersWithId({
         mobilePhone: "ex",
         parentEmail: "rerum",
         password: "deserunt",
-        passwordChangeReason: ChangePasswordReasonEnum.Validation,
+        passwordChangeReason: ChangePasswordReason.Validation,
         passwordChangeRequired: false,
         passwordLastUpdateInstant: 1659380719000,
         preferredLanguages: [
@@ -21732,7 +21642,7 @@ sdk.sdk.updateGroupMembersWithId({
               "molestias": "repellat",
             },
             username: "Federico.Wisoky",
-            usernameStatus: ContentStatusEnum.Pending,
+            usernameStatus: ContentStatus.Pending,
             verified: false,
           },
           {
@@ -21769,7 +21679,7 @@ sdk.sdk.updateGroupMembersWithId({
               "aspernatur": "omnis",
             },
             username: "Adam_Bradtke",
-            usernameStatus: ContentStatusEnum.Active,
+            usernameStatus: ContentStatus.Active,
             verified: false,
           },
         ],
@@ -21780,7 +21690,7 @@ sdk.sdk.updateGroupMembersWithId({
           methods: [
             {
               authenticator: {
-                algorithm: TOTPAlgorithmEnum.HmacSha256,
+                algorithm: TOTPAlgorithm.HmacSha256,
                 codeLength: 205839,
                 timeStep: 299671,
               },
@@ -21799,7 +21709,7 @@ sdk.sdk.updateGroupMembersWithId({
         },
         uniqueUsername: "repudiandae",
         username: "Glenna.Volkman38",
-        usernameStatus: ContentStatusEnum.Pending,
+        usernameStatus: ContentStatus.Pending,
         verified: false,
       },
       userId: "72056820-9848-49be-b2c7-fe13d53d4a7a",
@@ -21820,7 +21730,7 @@ sdk.sdk.updateGroupMembersWithId({
         active: false,
         birthDate: "2007-12-03",
         breachedPasswordLastCheckedInstant: 1659380719000,
-        breachedPasswordStatus: BreachedPasswordStatusEnum.None,
+        breachedPasswordStatus: BreachedPasswordStatus.None,
         cleanSpeakId: "b20f6896-30d7-4ac7-8f7d-29ea309ff76b",
         connectorId: "02301c89-cadb-4e9d-a81b-1d810f7f8bdb",
         data: {
@@ -21860,7 +21770,7 @@ sdk.sdk.updateGroupMembersWithId({
         mobilePhone: "nihil",
         parentEmail: "quasi",
         password: "sit",
-        passwordChangeReason: ChangePasswordReasonEnum.Breached,
+        passwordChangeReason: ChangePasswordReason.Breached,
         passwordChangeRequired: false,
         passwordLastUpdateInstant: 1659380719000,
         preferredLanguages: [
@@ -21917,7 +21827,7 @@ sdk.sdk.updateGroupMembersWithId({
               "libero": "commodi",
             },
             username: "Nyasia.OHara9",
-            usernameStatus: ContentStatusEnum.Active,
+            usernameStatus: ContentStatus.Active,
             verified: false,
           },
           {
@@ -21954,7 +21864,7 @@ sdk.sdk.updateGroupMembersWithId({
               "natus": "sequi",
             },
             username: "Kennedy.Osinski",
-            usernameStatus: ContentStatusEnum.Active,
+            usernameStatus: ContentStatus.Active,
             verified: false,
           },
           {
@@ -21983,7 +21893,7 @@ sdk.sdk.updateGroupMembersWithId({
               "reiciendis": "eos",
             },
             username: "Jameson_Swift",
-            usernameStatus: ContentStatusEnum.Rejected,
+            usernameStatus: ContentStatus.Rejected,
             verified: false,
           },
           {
@@ -22026,7 +21936,7 @@ sdk.sdk.updateGroupMembersWithId({
               "consequatur": "excepturi",
             },
             username: "Deon.Greenholt21",
-            usernameStatus: ContentStatusEnum.Pending,
+            usernameStatus: ContentStatus.Pending,
             verified: false,
           },
         ],
@@ -22037,7 +21947,7 @@ sdk.sdk.updateGroupMembersWithId({
           methods: [
             {
               authenticator: {
-                algorithm: TOTPAlgorithmEnum.HmacSha256,
+                algorithm: TOTPAlgorithm.HmacSha256,
                 codeLength: 173654,
                 timeStep: 448233,
               },
@@ -22050,7 +21960,7 @@ sdk.sdk.updateGroupMembersWithId({
             },
             {
               authenticator: {
-                algorithm: TOTPAlgorithmEnum.HmacSha512,
+                algorithm: TOTPAlgorithm.HmacSha512,
                 codeLength: 513378,
                 timeStep: 346787,
               },
@@ -22063,7 +21973,7 @@ sdk.sdk.updateGroupMembersWithId({
             },
             {
               authenticator: {
-                algorithm: TOTPAlgorithmEnum.HmacSha1,
+                algorithm: TOTPAlgorithm.HmacSha1,
                 codeLength: 361821,
                 timeStep: 895759,
               },
@@ -22076,7 +21986,7 @@ sdk.sdk.updateGroupMembersWithId({
             },
             {
               authenticator: {
-                algorithm: TOTPAlgorithmEnum.HmacSha256,
+                algorithm: TOTPAlgorithm.HmacSha256,
                 codeLength: 405955,
                 timeStep: 668252,
               },
@@ -22097,7 +22007,7 @@ sdk.sdk.updateGroupMembersWithId({
         },
         uniqueUsername: "natus",
         username: "Felix_Cartwright60",
-        usernameStatus: ContentStatusEnum.Pending,
+        usernameStatus: ContentStatus.Pending,
         verified: false,
       },
       userId: "2179edba-bb18-4f6b-9ddc-7bc9a3412a23",
@@ -22115,7 +22025,7 @@ sdk.sdk.updateGroupMembersWithId({
         active: false,
         birthDate: "2007-12-03",
         breachedPasswordLastCheckedInstant: 1659380719000,
-        breachedPasswordStatus: BreachedPasswordStatusEnum.PasswordOnly,
+        breachedPasswordStatus: BreachedPasswordStatus.PasswordOnly,
         cleanSpeakId: "b1e02b74-575c-40fe-8e14-fac60d12f7e7",
         connectorId: "ba0673ce-9526-4a16-8122-ca2f19517092",
         data: {
@@ -22156,7 +22066,7 @@ sdk.sdk.updateGroupMembersWithId({
         mobilePhone: "nobis",
         parentEmail: "ratione",
         password: "at",
-        passwordChangeReason: ChangePasswordReasonEnum.Expired,
+        passwordChangeReason: ChangePasswordReason.Expired,
         passwordChangeRequired: false,
         passwordLastUpdateInstant: 1659380719000,
         preferredLanguages: [
@@ -22207,7 +22117,7 @@ sdk.sdk.updateGroupMembersWithId({
               "exercitationem": "perferendis",
             },
             username: "Robin26",
-            usernameStatus: ContentStatusEnum.Pending,
+            usernameStatus: ContentStatus.Pending,
             verified: false,
           },
           {
@@ -22242,7 +22152,7 @@ sdk.sdk.updateGroupMembersWithId({
               "sapiente": "voluptate",
             },
             username: "Ike_Towne45",
-            usernameStatus: ContentStatusEnum.Rejected,
+            usernameStatus: ContentStatus.Rejected,
             verified: false,
           },
         ],
@@ -22253,7 +22163,7 @@ sdk.sdk.updateGroupMembersWithId({
           methods: [
             {
               authenticator: {
-                algorithm: TOTPAlgorithmEnum.HmacSha1,
+                algorithm: TOTPAlgorithm.HmacSha1,
                 codeLength: 73589,
                 timeStep: 517468,
               },
@@ -22272,7 +22182,7 @@ sdk.sdk.updateGroupMembersWithId({
         },
         uniqueUsername: "aliquam",
         username: "Elise.Becker7",
-        usernameStatus: ContentStatusEnum.Active,
+        usernameStatus: ContentStatus.Active,
         verified: false,
       },
       userId: "a8ae6ea1-036a-4956-9852-001331a2feba",
@@ -22302,7 +22212,7 @@ sdk.sdk.updateGroupMembersWithId({
         active: false,
         birthDate: "2007-12-03",
         breachedPasswordLastCheckedInstant: 1659380719000,
-        breachedPasswordStatus: BreachedPasswordStatusEnum.None,
+        breachedPasswordStatus: BreachedPasswordStatus.None,
         cleanSpeakId: "5a3fdd18-9d6e-4ddb-b0d4-970df261f626",
         connectorId: "5b78f1d4-e923-4834-b2b0-d545b391239d",
         data: {
@@ -22338,7 +22248,7 @@ sdk.sdk.updateGroupMembersWithId({
         mobilePhone: "dicta",
         parentEmail: "perferendis",
         password: "modi",
-        passwordChangeReason: ChangePasswordReasonEnum.Expired,
+        passwordChangeReason: ChangePasswordReason.Expired,
         passwordChangeRequired: false,
         passwordLastUpdateInstant: 1659380719000,
         preferredLanguages: [
@@ -22377,7 +22287,7 @@ sdk.sdk.updateGroupMembersWithId({
               "saepe": "ex",
             },
             username: "Brooke_Crona",
-            usernameStatus: ContentStatusEnum.Rejected,
+            usernameStatus: ContentStatus.Rejected,
             verified: false,
           },
           {
@@ -22411,7 +22321,7 @@ sdk.sdk.updateGroupMembersWithId({
               "totam": "debitis",
             },
             username: "Aniyah30",
-            usernameStatus: ContentStatusEnum.Rejected,
+            usernameStatus: ContentStatus.Rejected,
             verified: false,
           },
           {
@@ -22456,7 +22366,7 @@ sdk.sdk.updateGroupMembersWithId({
               "iure": "ad",
             },
             username: "Adela_Hyatt89",
-            usernameStatus: ContentStatusEnum.Active,
+            usernameStatus: ContentStatus.Active,
             verified: false,
           },
           {
@@ -22495,7 +22405,7 @@ sdk.sdk.updateGroupMembersWithId({
               "inventore": "atque",
             },
             username: "Darrick_Koepp91",
-            usernameStatus: ContentStatusEnum.Rejected,
+            usernameStatus: ContentStatus.Rejected,
             verified: false,
           },
         ],
@@ -22506,7 +22416,7 @@ sdk.sdk.updateGroupMembersWithId({
           methods: [
             {
               authenticator: {
-                algorithm: TOTPAlgorithmEnum.HmacSha256,
+                algorithm: TOTPAlgorithm.HmacSha256,
                 codeLength: 204411,
                 timeStep: 978387,
               },
@@ -22519,7 +22429,7 @@ sdk.sdk.updateGroupMembersWithId({
             },
             {
               authenticator: {
-                algorithm: TOTPAlgorithmEnum.HmacSha256,
+                algorithm: TOTPAlgorithm.HmacSha256,
                 codeLength: 701698,
                 timeStep: 869283,
               },
@@ -22539,7 +22449,7 @@ sdk.sdk.updateGroupMembersWithId({
         },
         uniqueUsername: "illo",
         username: "Ignacio.Lynch",
-        usernameStatus: ContentStatusEnum.Pending,
+        usernameStatus: ContentStatus.Pending,
         verified: false,
       },
       userId: "df1bf7b4-4d3e-4de7-a0cc-9ad7cdd18844",
@@ -22651,7 +22561,7 @@ Updates the IP Access Control List with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateIPAccessControlListWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { IPAccessControlEntryActionEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { IPAccessControlEntryAction } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -22670,22 +22580,22 @@ sdk.sdk.updateIPAccessControlListWithId("sed", {
     },
     entries: [
       {
-        action: IPAccessControlEntryActionEnum.Allow,
+        action: IPAccessControlEntryAction.Allow,
         endIPAddress: "sunt",
         startIPAddress: "officia",
       },
       {
-        action: IPAccessControlEntryActionEnum.Block,
+        action: IPAccessControlEntryAction.Block,
         endIPAddress: "explicabo",
         startIPAddress: "ab",
       },
       {
-        action: IPAccessControlEntryActionEnum.Allow,
+        action: IPAccessControlEntryAction.Allow,
         endIPAddress: "quos",
         startIPAddress: "consequatur",
       },
       {
-        action: IPAccessControlEntryActionEnum.Block,
+        action: IPAccessControlEntryAction.Block,
         endIPAddress: "unde",
         startIPAddress: "porro",
       },
@@ -22712,13 +22622,13 @@ Updates the identity provider with the given Id.
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  CanonicalizationMethodEnum,
-  ClientAuthenticationMethodEnum,
-  IdentityProviderLinkingStrategyEnum,
-  IdentityProviderLoginMethodEnum,
-  IdentityProviderTypeEnum,
-  SAMLv2DestinationAssertionPolicyEnum,
-  SteamAPIModeEnum,
+  CanonicalizationMethod,
+  ClientAuthenticationMethod,
+  IdentityProviderLinkingStrategy,
+  IdentityProviderLoginMethod,
+  IdentityProviderType,
+  SAMLv2DestinationAssertionPolicy,
+  SteamAPIMode,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -22741,7 +22651,7 @@ sdk.sdk.updateIdentityProviderWithId("reiciendis", {
             "perspiciatis": "beatae",
           },
         },
-        loginMethod: IdentityProviderLoginMethodEnum.UsePopup,
+        loginMethod: IdentityProviderLoginMethod.UsePopup,
         properties: {
           api: "dicta",
           button: "ratione",
@@ -22759,7 +22669,7 @@ sdk.sdk.updateIdentityProviderWithId("reiciendis", {
             "laboriosam": "ratione",
           },
         },
-        loginMethod: IdentityProviderLoginMethodEnum.UseVendorJavaScript,
+        loginMethod: IdentityProviderLoginMethod.UseVendorJavaScript,
         properties: {
           api: "tempora",
           button: "consequatur",
@@ -22788,7 +22698,7 @@ sdk.sdk.updateIdentityProviderWithId("reiciendis", {
             "maiores": "rerum",
           },
         },
-        loginMethod: IdentityProviderLoginMethodEnum.UseVendorJavaScript,
+        loginMethod: IdentityProviderLoginMethod.UseVendorJavaScript,
         properties: {
           api: "quaerat",
           button: "explicabo",
@@ -22807,7 +22717,7 @@ sdk.sdk.updateIdentityProviderWithId("reiciendis", {
             "commodi": "dicta",
           },
         },
-        loginMethod: IdentityProviderLoginMethodEnum.UsePopup,
+        loginMethod: IdentityProviderLoginMethod.UsePopup,
         properties: {
           api: "autem",
           button: "ad",
@@ -22837,8 +22747,8 @@ sdk.sdk.updateIdentityProviderWithId("reiciendis", {
       reconcileId: "cb96ab11-1e5d-49dd-a12e-412dbec4c483",
     },
     lastUpdateInstant: 1659380719000,
-    linkingStrategy: IdentityProviderLinkingStrategyEnum.LinkByEmailForExistingUser,
-    loginMethod: IdentityProviderLoginMethodEnum.UseVendorJavaScript,
+    linkingStrategy: IdentityProviderLinkingStrategy.LinkByEmailForExistingUser,
+    loginMethod: IdentityProviderLoginMethod.UseVendorJavaScript,
     name: "Mrs. William Hodkiewicz",
     properties: {
       api: "id",
@@ -22881,7 +22791,7 @@ sdk.sdk.updateIdentityProviderWithId("reiciendis", {
         },
       },
     },
-    type: IdentityProviderTypeEnum.OpenIDConnect,
+    type: IdentityProviderType.OpenIDConnect,
   },
 }).then((res: UpdateIdentityProviderWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -22948,7 +22858,7 @@ Updates the key with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { KeyAlgorithmEnum, KeyTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -22958,7 +22868,7 @@ const sdk = new SDK({
 
 sdk.sdk.updateKeyWithId("officia", {
   key: {
-    algorithm: KeyAlgorithmEnum.Rs512,
+    algorithm: KeyAlgorithm.Rs512,
     certificate: "cum",
     certificateInformation: {
       issuer: "earum",
@@ -22984,7 +22894,7 @@ sdk.sdk.updateKeyWithId("officia", {
     privateKey: "illum",
     publicKey: "doloremque",
     secret: "soluta",
-    type: KeyTypeEnum.Rsa,
+    type: KeyType.Rsa,
   },
 }).then((res: UpdateKeyWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -23002,7 +22912,7 @@ Updates the lambda with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { LambdaEngineTypeEnum, LambdaTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -23014,12 +22924,12 @@ sdk.sdk.updateLambdaWithId("aliquid", {
   lambda: {
     body: "impedit",
     debug: false,
-    engineType: LambdaEngineTypeEnum.Nashorn,
+    engineType: LambdaEngineType.Nashorn,
     id: "7cae6bf2-fc99-486e-b410-79e80e228e71",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     name: "Allison Oberbrunner",
-    type: LambdaTypeEnum.NintendoReconcile,
+    type: LambdaType.NintendoReconcile,
   },
 }).then((res: UpdateLambdaWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -23037,7 +22947,7 @@ Updates the message template with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessageTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -23056,7 +22966,7 @@ sdk.sdk.updateMessageTemplateWithId("quisquam", {
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     name: "Rita Feeney III",
-    type: MessageTypeEnum.Sms,
+    type: MessageType.Sms,
   },
 }).then((res: UpdateMessageTemplateWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -23074,7 +22984,7 @@ Updates the messenger with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessengerTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { MessengerType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -23110,7 +23020,7 @@ sdk.sdk.updateMessengerWithId("minus", {
     lastUpdateInstant: 1659380719000,
     name: "Alonzo Bartoletti",
     transport: "molestiae",
-    type: MessengerTypeEnum.Twilio,
+    type: MessengerType.Twilio,
   },
 }).then((res: UpdateMessengerWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -23128,12 +23038,7 @@ Updates the registration for the user with the given id and the application defi
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -23210,7 +23115,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
       "architecto": "sit",
     },
     username: "Keshawn_Kiehn73",
-    usernameStatus: ContentStatusEnum.Pending,
+    usernameStatus: ContentStatus.Pending,
     verified: false,
   },
   sendSetPasswordEmail: false,
@@ -23220,7 +23125,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
     active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatusEnum.SubAddressMatch,
+    breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
     cleanSpeakId: "f11f429d-8b35-4d0c-b6a5-9f39710f30a8",
     connectorId: "0c9f210d-a0c1-468f-8a0a-1e63d05ae618",
     data: {
@@ -23282,7 +23187,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.PasswordOnly,
+          breachedPasswordStatus: BreachedPasswordStatus.PasswordOnly,
           cleanSpeakId: "f2a52687-7c4f-47c4-b4cf-097c850c4c6c",
           connectorId: "044c43df-7420-45f2-80c4-baeab4b45bb3",
           data: {
@@ -23310,7 +23215,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
           mobilePhone: "incidunt",
           parentEmail: "in",
           password: "architecto",
-          passwordChangeReason: ChangePasswordReasonEnum.Administrative,
+          passwordChangeReason: ChangePasswordReason.Administrative,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -23350,7 +23255,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
                 "magni": "a",
               },
               username: "Jeanie82",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
             {
@@ -23388,7 +23293,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
                 "sit": "omnis",
               },
               username: "Korey.Kessler45",
-              usernameStatus: ContentStatusEnum.Rejected,
+              usernameStatus: ContentStatus.Rejected,
               verified: false,
             },
           ],
@@ -23399,7 +23304,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 762619,
                   timeStep: 220797,
                 },
@@ -23412,7 +23317,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha512,
+                  algorithm: TOTPAlgorithm.HmacSha512,
                   codeLength: 718563,
                   timeStep: 846273,
                 },
@@ -23425,7 +23330,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha512,
+                  algorithm: TOTPAlgorithm.HmacSha512,
                   codeLength: 907533,
                   timeStep: 288620,
                 },
@@ -23443,7 +23348,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
           },
           uniqueUsername: "asperiores",
           username: "Grady_Macejkovic67",
-          usernameStatus: ContentStatusEnum.Active,
+          usernameStatus: ContentStatus.Active,
           verified: false,
         },
         userId: "9a717e85-84f2-4312-952f-68fb5a329c77",
@@ -23468,7 +23373,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.SubAddressMatch,
+          breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
           cleanSpeakId: "eed24273-d123-4121-8279-be41b0c74de0",
           connectorId: "a4289b1d-febb-415f-b3d7-5856722a72d7",
           data: {
@@ -23511,7 +23416,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
           mobilePhone: "sed",
           parentEmail: "atque",
           password: "earum",
-          passwordChangeReason: ChangePasswordReasonEnum.Validation,
+          passwordChangeReason: ChangePasswordReason.Validation,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -23564,7 +23469,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
                 "aperiam": "officiis",
               },
               username: "Hailie16",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
             {
@@ -23610,7 +23515,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
                 "delectus": "sapiente",
               },
               username: "Lloyd15",
-              usernameStatus: ContentStatusEnum.Rejected,
+              usernameStatus: ContentStatus.Rejected,
               verified: false,
             },
           ],
@@ -23621,7 +23526,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha256,
+                  algorithm: TOTPAlgorithm.HmacSha256,
                   codeLength: 430929,
                   timeStep: 510997,
                 },
@@ -23634,7 +23539,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 391869,
                   timeStep: 103034,
                 },
@@ -23652,7 +23557,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
           },
           uniqueUsername: "nostrum",
           username: "Sonny.Graham",
-          usernameStatus: ContentStatusEnum.Rejected,
+          usernameStatus: ContentStatus.Rejected,
           verified: false,
         },
         userId: "dc2e5b02-b137-4e67-802d-f43578d0d680",
@@ -23662,7 +23567,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
     mobilePhone: "tempora",
     parentEmail: "fugit",
     password: "ipsum",
-    passwordChangeReason: ChangePasswordReasonEnum.Validation,
+    passwordChangeReason: ChangePasswordReason.Validation,
     passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
@@ -23704,7 +23609,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
           "reiciendis": "et",
         },
         username: "Joelle.Effertz",
-        usernameStatus: ContentStatusEnum.Pending,
+        usernameStatus: ContentStatus.Pending,
         verified: false,
       },
     ],
@@ -23715,7 +23620,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
       methods: [
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha256,
+            algorithm: TOTPAlgorithm.HmacSha256,
             codeLength: 867412,
             timeStep: 329017,
           },
@@ -23728,7 +23633,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
         },
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha512,
+            algorithm: TOTPAlgorithm.HmacSha512,
             codeLength: 973543,
             timeStep: 516541,
           },
@@ -23741,7 +23646,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
         },
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha256,
+            algorithm: TOTPAlgorithm.HmacSha256,
             codeLength: 590914,
             timeStep: 566910,
           },
@@ -23761,7 +23666,7 @@ sdk.sdk.updateRegistrationWithId("officia", {
     },
     uniqueUsername: "facilis",
     username: "Keegan41",
-    usernameStatus: ContentStatusEnum.Active,
+    usernameStatus: ContentStatus.Active,
     verified: false,
   },
 }, "debitis").then((res: UpdateRegistrationWithIdResponse) => {
@@ -23780,7 +23685,7 @@ Updates the system configuration.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateSystemConfigurationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { HTTPMethodEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { HTTPMethod } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -23805,7 +23710,7 @@ sdk.sdk.updateSystemConfigurationWithId({
         "non",
       ],
       allowedMethods: [
-        HTTPMethodEnum.Get,
+        HTTPMethod.Get,
       ],
       allowedOrigins: [
         "sit",
@@ -23866,23 +23771,23 @@ Updates the tenant with the given Id.
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
-  AuthenticatorAttachmentPreferenceEnum,
-  BreachActionEnum,
-  BreachMatchModeEnum,
-  CaptchaMethodEnum,
-  EmailSecurityTypeEnum,
-  ExpiryUnitEnum,
-  MultiFactorLoginPolicyEnum,
-  ObjectStateEnum,
-  RefreshTokenExpirationPolicyEnum,
-  RefreshTokenUsagePolicyEnum,
-  SecureGeneratorTypeEnum,
-  TOTPAlgorithmEnum,
-  TransactionTypeEnum,
-  UniqueUsernameStrategyEnum,
-  UnverifiedBehaviorEnum,
-  UserVerificationRequirementEnum,
-  VerificationStrategyEnum,
+  AuthenticatorAttachmentPreference,
+  BreachAction,
+  BreachMatchMode,
+  CaptchaMethod,
+  EmailSecurityType,
+  ExpiryUnit,
+  MultiFactorLoginPolicy,
+  ObjectState,
+  RefreshTokenExpirationPolicy,
+  RefreshTokenUsagePolicy,
+  SecureGeneratorType,
+  TOTPAlgorithm,
+  TransactionType,
+  UniqueUsernameStrategy,
+  UnverifiedBehavior,
+  UserVerificationRequirement,
+  VerificationStrategy,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -23923,7 +23828,7 @@ sdk.sdk.updateTenantWithId("ipsam", {
       uiIPAccessControlListId: "083554dd-f21c-49c9-ab54-0d5ce4339633",
     },
     captchaConfiguration: {
-      captchaMethod: CaptchaMethodEnum.GoogleRecaptchaV3,
+      captchaMethod: CaptchaMethod.GoogleRecaptchaV3,
       enabled: false,
       secretKey: "doloribus",
       siteKey: "eum",
@@ -23994,17 +23899,17 @@ sdk.sdk.updateTenantWithId("ipsam", {
       passwordlessEmailTemplateId: "54c5860f-c017-44e3-9e5d-3efe6e82dcf5",
       port: 994741,
       properties: "nesciunt",
-      security: EmailSecurityTypeEnum.Ssl,
+      security: EmailSecurityType.Ssl,
       setPasswordEmailTemplateId: "2a92b387-827a-467b-8b3e-7b0c4228867f",
       twoFactorMethodAddEmailTemplateId: "befecaf3-ca7c-4421-9ea8-3c481195b0dd",
       twoFactorMethodRemoveEmailTemplateId: "cb7fb07c-89b4-4638-9fc6-e86783c99bc0",
       unverified: {
         allowEmailChangeWhenGated: false,
-        behavior: UnverifiedBehaviorEnum.Gated,
+        behavior: UnverifiedBehavior.Gated,
       },
       username: "Doug23",
       verificationEmailTemplateId: "c2c8a507-ef4e-4824-ba71-81738d28a897",
-      verificationStrategy: VerificationStrategyEnum.ClickableLink,
+      verificationStrategy: VerificationStrategy.ClickableLink,
       verifyEmail: false,
       verifyEmailWhenChanged: false,
     },
@@ -24012,19 +23917,19 @@ sdk.sdk.updateTenantWithId("ipsam", {
       events: {
         "molestiae": {
           enabled: false,
-          transactionType: TransactionTypeEnum.AbsoluteMajority,
+          transactionType: TransactionType.AbsoluteMajority,
         },
         "numquam": {
           enabled: false,
-          transactionType: TransactionTypeEnum.Any,
+          transactionType: TransactionType.Any,
         },
         "praesentium": {
           enabled: false,
-          transactionType: TransactionTypeEnum.SimpleMajority,
+          transactionType: TransactionType.SimpleMajority,
         },
         "quae": {
           enabled: false,
-          transactionType: TransactionTypeEnum.AbsoluteMajority,
+          transactionType: TransactionType.AbsoluteMajority,
         },
       },
     },
@@ -24032,51 +23937,51 @@ sdk.sdk.updateTenantWithId("ipsam", {
       authorizationGrantIdTimeToLiveInSeconds: 291975,
       changePasswordIdGenerator: {
         length: 20176,
-        type: SecureGeneratorTypeEnum.RandomAlphaNumeric,
+        type: SecureGeneratorType.RandomAlphaNumeric,
       },
       changePasswordIdTimeToLiveInSeconds: 48760,
       deviceCodeTimeToLiveInSeconds: 230709,
       deviceUserCodeIdGenerator: {
         length: 802238,
-        type: SecureGeneratorTypeEnum.RandomDigits,
+        type: SecureGeneratorType.RandomDigits,
       },
       emailVerificationIdGenerator: {
         length: 575258,
-        type: SecureGeneratorTypeEnum.RandomAlphaNumeric,
+        type: SecureGeneratorType.RandomAlphaNumeric,
       },
       emailVerificationIdTimeToLiveInSeconds: 576543,
       emailVerificationOneTimeCodeGenerator: {
         length: 670394,
-        type: SecureGeneratorTypeEnum.RandomDigits,
+        type: SecureGeneratorType.RandomDigits,
       },
       externalAuthenticationIdTimeToLiveInSeconds: 428173,
       oneTimePasswordTimeToLiveInSeconds: 358474,
       passwordlessLoginGenerator: {
         length: 452716,
-        type: SecureGeneratorTypeEnum.RandomAlphaNumeric,
+        type: SecureGeneratorType.RandomAlphaNumeric,
       },
       passwordlessLoginTimeToLiveInSeconds: 856002,
       pendingAccountLinkTimeToLiveInSeconds: 166189,
       registrationVerificationIdGenerator: {
         length: 867884,
-        type: SecureGeneratorTypeEnum.RandomDigits,
+        type: SecureGeneratorType.RandomDigits,
       },
       registrationVerificationIdTimeToLiveInSeconds: 732375,
       registrationVerificationOneTimeCodeGenerator: {
         length: 846535,
-        type: SecureGeneratorTypeEnum.RandomAlphaNumeric,
+        type: SecureGeneratorType.RandomAlphaNumeric,
       },
       samlv2AuthNRequestIdTimeToLiveInSeconds: 831487,
       setupPasswordIdGenerator: {
         length: 785899,
-        type: SecureGeneratorTypeEnum.RandomDigits,
+        type: SecureGeneratorType.RandomDigits,
       },
       setupPasswordIdTimeToLiveInSeconds: 781158,
       trustTokenTimeToLiveInSeconds: 15483,
       twoFactorIdTimeToLiveInSeconds: 287825,
       twoFactorOneTimeCodeIdGenerator: {
         length: 45040,
-        type: SecureGeneratorTypeEnum.RandomAlphaNumeric,
+        type: SecureGeneratorType.RandomAlphaNumeric,
       },
       twoFactorOneTimeCodeIdTimeToLiveInSeconds: 438854,
       twoFactorTrustIdTimeToLiveInSeconds: 945375,
@@ -24088,7 +23993,7 @@ sdk.sdk.updateTenantWithId("ipsam", {
         onPasswordReset: false,
       },
       actionDuration: 272849,
-      actionDurationUnit: ExpiryUnitEnum.Weeks,
+      actionDurationUnit: ExpiryUnit.Weeks,
       emailUser: false,
       resetCountInSeconds: 122706,
       tooManyAttempts: 309168,
@@ -24117,14 +24022,14 @@ sdk.sdk.updateTenantWithId("ipsam", {
       accessTokenKeyId: "2cfbe2df-21d9-4187-8e6f-e79c0dfc7e18",
       enabled: false,
       idTokenKeyId: "d81dc8f9-8f76-49e6-a5bb-305708ae6e32",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicyEnum.Fixed,
+      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.Fixed,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
       refreshTokenTimeToLiveInMinutes: 886853,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicyEnum.OneTimeUse,
+      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.OneTimeUse,
       timeToLiveInSeconds: 294683,
     },
     lambdaConfiguration: {
@@ -24150,7 +24055,7 @@ sdk.sdk.updateTenantWithId("ipsam", {
     },
     multiFactorConfiguration: {
       authenticator: {
-        algorithm: TOTPAlgorithmEnum.HmacSha1,
+        algorithm: TOTPAlgorithm.HmacSha1,
         codeLength: 783908,
         enabled: false,
         timeStep: 167685,
@@ -24159,7 +24064,7 @@ sdk.sdk.updateTenantWithId("ipsam", {
         enabled: false,
         templateId: "88b5648e-6301-4546-bd25-6d57ffa86687",
       },
-      loginPolicy: MultiFactorLoginPolicyEnum.Enabled,
+      loginPolicy: MultiFactorLoginPolicy.Enabled,
       sms: {
         enabled: false,
         messengerId: "48183b97-7bf6-4db1-9599-c496d2bd7104",
@@ -24178,9 +24083,9 @@ sdk.sdk.updateTenantWithId("ipsam", {
     passwordValidationRules: {
       breachDetection: {
         enabled: false,
-        matchMode: BreachMatchModeEnum.Low,
+        matchMode: BreachMatchMode.Low,
         notifyUserEmailTemplateId: "f853a2ef-63b0-45e5-b891-230f68de43ac",
-        onLogin: BreachActionEnum.RequireChange,
+        onLogin: BreachAction.RequireChange,
       },
       maxLength: 616674,
       minLength: 956050,
@@ -24254,7 +24159,7 @@ sdk.sdk.updateTenantWithId("ipsam", {
     ssoConfiguration: {
       deviceTrustTimeToLiveInSeconds: 579319,
     },
-    state: ObjectStateEnum.PendingDelete,
+    state: ObjectState.PendingDelete,
     themeId: "681fa03e-aa7c-4f2a-bb08-cbd64725a654",
     userDeletePolicy: {
       unverified: {
@@ -24267,21 +24172,21 @@ sdk.sdk.updateTenantWithId("ipsam", {
         enabled: false,
         numberOfDigits: 267891,
         separator: "accusantium",
-        strategy: UniqueUsernameStrategyEnum.OnCollision,
+        strategy: UniqueUsernameStrategy.OnCollision,
       },
     },
     webAuthnConfiguration: {
       bootstrapWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreferenceEnum.Platform,
+        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.Platform,
         enabled: false,
-        userVerificationRequirement: UserVerificationRequirementEnum.Preferred,
+        userVerificationRequirement: UserVerificationRequirement.Preferred,
       },
       debug: false,
       enabled: false,
       reauthenticationWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreferenceEnum.Any,
+        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.Any,
         enabled: false,
-        userVerificationRequirement: UserVerificationRequirementEnum.Preferred,
+        userVerificationRequirement: UserVerificationRequirement.Preferred,
       },
       relyingPartyId: "itaque",
       relyingPartyName: "asperiores",
@@ -24441,7 +24346,7 @@ Reactivates the user action with the given Id. OR Updates the user action with t
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { TransactionTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -24502,7 +24407,7 @@ sdk.sdk.updateUserActionWithId("saepe", {
     sendEndEvent: false,
     startEmailTemplateId: "ed49af77-b90b-4e5a-b090-7d4545ef7d80",
     temporal: false,
-    transactionType: TransactionTypeEnum.SimpleMajority,
+    transactionType: TransactionType.SimpleMajority,
     userEmailingEnabled: false,
     userNotificationsEnabled: false,
   },
@@ -24522,7 +24427,7 @@ Updates a single User consent by Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConsentStatusEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -24590,7 +24495,7 @@ sdk.sdk.updateUserConsentWithId("voluptates", {
     id: "5eb95ac4-f29f-4e47-b559-44520125ac5c",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    status: ConsentStatusEnum.Active,
+    status: ConsentStatus.Active,
     userId: "294ac416-ddb9-4097-9195-bbe1b4f8e117",
     values: [
       "recusandae",
@@ -24661,12 +24566,7 @@ Reactivates the user with the given Id. OR Updates the user with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { UpdateUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatusEnum,
-  ChangePasswordReasonEnum,
-  ContentStatusEnum,
-  TOTPAlgorithmEnum,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -24709,7 +24609,7 @@ sdk.sdk.updateUserWithId("explicabo", {
     active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatusEnum.CommonPassword,
+    breachedPasswordStatus: BreachedPasswordStatus.CommonPassword,
     cleanSpeakId: "284d39f8-fd5b-4aa5-8e80-25d38de4f3a6",
     connectorId: "469c544e-7869-49cd-9547-dd23d2a82de5",
     data: {
@@ -24758,7 +24658,7 @@ sdk.sdk.updateUserWithId("explicabo", {
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.SubAddressMatch,
+          breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
           cleanSpeakId: "2332164f-13ed-4272-91bb-05f404badc40",
           connectorId: "28a0fddf-10d4-457d-9039-6810f8a3b0b8",
           data: {
@@ -24792,7 +24692,7 @@ sdk.sdk.updateUserWithId("explicabo", {
           mobilePhone: "impedit",
           parentEmail: "error",
           password: "modi",
-          passwordChangeReason: ChangePasswordReasonEnum.Expired,
+          passwordChangeReason: ChangePasswordReason.Expired,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -24838,7 +24738,7 @@ sdk.sdk.updateUserWithId("explicabo", {
                 "consequuntur": "corrupti",
               },
               username: "Willa.Ernser9",
-              usernameStatus: ContentStatusEnum.Pending,
+              usernameStatus: ContentStatus.Pending,
               verified: false,
             },
           ],
@@ -24849,7 +24749,7 @@ sdk.sdk.updateUserWithId("explicabo", {
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha1,
+                  algorithm: TOTPAlgorithm.HmacSha1,
                   codeLength: 865450,
                   timeStep: 315188,
                 },
@@ -24862,7 +24762,7 @@ sdk.sdk.updateUserWithId("explicabo", {
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha256,
+                  algorithm: TOTPAlgorithm.HmacSha256,
                   codeLength: 623137,
                   timeStep: 601713,
                 },
@@ -24875,7 +24775,7 @@ sdk.sdk.updateUserWithId("explicabo", {
               },
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha512,
+                  algorithm: TOTPAlgorithm.HmacSha512,
                   codeLength: 272593,
                   timeStep: 439696,
                 },
@@ -24896,7 +24796,7 @@ sdk.sdk.updateUserWithId("explicabo", {
           },
           uniqueUsername: "sunt",
           username: "Wilton61",
-          usernameStatus: ContentStatusEnum.Pending,
+          usernameStatus: ContentStatus.Pending,
           verified: false,
         },
         userId: "70287404-37bb-4d98-994b-c101ece7003c",
@@ -24921,7 +24821,7 @@ sdk.sdk.updateUserWithId("explicabo", {
           active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatusEnum.CommonPassword,
+          breachedPasswordStatus: BreachedPasswordStatus.CommonPassword,
           cleanSpeakId: "3ce22a76-394b-4ffe-9236-e56211a37769",
           connectorId: "03019396-6756-4234-8950-1ca89cd71a88",
           data: {
@@ -24960,7 +24860,7 @@ sdk.sdk.updateUserWithId("explicabo", {
           mobilePhone: "alias",
           parentEmail: "illo",
           password: "eum",
-          passwordChangeReason: ChangePasswordReasonEnum.Administrative,
+          passwordChangeReason: ChangePasswordReason.Administrative,
           passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
@@ -25001,7 +24901,7 @@ sdk.sdk.updateUserWithId("explicabo", {
                 "atque": "a",
               },
               username: "Peyton_Kuhlman19",
-              usernameStatus: ContentStatusEnum.Active,
+              usernameStatus: ContentStatus.Active,
               verified: false,
             },
             {
@@ -25048,7 +24948,7 @@ sdk.sdk.updateUserWithId("explicabo", {
                 "aliquam": "tempore",
               },
               username: "Adriana56",
-              usernameStatus: ContentStatusEnum.Rejected,
+              usernameStatus: ContentStatus.Rejected,
               verified: false,
             },
             {
@@ -25082,7 +24982,7 @@ sdk.sdk.updateUserWithId("explicabo", {
                 "temporibus": "ipsum",
               },
               username: "Chelsie.Marquardt",
-              usernameStatus: ContentStatusEnum.Active,
+              usernameStatus: ContentStatus.Active,
               verified: false,
             },
           ],
@@ -25093,7 +24993,7 @@ sdk.sdk.updateUserWithId("explicabo", {
             methods: [
               {
                 authenticator: {
-                  algorithm: TOTPAlgorithmEnum.HmacSha512,
+                  algorithm: TOTPAlgorithm.HmacSha512,
                   codeLength: 394579,
                   timeStep: 140525,
                 },
@@ -25112,7 +25012,7 @@ sdk.sdk.updateUserWithId("explicabo", {
           },
           uniqueUsername: "tempora",
           username: "Gus.Bergnaum72",
-          usernameStatus: ContentStatusEnum.Active,
+          usernameStatus: ContentStatus.Active,
           verified: false,
         },
         userId: "9da8f43d-b2ac-4153-96d3-7836e3d20d06",
@@ -25122,7 +25022,7 @@ sdk.sdk.updateUserWithId("explicabo", {
     mobilePhone: "laborum",
     parentEmail: "maxime",
     password: "quo",
-    passwordChangeReason: ChangePasswordReasonEnum.Breached,
+    passwordChangeReason: ChangePasswordReason.Breached,
     passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
@@ -25165,7 +25065,7 @@ sdk.sdk.updateUserWithId("explicabo", {
           "eius": "voluptatum",
         },
         username: "Jacklyn.Balistreri",
-        usernameStatus: ContentStatusEnum.Pending,
+        usernameStatus: ContentStatus.Pending,
         verified: false,
       },
       {
@@ -25200,7 +25100,7 @@ sdk.sdk.updateUserWithId("explicabo", {
           "placeat": "incidunt",
         },
         username: "Carolyne76",
-        usernameStatus: ContentStatusEnum.Rejected,
+        usernameStatus: ContentStatus.Rejected,
         verified: false,
       },
       {
@@ -25246,7 +25146,7 @@ sdk.sdk.updateUserWithId("explicabo", {
           "totam": "fugit",
         },
         username: "Talia28",
-        usernameStatus: ContentStatusEnum.Pending,
+        usernameStatus: ContentStatus.Pending,
         verified: false,
       },
       {
@@ -25283,7 +25183,7 @@ sdk.sdk.updateUserWithId("explicabo", {
           "aperiam": "omnis",
         },
         username: "Stanton.Considine",
-        usernameStatus: ContentStatusEnum.Active,
+        usernameStatus: ContentStatus.Active,
         verified: false,
       },
     ],
@@ -25294,7 +25194,7 @@ sdk.sdk.updateUserWithId("explicabo", {
       methods: [
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha1,
+            algorithm: TOTPAlgorithm.HmacSha1,
             codeLength: 272566,
             timeStep: 448173,
           },
@@ -25307,7 +25207,7 @@ sdk.sdk.updateUserWithId("explicabo", {
         },
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha1,
+            algorithm: TOTPAlgorithm.HmacSha1,
             codeLength: 610161,
             timeStep: 501217,
           },
@@ -25320,7 +25220,7 @@ sdk.sdk.updateUserWithId("explicabo", {
         },
         {
           authenticator: {
-            algorithm: TOTPAlgorithmEnum.HmacSha1,
+            algorithm: TOTPAlgorithm.HmacSha1,
             codeLength: 324189,
             timeStep: 198508,
           },
@@ -25340,7 +25240,7 @@ sdk.sdk.updateUserWithId("explicabo", {
     },
     uniqueUsername: "amet",
     username: "Malinda.Becker",
-    usernameStatus: ContentStatusEnum.Pending,
+    usernameStatus: ContentStatus.Pending,
     verified: false,
   },
 }, "aliquam", "doloribus").then((res: UpdateUserWithIdResponse) => {

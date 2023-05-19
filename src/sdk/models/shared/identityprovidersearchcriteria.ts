@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { IdentityProviderTypeEnum } from "./identityprovidertypeenum";
+import { IdentityProviderType } from "./identityprovidertype";
 import { Expose } from "class-transformer";
 
 /**
@@ -32,5 +32,5 @@ export class IdentityProviderSearchCriteria extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: IdentityProviderTypeEnum;
+  type?: IdentityProviderType;
 }

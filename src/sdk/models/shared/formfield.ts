@@ -3,8 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { FormControlEnum } from "./formcontrolenum";
-import { FormDataTypeEnum } from "./formdatatypeenum";
+import { FormControl } from "./formcontrol";
+import { FormDataType } from "./formdatatype";
 import { FormFieldValidator } from "./formfieldvalidator";
 import { Expose, Type } from "class-transformer";
 
@@ -19,7 +19,7 @@ export class FormField extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "control" })
-  control?: FormControlEnum;
+  control?: FormControl;
 
   @SpeakeasyMetadata()
   @Expose({ name: "data" })
@@ -65,7 +65,7 @@ export class FormField extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: FormDataTypeEnum;
+  type?: FormDataType;
 
   @SpeakeasyMetadata()
   @Expose({ name: "validator" })

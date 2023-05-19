@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { SortEnum } from "./sortenum";
+import { Sort } from "./sort";
 import { Expose } from "class-transformer";
 
 export class SortField extends SpeakeasyBase {
@@ -17,5 +17,5 @@ export class SortField extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "order" })
-  order?: SortEnum;
+  order?: Sort;
 }

@@ -7,9 +7,9 @@ import {
   SpeakeasyBase,
   SpeakeasyMetadata,
 } from "../../../internal/utils";
-import { IdentityProviderLinkingStrategyEnum } from "./identityproviderlinkingstrategyenum";
+import { IdentityProviderLinkingStrategy } from "./identityproviderlinkingstrategy";
 import { IdentityProviderTenantConfiguration } from "./identityprovidertenantconfiguration";
-import { IdentityProviderTypeEnum } from "./identityprovidertypeenum";
+import { IdentityProviderType } from "./identityprovidertype";
 import { ProviderLambdaConfiguration } from "./providerlambdaconfiguration";
 import { XboxApplicationConfiguration } from "./xboxapplicationconfiguration";
 import { Expose, Transform, Type } from "class-transformer";
@@ -80,7 +80,7 @@ export class XboxIdentityProvider extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "linkingStrategy" })
-  linkingStrategy?: IdentityProviderLinkingStrategyEnum;
+  linkingStrategy?: IdentityProviderLinkingStrategy;
 
   @SpeakeasyMetadata()
   @Expose({ name: "name" })
@@ -109,5 +109,5 @@ export class XboxIdentityProvider extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: IdentityProviderTypeEnum;
+  type?: IdentityProviderType;
 }

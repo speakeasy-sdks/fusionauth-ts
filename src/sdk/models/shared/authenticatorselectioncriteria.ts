@@ -3,9 +3,9 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { AuthenticatorAttachmentEnum } from "./authenticatorattachmentenum";
-import { ResidentKeyRequirementEnum } from "./residentkeyrequirementenum";
-import { UserVerificationRequirementEnum } from "./userverificationrequirementenum";
+import { AuthenticatorAttachment } from "./authenticatorattachment";
+import { ResidentKeyRequirement } from "./residentkeyrequirement";
+import { UserVerificationRequirement } from "./userverificationrequirement";
 import { Expose } from "class-transformer";
 
 /**
@@ -17,7 +17,7 @@ export class AuthenticatorSelectionCriteria extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "authenticatorAttachment" })
-  authenticatorAttachment?: AuthenticatorAttachmentEnum;
+  authenticatorAttachment?: AuthenticatorAttachment;
 
   @SpeakeasyMetadata()
   @Expose({ name: "requireResidentKey" })
@@ -28,12 +28,12 @@ export class AuthenticatorSelectionCriteria extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "residentKey" })
-  residentKey?: ResidentKeyRequirementEnum;
+  residentKey?: ResidentKeyRequirement;
 
   /**
    * Used to express whether the Relying Party requires <a href="https:www.w3.orgTRwebauthn-2#user-verification">user verification<a> for the  current operation.
    */
   @SpeakeasyMetadata()
   @Expose({ name: "userVerification" })
-  userVerification?: UserVerificationRequirementEnum;
+  userVerification?: UserVerificationRequirement;
 }

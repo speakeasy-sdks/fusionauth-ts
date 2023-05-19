@@ -8,10 +8,10 @@ import {
   SpeakeasyMetadata,
 } from "../../../internal/utils";
 import { FacebookApplicationConfiguration } from "./facebookapplicationconfiguration";
-import { IdentityProviderLinkingStrategyEnum } from "./identityproviderlinkingstrategyenum";
-import { IdentityProviderLoginMethodEnum } from "./identityproviderloginmethodenum";
+import { IdentityProviderLinkingStrategy } from "./identityproviderlinkingstrategy";
+import { IdentityProviderLoginMethod } from "./identityproviderloginmethod";
 import { IdentityProviderTenantConfiguration } from "./identityprovidertenantconfiguration";
-import { IdentityProviderTypeEnum } from "./identityprovidertypeenum";
+import { IdentityProviderType } from "./identityprovidertype";
 import { ProviderLambdaConfiguration } from "./providerlambdaconfiguration";
 import { Expose, Transform, Type } from "class-transformer";
 
@@ -85,11 +85,11 @@ export class FacebookIdentityProvider extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "linkingStrategy" })
-  linkingStrategy?: IdentityProviderLinkingStrategyEnum;
+  linkingStrategy?: IdentityProviderLinkingStrategy;
 
   @SpeakeasyMetadata()
   @Expose({ name: "loginMethod" })
-  loginMethod?: IdentityProviderLoginMethodEnum;
+  loginMethod?: IdentityProviderLoginMethod;
 
   @SpeakeasyMetadata()
   @Expose({ name: "name" })
@@ -118,5 +118,5 @@ export class FacebookIdentityProvider extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: IdentityProviderTypeEnum;
+  type?: IdentityProviderType;
 }

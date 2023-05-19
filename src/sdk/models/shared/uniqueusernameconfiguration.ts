@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { UniqueUsernameStrategyEnum } from "./uniqueusernamestrategyenum";
+import { UniqueUsernameStrategy } from "./uniqueusernamestrategy";
 import { Expose } from "class-transformer";
 
 export class UniqueUsernameConfiguration extends SpeakeasyBase {
@@ -21,5 +21,5 @@ export class UniqueUsernameConfiguration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "strategy" })
-  strategy?: UniqueUsernameStrategyEnum;
+  strategy?: UniqueUsernameStrategy;
 }

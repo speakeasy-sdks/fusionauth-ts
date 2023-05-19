@@ -3,10 +3,10 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { ClientAuthenticationPolicyEnum } from "./clientauthenticationpolicyenum";
-import { LogoutBehaviorEnum } from "./logoutbehaviorenum";
-import { Oauth2AuthorizedURLValidationPolicyEnum } from "./oauth2authorizedurlvalidationpolicyenum";
-import { ProofKeyForCodeExchangePolicyEnum } from "./proofkeyforcodeexchangepolicyenum";
+import { ClientAuthenticationPolicy } from "./clientauthenticationpolicy";
+import { LogoutBehavior } from "./logoutbehavior";
+import { Oauth2AuthorizedURLValidationPolicy } from "./oauth2authorizedurlvalidationpolicy";
+import { ProofKeyForCodeExchangePolicy } from "./proofkeyforcodeexchangepolicy";
 import { Expose } from "class-transformer";
 
 export class OAuth2Configuration extends SpeakeasyBase {
@@ -20,11 +20,11 @@ export class OAuth2Configuration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "authorizedURLValidationPolicy" })
-  authorizedURLValidationPolicy?: Oauth2AuthorizedURLValidationPolicyEnum;
+  authorizedURLValidationPolicy?: Oauth2AuthorizedURLValidationPolicy;
 
   @SpeakeasyMetadata()
   @Expose({ name: "clientAuthenticationPolicy" })
-  clientAuthenticationPolicy?: ClientAuthenticationPolicyEnum;
+  clientAuthenticationPolicy?: ClientAuthenticationPolicy;
 
   @SpeakeasyMetadata()
   @Expose({ name: "clientId" })
@@ -52,7 +52,7 @@ export class OAuth2Configuration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "logoutBehavior" })
-  logoutBehavior?: LogoutBehaviorEnum;
+  logoutBehavior?: LogoutBehavior;
 
   @SpeakeasyMetadata()
   @Expose({ name: "logoutURL" })
@@ -60,7 +60,7 @@ export class OAuth2Configuration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "proofKeyForCodeExchangePolicy" })
-  proofKeyForCodeExchangePolicy?: ProofKeyForCodeExchangePolicyEnum;
+  proofKeyForCodeExchangePolicy?: ProofKeyForCodeExchangePolicy;
 
   @SpeakeasyMetadata()
   @Expose({ name: "requireClientAuthentication" })

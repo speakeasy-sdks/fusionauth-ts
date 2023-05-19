@@ -3,10 +3,10 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { CanonicalizationMethodEnum } from "./canonicalizationmethodenum";
+import { CanonicalizationMethod } from "./canonicalizationmethod";
 import { SAMLv2IdPInitiatedLoginConfiguration } from "./samlv2idpinitiatedloginconfiguration";
 import { SAMLv2Logout } from "./samlv2logout";
-import { XMLSignatureLocationEnum } from "./xmlsignaturelocationenum";
+import { XMLSignatureLocation } from "./xmlsignaturelocation";
 import { Expose, Type } from "class-transformer";
 
 export class SAMLv2Configuration extends SpeakeasyBase {
@@ -68,9 +68,9 @@ export class SAMLv2Configuration extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "xmlSignatureC14nMethod" })
-  xmlSignatureC14nMethod?: CanonicalizationMethodEnum;
+  xmlSignatureC14nMethod?: CanonicalizationMethod;
 
   @SpeakeasyMetadata()
   @Expose({ name: "xmlSignatureLocation" })
-  xmlSignatureLocation?: XMLSignatureLocationEnum;
+  xmlSignatureLocation?: XMLSignatureLocation;
 }

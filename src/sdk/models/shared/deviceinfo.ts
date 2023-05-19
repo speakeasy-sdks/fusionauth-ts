@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { DeviceTypeEnum } from "./devicetypeenum";
+import { DeviceType } from "./devicetype";
 import { Expose } from "class-transformer";
 
 export class DeviceInfo extends SpeakeasyBase {
@@ -28,5 +28,5 @@ export class DeviceInfo extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: DeviceTypeEnum;
+  type?: DeviceType;
 }

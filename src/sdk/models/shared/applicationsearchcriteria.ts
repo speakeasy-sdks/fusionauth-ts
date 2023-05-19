@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { ObjectStateEnum } from "./objectstateenum";
+import { ObjectState } from "./objectstate";
 import { Expose } from "class-transformer";
 
 /**
@@ -28,7 +28,7 @@ export class ApplicationSearchCriteria extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "state" })
-  state?: ObjectStateEnum;
+  state?: ObjectState;
 
   @SpeakeasyMetadata()
   @Expose({ name: "tenantId" })

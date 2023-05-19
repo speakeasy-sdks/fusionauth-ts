@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { ExpiryUnitEnum } from "./expiryunitenum";
+import { ExpiryUnit } from "./expiryunit";
 import { FailedAuthenticationActionCancelPolicy } from "./failedauthenticationactioncancelpolicy";
 import { Expose, Type } from "class-transformer";
 
@@ -25,7 +25,7 @@ export class FailedAuthenticationConfiguration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "actionDurationUnit" })
-  actionDurationUnit?: ExpiryUnitEnum;
+  actionDurationUnit?: ExpiryUnit;
 
   @SpeakeasyMetadata()
   @Expose({ name: "emailUser" })

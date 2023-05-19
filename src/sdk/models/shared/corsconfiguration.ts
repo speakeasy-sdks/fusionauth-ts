@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { HTTPMethodEnum } from "./httpmethodenum";
+import { HTTPMethod } from "./httpmethod";
 import { Expose } from "class-transformer";
 
 export class CORSConfiguration extends SpeakeasyBase {
@@ -17,7 +17,7 @@ export class CORSConfiguration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "allowedMethods" })
-  allowedMethods?: HTTPMethodEnum[];
+  allowedMethods?: HTTPMethod[];
 
   @SpeakeasyMetadata()
   @Expose({ name: "allowedOrigins" })

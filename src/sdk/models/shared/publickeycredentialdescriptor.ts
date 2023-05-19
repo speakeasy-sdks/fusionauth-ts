@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PublicKeyCredentialTypeEnum } from "./publickeycredentialtypeenum";
+import { PublicKeyCredentialType } from "./publickeycredentialtype";
 import { Expose } from "class-transformer";
 
 /**
@@ -23,5 +23,5 @@ export class PublicKeyCredentialDescriptor extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: PublicKeyCredentialTypeEnum;
+  type?: PublicKeyCredentialType;
 }

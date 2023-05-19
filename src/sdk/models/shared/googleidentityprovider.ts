@@ -9,10 +9,10 @@ import {
 } from "../../../internal/utils";
 import { GoogleApplicationConfiguration } from "./googleapplicationconfiguration";
 import { GoogleIdentityProviderProperties } from "./googleidentityproviderproperties";
-import { IdentityProviderLinkingStrategyEnum } from "./identityproviderlinkingstrategyenum";
-import { IdentityProviderLoginMethodEnum } from "./identityproviderloginmethodenum";
+import { IdentityProviderLinkingStrategy } from "./identityproviderlinkingstrategy";
+import { IdentityProviderLoginMethod } from "./identityproviderloginmethod";
 import { IdentityProviderTenantConfiguration } from "./identityprovidertenantconfiguration";
-import { IdentityProviderTypeEnum } from "./identityprovidertypeenum";
+import { IdentityProviderType } from "./identityprovidertype";
 import { ProviderLambdaConfiguration } from "./providerlambdaconfiguration";
 import { Expose, Transform, Type } from "class-transformer";
 
@@ -82,11 +82,11 @@ export class GoogleIdentityProvider extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "linkingStrategy" })
-  linkingStrategy?: IdentityProviderLinkingStrategyEnum;
+  linkingStrategy?: IdentityProviderLinkingStrategy;
 
   @SpeakeasyMetadata()
   @Expose({ name: "loginMethod" })
-  loginMethod?: IdentityProviderLoginMethodEnum;
+  loginMethod?: IdentityProviderLoginMethod;
 
   @SpeakeasyMetadata()
   @Expose({ name: "name" })
@@ -123,5 +123,5 @@ export class GoogleIdentityProvider extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: IdentityProviderTypeEnum;
+  type?: IdentityProviderType;
 }

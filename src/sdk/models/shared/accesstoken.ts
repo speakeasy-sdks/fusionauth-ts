@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { TokenTypeEnum } from "./tokentypeenum";
+import { TokenType } from "./tokentype";
 import { Expose } from "class-transformer";
 
 /**
@@ -39,7 +39,7 @@ export class AccessToken extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "token_type" })
-  tokenType?: TokenTypeEnum;
+  tokenType?: TokenType;
 
   @SpeakeasyMetadata()
   @Expose({ name: "userId" })

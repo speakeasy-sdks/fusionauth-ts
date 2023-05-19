@@ -4,7 +4,7 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Consent } from "./consent";
-import { ConsentStatusEnum } from "./consentstatusenum";
+import { ConsentStatus } from "./consentstatus";
 import { Expose, Type } from "class-transformer";
 
 /**
@@ -54,7 +54,7 @@ export class UserConsent extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "status" })
-  status?: ConsentStatusEnum;
+  status?: ConsentStatus;
 
   @SpeakeasyMetadata()
   @Expose({ name: "userId" })

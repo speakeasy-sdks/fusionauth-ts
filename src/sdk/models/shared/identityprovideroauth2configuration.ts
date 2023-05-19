@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { ClientAuthenticationMethodEnum } from "./clientauthenticationmethodenum";
+import { ClientAuthenticationMethod } from "./clientauthenticationmethod";
 import { Expose } from "class-transformer";
 
 export class IdentityProviderOauth2Configuration extends SpeakeasyBase {
@@ -13,7 +13,7 @@ export class IdentityProviderOauth2Configuration extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "clientAuthenticationMethod" })
-  clientAuthenticationMethod?: ClientAuthenticationMethodEnum;
+  clientAuthenticationMethod?: ClientAuthenticationMethod;
 
   @SpeakeasyMetadata()
   @Expose({ name: "client_id" })

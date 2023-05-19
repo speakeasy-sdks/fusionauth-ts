@@ -3,15 +3,15 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { CanonicalizationMethodEnum } from "./canonicalizationmethodenum";
-import { SAMLLogoutBehaviorEnum } from "./samllogoutbehaviorenum";
+import { CanonicalizationMethod } from "./canonicalizationmethod";
+import { SAMLLogoutBehavior } from "./samllogoutbehavior";
 import { SAMLv2SingleLogout } from "./samlv2singlelogout";
 import { Expose, Type } from "class-transformer";
 
 export class SAMLv2Logout extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "behavior" })
-  behavior?: SAMLLogoutBehaviorEnum;
+  behavior?: SAMLLogoutBehavior;
 
   @SpeakeasyMetadata()
   @Expose({ name: "defaultVerificationKeyId" })
@@ -35,5 +35,5 @@ export class SAMLv2Logout extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "xmlSignatureC14nMethod" })
-  xmlSignatureC14nMethod?: CanonicalizationMethodEnum;
+  xmlSignatureC14nMethod?: CanonicalizationMethod;
 }

@@ -3,8 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { CoseAlgorithmIdentifierEnum } from "./cosealgorithmidentifierenum";
-import { PublicKeyCredentialTypeEnum } from "./publickeycredentialtypeenum";
+import { CoseAlgorithmIdentifier } from "./cosealgorithmidentifier";
+import { PublicKeyCredentialType } from "./publickeycredentialtype";
 import { Expose } from "class-transformer";
 
 /**
@@ -16,12 +16,12 @@ export class PublicKeyCredentialParameters extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "alg" })
-  alg?: CoseAlgorithmIdentifierEnum;
+  alg?: CoseAlgorithmIdentifier;
 
   /**
    * Defines valid credential types. This is an extension point in the WebAuthn spec. The only defined value at this time is "public-key"
    */
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: PublicKeyCredentialTypeEnum;
+  type?: PublicKeyCredentialType;
 }

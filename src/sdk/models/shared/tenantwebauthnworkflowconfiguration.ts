@@ -3,8 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { AuthenticatorAttachmentPreferenceEnum } from "./authenticatorattachmentpreferenceenum";
-import { UserVerificationRequirementEnum } from "./userverificationrequirementenum";
+import { AuthenticatorAttachmentPreference } from "./authenticatorattachmentpreference";
+import { UserVerificationRequirement } from "./userverificationrequirement";
 import { Expose } from "class-transformer";
 
 export class TenantWebAuthnWorkflowConfiguration extends SpeakeasyBase {
@@ -13,7 +13,7 @@ export class TenantWebAuthnWorkflowConfiguration extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "authenticatorAttachmentPreference" })
-  authenticatorAttachmentPreference?: AuthenticatorAttachmentPreferenceEnum;
+  authenticatorAttachmentPreference?: AuthenticatorAttachmentPreference;
 
   @SpeakeasyMetadata()
   @Expose({ name: "enabled" })
@@ -24,5 +24,5 @@ export class TenantWebAuthnWorkflowConfiguration extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "userVerificationRequirement" })
-  userVerificationRequirement?: UserVerificationRequirementEnum;
+  userVerificationRequirement?: UserVerificationRequirement;
 }

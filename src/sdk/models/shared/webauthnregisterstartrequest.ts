@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { WebAuthnWorkflowEnum } from "./webauthnworkflowenum";
+import { WebAuthnWorkflow } from "./webauthnworkflow";
 import { Expose } from "class-transformer";
 
 /**
@@ -31,5 +31,5 @@ export class WebAuthnRegisterStartRequest extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "workflow" })
-  workflow?: WebAuthnWorkflowEnum;
+  workflow?: WebAuthnWorkflow;
 }

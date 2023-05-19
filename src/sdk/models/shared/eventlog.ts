@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { EventLogTypeEnum } from "./eventlogtypeenum";
+import { EventLogType } from "./eventlogtype";
 import { Expose } from "class-transformer";
 
 /**
@@ -30,5 +30,5 @@ export class EventLog extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: EventLogTypeEnum;
+  type?: EventLogType;
 }
