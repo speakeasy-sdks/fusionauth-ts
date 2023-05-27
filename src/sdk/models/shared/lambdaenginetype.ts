@@ -3,6 +3,6 @@
  */
 
 export enum LambdaEngineType {
-  GraalJS = "GraalJS",
-  Nashorn = "Nashorn",
+    GraalJS = "GraalJS",
+    Nashorn = "Nashorn",
 }

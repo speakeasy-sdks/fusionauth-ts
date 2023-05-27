@@ -6,27 +6,27 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class TwoFactorStartRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "applicationId" })
-  applicationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "applicationId" })
+    applicationId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "code" })
-  code?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "code" })
+    code?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "loginId" })
-  loginId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "loginId" })
+    loginId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "trustChallenge" })
-  trustChallenge?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "trustChallenge" })
+    trustChallenge?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userId" })
-  userId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userId" })
+    userId?: string;
 }

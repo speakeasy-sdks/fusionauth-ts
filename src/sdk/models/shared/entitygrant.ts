@@ -10,45 +10,45 @@ import { Expose, Type } from "class-transformer";
  * A grant for an entity to a user or another entity.
  */
 export class EntityGrant extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "data" })
-  data?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "data" })
+    data?: Record<string, Record<string, any>>;
 
-  /**
-   * Models an entity that a user can be granted permissions to. Or an entity that can be granted permissions to another entity.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "entity" })
-  @Type(() => Entity)
-  entity?: Entity;
+    /**
+     * Models an entity that a user can be granted permissions to. Or an entity that can be granted permissions to another entity.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "entity" })
+    @Type(() => Entity)
+    entity?: Entity;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "insertInstant" })
-  insertInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "insertInstant" })
+    insertInstant?: number;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "lastUpdateInstant" })
-  lastUpdateInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "lastUpdateInstant" })
+    lastUpdateInstant?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "permissions" })
-  permissions?: any[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "permissions" })
+    permissions?: any[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "recipientEntityId" })
-  recipientEntityId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "recipientEntityId" })
+    recipientEntityId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userId" })
-  userId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userId" })
+    userId?: string;
 }

@@ -9,15 +9,15 @@ import { Expose } from "class-transformer";
  * Defines an error.
  */
 export class ErrorT extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "code" })
-  code?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "code" })
+    code?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "data" })
-  data?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "data" })
+    data?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "message" })
-  message?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "message" })
+    message?: string;
 }

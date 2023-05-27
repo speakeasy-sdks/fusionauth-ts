@@ -3,6 +3,6 @@
  */
 
 export enum Oauth2AuthorizedURLValidationPolicy {
-  AllowWildcards = "AllowWildcards",
-  ExactMatch = "ExactMatch",
+    AllowWildcards = "AllowWildcards",
+    ExactMatch = "ExactMatch",
 }

@@ -7,8 +7,8 @@ import { AuditLogSearchCriteria } from "./auditlogsearchcriteria";
 import { Expose, Type } from "class-transformer";
 
 export class AuditLogSearchRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "search" })
-  @Type(() => AuditLogSearchCriteria)
-  search?: AuditLogSearchCriteria;
+    @SpeakeasyMetadata()
+    @Expose({ name: "search" })
+    @Type(() => AuditLogSearchCriteria)
+    search?: AuditLogSearchCriteria;
 }

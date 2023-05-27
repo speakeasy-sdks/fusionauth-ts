@@ -10,53 +10,53 @@ import { Expose, Type } from "class-transformer";
  * Models an entity that a user can be granted permissions to. Or an entity that can be granted permissions to another entity.
  */
 export class Entity extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "clientId" })
-  clientId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "clientId" })
+    clientId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "clientSecret" })
-  clientSecret?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "clientSecret" })
+    clientSecret?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "data" })
-  data?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "data" })
+    data?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "insertInstant" })
-  insertInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "insertInstant" })
+    insertInstant?: number;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "lastUpdateInstant" })
-  lastUpdateInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "lastUpdateInstant" })
+    lastUpdateInstant?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "parentId" })
-  parentId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "parentId" })
+    parentId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "tenantId" })
-  tenantId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "tenantId" })
+    tenantId?: string;
 
-  /**
-   * Models an entity type that has a specific set of permissions. These are global objects and can be used across tenants.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  @Type(() => EntityType)
-  type?: EntityType;
+    /**
+     * Models an entity type that has a specific set of permissions. These are global objects and can be used across tenants.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    @Type(() => EntityType)
+    type?: EntityType;
 }

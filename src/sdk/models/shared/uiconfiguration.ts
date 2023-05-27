@@ -6,15 +6,15 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class UIConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "headerColor" })
-  headerColor?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "headerColor" })
+    headerColor?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "logoURL" })
-  logoURL?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "logoURL" })
+    logoURL?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "menuFontColor" })
-  menuFontColor?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "menuFontColor" })
+    menuFontColor?: string;
 }

@@ -3,6 +3,6 @@
  */
 
 export enum LogoutBehavior {
-  RedirectOnly = "RedirectOnly",
-  AllApplications = "AllApplications",
+    RedirectOnly = "RedirectOnly",
+    AllApplications = "AllApplications",
 }

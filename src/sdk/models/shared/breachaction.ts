@@ -3,8 +3,8 @@
  */
 
 export enum BreachAction {
-  Off = "Off",
-  RecordOnly = "RecordOnly",
-  NotifyUser = "NotifyUser",
-  RequireChange = "RequireChange",
+    Off = "Off",
+    RecordOnly = "RecordOnly",
+    NotifyUser = "NotifyUser",
+    RequireChange = "RequireChange",
 }

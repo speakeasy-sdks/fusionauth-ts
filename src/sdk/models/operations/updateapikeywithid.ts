@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class UpdateAPIKeyWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the API key to update.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=keyId",
-  })
-  keyId: string;
+    /**
+     * The Id of the API key to update.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=keyId" })
+    keyId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  apiKeyRequest?: shared.APIKeyRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    apiKeyRequest?: shared.APIKeyRequest;
 }
 
 export class UpdateAPIKeyWithIdResponse extends SpeakeasyBase {
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  apiKeyResponse?: shared.APIKeyResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    apiKeyResponse?: shared.APIKeyResponse;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

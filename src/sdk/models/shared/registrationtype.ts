@@ -3,6 +3,6 @@
  */
 
 export enum RegistrationType {
-  Basic = "basic",
-  Advanced = "advanced",
+    Basic = "basic",
+    Advanced = "advanced",
 }

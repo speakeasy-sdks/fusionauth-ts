@@ -3,7 +3,7 @@
  */
 
 export enum BreachMatchMode {
-  Low = "Low",
-  Medium = "Medium",
-  High = "High",
+    Low = "Low",
+    Medium = "Medium",
+    High = "High",
 }

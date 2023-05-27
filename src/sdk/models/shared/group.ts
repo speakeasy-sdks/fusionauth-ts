@@ -7,38 +7,38 @@ import { ApplicationRole } from "./applicationrole";
 import { Expose, Type } from "class-transformer";
 
 export class Group extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "data" })
-  data?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "data" })
+    data?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "insertInstant" })
-  insertInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "insertInstant" })
+    insertInstant?: number;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "lastUpdateInstant" })
-  lastUpdateInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "lastUpdateInstant" })
+    lastUpdateInstant?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  @SpeakeasyMetadata({ elemType: ApplicationRole })
-  @Expose({ name: "roles" })
-  @Type(() => ApplicationRole)
-  roles?: ApplicationRole[];
+    @SpeakeasyMetadata({ elemType: ApplicationRole })
+    @Expose({ name: "roles" })
+    @Type(() => ApplicationRole)
+    roles?: ApplicationRole[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "tenantId" })
-  tenantId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "tenantId" })
+    tenantId?: string;
 }

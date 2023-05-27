@@ -10,25 +10,25 @@ import { Expose } from "class-transformer";
  * Event log used internally by FusionAuth to help developers debug hooks, Webhooks, email templates, etc.
  */
 export class EventLog extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: number;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "insertInstant" })
-  insertInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "insertInstant" })
+    insertInstant?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "message" })
-  message?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "message" })
+    message?: string;
 
-  /**
-   * Event Log Type
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type?: EventLogType;
+    /**
+     * Event Log Type
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type?: EventLogType;
 }

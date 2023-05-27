@@ -6,9 +6,9 @@
  * The transaction types for Webhooks and other event systems within FusionAuth.
  */
 export enum TransactionType {
-  None = "None",
-  Any = "Any",
-  SimpleMajority = "SimpleMajority",
-  SuperMajority = "SuperMajority",
-  AbsoluteMajority = "AbsoluteMajority",
+    None = "None",
+    Any = "Any",
+    SimpleMajority = "SimpleMajority",
+    SuperMajority = "SuperMajority",
+    AbsoluteMajority = "AbsoluteMajority",
 }

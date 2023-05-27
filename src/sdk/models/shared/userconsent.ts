@@ -11,56 +11,56 @@ import { Expose, Type } from "class-transformer";
  * Models a User consent.
  */
 export class UserConsent extends SpeakeasyBase {
-  /**
-   * Models a consent.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "consent" })
-  @Type(() => Consent)
-  consent?: Consent;
+    /**
+     * Models a consent.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "consent" })
+    @Type(() => Consent)
+    consent?: Consent;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "consentId" })
-  consentId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "consentId" })
+    consentId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "data" })
-  data?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "data" })
+    data?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "giverUserId" })
-  giverUserId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "giverUserId" })
+    giverUserId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "insertInstant" })
-  insertInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "insertInstant" })
+    insertInstant?: number;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "lastUpdateInstant" })
-  lastUpdateInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "lastUpdateInstant" })
+    lastUpdateInstant?: number;
 
-  /**
-   * Models a consent.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "status" })
-  status?: ConsentStatus;
+    /**
+     * Models a consent.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "status" })
+    status?: ConsentStatus;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userId" })
-  userId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userId" })
+    userId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "values" })
-  values?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "values" })
+    values?: string[];
 }

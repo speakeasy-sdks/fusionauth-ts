@@ -3,11 +3,11 @@
  */
 
 export enum HTTPMethod {
-  Get = "GET",
-  Post = "POST",
-  Put = "PUT",
-  Delete = "DELETE",
-  Head = "HEAD",
-  Options = "OPTIONS",
-  Patch = "PATCH",
+    Get = "GET",
+    Post = "POST",
+    Put = "PUT",
+    Delete = "DELETE",
+    Head = "HEAD",
+    Options = "OPTIONS",
+    Patch = "PATCH",
 }

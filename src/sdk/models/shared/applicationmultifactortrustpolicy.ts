@@ -3,7 +3,7 @@
  */
 
 export enum ApplicationMultiFactorTrustPolicy {
-  Any = "Any",
-  This = "This",
-  None = "None",
+    Any = "Any",
+    This = "This",
+    None = "None",
 }

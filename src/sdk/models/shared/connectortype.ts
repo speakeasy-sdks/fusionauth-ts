@@ -6,7 +6,7 @@
  * The types of connectors. This enum is stored as an ordinal on the <code>identities<code> table, order must be maintained.
  */
 export enum ConnectorType {
-  FusionAuth = "FusionAuth",
-  Generic = "Generic",
-  Ldap = "LDAP",
+    FusionAuth = "FusionAuth",
+    Generic = "Generic",
+    Ldap = "LDAP",
 }

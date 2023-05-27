@@ -3,7 +3,7 @@
  */
 
 export enum MessengerType {
-  Generic = "Generic",
-  Kafka = "Kafka",
-  Twilio = "Twilio",
+    Generic = "Generic",
+    Kafka = "Kafka",
+    Twilio = "Twilio",
 }

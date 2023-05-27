@@ -7,42 +7,38 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class IssueJWTWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Application Id for which you are requesting a new access token be issued.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=applicationId",
-  })
-  applicationId?: string;
+    /**
+     * The Application Id for which you are requesting a new access token be issued.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=applicationId" })
+    applicationId?: string;
 
-  /**
-   * An existing refresh token used to request a refresh token in addition to a JWT in the response. <p>The target application represented by the applicationId request parameter must have refresh tokens enabled in order to receive a refresh token in the response.</p>
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=refreshToken",
-  })
-  refreshToken?: string;
+    /**
+     * An existing refresh token used to request a refresh token in addition to a JWT in the response. <p>The target application represented by the applicationId request parameter must have refresh tokens enabled in order to receive a refresh token in the response.</p>
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=refreshToken" })
+    refreshToken?: string;
 }
 
 export class IssueJWTWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  issueResponse?: shared.IssueResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    issueResponse?: shared.IssueResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

@@ -7,8 +7,8 @@ import { SAMLv2DestinationAssertionConfiguration } from "./samlv2destinationasse
 import { Expose, Type } from "class-transformer";
 
 export class SAMLv2AssertionConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "destination" })
-  @Type(() => SAMLv2DestinationAssertionConfiguration)
-  destination?: SAMLv2DestinationAssertionConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "destination" })
+    @Type(() => SAMLv2DestinationAssertionConfiguration)
+    destination?: SAMLv2DestinationAssertionConfiguration;
 }

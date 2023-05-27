@@ -3,6 +3,6 @@
  */
 
 export enum SAMLLogoutBehavior {
-  AllParticipants = "AllParticipants",
-  OnlyOriginator = "OnlyOriginator",
+    AllParticipants = "AllParticipants",
+    OnlyOriginator = "OnlyOriginator",
 }

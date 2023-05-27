@@ -3,7 +3,7 @@
  */
 
 export enum ClientAuthenticationPolicy {
-  Required = "Required",
-  NotRequired = "NotRequired",
-  NotRequiredWhenUsingPKCE = "NotRequiredWhenUsingPKCE",
+    Required = "Required",
+    NotRequired = "NotRequired",
+    NotRequiredWhenUsingPKCE = "NotRequiredWhenUsingPKCE",
 }

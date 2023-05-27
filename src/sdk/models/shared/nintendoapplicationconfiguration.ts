@@ -6,39 +6,39 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class NintendoApplicationConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "buttonText" })
-  buttonText?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "buttonText" })
+    buttonText?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "client_id" })
-  clientId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "client_id" })
+    clientId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "client_secret" })
-  clientSecret?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "client_secret" })
+    clientSecret?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "createRegistration" })
-  createRegistration?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "createRegistration" })
+    createRegistration?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "data" })
-  data?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "data" })
+    data?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "emailClaim" })
-  emailClaim?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "emailClaim" })
+    emailClaim?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "scope" })
-  scope?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "scope" })
+    scope?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "uniqueIdClaim" })
-  uniqueIdClaim?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "uniqueIdClaim" })
+    uniqueIdClaim?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "usernameClaim" })
-  usernameClaim?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "usernameClaim" })
+    usernameClaim?: string;
 }

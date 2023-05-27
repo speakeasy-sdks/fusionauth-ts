@@ -3,8 +3,8 @@
  */
 
 export enum ChangePasswordReason {
-  Administrative = "Administrative",
-  Breached = "Breached",
-  Expired = "Expired",
-  Validation = "Validation",
+    Administrative = "Administrative",
+    Breached = "Breached",
+    Expired = "Expired",
+    Validation = "Validation",
 }

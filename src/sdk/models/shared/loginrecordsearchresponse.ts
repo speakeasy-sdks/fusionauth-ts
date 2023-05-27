@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * A raw login record response
  */
 export class LoginRecordSearchResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: DisplayableRawLogin })
-  @Expose({ name: "logins" })
-  @Type(() => DisplayableRawLogin)
-  logins?: DisplayableRawLogin[];
+    @SpeakeasyMetadata({ elemType: DisplayableRawLogin })
+    @Expose({ name: "logins" })
+    @Type(() => DisplayableRawLogin)
+    logins?: DisplayableRawLogin[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 }

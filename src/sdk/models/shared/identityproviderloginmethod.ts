@@ -3,7 +3,7 @@
  */
 
 export enum IdentityProviderLoginMethod {
-  UsePopup = "UsePopup",
-  UseRedirect = "UseRedirect",
-  UseVendorJavaScript = "UseVendorJavaScript",
+    UsePopup = "UsePopup",
+    UseRedirect = "UseRedirect",
+    UseVendorJavaScript = "UseVendorJavaScript",
 }

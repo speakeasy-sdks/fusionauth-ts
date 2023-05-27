@@ -10,67 +10,67 @@ import { XMLSignatureLocation } from "./xmlsignaturelocation";
 import { Expose, Type } from "class-transformer";
 
 export class SAMLv2Configuration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "audience" })
-  audience?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "audience" })
+    audience?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "authorizedRedirectURLs" })
-  authorizedRedirectURLs?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "authorizedRedirectURLs" })
+    authorizedRedirectURLs?: string[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "callbackURL" })
-  callbackURL?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "callbackURL" })
+    callbackURL?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "debug" })
-  debug?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "debug" })
+    debug?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "defaultVerificationKeyId" })
-  defaultVerificationKeyId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "defaultVerificationKeyId" })
+    defaultVerificationKeyId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  /**
-   * IdP Initiated login configuration
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "initiatedLogin" })
-  @Type(() => SAMLv2IdPInitiatedLoginConfiguration)
-  initiatedLogin?: SAMLv2IdPInitiatedLoginConfiguration;
+    /**
+     * IdP Initiated login configuration
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "initiatedLogin" })
+    @Type(() => SAMLv2IdPInitiatedLoginConfiguration)
+    initiatedLogin?: SAMLv2IdPInitiatedLoginConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "issuer" })
-  issuer?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "issuer" })
+    issuer?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "keyId" })
-  keyId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "keyId" })
+    keyId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "logout" })
-  @Type(() => SAMLv2Logout)
-  logout?: SAMLv2Logout;
+    @SpeakeasyMetadata()
+    @Expose({ name: "logout" })
+    @Type(() => SAMLv2Logout)
+    logout?: SAMLv2Logout;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "logoutURL" })
-  logoutURL?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "logoutURL" })
+    logoutURL?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "requireSignedRequests" })
-  requireSignedRequests?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "requireSignedRequests" })
+    requireSignedRequests?: boolean;
 
-  /**
-   * XML canonicalization method enumeration. This is used for the IdP and SP side of FusionAuth SAML.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "xmlSignatureC14nMethod" })
-  xmlSignatureC14nMethod?: CanonicalizationMethod;
+    /**
+     * XML canonicalization method enumeration. This is used for the IdP and SP side of FusionAuth SAML.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "xmlSignatureC14nMethod" })
+    xmlSignatureC14nMethod?: CanonicalizationMethod;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "xmlSignatureLocation" })
-  xmlSignatureLocation?: XMLSignatureLocation;
+    @SpeakeasyMetadata()
+    @Expose({ name: "xmlSignatureLocation" })
+    xmlSignatureLocation?: XMLSignatureLocation;
 }

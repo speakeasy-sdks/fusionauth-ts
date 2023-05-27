@@ -9,11 +9,11 @@ import { Expose } from "class-transformer";
  * Success
  */
 export class VerifyEmailResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "oneTimeCode" })
-  oneTimeCode?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "oneTimeCode" })
+    oneTimeCode?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "verificationId" })
-  verificationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "verificationId" })
+    verificationId?: string;
 }

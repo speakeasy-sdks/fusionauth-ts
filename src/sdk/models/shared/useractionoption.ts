@@ -9,14 +9,14 @@ import { Expose } from "class-transformer";
  * Models content user action options.
  */
 export class UserActionOption extends SpeakeasyBase {
-  /**
-   * Models a set of localized Strings that can be stored as JSON.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "localizedNames" })
-  localizedNames?: Record<string, any>;
+    /**
+     * Models a set of localized Strings that can be stored as JSON.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "localizedNames" })
+    localizedNames?: Record<string, any>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 }

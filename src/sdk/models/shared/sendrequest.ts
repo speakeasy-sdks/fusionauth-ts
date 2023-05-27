@@ -7,32 +7,32 @@ import { EmailAddress } from "./emailaddress";
 import { Expose, Type } from "class-transformer";
 
 export class SendRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "applicationId" })
-  applicationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "applicationId" })
+    applicationId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "bccAddresses" })
-  bccAddresses?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "bccAddresses" })
+    bccAddresses?: string[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "ccAddresses" })
-  ccAddresses?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "ccAddresses" })
+    ccAddresses?: string[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "preferredLanguages" })
-  preferredLanguages?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "preferredLanguages" })
+    preferredLanguages?: string[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "requestData" })
-  requestData?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "requestData" })
+    requestData?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata({ elemType: EmailAddress })
-  @Expose({ name: "toAddresses" })
-  @Type(() => EmailAddress)
-  toAddresses?: EmailAddress[];
+    @SpeakeasyMetadata({ elemType: EmailAddress })
+    @Expose({ name: "toAddresses" })
+    @Type(() => EmailAddress)
+    toAddresses?: EmailAddress[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userIds" })
-  userIds?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "userIds" })
+    userIds?: string[];
 }

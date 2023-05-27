@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class CreateEntityTypeWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id for the Entity Type. If not provided a secure random UUID will be generated.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=entityTypeId",
-  })
-  entityTypeId: string;
+    /**
+     * The Id for the Entity Type. If not provided a secure random UUID will be generated.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=entityTypeId" })
+    entityTypeId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  entityTypeRequest?: shared.EntityTypeRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    entityTypeRequest?: shared.EntityTypeRequest;
 }
 
 export class CreateEntityTypeWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  entityTypeResponse?: shared.EntityTypeResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    entityTypeResponse?: shared.EntityTypeResponse;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

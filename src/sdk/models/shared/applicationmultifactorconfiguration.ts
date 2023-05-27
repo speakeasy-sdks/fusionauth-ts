@@ -10,21 +10,21 @@ import { MultiFactorSMSTemplate } from "./multifactorsmstemplate";
 import { Expose, Type } from "class-transformer";
 
 export class ApplicationMultiFactorConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  @Type(() => MultiFactorEmailTemplate)
-  email?: MultiFactorEmailTemplate;
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    @Type(() => MultiFactorEmailTemplate)
+    email?: MultiFactorEmailTemplate;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "loginPolicy" })
-  loginPolicy?: MultiFactorLoginPolicy;
+    @SpeakeasyMetadata()
+    @Expose({ name: "loginPolicy" })
+    loginPolicy?: MultiFactorLoginPolicy;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "sms" })
-  @Type(() => MultiFactorSMSTemplate)
-  sms?: MultiFactorSMSTemplate;
+    @SpeakeasyMetadata()
+    @Expose({ name: "sms" })
+    @Type(() => MultiFactorSMSTemplate)
+    sms?: MultiFactorSMSTemplate;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "trustPolicy" })
-  trustPolicy?: ApplicationMultiFactorTrustPolicy;
+    @SpeakeasyMetadata()
+    @Expose({ name: "trustPolicy" })
+    trustPolicy?: ApplicationMultiFactorTrustPolicy;
 }

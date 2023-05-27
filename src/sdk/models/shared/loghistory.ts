@@ -10,8 +10,8 @@ import { Expose, Type } from "class-transformer";
  * A historical state of a user log event. Since events can be modified, this stores the historical state.
  */
 export class LogHistory extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: HistoryItem })
-  @Expose({ name: "historyItems" })
-  @Type(() => HistoryItem)
-  historyItems?: HistoryItem[];
+    @SpeakeasyMetadata({ elemType: HistoryItem })
+    @Expose({ name: "historyItems" })
+    @Type(() => HistoryItem)
+    historyItems?: HistoryItem[];
 }

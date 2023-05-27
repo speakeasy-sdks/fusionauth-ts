@@ -6,7 +6,7 @@
  * Identifies the WebAuthn workflow. This will affect the parameters used for credential creation  and request based on the Tenant configuration.
  */
 export enum WebAuthnWorkflow {
-  Bootstrap = "bootstrap",
-  General = "general",
-  Reauthentication = "reauthentication",
+    Bootstrap = "bootstrap",
+    General = "general",
+    Reauthentication = "reauthentication",
 }

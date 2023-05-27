@@ -11,17 +11,17 @@ import { Expose } from "class-transformer";
  * Supply information on credential type and algorithm to the <i>authenticator<i>.
  */
 export class PublicKeyCredentialParameters extends SpeakeasyBase {
-  /**
-   * A number identifying a cryptographic algorithm. Values should be registered with the <a  href="https:www.iana.orgassignmentscosecose.xhtml#algorithms">IANA COSE Algorithms registry<a>
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "alg" })
-  alg?: CoseAlgorithmIdentifier;
+    /**
+     * A number identifying a cryptographic algorithm. Values should be registered with the <a  href="https:www.iana.orgassignmentscosecose.xhtml#algorithms">IANA COSE Algorithms registry<a>
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "alg" })
+    alg?: CoseAlgorithmIdentifier;
 
-  /**
-   * Defines valid credential types. This is an extension point in the WebAuthn spec. The only defined value at this time is "public-key"
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type?: PublicKeyCredentialType;
+    /**
+     * Defines valid credential types. This is an extension point in the WebAuthn spec. The only defined value at this time is "public-key"
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type?: PublicKeyCredentialType;
 }

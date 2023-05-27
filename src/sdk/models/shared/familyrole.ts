@@ -3,7 +3,7 @@
  */
 
 export enum FamilyRole {
-  Child = "Child",
-  Teen = "Teen",
-  Adult = "Adult",
+    Child = "Child",
+    Teen = "Teen",
+    Adult = "Adult",
 }

@@ -11,87 +11,87 @@ import { Expose } from "class-transformer";
  * A User's WebAuthnCredential. Contains all data required to complete WebAuthn authentication ceremonies.
  */
 export class WebAuthnCredential extends SpeakeasyBase {
-  /**
-   * A number identifying a cryptographic algorithm. Values should be registered with the <a  href="https:www.iana.orgassignmentscosecose.xhtml#algorithms">IANA COSE Algorithms registry<a>
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "algorithm" })
-  algorithm?: CoseAlgorithmIdentifier;
+    /**
+     * A number identifying a cryptographic algorithm. Values should be registered with the <a  href="https:www.iana.orgassignmentscosecose.xhtml#algorithms">IANA COSE Algorithms registry<a>
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "algorithm" })
+    algorithm?: CoseAlgorithmIdentifier;
 
-  /**
-   * Used to indicate what type of attestation was included in the authenticator response for a given WebAuthn credential at the time it was created
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "attestationType" })
-  attestationType?: AttestationType;
+    /**
+     * Used to indicate what type of attestation was included in the authenticator response for a given WebAuthn credential at the time it was created
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "attestationType" })
+    attestationType?: AttestationType;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "authenticatorSupportsUserVerification" })
-  authenticatorSupportsUserVerification?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "authenticatorSupportsUserVerification" })
+    authenticatorSupportsUserVerification?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "credentialId" })
-  credentialId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "credentialId" })
+    credentialId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "data" })
-  data?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "data" })
+    data?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "discoverable" })
-  discoverable?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "discoverable" })
+    discoverable?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "displayName" })
-  displayName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "displayName" })
+    displayName?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "insertInstant" })
-  insertInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "insertInstant" })
+    insertInstant?: number;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "lastUseInstant" })
-  lastUseInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "lastUseInstant" })
+    lastUseInstant?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "publicKey" })
-  publicKey?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "publicKey" })
+    publicKey?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "relyingPartyId" })
-  relyingPartyId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "relyingPartyId" })
+    relyingPartyId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "signCount" })
-  signCount?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "signCount" })
+    signCount?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "tenantId" })
-  tenantId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "tenantId" })
+    tenantId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "transports" })
-  transports?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "transports" })
+    transports?: string[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userAgent" })
-  userAgent?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userAgent" })
+    userAgent?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userId" })
-  userId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userId" })
+    userId?: string;
 }

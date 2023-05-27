@@ -11,42 +11,42 @@ import { Expose, Type } from "class-transformer";
  * Models an entity type that has a specific set of permissions. These are global objects and can be used across tenants.
  */
 export class EntityType extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "data" })
-  data?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "data" })
+    data?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "insertInstant" })
-  insertInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "insertInstant" })
+    insertInstant?: number;
 
-  /**
-   * JWT Configuration for entities.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "jwtConfiguration" })
-  @Type(() => EntityJWTConfiguration)
-  jwtConfiguration?: EntityJWTConfiguration;
+    /**
+     * JWT Configuration for entities.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "jwtConfiguration" })
+    @Type(() => EntityJWTConfiguration)
+    jwtConfiguration?: EntityJWTConfiguration;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "lastUpdateInstant" })
-  lastUpdateInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "lastUpdateInstant" })
+    lastUpdateInstant?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  @SpeakeasyMetadata({ elemType: EntityTypePermission })
-  @Expose({ name: "permissions" })
-  @Type(() => EntityTypePermission)
-  permissions?: EntityTypePermission[];
+    @SpeakeasyMetadata({ elemType: EntityTypePermission })
+    @Expose({ name: "permissions" })
+    @Type(() => EntityTypePermission)
+    permissions?: EntityTypePermission[];
 }

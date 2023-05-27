@@ -3,6 +3,6 @@
  */
 
 export enum VerificationStrategy {
-  ClickableLink = "ClickableLink",
-  FormField = "FormField",
+    ClickableLink = "ClickableLink",
+    FormField = "FormField",
 }

@@ -3,6 +3,6 @@
  */
 
 export enum XMLSignatureLocation {
-  Assertion = "Assertion",
-  Response = "Response",
+    Assertion = "Assertion",
+    Response = "Response",
 }

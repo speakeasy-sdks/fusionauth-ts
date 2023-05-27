@@ -3,10 +3,10 @@
  */
 
 export enum FormDataType {
-  Bool = "bool",
-  Consent = "consent",
-  Date = "date",
-  Email = "email",
-  Number = "number",
-  String = "string",
+    Bool = "bool",
+    Consent = "consent",
+    Date = "date",
+    Email = "email",
+    Number = "number",
+    String = "string",
 }

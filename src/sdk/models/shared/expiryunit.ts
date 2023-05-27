@@ -3,10 +3,10 @@
  */
 
 export enum ExpiryUnit {
-  Minutes = "MINUTES",
-  Hours = "HOURS",
-  Days = "DAYS",
-  Weeks = "WEEKS",
-  Months = "MONTHS",
-  Years = "YEARS",
+    Minutes = "MINUTES",
+    Hours = "HOURS",
+    Days = "DAYS",
+    Weeks = "WEEKS",
+    Months = "MONTHS",
+    Years = "YEARS",
 }

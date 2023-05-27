@@ -9,7 +9,7 @@ import { Expose } from "class-transformer";
  * Options to request extensions during credential registration
  */
 export class WebAuthnRegistrationExtensionOptions extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "credProps" })
-  credProps?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "credProps" })
+    credProps?: boolean;
 }

@@ -7,16 +7,16 @@ import { DeviceInfo } from "./deviceinfo";
 import { Expose, Type } from "class-transformer";
 
 export class MetaData extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "data" })
-  data?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "data" })
+    data?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "device" })
-  @Type(() => DeviceInfo)
-  device?: DeviceInfo;
+    @SpeakeasyMetadata()
+    @Expose({ name: "device" })
+    @Type(() => DeviceInfo)
+    device?: DeviceInfo;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "scopes" })
-  scopes?: any[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "scopes" })
+    scopes?: any[];
 }

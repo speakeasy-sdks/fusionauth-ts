@@ -3,6 +3,6 @@
  */
 
 export enum RefreshTokenUsagePolicy {
-  Reusable = "Reusable",
-  OneTimeUse = "OneTimeUse",
+    Reusable = "Reusable",
+    OneTimeUse = "OneTimeUse",
 }

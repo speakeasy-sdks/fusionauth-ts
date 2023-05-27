@@ -6,11 +6,11 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class RememberPreviousPasswords extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "count" })
-  count?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "count" })
+    count?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 }

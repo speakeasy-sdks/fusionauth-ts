@@ -3,11 +3,11 @@
  */
 
 export enum FormControl {
-  Checkbox = "checkbox",
-  Number = "number",
-  Password = "password",
-  Radio = "radio",
-  Select = "select",
-  Textarea = "textarea",
-  Text = "text",
+    Checkbox = "checkbox",
+    Number = "number",
+    Password = "password",
+    Radio = "radio",
+    Select = "select",
+    Textarea = "textarea",
+    Text = "text",
 }

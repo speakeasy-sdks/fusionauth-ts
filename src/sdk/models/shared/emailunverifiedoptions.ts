@@ -7,11 +7,11 @@ import { UnverifiedBehavior } from "./unverifiedbehavior";
 import { Expose } from "class-transformer";
 
 export class EmailUnverifiedOptions extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "allowEmailChangeWhenGated" })
-  allowEmailChangeWhenGated?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "allowEmailChangeWhenGated" })
+    allowEmailChangeWhenGated?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "behavior" })
-  behavior?: UnverifiedBehavior;
+    @SpeakeasyMetadata()
+    @Expose({ name: "behavior" })
+    behavior?: UnverifiedBehavior;
 }

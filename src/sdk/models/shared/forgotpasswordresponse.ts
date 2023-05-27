@@ -9,7 +9,7 @@ import { Expose } from "class-transformer";
  * Forgot password response object.
  */
 export class ForgotPasswordResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "changePasswordId" })
-  changePasswordId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "changePasswordId" })
+    changePasswordId?: string;
 }

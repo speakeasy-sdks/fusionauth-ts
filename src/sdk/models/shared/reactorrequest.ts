@@ -9,11 +9,11 @@ import { Expose } from "class-transformer";
  * Request for managing FusionAuth Reactor and licenses.
  */
 export class ReactorRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "license" })
-  license?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "license" })
+    license?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "licenseId" })
-  licenseId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "licenseId" })
+    licenseId?: string;
 }

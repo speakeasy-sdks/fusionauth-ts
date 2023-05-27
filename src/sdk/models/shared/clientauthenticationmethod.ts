@@ -3,7 +3,7 @@
  */
 
 export enum ClientAuthenticationMethod {
-  None = "none",
-  ClientSecretBasic = "client_secret_basic",
-  ClientSecretPost = "client_secret_post",
+    None = "none",
+    ClientSecretBasic = "client_secret_basic",
+    ClientSecretPost = "client_secret_post",
 }

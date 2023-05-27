@@ -6,8 +6,8 @@
  * Used to communicate whether and how authenticator attestation should be delivered to the Relying Party
  */
 export enum AttestationConveyancePreference {
-  None = "none",
-  Indirect = "indirect",
-  Direct = "direct",
-  Enterprise = "enterprise",
+    None = "none",
+    Indirect = "indirect",
+    Direct = "direct",
+    Enterprise = "enterprise",
 }

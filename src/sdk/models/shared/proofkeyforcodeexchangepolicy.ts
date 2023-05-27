@@ -3,7 +3,7 @@
  */
 
 export enum ProofKeyForCodeExchangePolicy {
-  Required = "Required",
-  NotRequired = "NotRequired",
-  NotRequiredWhenUsingClientAuthentication = "NotRequiredWhenUsingClientAuthentication",
+    Required = "Required",
+    NotRequired = "NotRequired",
+    NotRequiredWhenUsingClientAuthentication = "NotRequiredWhenUsingClientAuthentication",
 }

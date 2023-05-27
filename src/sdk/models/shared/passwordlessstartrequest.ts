@@ -6,15 +6,15 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class PasswordlessStartRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "applicationId" })
-  applicationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "applicationId" })
+    applicationId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "loginId" })
-  loginId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "loginId" })
+    loginId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state?: Record<string, Record<string, any>>;
 }

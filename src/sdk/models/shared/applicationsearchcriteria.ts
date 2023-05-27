@@ -10,27 +10,27 @@ import { Expose } from "class-transformer";
  * Search criteria for Applications
  */
 export class ApplicationSearchCriteria extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "numberOfResults" })
-  numberOfResults?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "numberOfResults" })
+    numberOfResults?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "orderBy" })
-  orderBy?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "orderBy" })
+    orderBy?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "startRow" })
-  startRow?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "startRow" })
+    startRow?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state?: ObjectState;
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state?: ObjectState;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "tenantId" })
-  tenantId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "tenantId" })
+    tenantId?: string;
 }

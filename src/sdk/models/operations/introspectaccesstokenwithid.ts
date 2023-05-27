@@ -7,24 +7,24 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class IntrospectAccessTokenWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  introspectResponse?: Record<string, any>;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    introspectResponse?: Record<string, any>;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  oAuthError?: shared.OAuthError;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    oAuthError?: shared.OAuthError;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

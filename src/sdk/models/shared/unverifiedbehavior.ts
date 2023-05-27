@@ -3,6 +3,6 @@
  */
 
 export enum UnverifiedBehavior {
-  Allow = "Allow",
-  Gated = "Gated",
+    Allow = "Allow",
+    Gated = "Gated",
 }

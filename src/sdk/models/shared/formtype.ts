@@ -3,8 +3,8 @@
  */
 
 export enum FormType {
-  Registration = "registration",
-  AdminRegistration = "adminRegistration",
-  AdminUser = "adminUser",
-  SelfServiceUser = "selfServiceUser",
+    Registration = "registration",
+    AdminRegistration = "adminRegistration",
+    AdminUser = "adminUser",
+    SelfServiceUser = "selfServiceUser",
 }

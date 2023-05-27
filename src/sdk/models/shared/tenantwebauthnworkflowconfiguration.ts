@@ -8,21 +8,21 @@ import { UserVerificationRequirement } from "./userverificationrequirement";
 import { Expose } from "class-transformer";
 
 export class TenantWebAuthnWorkflowConfiguration extends SpeakeasyBase {
-  /**
-   * Describes the authenticator attachment modality preference for a WebAuthn workflow. See {@link AuthenticatorAttachment}
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "authenticatorAttachmentPreference" })
-  authenticatorAttachmentPreference?: AuthenticatorAttachmentPreference;
+    /**
+     * Describes the authenticator attachment modality preference for a WebAuthn workflow. See {@link AuthenticatorAttachment}
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "authenticatorAttachmentPreference" })
+    authenticatorAttachmentPreference?: AuthenticatorAttachmentPreference;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  /**
-   * Used to express whether the Relying Party requires <a href="https:www.w3.orgTRwebauthn-2#user-verification">user verification<a> for the  current operation.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "userVerificationRequirement" })
-  userVerificationRequirement?: UserVerificationRequirement;
+    /**
+     * Used to express whether the Relying Party requires <a href="https:www.w3.orgTRwebauthn-2#user-verification">user verification<a> for the  current operation.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "userVerificationRequirement" })
+    userVerificationRequirement?: UserVerificationRequirement;
 }

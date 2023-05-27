@@ -8,19 +8,19 @@ import { BreachMatchMode } from "./breachmatchmode";
 import { Expose } from "class-transformer";
 
 export class PasswordBreachDetection extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "matchMode" })
-  matchMode?: BreachMatchMode;
+    @SpeakeasyMetadata()
+    @Expose({ name: "matchMode" })
+    matchMode?: BreachMatchMode;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "notifyUserEmailTemplateId" })
-  notifyUserEmailTemplateId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "notifyUserEmailTemplateId" })
+    notifyUserEmailTemplateId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "onLogin" })
-  onLogin?: BreachAction;
+    @SpeakeasyMetadata()
+    @Expose({ name: "onLogin" })
+    onLogin?: BreachAction;
 }

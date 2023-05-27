@@ -3,6 +3,6 @@
  */
 
 export enum IPAccessControlEntryAction {
-  Allow = "Allow",
-  Block = "Block",
+    Allow = "Allow",
+    Block = "Block",
 }

@@ -7,47 +7,47 @@ import { ClientAuthenticationMethod } from "./clientauthenticationmethod";
 import { Expose } from "class-transformer";
 
 export class IdentityProviderOauth2Configuration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "authorization_endpoint" })
-  authorizationEndpoint?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "authorization_endpoint" })
+    authorizationEndpoint?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "clientAuthenticationMethod" })
-  clientAuthenticationMethod?: ClientAuthenticationMethod;
+    @SpeakeasyMetadata()
+    @Expose({ name: "clientAuthenticationMethod" })
+    clientAuthenticationMethod?: ClientAuthenticationMethod;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "client_id" })
-  clientId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "client_id" })
+    clientId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "client_secret" })
-  clientSecret?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "client_secret" })
+    clientSecret?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "emailClaim" })
-  emailClaim?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "emailClaim" })
+    emailClaim?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "issuer" })
-  issuer?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "issuer" })
+    issuer?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "scope" })
-  scope?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "scope" })
+    scope?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "token_endpoint" })
-  tokenEndpoint?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "token_endpoint" })
+    tokenEndpoint?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "uniqueIdClaim" })
-  uniqueIdClaim?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "uniqueIdClaim" })
+    uniqueIdClaim?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userinfo_endpoint" })
-  userinfoEndpoint?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userinfo_endpoint" })
+    userinfoEndpoint?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "usernameClaim" })
-  usernameClaim?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "usernameClaim" })
+    usernameClaim?: string;
 }

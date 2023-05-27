@@ -6,6 +6,6 @@
  * Models a consent.
  */
 export enum ConsentStatus {
-  Active = "Active",
-  Revoked = "Revoked",
+    Active = "Active",
+    Revoked = "Revoked",
 }

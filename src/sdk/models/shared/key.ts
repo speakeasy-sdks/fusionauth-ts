@@ -12,77 +12,77 @@ import { Expose, Type } from "class-transformer";
  * Domain for a public key, key pair or an HMAC secret. This is used by KeyMaster to manage keys for JWTs, SAML, etc.
  */
 export class Key extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "algorithm" })
-  algorithm?: KeyAlgorithm;
+    @SpeakeasyMetadata()
+    @Expose({ name: "algorithm" })
+    algorithm?: KeyAlgorithm;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "certificate" })
-  certificate?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "certificate" })
+    certificate?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "certificateInformation" })
-  @Type(() => CertificateInformation)
-  certificateInformation?: CertificateInformation;
+    @SpeakeasyMetadata()
+    @Expose({ name: "certificateInformation" })
+    @Type(() => CertificateInformation)
+    certificateInformation?: CertificateInformation;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "expirationInstant" })
-  expirationInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "expirationInstant" })
+    expirationInstant?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "hasPrivateKey" })
-  hasPrivateKey?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "hasPrivateKey" })
+    hasPrivateKey?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "insertInstant" })
-  insertInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "insertInstant" })
+    insertInstant?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "issuer" })
-  issuer?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "issuer" })
+    issuer?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "kid" })
-  kid?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "kid" })
+    kid?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "lastUpdateInstant" })
-  lastUpdateInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "lastUpdateInstant" })
+    lastUpdateInstant?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "length" })
-  length?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "length" })
+    length?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "privateKey" })
-  privateKey?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "privateKey" })
+    privateKey?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "publicKey" })
-  publicKey?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "publicKey" })
+    publicKey?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "secret" })
-  secret?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "secret" })
+    secret?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type?: KeyType;
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type?: KeyType;
 }

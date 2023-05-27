@@ -3,7 +3,7 @@
  */
 
 export enum EmailSecurityType {
-  None = "NONE",
-  Ssl = "SSL",
-  Tls = "TLS",
+    None = "NONE",
+    Ssl = "SSL",
+    Tls = "TLS",
 }

@@ -7,24 +7,24 @@ import { IdentityProviderOauth2Configuration } from "./identityprovideroauth2con
 import { Expose, Type } from "class-transformer";
 
 export class OpenIdConnectApplicationConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "buttonImageURL" })
-  buttonImageURL?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "buttonImageURL" })
+    buttonImageURL?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "buttonText" })
-  buttonText?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "buttonText" })
+    buttonText?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "createRegistration" })
-  createRegistration?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "createRegistration" })
+    createRegistration?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "data" })
-  data?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "data" })
+    data?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "oauth2" })
-  @Type(() => IdentityProviderOauth2Configuration)
-  oauth2?: IdentityProviderOauth2Configuration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "oauth2" })
+    @Type(() => IdentityProviderOauth2Configuration)
+    oauth2?: IdentityProviderOauth2Configuration;
 }

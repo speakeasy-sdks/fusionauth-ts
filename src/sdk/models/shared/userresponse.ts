@@ -10,30 +10,30 @@ import { Expose, Type } from "class-transformer";
  * User API response object.
  */
 export class UserResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "emailVerificationId" })
-  emailVerificationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "emailVerificationId" })
+    emailVerificationId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "registrationVerificationIds" })
-  registrationVerificationIds?: Record<string, string>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "registrationVerificationIds" })
+    registrationVerificationIds?: Record<string, string>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "token" })
-  token?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "token" })
+    token?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "tokenExpirationInstant" })
-  tokenExpirationInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "tokenExpirationInstant" })
+    tokenExpirationInstant?: number;
 
-  /**
-   * The global view of a User. This object contains all global information about the user including birth date, registration information  preferred languages, global attributes, etc.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "user" })
-  @Type(() => User)
-  user?: User;
+    /**
+     * The global view of a User. This object contains all global information about the user including birth date, registration information  preferred languages, global attributes, etc.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "user" })
+    @Type(() => User)
+    user?: User;
 }

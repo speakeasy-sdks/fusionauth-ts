@@ -10,8 +10,8 @@ import { Expose, Type } from "class-transformer";
  * Success
  */
 export class PasswordValidationRulesResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "passwordValidationRules" })
-  @Type(() => PasswordValidationRules)
-  passwordValidationRules?: PasswordValidationRules;
+    @SpeakeasyMetadata()
+    @Expose({ name: "passwordValidationRules" })
+    @Type(() => PasswordValidationRules)
+    passwordValidationRules?: PasswordValidationRules;
 }

@@ -3,7 +3,7 @@
  */
 
 export enum ObjectState {
-  Active = "Active",
-  Inactive = "Inactive",
-  PendingDelete = "PendingDelete",
+    Active = "Active",
+    Inactive = "Inactive",
+    PendingDelete = "PendingDelete",
 }

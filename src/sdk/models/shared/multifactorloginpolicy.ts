@@ -3,7 +3,7 @@
  */
 
 export enum MultiFactorLoginPolicy {
-  Disabled = "Disabled",
-  Enabled = "Enabled",
-  Required = "Required",
+    Disabled = "Disabled",
+    Enabled = "Enabled",
+    Required = "Required",
 }

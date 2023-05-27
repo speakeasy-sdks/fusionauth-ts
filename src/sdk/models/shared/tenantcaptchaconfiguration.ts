@@ -7,23 +7,23 @@ import { CaptchaMethod } from "./captchamethod";
 import { Expose } from "class-transformer";
 
 export class TenantCaptchaConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "captchaMethod" })
-  captchaMethod?: CaptchaMethod;
+    @SpeakeasyMetadata()
+    @Expose({ name: "captchaMethod" })
+    captchaMethod?: CaptchaMethod;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "secretKey" })
-  secretKey?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "secretKey" })
+    secretKey?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "siteKey" })
-  siteKey?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "siteKey" })
+    siteKey?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "threshold" })
-  threshold?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "threshold" })
+    threshold?: number;
 }

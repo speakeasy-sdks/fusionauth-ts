@@ -6,12 +6,12 @@
  * The IdP behavior when no user link has been made yet.
  */
 export enum IdentityProviderLinkingStrategy {
-  CreatePendingLink = "CreatePendingLink",
-  Disabled = "Disabled",
-  LinkAnonymously = "LinkAnonymously",
-  LinkByEmail = "LinkByEmail",
-  LinkByEmailForExistingUser = "LinkByEmailForExistingUser",
-  LinkByUsername = "LinkByUsername",
-  LinkByUsernameForExistingUser = "LinkByUsernameForExistingUser",
-  Unsupported = "Unsupported",
+    CreatePendingLink = "CreatePendingLink",
+    Disabled = "Disabled",
+    LinkAnonymously = "LinkAnonymously",
+    LinkByEmail = "LinkByEmail",
+    LinkByEmailForExistingUser = "LinkByEmailForExistingUser",
+    LinkByUsername = "LinkByUsername",
+    LinkByUsernameForExistingUser = "LinkByUsernameForExistingUser",
+    Unsupported = "Unsupported",
 }

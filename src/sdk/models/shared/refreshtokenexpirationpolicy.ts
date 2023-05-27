@@ -3,6 +3,6 @@
  */
 
 export enum RefreshTokenExpirationPolicy {
-  Fixed = "Fixed",
-  SlidingWindow = "SlidingWindow",
+    Fixed = "Fixed",
+    SlidingWindow = "SlidingWindow",
 }

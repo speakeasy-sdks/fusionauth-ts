@@ -8,28 +8,28 @@ import { IdentityProviderType } from "./identityprovidertype";
 import { Expose, Type } from "class-transformer";
 
 export class IdentityProviderDetails extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "applicationIds" })
-  applicationIds?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "applicationIds" })
+    applicationIds?: string[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "idpEndpoint" })
-  idpEndpoint?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "idpEndpoint" })
+    idpEndpoint?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "oauth2" })
-  @Type(() => IdentityProviderOauth2Configuration)
-  oauth2?: IdentityProviderOauth2Configuration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "oauth2" })
+    @Type(() => IdentityProviderOauth2Configuration)
+    oauth2?: IdentityProviderOauth2Configuration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type?: IdentityProviderType;
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type?: IdentityProviderType;
 }

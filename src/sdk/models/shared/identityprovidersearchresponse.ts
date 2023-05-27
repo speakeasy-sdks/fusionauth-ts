@@ -9,11 +9,11 @@ import { Expose } from "class-transformer";
  * Identity Provider response.
  */
 export class IdentityProviderSearchResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "identityProviders" })
-  identityProviders?: any[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "identityProviders" })
+    identityProviders?: any[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 }

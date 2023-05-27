@@ -3,9 +3,9 @@
  */
 
 export enum BreachedPasswordStatus {
-  None = "None",
-  ExactMatch = "ExactMatch",
-  SubAddressMatch = "SubAddressMatch",
-  PasswordOnly = "PasswordOnly",
-  CommonPassword = "CommonPassword",
+    None = "None",
+    ExactMatch = "ExactMatch",
+    SubAddressMatch = "SubAddressMatch",
+    PasswordOnly = "PasswordOnly",
+    CommonPassword = "CommonPassword",
 }

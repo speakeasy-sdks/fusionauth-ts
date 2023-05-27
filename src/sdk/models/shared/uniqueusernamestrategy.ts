@@ -3,6 +3,6 @@
  */
 
 export enum UniqueUsernameStrategy {
-  Always = "Always",
-  OnCollision = "OnCollision",
+    Always = "Always",
+    OnCollision = "OnCollision",
 }

@@ -32,193 +32,193 @@ import { TenantWebAuthnConfiguration } from "./tenantwebauthnconfiguration";
 import { Expose, Type } from "class-transformer";
 
 export class Tenant extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "accessControlConfiguration" })
-  @Type(() => TenantAccessControlConfiguration)
-  accessControlConfiguration?: TenantAccessControlConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "accessControlConfiguration" })
+    @Type(() => TenantAccessControlConfiguration)
+    accessControlConfiguration?: TenantAccessControlConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "captchaConfiguration" })
-  @Type(() => TenantCaptchaConfiguration)
-  captchaConfiguration?: TenantCaptchaConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "captchaConfiguration" })
+    @Type(() => TenantCaptchaConfiguration)
+    captchaConfiguration?: TenantCaptchaConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "configured" })
-  configured?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "configured" })
+    configured?: boolean;
 
-  @SpeakeasyMetadata({ elemType: ConnectorPolicy })
-  @Expose({ name: "connectorPolicies" })
-  @Type(() => ConnectorPolicy)
-  connectorPolicies?: ConnectorPolicy[];
+    @SpeakeasyMetadata({ elemType: ConnectorPolicy })
+    @Expose({ name: "connectorPolicies" })
+    @Type(() => ConnectorPolicy)
+    connectorPolicies?: ConnectorPolicy[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "data" })
-  data?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "data" })
+    data?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "emailConfiguration" })
-  @Type(() => EmailConfiguration)
-  emailConfiguration?: EmailConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "emailConfiguration" })
+    @Type(() => EmailConfiguration)
+    emailConfiguration?: EmailConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "eventConfiguration" })
-  @Type(() => EventConfiguration)
-  eventConfiguration?: EventConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "eventConfiguration" })
+    @Type(() => EventConfiguration)
+    eventConfiguration?: EventConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "externalIdentifierConfiguration" })
-  @Type(() => ExternalIdentifierConfiguration)
-  externalIdentifierConfiguration?: ExternalIdentifierConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "externalIdentifierConfiguration" })
+    @Type(() => ExternalIdentifierConfiguration)
+    externalIdentifierConfiguration?: ExternalIdentifierConfiguration;
 
-  /**
-   * Configuration for the behavior of failed login attempts. This helps us protect against brute force password attacks.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "failedAuthenticationConfiguration" })
-  @Type(() => FailedAuthenticationConfiguration)
-  failedAuthenticationConfiguration?: FailedAuthenticationConfiguration;
+    /**
+     * Configuration for the behavior of failed login attempts. This helps us protect against brute force password attacks.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "failedAuthenticationConfiguration" })
+    @Type(() => FailedAuthenticationConfiguration)
+    failedAuthenticationConfiguration?: FailedAuthenticationConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "familyConfiguration" })
-  @Type(() => FamilyConfiguration)
-  familyConfiguration?: FamilyConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "familyConfiguration" })
+    @Type(() => FamilyConfiguration)
+    familyConfiguration?: FamilyConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "formConfiguration" })
-  @Type(() => TenantFormConfiguration)
-  formConfiguration?: TenantFormConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "formConfiguration" })
+    @Type(() => TenantFormConfiguration)
+    formConfiguration?: TenantFormConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "httpSessionMaxInactiveInterval" })
-  httpSessionMaxInactiveInterval?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "httpSessionMaxInactiveInterval" })
+    httpSessionMaxInactiveInterval?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "insertInstant" })
-  insertInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "insertInstant" })
+    insertInstant?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "issuer" })
-  issuer?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "issuer" })
+    issuer?: string;
 
-  /**
-   * JWT Configuration. A JWT Configuration for an Application may not be active if it is using the global configuration, the configuration  may be <code>enabled = false<code>.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "jwtConfiguration" })
-  @Type(() => JWTConfiguration)
-  jwtConfiguration?: JWTConfiguration;
+    /**
+     * JWT Configuration. A JWT Configuration for an Application may not be active if it is using the global configuration, the configuration  may be <code>enabled = false<code>.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "jwtConfiguration" })
+    @Type(() => JWTConfiguration)
+    jwtConfiguration?: JWTConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "lambdaConfiguration" })
-  @Type(() => TenantLambdaConfiguration)
-  lambdaConfiguration?: TenantLambdaConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "lambdaConfiguration" })
+    @Type(() => TenantLambdaConfiguration)
+    lambdaConfiguration?: TenantLambdaConfiguration;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "lastUpdateInstant" })
-  lastUpdateInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "lastUpdateInstant" })
+    lastUpdateInstant?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "loginConfiguration" })
-  @Type(() => TenantLoginConfiguration)
-  loginConfiguration?: TenantLoginConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "loginConfiguration" })
+    @Type(() => TenantLoginConfiguration)
+    loginConfiguration?: TenantLoginConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "logoutURL" })
-  logoutURL?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "logoutURL" })
+    logoutURL?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "maximumPasswordAge" })
-  @Type(() => MaximumPasswordAge)
-  maximumPasswordAge?: MaximumPasswordAge;
+    @SpeakeasyMetadata()
+    @Expose({ name: "maximumPasswordAge" })
+    @Type(() => MaximumPasswordAge)
+    maximumPasswordAge?: MaximumPasswordAge;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "minimumPasswordAge" })
-  @Type(() => MinimumPasswordAge)
-  minimumPasswordAge?: MinimumPasswordAge;
+    @SpeakeasyMetadata()
+    @Expose({ name: "minimumPasswordAge" })
+    @Type(() => MinimumPasswordAge)
+    minimumPasswordAge?: MinimumPasswordAge;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "multiFactorConfiguration" })
-  @Type(() => TenantMultiFactorConfiguration)
-  multiFactorConfiguration?: TenantMultiFactorConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "multiFactorConfiguration" })
+    @Type(() => TenantMultiFactorConfiguration)
+    multiFactorConfiguration?: TenantMultiFactorConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "oauthConfiguration" })
-  @Type(() => TenantOAuth2Configuration)
-  oauthConfiguration?: TenantOAuth2Configuration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "oauthConfiguration" })
+    @Type(() => TenantOAuth2Configuration)
+    oauthConfiguration?: TenantOAuth2Configuration;
 
-  /**
-   * Password Encryption Scheme Configuration
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "passwordEncryptionConfiguration" })
-  @Type(() => PasswordEncryptionConfiguration)
-  passwordEncryptionConfiguration?: PasswordEncryptionConfiguration;
+    /**
+     * Password Encryption Scheme Configuration
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "passwordEncryptionConfiguration" })
+    @Type(() => PasswordEncryptionConfiguration)
+    passwordEncryptionConfiguration?: PasswordEncryptionConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "passwordValidationRules" })
-  @Type(() => PasswordValidationRules)
-  passwordValidationRules?: PasswordValidationRules;
+    @SpeakeasyMetadata()
+    @Expose({ name: "passwordValidationRules" })
+    @Type(() => PasswordValidationRules)
+    passwordValidationRules?: PasswordValidationRules;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "rateLimitConfiguration" })
-  @Type(() => TenantRateLimitConfiguration)
-  rateLimitConfiguration?: TenantRateLimitConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "rateLimitConfiguration" })
+    @Type(() => TenantRateLimitConfiguration)
+    rateLimitConfiguration?: TenantRateLimitConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "registrationConfiguration" })
-  @Type(() => TenantRegistrationConfiguration)
-  registrationConfiguration?: TenantRegistrationConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "registrationConfiguration" })
+    @Type(() => TenantRegistrationConfiguration)
+    registrationConfiguration?: TenantRegistrationConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "scimServerConfiguration" })
-  @Type(() => TenantSCIMServerConfiguration)
-  scimServerConfiguration?: TenantSCIMServerConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "scimServerConfiguration" })
+    @Type(() => TenantSCIMServerConfiguration)
+    scimServerConfiguration?: TenantSCIMServerConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "ssoConfiguration" })
-  @Type(() => TenantSSOConfiguration)
-  ssoConfiguration?: TenantSSOConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "ssoConfiguration" })
+    @Type(() => TenantSSOConfiguration)
+    ssoConfiguration?: TenantSSOConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state?: ObjectState;
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state?: ObjectState;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "themeId" })
-  themeId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "themeId" })
+    themeId?: string;
 
-  /**
-   * A Tenant-level policy for deleting Users.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "userDeletePolicy" })
-  @Type(() => TenantUserDeletePolicy)
-  userDeletePolicy?: TenantUserDeletePolicy;
+    /**
+     * A Tenant-level policy for deleting Users.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "userDeletePolicy" })
+    @Type(() => TenantUserDeletePolicy)
+    userDeletePolicy?: TenantUserDeletePolicy;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "usernameConfiguration" })
-  @Type(() => TenantUsernameConfiguration)
-  usernameConfiguration?: TenantUsernameConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "usernameConfiguration" })
+    @Type(() => TenantUsernameConfiguration)
+    usernameConfiguration?: TenantUsernameConfiguration;
 
-  /**
-   * Tenant-level configuration for WebAuthn
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "webAuthnConfiguration" })
-  @Type(() => TenantWebAuthnConfiguration)
-  webAuthnConfiguration?: TenantWebAuthnConfiguration;
+    /**
+     * Tenant-level configuration for WebAuthn
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "webAuthnConfiguration" })
+    @Type(() => TenantWebAuthnConfiguration)
+    webAuthnConfiguration?: TenantWebAuthnConfiguration;
 }

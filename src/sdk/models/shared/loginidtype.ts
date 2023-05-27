@@ -3,6 +3,6 @@
  */
 
 export enum LoginIdType {
-  Email = "email",
-  Username = "username",
+    Email = "email",
+    Username = "username",
 }

@@ -3,8 +3,8 @@
  */
 
 export enum SecureGeneratorType {
-  RandomDigits = "randomDigits",
-  RandomBytes = "randomBytes",
-  RandomAlpha = "randomAlpha",
-  RandomAlphaNumeric = "randomAlphaNumeric",
+    RandomDigits = "randomDigits",
+    RandomBytes = "randomBytes",
+    RandomAlpha = "randomAlpha",
+    RandomAlphaNumeric = "randomAlphaNumeric",
 }

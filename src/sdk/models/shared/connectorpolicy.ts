@@ -6,19 +6,19 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class ConnectorPolicy extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "connectorId" })
-  connectorId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "connectorId" })
+    connectorId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "data" })
-  data?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "data" })
+    data?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "domains" })
-  domains?: any[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "domains" })
+    domains?: any[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "migrate" })
-  migrate?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "migrate" })
+    migrate?: boolean;
 }

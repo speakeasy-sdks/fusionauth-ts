@@ -7,12 +7,12 @@ import { IdentityProviderLimitUserLinkingPolicy } from "./identityproviderlimitu
 import { Expose, Type } from "class-transformer";
 
 export class IdentityProviderTenantConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "data" })
-  data?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "data" })
+    data?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "limitUserLinkCount" })
-  @Type(() => IdentityProviderLimitUserLinkingPolicy)
-  limitUserLinkCount?: IdentityProviderLimitUserLinkingPolicy;
+    @SpeakeasyMetadata()
+    @Expose({ name: "limitUserLinkCount" })
+    @Type(() => IdentityProviderLimitUserLinkingPolicy)
+    limitUserLinkCount?: IdentityProviderLimitUserLinkingPolicy;
 }

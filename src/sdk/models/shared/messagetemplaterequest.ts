@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * A Message Template Request to the API
  */
 export class MessageTemplateRequest extends SpeakeasyBase {
-  /**
-   * Stores an message template used to distribute messages;
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "messageTemplate" })
-  @Type(() => MessageTemplate)
-  messageTemplate?: MessageTemplate;
+    /**
+     * Stores an message template used to distribute messages;
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "messageTemplate" })
+    @Type(() => MessageTemplate)
+    messageTemplate?: MessageTemplate;
 }

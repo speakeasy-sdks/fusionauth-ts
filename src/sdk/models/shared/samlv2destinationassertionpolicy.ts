@@ -3,7 +3,7 @@
  */
 
 export enum SAMLv2DestinationAssertionPolicy {
-  Enabled = "Enabled",
-  Disabled = "Disabled",
-  AllowAlternates = "AllowAlternates",
+    Enabled = "Enabled",
+    Disabled = "Disabled",
+    AllowAlternates = "AllowAlternates",
 }

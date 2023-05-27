@@ -6,6 +6,6 @@
  * Steam API modes.
  */
 export enum SteamAPIMode {
-  Public = "Public",
-  Partner = "Partner",
+    Public = "Public",
+    Partner = "Partner",
 }

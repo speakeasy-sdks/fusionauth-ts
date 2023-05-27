@@ -6,19 +6,19 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class TenantSCIMServerConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "clientEntityTypeId" })
-  clientEntityTypeId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "clientEntityTypeId" })
+    clientEntityTypeId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "schemas" })
-  schemas?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "schemas" })
+    schemas?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "serverEntityTypeId" })
-  serverEntityTypeId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "serverEntityTypeId" })
+    serverEntityTypeId?: string;
 }

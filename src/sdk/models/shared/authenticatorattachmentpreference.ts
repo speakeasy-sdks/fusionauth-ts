@@ -6,7 +6,7 @@
  * Describes the authenticator attachment modality preference for a WebAuthn workflow. See {@link AuthenticatorAttachment}
  */
 export enum AuthenticatorAttachmentPreference {
-  Any = "any",
-  Platform = "platform",
-  CrossPlatform = "crossPlatform",
+    Any = "any",
+    Platform = "platform",
+    CrossPlatform = "crossPlatform",
 }

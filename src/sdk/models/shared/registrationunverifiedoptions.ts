@@ -7,7 +7,7 @@ import { UnverifiedBehavior } from "./unverifiedbehavior";
 import { Expose } from "class-transformer";
 
 export class RegistrationUnverifiedOptions extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "behavior" })
-  behavior?: UnverifiedBehavior;
+    @SpeakeasyMetadata()
+    @Expose({ name: "behavior" })
+    behavior?: UnverifiedBehavior;
 }

@@ -3,5 +3,5 @@
  */
 
 export enum MessageType {
-  Sms = "SMS",
+    Sms = "SMS",
 }

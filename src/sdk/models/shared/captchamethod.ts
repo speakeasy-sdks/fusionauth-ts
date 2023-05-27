@@ -3,8 +3,8 @@
  */
 
 export enum CaptchaMethod {
-  GoogleRecaptchaV2 = "GoogleRecaptchaV2",
-  GoogleRecaptchaV3 = "GoogleRecaptchaV3",
-  HCaptcha = "HCaptcha",
-  HCaptchaEnterprise = "HCaptchaEnterprise",
+    GoogleRecaptchaV2 = "GoogleRecaptchaV2",
+    GoogleRecaptchaV3 = "GoogleRecaptchaV3",
+    HCaptcha = "HCaptcha",
+    HCaptchaEnterprise = "HCaptchaEnterprise",
 }

@@ -7,35 +7,35 @@ import { HTTPMethod } from "./httpmethod";
 import { Expose } from "class-transformer";
 
 export class CORSConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "allowCredentials" })
-  allowCredentials?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "allowCredentials" })
+    allowCredentials?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "allowedHeaders" })
-  allowedHeaders?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "allowedHeaders" })
+    allowedHeaders?: string[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "allowedMethods" })
-  allowedMethods?: HTTPMethod[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "allowedMethods" })
+    allowedMethods?: HTTPMethod[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "allowedOrigins" })
-  allowedOrigins?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "allowedOrigins" })
+    allowedOrigins?: string[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "debug" })
-  debug?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "debug" })
+    debug?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "exposedHeaders" })
-  exposedHeaders?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "exposedHeaders" })
+    exposedHeaders?: string[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "preflightMaxAgeInSeconds" })
-  preflightMaxAgeInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "preflightMaxAgeInSeconds" })
+    preflightMaxAgeInSeconds?: number;
 }

@@ -7,19 +7,19 @@ import { UniqueUsernameStrategy } from "./uniqueusernamestrategy";
 import { Expose } from "class-transformer";
 
 export class UniqueUsernameConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "numberOfDigits" })
-  numberOfDigits?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "numberOfDigits" })
+    numberOfDigits?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "separator" })
-  separator?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "separator" })
+    separator?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "strategy" })
-  strategy?: UniqueUsernameStrategy;
+    @SpeakeasyMetadata()
+    @Expose({ name: "strategy" })
+    strategy?: UniqueUsernameStrategy;
 }

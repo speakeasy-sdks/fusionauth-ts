@@ -6,7 +6,7 @@
  * Event Log Type
  */
 export enum EventLogType {
-  Information = "Information",
-  Debug = "Debug",
-  Error = "Error",
+    Information = "Information",
+    Debug = "Debug",
+    Error = "Error",
 }

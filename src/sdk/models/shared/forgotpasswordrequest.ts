@@ -10,39 +10,39 @@ import { Expose, Type } from "class-transformer";
  * Forgot password request object.
  */
 export class ForgotPasswordRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "applicationId" })
-  applicationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "applicationId" })
+    applicationId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "changePasswordId" })
-  changePasswordId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "changePasswordId" })
+    changePasswordId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  email?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    email?: string;
 
-  /**
-   * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "eventInfo" })
-  @Type(() => EventInfo)
-  eventInfo?: EventInfo;
+    /**
+     * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "eventInfo" })
+    @Type(() => EventInfo)
+    eventInfo?: EventInfo;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "loginId" })
-  loginId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "loginId" })
+    loginId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "sendForgotPasswordEmail" })
-  sendForgotPasswordEmail?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "sendForgotPasswordEmail" })
+    sendForgotPasswordEmail?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "username" })
-  username?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "username" })
+    username?: string;
 }

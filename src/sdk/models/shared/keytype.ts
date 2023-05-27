@@ -3,7 +3,7 @@
  */
 
 export enum KeyType {
-  Ec = "EC",
-  Rsa = "RSA",
-  Hmac = "HMAC",
+    Ec = "EC",
+    Rsa = "RSA",
+    Hmac = "HMAC",
 }

@@ -10,8 +10,8 @@ import { Expose, Type } from "class-transformer";
  * Response for the user login report.
  */
 export class RecentLoginResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: DisplayableRawLogin })
-  @Expose({ name: "logins" })
-  @Type(() => DisplayableRawLogin)
-  logins?: DisplayableRawLogin[];
+    @SpeakeasyMetadata({ elemType: DisplayableRawLogin })
+    @Expose({ name: "logins" })
+    @Type(() => DisplayableRawLogin)
+    logins?: DisplayableRawLogin[];
 }

@@ -9,31 +9,31 @@ import { SAMLv2SingleLogout } from "./samlv2singlelogout";
 import { Expose, Type } from "class-transformer";
 
 export class SAMLv2Logout extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "behavior" })
-  behavior?: SAMLLogoutBehavior;
+    @SpeakeasyMetadata()
+    @Expose({ name: "behavior" })
+    behavior?: SAMLLogoutBehavior;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "defaultVerificationKeyId" })
-  defaultVerificationKeyId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "defaultVerificationKeyId" })
+    defaultVerificationKeyId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "keyId" })
-  keyId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "keyId" })
+    keyId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "requireSignedRequests" })
-  requireSignedRequests?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "requireSignedRequests" })
+    requireSignedRequests?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "singleLogout" })
-  @Type(() => SAMLv2SingleLogout)
-  singleLogout?: SAMLv2SingleLogout;
+    @SpeakeasyMetadata()
+    @Expose({ name: "singleLogout" })
+    @Type(() => SAMLv2SingleLogout)
+    singleLogout?: SAMLv2SingleLogout;
 
-  /**
-   * XML canonicalization method enumeration. This is used for the IdP and SP side of FusionAuth SAML.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "xmlSignatureC14nMethod" })
-  xmlSignatureC14nMethod?: CanonicalizationMethod;
+    /**
+     * XML canonicalization method enumeration. This is used for the IdP and SP side of FusionAuth SAML.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "xmlSignatureC14nMethod" })
+    xmlSignatureC14nMethod?: CanonicalizationMethod;
 }

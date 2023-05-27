@@ -10,28 +10,28 @@ import { Expose, Type } from "class-transformer";
  * Login Ping API request object.
  */
 export class LoginPingRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "applicationId" })
-  applicationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "applicationId" })
+    applicationId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "ipAddress" })
-  ipAddress?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "ipAddress" })
+    ipAddress?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "metaData" })
-  @Type(() => MetaData)
-  metaData?: MetaData;
+    @SpeakeasyMetadata()
+    @Expose({ name: "metaData" })
+    @Type(() => MetaData)
+    metaData?: MetaData;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "newDevice" })
-  newDevice?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "newDevice" })
+    newDevice?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "noJWT" })
-  noJWT?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "noJWT" })
+    noJWT?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userId" })
-  userId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userId" })
+    userId?: string;
 }
