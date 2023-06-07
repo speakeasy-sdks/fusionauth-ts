@@ -43,8 +43,8 @@ export class SDKConfiguration {
     serverURL: string;
     serverDefaults: any;
     language = "typescript";
-    sdkVersion = "1.8.0";
-    genVersion = "2.35.3";
+    sdkVersion = "1.8.1";
+    genVersion = "2.35.9";
 
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -52,7 +52,7 @@ export class SDKConfiguration {
 }
 
 /**
- * This is a FusionAuth server. Find out more at [https://fusionauth.io](https://fusionauth.io). You need to [set up an API key](https://fusionauth.io/docs/v1/tech/apis/authentication#managing-api-keys) in the FusionAuth instance you are using to test out the API calls.
+ * FusionAuth API: This is a FusionAuth server. Find out more at [https://fusionauth.io](https://fusionauth.io). You need to [set up an API key](https://fusionauth.io/docs/v1/tech/apis/authentication#managing-api-keys) in the FusionAuth instance you are using to test out the API calls.
  */
 export class SDK {
     private sdkConfiguration: SDKConfiguration;
