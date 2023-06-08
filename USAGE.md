@@ -6,7 +6,7 @@ import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 

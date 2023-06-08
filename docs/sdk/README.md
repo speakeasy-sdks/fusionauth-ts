@@ -297,7 +297,7 @@ import { ActionUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mod
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -366,7 +366,7 @@ import { ActivateReactorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sd
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -393,7 +393,7 @@ import { FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -435,7 +435,7 @@ import { CancelActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -513,7 +513,7 @@ import { ChangePasswordByIdentityWithIdResponse } from "speakeasy-sdks/fusionaut
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -569,7 +569,7 @@ import { ChangePasswordWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -628,7 +628,7 @@ import { CheckChangePasswordUsingIdWithIdResponse } from "speakeasy-sdks/fusiona
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -651,7 +651,7 @@ import { CommentOnUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -683,7 +683,7 @@ import { AttestationType, CoseAlgorithmIdentifier, DeviceType } from "speakeasy-
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -775,7 +775,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -855,7 +855,7 @@ import { AttestationType, CoseAlgorithmIdentifier } from "speakeasy-sdks/fusiona
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -902,7 +902,7 @@ import { CreateAPIKeyResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -954,7 +954,7 @@ import { CreateApiKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -1022,7 +1022,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -1356,7 +1356,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -1702,7 +1702,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -2034,7 +2034,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -2333,7 +2333,7 @@ import { CreateAuditLogWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -2416,7 +2416,7 @@ import { ConnectorType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -2457,7 +2457,7 @@ import { ConnectorType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -2506,7 +2506,7 @@ import { CreateConsentResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -2564,7 +2564,7 @@ import { CreateConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -2620,7 +2620,7 @@ import { CreateEmailTemplateResponse } from "speakeasy-sdks/fusionauth/dist/sdk/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -2673,7 +2673,7 @@ import { CreateEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dis
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -2727,7 +2727,7 @@ import { CreateEntityResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -2840,7 +2840,7 @@ import { CreateEntityTypeResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mod
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -3001,7 +3001,7 @@ import { CreateEntityTypePermissionResponse } from "speakeasy-sdks/fusionauth/di
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -3119,7 +3119,7 @@ import { CreateEntityTypePermissionWithIdResponse } from "speakeasy-sdks/fusiona
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -3266,7 +3266,7 @@ import { CreateEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/s
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -3352,7 +3352,7 @@ import { CreateEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -3507,7 +3507,7 @@ import { FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -3551,7 +3551,7 @@ import { FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -3601,7 +3601,7 @@ import { FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -3661,7 +3661,7 @@ import { FormControl, FormDataType } from "speakeasy-sdks/fusionauth/dist/sdk/mo
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -3768,7 +3768,7 @@ import { FormControl, FormDataType } from "speakeasy-sdks/fusionauth/dist/sdk/mo
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -3929,7 +3929,7 @@ import { FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -3993,7 +3993,7 @@ import { CreateGroupResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/o
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -4065,7 +4065,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -4830,7 +4830,7 @@ import { CreateGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mo
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -4908,7 +4908,7 @@ import { IPAccessControlEntryAction } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -4961,7 +4961,7 @@ import { IPAccessControlEntryAction } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -5029,7 +5029,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -5099,7 +5099,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -5162,7 +5162,7 @@ import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -5197,7 +5197,7 @@ import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -5231,7 +5231,7 @@ import { CreateLogoutResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -5280,7 +5280,7 @@ import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -5331,7 +5331,7 @@ import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -5382,7 +5382,7 @@ import { MessengerType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -5429,7 +5429,7 @@ import { MessengerType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -5487,7 +5487,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -6003,7 +6003,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -6471,7 +6471,7 @@ import { CreateThemeResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/o
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -6573,7 +6573,7 @@ import { CreateThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mo
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -6675,7 +6675,7 @@ import { OAuthErrorReason, OAuthErrorType, TokenType, TOTPAlgorithm } from "spea
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -6699,7 +6699,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -7682,7 +7682,7 @@ import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/share
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -7737,7 +7737,7 @@ import { CreateUserActionReasonResponse } from "speakeasy-sdks/fusionauth/dist/s
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -7773,7 +7773,7 @@ import { CreateUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -7810,7 +7810,7 @@ import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/share
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -7882,7 +7882,7 @@ import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -7978,7 +7978,7 @@ import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -8054,7 +8054,7 @@ import { CreateUserLinkWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -8137,7 +8137,7 @@ import { CreateUserVerifyEmailResponse } from "speakeasy-sdks/fusionauth/dist/sd
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -8196,7 +8196,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -8937,7 +8937,7 @@ import { CreateWebhookResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9002,7 +9002,7 @@ import { CreateWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9058,7 +9058,7 @@ import { DeleteAPIKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9081,7 +9081,7 @@ import { DeleteApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/d
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9104,7 +9104,7 @@ import { DeleteApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9127,7 +9127,7 @@ import { DeleteConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sd
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9150,7 +9150,7 @@ import { DeleteConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9173,7 +9173,7 @@ import { DeleteEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dis
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9196,7 +9196,7 @@ import { DeleteEntityGrantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9219,7 +9219,7 @@ import { DeleteEntityTypePermissionWithIdResponse } from "speakeasy-sdks/fusiona
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9242,7 +9242,7 @@ import { DeleteEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/s
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9265,7 +9265,7 @@ import { DeleteEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9288,7 +9288,7 @@ import { DeleteFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sd
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9311,7 +9311,7 @@ import { DeleteFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mod
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9334,7 +9334,7 @@ import { DeleteGroupMembersWithIdResponse } from "speakeasy-sdks/fusionauth/dist
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9367,7 +9367,7 @@ import { DeleteGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mo
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9390,7 +9390,7 @@ import { DeleteIPAccessControlListWithIdResponse } from "speakeasy-sdks/fusionau
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9413,7 +9413,7 @@ import { DeleteIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9436,7 +9436,7 @@ import { DeleteJwtResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/ope
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9498,7 +9498,7 @@ import { DeleteKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mode
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9521,7 +9521,7 @@ import { DeleteLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9544,7 +9544,7 @@ import { DeleteMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/d
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9567,7 +9567,7 @@ import { DeleteMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sd
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9590,7 +9590,7 @@ import { DeleteTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9645,7 +9645,7 @@ import { DeleteThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mo
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9668,7 +9668,7 @@ import { DeleteUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9691,7 +9691,7 @@ import { DeleteUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/s
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9714,7 +9714,7 @@ import { DeleteUserBulkResponse } from "speakeasy-sdks/fusionauth/dist/sdk/model
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9775,7 +9775,7 @@ import { DeleteUserLinkWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9798,7 +9798,7 @@ import { DeleteUserRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9851,7 +9851,7 @@ import { DeleteUserTwoFactorWithIdResponse } from "speakeasy-sdks/fusionauth/dis
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9905,7 +9905,7 @@ import { DeleteUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mod
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9956,7 +9956,7 @@ import { DeleteWebAuthnCredentialWithIdResponse } from "speakeasy-sdks/fusionaut
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -9979,7 +9979,7 @@ import { DeleteWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -10002,7 +10002,7 @@ import { EnableTwoFactorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sd
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -10071,7 +10071,7 @@ import { ExchangeRefreshTokenForJWTWithIdResponse } from "speakeasy-sdks/fusiona
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -10123,7 +10123,7 @@ import { ForgotPasswordWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -10199,7 +10199,7 @@ import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -10253,7 +10253,7 @@ import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -10306,7 +10306,7 @@ import { GenerateTwoFactorRecoveryCodesWithIdResponse } from "speakeasy-sdks/fus
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -10329,7 +10329,7 @@ import { GenerateTwoFactorSecretUsingJWTWithIdResponse } from "speakeasy-sdks/fu
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -10359,7 +10359,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -10416,7 +10416,7 @@ import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -10470,7 +10470,7 @@ import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -10524,7 +10524,7 @@ import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -10755,7 +10755,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -11655,7 +11655,7 @@ import { AttestationType, CoseAlgorithmIdentifier } from "speakeasy-sdks/fusiona
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -11778,7 +11778,7 @@ import { OAuthErrorReason, OAuthErrorType, TOTPAlgorithm } from "speakeasy-sdks/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -11801,7 +11801,7 @@ import { IssueJWTWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/model
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -11825,7 +11825,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -11855,7 +11855,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -11910,7 +11910,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -11966,7 +11966,7 @@ import { ClientAuthenticationMethod, IdentityProviderType } from "speakeasy-sdks
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -11989,7 +11989,7 @@ import { ModifyActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -12075,7 +12075,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -12153,7 +12153,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -12474,7 +12474,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -12754,7 +12754,7 @@ import { ConnectorType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -12803,7 +12803,7 @@ import { PatchConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -12856,7 +12856,7 @@ import { PatchEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -12910,7 +12910,7 @@ import { PatchEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sd
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -13027,7 +13027,7 @@ import { PatchGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mod
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -13105,7 +13105,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -13166,7 +13166,7 @@ import { PatchIntegrationsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -13213,7 +13213,7 @@ import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -13248,7 +13248,7 @@ import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -13288,7 +13288,7 @@ import { MessengerType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -13342,7 +13342,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -14055,7 +14055,7 @@ import { HTTPMethod } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -14159,7 +14159,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -14598,7 +14598,7 @@ import { PatchThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mod
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -14693,7 +14693,7 @@ import { PatchUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/d
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -14731,7 +14731,7 @@ import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/share
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -14794,7 +14794,7 @@ import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -14893,7 +14893,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -15354,7 +15354,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -15423,7 +15423,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -15939,7 +15939,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17174,7 +17174,7 @@ import { ReindexWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17199,7 +17199,7 @@ import { RemoveUserFromFamilyWithIdResponse } from "speakeasy-sdks/fusionauth/di
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17222,7 +17222,7 @@ import { RetrieveAPIKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17245,7 +17245,7 @@ import { RetrieveActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17286,7 +17286,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17327,7 +17327,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17350,7 +17350,7 @@ import { RetrieveAuditLogWithIdResponse } from "speakeasy-sdks/fusionauth/dist/s
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17374,7 +17374,7 @@ import { ConnectorType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17397,7 +17397,7 @@ import { RetrieveConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sd
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17420,7 +17420,7 @@ import { RetrieveDailyActiveReportWithIdResponse } from "speakeasy-sdks/fusionau
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17443,7 +17443,7 @@ import { RetrieveEmailTemplateResponse } from "speakeasy-sdks/fusionauth/dist/sd
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17466,7 +17466,7 @@ import { RetrieveEmailTemplatePreviewWithIdResponse } from "speakeasy-sdks/fusio
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17518,7 +17518,7 @@ import { RetrieveEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/d
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17541,7 +17541,7 @@ import { RetrieveEntityGrantWithIdResponse } from "speakeasy-sdks/fusionauth/dis
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17564,7 +17564,7 @@ import { RetrieveEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17587,7 +17587,7 @@ import { RetrieveEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17611,7 +17611,7 @@ import { EventLogType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17635,7 +17635,7 @@ import { FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17659,7 +17659,7 @@ import { FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17683,7 +17683,7 @@ import { FormControl, FormDataType } from "speakeasy-sdks/fusionauth/dist/sdk/mo
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17707,7 +17707,7 @@ import { FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17730,7 +17730,7 @@ import { RetrieveGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17754,7 +17754,7 @@ import { IPAccessControlEntryAction } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17777,7 +17777,7 @@ import { RetrieveIdentityProviderResponse } from "speakeasy-sdks/fusionauth/dist
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17800,7 +17800,7 @@ import { RetrieveIdentityProviderByTypeWithIdResponse } from "speakeasy-sdks/fus
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17823,7 +17823,7 @@ import { RetrieveIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionaut
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17846,7 +17846,7 @@ import { RetrieveJwtResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/o
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17870,7 +17870,7 @@ import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17894,7 +17894,7 @@ import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17918,7 +17918,7 @@ import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17942,7 +17942,7 @@ import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -17966,7 +17966,7 @@ import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18013,7 +18013,7 @@ import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18037,7 +18037,7 @@ import { MessengerType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18060,7 +18060,7 @@ import { RetrieveMonthlyActiveReportWithIdResponse } from "speakeasy-sdks/fusion
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18089,7 +18089,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18113,7 +18113,7 @@ import { BreachAction, BreachMatchMode } from "speakeasy-sdks/fusionauth/dist/sd
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18137,7 +18137,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18161,7 +18161,7 @@ import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18185,7 +18185,7 @@ import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18208,7 +18208,7 @@ import { RetrieveRegistrationReportWithIdResponse } from "speakeasy-sdks/fusiona
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18232,7 +18232,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18255,7 +18255,7 @@ import { RetrieveReportResponse } from "speakeasy-sdks/fusionauth/dist/sdk/model
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18303,7 +18303,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18326,7 +18326,7 @@ import { RetrieveThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18349,7 +18349,7 @@ import { RetrieveTwoFactorRecoveryCodesWithIdResponse } from "speakeasy-sdks/fus
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18372,7 +18372,7 @@ import { RetrieveTwoFactorStatusWithIdResponse } from "speakeasy-sdks/fusionauth
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18396,7 +18396,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18427,7 +18427,7 @@ import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/share
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18450,7 +18450,7 @@ import { RetrieveUserActionReasonResponse } from "speakeasy-sdks/fusionauth/dist
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18473,7 +18473,7 @@ import { RetrieveUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionaut
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18497,7 +18497,7 @@ import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/share
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18520,7 +18520,7 @@ import { RetrieveUserActioningResponse } from "speakeasy-sdks/fusionauth/dist/sd
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18543,7 +18543,7 @@ import { RetrieveUserChangePasswordResponse } from "speakeasy-sdks/fusionauth/di
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18566,7 +18566,7 @@ import { RetrieveUserCommentsWithIdResponse } from "speakeasy-sdks/fusionauth/di
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18590,7 +18590,7 @@ import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18614,7 +18614,7 @@ import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18638,7 +18638,7 @@ import { OAuthErrorReason, OAuthErrorType, TOTPAlgorithm } from "speakeasy-sdks/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18661,7 +18661,7 @@ import { RetrieveUserRecentLoginResponse } from "speakeasy-sdks/fusionauth/dist/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18685,7 +18685,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18709,7 +18709,7 @@ import { AttestationType, CoseAlgorithmIdentifier } from "speakeasy-sdks/fusiona
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18733,7 +18733,7 @@ import { AttestationType, CoseAlgorithmIdentifier } from "speakeasy-sdks/fusiona
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18756,7 +18756,7 @@ import { RetrieveWebhookResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mode
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18779,7 +18779,7 @@ import { RetrieveWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sd
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18802,7 +18802,7 @@ import { RevokeRefreshTokenByIdWithIdResponse } from "speakeasy-sdks/fusionauth/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18825,7 +18825,7 @@ import { RevokeUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18866,7 +18866,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18898,7 +18898,7 @@ import { SearchAuditLogsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sd
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18934,7 +18934,7 @@ import { SearchConsentsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18964,7 +18964,7 @@ import { SearchEmailTemplatesWithIdResponse } from "speakeasy-sdks/fusionauth/di
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -18994,7 +18994,7 @@ import { SearchEntitiesByIdsWithIdResponse } from "speakeasy-sdks/fusionauth/dis
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19018,7 +19018,7 @@ import { Sort } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19058,7 +19058,7 @@ import { SearchEntityGrantsWithIdResponse } from "speakeasy-sdks/fusionauth/dist
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19090,7 +19090,7 @@ import { SearchEntityTypesWithIdResponse } from "speakeasy-sdks/fusionauth/dist/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19121,7 +19121,7 @@ import { EventLogType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19155,7 +19155,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19187,7 +19187,7 @@ import { SearchGroupsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19219,7 +19219,7 @@ import { IPAccessControlEntryAction } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19250,7 +19250,7 @@ import { IdentityProviderType } from "speakeasy-sdks/fusionauth/dist/sdk/models/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19283,7 +19283,7 @@ import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19316,7 +19316,7 @@ import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19348,7 +19348,7 @@ import { SearchLoginRecordsWithIdResponse } from "speakeasy-sdks/fusionauth/dist
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19401,7 +19401,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19431,7 +19431,7 @@ import { SearchThemesWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19461,7 +19461,7 @@ import { SearchUserCommentsWithIdResponse } from "speakeasy-sdks/fusionauth/dist
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19495,7 +19495,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19519,7 +19519,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, Sort, TOTP
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19571,7 +19571,7 @@ import { SearchWebhooksWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19603,7 +19603,7 @@ import { SendEmailWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mode
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19670,7 +19670,7 @@ import { SendFamilyRequestEmailWithIdResponse } from "speakeasy-sdks/fusionauth/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19695,7 +19695,7 @@ import { SendPasswordlessCodeWithIdResponse } from "speakeasy-sdks/fusionauth/di
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19733,7 +19733,7 @@ import { SendTwoFactorCodeForEnableDisableWithIdResponse } from "speakeasy-sdks/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19762,7 +19762,7 @@ import { SendTwoFactorCodeForLoginUsingMethodWithIdResponse } from "speakeasy-sd
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19792,7 +19792,7 @@ import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19871,7 +19871,7 @@ import { StartPasswordlessLoginWithIdResponse } from "speakeasy-sdks/fusionauth/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19922,7 +19922,7 @@ import { TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -19963,7 +19963,7 @@ import { PublicKeyCredentialType, UserVerificationRequirement, WebAuthnWorkflow 
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -20007,7 +20007,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -20043,7 +20043,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -20094,7 +20094,7 @@ import { UpdateAPIKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -20167,7 +20167,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -20473,7 +20473,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -20770,7 +20770,7 @@ import { ConnectorType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -20820,7 +20820,7 @@ import { UpdateConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -20879,7 +20879,7 @@ import { UpdateEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dis
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -20932,7 +20932,7 @@ import { UpdateEntityTypePermissionWithIdResponse } from "speakeasy-sdks/fusiona
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -21035,7 +21035,7 @@ import { UpdateEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/s
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -21170,7 +21170,7 @@ import { UpdateEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -21343,7 +21343,7 @@ import { FormControl, FormDataType } from "speakeasy-sdks/fusionauth/dist/sdk/mo
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -21473,7 +21473,7 @@ import { FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -21526,7 +21526,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -22474,7 +22474,7 @@ import { UpdateGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mo
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -22565,7 +22565,7 @@ import { IPAccessControlEntryAction } from "speakeasy-sdks/fusionauth/dist/sdk/m
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -22633,7 +22633,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -22812,7 +22812,7 @@ import { UpdateIntegrationsWithIdResponse } from "speakeasy-sdks/fusionauth/dist
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -22862,7 +22862,7 @@ import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -22916,7 +22916,7 @@ import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -22951,7 +22951,7 @@ import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -22988,7 +22988,7 @@ import { MessengerType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -23042,7 +23042,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -23689,7 +23689,7 @@ import { HTTPMethod } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -23792,7 +23792,7 @@ import {
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -24214,7 +24214,7 @@ import { UpdateThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mo
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -24313,7 +24313,7 @@ import { UpdateUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -24350,7 +24350,7 @@ import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/share
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -24431,7 +24431,7 @@ import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared"
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -24523,7 +24523,7 @@ import { UpdateUserVerifyEmailResponse } from "speakeasy-sdks/fusionauth/dist/sd
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -24546,7 +24546,7 @@ import { UpdateUserVerifyRegistrationResponse } from "speakeasy-sdks/fusionauth/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -24570,7 +24570,7 @@ import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgori
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -25262,7 +25262,7 @@ import { UpdateWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -25328,7 +25328,7 @@ import { UpsertEntityGrantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -25508,7 +25508,7 @@ import { ValidateDeviceWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -25531,7 +25531,7 @@ import { ValidateJWTWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/mo
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -25554,7 +25554,7 @@ import { VendJWTWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
@@ -25593,7 +25593,7 @@ import { VerifyUserRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/
 
 const sdk = new SDK({
   security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
+    apiKeyAuth: "",
   },
 });
 
