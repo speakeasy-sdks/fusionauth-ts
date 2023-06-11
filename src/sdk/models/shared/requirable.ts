@@ -9,11 +9,11 @@ import { Expose } from "class-transformer";
  * Something that can be required and thus also optional. This currently extends Enableable because anything that is  requireoptional is almost always enableable as well.
  */
 export class Requirable extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "required" })
-  required?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "required" })
+    required?: boolean;
 }

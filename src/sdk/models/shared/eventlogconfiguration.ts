@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class EventLogConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "numberToRetain" })
-  numberToRetain?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "numberToRetain" })
+    numberToRetain?: number;
 }

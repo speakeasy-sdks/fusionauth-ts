@@ -6,25 +6,25 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class HistoryItem extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "actionerUserId" })
-  actionerUserId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "actionerUserId" })
+    actionerUserId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "comment" })
-  comment?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "comment" })
+    comment?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "createInstant" })
-  createInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "createInstant" })
+    createInstant?: number;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "expiry" })
-  expiry?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "expiry" })
+    expiry?: number;
 }

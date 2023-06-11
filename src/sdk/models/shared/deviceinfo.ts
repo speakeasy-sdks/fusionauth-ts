@@ -3,30 +3,30 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { DeviceTypeEnum } from "./devicetypeenum";
+import { DeviceType } from "./devicetype";
 import { Expose } from "class-transformer";
 
 export class DeviceInfo extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "description" })
-  description?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "description" })
+    description?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "lastAccessedAddress" })
-  lastAccessedAddress?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "lastAccessedAddress" })
+    lastAccessedAddress?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "lastAccessedInstant" })
-  lastAccessedInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "lastAccessedInstant" })
+    lastAccessedInstant?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type?: DeviceTypeEnum;
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type?: DeviceType;
 }

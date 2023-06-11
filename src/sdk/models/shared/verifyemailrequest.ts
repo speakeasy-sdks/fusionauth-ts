@@ -7,23 +7,23 @@ import { EventInfo } from "./eventinfo";
 import { Expose, Type } from "class-transformer";
 
 export class VerifyEmailRequest extends SpeakeasyBase {
-  /**
-   * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "eventInfo" })
-  @Type(() => EventInfo)
-  eventInfo?: EventInfo;
+    /**
+     * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "eventInfo" })
+    @Type(() => EventInfo)
+    eventInfo?: EventInfo;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "oneTimeCode" })
-  oneTimeCode?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "oneTimeCode" })
+    oneTimeCode?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userId" })
-  userId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userId" })
+    userId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "verificationId" })
-  verificationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "verificationId" })
+    verificationId?: string;
 }

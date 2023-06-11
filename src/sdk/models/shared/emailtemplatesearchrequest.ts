@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * Search request for email templates
  */
 export class EmailTemplateSearchRequest extends SpeakeasyBase {
-  /**
-   * Search criteria for Email templates
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "search" })
-  @Type(() => EmailTemplateSearchCriteria)
-  search?: EmailTemplateSearchCriteria;
+    /**
+     * Search criteria for Email templates
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "search" })
+    @Type(() => EmailTemplateSearchCriteria)
+    search?: EmailTemplateSearchCriteria;
 }

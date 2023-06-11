@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Group API request object.
  */
 export class GroupRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "group" })
-  @Type(() => Group)
-  group?: Group;
+    @SpeakeasyMetadata()
+    @Expose({ name: "group" })
+    @Type(() => Group)
+    group?: Group;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "roleIds" })
-  roleIds?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "roleIds" })
+    roleIds?: string[];
 }

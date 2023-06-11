@@ -7,28 +7,26 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveIPAccessControlListWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the IP Access Control List.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=accessControlListId",
-  })
-  accessControlListId: string;
+    /**
+     * The Id of the IP Access Control List.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=accessControlListId" })
+    accessControlListId: string;
 }
 
 export class RetrieveIPAccessControlListWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  ipAccessControlListResponse?: shared.IPAccessControlListResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    ipAccessControlListResponse?: shared.IPAccessControlListResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

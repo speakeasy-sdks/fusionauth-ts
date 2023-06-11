@@ -1,0 +1,10 @@
+# RetrieveUserRecentLoginRequest
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `limit`                                                                                | *string*                                                                               | :heavy_minus_sign:                                                                     | (Optional, defaults to 10) The number of records to retrieve.                          |
+| `offset`                                                                               | *string*                                                                               | :heavy_minus_sign:                                                                     | The initial record. e.g. 0 is the last login, 100 will be the 100th most recent login. |
+| `userId`                                                                               | *string*                                                                               | :heavy_minus_sign:                                                                     | The Id of the user.                                                                    |

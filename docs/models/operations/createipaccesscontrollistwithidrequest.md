@@ -1,0 +1,9 @@
+# CreateIPAccessControlListWithIdRequest
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `accessControlListId`                                                                          | *string*                                                                                       | :heavy_check_mark:                                                                             | The Id for the IP Access Control List. If not provided a secure random UUID will be generated. |
+| `ipAccessControlListRequest`                                                                   | [shared.IPAccessControlListRequest](../../models/shared/ipaccesscontrollistrequest.md)         | :heavy_minus_sign:                                                                             | N/A                                                                                            |

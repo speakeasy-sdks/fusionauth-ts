@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Consent search response
  */
 export class ConsentSearchResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: Consent })
-  @Expose({ name: "consents" })
-  @Type(() => Consent)
-  consents?: Consent[];
+    @SpeakeasyMetadata({ elemType: Consent })
+    @Expose({ name: "consents" })
+    @Type(() => Consent)
+    consents?: Consent[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 }

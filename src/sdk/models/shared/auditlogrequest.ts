@@ -8,19 +8,19 @@ import { EventInfo } from "./eventinfo";
 import { Expose, Type } from "class-transformer";
 
 export class AuditLogRequest extends SpeakeasyBase {
-  /**
-   * An audit log.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "auditLog" })
-  @Type(() => AuditLog)
-  auditLog?: AuditLog;
+    /**
+     * An audit log.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "auditLog" })
+    @Type(() => AuditLog)
+    auditLog?: AuditLog;
 
-  /**
-   * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "eventInfo" })
-  @Type(() => EventInfo)
-  eventInfo?: EventInfo;
+    /**
+     * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "eventInfo" })
+    @Type(() => EventInfo)
+    eventInfo?: EventInfo;
 }

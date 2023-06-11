@@ -6,46 +6,46 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class ActionData extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "actioneeUserId" })
-  actioneeUserId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "actioneeUserId" })
+    actioneeUserId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "actionerUserId" })
-  actionerUserId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "actionerUserId" })
+    actionerUserId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "applicationIds" })
-  applicationIds?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "applicationIds" })
+    applicationIds?: string[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "comment" })
-  comment?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "comment" })
+    comment?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "emailUser" })
-  emailUser?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "emailUser" })
+    emailUser?: boolean;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "expiry" })
-  expiry?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "expiry" })
+    expiry?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "notifyUser" })
-  notifyUser?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "notifyUser" })
+    notifyUser?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "option" })
-  option?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "option" })
+    option?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "reasonId" })
-  reasonId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "reasonId" })
+    reasonId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userActionId" })
-  userActionId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userActionId" })
+    userActionId?: string;
 }

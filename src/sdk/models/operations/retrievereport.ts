@@ -7,62 +7,56 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveReportRequest extends SpeakeasyBase {
-  /**
-   * The application id.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=applicationId",
-  })
-  applicationId?: string;
+    /**
+     * The application id.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=applicationId" })
+    applicationId?: string;
 
-  /**
-   * The end instant as UTC milliseconds since Epoch.
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=end" })
-  end?: string;
+    /**
+     * The end instant as UTC milliseconds since Epoch.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=end" })
+    end?: string;
 
-  /**
-   * The userId id.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=loginId",
-  })
-  loginId?: string;
+    /**
+     * The userId id.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=loginId" })
+    loginId?: string;
 
-  /**
-   * The start instant as UTC milliseconds since Epoch.
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=start" })
-  start?: string;
+    /**
+     * The start instant as UTC milliseconds since Epoch.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=start" })
+    start?: string;
 
-  /**
-   * The userId id.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=userId",
-  })
-  userId?: string;
+    /**
+     * The userId id.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=userId" })
+    userId?: string;
 }
 
 export class RetrieveReportResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  loginReportResponse?: shared.LoginReportResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    loginReportResponse?: shared.LoginReportResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

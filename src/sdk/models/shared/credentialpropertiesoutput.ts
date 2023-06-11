@@ -9,7 +9,7 @@ import { Expose } from "class-transformer";
  * Contains the output for the {@code credProps} extension
  */
 export class CredentialPropertiesOutput extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "rk" })
-  rk?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "rk" })
+    rk?: boolean;
 }

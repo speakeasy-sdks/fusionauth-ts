@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class CreateFormWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id for the form. If not provided a secure random UUID will be generated.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=formId",
-  })
-  formId: string;
+    /**
+     * The Id for the form. If not provided a secure random UUID will be generated.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=formId" })
+    formId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  formRequest?: shared.FormRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    formRequest?: shared.FormRequest;
 }
 
 export class CreateFormWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  formResponse?: shared.FormResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    formResponse?: shared.FormResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

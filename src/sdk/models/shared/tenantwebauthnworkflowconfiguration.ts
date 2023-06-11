@@ -3,26 +3,26 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { AuthenticatorAttachmentPreferenceEnum } from "./authenticatorattachmentpreferenceenum";
-import { UserVerificationRequirementEnum } from "./userverificationrequirementenum";
+import { AuthenticatorAttachmentPreference } from "./authenticatorattachmentpreference";
+import { UserVerificationRequirement } from "./userverificationrequirement";
 import { Expose } from "class-transformer";
 
 export class TenantWebAuthnWorkflowConfiguration extends SpeakeasyBase {
-  /**
-   * Describes the authenticator attachment modality preference for a WebAuthn workflow. See {@link AuthenticatorAttachment}
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "authenticatorAttachmentPreference" })
-  authenticatorAttachmentPreference?: AuthenticatorAttachmentPreferenceEnum;
+    /**
+     * Describes the authenticator attachment modality preference for a WebAuthn workflow. See {@link AuthenticatorAttachment}
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "authenticatorAttachmentPreference" })
+    authenticatorAttachmentPreference?: AuthenticatorAttachmentPreference;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  /**
-   * Used to express whether the Relying Party requires <a href="https:www.w3.orgTRwebauthn-2#user-verification">user verification<a> for the  current operation.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "userVerificationRequirement" })
-  userVerificationRequirement?: UserVerificationRequirementEnum;
+    /**
+     * Used to express whether the Relying Party requires <a href="https:www.w3.orgTRwebauthn-2#user-verification">user verification<a> for the  current operation.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "userVerificationRequirement" })
+    userVerificationRequirement?: UserVerificationRequirement;
 }

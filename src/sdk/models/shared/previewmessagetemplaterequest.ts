@@ -7,18 +7,18 @@ import { MessageTemplate } from "./messagetemplate";
 import { Expose, Type } from "class-transformer";
 
 export class PreviewMessageTemplateRequest extends SpeakeasyBase {
-  /**
-   * A Locale object represents a specific geographical, political, or cultural region.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "locale" })
-  locale?: string;
+    /**
+     * A Locale object represents a specific geographical, political, or cultural region.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "locale" })
+    locale?: string;
 
-  /**
-   * Stores an message template used to distribute messages;
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "messageTemplate" })
-  @Type(() => MessageTemplate)
-  messageTemplate?: MessageTemplate;
+    /**
+     * Stores an message template used to distribute messages;
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "messageTemplate" })
+    @Type(() => MessageTemplate)
+    messageTemplate?: MessageTemplate;
 }
