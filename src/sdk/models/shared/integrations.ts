@@ -11,16 +11,16 @@ import { Expose, Type } from "class-transformer";
  * Available Integrations
  */
 export class Integrations extends SpeakeasyBase {
-  /**
-   * CleanSpeak configuration at the system and application level.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "cleanspeak" })
-  @Type(() => CleanSpeakConfiguration)
-  cleanspeak?: CleanSpeakConfiguration;
+    /**
+     * CleanSpeak configuration at the system and application level.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "cleanspeak" })
+    @Type(() => CleanSpeakConfiguration)
+    cleanspeak?: CleanSpeakConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "kafka" })
-  @Type(() => KafkaConfiguration)
-  kafka?: KafkaConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "kafka" })
+    @Type(() => KafkaConfiguration)
+    kafka?: KafkaConfiguration;
 }

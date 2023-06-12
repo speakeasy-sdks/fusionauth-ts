@@ -9,11 +9,11 @@ import { Expose } from "class-transformer";
  * The <i>authenticator's<i> response for the registration ceremony in its encoded format
  */
 export class WebAuthnAuthenticatorRegistrationResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "attestationObject" })
-  attestationObject?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "attestationObject" })
+    attestationObject?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "clientDataJSON" })
-  clientDataJSON?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "clientDataJSON" })
+    clientDataJSON?: string;
 }

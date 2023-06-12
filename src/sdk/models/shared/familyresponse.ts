@@ -10,16 +10,16 @@ import { Expose, Type } from "class-transformer";
  * API response for managing families and members.
  */
 export class FamilyResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: Family })
-  @Expose({ name: "families" })
-  @Type(() => Family)
-  families?: Family[];
+    @SpeakeasyMetadata({ elemType: Family })
+    @Expose({ name: "families" })
+    @Type(() => Family)
+    families?: Family[];
 
-  /**
-   * Models a family grouping of users.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "family" })
-  @Type(() => Family)
-  family?: Family;
+    /**
+     * Models a family grouping of users.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "family" })
+    @Type(() => Family)
+    family?: Family;
 }

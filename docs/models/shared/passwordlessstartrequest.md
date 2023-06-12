@@ -1,0 +1,10 @@
+# PasswordlessStartRequest
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `applicationId`                                                                                       | *string*                                                                                              | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
+| `loginId`                                                                                             | *string*                                                                                              | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
+| `state`                                                                                               | Record<string, [PasswordlessStartRequestState](../../models/shared/passwordlessstartrequeststate.md)> | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |

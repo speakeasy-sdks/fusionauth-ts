@@ -1,0 +1,11 @@
+# ConnectorPolicy
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `connectorId`                                                                     | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `data`                                                                            | Record<string, [ConnectorPolicyData](../../models/shared/connectorpolicydata.md)> | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `domains`                                                                         | *any*[]                                                                           | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `migrate`                                                                         | *boolean*                                                                         | :heavy_minus_sign:                                                                | N/A                                                                               |

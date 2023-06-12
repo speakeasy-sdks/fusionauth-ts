@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Search request for entity grants.
  */
 export class EntityGrantSearchResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: EntityGrant })
-  @Expose({ name: "grants" })
-  @Type(() => EntityGrant)
-  grants?: EntityGrant[];
+    @SpeakeasyMetadata({ elemType: EntityGrant })
+    @Expose({ name: "grants" })
+    @Type(() => EntityGrant)
+    grants?: EntityGrant[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 }

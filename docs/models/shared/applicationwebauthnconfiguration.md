@@ -1,0 +1,12 @@
+# ApplicationWebAuthnConfiguration
+
+Application-level configuration for WebAuthn
+
+
+## Fields
+
+| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `bootstrapWorkflow`                                                                                         | [ApplicationWebAuthnWorkflowConfiguration](../../models/shared/applicationwebauthnworkflowconfiguration.md) | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |
+| `enabled`                                                                                                   | *boolean*                                                                                                   | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |
+| `reauthenticationWorkflow`                                                                                  | [ApplicationWebAuthnWorkflowConfiguration](../../models/shared/applicationwebauthnworkflowconfiguration.md) | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |

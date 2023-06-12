@@ -11,51 +11,51 @@ import { Expose, Type } from "class-transformer";
  * This class is an abstraction of a simple email message.
  */
 export class Email extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: Attachment })
-  @Expose({ name: "attachments" })
-  @Type(() => Attachment)
-  attachments?: Attachment[];
+    @SpeakeasyMetadata({ elemType: Attachment })
+    @Expose({ name: "attachments" })
+    @Type(() => Attachment)
+    attachments?: Attachment[];
 
-  @SpeakeasyMetadata({ elemType: EmailAddress })
-  @Expose({ name: "bcc" })
-  @Type(() => EmailAddress)
-  bcc?: EmailAddress[];
+    @SpeakeasyMetadata({ elemType: EmailAddress })
+    @Expose({ name: "bcc" })
+    @Type(() => EmailAddress)
+    bcc?: EmailAddress[];
 
-  @SpeakeasyMetadata({ elemType: EmailAddress })
-  @Expose({ name: "cc" })
-  @Type(() => EmailAddress)
-  cc?: EmailAddress[];
+    @SpeakeasyMetadata({ elemType: EmailAddress })
+    @Expose({ name: "cc" })
+    @Type(() => EmailAddress)
+    cc?: EmailAddress[];
 
-  /**
-   * An email address.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "from" })
-  @Type(() => EmailAddress)
-  from?: EmailAddress;
+    /**
+     * An email address.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "from" })
+    @Type(() => EmailAddress)
+    from?: EmailAddress;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "html" })
-  html?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "html" })
+    html?: string;
 
-  /**
-   * An email address.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "replyTo" })
-  @Type(() => EmailAddress)
-  replyTo?: EmailAddress;
+    /**
+     * An email address.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "replyTo" })
+    @Type(() => EmailAddress)
+    replyTo?: EmailAddress;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "subject" })
-  subject?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "subject" })
+    subject?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "text" })
-  text?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "text" })
+    text?: string;
 
-  @SpeakeasyMetadata({ elemType: EmailAddress })
-  @Expose({ name: "to" })
-  @Type(() => EmailAddress)
-  to?: EmailAddress[];
+    @SpeakeasyMetadata({ elemType: EmailAddress })
+    @Expose({ name: "to" })
+    @Type(() => EmailAddress)
+    to?: EmailAddress[];
 }

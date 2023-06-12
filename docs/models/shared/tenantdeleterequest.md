@@ -1,0 +1,11 @@
+# TenantDeleteRequest
+
+Request for the Tenant API to delete a tenant rather than using the URL parameters.
+
+
+## Fields
+
+| Field                                                                                                                               | Type                                                                                                                                | Required                                                                                                                            | Description                                                                                                                         |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `async`                                                                                                                             | *boolean*                                                                                                                           | :heavy_minus_sign:                                                                                                                  | N/A                                                                                                                                 |
+| `eventInfo`                                                                                                                         | [EventInfo](../../models/shared/eventinfo.md)                                                                                       | :heavy_minus_sign:                                                                                                                  | Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc). |

@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class SendEmailWithIdRequest extends SpeakeasyBase {
-  /**
-   * The id for the template.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=emailTemplateId",
-  })
-  emailTemplateId: string;
+    /**
+     * The id for the template.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=emailTemplateId" })
+    emailTemplateId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  sendRequest?: shared.SendRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    sendRequest?: shared.SendRequest;
 }
 
 export class SendEmailWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  sendResponse?: shared.SendResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    sendResponse?: shared.SendResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

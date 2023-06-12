@@ -6,15 +6,15 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class LoginConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "allowTokenRefresh" })
-  allowTokenRefresh?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "allowTokenRefresh" })
+    allowTokenRefresh?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "generateRefreshTokens" })
-  generateRefreshTokens?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "generateRefreshTokens" })
+    generateRefreshTokens?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "requireAuthentication" })
-  requireAuthentication?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "requireAuthentication" })
+    requireAuthentication?: boolean;
 }

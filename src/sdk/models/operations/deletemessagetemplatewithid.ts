@@ -7,28 +7,26 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class DeleteMessageTemplateWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the message template to delete.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=messageTemplateId",
-  })
-  messageTemplateId: string;
+    /**
+     * The Id of the message template to delete.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=messageTemplateId" })
+    messageTemplateId: string;
 }
 
 export class DeleteMessageTemplateWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

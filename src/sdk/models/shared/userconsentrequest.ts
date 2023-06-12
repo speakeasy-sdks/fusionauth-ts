@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * API response for User consent.
  */
 export class UserConsentRequest extends SpeakeasyBase {
-  /**
-   * Models a User consent.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "userConsent" })
-  @Type(() => UserConsent)
-  userConsent?: UserConsent;
+    /**
+     * Models a User consent.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "userConsent" })
+    @Type(() => UserConsent)
+    userConsent?: UserConsent;
 }

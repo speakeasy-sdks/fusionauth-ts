@@ -3,25 +3,25 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PublicKeyCredentialTypeEnum } from "./publickeycredentialtypeenum";
+import { PublicKeyCredentialType } from "./publickeycredentialtype";
 import { Expose } from "class-transformer";
 
 /**
  * Contains attributes for the Relying Party to refer to an existing public key credential as an input parameter.
  */
 export class PublicKeyCredentialDescriptor extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "transports" })
-  transports?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "transports" })
+    transports?: string[];
 
-  /**
-   * Defines valid credential types. This is an extension point in the WebAuthn spec. The only defined value at this time is "public-key"
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type?: PublicKeyCredentialTypeEnum;
+    /**
+     * Defines valid credential types. This is an extension point in the WebAuthn spec. The only defined value at this time is "public-key"
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type?: PublicKeyCredentialType;
 }

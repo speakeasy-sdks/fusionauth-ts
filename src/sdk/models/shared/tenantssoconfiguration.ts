@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class TenantSSOConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "deviceTrustTimeToLiveInSeconds" })
-  deviceTrustTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "deviceTrustTimeToLiveInSeconds" })
+    deviceTrustTimeToLiveInSeconds?: number;
 }

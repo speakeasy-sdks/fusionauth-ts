@@ -7,45 +7,41 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class UpdateConsentWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the consent to update.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=consentId",
-  })
-  consentId: string;
+    /**
+     * The Id of the consent to update.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=consentId" })
+    consentId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  consentRequest?: shared.ConsentRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    consentRequest?: shared.ConsentRequest;
 
-  /**
-   * The unique Id of the tenant used to scope this API request. Only required when there is more than one tenant and the API key is not tenant-scoped.
-   */
-  @SpeakeasyMetadata({
-    data: "header, style=simple;explode=false;name=X-FusionAuth-TenantId",
-  })
-  xFusionAuthTenantId?: string;
+    /**
+     * The unique Id of the tenant used to scope this API request. Only required when there is more than one tenant and the API key is not tenant-scoped.
+     */
+    @SpeakeasyMetadata({ data: "header, style=simple;explode=false;name=X-FusionAuth-TenantId" })
+    xFusionAuthTenantId?: string;
 }
 
 export class UpdateConsentWithIdResponse extends SpeakeasyBase {
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  consentResponse?: shared.ConsentResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    consentResponse?: shared.ConsentResponse;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

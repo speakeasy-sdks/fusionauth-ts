@@ -11,20 +11,20 @@ import { Expose, Type } from "class-transformer";
  * The user action request object.
  */
 export class ActionRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "action" })
-  @Type(() => ActionData)
-  action?: ActionData;
+    @SpeakeasyMetadata()
+    @Expose({ name: "action" })
+    @Type(() => ActionData)
+    action?: ActionData;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "broadcast" })
-  broadcast?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "broadcast" })
+    broadcast?: boolean;
 
-  /**
-   * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "eventInfo" })
-  @Type(() => EventInfo)
-  eventInfo?: EventInfo;
+    /**
+     * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "eventInfo" })
+    @Type(() => EventInfo)
+    eventInfo?: EventInfo;
 }

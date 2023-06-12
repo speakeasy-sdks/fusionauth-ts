@@ -7,8 +7,8 @@ import { UniqueUsernameConfiguration } from "./uniqueusernameconfiguration";
 import { Expose, Type } from "class-transformer";
 
 export class TenantUsernameConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "unique" })
-  @Type(() => UniqueUsernameConfiguration)
-  unique?: UniqueUsernameConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "unique" })
+    @Type(() => UniqueUsernameConfiguration)
+    unique?: UniqueUsernameConfiguration;
 }

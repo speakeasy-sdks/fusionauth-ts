@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * Search request for webhooks
  */
 export class WebhookSearchRequest extends SpeakeasyBase {
-  /**
-   * Search criteria for webhooks.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "search" })
-  @Type(() => WebhookSearchCriteria)
-  search?: WebhookSearchCriteria;
+    /**
+     * Search criteria for webhooks.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "search" })
+    @Type(() => WebhookSearchCriteria)
+    search?: WebhookSearchCriteria;
 }
