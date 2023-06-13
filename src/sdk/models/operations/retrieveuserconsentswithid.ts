@@ -7,28 +7,26 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveUserConsentsWithIdRequest extends SpeakeasyBase {
-  /**
-   * The User's Id
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=userId",
-  })
-  userId?: string;
+    /**
+     * The User's Id
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=userId" })
+    userId?: string;
 }
 
 export class RetrieveUserConsentsWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  userConsentResponse?: shared.UserConsentResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    userConsentResponse?: shared.UserConsentResponse;
 }

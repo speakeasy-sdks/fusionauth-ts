@@ -7,34 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveKeyWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the key.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=keyId",
-  })
-  keyId: string;
+    /**
+     * The Id of the key.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=keyId" })
+    keyId: string;
 }
 
 export class RetrieveKeyWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  keyResponse?: shared.KeyResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    keyResponse?: shared.KeyResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

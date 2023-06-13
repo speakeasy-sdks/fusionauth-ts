@@ -6,19 +6,19 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class LambdaConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "accessTokenPopulateId" })
-  accessTokenPopulateId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "accessTokenPopulateId" })
+    accessTokenPopulateId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "idTokenPopulateId" })
-  idTokenPopulateId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "idTokenPopulateId" })
+    idTokenPopulateId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "samlv2PopulateId" })
-  samlv2PopulateId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "samlv2PopulateId" })
+    samlv2PopulateId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "selfServiceRegistrationValidationId" })
-  selfServiceRegistrationValidationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "selfServiceRegistrationValidationId" })
+    selfServiceRegistrationValidationId?: string;
 }

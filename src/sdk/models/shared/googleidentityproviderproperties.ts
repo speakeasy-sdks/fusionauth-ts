@@ -9,11 +9,11 @@ import { Expose } from "class-transformer";
  * Google social login provider parameters.
  */
 export class GoogleIdentityProviderProperties extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "api" })
-  api?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "api" })
+    api?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "button" })
-  button?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "button" })
+    button?: string;
 }

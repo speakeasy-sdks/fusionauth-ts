@@ -6,15 +6,15 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class RefreshTokenRevocationPolicy extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "onLoginPrevented" })
-  onLoginPrevented?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "onLoginPrevented" })
+    onLoginPrevented?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "onMultiFactorEnable" })
-  onMultiFactorEnable?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "onMultiFactorEnable" })
+    onMultiFactorEnable?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "onPasswordChanged" })
-  onPasswordChanged?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "onPasswordChanged" })
+    onPasswordChanged?: boolean;
 }

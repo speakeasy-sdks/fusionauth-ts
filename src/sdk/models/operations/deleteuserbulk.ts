@@ -7,47 +7,41 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class DeleteUserBulkRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  userDeleteRequest?: shared.UserDeleteRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    userDeleteRequest?: shared.UserDeleteRequest;
 
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=dryRun",
-  })
-  dryRun?: string;
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=dryRun" })
+    dryRun?: string;
 
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=hardDelete",
-  })
-  hardDelete?: string;
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=hardDelete" })
+    hardDelete?: string;
 
-  /**
-   * The ids of the users to deactivate.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=userIds",
-  })
-  userIds?: string;
+    /**
+     * The ids of the users to deactivate.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=userIds" })
+    userIds?: string;
 }
 
 export class DeleteUserBulkResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  userDeleteResponse?: shared.UserDeleteResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    userDeleteResponse?: shared.UserDeleteResponse;
 }

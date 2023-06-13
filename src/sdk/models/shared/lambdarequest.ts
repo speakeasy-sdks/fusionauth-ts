@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * Lambda API request object.
  */
 export class LambdaRequest extends SpeakeasyBase {
-  /**
-   * A JavaScript lambda function that is executed during certain events inside FusionAuth.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "lambda" })
-  @Type(() => Lambda)
-  lambda?: Lambda;
+    /**
+     * A JavaScript lambda function that is executed during certain events inside FusionAuth.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "lambda" })
+    @Type(() => Lambda)
+    lambda?: Lambda;
 }

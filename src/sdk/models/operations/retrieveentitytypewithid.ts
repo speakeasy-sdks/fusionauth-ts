@@ -7,34 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveEntityTypeWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the Entity Type.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=entityTypeId",
-  })
-  entityTypeId: string;
+    /**
+     * The Id of the Entity Type.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=entityTypeId" })
+    entityTypeId: string;
 }
 
 export class RetrieveEntityTypeWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  entityTypeResponse?: shared.EntityTypeResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    entityTypeResponse?: shared.EntityTypeResponse;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

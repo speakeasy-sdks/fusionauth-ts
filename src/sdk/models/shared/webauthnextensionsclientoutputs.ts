@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * Contains extension output for requested extensions during a WebAuthn ceremony
  */
 export class WebAuthnExtensionsClientOutputs extends SpeakeasyBase {
-  /**
-   * Contains the output for the {@code credProps} extension
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "credProps" })
-  @Type(() => CredentialPropertiesOutput)
-  credProps?: CredentialPropertiesOutput;
+    /**
+     * Contains the output for the {@code credProps} extension
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "credProps" })
+    @Type(() => CredentialPropertiesOutput)
+    credProps?: CredentialPropertiesOutput;
 }

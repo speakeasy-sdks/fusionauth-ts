@@ -10,8 +10,8 @@ import { Expose, Type } from "class-transformer";
  * Group Member Request
  */
 export class MemberRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: GroupMember })
-  @Expose({ name: "members" })
-  @Type(() => GroupMember)
-  members?: GroupMember[];
+    @SpeakeasyMetadata({ elemType: GroupMember })
+    @Expose({ name: "members" })
+    @Type(() => GroupMember)
+    members?: GroupMember[];
 }

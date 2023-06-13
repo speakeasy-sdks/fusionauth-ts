@@ -10,13 +10,13 @@ import { Expose, Type } from "class-transformer";
  * Theme API response object.
  */
 export class ThemeResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "theme" })
-  @Type(() => Theme)
-  theme?: Theme;
+    @SpeakeasyMetadata()
+    @Expose({ name: "theme" })
+    @Type(() => Theme)
+    theme?: Theme;
 
-  @SpeakeasyMetadata({ elemType: Theme })
-  @Expose({ name: "themes" })
-  @Type(() => Theme)
-  themes?: Theme[];
+    @SpeakeasyMetadata({ elemType: Theme })
+    @Expose({ name: "themes" })
+    @Type(() => Theme)
+    themes?: Theme[];
 }

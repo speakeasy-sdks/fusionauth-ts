@@ -7,34 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrievePendingChildrenWithIdRequest extends SpeakeasyBase {
-  /**
-   * The email of the parent.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=parentEmail",
-  })
-  parentEmail?: string;
+    /**
+     * The email of the parent.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=parentEmail" })
+    parentEmail?: string;
 }
 
 export class RetrievePendingChildrenWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  pendingResponse?: shared.PendingResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    pendingResponse?: shared.PendingResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

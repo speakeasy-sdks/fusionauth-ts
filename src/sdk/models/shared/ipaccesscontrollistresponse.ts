@@ -10,13 +10,13 @@ import { Expose, Type } from "class-transformer";
  * Success
  */
 export class IPAccessControlListResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "ipAccessControlList" })
-  @Type(() => IPAccessControlList)
-  ipAccessControlList?: IPAccessControlList;
+    @SpeakeasyMetadata()
+    @Expose({ name: "ipAccessControlList" })
+    @Type(() => IPAccessControlList)
+    ipAccessControlList?: IPAccessControlList;
 
-  @SpeakeasyMetadata({ elemType: IPAccessControlList })
-  @Expose({ name: "ipAccessControlLists" })
-  @Type(() => IPAccessControlList)
-  ipAccessControlLists?: IPAccessControlList[];
+    @SpeakeasyMetadata({ elemType: IPAccessControlList })
+    @Expose({ name: "ipAccessControlLists" })
+    @Type(() => IPAccessControlList)
+    ipAccessControlLists?: IPAccessControlList[];
 }

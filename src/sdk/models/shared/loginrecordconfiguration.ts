@@ -7,8 +7,8 @@ import { DeleteConfiguration } from "./deleteconfiguration";
 import { Expose, Type } from "class-transformer";
 
 export class LoginRecordConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "delete" })
-  @Type(() => DeleteConfiguration)
-  delete?: DeleteConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "delete" })
+    @Type(() => DeleteConfiguration)
+    delete?: DeleteConfiguration;
 }

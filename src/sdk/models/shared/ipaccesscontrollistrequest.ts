@@ -7,8 +7,8 @@ import { IPAccessControlList } from "./ipaccesscontrollist";
 import { Expose, Type } from "class-transformer";
 
 export class IPAccessControlListRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "ipAccessControlList" })
-  @Type(() => IPAccessControlList)
-  ipAccessControlList?: IPAccessControlList;
+    @SpeakeasyMetadata()
+    @Expose({ name: "ipAccessControlList" })
+    @Type(() => IPAccessControlList)
+    ipAccessControlList?: IPAccessControlList;
 }

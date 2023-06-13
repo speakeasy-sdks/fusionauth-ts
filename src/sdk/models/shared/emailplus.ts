@@ -6,19 +6,19 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class EmailPlus extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "emailTemplateId" })
-  emailTemplateId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "emailTemplateId" })
+    emailTemplateId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "maximumTimeToSendEmailInHours" })
-  maximumTimeToSendEmailInHours?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "maximumTimeToSendEmailInHours" })
+    maximumTimeToSendEmailInHours?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "minimumTimeToSendEmailInHours" })
-  minimumTimeToSendEmailInHours?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "minimumTimeToSendEmailInHours" })
+    minimumTimeToSendEmailInHours?: number;
 }

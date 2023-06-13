@@ -9,11 +9,11 @@ import { Expose } from "class-transformer";
  * An email address.
  */
 export class EmailAddress extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "address" })
-  address?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "address" })
+    address?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "display" })
-  display?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "display" })
+    display?: string;
 }

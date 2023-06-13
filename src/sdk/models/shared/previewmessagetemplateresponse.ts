@@ -11,16 +11,16 @@ import { Expose, Type } from "class-transformer";
  * Success
  */
 export class PreviewMessageTemplateResponse extends SpeakeasyBase {
-  /**
-   * Standard error domain object that can also be used as the response from an API call.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "errors" })
-  @Type(() => Errors)
-  errors?: Errors;
+    /**
+     * Standard error domain object that can also be used as the response from an API call.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "errors" })
+    @Type(() => Errors)
+    errors?: Errors;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "message" })
-  @Type(() => SMSMessage)
-  message?: SMSMessage;
+    @SpeakeasyMetadata()
+    @Expose({ name: "message" })
+    @Type(() => SMSMessage)
+    message?: SMSMessage;
 }

@@ -11,21 +11,21 @@ import { Expose, Type } from "class-transformer";
  * The Application API response.
  */
 export class ApplicationResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "application" })
-  @Type(() => Application)
-  application?: Application;
+    @SpeakeasyMetadata()
+    @Expose({ name: "application" })
+    @Type(() => Application)
+    application?: Application;
 
-  @SpeakeasyMetadata({ elemType: Application })
-  @Expose({ name: "applications" })
-  @Type(() => Application)
-  applications?: Application[];
+    @SpeakeasyMetadata({ elemType: Application })
+    @Expose({ name: "applications" })
+    @Type(() => Application)
+    applications?: Application[];
 
-  /**
-   * A role given to a user for a specific application.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "role" })
-  @Type(() => ApplicationRole)
-  role?: ApplicationRole;
+    /**
+     * A role given to a user for a specific application.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "role" })
+    @Type(() => ApplicationRole)
+    role?: ApplicationRole;
 }

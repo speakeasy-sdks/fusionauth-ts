@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class TenantLoginConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "requireAuthentication" })
-  requireAuthentication?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "requireAuthentication" })
+    requireAuthentication?: boolean;
 }
