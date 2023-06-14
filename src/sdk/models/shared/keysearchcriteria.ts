@@ -3,35 +3,35 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { KeyAlgorithmEnum } from "./keyalgorithmenum";
-import { KeyTypeEnum } from "./keytypeenum";
+import { KeyAlgorithm } from "./keyalgorithm";
+import { KeyType } from "./keytype";
 import { Expose } from "class-transformer";
 
 /**
  * Search criteria for Keys
  */
 export class KeySearchCriteria extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "algorithm" })
-  algorithm?: KeyAlgorithmEnum;
+    @SpeakeasyMetadata()
+    @Expose({ name: "algorithm" })
+    algorithm?: KeyAlgorithm;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "numberOfResults" })
-  numberOfResults?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "numberOfResults" })
+    numberOfResults?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "orderBy" })
-  orderBy?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "orderBy" })
+    orderBy?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "startRow" })
-  startRow?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "startRow" })
+    startRow?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type?: KeyTypeEnum;
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type?: KeyType;
 }

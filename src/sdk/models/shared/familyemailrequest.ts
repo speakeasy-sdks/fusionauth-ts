@@ -9,7 +9,7 @@ import { Expose } from "class-transformer";
  * API request for sending out family requests to parent's.
  */
 export class FamilyEmailRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "parentEmail" })
-  parentEmail?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "parentEmail" })
+    parentEmail?: string;
 }

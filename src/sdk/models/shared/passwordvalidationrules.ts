@@ -8,37 +8,37 @@ import { RememberPreviousPasswords } from "./rememberpreviouspasswords";
 import { Expose, Type } from "class-transformer";
 
 export class PasswordValidationRules extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "breachDetection" })
-  @Type(() => PasswordBreachDetection)
-  breachDetection?: PasswordBreachDetection;
+    @SpeakeasyMetadata()
+    @Expose({ name: "breachDetection" })
+    @Type(() => PasswordBreachDetection)
+    breachDetection?: PasswordBreachDetection;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "maxLength" })
-  maxLength?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "maxLength" })
+    maxLength?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "minLength" })
-  minLength?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "minLength" })
+    minLength?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "rememberPreviousPasswords" })
-  @Type(() => RememberPreviousPasswords)
-  rememberPreviousPasswords?: RememberPreviousPasswords;
+    @SpeakeasyMetadata()
+    @Expose({ name: "rememberPreviousPasswords" })
+    @Type(() => RememberPreviousPasswords)
+    rememberPreviousPasswords?: RememberPreviousPasswords;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "requireMixedCase" })
-  requireMixedCase?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "requireMixedCase" })
+    requireMixedCase?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "requireNonAlpha" })
-  requireNonAlpha?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "requireNonAlpha" })
+    requireNonAlpha?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "requireNumber" })
-  requireNumber?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "requireNumber" })
+    requireNumber?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "validateOnLogin" })
-  validateOnLogin?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "validateOnLogin" })
+    validateOnLogin?: boolean;
 }

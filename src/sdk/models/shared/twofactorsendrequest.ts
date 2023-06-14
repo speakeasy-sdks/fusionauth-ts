@@ -6,23 +6,23 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class TwoFactorSendRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  email?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    email?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "method" })
-  method?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "method" })
+    method?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "methodId" })
-  methodId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "methodId" })
+    methodId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "mobilePhone" })
-  mobilePhone?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "mobilePhone" })
+    mobilePhone?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userId" })
-  userId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userId" })
+    userId?: string;
 }

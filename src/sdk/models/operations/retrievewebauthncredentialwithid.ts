@@ -7,32 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveWebAuthnCredentialWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the WebAuthn credential.
-   */
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
-  id: string;
+    /**
+     * The Id of the WebAuthn credential.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
+    id: string;
 }
 
 export class RetrieveWebAuthnCredentialWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  webAuthnCredentialResponse?: shared.WebAuthnCredentialResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    webAuthnCredentialResponse?: shared.WebAuthnCredentialResponse;
 }

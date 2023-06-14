@@ -7,32 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveIdentityProviderByTypeWithIdRequest extends SpeakeasyBase {
-  /**
-   * The type of the identity provider.
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=type" })
-  type?: string;
+    /**
+     * The type of the identity provider.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=type" })
+    type?: string;
 }
 
 export class RetrieveIdentityProviderByTypeWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  identityProviderResponse?: shared.IdentityProviderResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    identityProviderResponse?: shared.IdentityProviderResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

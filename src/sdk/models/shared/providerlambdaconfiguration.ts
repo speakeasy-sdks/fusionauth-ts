@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class ProviderLambdaConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "reconcileId" })
-  reconcileId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "reconcileId" })
+    reconcileId?: string;
 }

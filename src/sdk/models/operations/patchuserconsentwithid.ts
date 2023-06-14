@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class PatchUserConsentWithIdRequest extends SpeakeasyBase {
-  /**
-   * The User Consent Id
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=userConsentId",
-  })
-  userConsentId: string;
+    /**
+     * The User Consent Id
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=userConsentId" })
+    userConsentId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  userConsentRequest?: shared.UserConsentRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    userConsentRequest?: shared.UserConsentRequest;
 }
 
 export class PatchUserConsentWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  userConsentResponse?: shared.UserConsentResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    userConsentResponse?: shared.UserConsentResponse;
 }

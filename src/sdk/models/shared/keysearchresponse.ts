@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Key search response
  */
 export class KeySearchResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: Key })
-  @Expose({ name: "keys" })
-  @Type(() => Key)
-  keys?: Key[];
+    @SpeakeasyMetadata({ elemType: Key })
+    @Expose({ name: "keys" })
+    @Type(() => Key)
+    keys?: Key[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 }

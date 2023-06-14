@@ -7,19 +7,19 @@ import { EventInfo } from "./eventinfo";
 import { Expose, Type } from "class-transformer";
 
 export class RefreshRequest extends SpeakeasyBase {
-  /**
-   * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "eventInfo" })
-  @Type(() => EventInfo)
-  eventInfo?: EventInfo;
+    /**
+     * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "eventInfo" })
+    @Type(() => EventInfo)
+    eventInfo?: EventInfo;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "refreshToken" })
-  refreshToken?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "refreshToken" })
+    refreshToken?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "token" })
-  token?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "token" })
+    token?: string;
 }

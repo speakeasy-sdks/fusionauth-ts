@@ -10,16 +10,16 @@ import { Expose, Type } from "class-transformer";
  * Success
  */
 export class OAuthConfigurationResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "httpSessionMaxInactiveInterval" })
-  httpSessionMaxInactiveInterval?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "httpSessionMaxInactiveInterval" })
+    httpSessionMaxInactiveInterval?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "logoutURL" })
-  logoutURL?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "logoutURL" })
+    logoutURL?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "oauthConfiguration" })
-  @Type(() => OAuth2Configuration)
-  oauthConfiguration?: OAuth2Configuration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "oauthConfiguration" })
+    @Type(() => OAuth2Configuration)
+    oauthConfiguration?: OAuth2Configuration;
 }

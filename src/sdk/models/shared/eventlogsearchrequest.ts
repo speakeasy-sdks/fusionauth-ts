@@ -7,11 +7,11 @@ import { EventLogSearchCriteria } from "./eventlogsearchcriteria";
 import { Expose, Type } from "class-transformer";
 
 export class EventLogSearchRequest extends SpeakeasyBase {
-  /**
-   * Search criteria for the event log.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "search" })
-  @Type(() => EventLogSearchCriteria)
-  search?: EventLogSearchCriteria;
+    /**
+     * Search criteria for the event log.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "search" })
+    @Type(() => EventLogSearchCriteria)
+    search?: EventLogSearchCriteria;
 }

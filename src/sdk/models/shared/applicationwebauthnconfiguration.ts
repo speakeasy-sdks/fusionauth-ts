@@ -10,17 +10,17 @@ import { Expose, Type } from "class-transformer";
  * Application-level configuration for WebAuthn
  */
 export class ApplicationWebAuthnConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "bootstrapWorkflow" })
-  @Type(() => ApplicationWebAuthnWorkflowConfiguration)
-  bootstrapWorkflow?: ApplicationWebAuthnWorkflowConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "bootstrapWorkflow" })
+    @Type(() => ApplicationWebAuthnWorkflowConfiguration)
+    bootstrapWorkflow?: ApplicationWebAuthnWorkflowConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "reauthenticationWorkflow" })
-  @Type(() => ApplicationWebAuthnWorkflowConfiguration)
-  reauthenticationWorkflow?: ApplicationWebAuthnWorkflowConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "reauthenticationWorkflow" })
+    @Type(() => ApplicationWebAuthnWorkflowConfiguration)
+    reauthenticationWorkflow?: ApplicationWebAuthnWorkflowConfiguration;
 }

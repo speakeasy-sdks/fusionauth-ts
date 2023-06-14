@@ -3,18 +3,18 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { TransactionTypeEnum } from "./transactiontypeenum";
+import { TransactionType } from "./transactiontype";
 import { Expose } from "class-transformer";
 
 export class EventConfigurationData extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  /**
-   * The transaction types for Webhooks and other event systems within FusionAuth.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "transactionType" })
-  transactionType?: TransactionTypeEnum;
+    /**
+     * The transaction types for Webhooks and other event systems within FusionAuth.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "transactionType" })
+    transactionType?: TransactionType;
 }

@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Success
  */
 export class TwoFactorStatusResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: TwoFactorTrust })
-  @Expose({ name: "trusts" })
-  @Type(() => TwoFactorTrust)
-  trusts?: TwoFactorTrust[];
+    @SpeakeasyMetadata({ elemType: TwoFactorTrust })
+    @Expose({ name: "trusts" })
+    @Type(() => TwoFactorTrust)
+    trusts?: TwoFactorTrust[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "twoFactorTrustId" })
-  twoFactorTrustId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "twoFactorTrustId" })
+    twoFactorTrustId?: string;
 }
