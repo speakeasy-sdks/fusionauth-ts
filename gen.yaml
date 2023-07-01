@@ -2,14 +2,14 @@ configVersion: 1.0.0
 management:
   docChecksum: b1efcc81fa48585c25a56a2295f4dd91
   docVersion: 1.45.1
-  speakeasyVersion: 1.51.3
-  generationVersion: 2.52.2
+  speakeasyVersion: 1.52.0
+  generationVersion: 2.55.0
 generation:
   sdkClassName: SDK
   singleTagPerOp: false
   telemetryEnabled: false
 typescript:
-  version: 1.5.0
+  version: 1.6.0
   author: Speakeasy
   maxMethodParams: 4
   packageName: speakeasy-sdks/fusionauth
