@@ -754,7 +754,7 @@ Complete a WebAuthn authentication ceremony by validating the signature against 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CompleteWebAuthnAssertionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { AttestationType, CoseAlgorithmIdentifier, DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -833,13 +833,7 @@ Complete a WebAuthn authentication ceremony by validating the signature against 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CompleteWebAuthnLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatus,
-  ChangePasswordReason,
-  ContentStatus,
-  DeviceType,
-  TOTPAlgorithm,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -915,7 +909,6 @@ Complete a WebAuthn registration ceremony by validating the client request and s
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CompleteWebAuthnRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { AttestationType, CoseAlgorithmIdentifier } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -6298,7 +6291,6 @@ Exchanges an OAuth authorization code and code_verifier for an access token. Mak
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { CreateTokenResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { OAuthErrorReason, OAuthErrorType, TokenType, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -9694,13 +9686,7 @@ Handles login via third-parties including Social login, external OAuth and OpenI
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { IdentityProviderLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatus,
-  ChangePasswordReason,
-  ContentStatus,
-  DeviceType,
-  TOTPAlgorithm,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -11219,7 +11205,6 @@ Inspect an access token issued by FusionAuth.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { IntrospectAccessTokenWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { OAuthErrorReason, OAuthErrorType, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -11292,7 +11277,6 @@ Sends a ping to FusionAuth indicating that the user was automatically logged int
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { LoginPingWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -11332,13 +11316,7 @@ Sends a ping to FusionAuth indicating that the user was automatically logged int
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { LoginPingWithRequestWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatus,
-  ChangePasswordReason,
-  ContentStatus,
-  DeviceType,
-  TOTPAlgorithm,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -11401,13 +11379,7 @@ Authenticates a user to FusionAuth.   This API optionally requires an API key. S
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { LoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatus,
-  ChangePasswordReason,
-  ContentStatus,
-  DeviceType,
-  TOTPAlgorithm,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -11472,7 +11444,6 @@ Retrieves the identity provider for the given domain. A 200 response code indica
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { LookupIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ClientAuthenticationMethod, IdentityProviderType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -11586,13 +11557,7 @@ Complete a login request using a passwordless code
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { PasswordlessLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatus,
-  ChangePasswordReason,
-  ContentStatus,
-  DeviceType,
-  TOTPAlgorithm,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -15558,13 +15523,7 @@ Reconcile a User to FusionAuth using JWT issued from another Identity Provider.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { ReconcileJWTWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatus,
-  ChangePasswordReason,
-  ContentStatus,
-  DeviceType,
-  TOTPAlgorithm,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -17594,24 +17553,6 @@ Retrieves the application for the given id or all of the applications if the id 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveApplicationResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  ApplicationMultiFactorTrustPolicy,
-  CanonicalizationMethod,
-  ClientAuthenticationPolicy,
-  LoginIdType,
-  LogoutBehavior,
-  MultiFactorLoginPolicy,
-  Oauth2AuthorizedURLValidationPolicy,
-  ObjectState,
-  ProofKeyForCodeExchangePolicy,
-  RefreshTokenExpirationPolicy,
-  RefreshTokenUsagePolicy,
-  RegistrationType,
-  SAMLLogoutBehavior,
-  UnverifiedBehavior,
-  VerificationStrategy,
-  XMLSignatureLocation,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -17649,24 +17590,6 @@ Retrieves the application for the given id or all of the applications if the id 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  ApplicationMultiFactorTrustPolicy,
-  CanonicalizationMethod,
-  ClientAuthenticationPolicy,
-  LoginIdType,
-  LogoutBehavior,
-  MultiFactorLoginPolicy,
-  Oauth2AuthorizedURLValidationPolicy,
-  ObjectState,
-  ProofKeyForCodeExchangePolicy,
-  RefreshTokenExpirationPolicy,
-  RefreshTokenUsagePolicy,
-  RegistrationType,
-  SAMLLogoutBehavior,
-  UnverifiedBehavior,
-  VerificationStrategy,
-  XMLSignatureLocation,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -17740,7 +17663,6 @@ Retrieves the connector with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConnectorType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18090,7 +18012,6 @@ Retrieves a single event log for the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveEventLogWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { EventLogType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18127,7 +18048,6 @@ Retrieves all the families that a user belongs to.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveFamiliesWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18165,7 +18085,6 @@ Retrieves all the members of a family by the unique Family Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveFamilyMembersByFamilyIdWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18203,7 +18122,6 @@ Retrieves the form field with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FormControl, FormDataType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18240,7 +18158,6 @@ Retrieves the form with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18314,7 +18231,6 @@ Retrieves the IP Access Control List with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveIPAccessControlListWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { IPAccessControlEntryAction } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18498,7 +18414,6 @@ Retrieves the key for the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18535,7 +18450,6 @@ Retrieves the lambda for the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18572,7 +18486,6 @@ Retrieves all the lambdas for the provided type.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveLambdasByTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18609,7 +18522,6 @@ Retrieves the message template for the given Id. If you don't specify the id, th
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveMessageTemplateResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18695,7 +18607,6 @@ Retrieves the message template for the given Id. If you don't specify the id, th
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18732,7 +18643,6 @@ Retrieves the messenger with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessengerType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18807,12 +18717,6 @@ Retrieves the Oauth2 configuration for the application for the given Application
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveOauthConfigurationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  ClientAuthenticationPolicy,
-  LogoutBehavior,
-  Oauth2AuthorizedURLValidationPolicy,
-  ProofKeyForCodeExchangePolicy,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18850,7 +18754,6 @@ Retrieves the password validation rules for a specific tenant.  This API does no
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrievePasswordValidationRulesWithTenantIdWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachAction, BreachMatchMode } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18887,7 +18790,6 @@ Retrieves all the children for the given parent email address.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrievePendingChildrenWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18924,7 +18826,6 @@ Retrieves a single refresh token by unique Id. This is not the same thing as the
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveRefreshTokenByIdWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -18961,7 +18862,6 @@ Retrieves the refresh tokens that belong to the user with the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveRefreshTokensWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19036,7 +18936,6 @@ Retrieves the user registration for the user with the given id and the given app
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19117,25 +19016,6 @@ Retrieves the tenant for the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  AuthenticatorAttachmentPreference,
-  BreachAction,
-  BreachMatchMode,
-  CaptchaMethod,
-  EmailSecurityType,
-  ExpiryUnit,
-  MultiFactorLoginPolicy,
-  ObjectState,
-  RefreshTokenExpirationPolicy,
-  RefreshTokenUsagePolicy,
-  SecureGeneratorType,
-  TOTPAlgorithm,
-  TransactionType,
-  UniqueUsernameStrategy,
-  UnverifiedBehavior,
-  UserVerificationRequirement,
-  VerificationStrategy,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19283,7 +19163,6 @@ Retrieves the user for the given username. OR Retrieves the user by a verificati
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveUserResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19327,7 +19206,6 @@ Retrieves all the user actions that are currently inactive. OR Retrieves the use
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveUserActionResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19436,7 +19314,6 @@ Retrieves the user action for the given Id. If you pass in null for the id, this
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19585,7 +19462,6 @@ Retrieve a single User consent by Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19622,7 +19498,6 @@ Retrieves all the consents for a User.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveUserConsentsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19659,7 +19534,6 @@ Call the UserInfo endpoint to retrieve User Claims from the access token issued 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveUserInfoFromAccessTokenWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { OAuthErrorReason, OAuthErrorType, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19733,7 +19607,6 @@ Retrieves the user for the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19771,7 +19644,6 @@ Retrieves the WebAuthn credential for the given Id.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveWebAuthnCredentialWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { AttestationType, CoseAlgorithmIdentifier } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19808,7 +19680,6 @@ Retrieves all WebAuthn credentials for the given user.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveWebAuthnCredentialsForUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { AttestationType, CoseAlgorithmIdentifier } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -19988,24 +19859,7 @@ Searches applications with the specified criteria and pagination.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchApplicationsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  ApplicationMultiFactorTrustPolicy,
-  CanonicalizationMethod,
-  ClientAuthenticationPolicy,
-  LoginIdType,
-  LogoutBehavior,
-  MultiFactorLoginPolicy,
-  Oauth2AuthorizedURLValidationPolicy,
-  ObjectState,
-  ProofKeyForCodeExchangePolicy,
-  RefreshTokenExpirationPolicy,
-  RefreshTokenUsagePolicy,
-  RegistrationType,
-  SAMLLogoutBehavior,
-  UnverifiedBehavior,
-  VerificationStrategy,
-  XMLSignatureLocation,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { ObjectState } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -20420,7 +20274,6 @@ Searches group members with the specified criteria and pagination.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchGroupMembersWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -20510,7 +20363,6 @@ Searches the IP Access Control Lists with the specified criteria and pagination.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchIPAccessControlListsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { IPAccessControlEntryAction } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -20646,7 +20498,7 @@ Searches lambdas with the specified criteria and pagination.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchLambdasWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -20739,25 +20591,6 @@ Searches tenants with the specified criteria and pagination.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchTenantsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  AuthenticatorAttachmentPreference,
-  BreachAction,
-  BreachMatchMode,
-  CaptchaMethod,
-  EmailSecurityType,
-  ExpiryUnit,
-  MultiFactorLoginPolicy,
-  ObjectState,
-  RefreshTokenExpirationPolicy,
-  RefreshTokenUsagePolicy,
-  SecureGeneratorType,
-  TOTPAlgorithm,
-  TransactionType,
-  UniqueUsernameStrategy,
-  UnverifiedBehavior,
-  UserVerificationRequirement,
-  VerificationStrategy,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -20890,7 +20723,6 @@ Retrieves the users for the given ids. If any id is invalid, it is ignored.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchUsersByIdsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -20927,7 +20759,7 @@ Retrieves the users for the given search criteria and pagination.
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { SearchUsersByQueryWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, Sort, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { Sort } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -21388,7 +21220,6 @@ Start a Two-Factor login request by generating a two-factor identifier. This cod
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { StartTwoFactorLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -21435,7 +21266,7 @@ Start a WebAuthn authentication ceremony by generating a new challenge for the u
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { StartWebAuthnLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { PublicKeyCredentialType, UserVerificationRequirement, WebAuthnWorkflow } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { WebAuthnWorkflow } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -21481,15 +21312,7 @@ Start a WebAuthn registration ceremony by generating a new challenge for the use
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { StartWebAuthnRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  AttestationConveyancePreference,
-  AuthenticatorAttachment,
-  CoseAlgorithmIdentifier,
-  PublicKeyCredentialType,
-  ResidentKeyRequirement,
-  UserVerificationRequirement,
-  WebAuthnWorkflow,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { WebAuthnWorkflow } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
@@ -21532,13 +21355,7 @@ Complete login using a 2FA challenge
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { TwoFactorLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  BreachedPasswordStatus,
-  ChangePasswordReason,
-  ContentStatus,
-  DeviceType,
-  TOTPAlgorithm,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
