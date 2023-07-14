@@ -9,15 +9,15 @@ import { Expose } from "class-transformer";
  * Password Encryption Scheme Configuration
  */
 export class PasswordEncryptionConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "encryptionScheme" })
-  encryptionScheme?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "encryptionScheme" })
+    encryptionScheme?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "encryptionSchemeFactor" })
-  encryptionSchemeFactor?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "encryptionSchemeFactor" })
+    encryptionSchemeFactor?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "modifyEncryptionSchemeOnLogin" })
-  modifyEncryptionSchemeOnLogin?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "modifyEncryptionSchemeOnLogin" })
+    modifyEncryptionSchemeOnLogin?: boolean;
 }

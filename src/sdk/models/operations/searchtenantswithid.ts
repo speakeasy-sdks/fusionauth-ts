@@ -7,24 +7,24 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class SearchTenantsWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  tenantSearchResponse?: shared.TenantSearchResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    tenantSearchResponse?: shared.TenantSearchResponse;
 }

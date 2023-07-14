@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class FormStep extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "fields" })
-  fields?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "fields" })
+    fields?: string[];
 }

@@ -1,0 +1,17 @@
+# EventInfo
+
+Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `data`                                                                            | Record<string, [EventInfoData](../../models/shared/eventinfodata.md)>             | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `deviceDescription`                                                               | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `deviceName`                                                                      | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `deviceType`                                                                      | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `ipAddress`                                                                       | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `location`                                                                        | [Location](../../models/shared/location.md)                                       | :heavy_minus_sign:                                                                | Location information. Useful for IP addresses and other displayable data objects. |
+| `os`                                                                              | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `userAgent`                                                                       | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |

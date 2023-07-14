@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * Search request for Applications
  */
 export class ApplicationSearchRequest extends SpeakeasyBase {
-  /**
-   * Search criteria for Applications
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "search" })
-  @Type(() => ApplicationSearchCriteria)
-  search?: ApplicationSearchCriteria;
+    /**
+     * Search criteria for Applications
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "search" })
+    @Type(() => ApplicationSearchCriteria)
+    search?: ApplicationSearchCriteria;
 }

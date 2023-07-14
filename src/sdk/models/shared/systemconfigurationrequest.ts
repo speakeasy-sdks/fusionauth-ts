@@ -10,8 +10,8 @@ import { Expose, Type } from "class-transformer";
  * Request for the system configuration API.
  */
 export class SystemConfigurationRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "systemConfiguration" })
-  @Type(() => SystemConfiguration)
-  systemConfiguration?: SystemConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "systemConfiguration" })
+    @Type(() => SystemConfiguration)
+    systemConfiguration?: SystemConfiguration;
 }

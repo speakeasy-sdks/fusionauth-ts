@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Refresh Token Import request.
  */
 export class RefreshTokenImportRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: RefreshToken })
-  @Expose({ name: "refreshTokens" })
-  @Type(() => RefreshToken)
-  refreshTokens?: RefreshToken[];
+    @SpeakeasyMetadata({ elemType: RefreshToken })
+    @Expose({ name: "refreshTokens" })
+    @Type(() => RefreshToken)
+    refreshTokens?: RefreshToken[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "validateDbConstraints" })
-  validateDbConstraints?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "validateDbConstraints" })
+    validateDbConstraints?: boolean;
 }

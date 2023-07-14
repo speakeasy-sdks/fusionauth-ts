@@ -1,0 +1,9 @@
+# PreviewMessageTemplateRequest
+
+
+## Fields
+
+| Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        | Example                                                                            |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `locale`                                                                           | *string*                                                                           | :heavy_minus_sign:                                                                 | A Locale object represents a specific geographical, political, or cultural region. | en_US                                                                              |
+| `messageTemplate`                                                                  | [MessageTemplate](../../models/shared/messagetemplate.md)                          | :heavy_minus_sign:                                                                 | Stores an message template used to distribute messages;                            |                                                                                    |

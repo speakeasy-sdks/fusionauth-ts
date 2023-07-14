@@ -11,28 +11,28 @@ import { Expose, Type } from "class-transformer";
  * Import request.
  */
 export class ImportRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "encryptionScheme" })
-  encryptionScheme?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "encryptionScheme" })
+    encryptionScheme?: string;
 
-  /**
-   * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "eventInfo" })
-  @Type(() => EventInfo)
-  eventInfo?: EventInfo;
+    /**
+     * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "eventInfo" })
+    @Type(() => EventInfo)
+    eventInfo?: EventInfo;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "factor" })
-  factor?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "factor" })
+    factor?: number;
 
-  @SpeakeasyMetadata({ elemType: User })
-  @Expose({ name: "users" })
-  @Type(() => User)
-  users?: User[];
+    @SpeakeasyMetadata({ elemType: User })
+    @Expose({ name: "users" })
+    @Type(() => User)
+    users?: User[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "validateDbConstraints" })
-  validateDbConstraints?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "validateDbConstraints" })
+    validateDbConstraints?: boolean;
 }

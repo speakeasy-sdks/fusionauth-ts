@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class EnableTwoFactorWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the user to enable two-factor authentication.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=userId",
-  })
-  userId: string;
+    /**
+     * The Id of the user to enable two-factor authentication.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=userId" })
+    userId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  twoFactorRequest?: shared.TwoFactorRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    twoFactorRequest?: shared.TwoFactorRequest;
 }
 
 export class EnableTwoFactorWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  twoFactorResponse?: shared.TwoFactorResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    twoFactorResponse?: shared.TwoFactorResponse;
 }

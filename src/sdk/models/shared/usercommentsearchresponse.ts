@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * User comment search response
  */
 export class UserCommentSearchResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 
-  @SpeakeasyMetadata({ elemType: UserComment })
-  @Expose({ name: "userComments" })
-  @Type(() => UserComment)
-  userComments?: UserComment[];
+    @SpeakeasyMetadata({ elemType: UserComment })
+    @Expose({ name: "userComments" })
+    @Type(() => UserComment)
+    userComments?: UserComment[];
 }

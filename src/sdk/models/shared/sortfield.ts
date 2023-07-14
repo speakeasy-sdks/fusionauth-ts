@@ -3,19 +3,19 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { SortEnum } from "./sortenum";
+import { Sort } from "./sort";
 import { Expose } from "class-transformer";
 
 export class SortField extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "missing" })
-  missing?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "missing" })
+    missing?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "order" })
-  order?: SortEnum;
+    @SpeakeasyMetadata()
+    @Expose({ name: "order" })
+    order?: Sort;
 }

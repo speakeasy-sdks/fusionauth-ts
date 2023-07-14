@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class SelfServiceFormConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "requireCurrentPasswordOnPasswordChange" })
-  requireCurrentPasswordOnPasswordChange?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "requireCurrentPasswordOnPasswordChange" })
+    requireCurrentPasswordOnPasswordChange?: boolean;
 }

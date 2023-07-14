@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class ApplicationExternalIdentifierConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "twoFactorTrustIdTimeToLiveInSeconds" })
-  twoFactorTrustIdTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "twoFactorTrustIdTimeToLiveInSeconds" })
+    twoFactorTrustIdTimeToLiveInSeconds?: number;
 }

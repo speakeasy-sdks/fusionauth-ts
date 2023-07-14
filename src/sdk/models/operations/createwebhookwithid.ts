@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class CreateWebhookWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id for the webhook. If not provided a secure random UUID will be generated.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=webhookId",
-  })
-  webhookId: string;
+    /**
+     * The Id for the webhook. If not provided a secure random UUID will be generated.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=webhookId" })
+    webhookId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  webhookRequest?: shared.WebhookRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    webhookRequest?: shared.WebhookRequest;
 }
 
 export class CreateWebhookWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  webhookResponse?: shared.WebhookResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    webhookResponse?: shared.WebhookResponse;
 }

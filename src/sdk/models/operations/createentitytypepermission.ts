@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class CreateEntityTypePermissionRequest extends SpeakeasyBase {
-  /**
-   * The Id of the entity type to create the permission on.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=entityTypeId",
-  })
-  entityTypeId: string;
+    /**
+     * The Id of the entity type to create the permission on.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=entityTypeId" })
+    entityTypeId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  entityTypeRequest?: shared.EntityTypeRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    entityTypeRequest?: shared.EntityTypeRequest;
 }
 
 export class CreateEntityTypePermissionResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  entityTypeResponse?: shared.EntityTypeResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    entityTypeResponse?: shared.EntityTypeResponse;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

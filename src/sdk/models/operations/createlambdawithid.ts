@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class CreateLambdaWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id for the lambda. If not provided a secure random UUID will be generated.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=lambdaId",
-  })
-  lambdaId: string;
+    /**
+     * The Id for the lambda. If not provided a secure random UUID will be generated.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=lambdaId" })
+    lambdaId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  lambdaRequest?: shared.LambdaRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    lambdaRequest?: shared.LambdaRequest;
 }
 
 export class CreateLambdaWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  lambdaResponse?: shared.LambdaResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    lambdaResponse?: shared.LambdaResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

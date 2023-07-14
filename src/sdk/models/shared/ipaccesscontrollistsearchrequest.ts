@@ -10,8 +10,8 @@ import { Expose, Type } from "class-transformer";
  * Search request for IP ACLs .
  */
 export class IPAccessControlListSearchRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "search" })
-  @Type(() => IPAccessControlListSearchCriteria)
-  search?: IPAccessControlListSearchCriteria;
+    @SpeakeasyMetadata()
+    @Expose({ name: "search" })
+    @Type(() => IPAccessControlListSearchCriteria)
+    search?: IPAccessControlListSearchCriteria;
 }

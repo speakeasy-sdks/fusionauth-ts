@@ -10,16 +10,16 @@ import { Expose, Type } from "class-transformer";
  * Webhook API response object.
  */
 export class WebhookResponse extends SpeakeasyBase {
-  /**
-   * A server where events are sent. This includes user action events and any other events sent by FusionAuth.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "webhook" })
-  @Type(() => Webhook)
-  webhook?: Webhook;
+    /**
+     * A server where events are sent. This includes user action events and any other events sent by FusionAuth.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "webhook" })
+    @Type(() => Webhook)
+    webhook?: Webhook;
 
-  @SpeakeasyMetadata({ elemType: Webhook })
-  @Expose({ name: "webhooks" })
-  @Type(() => Webhook)
-  webhooks?: Webhook[];
+    @SpeakeasyMetadata({ elemType: Webhook })
+    @Expose({ name: "webhooks" })
+    @Type(() => Webhook)
+    webhooks?: Webhook[];
 }

@@ -6,22 +6,20 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 
 export class RevokeUserConsentWithIdRequest extends SpeakeasyBase {
-  /**
-   * The User Consent Id
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=userConsentId",
-  })
-  userConsentId: string;
+    /**
+     * The User Consent Id
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=userConsentId" })
+    userConsentId: string;
 }
 
 export class RevokeUserConsentWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

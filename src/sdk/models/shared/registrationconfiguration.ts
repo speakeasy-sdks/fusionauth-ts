@@ -3,77 +3,77 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { LoginIdTypeEnum } from "./loginidtypeenum";
-import { RegistrationTypeEnum } from "./registrationtypeenum";
+import { LoginIdType } from "./loginidtype";
+import { RegistrationType } from "./registrationtype";
 import { Requirable } from "./requirable";
 import { Expose, Type } from "class-transformer";
 
 export class RegistrationConfiguration extends SpeakeasyBase {
-  /**
-   * Something that can be required and thus also optional. This currently extends Enableable because anything that is  requireoptional is almost always enableable as well.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "birthDate" })
-  @Type(() => Requirable)
-  birthDate?: Requirable;
+    /**
+     * Something that can be required and thus also optional. This currently extends Enableable because anything that is  requireoptional is almost always enableable as well.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "birthDate" })
+    @Type(() => Requirable)
+    birthDate?: Requirable;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "confirmPassword" })
-  confirmPassword?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "confirmPassword" })
+    confirmPassword?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  /**
-   * Something that can be required and thus also optional. This currently extends Enableable because anything that is  requireoptional is almost always enableable as well.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "firstName" })
-  @Type(() => Requirable)
-  firstName?: Requirable;
+    /**
+     * Something that can be required and thus also optional. This currently extends Enableable because anything that is  requireoptional is almost always enableable as well.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "firstName" })
+    @Type(() => Requirable)
+    firstName?: Requirable;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "formId" })
-  formId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "formId" })
+    formId?: string;
 
-  /**
-   * Something that can be required and thus also optional. This currently extends Enableable because anything that is  requireoptional is almost always enableable as well.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "fullName" })
-  @Type(() => Requirable)
-  fullName?: Requirable;
+    /**
+     * Something that can be required and thus also optional. This currently extends Enableable because anything that is  requireoptional is almost always enableable as well.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "fullName" })
+    @Type(() => Requirable)
+    fullName?: Requirable;
 
-  /**
-   * Something that can be required and thus also optional. This currently extends Enableable because anything that is  requireoptional is almost always enableable as well.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "lastName" })
-  @Type(() => Requirable)
-  lastName?: Requirable;
+    /**
+     * Something that can be required and thus also optional. This currently extends Enableable because anything that is  requireoptional is almost always enableable as well.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "lastName" })
+    @Type(() => Requirable)
+    lastName?: Requirable;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "loginIdType" })
-  loginIdType?: LoginIdTypeEnum;
+    @SpeakeasyMetadata()
+    @Expose({ name: "loginIdType" })
+    loginIdType?: LoginIdType;
 
-  /**
-   * Something that can be required and thus also optional. This currently extends Enableable because anything that is  requireoptional is almost always enableable as well.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "middleName" })
-  @Type(() => Requirable)
-  middleName?: Requirable;
+    /**
+     * Something that can be required and thus also optional. This currently extends Enableable because anything that is  requireoptional is almost always enableable as well.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "middleName" })
+    @Type(() => Requirable)
+    middleName?: Requirable;
 
-  /**
-   * Something that can be required and thus also optional. This currently extends Enableable because anything that is  requireoptional is almost always enableable as well.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "mobilePhone" })
-  @Type(() => Requirable)
-  mobilePhone?: Requirable;
+    /**
+     * Something that can be required and thus also optional. This currently extends Enableable because anything that is  requireoptional is almost always enableable as well.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "mobilePhone" })
+    @Type(() => Requirable)
+    mobilePhone?: Requirable;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type?: RegistrationTypeEnum;
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type?: RegistrationType;
 }

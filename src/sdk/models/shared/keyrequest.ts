@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * Key API request object.
  */
 export class KeyRequest extends SpeakeasyBase {
-  /**
-   * Domain for a public key, key pair or an HMAC secret. This is used by KeyMaster to manage keys for JWTs, SAML, etc.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "key" })
-  @Type(() => Key)
-  key?: Key;
+    /**
+     * Domain for a public key, key pair or an HMAC secret. This is used by KeyMaster to manage keys for JWTs, SAML, etc.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "key" })
+    @Type(() => Key)
+    key?: Key;
 }

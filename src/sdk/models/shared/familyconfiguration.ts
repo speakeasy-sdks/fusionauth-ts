@@ -6,43 +6,43 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class FamilyConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "allowChildRegistrations" })
-  allowChildRegistrations?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "allowChildRegistrations" })
+    allowChildRegistrations?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "confirmChildEmailTemplateId" })
-  confirmChildEmailTemplateId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "confirmChildEmailTemplateId" })
+    confirmChildEmailTemplateId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "deleteOrphanedAccounts" })
-  deleteOrphanedAccounts?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "deleteOrphanedAccounts" })
+    deleteOrphanedAccounts?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "deleteOrphanedAccountsDays" })
-  deleteOrphanedAccountsDays?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "deleteOrphanedAccountsDays" })
+    deleteOrphanedAccountsDays?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "familyRequestEmailTemplateId" })
-  familyRequestEmailTemplateId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "familyRequestEmailTemplateId" })
+    familyRequestEmailTemplateId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "maximumChildAge" })
-  maximumChildAge?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "maximumChildAge" })
+    maximumChildAge?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "minimumOwnerAge" })
-  minimumOwnerAge?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "minimumOwnerAge" })
+    minimumOwnerAge?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "parentEmailRequired" })
-  parentEmailRequired?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "parentEmailRequired" })
+    parentEmailRequired?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "parentRegistrationEmailTemplateId" })
-  parentRegistrationEmailTemplateId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "parentRegistrationEmailTemplateId" })
+    parentRegistrationEmailTemplateId?: string;
 }

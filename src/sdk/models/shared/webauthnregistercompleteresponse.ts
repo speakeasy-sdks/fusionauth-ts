@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * API response for completing WebAuthn credential registration or assertion
  */
 export class WebAuthnRegisterCompleteResponse extends SpeakeasyBase {
-  /**
-   * A User's WebAuthnCredential. Contains all data required to complete WebAuthn authentication ceremonies.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "credential" })
-  @Type(() => WebAuthnCredential)
-  credential?: WebAuthnCredential;
+    /**
+     * A User's WebAuthnCredential. Contains all data required to complete WebAuthn authentication ceremonies.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "credential" })
+    @Type(() => WebAuthnCredential)
+    credential?: WebAuthnCredential;
 }

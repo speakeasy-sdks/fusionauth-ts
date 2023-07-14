@@ -10,19 +10,19 @@ import { Expose, Type } from "class-transformer";
  * A displayable raw login that includes application name and user loginId.
  */
 export class DisplayableRawLogin extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "applicationName" })
-  applicationName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "applicationName" })
+    applicationName?: string;
 
-  /**
-   * Location information. Useful for IP addresses and other displayable data objects.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "location" })
-  @Type(() => Location)
-  location?: Location;
+    /**
+     * Location information. Useful for IP addresses and other displayable data objects.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "location" })
+    @Type(() => Location)
+    location?: Location;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "loginId" })
-  loginId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "loginId" })
+    loginId?: string;
 }

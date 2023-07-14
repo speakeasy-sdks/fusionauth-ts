@@ -9,11 +9,11 @@ import { Expose } from "class-transformer";
  * JWT Public Key Response Object
  */
 export class PublicKeyResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "publicKey" })
-  publicKey?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "publicKey" })
+    publicKey?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "publicKeys" })
-  publicKeys?: Record<string, string>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "publicKeys" })
+    publicKeys?: Record<string, string>;
 }

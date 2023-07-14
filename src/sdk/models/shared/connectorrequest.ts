@@ -7,11 +7,11 @@ import { BaseConnectorConfiguration } from "./baseconnectorconfiguration";
 import { Expose, Type } from "class-transformer";
 
 export class ConnectorRequest extends SpeakeasyBase {
-  /**
-   * Do not require a setter for 'type', it is defined by the concrete class and is not mutable
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "connector" })
-  @Type(() => BaseConnectorConfiguration)
-  connector?: BaseConnectorConfiguration;
+    /**
+     * Do not require a setter for 'type', it is defined by the concrete class and is not mutable
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "connector" })
+    @Type(() => BaseConnectorConfiguration)
+    connector?: BaseConnectorConfiguration;
 }

@@ -10,16 +10,16 @@ import { Expose, Type } from "class-transformer";
  * User Action Reason API response object.
  */
 export class UserActionReasonResponse extends SpeakeasyBase {
-  /**
-   * Models action reasons.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "userActionReason" })
-  @Type(() => UserActionReason)
-  userActionReason?: UserActionReason;
+    /**
+     * Models action reasons.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "userActionReason" })
+    @Type(() => UserActionReason)
+    userActionReason?: UserActionReason;
 
-  @SpeakeasyMetadata({ elemType: UserActionReason })
-  @Expose({ name: "userActionReasons" })
-  @Type(() => UserActionReason)
-  userActionReasons?: UserActionReason[];
+    @SpeakeasyMetadata({ elemType: UserActionReason })
+    @Expose({ name: "userActionReasons" })
+    @Type(() => UserActionReason)
+    userActionReasons?: UserActionReason[];
 }

@@ -10,16 +10,16 @@ import { Expose, Type } from "class-transformer";
  * Success
  */
 export class TwoFactorStartResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "code" })
-  code?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "code" })
+    code?: string;
 
-  @SpeakeasyMetadata({ elemType: TwoFactorMethod })
-  @Expose({ name: "methods" })
-  @Type(() => TwoFactorMethod)
-  methods?: TwoFactorMethod[];
+    @SpeakeasyMetadata({ elemType: TwoFactorMethod })
+    @Expose({ name: "methods" })
+    @Type(() => TwoFactorMethod)
+    methods?: TwoFactorMethod[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "twoFactorId" })
-  twoFactorId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "twoFactorId" })
+    twoFactorId?: string;
 }

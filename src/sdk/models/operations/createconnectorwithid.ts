@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class CreateConnectorWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id for the connector. If not provided a secure random UUID will be generated.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=connectorId",
-  })
-  connectorId: string;
+    /**
+     * The Id for the connector. If not provided a secure random UUID will be generated.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connectorId" })
+    connectorId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  connectorRequest?: shared.ConnectorRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    connectorRequest?: shared.ConnectorRequest;
 }
 
 export class CreateConnectorWithIdResponse extends SpeakeasyBase {
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  connectorResponse?: shared.ConnectorResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    connectorResponse?: shared.ConnectorResponse;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

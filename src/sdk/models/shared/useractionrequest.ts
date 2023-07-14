@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * User Action API request object.
  */
 export class UserActionRequest extends SpeakeasyBase {
-  /**
-   * An action that can be executed on a user (discipline or reward potentially).
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "userAction" })
-  @Type(() => UserAction)
-  userAction?: UserAction;
+    /**
+     * An action that can be executed on a user (discipline or reward potentially).
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "userAction" })
+    @Type(() => UserAction)
+    userAction?: UserAction;
 }

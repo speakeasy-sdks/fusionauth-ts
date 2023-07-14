@@ -3,79 +3,84 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { LocalizedStrings } from "./localizedstrings";
+import { Expose, Type } from "class-transformer";
 
 /**
  * Stores an email template used to send emails to users.
  */
 export class EmailTemplate extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "defaultFromName" })
-  defaultFromName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "defaultFromName" })
+    defaultFromName?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "defaultHtmlTemplate" })
-  defaultHtmlTemplate?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "defaultHtmlTemplate" })
+    defaultHtmlTemplate?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "defaultSubject" })
-  defaultSubject?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "defaultSubject" })
+    defaultSubject?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "defaultTextTemplate" })
-  defaultTextTemplate?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "defaultTextTemplate" })
+    defaultTextTemplate?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "fromEmail" })
-  fromEmail?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "fromEmail" })
+    fromEmail?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "insertInstant" })
-  insertInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "insertInstant" })
+    insertInstant?: number;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "lastUpdateInstant" })
-  lastUpdateInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "lastUpdateInstant" })
+    lastUpdateInstant?: number;
 
-  /**
-   * Models a set of localized Strings that can be stored as JSON.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "localizedFromNames" })
-  localizedFromNames?: Record<string, any>;
+    /**
+     * Models a set of localized Strings that can be stored as JSON.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "localizedFromNames" })
+    @Type(() => LocalizedStrings)
+    localizedFromNames?: LocalizedStrings;
 
-  /**
-   * Models a set of localized Strings that can be stored as JSON.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "localizedHtmlTemplates" })
-  localizedHtmlTemplates?: Record<string, any>;
+    /**
+     * Models a set of localized Strings that can be stored as JSON.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "localizedHtmlTemplates" })
+    @Type(() => LocalizedStrings)
+    localizedHtmlTemplates?: LocalizedStrings;
 
-  /**
-   * Models a set of localized Strings that can be stored as JSON.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "localizedSubjects" })
-  localizedSubjects?: Record<string, any>;
+    /**
+     * Models a set of localized Strings that can be stored as JSON.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "localizedSubjects" })
+    @Type(() => LocalizedStrings)
+    localizedSubjects?: LocalizedStrings;
 
-  /**
-   * Models a set of localized Strings that can be stored as JSON.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "localizedTextTemplates" })
-  localizedTextTemplates?: Record<string, any>;
+    /**
+     * Models a set of localized Strings that can be stored as JSON.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "localizedTextTemplates" })
+    @Type(() => LocalizedStrings)
+    localizedTextTemplates?: LocalizedStrings;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 }

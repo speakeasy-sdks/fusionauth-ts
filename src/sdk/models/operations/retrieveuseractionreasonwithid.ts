@@ -7,28 +7,26 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveUserActionReasonWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the user action reason.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=userActionReasonId",
-  })
-  userActionReasonId: string;
+    /**
+     * The Id of the user action reason.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=userActionReasonId" })
+    userActionReasonId: string;
 }
 
 export class RetrieveUserActionReasonWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  userActionReasonResponse?: shared.UserActionReasonResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    userActionReasonResponse?: shared.UserActionReasonResponse;
 }

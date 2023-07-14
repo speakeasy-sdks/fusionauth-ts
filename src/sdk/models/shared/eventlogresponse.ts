@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * Event log response.
  */
 export class EventLogResponse extends SpeakeasyBase {
-  /**
-   * Event log used internally by FusionAuth to help developers debug hooks, Webhooks, email templates, etc.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "eventLog" })
-  @Type(() => EventLog)
-  eventLog?: EventLog;
+    /**
+     * Event log used internally by FusionAuth to help developers debug hooks, Webhooks, email templates, etc.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "eventLog" })
+    @Type(() => EventLog)
+    eventLog?: EventLog;
 }

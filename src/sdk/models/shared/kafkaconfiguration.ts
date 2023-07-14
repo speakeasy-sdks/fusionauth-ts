@@ -6,15 +6,15 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class KafkaConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "defaultTopic" })
-  defaultTopic?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "defaultTopic" })
+    defaultTopic?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "producer" })
-  producer?: Record<string, string>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "producer" })
+    producer?: Record<string, string>;
 }

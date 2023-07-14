@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * Search request for Groups.
  */
 export class GroupSearchRequest extends SpeakeasyBase {
-  /**
-   * Search criteria for Groups
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "search" })
-  @Type(() => GroupSearchCriteria)
-  search?: GroupSearchCriteria;
+    /**
+     * Search criteria for Groups
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "search" })
+    @Type(() => GroupSearchCriteria)
+    search?: GroupSearchCriteria;
 }

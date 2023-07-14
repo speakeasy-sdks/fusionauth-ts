@@ -9,7 +9,7 @@ import { Expose } from "class-transformer";
  * Reindex API request
  */
 export class ReindexRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "index" })
-  index?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "index" })
+    index?: string;
 }

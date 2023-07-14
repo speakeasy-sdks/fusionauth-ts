@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class TenantRegistrationConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "blockedDomains" })
-  blockedDomains?: any[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "blockedDomains" })
+    blockedDomains?: any[];
 }

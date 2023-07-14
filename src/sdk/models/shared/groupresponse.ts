@@ -10,13 +10,13 @@ import { Expose, Type } from "class-transformer";
  * Group API response object.
  */
 export class GroupResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "group" })
-  @Type(() => Group)
-  group?: Group;
+    @SpeakeasyMetadata()
+    @Expose({ name: "group" })
+    @Type(() => Group)
+    group?: Group;
 
-  @SpeakeasyMetadata({ elemType: Group })
-  @Expose({ name: "groups" })
-  @Type(() => Group)
-  groups?: Group[];
+    @SpeakeasyMetadata({ elemType: Group })
+    @Expose({ name: "groups" })
+    @Type(() => Group)
+    groups?: Group[];
 }

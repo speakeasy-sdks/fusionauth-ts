@@ -9,19 +9,19 @@ import { Expose } from "class-transformer";
  * Search criteria for entity types.
  */
 export class EntityTypeSearchCriteria extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "numberOfResults" })
-  numberOfResults?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "numberOfResults" })
+    numberOfResults?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "orderBy" })
-  orderBy?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "orderBy" })
+    orderBy?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "startRow" })
-  startRow?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "startRow" })
+    startRow?: number;
 }

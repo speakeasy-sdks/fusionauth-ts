@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Audit log response.
  */
 export class AuditLogSearchResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: AuditLog })
-  @Expose({ name: "auditLogs" })
-  @Type(() => AuditLog)
-  auditLogs?: AuditLog[];
+    @SpeakeasyMetadata({ elemType: AuditLog })
+    @Expose({ name: "auditLogs" })
+    @Type(() => AuditLog)
+    auditLogs?: AuditLog[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 }

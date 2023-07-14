@@ -1,0 +1,9 @@
+# PreviewRequest
+
+
+## Fields
+
+| Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        | Example                                                                            |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `emailTemplate`                                                                    | [EmailTemplate](../../models/shared/emailtemplate.md)                              | :heavy_minus_sign:                                                                 | Stores an email template used to send emails to users.                             |                                                                                    |
+| `locale`                                                                           | *string*                                                                           | :heavy_minus_sign:                                                                 | A Locale object represents a specific geographical, political, or cultural region. | en_US                                                                              |

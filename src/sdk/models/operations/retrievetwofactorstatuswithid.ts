@@ -7,50 +7,44 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveTwoFactorStatusWithIdRequest extends SpeakeasyBase {
-  /**
-   * The optional two-factor trust Id to verify.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=twoFactorTrustId",
-  })
-  twoFactorTrustId: string;
+    /**
+     * The optional two-factor trust Id to verify.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=twoFactorTrustId" })
+    twoFactorTrustId: string;
 
-  /**
-   * The optional applicationId to verify.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=applicationId",
-  })
-  applicationId?: string;
+    /**
+     * The optional applicationId to verify.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=applicationId" })
+    applicationId?: string;
 
-  /**
-   * The user Id to retrieve the Two-Factor status.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=userId",
-  })
-  userId?: string;
+    /**
+     * The user Id to retrieve the Two-Factor status.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=userId" })
+    userId?: string;
 }
 
 export class RetrieveTwoFactorStatusWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  twoFactorStatusResponse?: shared.TwoFactorStatusResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    twoFactorStatusResponse?: shared.TwoFactorStatusResponse;
 }

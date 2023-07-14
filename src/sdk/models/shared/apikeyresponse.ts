@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * Authentication key response object.
  */
 export class APIKeyResponse extends SpeakeasyBase {
-  /**
-   * domain POJO to represent AuthenticationKey
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "apiKey" })
-  @Type(() => APIKey)
-  apiKey?: APIKey;
+    /**
+     * domain POJO to represent AuthenticationKey
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "apiKey" })
+    @Type(() => APIKey)
+    apiKey?: APIKey;
 }

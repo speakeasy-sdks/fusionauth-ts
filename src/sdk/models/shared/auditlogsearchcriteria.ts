@@ -6,49 +6,49 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class AuditLogSearchCriteria extends SpeakeasyBase {
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "end" })
-  end?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "end" })
+    end?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "message" })
-  message?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "message" })
+    message?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "newValue" })
-  newValue?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "newValue" })
+    newValue?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "numberOfResults" })
-  numberOfResults?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "numberOfResults" })
+    numberOfResults?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "oldValue" })
-  oldValue?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "oldValue" })
+    oldValue?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "orderBy" })
-  orderBy?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "orderBy" })
+    orderBy?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "reason" })
-  reason?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "reason" })
+    reason?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "start" })
-  start?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "start" })
+    start?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "startRow" })
-  startRow?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "startRow" })
+    startRow?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "user" })
-  user?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "user" })
+    user?: string;
 }

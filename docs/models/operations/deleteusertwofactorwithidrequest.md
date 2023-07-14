@@ -1,0 +1,11 @@
+# DeleteUserTwoFactorWithIdRequest
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `userId`                                                                         | *string*                                                                         | :heavy_check_mark:                                                               | The Id of the User for which you're disabling two-factor authentication.         |
+| `twoFactorDisableRequest`                                                        | [shared.TwoFactorDisableRequest](../../models/shared/twofactordisablerequest.md) | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `code`                                                                           | *string*                                                                         | :heavy_minus_sign:                                                               | The two-factor code used verify the the caller knows the two-factor secret.      |
+| `methodId`                                                                       | *string*                                                                         | :heavy_minus_sign:                                                               | The two-factor method identifier you wish to disable                             |

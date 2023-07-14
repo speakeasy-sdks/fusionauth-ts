@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * Search request for user comments
  */
 export class UserCommentSearchRequest extends SpeakeasyBase {
-  /**
-   * Search criteria for user comments.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "search" })
-  @Type(() => UserCommentSearchCriteria)
-  search?: UserCommentSearchCriteria;
+    /**
+     * Search criteria for user comments.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "search" })
+    @Type(() => UserCommentSearchCriteria)
+    search?: UserCommentSearchCriteria;
 }

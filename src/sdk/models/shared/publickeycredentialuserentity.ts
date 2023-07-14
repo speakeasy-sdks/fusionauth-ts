@@ -9,15 +9,15 @@ import { Expose } from "class-transformer";
  * Supply additional information about the user account when creating a new credential
  */
 export class PublicKeyCredentialUserEntity extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "displayName" })
-  displayName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "displayName" })
+    displayName?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 }

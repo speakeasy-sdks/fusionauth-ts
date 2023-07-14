@@ -7,28 +7,26 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrievePasswordValidationRulesWithTenantIdWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the tenant.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=tenantId",
-  })
-  tenantId: string;
+    /**
+     * The Id of the tenant.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=tenantId" })
+    tenantId: string;
 }
 
 export class RetrievePasswordValidationRulesWithTenantIdWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  passwordValidationRulesResponse?: shared.PasswordValidationRulesResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    passwordValidationRulesResponse?: shared.PasswordValidationRulesResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

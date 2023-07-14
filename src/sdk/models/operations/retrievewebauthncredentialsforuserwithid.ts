@@ -7,34 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveWebAuthnCredentialsForUserWithIdRequest extends SpeakeasyBase {
-  /**
-   * The user's ID.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=userId",
-  })
-  userId?: string;
+    /**
+     * The user's ID.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=userId" })
+    userId?: string;
 }
 
 export class RetrieveWebAuthnCredentialsForUserWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  webAuthnCredentialResponse?: shared.WebAuthnCredentialResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    webAuthnCredentialResponse?: shared.WebAuthnCredentialResponse;
 }

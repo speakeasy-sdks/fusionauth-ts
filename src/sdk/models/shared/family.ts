@@ -10,26 +10,26 @@ import { Expose, Type } from "class-transformer";
  * Models a family grouping of users.
  */
 export class Family extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "insertInstant" })
-  insertInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "insertInstant" })
+    insertInstant?: number;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "lastUpdateInstant" })
-  lastUpdateInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "lastUpdateInstant" })
+    lastUpdateInstant?: number;
 
-  @SpeakeasyMetadata({ elemType: FamilyMember })
-  @Expose({ name: "members" })
-  @Type(() => FamilyMember)
-  members?: FamilyMember[];
+    @SpeakeasyMetadata({ elemType: FamilyMember })
+    @Expose({ name: "members" })
+    @Type(() => FamilyMember)
+    members?: FamilyMember[];
 }

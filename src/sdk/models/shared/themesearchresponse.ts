@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Search response for Themes
  */
 export class ThemeSearchResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: Theme })
-  @Expose({ name: "themes" })
-  @Type(() => Theme)
-  themes?: Theme[];
+    @SpeakeasyMetadata({ elemType: Theme })
+    @Expose({ name: "themes" })
+    @Type(() => Theme)
+    themes?: Theme[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 }

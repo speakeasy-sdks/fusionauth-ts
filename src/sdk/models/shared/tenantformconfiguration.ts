@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class TenantFormConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "adminUserFormId" })
-  adminUserFormId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "adminUserFormId" })
+    adminUserFormId?: string;
 }

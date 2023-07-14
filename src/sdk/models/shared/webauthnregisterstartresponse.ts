@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * API response for starting a WebAuthn registration ceremony
  */
 export class WebAuthnRegisterStartResponse extends SpeakeasyBase {
-  /**
-   * Allows the Relying Party to specify desired attributes of a new credential.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "options" })
-  @Type(() => PublicKeyCredentialCreationOptions)
-  options?: PublicKeyCredentialCreationOptions;
+    /**
+     * Allows the Relying Party to specify desired attributes of a new credential.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "options" })
+    @Type(() => PublicKeyCredentialCreationOptions)
+    options?: PublicKeyCredentialCreationOptions;
 }

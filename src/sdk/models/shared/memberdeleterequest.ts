@@ -9,11 +9,11 @@ import { Expose } from "class-transformer";
  * Group Member Delete Request
  */
 export class MemberDeleteRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "memberIds" })
-  memberIds?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "memberIds" })
+    memberIds?: string[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "members" })
-  members?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "members" })
+    members?: string[];
 }

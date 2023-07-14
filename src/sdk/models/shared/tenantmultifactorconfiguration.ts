@@ -5,27 +5,27 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { MultiFactorAuthenticatorMethod } from "./multifactorauthenticatormethod";
 import { MultiFactorEmailMethod } from "./multifactoremailmethod";
-import { MultiFactorLoginPolicyEnum } from "./multifactorloginpolicyenum";
+import { MultiFactorLoginPolicy } from "./multifactorloginpolicy";
 import { MultiFactorSMSMethod } from "./multifactorsmsmethod";
 import { Expose, Type } from "class-transformer";
 
 export class TenantMultiFactorConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "authenticator" })
-  @Type(() => MultiFactorAuthenticatorMethod)
-  authenticator?: MultiFactorAuthenticatorMethod;
+    @SpeakeasyMetadata()
+    @Expose({ name: "authenticator" })
+    @Type(() => MultiFactorAuthenticatorMethod)
+    authenticator?: MultiFactorAuthenticatorMethod;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  @Type(() => MultiFactorEmailMethod)
-  email?: MultiFactorEmailMethod;
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    @Type(() => MultiFactorEmailMethod)
+    email?: MultiFactorEmailMethod;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "loginPolicy" })
-  loginPolicy?: MultiFactorLoginPolicyEnum;
+    @SpeakeasyMetadata()
+    @Expose({ name: "loginPolicy" })
+    loginPolicy?: MultiFactorLoginPolicy;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "sms" })
-  @Type(() => MultiFactorSMSMethod)
-  sms?: MultiFactorSMSMethod;
+    @SpeakeasyMetadata()
+    @Expose({ name: "sms" })
+    @Type(() => MultiFactorSMSMethod)
+    sms?: MultiFactorSMSMethod;
 }

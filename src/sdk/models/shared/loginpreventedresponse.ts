@@ -9,46 +9,46 @@ import { Expose } from "class-transformer";
  * The summary of the action that is preventing login to be returned on the login response.
  */
 export class LoginPreventedResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "actionId" })
-  actionId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "actionId" })
+    actionId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "actionerUserId" })
-  actionerUserId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "actionerUserId" })
+    actionerUserId?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "expiry" })
-  expiry?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "expiry" })
+    expiry?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "localizedName" })
-  localizedName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "localizedName" })
+    localizedName?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "localizedOption" })
-  localizedOption?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "localizedOption" })
+    localizedOption?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "localizedReason" })
-  localizedReason?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "localizedReason" })
+    localizedReason?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "option" })
-  option?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "option" })
+    option?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "reason" })
-  reason?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "reason" })
+    reason?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "reasonCode" })
-  reasonCode?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "reasonCode" })
+    reasonCode?: string;
 }

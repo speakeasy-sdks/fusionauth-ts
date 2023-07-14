@@ -7,12 +7,12 @@ import { LoginRecordSearchCriteria } from "./loginrecordsearchcriteria";
 import { Expose, Type } from "class-transformer";
 
 export class LoginRecordSearchRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "retrieveTotal" })
-  retrieveTotal?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "retrieveTotal" })
+    retrieveTotal?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "search" })
-  @Type(() => LoginRecordSearchCriteria)
-  search?: LoginRecordSearchCriteria;
+    @SpeakeasyMetadata()
+    @Expose({ name: "search" })
+    @Type(() => LoginRecordSearchCriteria)
+    search?: LoginRecordSearchCriteria;
 }

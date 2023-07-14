@@ -6,11 +6,11 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class LoginHintConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "parameterName" })
-  parameterName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "parameterName" })
+    parameterName?: string;
 }

@@ -7,72 +7,62 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveUserRequest extends SpeakeasyBase {
-  /**
-   * The unique Id of the tenant used to scope this API request. Only required when there is more than one tenant and the API key is not tenant-scoped.
-   */
-  @SpeakeasyMetadata({
-    data: "header, style=simple;explode=false;name=X-FusionAuth-TenantId",
-  })
-  xFusionAuthTenantId?: string;
+    /**
+     * The unique Id of the tenant used to scope this API request. Only required when there is more than one tenant and the API key is not tenant-scoped.
+     */
+    @SpeakeasyMetadata({ data: "header, style=simple;explode=false;name=X-FusionAuth-TenantId" })
+    xFusionAuthTenantId?: string;
 
-  /**
-   * The unique change password Id that was sent via email or returned by the Forgot Password API.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=changePasswordId",
-  })
-  changePasswordId?: string;
+    /**
+     * The unique change password Id that was sent via email or returned by the Forgot Password API.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=changePasswordId" })
+    changePasswordId?: string;
 
-  /**
-   * The email of the user.
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=email" })
-  email?: string;
+    /**
+     * The email of the user.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=email" })
+    email?: string;
 
-  /**
-   * The email or username of the user.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=loginId",
-  })
-  loginId?: string;
+    /**
+     * The email or username of the user.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=loginId" })
+    loginId?: string;
 
-  /**
-   * The username of the user.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=username",
-  })
-  username?: string;
+    /**
+     * The username of the user.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=username" })
+    username?: string;
 
-  /**
-   * The unique verification Id that has been set on the user object.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=verificationId",
-  })
-  verificationId?: string;
+    /**
+     * The unique verification Id that has been set on the user object.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=verificationId" })
+    verificationId?: string;
 }
 
 export class RetrieveUserResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  userResponse?: shared.UserResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    userResponse?: shared.UserResponse;
 }

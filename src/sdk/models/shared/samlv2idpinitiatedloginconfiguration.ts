@@ -9,11 +9,11 @@ import { Expose } from "class-transformer";
  * IdP Initiated login configuration
  */
 export class SAMLv2IdPInitiatedLoginConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "nameIdFormat" })
-  nameIdFormat?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "nameIdFormat" })
+    nameIdFormat?: string;
 }

@@ -9,26 +9,26 @@ import { Expose } from "class-transformer";
  * A log for an event that happened to a User.
  */
 export class UserComment extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "comment" })
-  comment?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "comment" })
+    comment?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "commenterId" })
-  commenterId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "commenterId" })
+    commenterId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "insertInstant" })
-  insertInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "insertInstant" })
+    insertInstant?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userId" })
-  userId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userId" })
+    userId?: string;
 }

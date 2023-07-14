@@ -10,19 +10,19 @@ import { Expose, Type } from "class-transformer";
  * Request for the Logout API that can be used as an alternative to URL parameters.
  */
 export class LogoutRequest extends SpeakeasyBase {
-  /**
-   * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "eventInfo" })
-  @Type(() => EventInfo)
-  eventInfo?: EventInfo;
+    /**
+     * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "eventInfo" })
+    @Type(() => EventInfo)
+    eventInfo?: EventInfo;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "global" })
-  global?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "global" })
+    global?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "refreshToken" })
-  refreshToken?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "refreshToken" })
+    refreshToken?: string;
 }

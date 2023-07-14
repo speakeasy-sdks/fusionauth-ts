@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class CreateApiKeyWithIdRequest extends SpeakeasyBase {
-  /**
-   * The unique Id of the API key. If not provided a secure random Id will be generated.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=keyId",
-  })
-  keyId: string;
+    /**
+     * The unique Id of the API key. If not provided a secure random Id will be generated.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=keyId" })
+    keyId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  apiKeyRequest?: shared.APIKeyRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    apiKeyRequest?: shared.APIKeyRequest;
 }
 
 export class CreateApiKeyWithIdResponse extends SpeakeasyBase {
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  apiKeyResponse?: shared.APIKeyResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    apiKeyResponse?: shared.APIKeyResponse;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

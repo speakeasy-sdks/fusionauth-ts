@@ -9,7 +9,7 @@ import { Expose } from "class-transformer";
  * A policy to configure if and when the user-action is canceled prior to the expiration of the action.
  */
 export class FailedAuthenticationActionCancelPolicy extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "onPasswordReset" })
-  onPasswordReset?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "onPasswordReset" })
+    onPasswordReset?: boolean;
 }

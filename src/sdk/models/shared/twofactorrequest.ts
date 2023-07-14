@@ -7,47 +7,47 @@ import { EventInfo } from "./eventinfo";
 import { Expose, Type } from "class-transformer";
 
 export class TwoFactorRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "applicationId" })
-  applicationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "applicationId" })
+    applicationId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "authenticatorId" })
-  authenticatorId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "authenticatorId" })
+    authenticatorId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "code" })
-  code?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "code" })
+    code?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  email?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    email?: string;
 
-  /**
-   * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "eventInfo" })
-  @Type(() => EventInfo)
-  eventInfo?: EventInfo;
+    /**
+     * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "eventInfo" })
+    @Type(() => EventInfo)
+    eventInfo?: EventInfo;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "method" })
-  method?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "method" })
+    method?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "mobilePhone" })
-  mobilePhone?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "mobilePhone" })
+    mobilePhone?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "secret" })
-  secret?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "secret" })
+    secret?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "secretBase32Encoded" })
-  secretBase32Encoded?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "secretBase32Encoded" })
+    secretBase32Encoded?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "twoFactorId" })
-  twoFactorId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "twoFactorId" })
+    twoFactorId?: string;
 }

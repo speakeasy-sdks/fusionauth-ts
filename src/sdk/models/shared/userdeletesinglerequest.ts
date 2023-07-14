@@ -10,15 +10,15 @@ import { Expose, Type } from "class-transformer";
  * User API delete request object for a single user.
  */
 export class UserDeleteSingleRequest extends SpeakeasyBase {
-  /**
-   * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "eventInfo" })
-  @Type(() => EventInfo)
-  eventInfo?: EventInfo;
+    /**
+     * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "eventInfo" })
+    @Type(() => EventInfo)
+    eventInfo?: EventInfo;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "hardDelete" })
-  hardDelete?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "hardDelete" })
+    hardDelete?: boolean;
 }

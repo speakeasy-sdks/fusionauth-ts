@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class CancelActionWithIdRequest extends SpeakeasyBase {
-  /**
-   * The action id of the action to cancel.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=actionId",
-  })
-  actionId: string;
+    /**
+     * The action id of the action to cancel.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=actionId" })
+    actionId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  actionRequest?: shared.ActionRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    actionRequest?: shared.ActionRequest;
 }
 
 export class CancelActionWithIdResponse extends SpeakeasyBase {
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  actionResponse?: shared.ActionResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    actionResponse?: shared.ActionResponse;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

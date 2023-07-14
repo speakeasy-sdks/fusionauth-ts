@@ -7,16 +7,16 @@ import { SelfServiceFormConfiguration } from "./selfserviceformconfiguration";
 import { Expose, Type } from "class-transformer";
 
 export class ApplicationFormConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "adminRegistrationFormId" })
-  adminRegistrationFormId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "adminRegistrationFormId" })
+    adminRegistrationFormId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "selfServiceFormConfiguration" })
-  @Type(() => SelfServiceFormConfiguration)
-  selfServiceFormConfiguration?: SelfServiceFormConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "selfServiceFormConfiguration" })
+    @Type(() => SelfServiceFormConfiguration)
+    selfServiceFormConfiguration?: SelfServiceFormConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "selfServiceFormId" })
-  selfServiceFormId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "selfServiceFormId" })
+    selfServiceFormId?: string;
 }

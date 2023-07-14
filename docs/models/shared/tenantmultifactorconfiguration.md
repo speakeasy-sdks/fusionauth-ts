@@ -1,0 +1,11 @@
+# TenantMultiFactorConfiguration
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `authenticator`                                                                         | [MultiFactorAuthenticatorMethod](../../models/shared/multifactorauthenticatormethod.md) | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `email`                                                                                 | [MultiFactorEmailMethod](../../models/shared/multifactoremailmethod.md)                 | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `loginPolicy`                                                                           | [MultiFactorLoginPolicy](../../models/shared/multifactorloginpolicy.md)                 | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `sms`                                                                                   | [MultiFactorSMSMethod](../../models/shared/multifactorsmsmethod.md)                     | :heavy_minus_sign:                                                                      | N/A                                                                                     |

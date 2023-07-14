@@ -7,32 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class SearchUsersByIdsWithIdRequest extends SpeakeasyBase {
-  /**
-   * The user ids to search for.
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=ids" })
-  ids?: string;
+    /**
+     * The user ids to search for.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=ids" })
+    ids?: string;
 }
 
 export class SearchUsersByIdsWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  searchResponse?: shared.SearchResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    searchResponse?: shared.SearchResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

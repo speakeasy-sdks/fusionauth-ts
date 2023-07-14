@@ -7,34 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveIdentityProviderWithIdRequest extends SpeakeasyBase {
-  /**
-   * The identity provider Id.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=identityProviderId",
-  })
-  identityProviderId: string;
+    /**
+     * The identity provider Id.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=identityProviderId" })
+    identityProviderId: string;
 }
 
 export class RetrieveIdentityProviderWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  identityProviderResponse?: shared.IdentityProviderResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    identityProviderResponse?: shared.IdentityProviderResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

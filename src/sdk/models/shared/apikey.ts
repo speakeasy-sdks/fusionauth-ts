@@ -11,47 +11,47 @@ import { Expose, Type } from "class-transformer";
  * domain POJO to represent AuthenticationKey
  */
 export class APIKey extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "insertInstant" })
-  insertInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "insertInstant" })
+    insertInstant?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "ipAccessControlListId" })
-  ipAccessControlListId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "ipAccessControlListId" })
+    ipAccessControlListId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "key" })
-  key?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "key" })
+    key?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "keyManager" })
-  keyManager?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "keyManager" })
+    keyManager?: boolean;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "lastUpdateInstant" })
-  lastUpdateInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "lastUpdateInstant" })
+    lastUpdateInstant?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "metaData" })
-  @Type(() => APIKeyMetaData)
-  metaData?: APIKeyMetaData;
+    @SpeakeasyMetadata()
+    @Expose({ name: "metaData" })
+    @Type(() => APIKeyMetaData)
+    metaData?: APIKeyMetaData;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "permissions" })
-  @Type(() => APIKeyPermissions)
-  permissions?: APIKeyPermissions;
+    @SpeakeasyMetadata()
+    @Expose({ name: "permissions" })
+    @Type(() => APIKeyPermissions)
+    permissions?: APIKeyPermissions;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "tenantId" })
-  tenantId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "tenantId" })
+    tenantId?: string;
 }

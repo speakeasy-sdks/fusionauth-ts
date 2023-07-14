@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class UpdateThemeWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the theme to update.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=themeId",
-  })
-  themeId: string;
+    /**
+     * The Id of the theme to update.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=themeId" })
+    themeId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  themeRequest?: shared.ThemeRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    themeRequest?: shared.ThemeRequest;
 }
 
 export class UpdateThemeWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  themeResponse?: shared.ThemeResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    themeResponse?: shared.ThemeResponse;
 }

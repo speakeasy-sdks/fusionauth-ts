@@ -7,28 +7,26 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class DeleteUserActionReasonWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the user action reason to delete.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=userActionReasonId",
-  })
-  userActionReasonId: string;
+    /**
+     * The Id of the user action reason to delete.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=userActionReasonId" })
+    userActionReasonId: string;
 }
 
 export class DeleteUserActionReasonWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

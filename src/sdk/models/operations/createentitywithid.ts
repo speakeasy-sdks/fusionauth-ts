@@ -7,45 +7,41 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class CreateEntityWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id for the Entity. If not provided a secure random UUID will be generated.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=entityId",
-  })
-  entityId: string;
+    /**
+     * The Id for the Entity. If not provided a secure random UUID will be generated.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=entityId" })
+    entityId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  entityRequest?: shared.EntityRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    entityRequest?: shared.EntityRequest;
 
-  /**
-   * The unique Id of the tenant used to scope this API request. Only required when there is more than one tenant and the API key is not tenant-scoped.
-   */
-  @SpeakeasyMetadata({
-    data: "header, style=simple;explode=false;name=X-FusionAuth-TenantId",
-  })
-  xFusionAuthTenantId?: string;
+    /**
+     * The unique Id of the tenant used to scope this API request. Only required when there is more than one tenant and the API key is not tenant-scoped.
+     */
+    @SpeakeasyMetadata({ data: "header, style=simple;explode=false;name=X-FusionAuth-TenantId" })
+    xFusionAuthTenantId?: string;
 }
 
 export class CreateEntityWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  entityResponse?: shared.EntityResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    entityResponse?: shared.EntityResponse;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

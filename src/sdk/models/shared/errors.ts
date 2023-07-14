@@ -10,13 +10,13 @@ import { Expose, Type } from "class-transformer";
  * Standard error domain object that can also be used as the response from an API call.
  */
 export class Errors extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: ErrorT })
-  @Expose({ name: "fieldErrors" })
-  @Type(() => ErrorT)
-  fieldErrors?: ErrorT[];
+    @SpeakeasyMetadata({ elemType: ErrorT })
+    @Expose({ name: "fieldErrors" })
+    @Type(() => ErrorT)
+    fieldErrors?: ErrorT[];
 
-  @SpeakeasyMetadata({ elemType: ErrorT })
-  @Expose({ name: "generalErrors" })
-  @Type(() => ErrorT)
-  generalErrors?: ErrorT[];
+    @SpeakeasyMetadata({ elemType: ErrorT })
+    @Expose({ name: "generalErrors" })
+    @Type(() => ErrorT)
+    generalErrors?: ErrorT[];
 }

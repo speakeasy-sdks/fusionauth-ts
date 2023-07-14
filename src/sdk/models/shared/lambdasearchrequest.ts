@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * Search request for Lambdas
  */
 export class LambdaSearchRequest extends SpeakeasyBase {
-  /**
-   * Search criteria for Lambdas
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "search" })
-  @Type(() => LambdaSearchCriteria)
-  search?: LambdaSearchCriteria;
+    /**
+     * Search criteria for Lambdas
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "search" })
+    @Type(() => LambdaSearchCriteria)
+    search?: LambdaSearchCriteria;
 }

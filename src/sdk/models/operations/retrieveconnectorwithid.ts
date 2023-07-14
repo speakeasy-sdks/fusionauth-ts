@@ -7,28 +7,26 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveConnectorWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the connector.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=connectorId",
-  })
-  connectorId: string;
+    /**
+     * The Id of the connector.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connectorId" })
+    connectorId: string;
 }
 
 export class RetrieveConnectorWithIdResponse extends SpeakeasyBase {
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  connectorResponse?: shared.ConnectorResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    connectorResponse?: shared.ConnectorResponse;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

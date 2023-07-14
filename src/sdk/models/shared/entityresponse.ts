@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * Entity API response object.
  */
 export class EntityResponse extends SpeakeasyBase {
-  /**
-   * Models an entity that a user can be granted permissions to. Or an entity that can be granted permissions to another entity.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "entity" })
-  @Type(() => Entity)
-  entity?: Entity;
+    /**
+     * Models an entity that a user can be granted permissions to. Or an entity that can be granted permissions to another entity.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "entity" })
+    @Type(() => Entity)
+    entity?: Entity;
 }

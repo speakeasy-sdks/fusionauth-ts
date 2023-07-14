@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class UpdateIdentityProviderWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the identity provider to update.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=identityProviderId",
-  })
-  identityProviderId: string;
+    /**
+     * The Id of the identity provider to update.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=identityProviderId" })
+    identityProviderId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  identityProviderRequest?: shared.IdentityProviderRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    identityProviderRequest?: shared.IdentityProviderRequest;
 }
 
 export class UpdateIdentityProviderWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  identityProviderResponse?: shared.IdentityProviderResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    identityProviderResponse?: shared.IdentityProviderResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

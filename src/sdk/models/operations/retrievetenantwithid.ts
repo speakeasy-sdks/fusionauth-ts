@@ -7,42 +7,38 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveTenantWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the tenant.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=tenantId",
-  })
-  tenantId: string;
+    /**
+     * The Id of the tenant.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=tenantId" })
+    tenantId: string;
 
-  /**
-   * The unique Id of the tenant used to scope this API request. Only required when there is more than one tenant and the API key is not tenant-scoped.
-   */
-  @SpeakeasyMetadata({
-    data: "header, style=simple;explode=false;name=X-FusionAuth-TenantId",
-  })
-  xFusionAuthTenantId?: string;
+    /**
+     * The unique Id of the tenant used to scope this API request. Only required when there is more than one tenant and the API key is not tenant-scoped.
+     */
+    @SpeakeasyMetadata({ data: "header, style=simple;explode=false;name=X-FusionAuth-TenantId" })
+    xFusionAuthTenantId?: string;
 }
 
 export class RetrieveTenantWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  tenantResponse?: shared.TenantResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    tenantResponse?: shared.TenantResponse;
 }

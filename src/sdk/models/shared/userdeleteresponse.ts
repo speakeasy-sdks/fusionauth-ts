@@ -9,19 +9,19 @@ import { Expose } from "class-transformer";
  * User API bulk response object.
  */
 export class UserDeleteResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "dryRun" })
-  dryRun?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "dryRun" })
+    dryRun?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "hardDelete" })
-  hardDelete?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "hardDelete" })
+    hardDelete?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userIds" })
-  userIds?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "userIds" })
+    userIds?: string[];
 }

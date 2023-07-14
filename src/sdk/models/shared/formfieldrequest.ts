@@ -10,13 +10,13 @@ import { Expose, Type } from "class-transformer";
  * The FormField API request object.
  */
 export class FormFieldRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "field" })
-  @Type(() => FormField)
-  field?: FormField;
+    @SpeakeasyMetadata()
+    @Expose({ name: "field" })
+    @Type(() => FormField)
+    field?: FormField;
 
-  @SpeakeasyMetadata({ elemType: FormField })
-  @Expose({ name: "fields" })
-  @Type(() => FormField)
-  fields?: FormField[];
+    @SpeakeasyMetadata({ elemType: FormField })
+    @Expose({ name: "fields" })
+    @Type(() => FormField)
+    fields?: FormField[];
 }

@@ -3,33 +3,33 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { WebAuthnWorkflowEnum } from "./webauthnworkflowenum";
+import { WebAuthnWorkflow } from "./webauthnworkflow";
 import { Expose } from "class-transformer";
 
 /**
  * API request to start a WebAuthn registration ceremony
  */
 export class WebAuthnRegisterStartRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "displayName" })
-  displayName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "displayName" })
+    displayName?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userAgent" })
-  userAgent?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userAgent" })
+    userAgent?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userId" })
-  userId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userId" })
+    userId?: string;
 
-  /**
-   * Identifies the WebAuthn workflow. This will affect the parameters used for credential creation  and request based on the Tenant configuration.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "workflow" })
-  workflow?: WebAuthnWorkflowEnum;
+    /**
+     * Identifies the WebAuthn workflow. This will affect the parameters used for credential creation  and request based on the Tenant configuration.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "workflow" })
+    workflow?: WebAuthnWorkflow;
 }

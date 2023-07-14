@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * Search request for entity grants.
  */
 export class EntityGrantSearchRequest extends SpeakeasyBase {
-  /**
-   * Search criteria for entity grants.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "search" })
-  @Type(() => EntityGrantSearchCriteria)
-  search?: EntityGrantSearchCriteria;
+    /**
+     * Search criteria for entity grants.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "search" })
+    @Type(() => EntityGrantSearchCriteria)
+    search?: EntityGrantSearchCriteria;
 }

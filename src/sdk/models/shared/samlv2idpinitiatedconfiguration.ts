@@ -9,11 +9,11 @@ import { Expose } from "class-transformer";
  * Config for regular SAML IDP configurations that support IdP initiated requests
  */
 export class SAMLv2IdpInitiatedConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "issuer" })
-  issuer?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "issuer" })
+    issuer?: string;
 }

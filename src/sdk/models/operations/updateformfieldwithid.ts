@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class UpdateFormFieldWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the form field to update.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=fieldId",
-  })
-  fieldId: string;
+    /**
+     * The Id of the form field to update.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=fieldId" })
+    fieldId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  formFieldRequest?: shared.FormFieldRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    formFieldRequest?: shared.FormFieldRequest;
 }
 
 export class UpdateFormFieldWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  formFieldResponse?: shared.FormFieldResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    formFieldResponse?: shared.FormFieldResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

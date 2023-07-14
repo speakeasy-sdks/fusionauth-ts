@@ -7,34 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GenerateTwoFactorRecoveryCodesWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the user to generate new Two Factor recovery codes.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=userId",
-  })
-  userId: string;
+    /**
+     * The Id of the user to generate new Two Factor recovery codes.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=userId" })
+    userId: string;
 }
 
 export class GenerateTwoFactorRecoveryCodesWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  twoFactorRecoveryCodeResponse?: shared.TwoFactorRecoveryCodeResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    twoFactorRecoveryCodeResponse?: shared.TwoFactorRecoveryCodeResponse;
 }

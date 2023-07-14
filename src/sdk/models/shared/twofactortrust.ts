@@ -6,21 +6,21 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class TwoFactorTrust extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "applicationId" })
-  applicationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "applicationId" })
+    applicationId?: string;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "expiration" })
-  expiration?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "expiration" })
+    expiration?: number;
 
-  /**
-   * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "startInstant" })
-  startInstant?: number;
+    /**
+     * The number of milliseconds since the unix epoch: January 1, 1970 00:00:00 UTC. This value is always in UTC.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "startInstant" })
+    startInstant?: number;
 }

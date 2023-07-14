@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Lambda search response
  */
 export class LambdaSearchResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: Lambda })
-  @Expose({ name: "lambdas" })
-  @Type(() => Lambda)
-  lambdas?: Lambda[];
+    @SpeakeasyMetadata({ elemType: Lambda })
+    @Expose({ name: "lambdas" })
+    @Type(() => Lambda)
+    lambdas?: Lambda[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 }

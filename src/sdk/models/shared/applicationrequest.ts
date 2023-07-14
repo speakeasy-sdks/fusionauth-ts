@@ -12,28 +12,28 @@ import { Expose, Type } from "class-transformer";
  * The Application API request object.
  */
 export class ApplicationRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "application" })
-  @Type(() => Application)
-  application?: Application;
+    @SpeakeasyMetadata()
+    @Expose({ name: "application" })
+    @Type(() => Application)
+    application?: Application;
 
-  /**
-   * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "eventInfo" })
-  @Type(() => EventInfo)
-  eventInfo?: EventInfo;
+    /**
+     * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "eventInfo" })
+    @Type(() => EventInfo)
+    eventInfo?: EventInfo;
 
-  /**
-   * A role given to a user for a specific application.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "role" })
-  @Type(() => ApplicationRole)
-  role?: ApplicationRole;
+    /**
+     * A role given to a user for a specific application.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "role" })
+    @Type(() => ApplicationRole)
+    role?: ApplicationRole;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "sourceApplicationId" })
-  sourceApplicationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "sourceApplicationId" })
+    sourceApplicationId?: string;
 }

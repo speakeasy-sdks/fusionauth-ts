@@ -6,11 +6,11 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class MultiFactorEmailMethod extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "templateId" })
-  templateId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "templateId" })
+    templateId?: string;
 }

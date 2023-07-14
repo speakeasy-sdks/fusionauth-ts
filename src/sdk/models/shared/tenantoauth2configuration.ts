@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class TenantOAuth2Configuration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "clientCredentialsAccessTokenPopulateLambdaId" })
-  clientCredentialsAccessTokenPopulateLambdaId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "clientCredentialsAccessTokenPopulateLambdaId" })
+    clientCredentialsAccessTokenPopulateLambdaId?: string;
 }

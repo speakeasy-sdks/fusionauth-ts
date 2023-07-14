@@ -9,27 +9,27 @@ import { Expose } from "class-transformer";
  * Search criteria for Group Members
  */
 export class GroupMemberSearchCriteria extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "groupId" })
-  groupId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "groupId" })
+    groupId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "numberOfResults" })
-  numberOfResults?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "numberOfResults" })
+    numberOfResults?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "orderBy" })
-  orderBy?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "orderBy" })
+    orderBy?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "startRow" })
-  startRow?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "startRow" })
+    startRow?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "tenantId" })
-  tenantId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "tenantId" })
+    tenantId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userId" })
-  userId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userId" })
+    userId?: string;
 }

@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Email template search response
  */
 export class EmailTemplateSearchResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: EmailTemplate })
-  @Expose({ name: "emailTemplates" })
-  @Type(() => EmailTemplate)
-  emailTemplates?: EmailTemplate[];
+    @SpeakeasyMetadata({ elemType: EmailTemplate })
+    @Expose({ name: "emailTemplates" })
+    @Type(() => EmailTemplate)
+    emailTemplates?: EmailTemplate[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 }

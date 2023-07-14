@@ -1,0 +1,11 @@
+# ApplicationMultiFactorConfiguration
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `email`                                                                                       | [MultiFactorEmailTemplate](../../models/shared/multifactoremailtemplate.md)                   | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `loginPolicy`                                                                                 | [MultiFactorLoginPolicy](../../models/shared/multifactorloginpolicy.md)                       | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `sms`                                                                                         | [MultiFactorSMSTemplate](../../models/shared/multifactorsmstemplate.md)                       | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `trustPolicy`                                                                                 | [ApplicationMultiFactorTrustPolicy](../../models/shared/applicationmultifactortrustpolicy.md) | :heavy_minus_sign:                                                                            | N/A                                                                                           |

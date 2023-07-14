@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { ExpiryUnitEnum } from "./expiryunitenum";
+import { ExpiryUnit } from "./expiryunit";
 import { FailedAuthenticationActionCancelPolicy } from "./failedauthenticationactioncancelpolicy";
 import { Expose, Type } from "class-transformer";
 
@@ -11,35 +11,35 @@ import { Expose, Type } from "class-transformer";
  * Configuration for the behavior of failed login attempts. This helps us protect against brute force password attacks.
  */
 export class FailedAuthenticationConfiguration extends SpeakeasyBase {
-  /**
-   * A policy to configure if and when the user-action is canceled prior to the expiration of the action.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "actionCancelPolicy" })
-  @Type(() => FailedAuthenticationActionCancelPolicy)
-  actionCancelPolicy?: FailedAuthenticationActionCancelPolicy;
+    /**
+     * A policy to configure if and when the user-action is canceled prior to the expiration of the action.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "actionCancelPolicy" })
+    @Type(() => FailedAuthenticationActionCancelPolicy)
+    actionCancelPolicy?: FailedAuthenticationActionCancelPolicy;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "actionDuration" })
-  actionDuration?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "actionDuration" })
+    actionDuration?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "actionDurationUnit" })
-  actionDurationUnit?: ExpiryUnitEnum;
+    @SpeakeasyMetadata()
+    @Expose({ name: "actionDurationUnit" })
+    actionDurationUnit?: ExpiryUnit;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "emailUser" })
-  emailUser?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "emailUser" })
+    emailUser?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "resetCountInSeconds" })
-  resetCountInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "resetCountInSeconds" })
+    resetCountInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "tooManyAttempts" })
-  tooManyAttempts?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "tooManyAttempts" })
+    tooManyAttempts?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userActionId" })
-  userActionId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userActionId" })
+    userActionId?: string;
 }

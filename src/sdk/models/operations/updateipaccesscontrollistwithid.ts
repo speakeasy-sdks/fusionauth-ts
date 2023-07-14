@@ -7,37 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class UpdateIPAccessControlListWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the IP Access Control List to update.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=accessControlListId",
-  })
-  accessControlListId: string;
+    /**
+     * The Id of the IP Access Control List to update.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=accessControlListId" })
+    accessControlListId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  ipAccessControlListRequest?: shared.IPAccessControlListRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    ipAccessControlListRequest?: shared.IPAccessControlListRequest;
 }
 
 export class UpdateIPAccessControlListWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  ipAccessControlListResponse?: shared.IPAccessControlListResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    ipAccessControlListResponse?: shared.IPAccessControlListResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

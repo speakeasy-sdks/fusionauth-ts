@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Search response for entity types.
  */
 export class EntityTypeSearchResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: EntityType })
-  @Expose({ name: "entityTypes" })
-  @Type(() => EntityType)
-  entityTypes?: EntityType[];
+    @SpeakeasyMetadata({ elemType: EntityType })
+    @Expose({ name: "entityTypes" })
+    @Type(() => EntityType)
+    entityTypes?: EntityType[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 }

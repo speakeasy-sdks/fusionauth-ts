@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class MultiFactorSMSTemplate extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "templateId" })
-  templateId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "templateId" })
+    templateId?: string;
 }

@@ -7,11 +7,11 @@ import { UserComment } from "./usercomment";
 import { Expose, Type } from "class-transformer";
 
 export class UserCommentRequest extends SpeakeasyBase {
-  /**
-   * A log for an event that happened to a User.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "userComment" })
-  @Type(() => UserComment)
-  userComment?: UserComment;
+    /**
+     * A log for an event that happened to a User.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "userComment" })
+    @Type(() => UserComment)
+    userComment?: UserComment;
 }

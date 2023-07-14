@@ -7,116 +7,116 @@ import { SecureGeneratorConfiguration } from "./securegeneratorconfiguration";
 import { Expose, Type } from "class-transformer";
 
 export class ExternalIdentifierConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "authorizationGrantIdTimeToLiveInSeconds" })
-  authorizationGrantIdTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "authorizationGrantIdTimeToLiveInSeconds" })
+    authorizationGrantIdTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "changePasswordIdGenerator" })
-  @Type(() => SecureGeneratorConfiguration)
-  changePasswordIdGenerator?: SecureGeneratorConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "changePasswordIdGenerator" })
+    @Type(() => SecureGeneratorConfiguration)
+    changePasswordIdGenerator?: SecureGeneratorConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "changePasswordIdTimeToLiveInSeconds" })
-  changePasswordIdTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "changePasswordIdTimeToLiveInSeconds" })
+    changePasswordIdTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "deviceCodeTimeToLiveInSeconds" })
-  deviceCodeTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "deviceCodeTimeToLiveInSeconds" })
+    deviceCodeTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "deviceUserCodeIdGenerator" })
-  @Type(() => SecureGeneratorConfiguration)
-  deviceUserCodeIdGenerator?: SecureGeneratorConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "deviceUserCodeIdGenerator" })
+    @Type(() => SecureGeneratorConfiguration)
+    deviceUserCodeIdGenerator?: SecureGeneratorConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "emailVerificationIdGenerator" })
-  @Type(() => SecureGeneratorConfiguration)
-  emailVerificationIdGenerator?: SecureGeneratorConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "emailVerificationIdGenerator" })
+    @Type(() => SecureGeneratorConfiguration)
+    emailVerificationIdGenerator?: SecureGeneratorConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "emailVerificationIdTimeToLiveInSeconds" })
-  emailVerificationIdTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "emailVerificationIdTimeToLiveInSeconds" })
+    emailVerificationIdTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "emailVerificationOneTimeCodeGenerator" })
-  @Type(() => SecureGeneratorConfiguration)
-  emailVerificationOneTimeCodeGenerator?: SecureGeneratorConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "emailVerificationOneTimeCodeGenerator" })
+    @Type(() => SecureGeneratorConfiguration)
+    emailVerificationOneTimeCodeGenerator?: SecureGeneratorConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "externalAuthenticationIdTimeToLiveInSeconds" })
-  externalAuthenticationIdTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "externalAuthenticationIdTimeToLiveInSeconds" })
+    externalAuthenticationIdTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "oneTimePasswordTimeToLiveInSeconds" })
-  oneTimePasswordTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "oneTimePasswordTimeToLiveInSeconds" })
+    oneTimePasswordTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "passwordlessLoginGenerator" })
-  @Type(() => SecureGeneratorConfiguration)
-  passwordlessLoginGenerator?: SecureGeneratorConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "passwordlessLoginGenerator" })
+    @Type(() => SecureGeneratorConfiguration)
+    passwordlessLoginGenerator?: SecureGeneratorConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "passwordlessLoginTimeToLiveInSeconds" })
-  passwordlessLoginTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "passwordlessLoginTimeToLiveInSeconds" })
+    passwordlessLoginTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "pendingAccountLinkTimeToLiveInSeconds" })
-  pendingAccountLinkTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "pendingAccountLinkTimeToLiveInSeconds" })
+    pendingAccountLinkTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "registrationVerificationIdGenerator" })
-  @Type(() => SecureGeneratorConfiguration)
-  registrationVerificationIdGenerator?: SecureGeneratorConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "registrationVerificationIdGenerator" })
+    @Type(() => SecureGeneratorConfiguration)
+    registrationVerificationIdGenerator?: SecureGeneratorConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "registrationVerificationIdTimeToLiveInSeconds" })
-  registrationVerificationIdTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "registrationVerificationIdTimeToLiveInSeconds" })
+    registrationVerificationIdTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "registrationVerificationOneTimeCodeGenerator" })
-  @Type(() => SecureGeneratorConfiguration)
-  registrationVerificationOneTimeCodeGenerator?: SecureGeneratorConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "registrationVerificationOneTimeCodeGenerator" })
+    @Type(() => SecureGeneratorConfiguration)
+    registrationVerificationOneTimeCodeGenerator?: SecureGeneratorConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "samlv2AuthNRequestIdTimeToLiveInSeconds" })
-  samlv2AuthNRequestIdTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "samlv2AuthNRequestIdTimeToLiveInSeconds" })
+    samlv2AuthNRequestIdTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "setupPasswordIdGenerator" })
-  @Type(() => SecureGeneratorConfiguration)
-  setupPasswordIdGenerator?: SecureGeneratorConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "setupPasswordIdGenerator" })
+    @Type(() => SecureGeneratorConfiguration)
+    setupPasswordIdGenerator?: SecureGeneratorConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "setupPasswordIdTimeToLiveInSeconds" })
-  setupPasswordIdTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "setupPasswordIdTimeToLiveInSeconds" })
+    setupPasswordIdTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "trustTokenTimeToLiveInSeconds" })
-  trustTokenTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "trustTokenTimeToLiveInSeconds" })
+    trustTokenTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "twoFactorIdTimeToLiveInSeconds" })
-  twoFactorIdTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "twoFactorIdTimeToLiveInSeconds" })
+    twoFactorIdTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "twoFactorOneTimeCodeIdGenerator" })
-  @Type(() => SecureGeneratorConfiguration)
-  twoFactorOneTimeCodeIdGenerator?: SecureGeneratorConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "twoFactorOneTimeCodeIdGenerator" })
+    @Type(() => SecureGeneratorConfiguration)
+    twoFactorOneTimeCodeIdGenerator?: SecureGeneratorConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "twoFactorOneTimeCodeIdTimeToLiveInSeconds" })
-  twoFactorOneTimeCodeIdTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "twoFactorOneTimeCodeIdTimeToLiveInSeconds" })
+    twoFactorOneTimeCodeIdTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "twoFactorTrustIdTimeToLiveInSeconds" })
-  twoFactorTrustIdTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "twoFactorTrustIdTimeToLiveInSeconds" })
+    twoFactorTrustIdTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "webAuthnAuthenticationChallengeTimeToLiveInSeconds" })
-  webAuthnAuthenticationChallengeTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "webAuthnAuthenticationChallengeTimeToLiveInSeconds" })
+    webAuthnAuthenticationChallengeTimeToLiveInSeconds?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "webAuthnRegistrationChallengeTimeToLiveInSeconds" })
-  webAuthnRegistrationChallengeTimeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "webAuthnRegistrationChallengeTimeToLiveInSeconds" })
+    webAuthnRegistrationChallengeTimeToLiveInSeconds?: number;
 }

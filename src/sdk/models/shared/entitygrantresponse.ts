@@ -10,16 +10,16 @@ import { Expose, Type } from "class-transformer";
  * Entity grant API response object.
  */
 export class EntityGrantResponse extends SpeakeasyBase {
-  /**
-   * A grant for an entity to a user or another entity.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "grant" })
-  @Type(() => EntityGrant)
-  grant?: EntityGrant;
+    /**
+     * A grant for an entity to a user or another entity.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "grant" })
+    @Type(() => EntityGrant)
+    grant?: EntityGrant;
 
-  @SpeakeasyMetadata({ elemType: EntityGrant })
-  @Expose({ name: "grants" })
-  @Type(() => EntityGrant)
-  grants?: EntityGrant[];
+    @SpeakeasyMetadata({ elemType: EntityGrant })
+    @Expose({ name: "grants" })
+    @Type(() => EntityGrant)
+    grants?: EntityGrant[];
 }
