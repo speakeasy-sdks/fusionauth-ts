@@ -44,8 +44,8 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.45.1";
-    sdkVersion = "1.11.0";
-    genVersion = "2.65.0";
+    sdkVersion = "1.12.0";
+    genVersion = "2.66.0";
 
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -149,11 +149,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ActionResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -226,6 +240,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -306,11 +327,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.FamilyResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -385,11 +420,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ActionResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -462,6 +511,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -543,11 +599,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ChangePasswordResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -611,6 +681,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -692,6 +769,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -764,11 +848,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.WebAuthnAssertResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -841,11 +939,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LoginResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -919,11 +1031,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.WebAuthnRegisterCompleteResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -996,11 +1122,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.APIKeyResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1075,11 +1215,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.APIKeyResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1161,11 +1315,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ApplicationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1254,11 +1422,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ApplicationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1349,11 +1531,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ApplicationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1438,11 +1634,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ApplicationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1516,11 +1726,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.AuditLogResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1593,11 +1817,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ConnectorResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1672,11 +1910,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ConnectorResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1754,11 +2006,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ConsentResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1839,11 +2105,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ConsentResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1926,11 +2206,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EmailTemplateResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2019,11 +2313,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EmailTemplateResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2101,11 +2409,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntityResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2178,11 +2500,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntityTypeResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2265,11 +2601,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntityTypeResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2354,11 +2704,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntityTypeResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2437,11 +2801,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntityTypeResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2522,11 +2900,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntityResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2604,11 +2996,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.FamilyResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2689,11 +3095,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.FamilyResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2766,11 +3186,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.FormResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2843,11 +3277,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.FormFieldResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2922,11 +3370,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.FormFieldResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3000,11 +3462,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.FormResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3082,11 +3558,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.GroupResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3160,11 +3650,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.MemberResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3244,11 +3748,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.GroupResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3322,11 +3840,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IPAccessControlListResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3405,11 +3937,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IPAccessControlListResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3483,11 +4029,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IdentityProviderResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3570,11 +4130,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IdentityProviderResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3647,11 +4221,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LambdaResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3726,11 +4314,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LambdaResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3872,11 +4474,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.MessageTemplateResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3959,11 +4575,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.MessageTemplateResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -4036,11 +4666,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.MessengerResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -4115,11 +4759,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.MessengerResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -4197,11 +4855,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.TenantResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -4282,11 +4954,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.TenantResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -4359,11 +5045,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ThemeResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -4437,11 +5137,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ThemeResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -4495,11 +5209,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.AccessToken
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.oAuthError = utils.objectToClass(JSON.parse(decodedRes), shared.OAuthError);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -4577,11 +5305,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -4663,11 +5405,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserActionResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -4741,11 +5497,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserActionReasonResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -4828,11 +5598,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserActionReasonResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -4917,11 +5701,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserActionResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -4994,11 +5792,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserConsentResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -5077,11 +5889,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserConsentResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -5155,11 +5981,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IdentityProviderLinkResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -5232,6 +6072,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -5311,11 +6158,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -5388,11 +6249,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.WebhookResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -5467,11 +6342,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.WebhookResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -5532,6 +6421,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -5600,6 +6496,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -5665,6 +6568,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -5725,6 +6635,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -5787,6 +6704,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -5853,6 +6777,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -5920,6 +6851,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -5986,6 +6924,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -6046,6 +6991,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -6108,6 +7060,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -6168,6 +7127,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -6227,6 +7193,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -6299,6 +7272,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -6360,6 +7340,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -6420,6 +7407,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -6484,6 +7478,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -6565,6 +7566,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -6624,6 +7632,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -6684,6 +7699,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -6748,6 +7770,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -6808,6 +7837,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -6894,6 +7930,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -6953,6 +7996,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -7017,6 +8067,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -7082,6 +8139,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -7164,11 +8228,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserDeleteResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -7235,11 +8313,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IdentityProviderLinkResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -7329,6 +8421,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -7411,6 +8510,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -7496,6 +8602,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -7556,6 +8669,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -7616,6 +8736,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -7690,11 +8817,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.TwoFactorResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -7767,11 +8908,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.JWTRefreshResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -7845,11 +9000,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ForgotPasswordResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -7922,11 +9091,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.KeyResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -8000,11 +9183,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.KeyResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -8070,11 +9267,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.TwoFactorRecoveryCodeResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -8130,6 +9341,13 @@ export class SDK {
                     res.secretResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.SecretResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -8214,11 +9432,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LoginResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -8291,11 +9523,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.KeyResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -8369,11 +9615,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.KeyResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -8446,6 +9706,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -8517,6 +9784,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -8589,6 +9863,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -8645,11 +9926,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IntrospectResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.oAuthError = utils.objectToClass(JSON.parse(decodedRes), shared.OAuthError);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -8712,11 +10007,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IssueResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -8784,11 +10093,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LoginResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -8867,11 +10190,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LoginResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -8949,11 +10286,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LoginResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -9015,6 +10366,13 @@ export class SDK {
                     res.lookupResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.LookupResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -9092,11 +10450,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ActionResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -9169,11 +10541,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LoginResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -9264,11 +10650,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ApplicationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -9353,11 +10753,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ApplicationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -9432,11 +10846,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ConnectorResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -9517,11 +10945,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ConsentResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -9610,11 +11052,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EmailTemplateResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -9693,11 +11149,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntityTypeResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -9777,11 +11247,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.GroupResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -9864,11 +11348,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IdentityProviderResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -9942,11 +11440,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IntegrationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -10020,11 +11532,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LambdaResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -10107,11 +11633,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.MessageTemplateResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -10186,11 +11726,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.MessengerResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -10275,11 +11829,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.RegistrationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -10353,11 +11921,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.SystemConfigurationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -10437,11 +12019,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.TenantResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -10515,11 +12111,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ThemeResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -10602,11 +12212,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserActionReasonResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -10691,11 +12315,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserActionResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -10774,11 +12412,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserConsentResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -10858,11 +12510,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -10935,11 +12601,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LoginResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -11021,11 +12701,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.RegistrationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -11109,11 +12803,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.RegistrationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -11185,6 +12893,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -11249,6 +12964,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -11310,11 +13032,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.APIKeyResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -11376,11 +13112,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ActionResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -11444,6 +13194,13 @@ export class SDK {
                     res.applicationResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ApplicationResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -11510,6 +13267,13 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ApplicationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
@@ -11573,11 +13337,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.AuditLogResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -11638,6 +13416,13 @@ export class SDK {
                     res.connectorResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ConnectorResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -11703,6 +13488,13 @@ export class SDK {
                     res.consentResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ConsentResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -11772,11 +13564,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.DailyActiveUserReportResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -11837,6 +13643,13 @@ export class SDK {
                     res.emailTemplateResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.EmailTemplateResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -11913,11 +13726,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.PreviewResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -11984,6 +13811,13 @@ export class SDK {
                     res.emailTemplateResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.EmailTemplateResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -12055,11 +13889,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntityGrantResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -12121,11 +13969,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntityTypeResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -12189,11 +14051,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntityResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -12255,11 +14131,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EventLogResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -12323,6 +14213,13 @@ export class SDK {
                     res.familyResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.FamilyResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -12389,6 +14286,13 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.FamilyResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
@@ -12452,6 +14356,13 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.FormFieldResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
@@ -12514,6 +14425,13 @@ export class SDK {
                     res.formResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.FormResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -12580,11 +14498,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.GroupResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -12645,6 +14577,13 @@ export class SDK {
                     res.ipAccessControlListResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.IPAccessControlListResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -12714,11 +14653,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IdentityProviderLinkResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -12781,11 +14734,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IdentityProviderResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -12851,11 +14818,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IdentityProviderResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -12917,6 +14898,13 @@ export class SDK {
                     res.publicKeyResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.PublicKeyResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -12980,11 +14968,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.KeyResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -13046,11 +15048,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LambdaResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -13113,6 +15129,13 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LambdaResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
@@ -13171,6 +15194,13 @@ export class SDK {
                     res.messageTemplateResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.MessageTemplateResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -13247,11 +15277,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.PreviewMessageTemplateResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -13317,6 +15361,13 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.MessageTemplateResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
@@ -13379,6 +15430,13 @@ export class SDK {
                     res.messengerResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.MessengerResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -13448,11 +15506,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.MonthlyActiveUserReportResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -13520,11 +15592,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.OAuthConfigurationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -13588,6 +15674,13 @@ export class SDK {
                     res.passwordValidationRulesResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.PasswordValidationRulesResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -13653,11 +15746,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.PendingResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -13719,11 +15826,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.RefreshTokenResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -13786,11 +15907,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.RefreshTokenResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -13857,11 +15992,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.RegistrationReportResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -13931,11 +16080,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.RegistrationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -13998,11 +16161,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LoginReportResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -14066,11 +16243,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.TenantResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -14132,11 +16323,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ThemeResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -14202,11 +16407,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.TwoFactorRecoveryCodeResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -14277,11 +16496,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.TwoFactorStatusResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -14344,11 +16577,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -14413,6 +16660,13 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserActionResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
@@ -14471,6 +16725,13 @@ export class SDK {
                     res.userActionReasonResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.UserActionReasonResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -14539,6 +16800,13 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserActionReasonResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
@@ -14603,6 +16871,13 @@ export class SDK {
                     res.userActionResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.UserActionResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -14672,11 +16947,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ActionResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -14738,6 +17027,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -14801,11 +17097,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserCommentResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -14866,6 +17176,13 @@ export class SDK {
                     res.userConsentResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.UserConsentResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -14931,6 +17248,13 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserConsentResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
@@ -14989,11 +17313,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserinfoResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.oAuthError = utils.objectToClass(JSON.parse(decodedRes), shared.OAuthError);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -15060,11 +17398,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.RecentLoginResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -15128,11 +17480,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -15194,11 +17560,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.WebAuthnCredentialResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -15261,11 +17641,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.WebAuthnCredentialResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -15321,6 +17715,13 @@ export class SDK {
                     res.webhookResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.WebhookResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -15385,6 +17786,13 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.WebhookResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
@@ -15447,6 +17855,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -15574,11 +17989,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ApplicationSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -15652,11 +18081,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.AuditLogSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -15730,11 +18173,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ConsentSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -15808,11 +18265,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EmailTemplateSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -15875,11 +18346,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntitySearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -15953,11 +18438,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntitySearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -16031,11 +18530,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntityGrantSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -16109,11 +18622,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntityTypeSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -16187,11 +18714,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EventLogSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -16265,11 +18806,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.GroupMemberSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -16343,11 +18898,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.GroupSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -16421,11 +18990,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IPAccessControlListSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -16499,11 +19082,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IdentityProviderSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -16576,11 +19173,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.KeySearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -16654,11 +19265,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LambdaSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -16732,11 +19357,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LoginRecordSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -16810,11 +19449,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.TenantSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -16888,11 +19541,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ThemeSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -16966,11 +19633,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserCommentSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -17033,11 +19714,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.SearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -17111,11 +19806,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.SearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -17189,11 +19898,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.WebhookSearchResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -17267,11 +19990,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.SendResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -17344,6 +20081,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -17415,6 +20159,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -17487,6 +20238,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -17563,6 +20321,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -17636,11 +20401,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IdentityProviderStartLoginResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -17714,11 +20493,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.PasswordlessStartResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -17792,11 +20585,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.TwoFactorStartResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -17870,11 +20677,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.WebAuthnStartResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -17948,11 +20769,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.WebAuthnRegisterStartResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -18025,11 +20860,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LoginResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -18104,11 +20953,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.APIKeyResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -18199,11 +21062,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ApplicationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -18291,11 +21168,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ApplicationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -18370,11 +21261,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ConnectorResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -18455,11 +21360,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ConsentResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -18548,11 +21467,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EmailTemplateResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -18637,11 +21570,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntityTypeResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -18720,11 +21667,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntityTypeResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -18805,11 +21766,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.EntityResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -18884,11 +21859,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.FormFieldResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -18962,11 +21951,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.FormResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -19040,11 +22043,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.MemberResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -19124,11 +22141,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.GroupResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -19207,11 +22238,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IPAccessControlListResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -19294,11 +22339,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IdentityProviderResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -19372,11 +22431,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.IntegrationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -19450,11 +22523,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.KeyResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -19529,11 +22616,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.LambdaResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -19616,11 +22717,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.MessageTemplateResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -19695,11 +22810,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.MessengerResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -19784,11 +22913,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.RegistrationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -19862,11 +23005,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.SystemConfigurationResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -19947,11 +23104,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.TenantResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -20025,11 +23196,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ThemeResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -20112,11 +23297,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserActionReasonResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -20204,11 +23403,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserActionResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -20287,11 +23500,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserConsentResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -20358,11 +23585,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.VerifyEmailResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -20428,6 +23669,13 @@ export class SDK {
                     res.verifyRegistrationResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.VerifyRegistrationResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -20513,11 +23761,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.UserResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -20592,11 +23854,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.WebhookResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -20680,6 +23956,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -20791,6 +24074,13 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.ValidateResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
@@ -20865,11 +24155,25 @@ export class SDK {
                         JSON.parse(decodedRes),
                         shared.JWTVendResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -20941,6 +24245,13 @@ export class SDK {
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.errors = utils.objectToClass(JSON.parse(decodedRes), shared.Errors);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
