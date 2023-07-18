@@ -767,6 +767,7 @@ src/sdk/models/shared/jwtvendrequest.ts
 src/sdk/models/shared/verifyregistrationrequest.ts
 src/sdk/models/shared/security.ts
 src/sdk/models/shared/index.ts
+src/sdk/models/errors/index.ts
 docs/sdks/sdk/README.md
 USAGE.md
 docs/models/operations/actionuserwithidresponse.md

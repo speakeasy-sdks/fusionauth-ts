@@ -3,6 +3,7 @@
  */
 
 import * as utils from "../internal/utils";
+import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import axios from "axios";
@@ -44,8 +45,8 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.45.1";
-    sdkVersion = "1.12.0";
-    genVersion = "2.66.0";
+    sdkVersion = "1.13.0";
+    genVersion = "2.70.0";
 
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
