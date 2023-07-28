@@ -29,15 +29,16 @@ yarn add https://github.com/speakeasy-sdks/fusionauth-ts
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveKeyWithIdRequest, RetrieveKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const keyId: string = "corrupti";
 
-sdk.retrieveKeyWithId("corrupti").then((res: RetrieveKeyWithIdResponse) => {
+sdk.retrieveKeyWithId(keyId).then((res: RetrieveKeyWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

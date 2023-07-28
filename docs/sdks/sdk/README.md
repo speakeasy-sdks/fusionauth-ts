@@ -407,16 +407,16 @@ Adds a user to an existing family. The family id must be specified.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { AddUserToFamilyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { AddUserToFamilyWithIdRequest, AddUserToFamilyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { FamilyMember, FamilyMemberData, FamilyRequest, FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.addUserToFamilyWithId("amet", {
+const familyId: string = "amet";
+const familyRequest: FamilyRequest = {
   familyMember: {
     data: {
       "nisi": {},
@@ -429,7 +429,10 @@ sdk.sdk.addUserToFamilyWithId("amet", {
     role: FamilyRole.Teen,
     userId: "7074ba44-69b6-4e21-8195-9890afa563e2",
   },
-}, "nemo").then((res: AddUserToFamilyWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "nemo";
+
+sdk.sdk.addUserToFamilyWithId(familyId, familyRequest, xFusionAuthTenantId).then((res: AddUserToFamilyWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -459,15 +462,16 @@ Cancels the user action.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CancelActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CancelActionWithIdRequest, CancelActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { ActionData, ActionRequest, EventInfo, EventInfoData, Location } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.cancelActionWithId("quasi", {
+const actionId: string = "quasi";
+const actionRequest: ActionRequest = {
   action: {
     actioneeUserId: "6fe4c8b7-11e5-4b7f-92ed-028921cddc69",
     actionerUserId: "2601fb57-6b0d-45f0-930c-5fbb25870532",
@@ -506,7 +510,9 @@ sdk.sdk.cancelActionWithId("quasi", {
     os: "sed",
     userAgent: "vel",
   },
-}).then((res: CancelActionWithIdResponse) => {
+};
+
+sdk.sdk.cancelActionWithId(actionId, actionRequest).then((res: CancelActionWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -603,15 +609,16 @@ Changes a user's password using the change password Id. This usually occurs afte
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ChangePasswordWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { ChangePasswordWithIdRequest, ChangePasswordWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { ChangePasswordRequest, EventInfo, EventInfoData, Location } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.changePasswordWithId("odio", {
+const changePasswordId: string = "odio";
+const changePasswordRequest: ChangePasswordRequest = {
   applicationId: "9fce953f-73ef-47fb-87ab-d74dd39c0f5d",
   changePasswordId: "fugit",
   currentPassword: "porro",
@@ -643,7 +650,9 @@ sdk.sdk.changePasswordWithId("odio", {
   refreshToken: "quisquam",
   trustChallenge: "saepe",
   trustToken: "ea",
-}).then((res: ChangePasswordWithIdResponse) => {
+};
+
+sdk.sdk.changePasswordWithId(changePasswordId, changePasswordRequest).then((res: ChangePasswordWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -672,15 +681,19 @@ Check to see if the user must obtain a Trust Token Id in order to complete a cha
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CheckChangePasswordUsingIdWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  CheckChangePasswordUsingIdWithIdRequest,
+  CheckChangePasswordUsingIdWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const changePasswordId: string = "impedit";
 
-sdk.sdk.checkChangePasswordUsingIdWithId("impedit").then((res: CheckChangePasswordUsingIdWithIdResponse) => {
+sdk.sdk.checkChangePasswordUsingIdWithId(changePasswordId).then((res: CheckChangePasswordUsingIdWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -708,15 +721,15 @@ Adds a comment to the user's account.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CommentOnUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CommentOnUserWithIdRequest, CommentOnUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UserComment, UserCommentRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.commentOnUserWithId({
+const userCommentRequest: UserCommentRequest = {
   userComment: {
     comment: "corporis",
     commenterId: "56146c3e-250f-4b00-8c42-e141aac366c8",
@@ -724,7 +737,10 @@ sdk.sdk.commentOnUserWithId({
     insertInstant: 1659380719000,
     userId: "b3cdca42-5190-44e5-a3c7-e0bc7178e479",
   },
-}, "commodi").then((res: CommentOnUserWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "commodi";
+
+sdk.sdk.commentOnUserWithId(userCommentRequest, xFusionAuthTenantId).then((res: CommentOnUserWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1033,15 +1049,16 @@ Creates an API key. You can optionally specify a unique Id for the key, if not p
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateApiKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateApiKeyWithIdRequest, CreateApiKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { APIKey, APIKeyMetaData, APIKeyPermissions, APIKeyRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createApiKeyWithId("amet", {
+const keyId: string = "amet";
+const apiKeyRequest: APIKeyRequest = {
   apiKey: {
     id: "a79f9dfe-0ab7-4da8-a50c-e187f86bc173",
     insertInstant: 1659380719000,
@@ -1070,7 +1087,9 @@ sdk.sdk.createApiKeyWithId("amet", {
     tenantId: "922a57a1-5be3-4e06-8807-e2b6e3ab8845",
   },
   sourceKeyId: "f0597a60-ff2a-454a-b1e9-4764a3e865e7",
-}).then((res: CreateApiKeyWithIdResponse) => {
+};
+
+sdk.sdk.createApiKeyWithId(keyId, apiKeyRequest).then((res: CreateApiKeyWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1099,22 +1118,57 @@ Creates an application. You can optionally specify an Id for the application, if
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateApplicationResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateApplicationRequest, CreateApplicationResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
+  Application,
+  ApplicationAccessControlConfiguration,
+  ApplicationData,
+  ApplicationEmailConfiguration,
+  ApplicationExternalIdentifierConfiguration,
+  ApplicationFormConfiguration,
+  ApplicationMultiFactorConfiguration,
   ApplicationMultiFactorTrustPolicy,
+  ApplicationRegistrationDeletePolicy,
+  ApplicationRequest,
+  ApplicationRole,
+  ApplicationWebAuthnConfiguration,
+  ApplicationWebAuthnWorkflowConfiguration,
+  AuthenticationTokenConfiguration,
   CanonicalizationMethod,
+  CleanSpeakConfiguration,
   ClientAuthenticationPolicy,
+  EventInfo,
+  EventInfoData,
+  JWTConfiguration,
+  LambdaConfiguration,
+  Location,
+  LoginConfiguration,
   LoginIdType,
   LogoutBehavior,
+  MultiFactorEmailTemplate,
   MultiFactorLoginPolicy,
+  MultiFactorSMSTemplate,
   Oauth2AuthorizedURLValidationPolicy,
+  OAuth2Configuration,
   ObjectState,
+  PasswordlessConfiguration,
   ProofKeyForCodeExchangePolicy,
   RefreshTokenExpirationPolicy,
+  RefreshTokenRevocationPolicy,
   RefreshTokenUsagePolicy,
+  RegistrationConfiguration,
   RegistrationType,
+  RegistrationUnverifiedOptions,
+  Requirable,
   SAMLLogoutBehavior,
+  SAMLv2Configuration,
+  SAMLv2IdPInitiatedLoginConfiguration,
+  SAMLv2Logout,
+  SAMLv2SingleLogout,
+  SelfServiceFormConfiguration,
+  TimeBasedDeletePolicy,
   UnverifiedBehavior,
+  UsernameModeration,
   VerificationStrategy,
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
@@ -1124,8 +1178,7 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createApplication({
+const applicationRequest: ApplicationRequest = {
   application: {
     accessControlConfiguration: {
       uiIPAccessControlListId: "956f9251-a5a9-4da6-a0ff-57bfaad4f9ef",
@@ -1385,7 +1438,10 @@ sdk.sdk.createApplication({
     name: "Emilio Waters",
   },
   sourceApplicationId: "53e5ae6e-0ac1-484c-ab9c-247c88373a40",
-}, "necessitatibus").then((res: CreateApplicationResponse) => {
+};
+const xFusionAuthTenantId: string = "necessitatibus";
+
+sdk.sdk.createApplication(applicationRequest, xFusionAuthTenantId).then((res: CreateApplicationResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1414,22 +1470,57 @@ Creates a new role for an application. You must specify the id of the applicatio
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateApplicationRoleResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateApplicationRoleRequest, CreateApplicationRoleResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
+  Application,
+  ApplicationAccessControlConfiguration,
+  ApplicationData,
+  ApplicationEmailConfiguration,
+  ApplicationExternalIdentifierConfiguration,
+  ApplicationFormConfiguration,
+  ApplicationMultiFactorConfiguration,
   ApplicationMultiFactorTrustPolicy,
+  ApplicationRegistrationDeletePolicy,
+  ApplicationRequest,
+  ApplicationRole,
+  ApplicationWebAuthnConfiguration,
+  ApplicationWebAuthnWorkflowConfiguration,
+  AuthenticationTokenConfiguration,
   CanonicalizationMethod,
+  CleanSpeakConfiguration,
   ClientAuthenticationPolicy,
+  EventInfo,
+  EventInfoData,
+  JWTConfiguration,
+  LambdaConfiguration,
+  Location,
+  LoginConfiguration,
   LoginIdType,
   LogoutBehavior,
+  MultiFactorEmailTemplate,
   MultiFactorLoginPolicy,
+  MultiFactorSMSTemplate,
   Oauth2AuthorizedURLValidationPolicy,
+  OAuth2Configuration,
   ObjectState,
+  PasswordlessConfiguration,
   ProofKeyForCodeExchangePolicy,
   RefreshTokenExpirationPolicy,
+  RefreshTokenRevocationPolicy,
   RefreshTokenUsagePolicy,
+  RegistrationConfiguration,
   RegistrationType,
+  RegistrationUnverifiedOptions,
+  Requirable,
   SAMLLogoutBehavior,
+  SAMLv2Configuration,
+  SAMLv2IdPInitiatedLoginConfiguration,
+  SAMLv2Logout,
+  SAMLv2SingleLogout,
+  SelfServiceFormConfiguration,
+  TimeBasedDeletePolicy,
   UnverifiedBehavior,
+  UsernameModeration,
   VerificationStrategy,
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
@@ -1439,8 +1530,8 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createApplicationRole("architecto", {
+const applicationId: string = "architecto";
+const applicationRequest: ApplicationRequest = {
   application: {
     accessControlConfiguration: {
       uiIPAccessControlListId: "942f32e5-5055-4756-b5d5-6d0bd0af2dfe",
@@ -1699,7 +1790,10 @@ sdk.sdk.createApplicationRole("architecto", {
     name: "Dan Nolan",
   },
   sourceApplicationId: "7799d22e-8c1f-4849-b825-fdc42c876c2c",
-}, "consequuntur").then((res: CreateApplicationRoleResponse) => {
+};
+const xFusionAuthTenantId: string = "consequuntur";
+
+sdk.sdk.createApplicationRole(applicationId, applicationRequest, xFusionAuthTenantId).then((res: CreateApplicationRoleResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1729,22 +1823,57 @@ Creates a new role for an application. You must specify the id of the applicatio
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateApplicationRoleWithIdRequest, CreateApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
+  Application,
+  ApplicationAccessControlConfiguration,
+  ApplicationData,
+  ApplicationEmailConfiguration,
+  ApplicationExternalIdentifierConfiguration,
+  ApplicationFormConfiguration,
+  ApplicationMultiFactorConfiguration,
   ApplicationMultiFactorTrustPolicy,
+  ApplicationRegistrationDeletePolicy,
+  ApplicationRequest,
+  ApplicationRole,
+  ApplicationWebAuthnConfiguration,
+  ApplicationWebAuthnWorkflowConfiguration,
+  AuthenticationTokenConfiguration,
   CanonicalizationMethod,
+  CleanSpeakConfiguration,
   ClientAuthenticationPolicy,
+  EventInfo,
+  EventInfoData,
+  JWTConfiguration,
+  LambdaConfiguration,
+  Location,
+  LoginConfiguration,
   LoginIdType,
   LogoutBehavior,
+  MultiFactorEmailTemplate,
   MultiFactorLoginPolicy,
+  MultiFactorSMSTemplate,
   Oauth2AuthorizedURLValidationPolicy,
+  OAuth2Configuration,
   ObjectState,
+  PasswordlessConfiguration,
   ProofKeyForCodeExchangePolicy,
   RefreshTokenExpirationPolicy,
+  RefreshTokenRevocationPolicy,
   RefreshTokenUsagePolicy,
+  RegistrationConfiguration,
   RegistrationType,
+  RegistrationUnverifiedOptions,
+  Requirable,
   SAMLLogoutBehavior,
+  SAMLv2Configuration,
+  SAMLv2IdPInitiatedLoginConfiguration,
+  SAMLv2Logout,
+  SAMLv2SingleLogout,
+  SelfServiceFormConfiguration,
+  TimeBasedDeletePolicy,
   UnverifiedBehavior,
+  UsernameModeration,
   VerificationStrategy,
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
@@ -1754,8 +1883,9 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createApplicationRoleWithId("possimus", "delectus", {
+const applicationId: string = "possimus";
+const roleId: string = "delectus";
+const applicationRequest: ApplicationRequest = {
   application: {
     accessControlConfiguration: {
       uiIPAccessControlListId: "b4cfc1c7-6230-4f84-9fb1-bd23fdb14db6",
@@ -2030,7 +2160,10 @@ sdk.sdk.createApplicationRoleWithId("possimus", "delectus", {
     name: "Lawrence Wunsch",
   },
   sourceApplicationId: "428ad9a9-f8bf-4822-9125-359d98387f7a",
-}, "voluptate").then((res: CreateApplicationRoleWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "voluptate";
+
+sdk.sdk.createApplicationRoleWithId(applicationId, roleId, applicationRequest, xFusionAuthTenantId).then((res: CreateApplicationRoleWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2061,22 +2194,57 @@ Creates an application. You can optionally specify an Id for the application, if
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateApplicationWithIdRequest, CreateApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
+  Application,
+  ApplicationAccessControlConfiguration,
+  ApplicationData,
+  ApplicationEmailConfiguration,
+  ApplicationExternalIdentifierConfiguration,
+  ApplicationFormConfiguration,
+  ApplicationMultiFactorConfiguration,
   ApplicationMultiFactorTrustPolicy,
+  ApplicationRegistrationDeletePolicy,
+  ApplicationRequest,
+  ApplicationRole,
+  ApplicationWebAuthnConfiguration,
+  ApplicationWebAuthnWorkflowConfiguration,
+  AuthenticationTokenConfiguration,
   CanonicalizationMethod,
+  CleanSpeakConfiguration,
   ClientAuthenticationPolicy,
+  EventInfo,
+  EventInfoData,
+  JWTConfiguration,
+  LambdaConfiguration,
+  Location,
+  LoginConfiguration,
   LoginIdType,
   LogoutBehavior,
+  MultiFactorEmailTemplate,
   MultiFactorLoginPolicy,
+  MultiFactorSMSTemplate,
   Oauth2AuthorizedURLValidationPolicy,
+  OAuth2Configuration,
   ObjectState,
+  PasswordlessConfiguration,
   ProofKeyForCodeExchangePolicy,
   RefreshTokenExpirationPolicy,
+  RefreshTokenRevocationPolicy,
   RefreshTokenUsagePolicy,
+  RegistrationConfiguration,
   RegistrationType,
+  RegistrationUnverifiedOptions,
+  Requirable,
   SAMLLogoutBehavior,
+  SAMLv2Configuration,
+  SAMLv2IdPInitiatedLoginConfiguration,
+  SAMLv2Logout,
+  SAMLv2SingleLogout,
+  SelfServiceFormConfiguration,
+  TimeBasedDeletePolicy,
   UnverifiedBehavior,
+  UsernameModeration,
   VerificationStrategy,
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
@@ -2086,8 +2254,8 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createApplicationWithId("cupiditate", {
+const applicationId: string = "cupiditate";
+const applicationRequest: ApplicationRequest = {
   application: {
     accessControlConfiguration: {
       uiIPAccessControlListId: "cd72cd24-84da-4217-a9f2-ac41ef5725f1",
@@ -2351,7 +2519,10 @@ sdk.sdk.createApplicationWithId("cupiditate", {
     name: "Mrs. Milton Weimann",
   },
   sourceApplicationId: "1d2c3b80-8094-4373-a060-459bebbad02f",
-}, "sunt").then((res: CreateApplicationWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "sunt";
+
+sdk.sdk.createApplicationWithId(applicationId, applicationRequest, xFusionAuthTenantId).then((res: CreateApplicationWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2502,16 +2673,21 @@ Creates a connector.  You can optionally specify an Id for the connector, if not
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConnectorType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { CreateConnectorWithIdRequest, CreateConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  BaseConnectorConfiguration,
+  BaseConnectorConfigurationData,
+  ConnectorRequest,
+  ConnectorType,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createConnectorWithId("nobis", {
+const connectorId: string = "nobis";
+const connectorRequest: ConnectorRequest = {
   connector: {
     data: {
       "iusto": {},
@@ -2524,7 +2700,9 @@ sdk.sdk.createConnectorWithId("nobis", {
     name: "Melinda Ankunding",
     type: ConnectorType.FusionAuth,
   },
-}).then((res: CreateConnectorWithIdResponse) => {
+};
+
+sdk.sdk.createConnectorWithId(connectorId, connectorRequest).then((res: CreateConnectorWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2553,15 +2731,15 @@ Creates a user consent type. You can optionally specify an Id for the consent ty
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateConsentResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateConsentRequest, CreateConsentResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { Consent, ConsentData, ConsentRequest, EmailPlus, LocalizedIntegers } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createConsent({
+const consentRequest: ConsentRequest = {
   consent: {
     consentEmailTemplateId: "2bd3c9f1-cc50-43f6-839b-cd0a6290f957",
     countryMinimumAgeForSelfConsent: {},
@@ -2587,7 +2765,10 @@ sdk.sdk.createConsent({
       "modi",
     ],
   },
-}, "eum").then((res: CreateConsentResponse) => {
+};
+const xFusionAuthTenantId: string = "eum";
+
+sdk.sdk.createConsent(consentRequest, xFusionAuthTenantId).then((res: CreateConsentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2616,15 +2797,16 @@ Creates a user consent type. You can optionally specify an Id for the consent ty
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateConsentWithIdRequest, CreateConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { Consent, ConsentData, ConsentRequest, EmailPlus, LocalizedIntegers } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createConsentWithId("rerum", {
+const consentId: string = "rerum";
+const consentRequest: ConsentRequest = {
   consent: {
     consentEmailTemplateId: "c5163bbc-a492-427c-82c2-2c55350495c5",
     countryMinimumAgeForSelfConsent: {},
@@ -2652,7 +2834,10 @@ sdk.sdk.createConsentWithId("rerum", {
       "sunt",
     ],
   },
-}, "necessitatibus").then((res: CreateConsentWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "necessitatibus";
+
+sdk.sdk.createConsentWithId(consentId, consentRequest, xFusionAuthTenantId).then((res: CreateConsentWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2682,15 +2867,15 @@ Creates an email template. You can optionally specify an Id for the template, if
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateEmailTemplateResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateEmailTemplateRequest, CreateEmailTemplateResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { EmailTemplate, EmailTemplateRequest, LocalizedStrings } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createEmailTemplate({
+const emailTemplateRequest: EmailTemplateRequest = {
   emailTemplate: {
     defaultFromName: "iste",
     defaultHtmlTemplate: "veritatis",
@@ -2706,7 +2891,10 @@ sdk.sdk.createEmailTemplate({
     localizedTextTemplates: {},
     name: "Ray Botsford",
   },
-}, "quasi").then((res: CreateEmailTemplateResponse) => {
+};
+const xFusionAuthTenantId: string = "quasi";
+
+sdk.sdk.createEmailTemplate(emailTemplateRequest, xFusionAuthTenantId).then((res: CreateEmailTemplateResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2735,15 +2923,16 @@ Creates an email template. You can optionally specify an Id for the template, if
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateEmailTemplateWithIdRequest, CreateEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { EmailTemplate, EmailTemplateRequest, LocalizedStrings } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createEmailTemplateWithId("magni", {
+const emailTemplateId: string = "magni";
+const emailTemplateRequest: EmailTemplateRequest = {
   emailTemplate: {
     defaultFromName: "numquam",
     defaultHtmlTemplate: "velit",
@@ -2759,7 +2948,10 @@ sdk.sdk.createEmailTemplateWithId("magni", {
     localizedTextTemplates: {},
     name: "Cesar Daugherty",
   },
-}, "sint").then((res: CreateEmailTemplateWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "sint";
+
+sdk.sdk.createEmailTemplateWithId(emailTemplateId, emailTemplateRequest, xFusionAuthTenantId).then((res: CreateEmailTemplateWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2789,15 +2981,24 @@ Creates an Entity. You can optionally specify an Id for the Entity. If not provi
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateEntityResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateEntityRequest, CreateEntityResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  Entity,
+  EntityData,
+  EntityJWTConfiguration,
+  EntityRequest,
+  EntityType,
+  EntityTypeData,
+  EntityTypePermission,
+  EntityTypePermissionData,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createEntity({
+const entityRequest: EntityRequest = {
   entity: {
     clientId: "tempore",
     clientSecret: "dolorem",
@@ -2844,7 +3045,10 @@ sdk.sdk.createEntity({
       ],
     },
   },
-}, "ratione").then((res: CreateEntityResponse) => {
+};
+const xFusionAuthTenantId: string = "ratione";
+
+sdk.sdk.createEntity(entityRequest, xFusionAuthTenantId).then((res: CreateEntityResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2990,15 +3194,23 @@ Creates a new permission for an entity type. You must specify the id of the enti
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateEntityTypePermissionResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateEntityTypePermissionRequest, CreateEntityTypePermissionResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  EntityJWTConfiguration,
+  EntityType,
+  EntityTypeData,
+  EntityTypePermission,
+  EntityTypePermissionData,
+  EntityTypeRequest,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createEntityTypePermission("quibusdam", {
+const entityTypeId: string = "quibusdam";
+const entityTypeRequest: EntityTypeRequest = {
   entityType: {
     data: {
       "pariatur": {},
@@ -3056,7 +3268,9 @@ sdk.sdk.createEntityTypePermission("quibusdam", {
     lastUpdateInstant: 1659380719000,
     name: "Dorothy Kemmer",
   },
-}).then((res: CreateEntityTypePermissionResponse) => {
+};
+
+sdk.sdk.createEntityTypePermission(entityTypeId, entityTypeRequest).then((res: CreateEntityTypePermissionResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -3085,15 +3299,27 @@ Creates a new permission for an entity type. You must specify the id of the enti
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateEntityTypePermissionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  CreateEntityTypePermissionWithIdRequest,
+  CreateEntityTypePermissionWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  EntityJWTConfiguration,
+  EntityType,
+  EntityTypeData,
+  EntityTypePermission,
+  EntityTypePermissionData,
+  EntityTypeRequest,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createEntityTypePermissionWithId("pariatur", "quas", {
+const entityTypeId: string = "pariatur";
+const permissionId: string = "quas";
+const entityTypeRequest: EntityTypeRequest = {
   entityType: {
     data: {
       "illo": {},
@@ -3176,7 +3402,9 @@ sdk.sdk.createEntityTypePermissionWithId("pariatur", "quas", {
     lastUpdateInstant: 1659380719000,
     name: "Rudy Reinger",
   },
-}).then((res: CreateEntityTypePermissionWithIdResponse) => {
+};
+
+sdk.sdk.createEntityTypePermissionWithId(entityTypeId, permissionId, entityTypeRequest).then((res: CreateEntityTypePermissionWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -3206,15 +3434,23 @@ Creates a Entity Type. You can optionally specify an Id for the Entity Type, if 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateEntityTypeWithIdRequest, CreateEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  EntityJWTConfiguration,
+  EntityType,
+  EntityTypeData,
+  EntityTypePermission,
+  EntityTypePermissionData,
+  EntityTypeRequest,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createEntityTypeWithId("quasi", {
+const entityTypeId: string = "quasi";
+const entityTypeRequest: EntityTypeRequest = {
   entityType: {
     data: {
       "aspernatur": {},
@@ -3287,7 +3523,9 @@ sdk.sdk.createEntityTypeWithId("quasi", {
     lastUpdateInstant: 1659380719000,
     name: "Hector Hegmann",
   },
-}).then((res: CreateEntityTypeWithIdResponse) => {
+};
+
+sdk.sdk.createEntityTypeWithId(entityTypeId, entityTypeRequest).then((res: CreateEntityTypeWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -3316,15 +3554,25 @@ Creates an Entity. You can optionally specify an Id for the Entity. If not provi
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateEntityWithIdRequest, CreateEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  Entity,
+  EntityData,
+  EntityJWTConfiguration,
+  EntityRequest,
+  EntityType,
+  EntityTypeData,
+  EntityTypePermission,
+  EntityTypePermissionData,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createEntityWithId("impedit", {
+const entityId: string = "impedit";
+const entityRequest: EntityRequest = {
   entity: {
     clientId: "cupiditate",
     clientSecret: "excepturi",
@@ -3408,7 +3656,10 @@ sdk.sdk.createEntityWithId("impedit", {
       ],
     },
   },
-}, "aspernatur").then((res: CreateEntityWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "aspernatur";
+
+sdk.sdk.createEntityWithId(entityId, entityRequest, xFusionAuthTenantId).then((res: CreateEntityWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -3438,16 +3689,15 @@ Creates a family with the user id in the request as the owner and sole member of
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateFamilyResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { CreateFamilyRequest, CreateFamilyResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { FamilyMember, FamilyMemberData, FamilyRequest, FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createFamily({
+const familyRequest: FamilyRequest = {
   familyMember: {
     data: {
       "molestiae": {},
@@ -3460,7 +3710,10 @@ sdk.sdk.createFamily({
     role: FamilyRole.Child,
     userId: "da803122-92cc-461c-aa70-2bb97ee102da",
   },
-}, "sed").then((res: CreateFamilyResponse) => {
+};
+const xFusionAuthTenantId: string = "sed";
+
+sdk.sdk.createFamily(familyRequest, xFusionAuthTenantId).then((res: CreateFamilyResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -3489,16 +3742,16 @@ Creates a family with the user id in the request as the owner and sole member of
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateFamilyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { CreateFamilyWithIdRequest, CreateFamilyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { FamilyMember, FamilyMemberData, FamilyRequest, FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createFamilyWithId("fugiat", {
+const familyId: string = "fugiat";
+const familyRequest: FamilyRequest = {
   familyMember: {
     data: {
       "neque": {},
@@ -3512,7 +3765,10 @@ sdk.sdk.createFamilyWithId("fugiat", {
     role: FamilyRole.Adult,
     userId: "01bf33ea-ab45-4402-ac17-04bf1cc9fc61",
   },
-}, "deserunt").then((res: CreateFamilyWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "deserunt";
+
+sdk.sdk.createFamilyWithId(familyId, familyRequest, xFusionAuthTenantId).then((res: CreateFamilyWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -3739,16 +3995,23 @@ Creates a form field.  You can optionally specify an Id for the form, if not pro
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FormControl, FormDataType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { CreateFormFieldWithIdRequest, CreateFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  FormControl,
+  FormDataType,
+  FormField,
+  FormFieldData,
+  FormFieldRequest,
+  FormFieldValidator,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createFormFieldWithId("accusantium", {
+const fieldId: string = "accusantium";
+const formFieldRequest: FormFieldRequest = {
   field: {
     confirm: false,
     consentId: "0310d023-dc90-41f5-afd2-a6c44846ae9d",
@@ -3831,7 +4094,9 @@ sdk.sdk.createFormFieldWithId("accusantium", {
       },
     },
   ],
-}).then((res: CreateFormFieldWithIdResponse) => {
+};
+
+sdk.sdk.createFormFieldWithId(fieldId, formFieldRequest).then((res: CreateFormFieldWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -3860,16 +4125,16 @@ Creates a form.  You can optionally specify an Id for the form, if not provided 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { CreateFormWithIdRequest, CreateFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { Form, FormData, FormRequest, FormStep, FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createFormWithId("fugiat", {
+const formId: string = "fugiat";
+const formRequest: FormRequest = {
   form: {
     data: {
       "exercitationem": {},
@@ -3893,7 +4158,9 @@ sdk.sdk.createFormWithId("fugiat", {
     ],
     type: FormType.AdminUser,
   },
-}).then((res: CreateFormWithIdResponse) => {
+};
+
+sdk.sdk.createFormWithId(formId, formRequest).then((res: CreateFormWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -3922,15 +4189,15 @@ Creates a group. You can optionally specify an Id for the group, if not provided
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateGroupResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateGroupRequest, CreateGroupResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { ApplicationRole, Group, GroupData, GroupRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createGroup({
+const groupRequest: GroupRequest = {
   group: {
     data: {
       "odio": {},
@@ -3958,7 +4225,10 @@ sdk.sdk.createGroup({
   roleIds: [
     "87271e18-ea9e-4451-98c2-cc57fbd60b1a",
   ],
-}, "quam").then((res: CreateGroupResponse) => {
+};
+const xFusionAuthTenantId: string = "quam";
+
+sdk.sdk.createGroup(groupRequest, xFusionAuthTenantId).then((res: CreateGroupResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -4426,15 +4696,16 @@ Creates a group. You can optionally specify an Id for the group, if not provided
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateGroupWithIdRequest, CreateGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { ApplicationRole, Group, GroupData, GroupRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createGroupWithId("eaque", {
+const groupId: string = "eaque";
+const groupRequest: GroupRequest = {
   group: {
     data: {
       "corporis": {},
@@ -4464,7 +4735,10 @@ sdk.sdk.createGroupWithId("eaque", {
     "4afb0735-cb62-485d-8a29-aaa1e169156f",
     "7d2ee209-505b-4f03-a93e-94480ca37fb1",
   ],
-}, "ipsa").then((res: CreateGroupWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "ipsa";
+
+sdk.sdk.createGroupWithId(groupId, groupRequest, xFusionAuthTenantId).then((res: CreateGroupWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -4549,16 +4823,22 @@ Creates an IP Access Control List. You can optionally specify an Id on this crea
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateIPAccessControlListWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { IPAccessControlEntryAction } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { CreateIPAccessControlListWithIdRequest, CreateIPAccessControlListWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  IPAccessControlEntry,
+  IPAccessControlEntryAction,
+  IPAccessControlList,
+  IPAccessControlListData,
+  IPAccessControlListRequest,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createIPAccessControlListWithId("dicta", {
+const accessControlListId: string = "dicta";
+const ipAccessControlListRequest: IPAccessControlListRequest = {
   ipAccessControlList: {
     data: {
       "quas": {},
@@ -4578,7 +4858,9 @@ sdk.sdk.createIPAccessControlListWithId("dicta", {
     lastUpdateInstant: 1659380719000,
     name: "Caleb Kuhic",
   },
-}).then((res: CreateIPAccessControlListWithIdResponse) => {
+};
+
+sdk.sdk.createIPAccessControlListWithId(accessControlListId, ipAccessControlListRequest).then((res: CreateIPAccessControlListWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -4690,15 +4972,84 @@ Creates an identity provider. You can optionally specify an Id for the identity 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateIdentityProviderWithIdRequest, CreateIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
+  AppleApplicationConfiguration,
+  AppleApplicationConfigurationData,
+  AppleIdentityProvider,
+  AppleIdentityProviderData,
   CanonicalizationMethod,
   ClientAuthenticationMethod,
+  EpicGamesApplicationConfiguration,
+  EpicGamesApplicationConfigurationData,
+  EpicGamesIdentityProvider,
+  EpicGamesIdentityProviderData,
+  ExternalJWTApplicationConfiguration,
+  ExternalJWTApplicationConfigurationData,
+  ExternalJWTIdentityProvider,
+  ExternalJWTIdentityProviderData,
+  FacebookApplicationConfiguration,
+  FacebookApplicationConfigurationData,
+  FacebookIdentityProvider,
+  FacebookIdentityProviderData,
+  GoogleApplicationConfiguration,
+  GoogleApplicationConfigurationData,
+  GoogleIdentityProvider,
+  GoogleIdentityProviderData,
+  GoogleIdentityProviderProperties,
+  HYPRApplicationConfiguration,
+  HYPRApplicationConfigurationData,
+  HYPRIdentityProvider,
+  HYPRIdentityProviderData,
+  IdentityProviderLimitUserLinkingPolicy,
   IdentityProviderLinkingStrategy,
   IdentityProviderLoginMethod,
+  IdentityProviderOauth2Configuration,
+  IdentityProviderRequest,
+  IdentityProviderTenantConfiguration,
+  IdentityProviderTenantConfigurationData,
   IdentityProviderType,
+  LinkedInApplicationConfiguration,
+  LinkedInApplicationConfigurationData,
+  LinkedInIdentityProvider,
+  LinkedInIdentityProviderData,
+  LoginHintConfiguration,
+  NintendoApplicationConfiguration,
+  NintendoApplicationConfigurationData,
+  NintendoIdentityProvider,
+  NintendoIdentityProviderData,
+  OpenIdConnectApplicationConfiguration,
+  OpenIdConnectApplicationConfigurationData,
+  OpenIdConnectIdentityProvider,
+  OpenIdConnectIdentityProviderData,
+  ProviderLambdaConfiguration,
+  SAMLv2AssertionConfiguration,
+  SAMLv2DestinationAssertionConfiguration,
   SAMLv2DestinationAssertionPolicy,
+  SAMLv2IdentityProvider,
+  SAMLv2IdpInitiatedConfiguration,
+  SAMLv2IdPInitiatedIdentityProvider,
+  SonyPSNApplicationConfiguration,
+  SonyPSNApplicationConfigurationData,
+  SonyPSNIdentityProvider,
+  SonyPSNIdentityProviderData,
   SteamAPIMode,
+  SteamApplicationConfiguration,
+  SteamApplicationConfigurationData,
+  SteamIdentityProvider,
+  SteamIdentityProviderData,
+  TwitchApplicationConfiguration,
+  TwitchApplicationConfigurationData,
+  TwitchIdentityProvider,
+  TwitchIdentityProviderData,
+  TwitterApplicationConfiguration,
+  TwitterApplicationConfigurationData,
+  TwitterIdentityProvider,
+  TwitterIdentityProviderData,
+  XboxApplicationConfiguration,
+  XboxApplicationConfigurationData,
+  XboxIdentityProvider,
+  XboxIdentityProviderData,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -4706,8 +5057,8 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createIdentityProviderWithId("praesentium", {
+const identityProviderId: string = "praesentium";
+const identityProviderRequest: IdentityProviderRequest = {
   identityProvider: {
     applicationConfiguration: {
       "eveniet": {
@@ -4820,7 +5171,9 @@ sdk.sdk.createIdentityProviderWithId("praesentium", {
     },
     type: IdentityProviderType.Facebook,
   },
-}).then((res: CreateIdentityProviderWithIdResponse) => {
+};
+
+sdk.sdk.createIdentityProviderWithId(identityProviderId, identityProviderRequest).then((res: CreateIdentityProviderWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -4897,16 +5250,16 @@ Creates a Lambda. You can optionally specify an Id for the lambda, if not provid
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { CreateLambdaWithIdRequest, CreateLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { Lambda, LambdaEngineType, LambdaRequest, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createLambdaWithId("quibusdam", {
+const lambdaId: string = "quibusdam";
+const lambdaRequest: LambdaRequest = {
   lambda: {
     body: "debitis",
     debug: false,
@@ -4917,7 +5270,9 @@ sdk.sdk.createLambdaWithId("quibusdam", {
     name: "Alberto Wisozk",
     type: LambdaType.SCIMServerGroupResponseConverter,
   },
-}).then((res: CreateLambdaWithIdResponse) => {
+};
+
+sdk.sdk.createLambdaWithId(lambdaId, lambdaRequest).then((res: CreateLambdaWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -4946,15 +5301,15 @@ The Logout API is intended to be used to remove the refresh token and access tok
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateLogoutResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateLogoutRequest, CreateLogoutResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { EventInfo, EventInfoData, Location, LogoutRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createLogout({
+const logoutRequest: LogoutRequest = {
   eventInfo: {
     data: {
       "tempore": {},
@@ -4978,7 +5333,11 @@ sdk.sdk.createLogout({
   },
   global: false,
   refreshToken: "sapiente",
-}, "quae", "blanditiis").then((res: CreateLogoutResponse) => {
+};
+const global: string = "quae";
+const refreshToken: string = "blanditiis";
+
+sdk.sdk.createLogout(logoutRequest, global, refreshToken).then((res: CreateLogoutResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -5057,16 +5416,16 @@ Creates an message template. You can optionally specify an Id for the template, 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { CreateMessageTemplateWithIdRequest, CreateMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { MessageTemplate, MessageTemplateData, MessageTemplateRequest, MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createMessageTemplateWithId("dolores", {
+const messageTemplateId: string = "dolores";
+const messageTemplateRequest: MessageTemplateRequest = {
   messageTemplate: {
     data: {
       "eius": {},
@@ -5078,7 +5437,9 @@ sdk.sdk.createMessageTemplateWithId("dolores", {
     name: "Mr. Tamara Rohan",
     type: MessageType.Sms,
   },
-}).then((res: CreateMessageTemplateWithIdResponse) => {
+};
+
+sdk.sdk.createMessageTemplateWithId(messageTemplateId, messageTemplateRequest).then((res: CreateMessageTemplateWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -5158,16 +5519,21 @@ Creates a messenger.  You can optionally specify an Id for the messenger, if not
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessengerType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { CreateMessengerWithIdRequest, CreateMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  BaseMessengerConfiguration,
+  BaseMessengerConfigurationData,
+  MessengerRequest,
+  MessengerType,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createMessengerWithId("illo", {
+const messengerId: string = "illo";
+const messengerRequest: MessengerRequest = {
   messenger: {
     data: {
       "dolorum": {},
@@ -5182,7 +5548,9 @@ sdk.sdk.createMessengerWithId("illo", {
     transport: "placeat",
     type: MessengerType.Generic,
   },
-}).then((res: CreateMessengerWithIdResponse) => {
+};
+
+sdk.sdk.createMessengerWithId(messengerId, messengerRequest).then((res: CreateMessengerWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -5211,21 +5579,69 @@ Creates a tenant. You can optionally specify an Id for the tenant, if not provid
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateTenantResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateTenantRequest, CreateTenantResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorAttachmentPreference,
   BreachAction,
   BreachMatchMode,
   CaptchaMethod,
+  ConnectorPolicy,
+  ConnectorPolicyData,
+  EmailConfiguration,
+  EmailHeader,
   EmailSecurityType,
+  EmailUnverifiedOptions,
+  EventConfiguration,
+  EventConfigurationData,
+  EventInfo,
+  EventInfoData,
   ExpiryUnit,
+  ExternalIdentifierConfiguration,
+  FailedAuthenticationActionCancelPolicy,
+  FailedAuthenticationConfiguration,
+  FamilyConfiguration,
+  JWTConfiguration,
+  Location,
+  MaximumPasswordAge,
+  MinimumPasswordAge,
+  MultiFactorAuthenticatorMethod,
+  MultiFactorEmailMethod,
   MultiFactorLoginPolicy,
+  MultiFactorSMSMethod,
   ObjectState,
+  PasswordBreachDetection,
+  PasswordEncryptionConfiguration,
+  PasswordValidationRules,
+  RateLimitedRequestConfiguration,
   RefreshTokenExpirationPolicy,
+  RefreshTokenRevocationPolicy,
   RefreshTokenUsagePolicy,
+  RememberPreviousPasswords,
+  SecureGeneratorConfiguration,
   SecureGeneratorType,
+  Tenant,
+  TenantAccessControlConfiguration,
+  TenantCaptchaConfiguration,
+  TenantData,
+  TenantFormConfiguration,
+  TenantLambdaConfiguration,
+  TenantLoginConfiguration,
+  TenantMultiFactorConfiguration,
+  TenantOAuth2Configuration,
+  TenantRateLimitConfiguration,
+  TenantRegistrationConfiguration,
+  TenantRequest,
+  TenantSCIMServerConfiguration,
+  TenantSCIMServerConfigurationSchemas,
+  TenantSSOConfiguration,
+  TenantUserDeletePolicy,
+  TenantUsernameConfiguration,
+  TenantWebAuthnConfiguration,
+  TenantWebAuthnWorkflowConfiguration,
+  TimeBasedDeletePolicy,
   TOTPAlgorithm,
   TransactionType,
+  UniqueUsernameConfiguration,
   UniqueUsernameStrategy,
   UnverifiedBehavior,
   UserVerificationRequirement,
@@ -5237,8 +5653,7 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createTenant({
+const tenantRequest: TenantRequest = {
   eventInfo: {
     data: {
       "natus": {},
@@ -5620,7 +6035,10 @@ sdk.sdk.createTenant({
     "47871a88-ed72-4a2d-8af4-158ac2d0f0f5",
     "8c3b87b4-7040-4d0d-98e9-d82c5e306f55",
   ],
-}, "molestiae").then((res: CreateTenantResponse) => {
+};
+const xFusionAuthTenantId: string = "molestiae";
+
+sdk.sdk.createTenant(tenantRequest, xFusionAuthTenantId).then((res: CreateTenantResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -5649,21 +6067,69 @@ Creates a tenant. You can optionally specify an Id for the tenant, if not provid
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateTenantWithIdRequest, CreateTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorAttachmentPreference,
   BreachAction,
   BreachMatchMode,
   CaptchaMethod,
+  ConnectorPolicy,
+  ConnectorPolicyData,
+  EmailConfiguration,
+  EmailHeader,
   EmailSecurityType,
+  EmailUnverifiedOptions,
+  EventConfiguration,
+  EventConfigurationData,
+  EventInfo,
+  EventInfoData,
   ExpiryUnit,
+  ExternalIdentifierConfiguration,
+  FailedAuthenticationActionCancelPolicy,
+  FailedAuthenticationConfiguration,
+  FamilyConfiguration,
+  JWTConfiguration,
+  Location,
+  MaximumPasswordAge,
+  MinimumPasswordAge,
+  MultiFactorAuthenticatorMethod,
+  MultiFactorEmailMethod,
   MultiFactorLoginPolicy,
+  MultiFactorSMSMethod,
   ObjectState,
+  PasswordBreachDetection,
+  PasswordEncryptionConfiguration,
+  PasswordValidationRules,
+  RateLimitedRequestConfiguration,
   RefreshTokenExpirationPolicy,
+  RefreshTokenRevocationPolicy,
   RefreshTokenUsagePolicy,
+  RememberPreviousPasswords,
+  SecureGeneratorConfiguration,
   SecureGeneratorType,
+  Tenant,
+  TenantAccessControlConfiguration,
+  TenantCaptchaConfiguration,
+  TenantData,
+  TenantFormConfiguration,
+  TenantLambdaConfiguration,
+  TenantLoginConfiguration,
+  TenantMultiFactorConfiguration,
+  TenantOAuth2Configuration,
+  TenantRateLimitConfiguration,
+  TenantRegistrationConfiguration,
+  TenantRequest,
+  TenantSCIMServerConfiguration,
+  TenantSCIMServerConfigurationSchemas,
+  TenantSSOConfiguration,
+  TenantUserDeletePolicy,
+  TenantUsernameConfiguration,
+  TenantWebAuthnConfiguration,
+  TenantWebAuthnWorkflowConfiguration,
+  TimeBasedDeletePolicy,
   TOTPAlgorithm,
   TransactionType,
+  UniqueUsernameConfiguration,
   UniqueUsernameStrategy,
   UnverifiedBehavior,
   UserVerificationRequirement,
@@ -5675,8 +6141,8 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createTenantWithId("aliquid", {
+const tenantId: string = "aliquid";
+const tenantRequest: TenantRequest = {
   eventInfo: {
     data: {
       "nemo": {},
@@ -6061,7 +6527,10 @@ sdk.sdk.createTenantWithId("aliquid", {
     "ec6fc031-28f0-4aaa-aee0-04eba7bf8732",
     "be509c50-8713-41f0-af0b-ce55a8687143",
   ],
-}, "quisquam").then((res: CreateTenantWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "quisquam";
+
+sdk.sdk.createTenantWithId(tenantId, tenantRequest, xFusionAuthTenantId).then((res: CreateTenantWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -6191,15 +6660,16 @@ Creates a Theme. You can optionally specify an Id for the theme, if not provided
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateThemeWithIdRequest, CreateThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { LocalizedStrings, Templates, Theme, ThemeData, ThemeRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createThemeWithId("vel", {
+const themeId: string = "vel";
+const themeRequest: ThemeRequest = {
   sourceThemeId: "78fa2795-8367-4363-9a07-9096faeb8648",
   theme: {
     data: {
@@ -6261,7 +6731,9 @@ sdk.sdk.createThemeWithId("vel", {
       unauthorized: "explicabo",
     },
   },
-}).then((res: CreateThemeWithIdResponse) => {
+};
+
+sdk.sdk.createThemeWithId(themeId, themeRequest).then((res: CreateThemeWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -6325,16 +6797,33 @@ Creates a user. You can optionally specify an Id for the user, if not provided o
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { CreateUserRequest, CreateUserResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  AuthenticatorConfiguration,
+  BreachedPasswordStatus,
+  ChangePasswordReason,
+  ContentStatus,
+  EventInfo,
+  EventInfoData,
+  GroupMember,
+  GroupMemberData,
+  Location,
+  TOTPAlgorithm,
+  TwoFactorMethod,
+  User,
+  UserData,
+  UserRegistration,
+  UserRegistrationData,
+  UserRequest,
+  UserTwoFactorConfiguration,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createUser({
+const userRequest: UserRequest = {
   applicationId: "69b6a70b-0dd8-42f9-8fff-bd1e1e21ddc6",
   currentPassword: "sint",
   disableDomainBlock: false,
@@ -6598,7 +7087,10 @@ sdk.sdk.createUser({
     usernameStatus: ContentStatus.Pending,
     verified: false,
   },
-}, "optio").then((res: CreateUserResponse) => {
+};
+const xFusionAuthTenantId: string = "optio";
+
+sdk.sdk.createUser(userRequest, xFusionAuthTenantId).then((res: CreateUserResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -6627,16 +7119,21 @@ Creates a user action. This action cannot be taken on a user until this call suc
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserActionResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { CreateUserActionRequest, CreateUserActionResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  LocalizedStrings,
+  TransactionType,
+  UserAction,
+  UserActionOption,
+  UserActionRequest,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createUserAction({
+const userActionRequest: UserActionRequest = {
   userAction: {
     active: false,
     cancelEmailTemplateId: "0649d2bd-d9e5-48dd-b166-5c312c7f550d",
@@ -6666,7 +7163,10 @@ sdk.sdk.createUserAction({
     userEmailingEnabled: false,
     userNotificationsEnabled: false,
   },
-}, "similique").then((res: CreateUserActionResponse) => {
+};
+const xFusionAuthTenantId: string = "similique";
+
+sdk.sdk.createUserAction(userActionRequest, xFusionAuthTenantId).then((res: CreateUserActionResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -6740,15 +7240,16 @@ Creates a user reason. This user action reason cannot be used when actioning a u
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateUserActionReasonWithIdRequest, CreateUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { LocalizedStrings, UserActionReason, UserActionReasonRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createUserActionReasonWithId("officia", {
+const userActionReasonId: string = "officia";
+const userActionReasonRequest: UserActionReasonRequest = {
   userActionReason: {
     code: "est",
     id: "0e149cd1-ccdd-4362-bbf9-2390015f2689",
@@ -6757,7 +7258,9 @@ sdk.sdk.createUserActionReasonWithId("officia", {
     localizedTexts: {},
     text: "unde",
   },
-}).then((res: CreateUserActionReasonWithIdResponse) => {
+};
+
+sdk.sdk.createUserActionReasonWithId(userActionReasonId, userActionReasonRequest).then((res: CreateUserActionReasonWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -6786,16 +7289,22 @@ Creates a user action. This action cannot be taken on a user until this call suc
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { CreateUserActionWithIdRequest, CreateUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  LocalizedStrings,
+  TransactionType,
+  UserAction,
+  UserActionOption,
+  UserActionRequest,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createUserActionWithId("optio", {
+const userActionId: string = "optio";
+const userActionRequest: UserActionRequest = {
   userAction: {
     active: false,
     cancelEmailTemplateId: "f4ffeb9b-ec50-4318-a81e-b01d297f7b45",
@@ -6821,7 +7330,10 @@ sdk.sdk.createUserActionWithId("optio", {
     userEmailingEnabled: false,
     userNotificationsEnabled: false,
   },
-}, "totam").then((res: CreateUserActionWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "totam";
+
+sdk.sdk.createUserActionWithId(userActionId, userActionRequest, xFusionAuthTenantId).then((res: CreateUserActionWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -6933,16 +7445,25 @@ Creates a single User consent.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { CreateUserConsentWithIdRequest, CreateUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  Consent,
+  ConsentData,
+  ConsentStatus,
+  EmailPlus,
+  LocalizedIntegers,
+  UserConsent,
+  UserConsentData,
+  UserConsentRequest,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createUserConsentWithId("iste", {
+const userConsentId: string = "iste";
+const userConsentRequest: UserConsentRequest = {
   userConsent: {
     consent: {
       consentEmailTemplateId: "b0c46a09-4e2e-49c2-a05d-fe765bffbcb8",
@@ -6987,7 +7508,9 @@ sdk.sdk.createUserConsentWithId("iste", {
       "ipsa",
     ],
   },
-}).then((res: CreateUserConsentWithIdResponse) => {
+};
+
+sdk.sdk.createUserConsentWithId(userConsentId, userConsentRequest).then((res: CreateUserConsentWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -7149,16 +7672,34 @@ Creates a user. You can optionally specify an Id for the user, if not provided o
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { CreateUserWithIdRequest, CreateUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  AuthenticatorConfiguration,
+  BreachedPasswordStatus,
+  ChangePasswordReason,
+  ContentStatus,
+  EventInfo,
+  EventInfoData,
+  GroupMember,
+  GroupMemberData,
+  Location,
+  TOTPAlgorithm,
+  TwoFactorMethod,
+  User,
+  UserData,
+  UserRegistration,
+  UserRegistrationData,
+  UserRequest,
+  UserTwoFactorConfiguration,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createUserWithId("vitae", {
+const userId: string = "vitae";
+const userRequest: UserRequest = {
   applicationId: "4aa294d6-4c08-4a2e-81a8-07151a354ba1",
   currentPassword: "mollitia",
   disableDomainBlock: false,
@@ -7768,7 +8309,10 @@ sdk.sdk.createUserWithId("vitae", {
     usernameStatus: ContentStatus.Pending,
     verified: false,
   },
-}, "nulla").then((res: CreateUserWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "nulla";
+
+sdk.sdk.createUserWithId(userId, userRequest, xFusionAuthTenantId).then((res: CreateUserWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -7863,15 +8407,16 @@ Creates a webhook. You can optionally specify an Id for the webhook, if not prov
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateWebhookWithIdRequest, CreateWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { HTTPHeaders, Webhook, WebhookData, WebhookRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.createWebhookWithId("aliquid", {
+const webhookId: string = "aliquid";
+const webhookRequest: WebhookRequest = {
   webhook: {
     connectTimeout: 659750,
     data: {
@@ -7903,7 +8448,9 @@ sdk.sdk.createWebhookWithId("aliquid", {
     ],
     url: "laboriosam",
   },
-}).then((res: CreateWebhookWithIdResponse) => {
+};
+
+sdk.sdk.createWebhookWithId(webhookId, webhookRequest).then((res: CreateWebhookWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -7932,15 +8479,16 @@ Deletes the API key for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteAPIKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteAPIKeyWithIdRequest, DeleteAPIKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const keyId: string = "quia";
 
-sdk.sdk.deleteAPIKeyWithId("quia").then((res: DeleteAPIKeyWithIdResponse) => {
+sdk.sdk.deleteAPIKeyWithId(keyId).then((res: DeleteAPIKeyWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -7968,15 +8516,18 @@ Hard deletes an application role. This is a dangerous operation and should not b
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteApplicationRoleWithIdRequest, DeleteApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const applicationId: string = "magnam";
+const roleId: string = "odit";
+const xFusionAuthTenantId: string = "repudiandae";
 
-sdk.sdk.deleteApplicationRoleWithId("magnam", "odit", "repudiandae").then((res: DeleteApplicationRoleWithIdResponse) => {
+sdk.sdk.deleteApplicationRoleWithId(applicationId, roleId, xFusionAuthTenantId).then((res: DeleteApplicationRoleWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8006,15 +8557,18 @@ Hard deletes an application. This is a dangerous operation and should not be use
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteApplicationWithIdRequest, DeleteApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const applicationId: string = "amet";
+const xFusionAuthTenantId: string = "nesciunt";
+const hardDelete: string = "sint";
 
-sdk.sdk.deleteApplicationWithId("amet", "nesciunt", "sint").then((res: DeleteApplicationWithIdResponse) => {
+sdk.sdk.deleteApplicationWithId(applicationId, xFusionAuthTenantId, hardDelete).then((res: DeleteApplicationWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8044,15 +8598,16 @@ Deletes the connector for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteConnectorWithIdRequest, DeleteConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const connectorId: string = "nam";
 
-sdk.sdk.deleteConnectorWithId("nam").then((res: DeleteConnectorWithIdResponse) => {
+sdk.sdk.deleteConnectorWithId(connectorId).then((res: DeleteConnectorWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8080,15 +8635,17 @@ Deletes the consent for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteConsentWithIdRequest, DeleteConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const consentId: string = "numquam";
+const xFusionAuthTenantId: string = "ipsum";
 
-sdk.sdk.deleteConsentWithId("numquam", "ipsum").then((res: DeleteConsentWithIdResponse) => {
+sdk.sdk.deleteConsentWithId(consentId, xFusionAuthTenantId).then((res: DeleteConsentWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8117,15 +8674,17 @@ Deletes the email template for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteEmailTemplateWithIdRequest, DeleteEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const emailTemplateId: string = "reiciendis";
+const xFusionAuthTenantId: string = "error";
 
-sdk.sdk.deleteEmailTemplateWithId("reiciendis", "error").then((res: DeleteEmailTemplateWithIdResponse) => {
+sdk.sdk.deleteEmailTemplateWithId(emailTemplateId, xFusionAuthTenantId).then((res: DeleteEmailTemplateWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8154,15 +8713,19 @@ Deletes an Entity Grant for the given User or Entity.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteEntityGrantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteEntityGrantWithIdRequest, DeleteEntityGrantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const entityId: string = "architecto";
+const xFusionAuthTenantId: string = "occaecati";
+const recipientEntityId: string = "non";
+const userId: string = "esse";
 
-sdk.sdk.deleteEntityGrantWithId("architecto", "occaecati", "non", "esse").then((res: DeleteEntityGrantWithIdResponse) => {
+sdk.sdk.deleteEntityGrantWithId(entityId, xFusionAuthTenantId, recipientEntityId, userId).then((res: DeleteEntityGrantWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8193,15 +8756,20 @@ Hard deletes a permission. This is a dangerous operation and should not be used 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteEntityTypePermissionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  DeleteEntityTypePermissionWithIdRequest,
+  DeleteEntityTypePermissionWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const entityTypeId: string = "nostrum";
+const permissionId: string = "facere";
 
-sdk.sdk.deleteEntityTypePermissionWithId("nostrum", "facere").then((res: DeleteEntityTypePermissionWithIdResponse) => {
+sdk.sdk.deleteEntityTypePermissionWithId(entityTypeId, permissionId).then((res: DeleteEntityTypePermissionWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8230,15 +8798,16 @@ Deletes the Entity Type for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteEntityTypeWithIdRequest, DeleteEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const entityTypeId: string = "veritatis";
 
-sdk.sdk.deleteEntityTypeWithId("veritatis").then((res: DeleteEntityTypeWithIdResponse) => {
+sdk.sdk.deleteEntityTypeWithId(entityTypeId).then((res: DeleteEntityTypeWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8266,15 +8835,17 @@ Deletes the Entity for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteEntityWithIdRequest, DeleteEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const entityId: string = "dolor";
+const xFusionAuthTenantId: string = "facere";
 
-sdk.sdk.deleteEntityWithId("dolor", "facere").then((res: DeleteEntityWithIdResponse) => {
+sdk.sdk.deleteEntityWithId(entityId, xFusionAuthTenantId).then((res: DeleteEntityWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8303,15 +8874,16 @@ Deletes the form field for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteFormFieldWithIdRequest, DeleteFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const fieldId: string = "molestiae";
 
-sdk.sdk.deleteFormFieldWithId("molestiae").then((res: DeleteFormFieldWithIdResponse) => {
+sdk.sdk.deleteFormFieldWithId(fieldId).then((res: DeleteFormFieldWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8339,15 +8911,16 @@ Deletes the form for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteFormWithIdRequest, DeleteFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const formId: string = "labore";
 
-sdk.sdk.deleteFormWithId("labore").then((res: DeleteFormWithIdResponse) => {
+sdk.sdk.deleteFormWithId(formId).then((res: DeleteFormWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8422,15 +8995,17 @@ Deletes the group for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteGroupWithIdRequest, DeleteGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const groupId: string = "rerum";
+const xFusionAuthTenantId: string = "ad";
 
-sdk.sdk.deleteGroupWithId("rerum", "ad").then((res: DeleteGroupWithIdResponse) => {
+sdk.sdk.deleteGroupWithId(groupId, xFusionAuthTenantId).then((res: DeleteGroupWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8459,15 +9034,16 @@ Deletes the IP Access Control List for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteIPAccessControlListWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteIPAccessControlListWithIdRequest, DeleteIPAccessControlListWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const accessControlListId: string = "error";
 
-sdk.sdk.deleteIPAccessControlListWithId("error").then((res: DeleteIPAccessControlListWithIdResponse) => {
+sdk.sdk.deleteIPAccessControlListWithId(accessControlListId).then((res: DeleteIPAccessControlListWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8495,15 +9071,16 @@ Deletes the identity provider for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteIdentityProviderWithIdRequest, DeleteIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const identityProviderId: string = "non";
 
-sdk.sdk.deleteIdentityProviderWithId("non").then((res: DeleteIdentityProviderWithIdResponse) => {
+sdk.sdk.deleteIdentityProviderWithId(identityProviderId).then((res: DeleteIdentityProviderWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8531,15 +9108,15 @@ Revoke all refresh tokens that belong to a user by user Id. OR Revoke all refres
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteJwtResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteJwtRequest, DeleteJwtResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { EventInfo, EventInfoData, Location, RefreshTokenRevokeRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.deleteJwt({
+const refreshTokenRevokeRequest: RefreshTokenRevokeRequest = {
   applicationId: "6c575860-8d2d-4eba-95cf-1d9945c5c145",
   eventInfo: {
     data: {
@@ -8564,7 +9141,12 @@ sdk.sdk.deleteJwt({
   },
   token: "nemo",
   userId: "67b3f53e-42a3-4305-ba82-770bf6d2dee1",
-}, "quo", "rerum", "odit").then((res: DeleteJwtResponse) => {
+};
+const applicationId: string = "quo";
+const token: string = "rerum";
+const userId: string = "odit";
+
+sdk.sdk.deleteJwt(refreshTokenRevokeRequest, applicationId, token, userId).then((res: DeleteJwtResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8595,15 +9177,16 @@ Deletes the key for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteKeyWithIdRequest, DeleteKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const keyId: string = "dignissimos";
 
-sdk.sdk.deleteKeyWithId("dignissimos").then((res: DeleteKeyWithIdResponse) => {
+sdk.sdk.deleteKeyWithId(keyId).then((res: DeleteKeyWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8631,15 +9214,16 @@ Deletes the lambda for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteLambdaWithIdRequest, DeleteLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const lambdaId: string = "reiciendis";
 
-sdk.sdk.deleteLambdaWithId("reiciendis").then((res: DeleteLambdaWithIdResponse) => {
+sdk.sdk.deleteLambdaWithId(lambdaId).then((res: DeleteLambdaWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8667,15 +9251,16 @@ Deletes the message template for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteMessageTemplateWithIdRequest, DeleteMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const messageTemplateId: string = "fugiat";
 
-sdk.sdk.deleteMessageTemplateWithId("fugiat").then((res: DeleteMessageTemplateWithIdResponse) => {
+sdk.sdk.deleteMessageTemplateWithId(messageTemplateId).then((res: DeleteMessageTemplateWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8703,15 +9288,16 @@ Deletes the messenger for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteMessengerWithIdRequest, DeleteMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const messengerId: string = "itaque";
 
-sdk.sdk.deleteMessengerWithId("itaque").then((res: DeleteMessengerWithIdResponse) => {
+sdk.sdk.deleteMessengerWithId(messengerId).then((res: DeleteMessengerWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8739,15 +9325,16 @@ Deletes the tenant based on the given Id on the URL. This permanently deletes al
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteTenantWithIdRequest, DeleteTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { EventInfo, EventInfoData, Location, TenantDeleteRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.deleteTenantWithId("voluptatem", {
+const tenantId: string = "voluptatem";
+const tenantDeleteRequest: TenantDeleteRequest = {
   async: false,
   eventInfo: {
     data: {
@@ -8771,7 +9358,11 @@ sdk.sdk.deleteTenantWithId("voluptatem", {
     os: "id",
     userAgent: "consectetur",
   },
-}, "officiis", "in").then((res: DeleteTenantWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "officiis";
+const async: string = "in";
+
+sdk.sdk.deleteTenantWithId(tenantId, tenantDeleteRequest, xFusionAuthTenantId, async).then((res: DeleteTenantWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8802,15 +9393,16 @@ Deletes the theme for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteThemeWithIdRequest, DeleteThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const themeId: string = "minus";
 
-sdk.sdk.deleteThemeWithId("minus").then((res: DeleteThemeWithIdResponse) => {
+sdk.sdk.deleteThemeWithId(themeId).then((res: DeleteThemeWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8838,15 +9430,16 @@ Deletes the user action reason for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteUserActionReasonWithIdRequest, DeleteUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const userActionReasonId: string = "suscipit";
 
-sdk.sdk.deleteUserActionReasonWithId("suscipit").then((res: DeleteUserActionReasonWithIdResponse) => {
+sdk.sdk.deleteUserActionReasonWithId(userActionReasonId).then((res: DeleteUserActionReasonWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8874,15 +9467,18 @@ Deactivates the user action with the given Id. OR Deletes the user action for th
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteUserActionWithIdRequest, DeleteUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const userActionId: string = "architecto";
+const xFusionAuthTenantId: string = "aliquam";
+const hardDelete: string = "in";
 
-sdk.sdk.deleteUserActionWithId("architecto", "aliquam", "in").then((res: DeleteUserActionWithIdResponse) => {
+sdk.sdk.deleteUserActionWithId(userActionId, xFusionAuthTenantId, hardDelete).then((res: DeleteUserActionWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8912,15 +9508,15 @@ Deactivates the users with the given ids. OR Deletes the users with the given id
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteUserBulkResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteUserBulkRequest, DeleteUserBulkResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { EventInfo, EventInfoData, Location, UserDeleteRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.deleteUserBulk({
+const userDeleteRequest: UserDeleteRequest = {
   dryRun: false,
   eventInfo: {
     data: {
@@ -8954,7 +9550,12 @@ sdk.sdk.deleteUserBulk({
     "6db6bb78-aa73-410c-bd14-ba92c26349d5",
     "9272ed50-6646-42c9-9eaa-dacd2b866ce1",
   ],
-}, "iure", "at", "recusandae").then((res: DeleteUserBulkResponse) => {
+};
+const dryRun: string = "iure";
+const hardDelete: string = "at";
+const userIds: string = "recusandae";
+
+sdk.sdk.deleteUserBulk(userDeleteRequest, dryRun, hardDelete, userIds).then((res: DeleteUserBulkResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -8985,15 +9586,18 @@ Remove an existing link that has been made from a 3rd party identity provider to
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteUserLinkWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteUserLinkWithIdRequest, DeleteUserLinkWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const identityProviderId: string = "praesentium";
+const identityProviderUserId: string = "quae";
+const userId: string = "corrupti";
 
-sdk.sdk.deleteUserLinkWithId("praesentium", "quae", "corrupti").then((res: DeleteUserLinkWithIdResponse) => {
+sdk.sdk.deleteUserLinkWithId(identityProviderId, identityProviderUserId, userId).then((res: DeleteUserLinkWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -9023,15 +9627,17 @@ Deletes the user registration for the given user and application. OR Deletes the
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteUserRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteUserRegistrationWithIdRequest, DeleteUserRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { EventInfo, EventInfoData, Location, RegistrationDeleteRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.deleteUserRegistrationWithId("sunt", "repudiandae", {
+const applicationId: string = "sunt";
+const userId: string = "repudiandae";
+const registrationDeleteRequest: RegistrationDeleteRequest = {
   eventInfo: {
     data: {
       "fuga": {},
@@ -9052,7 +9658,10 @@ sdk.sdk.deleteUserRegistrationWithId("sunt", "repudiandae", {
     os: "nostrum",
     userAgent: "eaque",
   },
-}, "vel").then((res: DeleteUserRegistrationWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "vel";
+
+sdk.sdk.deleteUserRegistrationWithId(applicationId, userId, registrationDeleteRequest, xFusionAuthTenantId).then((res: DeleteUserRegistrationWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -9083,15 +9692,16 @@ Disable two-factor authentication for a user using a JSON body rather than URL p
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteUserTwoFactorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteUserTwoFactorWithIdRequest, DeleteUserTwoFactorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { EventInfo, EventInfoData, Location, TwoFactorDisableRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.deleteUserTwoFactorWithId("totam", {
+const userId: string = "totam";
+const twoFactorDisableRequest: TwoFactorDisableRequest = {
   applicationId: "1a7f89f7-d9ec-4432-ba73-09239137eac1",
   code: "delectus",
   eventInfo: {
@@ -9117,7 +9727,11 @@ sdk.sdk.deleteUserTwoFactorWithId("totam", {
     userAgent: "quam",
   },
   methodId: "expedita",
-}, "amet", "reiciendis").then((res: DeleteUserTwoFactorWithIdResponse) => {
+};
+const code: string = "amet";
+const methodId: string = "reiciendis";
+
+sdk.sdk.deleteUserTwoFactorWithId(userId, twoFactorDisableRequest, code, methodId).then((res: DeleteUserTwoFactorWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -9148,15 +9762,16 @@ Deletes the user based on the given request (sent to the API as JSON). This perm
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteUserWithIdRequest, DeleteUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { EventInfo, EventInfoData, Location, UserDeleteSingleRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.deleteUserWithId("esse", {
+const userId: string = "esse";
+const userDeleteSingleRequest: UserDeleteSingleRequest = {
   eventInfo: {
     data: {
       "possimus": {},
@@ -9180,7 +9795,11 @@ sdk.sdk.deleteUserWithId("esse", {
     userAgent: "temporibus",
   },
   hardDelete: false,
-}, "labore", "doloribus").then((res: DeleteUserWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "labore";
+const hardDelete: string = "doloribus";
+
+sdk.sdk.deleteUserWithId(userId, userDeleteSingleRequest, xFusionAuthTenantId, hardDelete).then((res: DeleteUserWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -9211,15 +9830,16 @@ Deletes the WebAuthn credential for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteWebAuthnCredentialWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteWebAuthnCredentialWithIdRequest, DeleteWebAuthnCredentialWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const id: string = "veniam";
 
-sdk.sdk.deleteWebAuthnCredentialWithId("veniam").then((res: DeleteWebAuthnCredentialWithIdResponse) => {
+sdk.sdk.deleteWebAuthnCredentialWithId(id).then((res: DeleteWebAuthnCredentialWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -9247,15 +9867,16 @@ Deletes the webhook for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteWebhookWithIdRequest, DeleteWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const webhookId: string = "facere";
 
-sdk.sdk.deleteWebhookWithId("facere").then((res: DeleteWebhookWithIdResponse) => {
+sdk.sdk.deleteWebhookWithId(webhookId).then((res: DeleteWebhookWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -9283,15 +9904,16 @@ Enable two-factor authentication for a user.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { EnableTwoFactorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { EnableTwoFactorWithIdRequest, EnableTwoFactorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { EventInfo, EventInfoData, Location, TwoFactorRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.enableTwoFactorWithId("eum", {
+const userId: string = "eum";
+const twoFactorRequest: TwoFactorRequest = {
   applicationId: "07464112-37b6-42fb-839f-8d06ad968eca",
   authenticatorId: "porro",
   code: "non",
@@ -9324,7 +9946,9 @@ sdk.sdk.enableTwoFactorWithId("eum", {
   secret: "iure",
   secretBase32Encoded: "architecto",
   twoFactorId: "repellendus",
-}).then((res: EnableTwoFactorWithIdResponse) => {
+};
+
+sdk.sdk.enableTwoFactorWithId(userId, twoFactorRequest).then((res: EnableTwoFactorWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -9546,16 +10170,16 @@ Generate a new RSA or EC key pair or an HMAC secret.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { GenerateKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { GenerateKeyWithIdRequest, GenerateKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CertificateInformation, Key, KeyAlgorithm, KeyRequest, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.generateKeyWithId("expedita", {
+const keyId: string = "expedita";
+const keyRequest: KeyRequest = {
   key: {
     algorithm: KeyAlgorithm.Hs512,
     certificate: "tempore",
@@ -9585,7 +10209,9 @@ sdk.sdk.generateKeyWithId("expedita", {
     secret: "minima",
     type: KeyType.Ec,
   },
-}).then((res: GenerateKeyWithIdResponse) => {
+};
+
+sdk.sdk.generateKeyWithId(keyId, keyRequest).then((res: GenerateKeyWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -9614,15 +10240,19 @@ Generate two-factor recovery codes for a user. Generating two-factor recovery co
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { GenerateTwoFactorRecoveryCodesWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  GenerateTwoFactorRecoveryCodesWithIdRequest,
+  GenerateTwoFactorRecoveryCodesWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const userId: string = "illum";
 
-sdk.sdk.generateTwoFactorRecoveryCodesWithId("illum").then((res: GenerateTwoFactorRecoveryCodesWithIdResponse) => {
+sdk.sdk.generateTwoFactorRecoveryCodesWithId(userId).then((res: GenerateTwoFactorRecoveryCodesWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -9685,16 +10315,15 @@ Handles login via third-parties including Social login, external OAuth and OpenI
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { IdentityProviderLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { IdentityProviderLoginWithIdRequest, IdentityProviderLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeviceInfo, DeviceType, IdentityProviderLoginRequest, MetaData, MetaDataData } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.identityProviderLoginWithId({
+const identityProviderLoginRequest: IdentityProviderLoginRequest = {
   applicationId: "61dcb7d8-2d77-4b1b-a1eb-1a05b4300654",
   data: {
     "eum": "est",
@@ -9724,7 +10353,10 @@ sdk.sdk.identityProviderLoginWithId({
   newDevice: false,
   noJWT: false,
   noLink: false,
-}, "dolorum").then((res: IdentityProviderLoginWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "dolorum";
+
+sdk.sdk.identityProviderLoginWithId(identityProviderLoginRequest, xFusionAuthTenantId).then((res: IdentityProviderLoginWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -9820,16 +10452,16 @@ Import an existing RSA or EC key pair or an HMAC secret.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ImportKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { ImportKeyWithIdRequest, ImportKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CertificateInformation, Key, KeyAlgorithm, KeyRequest, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.importKeyWithId("optio", {
+const keyId: string = "optio";
+const keyRequest: KeyRequest = {
   key: {
     algorithm: KeyAlgorithm.Rs384,
     certificate: "occaecati",
@@ -9859,7 +10491,9 @@ sdk.sdk.importKeyWithId("optio", {
     secret: "impedit",
     type: KeyType.Ec,
   },
-}).then((res: ImportKeyWithIdResponse) => {
+};
+
+sdk.sdk.importKeyWithId(keyId, keyRequest).then((res: ImportKeyWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -11239,15 +11873,17 @@ Issue a new access token (JWT) for the requested Application after ensuring the 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { IssueJWTWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { IssueJWTWithIdRequest, IssueJWTWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const applicationId: string = "sint";
+const refreshToken: string = "at";
 
-sdk.sdk.issueJWTWithId("sint", "at").then((res: IssueJWTWithIdResponse) => {
+sdk.sdk.issueJWTWithId(applicationId, refreshToken).then((res: IssueJWTWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -11276,15 +11912,19 @@ Sends a ping to FusionAuth indicating that the user was automatically logged int
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { LoginPingWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { LoginPingWithIdRequest, LoginPingWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const applicationId: string = "cum";
+const userId: string = "debitis";
+const xFusionAuthTenantId: string = "minus";
+const callerIPAddress: string = "placeat";
 
-sdk.sdk.loginPingWithId("cum", "debitis", "minus", "placeat").then((res: LoginPingWithIdResponse) => {
+sdk.sdk.loginPingWithId(applicationId, userId, xFusionAuthTenantId, callerIPAddress).then((res: LoginPingWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -11315,16 +11955,15 @@ Sends a ping to FusionAuth indicating that the user was automatically logged int
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { LoginPingWithRequestWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { LoginPingWithRequestWithIdRequest, LoginPingWithRequestWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeviceInfo, DeviceType, LoginPingRequest, MetaData, MetaDataData } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.loginPingWithRequestWithId({
+const loginPingRequest: LoginPingRequest = {
   applicationId: "abf1b692-dab4-42fc-a242-14cb79e5fca1",
   ipAddress: "hic",
   metaData: {
@@ -11349,7 +11988,10 @@ sdk.sdk.loginPingWithRequestWithId({
   newDevice: false,
   noJWT: false,
   userId: "ffb56085-1cc1-4a35-990e-d49fe319a998",
-}, "temporibus").then((res: LoginPingWithRequestWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "temporibus";
+
+sdk.sdk.loginPingWithRequestWithId(loginPingRequest, xFusionAuthTenantId).then((res: LoginPingWithRequestWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -11378,16 +12020,15 @@ Authenticates a user to FusionAuth.   This API optionally requires an API key. S
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { LoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { LoginWithIdRequest, LoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeviceInfo, DeviceType, LoginRequest, MetaData, MetaDataData } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.loginWithId({
+const loginRequest: LoginRequest = {
   applicationId: "67047877-2aaf-465c-9d54-83eb5ee6c2b4",
   ipAddress: "maxime",
   loginId: "minima",
@@ -11414,7 +12055,10 @@ sdk.sdk.loginWithId({
   oneTimePassword: "nesciunt",
   password: "esse",
   twoFactorTrustId: "ipsam",
-}, "quis").then((res: LoginWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "quis";
+
+sdk.sdk.loginWithId(loginRequest, xFusionAuthTenantId).then((res: LoginWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -11443,15 +12087,16 @@ Retrieves the identity provider for the given domain. A 200 response code indica
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { LookupIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { LookupIdentityProviderWithIdRequest, LookupIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const domain: string = "nulla";
 
-sdk.sdk.lookupIdentityProviderWithId("nulla").then((res: LookupIdentityProviderWithIdResponse) => {
+sdk.sdk.lookupIdentityProviderWithId(domain).then((res: LookupIdentityProviderWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -11479,15 +12124,16 @@ Modifies a temporal user action by changing the expiration of the action and opt
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ModifyActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { ModifyActionWithIdRequest, ModifyActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { ActionData, ActionRequest, EventInfo, EventInfoData, Location } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.modifyActionWithId("voluptates", {
+const actionId: string = "voluptates";
+const actionRequest: ActionRequest = {
   action: {
     actioneeUserId: "6e099bd9-c35c-424f-99d4-560001b003f1",
     actionerUserId: "f36a39c6-bffe-438f-8918-79a4e50e2aed",
@@ -11527,7 +12173,9 @@ sdk.sdk.modifyActionWithId("voluptates", {
     os: "deserunt",
     userAgent: "exercitationem",
   },
-}).then((res: ModifyActionWithIdResponse) => {
+};
+
+sdk.sdk.modifyActionWithId(actionId, actionRequest).then((res: ModifyActionWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -11620,22 +12268,57 @@ Updates, via PATCH, the application role with the given id for the application.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchApplicationRoleWithIdRequest, PatchApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
+  Application,
+  ApplicationAccessControlConfiguration,
+  ApplicationData,
+  ApplicationEmailConfiguration,
+  ApplicationExternalIdentifierConfiguration,
+  ApplicationFormConfiguration,
+  ApplicationMultiFactorConfiguration,
   ApplicationMultiFactorTrustPolicy,
+  ApplicationRegistrationDeletePolicy,
+  ApplicationRequest,
+  ApplicationRole,
+  ApplicationWebAuthnConfiguration,
+  ApplicationWebAuthnWorkflowConfiguration,
+  AuthenticationTokenConfiguration,
   CanonicalizationMethod,
+  CleanSpeakConfiguration,
   ClientAuthenticationPolicy,
+  EventInfo,
+  EventInfoData,
+  JWTConfiguration,
+  LambdaConfiguration,
+  Location,
+  LoginConfiguration,
   LoginIdType,
   LogoutBehavior,
+  MultiFactorEmailTemplate,
   MultiFactorLoginPolicy,
+  MultiFactorSMSTemplate,
   Oauth2AuthorizedURLValidationPolicy,
+  OAuth2Configuration,
   ObjectState,
+  PasswordlessConfiguration,
   ProofKeyForCodeExchangePolicy,
   RefreshTokenExpirationPolicy,
+  RefreshTokenRevocationPolicy,
   RefreshTokenUsagePolicy,
+  RegistrationConfiguration,
   RegistrationType,
+  RegistrationUnverifiedOptions,
+  Requirable,
   SAMLLogoutBehavior,
+  SAMLv2Configuration,
+  SAMLv2IdPInitiatedLoginConfiguration,
+  SAMLv2Logout,
+  SAMLv2SingleLogout,
+  SelfServiceFormConfiguration,
+  TimeBasedDeletePolicy,
   UnverifiedBehavior,
+  UsernameModeration,
   VerificationStrategy,
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
@@ -11645,8 +12328,9 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchApplicationRoleWithId("laborum", "accusantium", {
+const applicationId: string = "laborum";
+const roleId: string = "accusantium";
+const applicationRequest: ApplicationRequest = {
   application: {
     accessControlConfiguration: {
       uiIPAccessControlListId: "9c305502-e77c-4200-9c15-b4d837399065",
@@ -11924,7 +12608,10 @@ sdk.sdk.patchApplicationRoleWithId("laborum", "accusantium", {
     name: "Miss Lynette Ondricka MD",
   },
   sourceApplicationId: "d8b3be61-b74a-4c22-9edd-5046c43c72e4",
-}, "voluptatibus").then((res: PatchApplicationRoleWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "voluptatibus";
+
+sdk.sdk.patchApplicationRoleWithId(applicationId, roleId, applicationRequest, xFusionAuthTenantId).then((res: PatchApplicationRoleWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -11955,22 +12642,57 @@ Updates, via PATCH, the application with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchApplicationWithIdRequest, PatchApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
+  Application,
+  ApplicationAccessControlConfiguration,
+  ApplicationData,
+  ApplicationEmailConfiguration,
+  ApplicationExternalIdentifierConfiguration,
+  ApplicationFormConfiguration,
+  ApplicationMultiFactorConfiguration,
   ApplicationMultiFactorTrustPolicy,
+  ApplicationRegistrationDeletePolicy,
+  ApplicationRequest,
+  ApplicationRole,
+  ApplicationWebAuthnConfiguration,
+  ApplicationWebAuthnWorkflowConfiguration,
+  AuthenticationTokenConfiguration,
   CanonicalizationMethod,
+  CleanSpeakConfiguration,
   ClientAuthenticationPolicy,
+  EventInfo,
+  EventInfoData,
+  JWTConfiguration,
+  LambdaConfiguration,
+  Location,
+  LoginConfiguration,
   LoginIdType,
   LogoutBehavior,
+  MultiFactorEmailTemplate,
   MultiFactorLoginPolicy,
+  MultiFactorSMSTemplate,
   Oauth2AuthorizedURLValidationPolicy,
+  OAuth2Configuration,
   ObjectState,
+  PasswordlessConfiguration,
   ProofKeyForCodeExchangePolicy,
   RefreshTokenExpirationPolicy,
+  RefreshTokenRevocationPolicy,
   RefreshTokenUsagePolicy,
+  RegistrationConfiguration,
   RegistrationType,
+  RegistrationUnverifiedOptions,
+  Requirable,
   SAMLLogoutBehavior,
+  SAMLv2Configuration,
+  SAMLv2IdPInitiatedLoginConfiguration,
+  SAMLv2Logout,
+  SAMLv2SingleLogout,
+  SelfServiceFormConfiguration,
+  TimeBasedDeletePolicy,
   UnverifiedBehavior,
+  UsernameModeration,
   VerificationStrategy,
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
@@ -11980,8 +12702,8 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchApplicationWithId("quae", {
+const applicationId: string = "quae";
+const applicationRequest: ApplicationRequest = {
   application: {
     accessControlConfiguration: {
       uiIPAccessControlListId: "c4032e9c-9f84-4931-95ae-e7983a746918",
@@ -12250,7 +12972,10 @@ sdk.sdk.patchApplicationWithId("quae", {
     name: "Jason Swaniawski",
   },
   sourceApplicationId: "51022320-9434-42ae-8e72-526195064685",
-}, "illum").then((res: PatchApplicationWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "illum";
+
+sdk.sdk.patchApplicationWithId(applicationId, applicationRequest, xFusionAuthTenantId).then((res: PatchApplicationWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -12280,16 +13005,21 @@ Updates, via PATCH, the connector with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConnectorType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { PatchConnectorWithIdRequest, PatchConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  BaseConnectorConfiguration,
+  BaseConnectorConfigurationData,
+  ConnectorRequest,
+  ConnectorType,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchConnectorWithId("explicabo", {
+const connectorId: string = "explicabo";
+const connectorRequest: ConnectorRequest = {
   connector: {
     data: {
       "nesciunt": {},
@@ -12301,7 +13031,9 @@ sdk.sdk.patchConnectorWithId("explicabo", {
     name: "Jerome Veum",
     type: ConnectorType.FusionAuth,
   },
-}).then((res: PatchConnectorWithIdResponse) => {
+};
+
+sdk.sdk.patchConnectorWithId(connectorId, connectorRequest).then((res: PatchConnectorWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -12330,15 +13062,16 @@ Updates, via PATCH, the consent with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchConsentWithIdRequest, PatchConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { Consent, ConsentData, ConsentRequest, EmailPlus, LocalizedIntegers } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchConsentWithId("doloribus", {
+const consentId: string = "doloribus";
+const consentRequest: ConsentRequest = {
   consent: {
     consentEmailTemplateId: "d13afe0d-2b42-4294-8932-5be7ca960812",
     countryMinimumAgeForSelfConsent: {},
@@ -12364,7 +13097,10 @@ sdk.sdk.patchConsentWithId("doloribus", {
       "eveniet",
     ],
   },
-}, "placeat").then((res: PatchConsentWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "placeat";
+
+sdk.sdk.patchConsentWithId(consentId, consentRequest, xFusionAuthTenantId).then((res: PatchConsentWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -12394,15 +13130,16 @@ Updates, via PATCH, the email template with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchEmailTemplateWithIdRequest, PatchEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { EmailTemplate, EmailTemplateRequest, LocalizedStrings } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchEmailTemplateWithId("perferendis", {
+const emailTemplateId: string = "perferendis";
+const emailTemplateRequest: EmailTemplateRequest = {
   emailTemplate: {
     defaultFromName: "culpa",
     defaultHtmlTemplate: "blanditiis",
@@ -12418,7 +13155,10 @@ sdk.sdk.patchEmailTemplateWithId("perferendis", {
     localizedTextTemplates: {},
     name: "Edwin Effertz",
   },
-}, "voluptatibus").then((res: PatchEmailTemplateWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "voluptatibus";
+
+sdk.sdk.patchEmailTemplateWithId(emailTemplateId, emailTemplateRequest, xFusionAuthTenantId).then((res: PatchEmailTemplateWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -12448,15 +13188,23 @@ Updates, via PATCH, the Entity Type with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchEntityTypeWithIdRequest, PatchEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  EntityJWTConfiguration,
+  EntityType,
+  EntityTypeData,
+  EntityTypePermission,
+  EntityTypePermissionData,
+  EntityTypeRequest,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchEntityTypeWithId("non", {
+const entityTypeId: string = "non";
+const entityTypeRequest: EntityTypeRequest = {
   entityType: {
     data: {
       "nulla": {},
@@ -12539,7 +13287,9 @@ sdk.sdk.patchEntityTypeWithId("non", {
     lastUpdateInstant: 1659380719000,
     name: "Sheila Harber",
   },
-}).then((res: PatchEntityTypeWithIdResponse) => {
+};
+
+sdk.sdk.patchEntityTypeWithId(entityTypeId, entityTypeRequest).then((res: PatchEntityTypeWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -12568,15 +13318,16 @@ Updates, via PATCH, the group with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchGroupWithIdRequest, PatchGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { ApplicationRole, Group, GroupData, GroupRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchGroupWithId("culpa", {
+const groupId: string = "culpa";
+const groupRequest: GroupRequest = {
   group: {
     data: {
       "autem": {},
@@ -12611,7 +13362,10 @@ sdk.sdk.patchGroupWithId("culpa", {
     "4356d6e3-25bf-49a9-9851-32d5c68010b1",
     "b13ee36f-612d-4e96-af84-f52575fbadf2",
   ],
-}, "vitae").then((res: PatchGroupWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "vitae";
+
+sdk.sdk.patchGroupWithId(groupId, groupRequest, xFusionAuthTenantId).then((res: PatchGroupWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -12641,15 +13395,84 @@ Updates, via PATCH, the identity provider with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchIdentityProviderWithIdRequest, PatchIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
+  AppleApplicationConfiguration,
+  AppleApplicationConfigurationData,
+  AppleIdentityProvider,
+  AppleIdentityProviderData,
   CanonicalizationMethod,
   ClientAuthenticationMethod,
+  EpicGamesApplicationConfiguration,
+  EpicGamesApplicationConfigurationData,
+  EpicGamesIdentityProvider,
+  EpicGamesIdentityProviderData,
+  ExternalJWTApplicationConfiguration,
+  ExternalJWTApplicationConfigurationData,
+  ExternalJWTIdentityProvider,
+  ExternalJWTIdentityProviderData,
+  FacebookApplicationConfiguration,
+  FacebookApplicationConfigurationData,
+  FacebookIdentityProvider,
+  FacebookIdentityProviderData,
+  GoogleApplicationConfiguration,
+  GoogleApplicationConfigurationData,
+  GoogleIdentityProvider,
+  GoogleIdentityProviderData,
+  GoogleIdentityProviderProperties,
+  HYPRApplicationConfiguration,
+  HYPRApplicationConfigurationData,
+  HYPRIdentityProvider,
+  HYPRIdentityProviderData,
+  IdentityProviderLimitUserLinkingPolicy,
   IdentityProviderLinkingStrategy,
   IdentityProviderLoginMethod,
+  IdentityProviderOauth2Configuration,
+  IdentityProviderRequest,
+  IdentityProviderTenantConfiguration,
+  IdentityProviderTenantConfigurationData,
   IdentityProviderType,
+  LinkedInApplicationConfiguration,
+  LinkedInApplicationConfigurationData,
+  LinkedInIdentityProvider,
+  LinkedInIdentityProviderData,
+  LoginHintConfiguration,
+  NintendoApplicationConfiguration,
+  NintendoApplicationConfigurationData,
+  NintendoIdentityProvider,
+  NintendoIdentityProviderData,
+  OpenIdConnectApplicationConfiguration,
+  OpenIdConnectApplicationConfigurationData,
+  OpenIdConnectIdentityProvider,
+  OpenIdConnectIdentityProviderData,
+  ProviderLambdaConfiguration,
+  SAMLv2AssertionConfiguration,
+  SAMLv2DestinationAssertionConfiguration,
   SAMLv2DestinationAssertionPolicy,
+  SAMLv2IdentityProvider,
+  SAMLv2IdpInitiatedConfiguration,
+  SAMLv2IdPInitiatedIdentityProvider,
+  SonyPSNApplicationConfiguration,
+  SonyPSNApplicationConfigurationData,
+  SonyPSNIdentityProvider,
+  SonyPSNIdentityProviderData,
   SteamAPIMode,
+  SteamApplicationConfiguration,
+  SteamApplicationConfigurationData,
+  SteamIdentityProvider,
+  SteamIdentityProviderData,
+  TwitchApplicationConfiguration,
+  TwitchApplicationConfigurationData,
+  TwitchIdentityProvider,
+  TwitchIdentityProviderData,
+  TwitterApplicationConfiguration,
+  TwitterApplicationConfigurationData,
+  TwitterIdentityProvider,
+  TwitterIdentityProviderData,
+  XboxApplicationConfiguration,
+  XboxApplicationConfigurationData,
+  XboxIdentityProvider,
+  XboxIdentityProviderData,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -12657,8 +13480,8 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchIdentityProviderWithId("commodi", {
+const identityProviderId: string = "commodi";
+const identityProviderRequest: IdentityProviderRequest = {
   identityProvider: {
     applicationConfiguration: {
       "ut": {
@@ -12752,7 +13575,9 @@ sdk.sdk.patchIdentityProviderWithId("commodi", {
     },
     type: IdentityProviderType.SAMLv2IdPInitiated,
   },
-}).then((res: PatchIdentityProviderWithIdResponse) => {
+};
+
+sdk.sdk.patchIdentityProviderWithId(identityProviderId, identityProviderRequest).then((res: PatchIdentityProviderWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -12839,16 +13664,16 @@ Updates, via PATCH, the lambda with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { PatchLambdaWithIdRequest, PatchLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { Lambda, LambdaEngineType, LambdaRequest, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchLambdaWithId("placeat", {
+const lambdaId: string = "placeat";
+const lambdaRequest: LambdaRequest = {
   lambda: {
     body: "iure",
     debug: false,
@@ -12859,7 +13684,9 @@ sdk.sdk.patchLambdaWithId("placeat", {
     name: "Mrs. Douglas Jacobson",
     type: LambdaType.ExternalJWTReconcile,
   },
-}).then((res: PatchLambdaWithIdResponse) => {
+};
+
+sdk.sdk.patchLambdaWithId(lambdaId, lambdaRequest).then((res: PatchLambdaWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -12888,16 +13715,16 @@ Updates, via PATCH, the message template with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { PatchMessageTemplateWithIdRequest, PatchMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { MessageTemplate, MessageTemplateData, MessageTemplateRequest, MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchMessageTemplateWithId("qui", {
+const messageTemplateId: string = "qui";
+const messageTemplateRequest: MessageTemplateRequest = {
   messageTemplate: {
     data: {
       "est": {},
@@ -12910,7 +13737,9 @@ sdk.sdk.patchMessageTemplateWithId("qui", {
     name: "Forrest Bailey",
     type: MessageType.Sms,
   },
-}).then((res: PatchMessageTemplateWithIdResponse) => {
+};
+
+sdk.sdk.patchMessageTemplateWithId(messageTemplateId, messageTemplateRequest).then((res: PatchMessageTemplateWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -12939,16 +13768,21 @@ Updates, via PATCH, the messenger with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessengerType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { PatchMessengerWithIdRequest, PatchMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  BaseMessengerConfiguration,
+  BaseMessengerConfigurationData,
+  MessengerRequest,
+  MessengerType,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchMessengerWithId("corporis", {
+const messengerId: string = "corporis";
+const messengerRequest: MessengerRequest = {
   messenger: {
     data: {
       "eaque": {},
@@ -12964,7 +13798,9 @@ sdk.sdk.patchMessengerWithId("corporis", {
     transport: "a",
     type: MessengerType.Generic,
   },
-}).then((res: PatchMessengerWithIdResponse) => {
+};
+
+sdk.sdk.patchMessengerWithId(messengerId, messengerRequest).then((res: PatchMessengerWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -12993,16 +13829,34 @@ Updates, via PATCH, the registration for the user with the given id and the appl
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { PatchRegistrationWithIdRequest, PatchRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  AuthenticatorConfiguration,
+  BreachedPasswordStatus,
+  ChangePasswordReason,
+  ContentStatus,
+  EventInfo,
+  EventInfoData,
+  GroupMember,
+  GroupMemberData,
+  Location,
+  RegistrationRequest,
+  TOTPAlgorithm,
+  TwoFactorMethod,
+  User,
+  UserData,
+  UserRegistration,
+  UserRegistrationData,
+  UserTwoFactorConfiguration,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchRegistrationWithId("voluptatibus", {
+const userId: string = "voluptatibus";
+const registrationRequest: RegistrationRequest = {
   disableDomainBlock: false,
   eventInfo: {
     data: {
@@ -13841,7 +14695,10 @@ sdk.sdk.patchRegistrationWithId("voluptatibus", {
     usernameStatus: ContentStatus.Active,
     verified: false,
   },
-}, "quae").then((res: PatchRegistrationWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "quae";
+
+sdk.sdk.patchRegistrationWithId(userId, registrationRequest, xFusionAuthTenantId).then((res: PatchRegistrationWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -13962,21 +14819,69 @@ Updates, via PATCH, the tenant with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchTenantWithIdRequest, PatchTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorAttachmentPreference,
   BreachAction,
   BreachMatchMode,
   CaptchaMethod,
+  ConnectorPolicy,
+  ConnectorPolicyData,
+  EmailConfiguration,
+  EmailHeader,
   EmailSecurityType,
+  EmailUnverifiedOptions,
+  EventConfiguration,
+  EventConfigurationData,
+  EventInfo,
+  EventInfoData,
   ExpiryUnit,
+  ExternalIdentifierConfiguration,
+  FailedAuthenticationActionCancelPolicy,
+  FailedAuthenticationConfiguration,
+  FamilyConfiguration,
+  JWTConfiguration,
+  Location,
+  MaximumPasswordAge,
+  MinimumPasswordAge,
+  MultiFactorAuthenticatorMethod,
+  MultiFactorEmailMethod,
   MultiFactorLoginPolicy,
+  MultiFactorSMSMethod,
   ObjectState,
+  PasswordBreachDetection,
+  PasswordEncryptionConfiguration,
+  PasswordValidationRules,
+  RateLimitedRequestConfiguration,
   RefreshTokenExpirationPolicy,
+  RefreshTokenRevocationPolicy,
   RefreshTokenUsagePolicy,
+  RememberPreviousPasswords,
+  SecureGeneratorConfiguration,
   SecureGeneratorType,
+  Tenant,
+  TenantAccessControlConfiguration,
+  TenantCaptchaConfiguration,
+  TenantData,
+  TenantFormConfiguration,
+  TenantLambdaConfiguration,
+  TenantLoginConfiguration,
+  TenantMultiFactorConfiguration,
+  TenantOAuth2Configuration,
+  TenantRateLimitConfiguration,
+  TenantRegistrationConfiguration,
+  TenantRequest,
+  TenantSCIMServerConfiguration,
+  TenantSCIMServerConfigurationSchemas,
+  TenantSSOConfiguration,
+  TenantUserDeletePolicy,
+  TenantUsernameConfiguration,
+  TenantWebAuthnConfiguration,
+  TenantWebAuthnWorkflowConfiguration,
+  TimeBasedDeletePolicy,
   TOTPAlgorithm,
   TransactionType,
+  UniqueUsernameConfiguration,
   UniqueUsernameStrategy,
   UnverifiedBehavior,
   UserVerificationRequirement,
@@ -13988,8 +14893,8 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchTenantWithId("cum", {
+const tenantId: string = "cum";
+const tenantRequest: TenantRequest = {
   eventInfo: {
     data: {
       "in": {},
@@ -14372,7 +15277,10 @@ sdk.sdk.patchTenantWithId("cum", {
     "208fdbf8-1cdb-4ae4-90d9-318a3edf8144",
     "1dbd542c-7aa6-4a41-b99f-388a06fe0316",
   ],
-}, "tenetur").then((res: PatchTenantWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "tenetur";
+
+sdk.sdk.patchTenantWithId(tenantId, tenantRequest, xFusionAuthTenantId).then((res: PatchTenantWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -14402,15 +15310,16 @@ Updates, via PATCH, the theme with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchThemeWithIdRequest, PatchThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { LocalizedStrings, Templates, Theme, ThemeData, ThemeRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchThemeWithId("voluptatem", {
+const themeId: string = "voluptatem";
+const themeRequest: ThemeRequest = {
   sourceThemeId: "df8ea4ed-d795-41ce-a1e2-3540aa523938",
   theme: {
     data: {
@@ -14473,7 +15382,9 @@ sdk.sdk.patchThemeWithId("voluptatem", {
       unauthorized: "error",
     },
   },
-}).then((res: PatchThemeWithIdResponse) => {
+};
+
+sdk.sdk.patchThemeWithId(themeId, themeRequest).then((res: PatchThemeWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -14502,15 +15413,16 @@ Updates, via PATCH, the user action reason with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchUserActionReasonWithIdRequest, PatchUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { LocalizedStrings, UserActionReason, UserActionReasonRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchUserActionReasonWithId("illo", {
+const userActionReasonId: string = "illo";
+const userActionReasonRequest: UserActionReasonRequest = {
   userActionReason: {
     code: "atque",
     id: "9d882029-2212-4fae-ab25-9a381fea8047",
@@ -14519,7 +15431,9 @@ sdk.sdk.patchUserActionReasonWithId("illo", {
     localizedTexts: {},
     text: "sit",
   },
-}).then((res: PatchUserActionReasonWithIdResponse) => {
+};
+
+sdk.sdk.patchUserActionReasonWithId(userActionReasonId, userActionReasonRequest).then((res: PatchUserActionReasonWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -14548,16 +15462,22 @@ Updates, via PATCH, the user action with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { PatchUserActionWithIdRequest, PatchUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  LocalizedStrings,
+  TransactionType,
+  UserAction,
+  UserActionOption,
+  UserActionRequest,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchUserActionWithId("laboriosam", {
+const userActionId: string = "laboriosam";
+const userActionRequest: UserActionRequest = {
   userAction: {
     active: false,
     cancelEmailTemplateId: "d1eda651-8626-48e1-80e9-37839e871a20",
@@ -14595,7 +15515,10 @@ sdk.sdk.patchUserActionWithId("laboriosam", {
     userEmailingEnabled: false,
     userNotificationsEnabled: false,
   },
-}, "explicabo").then((res: PatchUserActionWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "explicabo";
+
+sdk.sdk.patchUserActionWithId(userActionId, userActionRequest, xFusionAuthTenantId).then((res: PatchUserActionWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -14625,16 +15548,25 @@ Updates, via PATCH, a single User consent by Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { PatchUserConsentWithIdRequest, PatchUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  Consent,
+  ConsentData,
+  ConsentStatus,
+  EmailPlus,
+  LocalizedIntegers,
+  UserConsent,
+  UserConsentData,
+  UserConsentRequest,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchUserConsentWithId("earum", {
+const userConsentId: string = "earum";
+const userConsentRequest: UserConsentRequest = {
   userConsent: {
     consent: {
       consentEmailTemplateId: "7b2a92c1-77d5-45a9-9754-050412ff158f",
@@ -14677,7 +15609,9 @@ sdk.sdk.patchUserConsentWithId("earum", {
       "ut",
     ],
   },
-}).then((res: PatchUserConsentWithIdResponse) => {
+};
+
+sdk.sdk.patchUserConsentWithId(userConsentId, userConsentRequest).then((res: PatchUserConsentWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -14706,16 +15640,34 @@ Updates, via PATCH, the user with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { PatchUserWithIdRequest, PatchUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  AuthenticatorConfiguration,
+  BreachedPasswordStatus,
+  ChangePasswordReason,
+  ContentStatus,
+  EventInfo,
+  EventInfoData,
+  GroupMember,
+  GroupMemberData,
+  Location,
+  TOTPAlgorithm,
+  TwoFactorMethod,
+  User,
+  UserData,
+  UserRegistration,
+  UserRegistrationData,
+  UserRequest,
+  UserTwoFactorConfiguration,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.patchUserWithId("veniam", {
+const userId: string = "veniam";
+const userRequest: UserRequest = {
   applicationId: "b1a50910-4fd3-4fc8-a359-601935d87b83",
   currentPassword: "quaerat",
   disableDomainBlock: false,
@@ -15492,7 +16444,10 @@ sdk.sdk.patchUserWithId("veniam", {
     usernameStatus: ContentStatus.Pending,
     verified: false,
   },
-}, "tempore").then((res: PatchUserWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "tempore";
+
+sdk.sdk.patchUserWithId(userId, userRequest, xFusionAuthTenantId).then((res: PatchUserWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -15586,16 +16541,33 @@ Registers a user for an application. If you provide the User and the UserRegistr
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RegisterResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { RegisterRequest, RegisterResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  AuthenticatorConfiguration,
+  BreachedPasswordStatus,
+  ChangePasswordReason,
+  ContentStatus,
+  EventInfo,
+  EventInfoData,
+  GroupMember,
+  GroupMemberData,
+  Location,
+  RegistrationRequest,
+  TOTPAlgorithm,
+  TwoFactorMethod,
+  User,
+  UserData,
+  UserRegistration,
+  UserRegistrationData,
+  UserTwoFactorConfiguration,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.register({
+const registrationRequest: RegistrationRequest = {
   disableDomainBlock: false,
   eventInfo: {
     data: {
@@ -16607,7 +17579,10 @@ sdk.sdk.register({
     usernameStatus: ContentStatus.Active,
     verified: false,
   },
-}, "aliquam").then((res: RegisterResponse) => {
+};
+const xFusionAuthTenantId: string = "aliquam";
+
+sdk.sdk.register(registrationRequest, xFusionAuthTenantId).then((res: RegisterResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -16636,16 +17611,34 @@ Registers a user for an application. If you provide the User and the UserRegistr
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RegisterWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { RegisterWithIdRequest, RegisterWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  AuthenticatorConfiguration,
+  BreachedPasswordStatus,
+  ChangePasswordReason,
+  ContentStatus,
+  EventInfo,
+  EventInfoData,
+  GroupMember,
+  GroupMemberData,
+  Location,
+  RegistrationRequest,
+  TOTPAlgorithm,
+  TwoFactorMethod,
+  User,
+  UserData,
+  UserRegistration,
+  UserRegistrationData,
+  UserTwoFactorConfiguration,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.registerWithId("facilis", {
+const userId: string = "facilis";
+const registrationRequest: RegistrationRequest = {
   disableDomainBlock: false,
   eventInfo: {
     data: {
@@ -17374,7 +18367,10 @@ sdk.sdk.registerWithId("facilis", {
     usernameStatus: ContentStatus.Active,
     verified: false,
   },
-}, "atque").then((res: RegisterWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "atque";
+
+sdk.sdk.registerWithId(userId, registrationRequest, xFusionAuthTenantId).then((res: RegisterWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -17442,15 +18438,18 @@ Removes a user from the family with the given id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RemoveUserFromFamilyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RemoveUserFromFamilyWithIdRequest, RemoveUserFromFamilyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const familyId: string = "ipsum";
+const userId: string = "dicta";
+const xFusionAuthTenantId: string = "facere";
 
-sdk.sdk.removeUserFromFamilyWithId("ipsum", "dicta", "facere").then((res: RemoveUserFromFamilyWithIdResponse) => {
+sdk.sdk.removeUserFromFamilyWithId(familyId, userId, xFusionAuthTenantId).then((res: RemoveUserFromFamilyWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -17480,15 +18479,16 @@ Retrieves an authentication API key for the given id
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveAPIKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveAPIKeyWithIdRequest, RetrieveAPIKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const keyId: string = "necessitatibus";
 
-sdk.sdk.retrieveAPIKeyWithId("necessitatibus").then((res: RetrieveAPIKeyWithIdResponse) => {
+sdk.sdk.retrieveAPIKeyWithId(keyId).then((res: RetrieveAPIKeyWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -17516,15 +18516,16 @@ Retrieves a single action log (the log of a user action that was taken on a user
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveActionWithIdRequest, RetrieveActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const actionId: string = "ullam";
 
-sdk.sdk.retrieveActionWithId("ullam").then((res: RetrieveActionWithIdResponse) => {
+sdk.sdk.retrieveActionWithId(actionId).then((res: RetrieveActionWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -17552,15 +18553,17 @@ Retrieves the application for the given id or all of the applications if the id 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveApplicationResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveApplicationRequest, RetrieveApplicationResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const xFusionAuthTenantId: string = "provident";
+const inactive: string = "adipisci";
 
-sdk.sdk.retrieveApplication("provident", "adipisci").then((res: RetrieveApplicationResponse) => {
+sdk.sdk.retrieveApplication(xFusionAuthTenantId, inactive).then((res: RetrieveApplicationResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -17589,15 +18592,17 @@ Retrieves the application for the given id or all of the applications if the id 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveApplicationWithIdRequest, RetrieveApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const applicationId: string = "modi";
+const xFusionAuthTenantId: string = "tempore";
 
-sdk.sdk.retrieveApplicationWithId("modi", "tempore").then((res: RetrieveApplicationWithIdResponse) => {
+sdk.sdk.retrieveApplicationWithId(applicationId, xFusionAuthTenantId).then((res: RetrieveApplicationWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -17626,15 +18631,16 @@ Retrieves a single audit log for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveAuditLogWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveAuditLogWithIdRequest, RetrieveAuditLogWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const auditLogId: string = "laboriosam";
 
-sdk.sdk.retrieveAuditLogWithId("laboriosam").then((res: RetrieveAuditLogWithIdResponse) => {
+sdk.sdk.retrieveAuditLogWithId(auditLogId).then((res: RetrieveAuditLogWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -17662,15 +18668,16 @@ Retrieves the connector with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveConnectorWithIdRequest, RetrieveConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const connectorId: string = "quidem";
 
-sdk.sdk.retrieveConnectorWithId("quidem").then((res: RetrieveConnectorWithIdResponse) => {
+sdk.sdk.retrieveConnectorWithId(connectorId).then((res: RetrieveConnectorWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -17698,15 +18705,17 @@ Retrieves the Consent for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveConsentWithIdRequest, RetrieveConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const consentId: string = "assumenda";
+const xFusionAuthTenantId: string = "amet";
 
-sdk.sdk.retrieveConsentWithId("assumenda", "amet").then((res: RetrieveConsentWithIdResponse) => {
+sdk.sdk.retrieveConsentWithId(consentId, xFusionAuthTenantId).then((res: RetrieveConsentWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -17735,15 +18744,18 @@ Retrieves the daily active user report between the two instants. If you specify 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveDailyActiveReportWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveDailyActiveReportWithIdRequest, RetrieveDailyActiveReportWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const applicationId: string = "laborum";
+const end: string = "magni";
+const start: string = "odio";
 
-sdk.sdk.retrieveDailyActiveReportWithId("laborum", "magni", "odio").then((res: RetrieveDailyActiveReportWithIdResponse) => {
+sdk.sdk.retrieveDailyActiveReportWithId(applicationId, end, start).then((res: RetrieveDailyActiveReportWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -17773,15 +18785,16 @@ Retrieves the email template for the given Id. If you don't specify the id, this
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveEmailTemplateResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveEmailTemplateRequest, RetrieveEmailTemplateResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const xFusionAuthTenantId: string = "cupiditate";
 
-sdk.sdk.retrieveEmailTemplate("cupiditate").then((res: RetrieveEmailTemplateResponse) => {
+sdk.sdk.retrieveEmailTemplate(xFusionAuthTenantId).then((res: RetrieveEmailTemplateResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -17862,15 +18875,17 @@ Retrieves the email template for the given Id. If you don't specify the id, this
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveEmailTemplateWithIdRequest, RetrieveEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const emailTemplateId: string = "doloremque";
+const xFusionAuthTenantId: string = "vero";
 
-sdk.sdk.retrieveEmailTemplateWithId("doloremque", "vero").then((res: RetrieveEmailTemplateWithIdResponse) => {
+sdk.sdk.retrieveEmailTemplateWithId(emailTemplateId, xFusionAuthTenantId).then((res: RetrieveEmailTemplateWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -17899,15 +18914,19 @@ Retrieves an Entity Grant for the given Entity and User/Entity.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveEntityGrantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveEntityGrantWithIdRequest, RetrieveEntityGrantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const entityId: string = "expedita";
+const xFusionAuthTenantId: string = "natus";
+const recipientEntityId: string = "blanditiis";
+const userId: string = "iure";
 
-sdk.sdk.retrieveEntityGrantWithId("expedita", "natus", "blanditiis", "iure").then((res: RetrieveEntityGrantWithIdResponse) => {
+sdk.sdk.retrieveEntityGrantWithId(entityId, xFusionAuthTenantId, recipientEntityId, userId).then((res: RetrieveEntityGrantWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -17938,15 +18957,16 @@ Retrieves the Entity Type for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveEntityTypeWithIdRequest, RetrieveEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const entityTypeId: string = "facere";
 
-sdk.sdk.retrieveEntityTypeWithId("facere").then((res: RetrieveEntityTypeWithIdResponse) => {
+sdk.sdk.retrieveEntityTypeWithId(entityTypeId).then((res: RetrieveEntityTypeWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -17974,15 +18994,17 @@ Retrieves the Entity for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveEntityWithIdRequest, RetrieveEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const entityId: string = "dolorum";
+const xFusionAuthTenantId: string = "distinctio";
 
-sdk.sdk.retrieveEntityWithId("dolorum", "distinctio").then((res: RetrieveEntityWithIdResponse) => {
+sdk.sdk.retrieveEntityWithId(entityId, xFusionAuthTenantId).then((res: RetrieveEntityWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18011,15 +19033,16 @@ Retrieves a single event log for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveEventLogWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveEventLogWithIdRequest, RetrieveEventLogWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const eventLogId: string = "facere";
 
-sdk.sdk.retrieveEventLogWithId("facere").then((res: RetrieveEventLogWithIdResponse) => {
+sdk.sdk.retrieveEventLogWithId(eventLogId).then((res: RetrieveEventLogWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18047,15 +19070,17 @@ Retrieves all the families that a user belongs to.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveFamiliesWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveFamiliesWithIdRequest, RetrieveFamiliesWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const xFusionAuthTenantId: string = "dolorem";
+const userId: string = "officiis";
 
-sdk.sdk.retrieveFamiliesWithId("dolorem", "officiis").then((res: RetrieveFamiliesWithIdResponse) => {
+sdk.sdk.retrieveFamiliesWithId(xFusionAuthTenantId, userId).then((res: RetrieveFamiliesWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18084,15 +19109,20 @@ Retrieves all the members of a family by the unique Family Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveFamilyMembersByFamilyIdWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  RetrieveFamilyMembersByFamilyIdWithIdRequest,
+  RetrieveFamilyMembersByFamilyIdWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const familyId: string = "voluptatum";
+const xFusionAuthTenantId: string = "vitae";
 
-sdk.sdk.retrieveFamilyMembersByFamilyIdWithId("voluptatum", "vitae").then((res: RetrieveFamilyMembersByFamilyIdWithIdResponse) => {
+sdk.sdk.retrieveFamilyMembersByFamilyIdWithId(familyId, xFusionAuthTenantId).then((res: RetrieveFamilyMembersByFamilyIdWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18121,15 +19151,16 @@ Retrieves the form field with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveFormFieldWithIdRequest, RetrieveFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const fieldId: string = "unde";
 
-sdk.sdk.retrieveFormFieldWithId("unde").then((res: RetrieveFormFieldWithIdResponse) => {
+sdk.sdk.retrieveFormFieldWithId(fieldId).then((res: RetrieveFormFieldWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18157,15 +19188,16 @@ Retrieves the form with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveFormWithIdRequest, RetrieveFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const formId: string = "porro";
 
-sdk.sdk.retrieveFormWithId("porro").then((res: RetrieveFormWithIdResponse) => {
+sdk.sdk.retrieveFormWithId(formId).then((res: RetrieveFormWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18193,15 +19225,17 @@ Retrieves the group for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveGroupWithIdRequest, RetrieveGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const groupId: string = "dicta";
+const xFusionAuthTenantId: string = "possimus";
 
-sdk.sdk.retrieveGroupWithId("dicta", "possimus").then((res: RetrieveGroupWithIdResponse) => {
+sdk.sdk.retrieveGroupWithId(groupId, xFusionAuthTenantId).then((res: RetrieveGroupWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18230,15 +19264,19 @@ Retrieves the IP Access Control List with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveIPAccessControlListWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  RetrieveIPAccessControlListWithIdRequest,
+  RetrieveIPAccessControlListWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const accessControlListId: string = "ut";
 
-sdk.sdk.retrieveIPAccessControlListWithId("ut").then((res: RetrieveIPAccessControlListWithIdResponse) => {
+sdk.sdk.retrieveIPAccessControlListWithId(accessControlListId).then((res: RetrieveIPAccessControlListWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18266,15 +19304,18 @@ Retrieve a single Identity Provider user (link). OR Retrieve all Identity Provid
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveIdentityProviderResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveIdentityProviderRequest, RetrieveIdentityProviderResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const identityProviderId: string = "voluptatem";
+const identityProviderUserId: string = "quos";
+const userId: string = "ipsum";
 
-sdk.sdk.retrieveIdentityProvider("voluptatem", "quos", "ipsum").then((res: RetrieveIdentityProviderResponse) => {
+sdk.sdk.retrieveIdentityProvider(identityProviderId, identityProviderUserId, userId).then((res: RetrieveIdentityProviderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18304,15 +19345,19 @@ Retrieves one or more identity provider for the given type. For types such as Go
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveIdentityProviderByTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  RetrieveIdentityProviderByTypeWithIdRequest,
+  RetrieveIdentityProviderByTypeWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const type: string = "sit";
 
-sdk.sdk.retrieveIdentityProviderByTypeWithId("sit").then((res: RetrieveIdentityProviderByTypeWithIdResponse) => {
+sdk.sdk.retrieveIdentityProviderByTypeWithId(type).then((res: RetrieveIdentityProviderByTypeWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18340,15 +19385,16 @@ Retrieves the identity provider for the given id or all of the identity provider
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveIdentityProviderWithIdRequest, RetrieveIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const identityProviderId: string = "cum";
 
-sdk.sdk.retrieveIdentityProviderWithId("cum").then((res: RetrieveIdentityProviderWithIdResponse) => {
+sdk.sdk.retrieveIdentityProviderWithId(identityProviderId).then((res: RetrieveIdentityProviderWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18376,15 +19422,17 @@ Retrieves the Public Key configured for verifying JSON Web Tokens (JWT) by the k
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveJwtResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveJwtRequest, RetrieveJwtResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const applicationId: string = "nulla";
+const keyId: string = "neque";
 
-sdk.sdk.retrieveJwt("nulla", "neque").then((res: RetrieveJwtResponse) => {
+sdk.sdk.retrieveJwt(applicationId, keyId).then((res: RetrieveJwtResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18413,15 +19461,16 @@ Retrieves the key for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveKeyWithIdRequest, RetrieveKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const keyId: string = "harum";
 
-sdk.sdk.retrieveKeyWithId("harum").then((res: RetrieveKeyWithIdResponse) => {
+sdk.sdk.retrieveKeyWithId(keyId).then((res: RetrieveKeyWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18449,15 +19498,16 @@ Retrieves the lambda for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveLambdaWithIdRequest, RetrieveLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const lambdaId: string = "eum";
 
-sdk.sdk.retrieveLambdaWithId("eum").then((res: RetrieveLambdaWithIdResponse) => {
+sdk.sdk.retrieveLambdaWithId(lambdaId).then((res: RetrieveLambdaWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18485,15 +19535,16 @@ Retrieves all the lambdas for the provided type.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveLambdasByTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveLambdasByTypeWithIdRequest, RetrieveLambdasByTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const type: string = "iusto";
 
-sdk.sdk.retrieveLambdasByTypeWithId("iusto").then((res: RetrieveLambdasByTypeWithIdResponse) => {
+sdk.sdk.retrieveLambdasByTypeWithId(type).then((res: RetrieveLambdasByTypeWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18606,15 +19657,16 @@ Retrieves the message template for the given Id. If you don't specify the id, th
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveMessageTemplateWithIdRequest, RetrieveMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const messageTemplateId: string = "repellat";
 
-sdk.sdk.retrieveMessageTemplateWithId("repellat").then((res: RetrieveMessageTemplateWithIdResponse) => {
+sdk.sdk.retrieveMessageTemplateWithId(messageTemplateId).then((res: RetrieveMessageTemplateWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18642,15 +19694,16 @@ Retrieves the messenger with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveMessengerWithIdRequest, RetrieveMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const messengerId: string = "ad";
 
-sdk.sdk.retrieveMessengerWithId("ad").then((res: RetrieveMessengerWithIdResponse) => {
+sdk.sdk.retrieveMessengerWithId(messengerId).then((res: RetrieveMessengerWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18678,15 +19731,21 @@ Retrieves the monthly active user report between the two instants. If you specif
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveMonthlyActiveReportWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  RetrieveMonthlyActiveReportWithIdRequest,
+  RetrieveMonthlyActiveReportWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const applicationId: string = "harum";
+const end: string = "officiis";
+const start: string = "consequatur";
 
-sdk.sdk.retrieveMonthlyActiveReportWithId("harum", "officiis", "consequatur").then((res: RetrieveMonthlyActiveReportWithIdResponse) => {
+sdk.sdk.retrieveMonthlyActiveReportWithId(applicationId, end, start).then((res: RetrieveMonthlyActiveReportWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18716,15 +19775,20 @@ Retrieves the Oauth2 configuration for the application for the given Application
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveOauthConfigurationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  RetrieveOauthConfigurationWithIdRequest,
+  RetrieveOauthConfigurationWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const applicationId: string = "blanditiis";
+const xFusionAuthTenantId: string = "ipsam";
 
-sdk.sdk.retrieveOauthConfigurationWithId("blanditiis", "ipsam").then((res: RetrieveOauthConfigurationWithIdResponse) => {
+sdk.sdk.retrieveOauthConfigurationWithId(applicationId, xFusionAuthTenantId).then((res: RetrieveOauthConfigurationWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18753,15 +19817,19 @@ Retrieves the password validation rules for a specific tenant.  This API does no
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrievePasswordValidationRulesWithTenantIdWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  RetrievePasswordValidationRulesWithTenantIdWithIdRequest,
+  RetrievePasswordValidationRulesWithTenantIdWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const tenantId: string = "illum";
 
-sdk.sdk.retrievePasswordValidationRulesWithTenantIdWithId("illum").then((res: RetrievePasswordValidationRulesWithTenantIdWithIdResponse) => {
+sdk.sdk.retrievePasswordValidationRulesWithTenantIdWithId(tenantId).then((res: RetrievePasswordValidationRulesWithTenantIdWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18789,15 +19857,16 @@ Retrieves all the children for the given parent email address.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrievePendingChildrenWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrievePendingChildrenWithIdRequest, RetrievePendingChildrenWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const parentEmail: string = "doloremque";
 
-sdk.sdk.retrievePendingChildrenWithId("doloremque").then((res: RetrievePendingChildrenWithIdResponse) => {
+sdk.sdk.retrievePendingChildrenWithId(parentEmail).then((res: RetrievePendingChildrenWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18825,15 +19894,16 @@ Retrieves a single refresh token by unique Id. This is not the same thing as the
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveRefreshTokenByIdWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveRefreshTokenByIdWithIdRequest, RetrieveRefreshTokenByIdWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const tokenId: string = "excepturi";
 
-sdk.sdk.retrieveRefreshTokenByIdWithId("excepturi").then((res: RetrieveRefreshTokenByIdWithIdResponse) => {
+sdk.sdk.retrieveRefreshTokenByIdWithId(tokenId).then((res: RetrieveRefreshTokenByIdWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18861,15 +19931,16 @@ Retrieves the refresh tokens that belong to the user with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveRefreshTokensWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveRefreshTokensWithIdRequest, RetrieveRefreshTokensWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const userId: string = "excepturi";
 
-sdk.sdk.retrieveRefreshTokensWithId("excepturi").then((res: RetrieveRefreshTokensWithIdResponse) => {
+sdk.sdk.retrieveRefreshTokensWithId(userId).then((res: RetrieveRefreshTokensWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18897,15 +19968,21 @@ Retrieves the registration report between the two instants. If you specify an ap
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveRegistrationReportWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  RetrieveRegistrationReportWithIdRequest,
+  RetrieveRegistrationReportWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const applicationId: string = "reprehenderit";
+const end: string = "placeat";
+const start: string = "non";
 
-sdk.sdk.retrieveRegistrationReportWithId("reprehenderit", "placeat", "non").then((res: RetrieveRegistrationReportWithIdResponse) => {
+sdk.sdk.retrieveRegistrationReportWithId(applicationId, end, start).then((res: RetrieveRegistrationReportWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -18935,15 +20012,18 @@ Retrieves the user registration for the user with the given id and the given app
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveRegistrationWithIdRequest, RetrieveRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const applicationId: string = "cupiditate";
+const userId: string = "ipsam";
+const xFusionAuthTenantId: string = "dolore";
 
-sdk.sdk.retrieveRegistrationWithId("cupiditate", "ipsam", "dolore").then((res: RetrieveRegistrationWithIdResponse) => {
+sdk.sdk.retrieveRegistrationWithId(applicationId, userId, xFusionAuthTenantId).then((res: RetrieveRegistrationWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19015,15 +20095,17 @@ Retrieves the tenant for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveTenantWithIdRequest, RetrieveTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const tenantId: string = "qui";
+const xFusionAuthTenantId: string = "consequatur";
 
-sdk.sdk.retrieveTenantWithId("qui", "consequatur").then((res: RetrieveTenantWithIdResponse) => {
+sdk.sdk.retrieveTenantWithId(tenantId, xFusionAuthTenantId).then((res: RetrieveTenantWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19052,15 +20134,16 @@ Retrieves the theme for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveThemeWithIdRequest, RetrieveThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const themeId: string = "nostrum";
 
-sdk.sdk.retrieveThemeWithId("nostrum").then((res: RetrieveThemeWithIdResponse) => {
+sdk.sdk.retrieveThemeWithId(themeId).then((res: RetrieveThemeWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19088,15 +20171,19 @@ Retrieve two-factor recovery codes for a user.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveTwoFactorRecoveryCodesWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  RetrieveTwoFactorRecoveryCodesWithIdRequest,
+  RetrieveTwoFactorRecoveryCodesWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const userId: string = "architecto";
 
-sdk.sdk.retrieveTwoFactorRecoveryCodesWithId("architecto").then((res: RetrieveTwoFactorRecoveryCodesWithIdResponse) => {
+sdk.sdk.retrieveTwoFactorRecoveryCodesWithId(userId).then((res: RetrieveTwoFactorRecoveryCodesWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19124,15 +20211,18 @@ Retrieve a user's two-factor status.  This can be used to see if a user will nee
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveTwoFactorStatusWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveTwoFactorStatusWithIdRequest, RetrieveTwoFactorStatusWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const twoFactorTrustId: string = "soluta";
+const applicationId: string = "ex";
+const userId: string = "maxime";
 
-sdk.sdk.retrieveTwoFactorStatusWithId("soluta", "ex", "maxime").then((res: RetrieveTwoFactorStatusWithIdResponse) => {
+sdk.sdk.retrieveTwoFactorStatusWithId(twoFactorTrustId, applicationId, userId).then((res: RetrieveTwoFactorStatusWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19205,15 +20295,17 @@ Retrieves all the user actions that are currently inactive. OR Retrieves the use
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserActionResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserActionRequest, RetrieveUserActionResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const xFusionAuthTenantId: string = "odio";
+const inactive: string = "culpa";
 
-sdk.sdk.retrieveUserAction("odio", "culpa").then((res: RetrieveUserActionResponse) => {
+sdk.sdk.retrieveUserAction(xFusionAuthTenantId, inactive).then((res: RetrieveUserActionResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19277,15 +20369,16 @@ Retrieves the user action reason for the given Id. If you pass in null for the i
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserActionReasonWithIdRequest, RetrieveUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const userActionReasonId: string = "alias";
 
-sdk.sdk.retrieveUserActionReasonWithId("alias").then((res: RetrieveUserActionReasonWithIdResponse) => {
+sdk.sdk.retrieveUserActionReasonWithId(userActionReasonId).then((res: RetrieveUserActionReasonWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19313,15 +20406,17 @@ Retrieves the user action for the given Id. If you pass in null for the id, this
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserActionWithIdRequest, RetrieveUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const userActionId: string = "assumenda";
+const xFusionAuthTenantId: string = "nam";
 
-sdk.sdk.retrieveUserActionWithId("assumenda", "nam").then((res: RetrieveUserActionWithIdResponse) => {
+sdk.sdk.retrieveUserActionWithId(userActionId, xFusionAuthTenantId).then((res: RetrieveUserActionWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19350,15 +20445,18 @@ Retrieves all the actions for the user with the given Id that are currently prev
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserActioningResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserActioningRequest, RetrieveUserActioningResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const active: string = "illo";
+const preventingLogin: string = "sapiente";
+const userId: string = "harum";
 
-sdk.sdk.retrieveUserActioning("illo", "sapiente", "harum").then((res: RetrieveUserActioningResponse) => {
+sdk.sdk.retrieveUserActioning(active, preventingLogin, userId).then((res: RetrieveUserActioningResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19388,15 +20486,16 @@ Check to see if the user must obtain a Trust Request Id in order to complete a c
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserChangePasswordResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserChangePasswordRequest, RetrieveUserChangePasswordResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const loginId: string = "consequuntur";
 
-sdk.sdk.retrieveUserChangePassword("consequuntur").then((res: RetrieveUserChangePasswordResponse) => {
+sdk.sdk.retrieveUserChangePassword(loginId).then((res: RetrieveUserChangePasswordResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19424,15 +20523,17 @@ Retrieves all the comments for the user with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserCommentsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserCommentsWithIdRequest, RetrieveUserCommentsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const userId: string = "maiores";
+const xFusionAuthTenantId: string = "et";
 
-sdk.sdk.retrieveUserCommentsWithId("maiores", "et").then((res: RetrieveUserCommentsWithIdResponse) => {
+sdk.sdk.retrieveUserCommentsWithId(userId, xFusionAuthTenantId).then((res: RetrieveUserCommentsWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19461,15 +20562,16 @@ Retrieve a single User consent by Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserConsentWithIdRequest, RetrieveUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const userConsentId: string = "incidunt";
 
-sdk.sdk.retrieveUserConsentWithId("incidunt").then((res: RetrieveUserConsentWithIdResponse) => {
+sdk.sdk.retrieveUserConsentWithId(userConsentId).then((res: RetrieveUserConsentWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19497,15 +20599,16 @@ Retrieves all the consents for a User.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserConsentsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserConsentsWithIdRequest, RetrieveUserConsentsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const userId: string = "ratione";
 
-sdk.sdk.retrieveUserConsentsWithId("ratione").then((res: RetrieveUserConsentsWithIdResponse) => {
+sdk.sdk.retrieveUserConsentsWithId(userId).then((res: RetrieveUserConsentsWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19568,15 +20671,18 @@ Retrieves the last number of login records. OR Retrieves the last number of logi
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserRecentLoginResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserRecentLoginRequest, RetrieveUserRecentLoginResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const limit: string = "enim";
+const offset: string = "quae";
+const userId: string = "repellendus";
 
-sdk.sdk.retrieveUserRecentLogin("enim", "quae", "repellendus").then((res: RetrieveUserRecentLoginResponse) => {
+sdk.sdk.retrieveUserRecentLogin(limit, offset, userId).then((res: RetrieveUserRecentLoginResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19606,15 +20712,17 @@ Retrieves the user for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserWithIdRequest, RetrieveUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const userId: string = "cum";
+const xFusionAuthTenantId: string = "rerum";
 
-sdk.sdk.retrieveUserWithId("cum", "rerum").then((res: RetrieveUserWithIdResponse) => {
+sdk.sdk.retrieveUserWithId(userId, xFusionAuthTenantId).then((res: RetrieveUserWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19643,15 +20751,19 @@ Retrieves the WebAuthn credential for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveWebAuthnCredentialWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  RetrieveWebAuthnCredentialWithIdRequest,
+  RetrieveWebAuthnCredentialWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const id: string = "soluta";
 
-sdk.sdk.retrieveWebAuthnCredentialWithId("soluta").then((res: RetrieveWebAuthnCredentialWithIdResponse) => {
+sdk.sdk.retrieveWebAuthnCredentialWithId(id).then((res: RetrieveWebAuthnCredentialWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19679,15 +20791,19 @@ Retrieves all WebAuthn credentials for the given user.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveWebAuthnCredentialsForUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  RetrieveWebAuthnCredentialsForUserWithIdRequest,
+  RetrieveWebAuthnCredentialsForUserWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const userId: string = "velit";
 
-sdk.sdk.retrieveWebAuthnCredentialsForUserWithId("velit").then((res: RetrieveWebAuthnCredentialsForUserWithIdResponse) => {
+sdk.sdk.retrieveWebAuthnCredentialsForUserWithId(userId).then((res: RetrieveWebAuthnCredentialsForUserWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19750,15 +20866,16 @@ Retrieves the webhook for the given Id. If you pass in null for the id, this wil
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveWebhookWithIdRequest, RetrieveWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const webhookId: string = "corporis";
 
-sdk.sdk.retrieveWebhookWithId("corporis").then((res: RetrieveWebhookWithIdResponse) => {
+sdk.sdk.retrieveWebhookWithId(webhookId).then((res: RetrieveWebhookWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19786,15 +20903,16 @@ Revokes a single refresh token by the unique Id. The unique Id is not sensitive 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RevokeRefreshTokenByIdWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RevokeRefreshTokenByIdWithIdRequest, RevokeRefreshTokenByIdWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const tokenId: string = "voluptatum";
 
-sdk.sdk.revokeRefreshTokenByIdWithId("voluptatum").then((res: RevokeRefreshTokenByIdWithIdResponse) => {
+sdk.sdk.revokeRefreshTokenByIdWithId(tokenId).then((res: RevokeRefreshTokenByIdWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -19822,15 +20940,16 @@ Revokes a single User consent by Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RevokeUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RevokeUserConsentWithIdRequest, RevokeUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const userConsentId: string = "fugiat";
 
-sdk.sdk.revokeUserConsentWithId("fugiat").then((res: RevokeUserConsentWithIdResponse) => {
+sdk.sdk.revokeUserConsentWithId(userConsentId).then((res: RevokeUserConsentWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -20039,15 +21158,16 @@ Retrieves the entities for the given ids. If any id is invalid, it is ignored.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchEntitiesByIdsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { SearchEntitiesByIdsWithIdRequest, SearchEntitiesByIdsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const ids: string = "accusantium";
 
-sdk.sdk.searchEntitiesByIdsWithId("accusantium").then((res: SearchEntitiesByIdsWithIdResponse) => {
+sdk.sdk.searchEntitiesByIdsWithId(ids).then((res: SearchEntitiesByIdsWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -20722,15 +21842,16 @@ Retrieves the users for the given ids. If any id is invalid, it is ignored.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchUsersByIdsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { SearchUsersByIdsWithIdRequest, SearchUsersByIdsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const ids: string = "nisi";
 
-sdk.sdk.searchUsersByIdsWithId("nisi").then((res: SearchUsersByIdsWithIdResponse) => {
+sdk.sdk.searchUsersByIdsWithId(ids).then((res: SearchUsersByIdsWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -20863,15 +21984,16 @@ Send an email using an email template id. You can optionally provide <code>reque
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SendEmailWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { SendEmailWithIdRequest, SendEmailWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { EmailAddress, SendRequest, SendRequestRequestData } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.sendEmailWithId("beatae", {
+const emailTemplateId: string = "beatae";
+const sendRequest: SendRequest = {
   applicationId: "3870670d-2cc1-4e74-94b2-0c30e4aac789",
   bccAddresses: [
     "molestias",
@@ -20908,7 +22030,9 @@ sdk.sdk.sendEmailWithId("beatae", {
     "d7cdcb4c-5daa-425e-9b70-8cb8af4899bd",
     "5e4ef92a-6079-4d2e-98f9-50b576a9dbbc",
   ],
-}).then((res: SendEmailWithIdResponse) => {
+};
+
+sdk.sdk.sendEmailWithId(emailTemplateId, sendRequest).then((res: SendEmailWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -21062,21 +22186,27 @@ Send a Two Factor authentication code to allow the completion of Two Factor auth
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SendTwoFactorCodeForLoginUsingMethodWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  SendTwoFactorCodeForLoginUsingMethodWithIdRequest,
+  SendTwoFactorCodeForLoginUsingMethodWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { TwoFactorSendRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.sendTwoFactorCodeForLoginUsingMethodWithId("excepturi", {
+const twoFactorId: string = "excepturi";
+const twoFactorSendRequest: TwoFactorSendRequest = {
   email: "Maude6@hotmail.com",
   method: "labore",
   methodId: "velit",
   mobilePhone: "dicta",
   userId: "fd353964-ddcd-4958-bba2-99d8994c2abe",
-}).then((res: SendTwoFactorCodeForLoginUsingMethodWithIdResponse) => {
+};
+
+sdk.sdk.sendTwoFactorCodeForLoginUsingMethodWithId(twoFactorId, twoFactorSendRequest).then((res: SendTwoFactorCodeForLoginUsingMethodWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -21418,15 +22548,16 @@ Updates an API key by given id
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateAPIKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateAPIKeyWithIdRequest, UpdateAPIKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { APIKey, APIKeyMetaData, APIKeyPermissions, APIKeyRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateAPIKeyWithId("deserunt", {
+const keyId: string = "deserunt";
+const apiKeyRequest: APIKeyRequest = {
   apiKey: {
     id: "82ef8abc-7457-4529-908b-691cb2c36b33",
     insertInstant: 1659380719000,
@@ -21457,7 +22588,9 @@ sdk.sdk.updateAPIKeyWithId("deserunt", {
     tenantId: "ff9b796c-32bf-473f-b919-223c6730b24e",
   },
   sourceKeyId: "50a309f4-6533-4c65-b514-e16b69ffeae0",
-}).then((res: UpdateAPIKeyWithIdResponse) => {
+};
+
+sdk.sdk.updateAPIKeyWithId(keyId, apiKeyRequest).then((res: UpdateAPIKeyWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -21486,22 +22619,57 @@ Updates the application role with the given id for the application.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateApplicationRoleWithIdRequest, UpdateApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
+  Application,
+  ApplicationAccessControlConfiguration,
+  ApplicationData,
+  ApplicationEmailConfiguration,
+  ApplicationExternalIdentifierConfiguration,
+  ApplicationFormConfiguration,
+  ApplicationMultiFactorConfiguration,
   ApplicationMultiFactorTrustPolicy,
+  ApplicationRegistrationDeletePolicy,
+  ApplicationRequest,
+  ApplicationRole,
+  ApplicationWebAuthnConfiguration,
+  ApplicationWebAuthnWorkflowConfiguration,
+  AuthenticationTokenConfiguration,
   CanonicalizationMethod,
+  CleanSpeakConfiguration,
   ClientAuthenticationPolicy,
+  EventInfo,
+  EventInfoData,
+  JWTConfiguration,
+  LambdaConfiguration,
+  Location,
+  LoginConfiguration,
   LoginIdType,
   LogoutBehavior,
+  MultiFactorEmailTemplate,
   MultiFactorLoginPolicy,
+  MultiFactorSMSTemplate,
   Oauth2AuthorizedURLValidationPolicy,
+  OAuth2Configuration,
   ObjectState,
+  PasswordlessConfiguration,
   ProofKeyForCodeExchangePolicy,
   RefreshTokenExpirationPolicy,
+  RefreshTokenRevocationPolicy,
   RefreshTokenUsagePolicy,
+  RegistrationConfiguration,
   RegistrationType,
+  RegistrationUnverifiedOptions,
+  Requirable,
   SAMLLogoutBehavior,
+  SAMLv2Configuration,
+  SAMLv2IdPInitiatedLoginConfiguration,
+  SAMLv2Logout,
+  SAMLv2SingleLogout,
+  SelfServiceFormConfiguration,
+  TimeBasedDeletePolicy,
   UnverifiedBehavior,
+  UsernameModeration,
   VerificationStrategy,
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
@@ -21511,8 +22679,9 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateApplicationRoleWithId("hic", "molestiae", {
+const applicationId: string = "hic";
+const roleId: string = "molestiae";
+const applicationRequest: ApplicationRequest = {
   application: {
     accessControlConfiguration: {
       uiIPAccessControlListId: "40c5f85f-90df-49ec-ae17-f89109d53545",
@@ -21773,7 +22942,10 @@ sdk.sdk.updateApplicationRoleWithId("hic", "molestiae", {
     name: "Abraham Lindgren",
   },
   sourceApplicationId: "74bac092-675e-4f93-b2b4-1c1e92e5ac3a",
-}, "velit").then((res: UpdateApplicationRoleWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "velit";
+
+sdk.sdk.updateApplicationRoleWithId(applicationId, roleId, applicationRequest, xFusionAuthTenantId).then((res: UpdateApplicationRoleWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -21804,22 +22976,57 @@ Updates the application with the given Id. OR Reactivates the application with t
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateApplicationWithIdRequest, UpdateApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
+  Application,
+  ApplicationAccessControlConfiguration,
+  ApplicationData,
+  ApplicationEmailConfiguration,
+  ApplicationExternalIdentifierConfiguration,
+  ApplicationFormConfiguration,
+  ApplicationMultiFactorConfiguration,
   ApplicationMultiFactorTrustPolicy,
+  ApplicationRegistrationDeletePolicy,
+  ApplicationRequest,
+  ApplicationRole,
+  ApplicationWebAuthnConfiguration,
+  ApplicationWebAuthnWorkflowConfiguration,
+  AuthenticationTokenConfiguration,
   CanonicalizationMethod,
+  CleanSpeakConfiguration,
   ClientAuthenticationPolicy,
+  EventInfo,
+  EventInfoData,
+  JWTConfiguration,
+  LambdaConfiguration,
+  Location,
+  LoginConfiguration,
   LoginIdType,
   LogoutBehavior,
+  MultiFactorEmailTemplate,
   MultiFactorLoginPolicy,
+  MultiFactorSMSTemplate,
   Oauth2AuthorizedURLValidationPolicy,
+  OAuth2Configuration,
   ObjectState,
+  PasswordlessConfiguration,
   ProofKeyForCodeExchangePolicy,
   RefreshTokenExpirationPolicy,
+  RefreshTokenRevocationPolicy,
   RefreshTokenUsagePolicy,
+  RegistrationConfiguration,
   RegistrationType,
+  RegistrationUnverifiedOptions,
+  Requirable,
   SAMLLogoutBehavior,
+  SAMLv2Configuration,
+  SAMLv2IdPInitiatedLoginConfiguration,
+  SAMLv2Logout,
+  SAMLv2SingleLogout,
+  SelfServiceFormConfiguration,
+  TimeBasedDeletePolicy,
   UnverifiedBehavior,
+  UsernameModeration,
   VerificationStrategy,
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
@@ -21829,8 +23036,8 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateApplicationWithId("molestias", {
+const applicationId: string = "molestias";
+const applicationRequest: ApplicationRequest = {
   application: {
     accessControlConfiguration: {
       uiIPAccessControlListId: "ade331cd-7bcb-438d-9945-2bba33a020df",
@@ -22114,7 +23321,11 @@ sdk.sdk.updateApplicationWithId("molestias", {
     name: "Dora Stiedemann",
   },
   sourceApplicationId: "0b5f1b0e-d652-4403-b4af-eb0733403fbb",
-}, "dignissimos", "dicta").then((res: UpdateApplicationWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "dignissimos";
+const reactivate: string = "dicta";
+
+sdk.sdk.updateApplicationWithId(applicationId, applicationRequest, xFusionAuthTenantId, reactivate).then((res: UpdateApplicationWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -22145,16 +23356,21 @@ Updates the connector with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConnectorType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { UpdateConnectorWithIdRequest, UpdateConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  BaseConnectorConfiguration,
+  BaseConnectorConfigurationData,
+  ConnectorRequest,
+  ConnectorType,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateConnectorWithId("aut", {
+const connectorId: string = "aut";
+const connectorRequest: ConnectorRequest = {
   connector: {
     data: {
       "vitae": {},
@@ -22166,7 +23382,9 @@ sdk.sdk.updateConnectorWithId("aut", {
     name: "Melvin Auer PhD",
     type: ConnectorType.FusionAuth,
   },
-}).then((res: UpdateConnectorWithIdResponse) => {
+};
+
+sdk.sdk.updateConnectorWithId(connectorId, connectorRequest).then((res: UpdateConnectorWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -22195,15 +23413,16 @@ Updates the consent with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateConsentWithIdRequest, UpdateConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { Consent, ConsentData, ConsentRequest, EmailPlus, LocalizedIntegers } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateConsentWithId("veniam", {
+const consentId: string = "veniam";
+const consentRequest: ConsentRequest = {
   consent: {
     consentEmailTemplateId: "8b1dbe87-68b5-473a-aa99-9becac5eab62",
     countryMinimumAgeForSelfConsent: {},
@@ -22229,7 +23448,10 @@ sdk.sdk.updateConsentWithId("veniam", {
       "in",
     ],
   },
-}, "perferendis").then((res: UpdateConsentWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "perferendis";
+
+sdk.sdk.updateConsentWithId(consentId, consentRequest, xFusionAuthTenantId).then((res: UpdateConsentWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -22259,15 +23481,16 @@ Updates the email template with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateEmailTemplateWithIdRequest, UpdateEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { EmailTemplate, EmailTemplateRequest, LocalizedStrings } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateEmailTemplateWithId("quas", {
+const emailTemplateId: string = "quas";
+const emailTemplateRequest: EmailTemplateRequest = {
   emailTemplate: {
     defaultFromName: "ad",
     defaultHtmlTemplate: "harum",
@@ -22283,7 +23506,10 @@ sdk.sdk.updateEmailTemplateWithId("quas", {
     localizedTextTemplates: {},
     name: "Guy Quitzon",
   },
-}, "voluptas").then((res: UpdateEmailTemplateWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "voluptas";
+
+sdk.sdk.updateEmailTemplateWithId(emailTemplateId, emailTemplateRequest, xFusionAuthTenantId).then((res: UpdateEmailTemplateWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -22313,15 +23539,27 @@ Updates the permission with the given id for the entity type.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateEntityTypePermissionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  UpdateEntityTypePermissionWithIdRequest,
+  UpdateEntityTypePermissionWithIdResponse,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  EntityJWTConfiguration,
+  EntityType,
+  EntityTypeData,
+  EntityTypePermission,
+  EntityTypePermissionData,
+  EntityTypeRequest,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateEntityTypePermissionWithId("non", "enim", {
+const entityTypeId: string = "non";
+const permissionId: string = "enim";
+const entityTypeRequest: EntityTypeRequest = {
   entityType: {
     data: {
       "at": {},
@@ -22366,7 +23604,9 @@ sdk.sdk.updateEntityTypePermissionWithId("non", "enim", {
     lastUpdateInstant: 1659380719000,
     name: "Dr. Emma Krajcik",
   },
-}).then((res: UpdateEntityTypePermissionWithIdResponse) => {
+};
+
+sdk.sdk.updateEntityTypePermissionWithId(entityTypeId, permissionId, entityTypeRequest).then((res: UpdateEntityTypePermissionWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -22396,15 +23636,23 @@ Updates the Entity Type with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateEntityTypeWithIdRequest, UpdateEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  EntityJWTConfiguration,
+  EntityType,
+  EntityTypeData,
+  EntityTypePermission,
+  EntityTypePermissionData,
+  EntityTypeRequest,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateEntityTypeWithId("placeat", {
+const entityTypeId: string = "placeat";
+const entityTypeRequest: EntityTypeRequest = {
   entityType: {
     data: {
       "itaque": {},
@@ -22445,7 +23693,9 @@ sdk.sdk.updateEntityTypeWithId("placeat", {
     lastUpdateInstant: 1659380719000,
     name: "Mr. Woodrow McClure",
   },
-}).then((res: UpdateEntityTypeWithIdResponse) => {
+};
+
+sdk.sdk.updateEntityTypeWithId(entityTypeId, entityTypeRequest).then((res: UpdateEntityTypeWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -22474,15 +23724,25 @@ Updates the Entity with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateEntityWithIdRequest, UpdateEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  Entity,
+  EntityData,
+  EntityJWTConfiguration,
+  EntityRequest,
+  EntityType,
+  EntityTypeData,
+  EntityTypePermission,
+  EntityTypePermissionData,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateEntityWithId("deserunt", {
+const entityId: string = "deserunt";
+const entityRequest: EntityRequest = {
   entity: {
     clientId: "officia",
     clientSecret: "reiciendis",
@@ -22564,7 +23824,10 @@ sdk.sdk.updateEntityWithId("deserunt", {
       ],
     },
   },
-}, "itaque").then((res: UpdateEntityWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "itaque";
+
+sdk.sdk.updateEntityWithId(entityId, entityRequest, xFusionAuthTenantId).then((res: UpdateEntityWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -22594,16 +23857,23 @@ Updates the form field with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FormControl, FormDataType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { UpdateFormFieldWithIdRequest, UpdateFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  FormControl,
+  FormDataType,
+  FormField,
+  FormFieldData,
+  FormFieldRequest,
+  FormFieldValidator,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateFormFieldWithId("quod", {
+const fieldId: string = "quod";
+const formFieldRequest: FormFieldRequest = {
   field: {
     confirm: false,
     consentId: "64f290bf-a503-446e-8921-9a364d53ff7c",
@@ -22729,7 +23999,9 @@ sdk.sdk.updateFormFieldWithId("quod", {
       },
     },
   ],
-}).then((res: UpdateFormFieldWithIdResponse) => {
+};
+
+sdk.sdk.updateFormFieldWithId(fieldId, formFieldRequest).then((res: UpdateFormFieldWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -22758,16 +24030,16 @@ Updates the form with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { UpdateFormWithIdRequest, UpdateFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { Form, FormData, FormRequest, FormStep, FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateFormWithId("atque", {
+const formId: string = "atque";
+const formRequest: FormRequest = {
   form: {
     data: {
       "doloremque": {},
@@ -22807,7 +24079,9 @@ sdk.sdk.updateFormWithId("atque", {
     ],
     type: FormType.Registration,
   },
-}).then((res: UpdateFormWithIdResponse) => {
+};
+
+sdk.sdk.updateFormWithId(formId, formRequest).then((res: UpdateFormWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -23252,15 +24526,16 @@ Updates the group with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateGroupWithIdRequest, UpdateGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { ApplicationRole, Group, GroupData, GroupRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateGroupWithId("non", {
+const groupId: string = "non";
+const groupRequest: GroupRequest = {
   group: {
     data: {
       "tenetur": {},
@@ -23288,7 +24563,10 @@ sdk.sdk.updateGroupWithId("non", {
     "63d126cb-3a4a-4026-9c43-d58b3f17e152",
     "42fbffa1-1b36-4402-9f2d-0b2a046a070d",
   ],
-}, "corporis").then((res: UpdateGroupWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "corporis";
+
+sdk.sdk.updateGroupWithId(groupId, groupRequest, xFusionAuthTenantId).then((res: UpdateGroupWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -23318,16 +24596,22 @@ Updates the IP Access Control List with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateIPAccessControlListWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { IPAccessControlEntryAction } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { UpdateIPAccessControlListWithIdRequest, UpdateIPAccessControlListWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  IPAccessControlEntry,
+  IPAccessControlEntryAction,
+  IPAccessControlList,
+  IPAccessControlListData,
+  IPAccessControlListRequest,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateIPAccessControlListWithId("consequuntur", {
+const accessControlListId: string = "consequuntur";
+const ipAccessControlListRequest: IPAccessControlListRequest = {
   ipAccessControlList: {
     data: {
       "maiores": {},
@@ -23350,7 +24634,9 @@ sdk.sdk.updateIPAccessControlListWithId("consequuntur", {
     lastUpdateInstant: 1659380719000,
     name: "Leona Hartmann",
   },
-}).then((res: UpdateIPAccessControlListWithIdResponse) => {
+};
+
+sdk.sdk.updateIPAccessControlListWithId(accessControlListId, ipAccessControlListRequest).then((res: UpdateIPAccessControlListWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -23379,15 +24665,84 @@ Updates the identity provider with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateIdentityProviderWithIdRequest, UpdateIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
+  AppleApplicationConfiguration,
+  AppleApplicationConfigurationData,
+  AppleIdentityProvider,
+  AppleIdentityProviderData,
   CanonicalizationMethod,
   ClientAuthenticationMethod,
+  EpicGamesApplicationConfiguration,
+  EpicGamesApplicationConfigurationData,
+  EpicGamesIdentityProvider,
+  EpicGamesIdentityProviderData,
+  ExternalJWTApplicationConfiguration,
+  ExternalJWTApplicationConfigurationData,
+  ExternalJWTIdentityProvider,
+  ExternalJWTIdentityProviderData,
+  FacebookApplicationConfiguration,
+  FacebookApplicationConfigurationData,
+  FacebookIdentityProvider,
+  FacebookIdentityProviderData,
+  GoogleApplicationConfiguration,
+  GoogleApplicationConfigurationData,
+  GoogleIdentityProvider,
+  GoogleIdentityProviderData,
+  GoogleIdentityProviderProperties,
+  HYPRApplicationConfiguration,
+  HYPRApplicationConfigurationData,
+  HYPRIdentityProvider,
+  HYPRIdentityProviderData,
+  IdentityProviderLimitUserLinkingPolicy,
   IdentityProviderLinkingStrategy,
   IdentityProviderLoginMethod,
+  IdentityProviderOauth2Configuration,
+  IdentityProviderRequest,
+  IdentityProviderTenantConfiguration,
+  IdentityProviderTenantConfigurationData,
   IdentityProviderType,
+  LinkedInApplicationConfiguration,
+  LinkedInApplicationConfigurationData,
+  LinkedInIdentityProvider,
+  LinkedInIdentityProviderData,
+  LoginHintConfiguration,
+  NintendoApplicationConfiguration,
+  NintendoApplicationConfigurationData,
+  NintendoIdentityProvider,
+  NintendoIdentityProviderData,
+  OpenIdConnectApplicationConfiguration,
+  OpenIdConnectApplicationConfigurationData,
+  OpenIdConnectIdentityProvider,
+  OpenIdConnectIdentityProviderData,
+  ProviderLambdaConfiguration,
+  SAMLv2AssertionConfiguration,
+  SAMLv2DestinationAssertionConfiguration,
   SAMLv2DestinationAssertionPolicy,
+  SAMLv2IdentityProvider,
+  SAMLv2IdpInitiatedConfiguration,
+  SAMLv2IdPInitiatedIdentityProvider,
+  SonyPSNApplicationConfiguration,
+  SonyPSNApplicationConfigurationData,
+  SonyPSNIdentityProvider,
+  SonyPSNIdentityProviderData,
   SteamAPIMode,
+  SteamApplicationConfiguration,
+  SteamApplicationConfigurationData,
+  SteamIdentityProvider,
+  SteamIdentityProviderData,
+  TwitchApplicationConfiguration,
+  TwitchApplicationConfigurationData,
+  TwitchIdentityProvider,
+  TwitchIdentityProviderData,
+  TwitterApplicationConfiguration,
+  TwitterApplicationConfigurationData,
+  TwitterIdentityProvider,
+  TwitterIdentityProviderData,
+  XboxApplicationConfiguration,
+  XboxApplicationConfigurationData,
+  XboxIdentityProvider,
+  XboxIdentityProviderData,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
@@ -23395,8 +24750,8 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateIdentityProviderWithId("quaerat", {
+const identityProviderId: string = "quaerat";
+const identityProviderRequest: IdentityProviderRequest = {
   identityProvider: {
     emailClaim: "expedita",
     issuer: "rem",
@@ -23405,7 +24760,9 @@ sdk.sdk.updateIdentityProviderWithId("quaerat", {
     useNameIdForEmail: false,
     usernameClaim: "ducimus",
   },
-}).then((res: UpdateIdentityProviderWithIdResponse) => {
+};
+
+sdk.sdk.updateIdentityProviderWithId(identityProviderId, identityProviderRequest).then((res: UpdateIdentityProviderWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -23497,16 +24854,16 @@ Updates the key with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { UpdateKeyWithIdRequest, UpdateKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CertificateInformation, Key, KeyAlgorithm, KeyRequest, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateKeyWithId("aspernatur", {
+const keyId: string = "aspernatur";
+const keyRequest: KeyRequest = {
   key: {
     algorithm: KeyAlgorithm.Hs256,
     certificate: "laboriosam",
@@ -23536,7 +24893,9 @@ sdk.sdk.updateKeyWithId("aspernatur", {
     secret: "optio",
     type: KeyType.Ec,
   },
-}).then((res: UpdateKeyWithIdResponse) => {
+};
+
+sdk.sdk.updateKeyWithId(keyId, keyRequest).then((res: UpdateKeyWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -23565,16 +24924,16 @@ Updates the lambda with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { UpdateLambdaWithIdRequest, UpdateLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { Lambda, LambdaEngineType, LambdaRequest, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateLambdaWithId("in", {
+const lambdaId: string = "in";
+const lambdaRequest: LambdaRequest = {
   lambda: {
     body: "blanditiis",
     debug: false,
@@ -23585,7 +24944,9 @@ sdk.sdk.updateLambdaWithId("in", {
     name: "Jose Bailey",
     type: LambdaType.SCIMServerUserRequestConverter,
   },
-}).then((res: UpdateLambdaWithIdResponse) => {
+};
+
+sdk.sdk.updateLambdaWithId(lambdaId, lambdaRequest).then((res: UpdateLambdaWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -23614,16 +24975,16 @@ Updates the message template with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { UpdateMessageTemplateWithIdRequest, UpdateMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { MessageTemplate, MessageTemplateData, MessageTemplateRequest, MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateMessageTemplateWithId("illum", {
+const messageTemplateId: string = "illum";
+const messageTemplateRequest: MessageTemplateRequest = {
   messageTemplate: {
     data: {
       "tempora": {},
@@ -23635,7 +24996,9 @@ sdk.sdk.updateMessageTemplateWithId("illum", {
     name: "Malcolm Wehner PhD",
     type: MessageType.Sms,
   },
-}).then((res: UpdateMessageTemplateWithIdResponse) => {
+};
+
+sdk.sdk.updateMessageTemplateWithId(messageTemplateId, messageTemplateRequest).then((res: UpdateMessageTemplateWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -23664,16 +25027,21 @@ Updates the messenger with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { MessengerType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { UpdateMessengerWithIdRequest, UpdateMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  BaseMessengerConfiguration,
+  BaseMessengerConfigurationData,
+  MessengerRequest,
+  MessengerType,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateMessengerWithId("similique", {
+const messengerId: string = "similique";
+const messengerRequest: MessengerRequest = {
   messenger: {
     data: {
       "dignissimos": {},
@@ -23689,7 +25057,9 @@ sdk.sdk.updateMessengerWithId("similique", {
     transport: "saepe",
     type: MessengerType.Twilio,
   },
-}).then((res: UpdateMessengerWithIdResponse) => {
+};
+
+sdk.sdk.updateMessengerWithId(messengerId, messengerRequest).then((res: UpdateMessengerWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -23718,16 +25088,34 @@ Updates the registration for the user with the given id and the application defi
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { UpdateRegistrationWithIdRequest, UpdateRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  AuthenticatorConfiguration,
+  BreachedPasswordStatus,
+  ChangePasswordReason,
+  ContentStatus,
+  EventInfo,
+  EventInfoData,
+  GroupMember,
+  GroupMemberData,
+  Location,
+  RegistrationRequest,
+  TOTPAlgorithm,
+  TwoFactorMethod,
+  User,
+  UserData,
+  UserRegistration,
+  UserRegistrationData,
+  UserTwoFactorConfiguration,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateRegistrationWithId("quidem", {
+const userId: string = "quidem";
+const registrationRequest: RegistrationRequest = {
   disableDomainBlock: false,
   eventInfo: {
     data: {
@@ -24122,7 +25510,10 @@ sdk.sdk.updateRegistrationWithId("quidem", {
     usernameStatus: ContentStatus.Active,
     verified: false,
   },
-}, "mollitia").then((res: UpdateRegistrationWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "mollitia";
+
+sdk.sdk.updateRegistrationWithId(userId, registrationRequest, xFusionAuthTenantId).then((res: UpdateRegistrationWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -24242,21 +25633,69 @@ Updates the tenant with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateTenantWithIdRequest, UpdateTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorAttachmentPreference,
   BreachAction,
   BreachMatchMode,
   CaptchaMethod,
+  ConnectorPolicy,
+  ConnectorPolicyData,
+  EmailConfiguration,
+  EmailHeader,
   EmailSecurityType,
+  EmailUnverifiedOptions,
+  EventConfiguration,
+  EventConfigurationData,
+  EventInfo,
+  EventInfoData,
   ExpiryUnit,
+  ExternalIdentifierConfiguration,
+  FailedAuthenticationActionCancelPolicy,
+  FailedAuthenticationConfiguration,
+  FamilyConfiguration,
+  JWTConfiguration,
+  Location,
+  MaximumPasswordAge,
+  MinimumPasswordAge,
+  MultiFactorAuthenticatorMethod,
+  MultiFactorEmailMethod,
   MultiFactorLoginPolicy,
+  MultiFactorSMSMethod,
   ObjectState,
+  PasswordBreachDetection,
+  PasswordEncryptionConfiguration,
+  PasswordValidationRules,
+  RateLimitedRequestConfiguration,
   RefreshTokenExpirationPolicy,
+  RefreshTokenRevocationPolicy,
   RefreshTokenUsagePolicy,
+  RememberPreviousPasswords,
+  SecureGeneratorConfiguration,
   SecureGeneratorType,
+  Tenant,
+  TenantAccessControlConfiguration,
+  TenantCaptchaConfiguration,
+  TenantData,
+  TenantFormConfiguration,
+  TenantLambdaConfiguration,
+  TenantLoginConfiguration,
+  TenantMultiFactorConfiguration,
+  TenantOAuth2Configuration,
+  TenantRateLimitConfiguration,
+  TenantRegistrationConfiguration,
+  TenantRequest,
+  TenantSCIMServerConfiguration,
+  TenantSCIMServerConfigurationSchemas,
+  TenantSSOConfiguration,
+  TenantUserDeletePolicy,
+  TenantUsernameConfiguration,
+  TenantWebAuthnConfiguration,
+  TenantWebAuthnWorkflowConfiguration,
+  TimeBasedDeletePolicy,
   TOTPAlgorithm,
   TransactionType,
+  UniqueUsernameConfiguration,
   UniqueUsernameStrategy,
   UnverifiedBehavior,
   UserVerificationRequirement,
@@ -24268,8 +25707,8 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateTenantWithId("dolore", {
+const tenantId: string = "dolore";
+const tenantRequest: TenantRequest = {
   eventInfo: {
     data: {
       "quae": {},
@@ -24641,7 +26080,10 @@ sdk.sdk.updateTenantWithId("dolore", {
     "ea4aad0b-a6fb-4178-969d-f1bf7b44d3ed",
     "e7e0cc9a-d7cd-4d18-8445-8d8dbf69eacd",
   ],
-}, "consequatur").then((res: UpdateTenantWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "consequatur";
+
+sdk.sdk.updateTenantWithId(tenantId, tenantRequest, xFusionAuthTenantId).then((res: UpdateTenantWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -24671,15 +26113,16 @@ Updates the theme with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateThemeWithIdRequest, UpdateThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { LocalizedStrings, Templates, Theme, ThemeData, ThemeRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateThemeWithId("amet", {
+const themeId: string = "amet";
+const themeRequest: ThemeRequest = {
   sourceThemeId: "15be4520-9f93-4e42-a688-27095693e896",
   theme: {
     data: {
@@ -24742,7 +26185,9 @@ sdk.sdk.updateThemeWithId("amet", {
       unauthorized: "numquam",
     },
   },
-}).then((res: UpdateThemeWithIdResponse) => {
+};
+
+sdk.sdk.updateThemeWithId(themeId, themeRequest).then((res: UpdateThemeWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -24771,15 +26216,16 @@ Updates the user action reason with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateUserActionReasonWithIdRequest, UpdateUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { LocalizedStrings, UserActionReason, UserActionReasonRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateUserActionReasonWithId("sunt", {
+const userActionReasonId: string = "sunt";
+const userActionReasonRequest: UserActionReasonRequest = {
   userActionReason: {
     code: "labore",
     id: "483a96a5-f771-43e6-8209-55657e7960c5",
@@ -24788,7 +26234,9 @@ sdk.sdk.updateUserActionReasonWithId("sunt", {
     localizedTexts: {},
     text: "esse",
   },
-}).then((res: UpdateUserActionReasonWithIdResponse) => {
+};
+
+sdk.sdk.updateUserActionReasonWithId(userActionReasonId, userActionReasonRequest).then((res: UpdateUserActionReasonWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -24817,16 +26265,22 @@ Reactivates the user action with the given Id. OR Updates the user action with t
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { TransactionType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { UpdateUserActionWithIdRequest, UpdateUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  LocalizedStrings,
+  TransactionType,
+  UserAction,
+  UserActionOption,
+  UserActionRequest,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateUserActionWithId("dicta", {
+const userActionId: string = "dicta";
+const userActionRequest: UserActionRequest = {
   userAction: {
     active: false,
     cancelEmailTemplateId: "d7c1ff8f-15c1-4d37-9a2f-9699e8fcbe8a",
@@ -24860,7 +26314,11 @@ sdk.sdk.updateUserActionWithId("dicta", {
     userEmailingEnabled: false,
     userNotificationsEnabled: false,
   },
-}, "sed", "pariatur").then((res: UpdateUserActionWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "sed";
+const reactivate: string = "pariatur";
+
+sdk.sdk.updateUserActionWithId(userActionId, userActionRequest, xFusionAuthTenantId, reactivate).then((res: UpdateUserActionWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -24891,16 +26349,25 @@ Updates a single User consent by Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { UpdateUserConsentWithIdRequest, UpdateUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  Consent,
+  ConsentData,
+  ConsentStatus,
+  EmailPlus,
+  LocalizedIntegers,
+  UserConsent,
+  UserConsentData,
+  UserConsentRequest,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateUserConsentWithId("numquam", {
+const userConsentId: string = "numquam";
+const userConsentRequest: UserConsentRequest = {
   userConsent: {
     consent: {
       consentEmailTemplateId: "1ac21680-89cd-4447-8674-0a2aadc1c0d2",
@@ -24946,7 +26413,9 @@ sdk.sdk.updateUserConsentWithId("numquam", {
       "assumenda",
     ],
   },
-}).then((res: UpdateUserConsentWithIdResponse) => {
+};
+
+sdk.sdk.updateUserConsentWithId(userConsentId, userConsentRequest).then((res: UpdateUserConsentWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -24975,15 +26444,18 @@ Re-sends the verification email to the user. OR Re-sends the verification email 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateUserVerifyEmailResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateUserVerifyEmailRequest, UpdateUserVerifyEmailResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const applicationId: string = "esse";
+const email: string = "voluptatem";
+const sendVerifyEmail: string = "sit";
 
-sdk.sdk.updateUserVerifyEmail("esse", "voluptatem", "sit").then((res: UpdateUserVerifyEmailResponse) => {
+sdk.sdk.updateUserVerifyEmail(applicationId, email, sendVerifyEmail).then((res: UpdateUserVerifyEmailResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -25013,15 +26485,18 @@ Generate a new Application Registration Verification Id to be used with the Veri
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateUserVerifyRegistrationResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateUserVerifyRegistrationRequest, UpdateUserVerifyRegistrationResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const applicationId: string = "voluptate";
+const email: string = "nisi";
+const sendVerifyPasswordEmail: string = "impedit";
 
-sdk.sdk.updateUserVerifyRegistration("voluptate", "nisi", "impedit").then((res: UpdateUserVerifyRegistrationResponse) => {
+sdk.sdk.updateUserVerifyRegistration(applicationId, email, sendVerifyPasswordEmail).then((res: UpdateUserVerifyRegistrationResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -25051,16 +26526,34 @@ Reactivates the user with the given Id. OR Updates the user with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { UpdateUserWithIdRequest, UpdateUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  AuthenticatorConfiguration,
+  BreachedPasswordStatus,
+  ChangePasswordReason,
+  ContentStatus,
+  EventInfo,
+  EventInfoData,
+  GroupMember,
+  GroupMemberData,
+  Location,
+  TOTPAlgorithm,
+  TwoFactorMethod,
+  User,
+  UserData,
+  UserRegistration,
+  UserRegistrationData,
+  UserRequest,
+  UserTwoFactorConfiguration,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateUserWithId("sed", {
+const userId: string = "sed";
+const userRequest: UserRequest = {
   applicationId: "585137ed-48ca-4d38-b9ef-e8ed8270fec4",
   currentPassword: "amet",
   disableDomainBlock: false,
@@ -26034,7 +27527,11 @@ sdk.sdk.updateUserWithId("sed", {
     usernameStatus: ContentStatus.Pending,
     verified: false,
   },
-}, "illo", "voluptatum").then((res: UpdateUserWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "illo";
+const reactivate: string = "voluptatum";
+
+sdk.sdk.updateUserWithId(userId, userRequest, xFusionAuthTenantId, reactivate).then((res: UpdateUserWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -26065,15 +27562,16 @@ Updates the webhook with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateWebhookWithIdRequest, UpdateWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { HTTPHeaders, Webhook, WebhookData, WebhookRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.updateWebhookWithId("ipsum", {
+const webhookId: string = "ipsum";
+const webhookRequest: WebhookRequest = {
   webhook: {
     connectTimeout: 688043,
     data: {
@@ -26103,7 +27601,9 @@ sdk.sdk.updateWebhookWithId("ipsum", {
     ],
     url: "amet",
   },
-}).then((res: UpdateWebhookWithIdResponse) => {
+};
+
+sdk.sdk.updateWebhookWithId(webhookId, webhookRequest).then((res: UpdateWebhookWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -26132,15 +27632,27 @@ Creates or updates an Entity Grant. This is when a User/Entity is granted permis
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpsertEntityGrantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpsertEntityGrantWithIdRequest, UpsertEntityGrantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import {
+  Entity,
+  EntityData,
+  EntityGrant,
+  EntityGrantData,
+  EntityGrantRequest,
+  EntityJWTConfiguration,
+  EntityType,
+  EntityTypeData,
+  EntityTypePermission,
+  EntityTypePermissionData,
+} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
-
-sdk.sdk.upsertEntityGrantWithId("rerum", {
+const entityId: string = "rerum";
+const entityGrantRequest: EntityGrantRequest = {
   grant: {
     data: {
       "enim": {},
@@ -26245,7 +27757,10 @@ sdk.sdk.upsertEntityGrantWithId("rerum", {
     recipientEntityId: "20bab6e8-281d-4f0e-b3a0-e793dd76067c",
     userId: "a7a1c7f5-085c-4573-8a61-75e04f7e92b4",
   },
-}, "ut").then((res: UpsertEntityGrantWithIdResponse) => {
+};
+const xFusionAuthTenantId: string = "ut";
+
+sdk.sdk.upsertEntityGrantWithId(entityId, entityGrantRequest, xFusionAuthTenantId).then((res: UpsertEntityGrantWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -26275,15 +27790,17 @@ Validates the end-user provided user_code from the user-interaction of the Devic
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ValidateDeviceWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { ValidateDeviceWithIdRequest, ValidateDeviceWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
 const sdk = new SDK({
   security: {
     apiKeyAuth: "",
   },
 });
+const clientId: string = "enim";
+const userCode: string = "eligendi";
 
-sdk.sdk.validateDeviceWithId("enim", "eligendi").then((res: ValidateDeviceWithIdResponse) => {
+sdk.sdk.validateDeviceWithId(clientId, userCode).then((res: ValidateDeviceWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
