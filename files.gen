@@ -1788,3 +1788,4 @@ docs/models/shared/jwtvendrequestclaims.md
 docs/models/shared/jwtvendrequest.md
 docs/models/shared/verifyregistrationrequest.md
 docs/models/shared/security.md
+.gitattributes
