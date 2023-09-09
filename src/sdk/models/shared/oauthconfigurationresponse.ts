@@ -6,9 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { OAuth2Configuration } from "./oauth2configuration";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Success
- */
 export class OAuthConfigurationResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "httpSessionMaxInactiveInterval" })

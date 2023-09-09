@@ -8,9 +8,6 @@ import { OAuthErrorType } from "./oautherrortype";
 import { TwoFactorMethod } from "./twofactormethod";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Error
- */
 export class OAuthError extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "change_password_id" })

@@ -1,7 +1,5 @@
 # IdentityProviderStartLoginResponse
 
-Success
-
 
 ## Fields
 

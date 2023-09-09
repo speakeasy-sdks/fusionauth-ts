@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Success
- */
 export class VerifyRegistrationResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "oneTimeCode" })

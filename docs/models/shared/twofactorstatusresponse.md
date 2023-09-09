@@ -1,7 +1,5 @@
 # TwoFactorStatusResponse
 
-Success
-
 
 ## Fields
 

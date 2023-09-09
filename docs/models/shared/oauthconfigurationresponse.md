@@ -1,7 +1,5 @@
 # OAuthConfigurationResponse
 
-Success
-
 
 ## Fields
 

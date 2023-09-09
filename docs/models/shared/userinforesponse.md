@@ -1,7 +1,5 @@
 # UserinfoResponse
 
-Success
-
 
 ## Fields
 

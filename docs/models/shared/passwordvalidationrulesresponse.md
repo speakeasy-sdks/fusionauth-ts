@@ -1,7 +1,5 @@
 # PasswordValidationRulesResponse
 
-Success
-
 
 ## Fields
 

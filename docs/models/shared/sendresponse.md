@@ -1,7 +1,5 @@
 # SendResponse
 
-Success
-
 
 ## Fields
 

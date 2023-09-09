@@ -1,7 +1,5 @@
 # IdentityProviderResponse
 
-Success
-
 
 ## Fields
 

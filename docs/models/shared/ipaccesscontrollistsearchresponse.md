@@ -1,7 +1,5 @@
 # IPAccessControlListSearchResponse
 
-Success
-
 
 ## Fields
 

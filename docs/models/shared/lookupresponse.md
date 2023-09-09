@@ -1,7 +1,5 @@
 # LookupResponse
 
-Success
-
 
 ## Fields
 

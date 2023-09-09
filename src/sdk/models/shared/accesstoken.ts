@@ -6,9 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { TokenType } from "./tokentype";
 import { Expose } from "class-transformer";
 
-/**
- * Success
- */
 export class AccessToken extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "access_token" })

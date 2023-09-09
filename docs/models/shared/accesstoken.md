@@ -1,7 +1,5 @@
 # AccessToken
 
-Success
-
 
 ## Fields
 

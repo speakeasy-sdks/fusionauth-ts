@@ -1,7 +1,5 @@
 # VerifyEmailResponse
 
-Success
-
 
 ## Fields
 

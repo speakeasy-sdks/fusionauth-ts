@@ -1,7 +1,5 @@
 # JWTVendResponse
 
-Success
-
 
 ## Fields
 

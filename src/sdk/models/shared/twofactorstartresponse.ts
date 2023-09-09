@@ -6,9 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { TwoFactorMethod } from "./twofactormethod";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Success
- */
 export class TwoFactorStartResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "code" })

@@ -1,7 +1,5 @@
 # TenantResponse
 
-Success
-
 
 ## Fields
 

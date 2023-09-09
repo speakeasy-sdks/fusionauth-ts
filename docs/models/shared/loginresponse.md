@@ -1,7 +1,5 @@
 # LoginResponse
 
-Success
-
 
 ## Fields
 

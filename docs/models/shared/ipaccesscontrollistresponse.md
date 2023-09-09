@@ -1,7 +1,5 @@
 # IPAccessControlListResponse
 
-Success
-
 
 ## Fields
 

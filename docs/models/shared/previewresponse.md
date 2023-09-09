@@ -1,7 +1,5 @@
 # PreviewResponse
 
-Success
-
 
 ## Fields
 

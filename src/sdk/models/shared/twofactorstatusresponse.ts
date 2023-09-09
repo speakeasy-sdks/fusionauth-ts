@@ -6,9 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { TwoFactorTrust } from "./twofactortrust";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Success
- */
 export class TwoFactorStatusResponse extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: TwoFactorTrust })
     @Expose({ name: "trusts" })

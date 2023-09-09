@@ -1,7 +1,5 @@
 # MessengerResponse
 
-Success
-
 
 ## Fields
 

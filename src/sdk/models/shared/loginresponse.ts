@@ -11,9 +11,6 @@ import { Expose, Transform, Type } from "class-transformer";
 
 export class LoginResponseState extends SpeakeasyBase {}
 
-/**
- * Success
- */
 export class LoginResponse extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: LoginPreventedResponse })
     @Expose({ name: "actions" })

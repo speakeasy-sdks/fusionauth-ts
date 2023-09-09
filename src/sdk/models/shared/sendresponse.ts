@@ -6,9 +6,6 @@ import { objectToClass, SpeakeasyBase, SpeakeasyMetadata } from "../../../intern
 import { EmailTemplateErrors } from "./emailtemplateerrors";
 import { Expose, Transform } from "class-transformer";
 
-/**
- * Success
- */
 export class SendResponse extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: EmailTemplateErrors })
     @Expose({ name: "anonymousResults" })

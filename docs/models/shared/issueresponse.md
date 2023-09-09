@@ -1,7 +1,5 @@
 # IssueResponse
 
-Success
-
 
 ## Fields
 

@@ -1,7 +1,5 @@
 # ValidateResponse
 
-Success
-
 
 ## Fields
 

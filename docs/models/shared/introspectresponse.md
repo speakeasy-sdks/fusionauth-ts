@@ -1,7 +1,5 @@
 # IntrospectResponse
 
-Success
-
 
 ## Fields
 

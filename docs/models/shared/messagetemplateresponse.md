@@ -1,7 +1,5 @@
 # MessageTemplateResponse
 
-Success
-
 
 ## Fields
 

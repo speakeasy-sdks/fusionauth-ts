@@ -6,9 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { BaseMessengerConfiguration } from "./basemessengerconfiguration";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Success
- */
 export class MessengerResponse extends SpeakeasyBase {
     /**
      * Do not require a setter for 'type', it is defined by the concrete class and is not mutable

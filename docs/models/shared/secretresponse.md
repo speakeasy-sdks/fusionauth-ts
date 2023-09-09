@@ -1,7 +1,5 @@
 # SecretResponse
 
-Success
-
 
 ## Fields
 

@@ -1,7 +1,5 @@
 # PreviewMessageTemplateResponse
 
-Success
-
 
 ## Fields
 

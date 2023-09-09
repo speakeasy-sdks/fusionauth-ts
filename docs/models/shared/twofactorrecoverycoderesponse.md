@@ -1,7 +1,5 @@
 # TwoFactorRecoveryCodeResponse
 
-Success
-
 
 ## Fields
 

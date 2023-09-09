@@ -1,7 +1,5 @@
 # PasswordlessStartResponse
 
-Success
-
 
 ## Fields
 

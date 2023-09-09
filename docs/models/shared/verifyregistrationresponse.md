@@ -1,7 +1,5 @@
 # VerifyRegistrationResponse
 
-Success
-
 
 ## Fields
 

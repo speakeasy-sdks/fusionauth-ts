@@ -7,9 +7,6 @@ import { Email } from "./email";
 import { Errors } from "./errors";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Success
- */
 export class PreviewResponse extends SpeakeasyBase {
     /**
      * This class is an abstraction of a simple email message.

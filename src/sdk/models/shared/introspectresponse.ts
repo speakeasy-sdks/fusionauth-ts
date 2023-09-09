@@ -4,7 +4,4 @@
 
 import { SpeakeasyBase } from "../../../internal/utils";
 
-/**
- * Success
- */
 export class IntrospectResponse extends SpeakeasyBase {}

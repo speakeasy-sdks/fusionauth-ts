@@ -1,7 +1,5 @@
 # PendingResponse
 
-Success
-
 
 ## Fields
 

@@ -6,9 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { IPAccessControlList } from "./ipaccesscontrollist";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Success
- */
 export class IPAccessControlListSearchResponse extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: IPAccessControlList })
     @Expose({ name: "ipAccessControlLists" })

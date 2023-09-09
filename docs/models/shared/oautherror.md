@@ -1,7 +1,5 @@
 # OAuthError
 
-Error
-
 
 ## Fields
 

@@ -6,9 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { PasswordValidationRules } from "./passwordvalidationrules";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Success
- */
 export class PasswordValidationRulesResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "passwordValidationRules" })
