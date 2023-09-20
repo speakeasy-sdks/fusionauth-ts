@@ -49,8 +49,8 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.45.1";
-    sdkVersion = "1.24.3";
-    genVersion = "2.115.2";
+    sdkVersion = "1.24.4";
+    genVersion = "2.118.1";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -97,7 +97,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user/action";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -194,7 +194,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/reactor";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -282,7 +282,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/family/{familyId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "familyRequest", "json");
@@ -386,7 +386,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/action/{actionId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "actionRequest", "json");
@@ -484,7 +484,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user/change-password";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -574,7 +574,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -738,7 +738,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user/comment";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -832,7 +832,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/webauthn/assert";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -922,7 +922,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/webauthn/login";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -1012,7 +1012,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/webauthn/register/complete";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -1110,7 +1110,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/api-key";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -1208,7 +1208,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/api-key/{keyId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "apiKeyRequest", "json");
@@ -1307,7 +1307,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/application";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -1420,7 +1420,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -1536,7 +1536,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -1646,7 +1646,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/application/{applicationId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -1753,7 +1753,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/system/audit-log";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -1851,7 +1851,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/connector";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -1949,7 +1949,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/connector/{connectorId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "connectorRequest", "json");
@@ -2048,7 +2048,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/consent";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "consentRequest", "json");
@@ -2153,7 +2153,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/consent/{consentId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "consentRequest", "json");
@@ -2257,7 +2257,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/email/template";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -2371,7 +2371,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -2479,7 +2479,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/entity";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "entityRequest", "json");
@@ -2581,7 +2581,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/entity/type";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -2683,7 +2683,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -2792,7 +2792,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -2895,7 +2895,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/entity/type/{entityTypeId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -3000,7 +3000,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/entity/{entityId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "entityRequest", "json");
@@ -3104,7 +3104,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user/family";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "familyRequest", "json");
@@ -3209,7 +3209,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/family/{familyId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "familyRequest", "json");
@@ -3312,7 +3312,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/form";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -3409,7 +3409,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/form/field";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -3507,7 +3507,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/form/field/{fieldId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "formFieldRequest", "json");
@@ -3606,7 +3606,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/form/{formId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "formRequest", "json");
@@ -3704,7 +3704,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/group";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "groupRequest", "json");
@@ -3806,7 +3806,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/group/member";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -3907,7 +3907,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/group/{groupId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "groupRequest", "json");
@@ -4009,7 +4009,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/ip-acl";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -4108,7 +4108,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/ip-acl/{accessControlListId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -4210,7 +4210,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/identity-provider";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -4313,7 +4313,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -4415,7 +4415,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/lambda";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -4513,7 +4513,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/lambda/{lambdaId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "lambdaRequest", "json");
@@ -4614,7 +4614,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/logout";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "logoutRequest", "json");
@@ -4678,7 +4678,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/message/template";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -4781,7 +4781,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -4883,7 +4883,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/messenger";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -4981,7 +4981,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/messenger/{messengerId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "messengerRequest", "json");
@@ -5080,7 +5080,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/tenant";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "tenantRequest", "json");
@@ -5185,7 +5185,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/tenant/{tenantId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "tenantRequest", "json");
@@ -5288,7 +5288,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/theme";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -5386,7 +5386,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/theme/{themeId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "themeRequest", "json");
@@ -5555,7 +5555,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "userRequest", "json");
@@ -5658,7 +5658,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user-action";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -5764,7 +5764,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user-action-reason";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -5867,7 +5867,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -5972,7 +5972,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user-action/{userActionId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -6079,7 +6079,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user/consent";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -6177,7 +6177,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/consent/{userConsentId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -6279,7 +6279,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/identity-provider/link";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -6377,7 +6377,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user/verify-email";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -6465,7 +6465,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/{userId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "userRequest", "json");
@@ -6567,7 +6567,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/webhook";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -6665,7 +6665,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/webhook/{webhookId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "webhookRequest", "json");
@@ -7698,7 +7698,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/group/member";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -8016,7 +8016,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/jwt/refresh";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -8405,7 +8405,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/tenant/{tenantId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -8736,7 +8736,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user/bulk";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -8938,7 +8938,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -9037,7 +9037,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/two-factor/{userId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -9132,7 +9132,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/{userId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -9373,7 +9373,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/two-factor/{userId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "twoFactorRequest", "json");
@@ -9471,7 +9471,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/jwt/refresh";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -9561,7 +9561,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user/forgot-password";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -9659,7 +9659,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/key/generate";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -9757,7 +9757,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/key/generate/{keyId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "keyRequest", "json");
@@ -10009,7 +10009,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/identity-provider/login";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -10107,7 +10107,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/key/import";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -10205,7 +10205,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/key/import/{keyId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "keyRequest", "json");
@@ -10302,7 +10302,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user/refresh-token/import";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -10387,7 +10387,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user/import";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -10471,7 +10471,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/webauthn/import";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -10807,7 +10807,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/login";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "loginPingRequest", "json");
@@ -10911,7 +10911,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/login";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "loginRequest", "json");
@@ -11091,7 +11091,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/action/{actionId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "actionRequest", "json");
@@ -11189,7 +11189,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/passwordless/login";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -11288,7 +11288,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -11398,7 +11398,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/application/{applicationId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -11506,7 +11506,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/connector/{connectorId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "connectorRequest", "json");
@@ -11607,7 +11607,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/consent/{consentId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "consentRequest", "json");
@@ -11717,7 +11717,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -11825,7 +11825,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/entity/type/{entityTypeId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -11930,7 +11930,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/group/{groupId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "groupRequest", "json");
@@ -12037,7 +12037,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -12139,7 +12139,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/integration";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -12238,7 +12238,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/lambda/{lambdaId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "lambdaRequest", "json");
@@ -12340,7 +12340,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -12443,7 +12443,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/messenger/{messengerId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "messengerRequest", "json");
@@ -12544,7 +12544,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/registration/{userId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -12651,7 +12651,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/system-configuration";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -12752,7 +12752,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/tenant/{tenantId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "tenantRequest", "json");
@@ -12855,7 +12855,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/theme/{themeId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "themeRequest", "json");
@@ -12957,7 +12957,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -13062,7 +13062,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user-action/{userActionId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -13170,7 +13170,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/consent/{userConsentId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -13275,7 +13275,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/{userId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "userRequest", "json");
@@ -13377,7 +13377,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/jwt/reconcile";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -13468,7 +13468,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user/registration";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -13577,7 +13577,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/registration/{userId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -13683,7 +13683,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/system/reindex";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -14600,7 +14600,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/email/template/preview";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -16288,7 +16288,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/message/template/preview";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -19228,7 +19228,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/application/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -19326,7 +19326,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/system/audit-log/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -19424,7 +19424,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/consent/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -19522,7 +19522,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/email/template/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -19707,7 +19707,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/entity/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -19805,7 +19805,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/entity/grant/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -19903,7 +19903,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/entity/type/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -20001,7 +20001,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/system/event-log/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -20099,7 +20099,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/group/member/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -20197,7 +20197,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/group/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -20295,7 +20295,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/ip-acl/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -20393,7 +20393,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/identity-provider/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -20491,7 +20491,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/key/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -20588,7 +20588,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/lambda/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -20686,7 +20686,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/system/login-record/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -20784,7 +20784,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/tenant/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -20882,7 +20882,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/theme/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -20980,7 +20980,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user/comment/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -21165,7 +21165,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -21263,7 +21263,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/webhook/search";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -21362,7 +21362,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/email/send/{emailTemplateId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "sendRequest", "json");
@@ -21459,7 +21459,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user/family/request";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -21544,7 +21544,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/passwordless/send";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -21621,7 +21621,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/two-factor/send";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -21707,7 +21707,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/two-factor/send/{twoFactorId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -21788,7 +21788,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/identity-provider/start";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -21886,7 +21886,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/passwordless/start";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -21984,7 +21984,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/two-factor/start";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -22082,7 +22082,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/webauthn/start";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -22180,7 +22180,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/webauthn/register/start";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -22278,7 +22278,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/two-factor/login";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -22369,7 +22369,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/api-key/{keyId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "apiKeyRequest", "json");
@@ -22476,7 +22476,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -22588,7 +22588,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/application/{applicationId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -22697,7 +22697,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/connector/{connectorId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "connectorRequest", "json");
@@ -22798,7 +22798,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/consent/{consentId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "consentRequest", "json");
@@ -22908,7 +22908,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -23022,7 +23022,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -23125,7 +23125,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/entity/type/{entityTypeId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -23230,7 +23230,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/entity/{entityId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "entityRequest", "json");
@@ -23334,7 +23334,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/form/field/{fieldId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "formFieldRequest", "json");
@@ -23433,7 +23433,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/form/{formId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "formRequest", "json");
@@ -23530,7 +23530,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/group/member";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -23631,7 +23631,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/group/{groupId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "groupRequest", "json");
@@ -23734,7 +23734,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/ip-acl/{accessControlListId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -23841,7 +23841,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -23943,7 +23943,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/integration";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -24042,7 +24042,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/key/{keyId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "keyRequest", "json");
@@ -24140,7 +24140,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/lambda/{lambdaId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "lambdaRequest", "json");
@@ -24243,7 +24243,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -24346,7 +24346,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/messenger/{messengerId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "messengerRequest", "json");
@@ -24447,7 +24447,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/registration/{userId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -24554,7 +24554,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/system-configuration";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -24655,7 +24655,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/tenant/{tenantId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "tenantRequest", "json");
@@ -24759,7 +24759,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/theme/{themeId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "themeRequest", "json");
@@ -24861,7 +24861,7 @@ export class SDK {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -24968,7 +24968,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user-action/{userActionId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -25077,7 +25077,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/consent/{userConsentId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -25356,7 +25356,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/user/{userId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "userRequest", "json");
@@ -25460,7 +25460,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/webhook/{webhookId}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "webhookRequest", "json");
@@ -25561,7 +25561,7 @@ export class SDK {
         );
         const url: string = utils.generateURL(baseURL, "/api/entity/{entityId}/grant", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -25773,7 +25773,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/jwt/vend";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -25870,7 +25870,7 @@ export class SDK {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/api/user/verify-registration";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
