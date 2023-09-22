@@ -303,39 +303,39 @@ const sdk = new SDK({
 
 sdk.sdk.actionUserWithId({
   action: {
-    actioneeUserId: "9bd9d8d6-9a67-44e0-b467-cc8796ed151a",
-    actionerUserId: "05dfc2dd-f7cc-478c-a1ba-928fc816742c",
+    actioneeUserId: "bd9d8d69-a674-4e0f-867c-c8796ed151a0",
+    actionerUserId: "5dfc2ddf-7cc7-48ca-9ba9-28fc816742cb",
     applicationIds: [
-      "b7392059-2939-46fe-a759-6eb10faaa235",
+      "73920592-9396-4fea-b596-eb10faaa2352",
     ],
-    comment: "explicabo",
+    comment: "nobis",
     emailUser: false,
     expiry: 1659380719000,
     notifyUser: false,
-    option: "nobis",
-    reasonId: "5955907a-ff1a-43a2-ba94-67739251aa52",
-    userActionId: "c3f5ad01-9da1-4ffe-b8f0-97b0074f1547",
+    option: "enim",
+    reasonId: "955907af-f1a3-4a2f-a946-7739251aa52c",
+    userActionId: "3f5ad019-da1f-4fe7-8f09-7b0074f15471",
   },
   broadcast: false,
   eventInfo: {
     data: {
-      "dicta": {},
+      "harum": {},
     },
-    deviceDescription: "harum",
-    deviceName: "enim",
-    deviceType: "accusamus",
-    ipAddress: "commodi",
+    deviceDescription: "enim",
+    deviceName: "accusamus",
+    deviceType: "commodi",
+    ipAddress: "repudiandae",
     location: {
-      city: "Beaumont",
-      country: "Croatia",
-      displayString: "quidem",
-      latitude: 5651.89,
-      longitude: 5666.02,
-      region: "pariatur",
-      zipcode: "55909",
+      city: "East Mathildestad",
+      country: "Mayotte",
+      displayString: "pariatur",
+      latitude: 2653.89,
+      longitude: 5089.69,
+      region: "rem",
+      zipcode: "09509-2306",
     },
-    os: "sint",
-    userAgent: "veritatis",
+    os: "quibusdam",
+    userAgent: "explicabo",
   },
 }).then((res: ActionUserWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -374,8 +374,8 @@ const sdk = new SDK({
 });
 
 sdk.sdk.activateReactorWithId({
-  license: "itaque",
-  licenseId: "incidunt",
+  license: "deserunt",
+  licenseId: "distinctio",
 }).then((res: ActivateReactorWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -412,20 +412,20 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-const familyId: string = "enim";
+const familyId: string = "quibusdam";
 const familyRequest: FamilyRequest = {
   familyMember: {
     data: {
-      "consequatur": {},
+      "labore": {},
     },
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     owner: false,
-    role: FamilyRole.Adult,
-    userId: "d2abd442-6980-42d5-82a9-4bb4f63c969e",
+    role: FamilyRole.Child,
+    userId: "269802d5-02a9-44bb-8f63-c969e9a3efa7",
   },
 };
-const xFusionAuthTenantId: string = "sint";
+const xFusionAuthTenantId: string = "in";
 
 sdk.sdk.addUserToFamilyWithId(familyId, familyRequest, xFusionAuthTenantId).then((res: AddUserToFamilyWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -465,42 +465,42 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-const actionId: string = "officia";
+const actionId: string = "illum";
 const actionRequest: ActionRequest = {
   action: {
-    actioneeUserId: "3efa77df-b14c-4d66-ae39-5efb9ba88f3a",
-    actionerUserId: "66997074-ba44-469b-ae21-41959890afa5",
+    actioneeUserId: "fb14cd66-ae39-45ef-b9ba-88f3a6699707",
+    actionerUserId: "4ba4469b-6e21-4419-9989-0afa563e2516",
     applicationIds: [
-      "63e2516f-e4c8-4b71-9e5b-7fd2ed028921",
+      "fe4c8b71-1e5b-47fd-aed0-28921cddc692",
     ],
-    comment: "quo",
+    comment: "ea",
     emailUser: false,
     expiry: 1659380719000,
     notifyUser: false,
-    option: "illum",
-    reasonId: "dc692601-fb57-46b0-95f0-d30c5fbb2587",
-    userActionId: "053202c7-3d5f-4e9b-90c2-8909b3fe49a8",
+    option: "accusantium",
+    reasonId: "1fb576b0-d5f0-4d30-85fb-b2587053202c",
+    userActionId: "73d5fe9b-90c2-4890-9b3f-e49a8d9cbf48",
   },
   broadcast: false,
   eventInfo: {
     data: {
-      "pariatur": {},
+      "aliquid": {},
     },
-    deviceDescription: "provident",
-    deviceName: "nobis",
-    deviceType: "libero",
-    ipAddress: "delectus",
+    deviceDescription: "dolorem",
+    deviceName: "dolorem",
+    deviceType: "dolor",
+    ipAddress: "qui",
     location: {
-      city: "New Granville",
-      country: "Cote d'Ivoire",
-      displayString: "dolorem",
-      latitude: 2224.43,
-      longitude: 1861.93,
-      region: "ipsum",
-      zipcode: "57449-2620",
+      city: "Fort Kevin",
+      country: "Rwanda",
+      displayString: "voluptate",
+      latitude: 4904.59,
+      longitude: 9702.37,
+      region: "amet",
+      zipcode: "20004-4386",
     },
-    os: "ipsa",
-    userAgent: "ipsa",
+    os: "voluptatibus",
+    userAgent: "voluptas",
   },
 };
 
@@ -542,34 +542,34 @@ const sdk = new SDK({
 });
 
 sdk.sdk.changePasswordByIdentityWithId({
-  applicationId: "674ebf69-280d-41ba-b7a8-9ebf737ae420",
-  changePasswordId: "amet",
-  currentPassword: "optio",
+  applicationId: "9280d1ba-77a8-49eb-b737-ae4203ce5e6a",
+  changePasswordId: "provident",
+  currentPassword: "minima",
   eventInfo: {
     data: {
-      "accusamus": {},
+      "repellendus": {},
     },
-    deviceDescription: "ad",
-    deviceName: "saepe",
-    deviceType: "suscipit",
-    ipAddress: "deserunt",
+    deviceDescription: "totam",
+    deviceName: "similique",
+    deviceType: "alias",
+    ipAddress: "at",
     location: {
-      city: "Ephraimhaven",
-      country: "Macao",
-      displayString: "similique",
-      latitude: 0.55,
-      longitude: 8726.51,
-      region: "quaerat",
-      zipcode: "47816",
+      city: "West Herminia",
+      country: "Seychelles",
+      displayString: "officiis",
+      latitude: 1856.36,
+      longitude: 6798.8,
+      region: "a",
+      zipcode: "64279",
     },
-    os: "a",
-    userAgent: "esse",
+    os: "amet",
+    userAgent: "tempore",
   },
-  loginId: "harum",
-  password: "iusto",
-  refreshToken: "ipsum",
-  trustChallenge: "quisquam",
-  trustToken: "tenetur",
+  loginId: "accusamus",
+  password: "numquam",
+  refreshToken: "enim",
+  trustChallenge: "dolorem",
+  trustToken: "sapiente",
 }).then((res: ChangePasswordByIdentityWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -606,36 +606,36 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-const changePasswordId: string = "amet";
+const changePasswordId: string = "totam";
 const changePasswordRequest: ChangePasswordRequest = {
-  applicationId: "be453f87-0b32-46b5-a734-29cdb1a8422b",
-  changePasswordId: "facilis",
-  currentPassword: "aliquid",
+  applicationId: "70b326b5-a734-429c-9b1a-8422bb679d23",
+  changePasswordId: "fugit",
+  currentPassword: "magni",
   eventInfo: {
     data: {
-      "quam": {},
+      "odio": {},
     },
-    deviceDescription: "molestias",
-    deviceName: "temporibus",
-    deviceType: "qui",
-    ipAddress: "neque",
+    deviceDescription: "sunt",
+    deviceName: "ullam",
+    deviceType: "nam",
+    ipAddress: "hic",
     location: {
-      city: "East Jeffereyland",
-      country: "Guatemala",
-      displayString: "nam",
-      latitude: 9404.32,
-      longitude: 304.52,
-      region: "cumque",
-      zipcode: "70920-7575",
+      city: "Port Nedfort",
+      country: "Benin",
+      displayString: "saepe",
+      latitude: 2174.5,
+      longitude: 834.22,
+      region: "nobis",
+      zipcode: "75092-2226",
     },
-    os: "aperiam",
-    userAgent: "delectus",
+    os: "architecto",
+    userAgent: "quae",
   },
-  loginId: "dolorem",
-  password: "dolore",
-  refreshToken: "labore",
-  trustChallenge: "adipisci",
-  trustToken: "dolorum",
+  loginId: "aut",
+  password: "quas",
+  refreshToken: "itaque",
+  trustChallenge: "consequatur",
+  trustToken: "est",
 };
 
 sdk.sdk.changePasswordWithId(changePasswordId, changePasswordRequest).then((res: ChangePasswordWithIdResponse) => {
@@ -677,7 +677,7 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-const changePasswordId: string = "architecto";
+const changePasswordId: string = "repellendus";
 
 sdk.sdk.checkChangePasswordUsingIdWithId(changePasswordId).then((res: CheckChangePasswordUsingIdWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -717,14 +717,14 @@ const sdk = new SDK({
 });
 const userCommentRequest: UserCommentRequest = {
   userComment: {
-    comment: "quae",
-    commenterId: "08e0adcf-4b92-4187-9fce-953f73ef7fbc",
-    id: "7abd74dd-39c0-4f5d-acff-7c70a45626d4",
+    comment: "porro",
+    commenterId: "f4b92187-9fce-4953-b73e-f7fbc7abd74d",
+    id: "d39c0f5d-2cff-47c7-8a45-626d436813f1",
     insertInstant: 1659380719000,
-    userId: "36813f16-d9f5-4fce-ac55-6146c3e250fb",
+    userId: "6d9f5fce-6c55-4614-ac3e-250fb008c42e",
   },
 };
-const xFusionAuthTenantId: string = "aut";
+const xFusionAuthTenantId: string = "inventore";
 
 sdk.sdk.commentOnUserWithId(userCommentRequest, xFusionAuthTenantId).then((res: CommentOnUserWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -765,44 +765,44 @@ const sdk = new SDK({
 });
 
 sdk.sdk.completeWebAuthnAssertionWithId({
-  applicationId: "08c42e14-1aac-4366-88dd-6b1442907474",
+  applicationId: "41aac366-c8dd-46b1-8429-07474778a7bd",
   credential: {
     clientExtensionResults: {
       credProps: {
         rk: false,
       },
     },
-    id: "778a7bd4-66d2-48c1-8ab3-cdca4251904e",
+    id: "466d28c1-0ab3-4cdc-a425-1904e523c7e0",
     response: {
-      authenticatorData: "ipsam",
-      clientDataJSON: "aspernatur",
-      signature: "sequi",
-      userHandle: "quo",
+      authenticatorData: "distinctio",
+      clientDataJSON: "quod",
+      signature: "dignissimos",
+      userHandle: "inventore",
     },
-    rpId: "esse",
-    type: "recusandae",
+    rpId: "nihil",
+    type: "totam",
   },
-  ipAddress: "aperiam",
+  ipAddress: "accusamus",
   metaData: {
     data: {
-      "distinctio": {},
+      "aliquam": {},
     },
     device: {
-      description: "quod",
-      lastAccessedAddress: "dignissimos",
+      description: "odio",
+      lastAccessedAddress: "occaecati",
       lastAccessedInstant: 1659380719000,
-      name: "Jackie Leannon",
-      type: DeviceType.Other,
+      name: "Miranda Daniel",
+      type: DeviceType.Browser,
     },
     scopes: [
-      "occaecati",
+      "porro",
     ],
   },
   newDevice: false,
   noJWT: false,
-  origin: "commodi",
-  rpId: "sapiente",
-  twoFactorTrustId: "dolores",
+  origin: "eum",
+  rpId: "quas",
+  twoFactorTrustId: "praesentium",
 }).then((res: CompleteWebAuthnAssertionWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -841,44 +841,44 @@ const sdk = new SDK({
 });
 
 sdk.sdk.completeWebAuthnLoginWithId({
-  applicationId: "a70c6882-82aa-4482-962f-222e9817ee17",
+  applicationId: "282aa482-562f-4222-a981-7ee17cbe61e6",
   credential: {
     clientExtensionResults: {
       credProps: {
         rk: false,
       },
     },
-    id: "cbe61e6b-7b95-4bc0-ab3c-20c4f3789fd8",
+    id: "b7b95bc0-ab3c-420c-8f37-89fd871f99dd",
     response: {
-      authenticatorData: "esse",
-      clientDataJSON: "quasi",
-      signature: "a",
-      userHandle: "error",
+      authenticatorData: "quia",
+      clientDataJSON: "eveniet",
+      signature: "asperiores",
+      userHandle: "facere",
     },
-    rpId: "sint",
-    type: "pariatur",
+    rpId: "veritatis",
+    type: "consequuntur",
   },
-  ipAddress: "possimus",
+  ipAddress: "quasi",
   metaData: {
     data: {
-      "quia": {},
+      "similique": {},
     },
     device: {
-      description: "eveniet",
-      lastAccessedAddress: "asperiores",
+      description: "culpa",
+      lastAccessedAddress: "aliquid",
       lastAccessedInstant: 1659380719000,
-      name: "Miss Peter Cronin",
-      type: DeviceType.Mobile,
+      name: "Scott Wehner",
+      type: DeviceType.Laptop,
     },
     scopes: [
-      "tenetur",
+      "libero",
     ],
   },
   newDevice: false,
   noJWT: false,
-  origin: "quae",
-  rpId: "earum",
-  twoFactorTrustId: "vel",
+  origin: "illum",
+  rpId: "soluta",
+  twoFactorTrustId: "accusantium",
 }).then((res: CompleteWebAuthnLoginWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -922,20 +922,20 @@ sdk.sdk.completeWebAuthnRegistrationWithId({
         rk: false,
       },
     },
-    id: "74bdb04f-1575-4608-ad68-ea19f1d17051",
+    id: "4f157560-82d6-48ea-99f1-d17051339d08",
     response: {
-      attestationObject: "consectetur",
-      clientDataJSON: "adipisci",
+      attestationObject: "aut",
+      clientDataJSON: "laudantium",
     },
-    rpId: "iste",
+    rpId: "eum",
     transports: [
-      "temporibus",
+      "mollitia",
     ],
-    type: "accusantium",
+    type: "ab",
   },
-  origin: "rem",
-  rpId: "aut",
-  userId: "86a18403-94c2-4607-9f93-f5f0642dac7a",
+  origin: "corrupti",
+  rpId: "non",
+  userId: "0394c260-71f9-43f5-b064-2dac7af515cc",
 }).then((res: CompleteWebAuthnRegistrationWithIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -974,27 +974,27 @@ const sdk = new SDK({
 
 sdk.sdk.createAPIKey({
   apiKey: {
-    id: "f515cc41-3aa6-43aa-a8d6-7864dbb675fd",
+    id: "413aa63a-ae8d-4678-a4db-b675fd5e60b3",
     insertInstant: 1659380719000,
-    ipAccessControlListId: "5e60b375-ed4f-46fb-ae41-f33317fe35b6",
-    key: "ipsa",
+    ipAccessControlListId: "75ed4f6f-bee4-41f3-b317-fe35b60eb1ea",
+    key: "tempora",
     keyManager: false,
     lastUpdateInstant: 1659380719000,
     metaData: {
       attributes: {
-        "voluptates": "libero",
+        "aspernatur": "voluptas",
       },
     },
     permissions: {
       endpoints: {
-        "vitae": [
-          "accusamus",
+        "voluptas": [
+          "voluptas",
         ],
       },
     },
-    tenantId: "a426555b-a3c2-4874-8ed5-3b88f3a8d8f5",
+    tenantId: "5ba3c287-44ed-453b-88f3-a8d8f5c0b2f2",
   },
-  sourceKeyId: "c0b2f2fb-7b19-44a2-b6b2-6916fe1f08f4",
+  sourceKeyId: "fb7b194a-276b-4269-96fe-1f08f4294e36",
 }).then((res: CreateAPIKeyResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1031,30 +1031,30 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-const keyId: string = "sed";
+const keyId: string = "occaecati";
 const apiKeyRequest: APIKeyRequest = {
   apiKey: {
-    id: "94e3698f-447f-4603-a8b4-45e80ca55efd",
+    id: "8f447f60-3e8b-4445-a80c-a55efd20e457",
     insertInstant: 1659380719000,
-    ipAccessControlListId: "20e457e1-858b-46a8-9fbe-3a5aa8e4824d",
-    key: "voluptatem",
+    ipAccessControlListId: "e1858b6a-89fb-4e3a-9aa8-e4824d0ab407",
+    key: "ipsam",
     keyManager: false,
     lastUpdateInstant: 1659380719000,
     metaData: {
       attributes: {
-        "culpa": "expedita",
+        "sit": "voluptatum",
       },
     },
     permissions: {
       endpoints: {
-        "magnam": [
-          "consequatur",
+        "quas": [
+          "repudiandae",
         ],
       },
     },
-    tenantId: "75088e51-8620-465e-904f-3b1194b8abf6",
+    tenantId: "51862065-e904-4f3b-9194-b8abf603a79f",
   },
-  sourceKeyId: "03a79f9d-fe0a-4b7d-a8a5-0ce187f86bc1",
+  sourceKeyId: "9dfe0ab7-da8a-450c-a187-f86bc173d689",
 };
 
 sdk.sdk.createApiKeyWithId(keyId, apiKeyRequest).then((res: CreateApiKeyWithIdResponse) => {
@@ -1149,74 +1149,74 @@ const sdk = new SDK({
 const applicationRequest: ApplicationRequest = {
   application: {
     accessControlConfiguration: {
-      uiIPAccessControlListId: "73d689ee-e952-46f8-9986-e881ead4f0e1",
+      uiIPAccessControlListId: "eee9526f-8d98-46e8-81ea-d4f0e1012563",
     },
     active: false,
     authenticationTokenConfiguration: {
       enabled: false,
     },
     cleanSpeakConfiguration: {
-      apiKey: "accusantium",
+      apiKey: "a",
       applicationIds: [
-        "12563f94-e29e-4973-a922-a57a15be3e06",
+        "94e29e97-3e92-42a5-ba15-be3e060807e2",
       ],
       enabled: false,
-      url: "ipsa",
+      url: "cum",
       usernameModeration: {
-        applicationId: "807e2b6e-3ab8-4845-b059-7a60ff2a54a3",
+        applicationId: "6e3ab884-5f05-497a-a0ff-2a54a31e9476",
         enabled: false,
       },
     },
     data: {
-      "quae": {},
+      "ut": {},
     },
     emailConfiguration: {
-      emailUpdateEmailTemplateId: "e94764a3-e865-4e79-96f9-251a5a9da660",
-      emailVerificationEmailTemplateId: "ff57bfaa-d4f9-4efc-9b45-12c1032648dc",
-      emailVerifiedEmailTemplateId: "2f615199-ebfd-40e9-be6c-632ca3aed011",
-      forgotPasswordEmailTemplateId: "7996312f-de04-4771-b78f-f61d01747636",
-      loginIdInUseOnCreateEmailTemplateId: "0a15db6a-6606-459a-9ade-aab5851d6c64",
-      loginIdInUseOnUpdateEmailTemplateId: "5b08b618-91ba-4a0f-a1ad-e008e6f8c5f3",
-      loginNewDeviceEmailTemplateId: "50d8cdb5-a341-4814-b010-421813d5208e",
-      loginSuspiciousEmailTemplateId: "ce7e253b-6684-451c-ac6e-205e16deab3f",
-      passwordResetSuccessEmailTemplateId: "ec9578a6-4584-4273-a841-8d162309fb09",
-      passwordUpdateEmailTemplateId: "29921aef-b9f5-48c4-986e-68e4be056013",
-      passwordlessEmailTemplateId: "f59da757-a59e-4cfe-b66e-f1caa3383c2b",
-      setPasswordEmailTemplateId: "eb477373-c8d7-42f6-8d1d-b1f2c4310661",
-      twoFactorMethodAddEmailTemplateId: "e96349e1-cf9e-406e-ba43-7000ae6b6bc9",
-      twoFactorMethodRemoveEmailTemplateId: "b8f759ea-c55a-4974-9d31-1352965bb8a7",
+      emailUpdateEmailTemplateId: "a3e865e7-956f-4925-9a5a-9da660ff57bf",
+      emailVerificationEmailTemplateId: "aad4f9ef-c1b4-4512-8103-2648dc2f6151",
+      emailVerifiedEmailTemplateId: "99ebfd0e-9fe6-4c63-aca3-aed011799631",
+      forgotPasswordEmailTemplateId: "2fde0477-1778-4ff6-9d01-7476360a15db",
+      loginIdInUseOnCreateEmailTemplateId: "6a660659-a1ad-4eaa-b585-1d6c645b08b6",
+      loginIdInUseOnUpdateEmailTemplateId: "1891baa0-fe1a-4de0-88e6-f8c5f350d8cd",
+      loginNewDeviceEmailTemplateId: "b5a34181-4301-4042-9813-d5208ece7e25",
+      loginSuspiciousEmailTemplateId: "3b668451-c6c6-4e20-9e16-deab3fec9578",
+      passwordResetSuccessEmailTemplateId: "a6458427-3a84-418d-9623-09fb0929921a",
+      passwordUpdateEmailTemplateId: "efb9f58c-4d86-4e68-a4be-056013f59da7",
+      passwordlessEmailTemplateId: "57a59ecf-ef66-4ef1-8aa3-383c2beb4773",
+      setPasswordEmailTemplateId: "73c8d72f-64d1-4db1-b2c4-310661e96349",
+      twoFactorMethodAddEmailTemplateId: "e1cf9e06-e3a4-4370-80ae-6b6bc9b8f759",
+      twoFactorMethodRemoveEmailTemplateId: "eac55a97-41d3-4113-9296-5bb8a7202611",
     },
     externalIdentifierConfiguration: {
-      twoFactorTrustIdTimeToLiveInSeconds: 144691,
+      twoFactorTrustIdTimeToLiveInSeconds: 264333,
     },
     formConfiguration: {
-      adminRegistrationFormId: "02611435-e139-4dbc-a259-b1abda8c070e",
+      adminRegistrationFormId: "35e139db-c225-49b1-abda-8c070e1084cb",
       selfServiceFormConfiguration: {
         requireCurrentPasswordOnPasswordChange: false,
       },
-      selfServiceFormId: "1084cb06-72d1-4ad8-b9ee-b9665b85efbd",
+      selfServiceFormId: "0672d1ad-879e-4eb9-a65b-85efbd02bae0",
     },
-    id: "02bae0be-2d78-4225-9e3e-a4b5197f9244",
+    id: "be2d7822-59e3-4ea4-b519-7f92443da7ce",
     insertInstant: 1659380719000,
     jwtConfiguration: {
-      accessTokenKeyId: "3da7ce52-b895-4c53-bc64-54efb0b34896",
+      accessTokenKeyId: "52b895c5-37c6-4454-afb0-b34896c3ca5a",
       enabled: false,
-      idTokenKeyId: "c3ca5acf-be2f-4d57-8757-7929177deac6",
+      idTokenKeyId: "cfbe2fd5-7075-4779-a917-7deac646ecb5",
       refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.Fixed,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
-      refreshTokenTimeToLiveInMinutes: 416692,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.OneTimeUse,
-      timeToLiveInSeconds: 810839,
+      refreshTokenTimeToLiveInMinutes: 211455,
+      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
+      timeToLiveInSeconds: 59383,
     },
     lambdaConfiguration: {
-      accessTokenPopulateId: "b573409e-3eb1-4e5a-ab12-eb07f116db99",
-      idTokenPopulateId: "545fc95f-a889-470e-989d-bb30fcb33ea0",
-      samlv2PopulateId: "55b197cd-44e2-4f52-982d-3513bb6f48b6",
-      selfServiceRegistrationValidationId: "56bcdb35-ff2e-44b2-b537-a8cd9e7319c1",
+      accessTokenPopulateId: "9e3eb1e5-a2b1-42eb-87f1-16db99545fc9",
+      idTokenPopulateId: "5fa88970-e189-4dbb-b0fc-b33ea055b197",
+      samlv2PopulateId: "cd44e2f5-2d82-4d35-93bb-6f48b656bcdb",
+      selfServiceRegistrationValidationId: "35ff2e4b-2753-47a8-8d9e-7319c177d525",
     },
     lastUpdateInstant: 1659380719000,
     loginConfiguration: {
@@ -1226,34 +1226,34 @@ const applicationRequest: ApplicationRequest = {
     },
     multiFactorConfiguration: {
       email: {
-        templateId: "77d525f7-7b11-44ee-b52f-f785fc37814d",
+        templateId: "f77b114e-eb52-4ff7-85fc-37814d4c98e0",
       },
-      loginPolicy: MultiFactorLoginPolicy.Disabled,
+      loginPolicy: MultiFactorLoginPolicy.Required,
       sms: {
-        templateId: "c98e0c2b-b89e-4b75-9ad6-36c600503d8b",
+        templateId: "2bb89eb7-5dad-4636-8600-503d8bb31180",
       },
       trustPolicy: ApplicationMultiFactorTrustPolicy.None,
     },
-    name: "Joyce Carroll DVM",
+    name: "Wendy McKenzie",
     oauthConfiguration: {
       authorizedOriginURLs: [
-        "iusto",
+        "provident",
       ],
       authorizedRedirectURLs: [
-        "amet",
+        "repudiandae",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.ExactMatch,
-      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequiredWhenUsingPKCE,
-      clientId: "necessitatibus",
-      clientSecret: "provident",
+      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.AllowWildcards,
+      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequired,
+      clientId: "molestiae",
+      clientSecret: "itaque",
       debug: false,
-      deviceVerificationURL: "repudiandae",
+      deviceVerificationURL: "facilis",
       enabledGrants: [
-        "consequatur",
+        "corrupti",
       ],
       generateRefreshTokens: false,
       logoutBehavior: LogoutBehavior.RedirectOnly,
-      logoutURL: "molestiae",
+      logoutURL: "sint",
       proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequiredWhenUsingClientAuthentication,
       requireClientAuthentication: false,
       requireRegistration: false,
@@ -1272,7 +1272,7 @@ const applicationRequest: ApplicationRequest = {
         enabled: false,
         required: false,
       },
-      formId: "b809e281-0331-4f39-81d4-c700b607f3c9",
+      formId: "2810331f-3981-4d4c-b00b-607f3c93c73b",
       fullName: {
         enabled: false,
         required: false,
@@ -1281,7 +1281,7 @@ const applicationRequest: ApplicationRequest = {
         enabled: false,
         required: false,
       },
-      loginIdType: LoginIdType.Email,
+      loginIdType: LoginIdType.Username,
       middleName: {
         enabled: false,
         required: false,
@@ -1295,60 +1295,60 @@ const applicationRequest: ApplicationRequest = {
     registrationDeletePolicy: {
       unverified: {
         enabled: false,
-        numberOfDaysToRetain: 490110,
+        numberOfDaysToRetain: 639622,
       },
     },
     roles: [
       {
-        description: "consectetur",
-        id: "b9da3f2c-eda7-4e23-b225-7411faf4b754",
+        description: "amet",
+        id: "f2ceda7e-23f2-4257-811f-af4b7544e472",
         insertInstant: 1659380719000,
         isDefault: false,
         isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "Casey Gleason PhD",
+        name: "Ian Baumbach",
       },
     ],
     samlv2Configuration: {
-      audience: "rem",
+      audience: "enim",
       authorizedRedirectURLs: [
-        "aperiam",
+        "voluptate",
       ],
-      callbackURL: "odit",
+      callbackURL: "similique",
       debug: false,
-      defaultVerificationKeyId: "857a5b40-463a-47d5-b5f1-400e764ad733",
+      defaultVerificationKeyId: "5b40463a-7d57-45f1-800e-764ad7334ec1",
       enabled: false,
       initiatedLogin: {
         enabled: false,
-        nameIdFormat: "quaerat",
+        nameIdFormat: "distinctio",
       },
-      issuer: "itaque",
-      keyId: "c1b781b3-6a08-4088-9100-efada200ef04",
+      issuer: "iusto",
+      keyId: "81b36a08-088d-4100-afad-a200ef0422eb",
       logout: {
         behavior: SAMLLogoutBehavior.AllParticipants,
-        defaultVerificationKeyId: "2eb2164c-f9ab-4836-ac72-3ffda9e06bee",
-        keyId: "4825c1fc-0e11-45c8-8bff-918544ec42de",
+        defaultVerificationKeyId: "164cf9ab-8366-4c72-bffd-a9e06bee4825",
+        keyId: "c1fc0e11-5c80-4bff-9185-44ec42defcce",
         requireSignedRequests: false,
         singleLogout: {
           enabled: false,
-          keyId: "fcce8f19-7777-43e6-b562-a7b408f05e3d",
-          url: "aliquam",
-          xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
+          keyId: "8f197777-3e63-4562-a7b4-08f05e3d48fd",
+          url: "est",
+          xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
         },
-        xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
+        xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
       },
-      logoutURL: "fugiat",
+      logoutURL: "vitae",
       requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
+      xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
       xmlSignatureLocation: XMLSignatureLocation.Response,
     },
     state: ObjectState.Active,
-    tenantId: "13a1f5fd-9425-49c0-b36f-25ea944f3b75",
-    themeId: "6c11f6c3-7a51-4262-8383-5bbc05a23a45",
+    tenantId: "f5fd9425-9c0b-436f-a5ea-944f3b756c11",
+    themeId: "f6c37a51-2624-4383-9bbc-05a23a45cefc",
     unverified: {
-      behavior: UnverifiedBehavior.Gated,
+      behavior: UnverifiedBehavior.Allow,
     },
-    verificationEmailTemplateId: "efc5fde1-0a0c-4e21-a9e5-10019c6dc5e3",
+    verificationEmailTemplateId: "fde10a0c-e216-49e5-9001-9c6dc5e34762",
     verificationStrategy: VerificationStrategy.ClickableLink,
     verifyRegistration: false,
     webAuthnConfiguration: {
@@ -1363,36 +1363,36 @@ const applicationRequest: ApplicationRequest = {
   },
   eventInfo: {
     data: {
-      "dignissimos": {},
+      "natus": {},
     },
-    deviceDescription: "laboriosam",
-    deviceName: "sed",
-    deviceType: "odio",
-    ipAddress: "natus",
+    deviceDescription: "provident",
+    deviceName: "cum",
+    deviceType: "doloribus",
+    ipAddress: "facilis",
     location: {
-      city: "Myrtleworth",
-      country: "Philippines",
-      displayString: "quidem",
-      latitude: 9320.8,
-      longitude: 3895.48,
-      region: "unde",
-      zipcode: "59717",
+      city: "Watersbury",
+      country: "Morocco",
+      displayString: "modi",
+      latitude: 5951.98,
+      longitude: 9446.26,
+      region: "cum",
+      zipcode: "77297",
     },
-    os: "nam",
-    userAgent: "incidunt",
+    os: "id",
+    userAgent: "saepe",
   },
   role: {
-    description: "recusandae",
-    id: "cae6c3d5-db3a-4deb-95da-ea4c506a8aa9",
+    description: "autem",
+    id: "c3d5db3a-debd-45da-aa4c-506a8aa94c02",
     insertInstant: 1659380719000,
     isDefault: false,
     isSuperRole: false,
     lastUpdateInstant: 1659380719000,
-    name: "Roxanne Aufderhar",
+    name: "Megan Hackett",
   },
-  sourceApplicationId: "44cf5e9d-9a45-478a-9c1a-c600dec001ac",
+  sourceApplicationId: "5e9d9a45-78ad-4c1a-8600-dec001ac802e",
 };
-const xFusionAuthTenantId: string = "blanditiis";
+const xFusionAuthTenantId: string = "sed";
 
 sdk.sdk.createApplication(applicationRequest, xFusionAuthTenantId).then((res: CreateApplicationResponse) => {
   if (res.statusCode == 200) {
@@ -1483,78 +1483,78 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-const applicationId: string = "quae";
+const applicationId: string = "necessitatibus";
 const applicationRequest: ApplicationRequest = {
   application: {
     accessControlConfiguration: {
-      uiIPAccessControlListId: "2e2ec09f-f8f0-4f81-aff3-477c13e902c1",
+      uiIPAccessControlListId: "c09ff8f0-f816-4ff3-877c-13e902c14125",
     },
     active: false,
     authenticationTokenConfiguration: {
       enabled: false,
     },
     cleanSpeakConfiguration: {
-      apiKey: "incidunt",
+      apiKey: "rerum",
       applicationIds: [
-        "125b0960-a668-4151-a472-af923c5949f8",
+        "0960a668-151a-4472-af92-3c5949f83f35",
       ],
       enabled: false,
-      url: "velit",
+      url: "ipsa",
       usernameModeration: {
-        applicationId: "f350cf87-6ffb-4901-86ec-bb4e243cf789",
+        applicationId: "cf876ffb-901c-46ec-bb4e-243cf789ffaf",
         enabled: false,
       },
     },
     data: {
-      "repellat": {},
+      "itaque": {},
     },
     emailConfiguration: {
-      emailUpdateEmailTemplateId: "fafeda53-e5ae-46e0-ac18-4c2b9c247c88",
-      emailVerificationEmailTemplateId: "373a40e1-942f-432e-9505-5756f5d56d0b",
-      emailVerifiedEmailTemplateId: "d0af2dfe-13db-44f6-acba-3f8941aebc0b",
-      forgotPasswordEmailTemplateId: "80a6924d-3b2e-4cfc-88f8-95010f5dd3d6",
-      loginIdInUseOnCreateEmailTemplateId: "fa1804e5-4c82-4f16-8a36-3c8873e48438",
-      loginIdInUseOnUpdateEmailTemplateId: "0b1f6b8c-a275-4a60-a04c-495cc699171b",
-      loginNewDeviceEmailTemplateId: "51c1bdb1-cf4b-4888-abdf-c4ccca99bc7f",
-      loginSuspiciousEmailTemplateId: "c0b2dce1-0873-4e42-b006-d678878ba858",
-      passwordResetSuccessEmailTemplateId: "1a58208c-54fe-4fa9-895f-2eac5565d307",
-      passwordUpdateEmailTemplateId: "cfee8120-6e28-413f-a4a4-1c480d3f2132",
-      passwordlessEmailTemplateId: "af03102d-514f-44cc-af18-bf9621a6a4f7",
-      setPasswordEmailTemplateId: "7a87ee3e-4be7-452c-a5b3-4418e3bb91c8",
-      twoFactorMethodAddEmailTemplateId: "d975e0e8-419d-48f8-8f14-4f3e07edcc4a",
-      twoFactorMethodRemoveEmailTemplateId: "a5f3cabd-905a-4972-a056-728227b2d309",
+      emailUpdateEmailTemplateId: "da53e5ae-6e0a-4c18-8c2b-9c247c88373a",
+      emailVerificationEmailTemplateId: "40e1942f-32e5-4505-9756-f5d56d0bd0af",
+      emailVerifiedEmailTemplateId: "2dfe13db-4f62-4cba-bf89-41aebc0b80a6",
+      forgotPasswordEmailTemplateId: "924d3b2e-cfcc-48f8-9501-0f5dd3d6fa18",
+      loginIdInUseOnCreateEmailTemplateId: "04e54c82-f168-4a36-bc88-73e484380b1f",
+      loginIdInUseOnUpdateEmailTemplateId: "6b8ca275-a60a-404c-895c-c699171b51c1",
+      loginNewDeviceEmailTemplateId: "bdb1cf4b-888e-4bdf-84cc-ca99bc7fc0b2",
+      loginSuspiciousEmailTemplateId: "dce10873-e42b-4006-9678-878ba8581a58",
+      passwordResetSuccessEmailTemplateId: "208c54fe-fa9c-495f-aeac-5565d307cfee",
+      passwordUpdateEmailTemplateId: "81206e28-13fa-44a4-9c48-0d3f2132af03",
+      passwordlessEmailTemplateId: "102d514f-4cc6-4f18-bf96-21a6a4f77a87",
+      setPasswordEmailTemplateId: "ee3e4be7-52c6-45b3-8418-e3bb91c8d975",
+      twoFactorMethodAddEmailTemplateId: "e0e8419d-8f84-4f14-8f3e-07edcc4aa5f3",
+      twoFactorMethodRemoveEmailTemplateId: "cabd905a-972e-4056-b282-27b2d309470b",
     },
     externalIdentifierConfiguration: {
-      twoFactorTrustIdTimeToLiveInSeconds: 291389,
+      twoFactorTrustIdTimeToLiveInSeconds: 956545,
     },
     formConfiguration: {
-      adminRegistrationFormId: "70bf7a4f-a87c-4f53-9a6f-ae54ebf60c32",
+      adminRegistrationFormId: "7a4fa87c-f535-4a6f-ae54-ebf60c321f02",
       selfServiceFormConfiguration: {
         requireCurrentPasswordOnPasswordChange: false,
       },
-      selfServiceFormId: "1f023b75-d236-47fe-9a0c-c8df79f0a396",
+      selfServiceFormId: "3b75d236-7fe1-4a0c-88df-79f0a396d90c",
     },
-    id: "d90c364b-7c15-4dfb-ace1-88b1c4ee2c8c",
+    id: "364b7c15-dfba-4ce1-88b1-c4ee2c8c6ce6",
     insertInstant: 1659380719000,
     jwtConfiguration: {
-      accessTokenKeyId: "6ce611fe-eb1c-47cb-9b6e-ec74378ba253",
+      accessTokenKeyId: "11feeb1c-7cbd-4b6e-ac74-378ba2531774",
       enabled: false,
-      idTokenKeyId: "17747dc9-15ad-42ca-b5dd-6723dc0f5ae2",
+      idTokenKeyId: "7dc915ad-2caf-45dd-a723-dc0f5ae2f3a6",
       refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
-      refreshTokenTimeToLiveInMinutes: 204373,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.OneTimeUse,
-      timeToLiveInSeconds: 379661,
+      refreshTokenTimeToLiveInMinutes: 496578,
+      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
+      timeToLiveInSeconds: 20141,
     },
     lambdaConfiguration: {
-      accessTokenPopulateId: "b7008787-5614-43f5-a6c9-8b55554080d4",
-      idTokenPopulateId: "0bcacc6c-bd6b-45f3-ac90-9304f926bad2",
-      samlv2PopulateId: "553819b4-74b0-4ed2-8e56-248fff639a91",
-      selfServiceRegistrationValidationId: "0abdcab6-2676-4696-a1ec-00221b335d89",
+      accessTokenPopulateId: "87875614-3f5a-46c9-8b55-554080d40bca",
+      idTokenPopulateId: "cc6cbd6b-5f3e-4c90-9304-f926bad25538",
+      samlv2PopulateId: "19b474b0-ed20-4e56-a48f-ff639a910abd",
+      selfServiceRegistrationValidationId: "cab62676-696e-41ec-8022-1b335d89acb3",
     },
     lastUpdateInstant: 1659380719000,
     loginConfiguration: {
@@ -1564,35 +1564,35 @@ const applicationRequest: ApplicationRequest = {
     },
     multiFactorConfiguration: {
       email: {
-        templateId: "acb3ecfd-a8d0-4c54-9ef0-3004978a61fa",
+        templateId: "ecfda8d0-c549-4ef0-b004-978a61fa1cf2",
       },
       loginPolicy: MultiFactorLoginPolicy.Disabled,
       sms: {
-        templateId: "cf20688f-77c1-4ffc-b1dc-a163f2a3c80a",
+        templateId: "688f77c1-ffc7-41dc-a163-f2a3c80a97ff",
       },
-      trustPolicy: ApplicationMultiFactorTrustPolicy.This,
+      trustPolicy: ApplicationMultiFactorTrustPolicy.Any,
     },
-    name: "Mindy Williamson",
+    name: "Ellen Ruecker",
     oauthConfiguration: {
       authorizedOriginURLs: [
-        "non",
+        "tenetur",
       ],
       authorizedRedirectURLs: [
-        "optio",
+        "molestias",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.ExactMatch,
-      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequiredWhenUsingPKCE,
-      clientId: "tenetur",
-      clientSecret: "molestias",
+      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.AllowWildcards,
+      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequired,
+      clientId: "laborum",
+      clientSecret: "perspiciatis",
       debug: false,
-      deviceVerificationURL: "ipsam",
+      deviceVerificationURL: "voluptates",
       enabledGrants: [
-        "esse",
+        "eum",
       ],
       generateRefreshTokens: false,
-      logoutBehavior: LogoutBehavior.AllApplications,
-      logoutURL: "perspiciatis",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequiredWhenUsingClientAuthentication,
+      logoutBehavior: LogoutBehavior.RedirectOnly,
+      logoutURL: "quas",
+      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequired,
       requireClientAuthentication: false,
       requireRegistration: false,
     },
@@ -1610,7 +1610,7 @@ const applicationRequest: ApplicationRequest = {
         enabled: false,
         required: false,
       },
-      formId: "61876c6a-b21d-429d-bc94-d6fecd799390",
+      formId: "6c6ab21d-29df-4c94-96fe-cd799390066a",
       fullName: {
         enabled: false,
         required: false,
@@ -1628,65 +1628,65 @@ const applicationRequest: ApplicationRequest = {
         enabled: false,
         required: false,
       },
-      type: RegistrationType.Basic,
+      type: RegistrationType.Advanced,
     },
     registrationDeletePolicy: {
       unverified: {
         enabled: false,
-        numberOfDaysToRetain: 385291,
+        numberOfDaysToRetain: 129631,
       },
     },
     roles: [
       {
-        description: "laborum",
-        id: "6d2d0003-5533-48ce-8086-fa21e9152cb3",
+        description: "fugiat",
+        id: "00035533-8cec-4086-ba21-e9152cb31191",
         insertInstant: 1659380719000,
         isDefault: false,
         isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "Ms. Joan Mann",
+        name: "Caroline Rempel",
       },
     ],
     samlv2Configuration: {
-      audience: "libero",
+      audience: "ipsum",
       authorizedRedirectURLs: [
-        "molestias",
+        "impedit",
       ],
-      callbackURL: "necessitatibus",
+      callbackURL: "quos",
       debug: false,
-      defaultVerificationKeyId: "3c8db034-08d6-4d36-8ffd-455906d1263d",
+      defaultVerificationKeyId: "db03408d-6d36-44ff-9455-906d1263d48e",
       enabled: false,
       initiatedLogin: {
         enabled: false,
-        nameIdFormat: "numquam",
+        nameIdFormat: "omnis",
       },
-      issuer: "rem",
-      keyId: "e935c2c9-e81f-430b-a3e4-3202d7216576",
+      issuer: "neque",
+      keyId: "5c2c9e81-f30b-4e3e-8320-2d7216576506",
       logout: {
         behavior: SAMLLogoutBehavior.AllParticipants,
-        defaultVerificationKeyId: "06641870-d9d2-41f9-ad03-0c4ecc11a083",
-        keyId: "6429068b-8502-4a55-a7f7-3bc845e320a3",
+        defaultVerificationKeyId: "41870d9d-21f9-4ad0-b0c4-ecc11a083642",
+        keyId: "9068b850-2a55-4e7f-b3bc-845e320a319f",
         requireSignedRequests: false,
         singleLogout: {
           enabled: false,
-          keyId: "19f4badf-947c-49a8-a7bc-42426665816d",
-          url: "fugiat",
+          keyId: "4badf947-c9a8-467b-8424-26665816ddca",
+          url: "atque",
           xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
         },
-        xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
+        xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
       },
-      logoutURL: "atque",
+      logoutURL: "nemo",
       requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
+      xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
       xmlSignatureLocation: XMLSignatureLocation.Response,
     },
-    state: ObjectState.Inactive,
-    tenantId: "1fcb4c59-3ec1-42cd-aad0-ec7afedbd80d",
-    themeId: "f448a47f-9390-4c58-8809-83dabf9ef3ff",
+    state: ObjectState.PendingDelete,
+    tenantId: "b4c593ec-12cd-4aad-8ec7-afedbd80df44",
+    themeId: "8a47f939-0c58-4880-983d-abf9ef3ffdd9",
     unverified: {
       behavior: UnverifiedBehavior.Gated,
     },
-    verificationEmailTemplateId: "d9f7f079-af4d-4357-a4cd-b0f4d281187d",
+    verificationEmailTemplateId: "7f079af4-d357-424c-9b0f-4d281187d568",
     verificationStrategy: VerificationStrategy.ClickableLink,
     verifyRegistration: false,
     webAuthnConfiguration: {
@@ -1701,36 +1701,36 @@ const applicationRequest: ApplicationRequest = {
   },
   eventInfo: {
     data: {
-      "iure": {},
+      "magnam": {},
     },
-    deviceDescription: "laudantium",
-    deviceName: "modi",
-    deviceType: "magnam",
-    ipAddress: "accusamus",
+    deviceDescription: "accusamus",
+    deviceName: "nulla",
+    deviceType: "repudiandae",
+    ipAddress: "quibusdam",
     location: {
-      city: "Twin Falls",
-      country: "Suriname",
-      displayString: "praesentium",
-      latitude: 3154.65,
-      longitude: 6581.25,
-      region: "unde",
-      zipcode: "43931",
+      city: "Emeraldchester",
+      country: "Morocco",
+      displayString: "quae",
+      latitude: 4301.81,
+      longitude: 3414.05,
+      region: "eveniet",
+      zipcode: "15689",
     },
-    os: "blanditiis",
-    userAgent: "quidem",
+    os: "placeat",
+    userAgent: "dolores",
   },
   role: {
-    description: "illum",
-    id: "fc2032b6-c879-4923-b7e1-3584f7ae12c6",
+    description: "consequatur",
+    id: "32b6c879-923b-47e1-b584-f7ae12c6891f",
     insertInstant: 1659380719000,
     isDefault: false,
     isSuperRole: false,
     lastUpdateInstant: 1659380719000,
-    name: "Nick Brown",
+    name: "Bruce Roob Jr.",
   },
-  sourceApplicationId: "2ce11571-7230-4537-bdcf-a89df975e356",
+  sourceApplicationId: "57172305-377d-4cfa-89df-975e35668609",
 };
-const xFusionAuthTenantId: string = "vel";
+const xFusionAuthTenantId: string = "fugit";
 
 sdk.sdk.createApplicationRole(applicationId, applicationRequest, xFusionAuthTenantId).then((res: CreateApplicationRoleResponse) => {
   if (res.statusCode == 200) {
@@ -1822,79 +1822,79 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-const applicationId: string = "rem";
-const roleId: string = "aliquid";
+const applicationId: string = "itaque";
+const roleId: string = "unde";
 const applicationRequest: ApplicationRequest = {
   application: {
     accessControlConfiguration: {
-      uiIPAccessControlListId: "092e9c3d-dc5f-4111-9ea1-026d541a4d19",
+      uiIPAccessControlListId: "c3ddc5f1-11de-4a10-a6d5-41a4d190feb2",
     },
     active: false,
     authenticationTokenConfiguration: {
       enabled: false,
     },
     cleanSpeakConfiguration: {
-      apiKey: "alias",
+      apiKey: "vitae",
       applicationIds: [
-        "feb21780-bccc-40db-bddb-484708fb4e39",
+        "780bccc0-dbbd-4db4-8470-8fb4e391e6bc",
       ],
       enabled: false,
       url: "ab",
       usernameModeration: {
-        applicationId: "e6bc158c-4c4e-4545-99ea-342260e9b200",
+        applicationId: "58c4c4e5-4599-4ea3-8226-0e9b200ce78a",
         enabled: false,
       },
     },
     data: {
-      "impedit": {},
+      "et": {},
     },
     emailConfiguration: {
-      emailUpdateEmailTemplateId: "e78a1bd8-fb7a-40a1-96ce-723d4097fa30",
-      emailVerificationEmailTemplateId: "e9af725b-2912-4203-8d83-f5aeb7799d22",
-      emailVerifiedEmailTemplateId: "e8c1f849-3825-4fdc-82c8-76c2c2dfb4cf",
-      forgotPasswordEmailTemplateId: "c1c76230-f841-4fb1-bd23-fdb14db6be5a",
-      loginIdInUseOnCreateEmailTemplateId: "685998e2-2ae2-40da-96fc-2b271a289c57",
-      loginIdInUseOnUpdateEmailTemplateId: "e854e904-39d2-4224-a569-462407084f7a",
-      loginNewDeviceEmailTemplateId: "b37cef02-2251-494d-b554-10adc669af90",
-      loginSuspiciousEmailTemplateId: "a26c7cdc-981f-4068-981d-6bb33cfaa348",
-      passwordResetSuccessEmailTemplateId: "c31bf407-ee4f-4cf0-842b-78f15626398a",
-      passwordUpdateEmailTemplateId: "0dc76632-4ccb-406c-8ca1-2d02529270b8",
-      passwordlessEmailTemplateId: "d5722dd8-95b8-4bcf-a4db-959693352f74",
-      setPasswordEmailTemplateId: "533994d7-8de3-4b6e-9389-f5abb7f66255",
-      twoFactorMethodAddEmailTemplateId: "0a28382a-c483-4afd-a315-bba650164e06",
-      twoFactorMethodRemoveEmailTemplateId: "f5bf6ae5-91bc-48bd-af36-12b63c205fda",
+      emailUpdateEmailTemplateId: "bd8fb7a0-a116-4ce7-a3d4-097fa30e9af7",
+      emailVerificationEmailTemplateId: "25b29122-030d-483f-9aeb-7799d22e8c1f",
+      emailVerifiedEmailTemplateId: "8493825f-dc42-4c87-ac2c-2dfb4cfc1c76",
+      forgotPasswordEmailTemplateId: "230f841f-b1bd-423f-9b14-db6be5a68599",
+      loginIdInUseOnCreateEmailTemplateId: "8e22ae20-da16-4fc2-b271-a289c57e854e",
+      loginIdInUseOnUpdateEmailTemplateId: "90439d22-2465-4694-a240-7084f7ab37ce",
+      loginNewDeviceEmailTemplateId: "f0222519-4db5-4541-8adc-669af90a26c7",
+      loginSuspiciousEmailTemplateId: "cdc981f0-6898-41d6-bb33-cfaa348c31bf",
+      passwordResetSuccessEmailTemplateId: "407ee4fc-f0c4-42b7-8f15-626398a0dc76",
+      passwordUpdateEmailTemplateId: "6324ccb0-6c8c-4a12-9025-29270b8d5722",
+      passwordlessEmailTemplateId: "dd895b8b-cf24-4db9-9969-3352f7453399",
+      setPasswordEmailTemplateId: "4d78de3b-6e93-489f-9abb-7f662550a283",
+      twoFactorMethodAddEmailTemplateId: "82ac483a-fd23-415b-ba65-0164e06f5bf6",
+      twoFactorMethodRemoveEmailTemplateId: "ae591bc8-bdef-4361-ab63-c205fda84077",
     },
     externalIdentifierConfiguration: {
-      twoFactorTrustIdTimeToLiveInSeconds: 539537,
+      twoFactorTrustIdTimeToLiveInSeconds: 264073,
     },
     formConfiguration: {
-      adminRegistrationFormId: "40774a68-a9a3-45d0-86b6-f66fef020e9f",
+      adminRegistrationFormId: "a68a9a35-d086-4b6f-a6fe-f020e9f443b4",
       selfServiceFormConfiguration: {
         requireCurrentPasswordOnPasswordChange: false,
       },
-      selfServiceFormId: "443b4257-b992-4c8d-bda6-a61efa219825",
+      selfServiceFormId: "257b992c-8dbd-4a6a-a1ef-a2198258fd0a",
     },
-    id: "8fd0a9eb-a47f-47d3-af04-9640d6a1831c",
+    id: "9eba47f7-d3ef-4049-a40d-6a1831c87adf",
     insertInstant: 1659380719000,
     jwtConfiguration: {
-      accessTokenKeyId: "87adf596-fdf1-4ad8-b7ae-80c1c19c95ba",
+      accessTokenKeyId: "596fdf1a-d837-4ae8-8c1c-19c95ba99867",
       enabled: false,
-      idTokenKeyId: "998678fa-3f69-4699-9af3-88ce03614448",
+      idTokenKeyId: "8fa3f696-991a-4f38-8ce0-3614448c7977",
       refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
-      refreshTokenTimeToLiveInMinutes: 452481,
+      refreshTokenTimeToLiveInMinutes: 10585,
       refreshTokenUsagePolicy: RefreshTokenUsagePolicy.OneTimeUse,
-      timeToLiveInSeconds: 440386,
+      timeToLiveInSeconds: 964928,
     },
     lambdaConfiguration: {
-      accessTokenPopulateId: "7a0ef2f5-3602-48ef-aef9-34152ed7e253",
-      idTokenPopulateId: "f4c157de-aa71-470f-845a-ccf667aaf9bb",
-      samlv2PopulateId: "ad185fe4-31d6-4bf5-8838-fbb8c20cb67f",
-      selfServiceRegistrationValidationId: "c4b425e9-9e62-434c-9f7b-79dfeb77a5c3",
+      accessTokenPopulateId: "2f536028-efee-4f93-8152-ed7e253f4c15",
+      idTokenPopulateId: "7deaa717-0f44-45ac-8f66-7aaf9bbad185",
+      samlv2PopulateId: "fe431d6b-f5c8-438f-bb8c-20cb67fc4b42",
+      selfServiceRegistrationValidationId: "5e99e623-4c9f-47b7-9dfe-b77a5c38d4ba",
     },
     lastUpdateInstant: 1659380719000,
     loginConfiguration: {
@@ -1904,35 +1904,35 @@ const applicationRequest: ApplicationRequest = {
     },
     multiFactorConfiguration: {
       email: {
-        templateId: "8d4baf91-e506-4ef8-90a5-4b475f16f56d",
+        templateId: "f91e506e-f890-4a54-b475-f16f56d385a3",
       },
-      loginPolicy: MultiFactorLoginPolicy.Disabled,
+      loginPolicy: MultiFactorLoginPolicy.Required,
       sms: {
-        templateId: "85a3c4ac-631b-499e-a6ce-d8f9fdb9410f",
+        templateId: "4ac631b9-9e26-4ced-8f9f-db9410f63bbf",
       },
       trustPolicy: ApplicationMultiFactorTrustPolicy.This,
     },
-    name: "Hannah Rath",
+    name: "Marlene Littel",
     oauthConfiguration: {
       authorizedOriginURLs: [
-        "vitae",
+        "nam",
       ],
       authorizedRedirectURLs: [
-        "iusto",
+        "aperiam",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.ExactMatch,
-      clientAuthenticationPolicy: ClientAuthenticationPolicy.Required,
-      clientId: "molestiae",
-      clientSecret: "nam",
+      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.AllowWildcards,
+      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequired,
+      clientId: "asperiores",
+      clientSecret: "at",
       debug: false,
-      deviceVerificationURL: "aperiam",
+      deviceVerificationURL: "quibusdam",
       enabledGrants: [
-        "vitae",
+        "quam",
       ],
       generateRefreshTokens: false,
       logoutBehavior: LogoutBehavior.AllApplications,
-      logoutURL: "asperiores",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequiredWhenUsingClientAuthentication,
+      logoutURL: "rem",
+      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequired,
       requireClientAuthentication: false,
       requireRegistration: false,
     },
@@ -1950,7 +1950,7 @@ const applicationRequest: ApplicationRequest = {
         enabled: false,
         required: false,
       },
-      formId: "d7886241-89eb-4448-b3f5-033f19dbf125",
+      formId: "24189eb4-4873-4f50-b3f1-9dbf125ce415",
       fullName: {
         enabled: false,
         required: false,
@@ -1959,7 +1959,7 @@ const applicationRequest: ApplicationRequest = {
         enabled: false,
         required: false,
       },
-      loginIdType: LoginIdType.Username,
+      loginIdType: LoginIdType.Email,
       middleName: {
         enabled: false,
         required: false,
@@ -1973,60 +1973,60 @@ const applicationRequest: ApplicationRequest = {
     registrationDeletePolicy: {
       unverified: {
         enabled: false,
-        numberOfDaysToRetain: 287379,
+        numberOfDaysToRetain: 625418,
       },
     },
     roles: [
       {
-        description: "veritatis",
-        id: "52eab9cd-7e52-424a-aa0e-123b7847ec59",
+        description: "expedita",
+        id: "9cd7e522-4a6a-40e1-a3b7-847ec59e1f67",
         insertInstant: 1659380719000,
         isDefault: false,
         isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "Juan Wolf",
+        name: "Allen Runte",
       },
     ],
     samlv2Configuration: {
-      audience: "repellat",
+      audience: "quo",
       authorizedRedirectURLs: [
-        "amet",
+        "repudiandae",
       ],
-      callbackURL: "cumque",
+      callbackURL: "tempora",
       debug: false,
-      defaultVerificationKeyId: "4cce4b6d-7696-4ff3-8574-7501357e44f5",
+      defaultVerificationKeyId: "b6d7696f-f3c5-4747-9013-57e44f51f8b0",
       enabled: false,
       initiatedLogin: {
         enabled: false,
-        nameIdFormat: "dicta",
+        nameIdFormat: "totam",
       },
-      issuer: "hic",
-      keyId: "8b084c31-97e1-493a-a454-67f94874c2d5",
+      issuer: "tempora",
+      keyId: "c3197e19-3a24-4546-bf94-874c2d5cc497",
       logout: {
-        behavior: SAMLLogoutBehavior.OnlyOriginator,
-        defaultVerificationKeyId: "c4972233-e66b-4d8f-a5d0-0b979ef20387",
-        keyId: "320590cc-c109-4640-8313-b3e5044f65fe",
+        behavior: SAMLLogoutBehavior.AllParticipants,
+        defaultVerificationKeyId: "233e66bd-8fe5-4d00-b979-ef2038732059",
+        keyId: "0ccc1096-4003-413b-be50-44f65fe72dc4",
         requireSignedRequests: false,
         singleLogout: {
           enabled: false,
-          keyId: "72dc4077-d0cc-43f4-88ef-c15ceb4d6e1e",
-          url: "animi",
-          xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
+          keyId: "077d0cc3-f408-4efc-95ce-b4d6e1eae0f7",
+          url: "veniam",
+          xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
         },
-        xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
+        xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
       },
-      logoutURL: "maiores",
+      logoutURL: "possimus",
       requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
+      xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
       xmlSignatureLocation: XMLSignatureLocation.Assertion,
     },
-    state: ObjectState.PendingDelete,
-    tenantId: "edf2acab-58b9-491c-926d-db589461e742",
-    themeId: "1cbe6d95-02f0-4ea9-b0b6-9f7ac2f72f88",
+    state: ObjectState.Inactive,
+    tenantId: "cab58b99-1c92-46dd-b589-461e7421cbe6",
+    themeId: "d9502f0e-a930-4b69-b7ac-2f72f8850090",
     unverified: {
       behavior: UnverifiedBehavior.Allow,
     },
-    verificationEmailTemplateId: "00904911-6082-4078-88ec-66183bfe9659",
+    verificationEmailTemplateId: "91160820-7888-4ec6-a183-bfe9659eb40e",
     verificationStrategy: VerificationStrategy.FormField,
     verifyRegistration: false,
     webAuthnConfiguration: {
@@ -2041,36 +2041,36 @@ const applicationRequest: ApplicationRequest = {
   },
   eventInfo: {
     data: {
-      "quidem": {},
+      "sunt": {},
     },
-    deviceDescription: "magnam",
-    deviceName: "doloremque",
-    deviceType: "accusamus",
-    ipAddress: "quod",
+    deviceDescription: "voluptas",
+    deviceName: "earum",
+    deviceType: "est",
+    ipAddress: "earum",
     location: {
-      city: "South Treverchester",
-      country: "United Arab Emirates",
-      displayString: "nihil",
-      latitude: 3452.7,
-      longitude: 7023.39,
-      region: "perferendis",
-      zipcode: "31162-8624",
+      city: "Ewellcester",
+      country: "Andorra",
+      displayString: "nam",
+      latitude: 3530.41,
+      longitude: 1915.71,
+      region: "eos",
+      zipcode: "28624-7766",
     },
-    os: "eligendi",
-    userAgent: "cum",
+    os: "a",
+    userAgent: "magnam",
   },
   role: {
-    description: "culpa",
-    id: "af4452c4-842c-49b2-ad32-dafe81a88f44",
+    description: "eius",
+    id: "52c4842c-9b2a-4d32-9afe-81a88f444457",
     insertInstant: 1659380719000,
     isDefault: false,
     isSuperRole: false,
     lastUpdateInstant: 1659380719000,
-    name: "Debbie Haley",
+    name: "Essie Turcotte",
   },
-  sourceApplicationId: "fecd4735-3f63-4c82-8937-9aa69cd5fbcf",
+  sourceApplicationId: "47353f63-c820-4937-9aa6-9cd5fbcf79da",
 };
-const xFusionAuthTenantId: string = "quam";
+const xFusionAuthTenantId: string = "dicta";
 
 sdk.sdk.createApplicationRoleWithId(applicationId, roleId, applicationRequest, xFusionAuthTenantId).then((res: CreateApplicationRoleWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -2163,78 +2163,78 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-const applicationId: string = "occaecati";
+const applicationId: string = "rem";
 const applicationRequest: ApplicationRequest = {
   application: {
     accessControlConfiguration: {
-      uiIPAccessControlListId: "da18a782-2bf9-4589-8e68-61adb55f9e5d",
+      uiIPAccessControlListId: "a7822bf9-5894-4e68-a1ad-b55f9e5d751c",
     },
     active: false,
     authenticationTokenConfiguration: {
       enabled: false,
     },
     cleanSpeakConfiguration: {
-      apiKey: "odio",
+      apiKey: "occaecati",
       applicationIds: [
-        "51c9fe8f-7502-4bfd-8345-0841f1764456",
+        "fe8f7502-bfdc-4345-8841-f1764456379f",
       ],
       enabled: false,
-      url: "amet",
+      url: "ipsum",
       usernameModeration: {
-        applicationId: "79f3fb27-e21f-4862-a57b-36fc6b9f587c",
+        applicationId: "fb27e21f-8626-457b-b6fc-6b9f587ce525",
         enabled: false,
       },
     },
     data: {
-      "saepe": {},
+      "minus": {},
     },
     emailConfiguration: {
-      emailUpdateEmailTemplateId: "525c6764-1a83-412e-9047-b4c21ccb423a",
-      emailVerificationEmailTemplateId: "bcdc91fa-abdd-488e-b1f6-c48252d7771e",
-      emailVerifiedEmailTemplateId: "7fd07400-9ef8-4d29-9e1d-d7097b5da08c",
-      forgotPasswordEmailTemplateId: "57fa6c78-a216-4e19-bafe-ca6191498140",
-      loginIdInUseOnCreateEmailTemplateId: "b64ff8ae-170e-4f03-b5f3-7e4aa8685559",
-      loginIdInUseOnUpdateEmailTemplateId: "66732aa5-dcb6-4682-8b70-f8cfd5fb6e91",
-      loginNewDeviceEmailTemplateId: "b9a9f748-46e2-4c33-89db-0536d9e75ca0",
-      loginSuspiciousEmailTemplateId: "06f5392c-11a2-45a8-bf92-f97428ad9a9f",
-      passwordResetSuccessEmailTemplateId: "8bf82211-2535-49d9-8387-f7a79cd72cd2",
-      passwordUpdateEmailTemplateId: "484da217-29f2-4ac4-9ef5-725f1169ac1e",
-      passwordlessEmailTemplateId: "41d8a23c-23e3-44f2-9fa4-a197f6de9221",
-      setPasswordEmailTemplateId: "51fe1712-0998-453e-9f54-3d854439ee22",
-      twoFactorMethodAddEmailTemplateId: "4460443b-c154-4188-82f5-6e85da7832ea",
-      twoFactorMethodRemoveEmailTemplateId: "bd617c3b-0d51-4a44-bf01-bad8706d4608",
+      emailUpdateEmailTemplateId: "67641a83-12e5-4047-b4c2-1ccb423abcdc",
+      emailVerificationEmailTemplateId: "91faabdd-88e7-41f6-8482-52d7771e7fd0",
+      emailVerifiedEmailTemplateId: "74009ef8-d29d-4e1d-9709-7b5da08c57fa",
+      forgotPasswordEmailTemplateId: "6c78a216-e19b-4afe-8a61-91498140b64f",
+      loginIdInUseOnCreateEmailTemplateId: "f8ae170e-f03b-45f3-be4a-a86855596673",
+      loginIdInUseOnUpdateEmailTemplateId: "2aa5dcb6-682c-4b70-b8cf-d5fb6e91b9a9",
+      loginNewDeviceEmailTemplateId: "f74846e2-c330-49db-8536-d9e75ca006f5",
+      loginSuspiciousEmailTemplateId: "392c11a2-5a8b-4f92-b974-28ad9a9f8bf8",
+      passwordResetSuccessEmailTemplateId: "22112535-9d98-4387-b7a7-9cd72cd2484d",
+      passwordUpdateEmailTemplateId: "a21729f2-ac41-4ef5-b25f-1169ac1e41d8",
+      passwordlessEmailTemplateId: "a23c23e3-4f2d-4fa4-a197-f6de922151fe",
+      setPasswordEmailTemplateId: "17120998-53e9-4f54-bd85-4439ee224460",
+      twoFactorMethodAddEmailTemplateId: "443bc154-188c-42f5-ae85-da7832eabd61",
+      twoFactorMethodRemoveEmailTemplateId: "7c3b0d51-a44b-4f01-bad8-706d46082bfb",
     },
     externalIdentifierConfiguration: {
-      twoFactorTrustIdTimeToLiveInSeconds: 186303,
+      twoFactorTrustIdTimeToLiveInSeconds: 867286,
     },
     formConfiguration: {
-      adminRegistrationFormId: "bfbdc41f-f5d4-4e2a-a4fb-5cb35d17638f",
+      adminRegistrationFormId: "c41ff5d4-e2ae-44fb-9cb3-5d17638f1edb",
       selfServiceFormConfiguration: {
         requireCurrentPasswordOnPasswordChange: false,
       },
-      selfServiceFormId: "1edb7835-9ecc-45cb-860f-8cd580ba7381",
+      selfServiceFormId: "78359ecc-5cb8-460f-8cd5-80ba73810e4f",
     },
-    id: "0e4fe444-7297-4cd3-b1dd-3bbce247b768",
+    id: "e4447297-cd3b-41dd-bbbc-e247b7684eff",
     insertInstant: 1659380719000,
     jwtConfiguration: {
-      accessTokenKeyId: "4eff5012-6d71-4cff-bd0e-b74b8421953b",
+      accessTokenKeyId: "50126d71-cffb-4d0e-b74b-8421953b44bd",
       enabled: false,
-      idTokenKeyId: "44bd3c43-159d-433e-9953-c001139863aa",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.Fixed,
+      idTokenKeyId: "3c43159d-33e5-4953-8001-139863aa41e6",
+      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
       refreshTokenRevocationPolicy: {
         onLoginPrevented: false,
         onMultiFactorEnable: false,
         onPasswordChanged: false,
       },
-      refreshTokenTimeToLiveInMinutes: 88777,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.OneTimeUse,
-      timeToLiveInSeconds: 399732,
+      refreshTokenTimeToLiveInMinutes: 236588,
+      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
+      timeToLiveInSeconds: 802861,
     },
     lambdaConfiguration: {
-      accessTokenPopulateId: "c31cc2f1-fcb5-41c9-a41f-fbe9cbd795ee",
-      idTokenPopulateId: "65e076cc-7abf-4616-aa5c-71641934b90f",
-      samlv2PopulateId: "2e09d19d-2fc2-4f9e-ae10-5944b935d237",
-      selfServiceRegistrationValidationId: "a72f9084-9d6a-4ed4-aecb-7537cd9222c9",
+      accessTokenPopulateId: "c2f1fcb5-1c9a-441f-bbe9-cbd795ee65e0",
+      idTokenPopulateId: "76cc7abf-616e-4a5c-b164-1934b90f2e09",
+      samlv2PopulateId: "d19d2fc2-f9e2-4e10-9944-b935d237a72f",
+      selfServiceRegistrationValidationId: "90849d6a-ed4a-4ecb-b537-cd9222c9ff57",
     },
     lastUpdateInstant: 1659380719000,
     loginConfiguration: {
@@ -2244,35 +2244,35 @@ const applicationRequest: ApplicationRequest = {
     },
     multiFactorConfiguration: {
       email: {
-        templateId: "ff57491a-abfa-42e7-a1f0-ca4d456ef103",
+        templateId: "491aabfa-2e76-41f0-8a4d-456ef1031e68",
       },
-      loginPolicy: MultiFactorLoginPolicy.Disabled,
+      loginPolicy: MultiFactorLoginPolicy.Enabled,
       sms: {
-        templateId: "e6899f0c-2001-4e22-8d55-cc0584a184d7",
+        templateId: "9f0c2001-e22c-4d55-8c05-84a184d76d97",
       },
-      trustPolicy: ApplicationMultiFactorTrustPolicy.This,
+      trustPolicy: ApplicationMultiFactorTrustPolicy.Any,
     },
-    name: "Dr. Arturo Kling",
+    name: "Mr. Spencer Littel",
     oauthConfiguration: {
       authorizedOriginURLs: [
-        "atque",
+        "commodi",
       ],
       authorizedRedirectURLs: [
-        "explicabo",
+        "enim",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.AllowWildcards,
-      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequiredWhenUsingPKCE,
-      clientId: "commodi",
-      clientSecret: "enim",
+      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.ExactMatch,
+      clientAuthenticationPolicy: ClientAuthenticationPolicy.Required,
+      clientId: "consectetur",
+      clientSecret: "in",
       debug: false,
-      deviceVerificationURL: "harum",
+      deviceVerificationURL: "rerum",
       enabledGrants: [
-        "aut",
+        "distinctio",
       ],
       generateRefreshTokens: false,
-      logoutBehavior: LogoutBehavior.RedirectOnly,
-      logoutURL: "in",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequiredWhenUsingClientAuthentication,
+      logoutBehavior: LogoutBehavior.AllApplications,
+      logoutURL: "saepe",
+      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.Required,
       requireClientAuthentication: false,
       requireRegistration: false,
     },
@@ -2290,7 +2290,7 @@ const applicationRequest: ApplicationRequest = {
         enabled: false,
         required: false,
       },
-      formId: "b8e0cc88-5187-4e4d-a04a-f28c5dddb46a",
+      formId: "cc885187-e4de-404a-b28c-5dddb46aa1cf",
       fullName: {
         enabled: false,
         required: false,
@@ -2313,60 +2313,60 @@ const applicationRequest: ApplicationRequest = {
     registrationDeletePolicy: {
       unverified: {
         enabled: false,
-        numberOfDaysToRetain: 778585,
+        numberOfDaysToRetain: 816413,
       },
     },
     roles: [
       {
-        description: "voluptatibus",
-        id: "d6d828da-0131-4911-a964-6645c1d81f29",
+        description: "corrupti",
+        id: "28da0131-9112-4964-a645-c1d81f29042f",
         insertInstant: 1659380719000,
         isDefault: false,
         isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "Megan Collins",
+        name: "Vanessa Monahan",
       },
     ],
     samlv2Configuration: {
-      audience: "laboriosam",
+      audience: "culpa",
       authorizedRedirectURLs: [
-        "iste",
+        "reiciendis",
       ],
-      callbackURL: "quidem",
+      callbackURL: "a",
       debug: false,
-      defaultVerificationKeyId: "7aff0ea2-216c-4be0-b1bc-163e279a3b08",
+      defaultVerificationKeyId: "0ea2216c-be07-41bc-963e-279a3b084da9",
       enabled: false,
       initiatedLogin: {
         enabled: false,
-        nameIdFormat: "aliquam",
+        nameIdFormat: "occaecati",
       },
-      issuer: "vero",
-      keyId: "a99257d0-4f40-4847-a742-d84496cbdeec",
+      issuer: "consequuntur",
+      keyId: "57d04f40-847a-4742-9844-96cbdeecf6b9",
       logout: {
         behavior: SAMLLogoutBehavior.OnlyOriginator,
-        defaultVerificationKeyId: "6b99bc63-562e-4bfd-b55c-294c060b06a1",
-        keyId: "287764ee-f6d0-4c6d-aed9-c73dd6345715",
+        defaultVerificationKeyId: "bc63562e-bfdf-455c-a94c-060b06a12877",
+        keyId: "64eef6d0-c6d6-4ed9-873d-d634571509a8",
         requireSignedRequests: false,
         singleLogout: {
           enabled: false,
-          keyId: "09a8e870-d3c5-4a1f-9c24-2c7b66a1f30c",
-          url: "dignissimos",
-          xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
+          keyId: "e870d3c5-a1f9-4c24-ac7b-66a1f30c73df",
+          url: "exercitationem",
+          xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
         },
-        xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
+        xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
       },
-      logoutURL: "repellat",
+      logoutURL: "molestiae",
       requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
+      xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
       xmlSignatureLocation: XMLSignatureLocation.Response,
     },
     state: ObjectState.Inactive,
-    tenantId: "719890f4-2a4b-4b43-8d85-b260591d745e",
-    themeId: "3c2059c9-c3f5-467e-8e25-2765b1d62fcd",
+    tenantId: "90f42a4b-b438-4d85-b260-591d745e3c20",
+    themeId: "59c9c3f5-67e0-4e25-a765-b1d62fcdace1",
     unverified: {
       behavior: UnverifiedBehavior.Gated,
     },
-    verificationEmailTemplateId: "ce1f0121-6ce2-4239-a8f2-5cd0d19d959f",
+    verificationEmailTemplateId: "01216ce2-239e-48f2-9cd0-d19d959f439e",
     verificationStrategy: VerificationStrategy.ClickableLink,
     verifyRegistration: false,
     webAuthnConfiguration: {
@@ -2381,36 +2381,36 @@ const applicationRequest: ApplicationRequest = {
   },
   eventInfo: {
     data: {
-      "adipisci": {},
+      "sint": {},
     },
-    deviceDescription: "natus",
-    deviceName: "necessitatibus",
-    deviceType: "velit",
-    ipAddress: "sint",
+    deviceDescription: "eos",
+    deviceName: "nisi",
+    deviceType: "commodi",
+    ipAddress: "impedit",
     location: {
-      city: "South Harmonfort",
-      country: "Pitcairn Islands",
-      displayString: "temporibus",
-      latitude: 6214.28,
-      longitude: 3126.08,
-      region: "delectus",
-      zipcode: "66161",
+      city: "Spencerfurt",
+      country: "Gambia",
+      displayString: "delectus",
+      latitude: 4768.91,
+      longitude: 6464.56,
+      region: "laborum",
+      zipcode: "61300",
     },
-    os: "magnam",
-    userAgent: "et",
+    os: "ratione",
+    userAgent: "nisi",
   },
   role: {
-    description: "et",
-    id: "3695d1e6-698f-4cc4-9962-17c297767633",
+    description: "perspiciatis",
+    id: "5d1e6698-fcc4-4596-a17c-297767633425",
     insertInstant: 1659380719000,
     isDefault: false,
     isSuperRole: false,
     lastUpdateInstant: 1659380719000,
-    name: "Judy Hane I",
+    name: "Mary Fisher",
   },
-  sourceApplicationId: "8bfb5971-e981-4905-9738-9cedbac7fda3",
+  sourceApplicationId: "fb5971e9-8190-4557-b89c-edbac7fda395",
 };
-const xFusionAuthTenantId: string = "occaecati";
+const xFusionAuthTenantId: string = "unde";
 
 sdk.sdk.createApplicationWithId(applicationId, applicationRequest, xFusionAuthTenantId).then((res: CreateApplicationWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -2453,35 +2453,35 @@ const sdk = new SDK({
 sdk.sdk.createAuditLogWithId({
   auditLog: {
     data: {
-      "exercitationem": {},
+      "labore": {},
     },
-    id: 601868,
+    id: 865806,
     insertInstant: 1659380719000,
-    insertUser: "labore",
-    message: "pariatur",
+    insertUser: "vel",
+    message: "laboriosam",
     newValue: {},
     oldValue: {},
-    reason: "vel",
+    reason: "soluta",
   },
   eventInfo: {
     data: {
-      "laboriosam": {},
+      "minus": {},
     },
-    deviceDescription: "soluta",
-    deviceName: "minus",
-    deviceType: "magni",
-    ipAddress: "mollitia",
+    deviceDescription: "magni",
+    deviceName: "mollitia",
+    deviceType: "officiis",
+    ipAddress: "aliquam",
     location: {
-      city: "Fayetteville",
-      country: "Mauritania",
-      displayString: "aut",
-      latitude: 4222.15,
-      longitude: 2099.2,
-      region: "explicabo",
-      zipcode: "65327-4961",
+      city: "Adrianview",
+      country: "Cote d'Ivoire",
+      displayString: "explicabo",
+      latitude: 6999.89,
+      longitude: 6137.44,
+      region: "occaecati",
+      zipcode: "27496",
     },
-    os: "explicabo",
-    userAgent: "accusantium",
+    os: "qui",
+    userAgent: "explicabo",
   },
 }).then((res: CreateAuditLogWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -2523,13 +2523,13 @@ const sdk = new SDK({
 sdk.sdk.createConnector({
   connector: {
     data: {
-      "eum": {},
+      "accusantium": {},
     },
     debug: false,
-    id: "36982855-3cb1-4000-abef-4921ec2053b7",
+    id: "63698285-53cb-4100-86be-f4921ec2053b",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "Claire Fay",
+    name: "Monica Miller",
     type: ConnectorType.Generic,
   },
 }).then((res: CreateConnectorResponse) => {
@@ -2573,17 +2573,17 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-const connectorId: string = "quisquam";
+const connectorId: string = "officia";
 const connectorRequest: ConnectorRequest = {
   connector: {
     data: {
-      "rem": {},
+      "quisquam": {},
     },
     debug: false,
-    id: "ee0f2bf1-9588-4d40-903f-3deba297be3e",
+    id: "8ee0f2bf-1958-48d4-8d03-f3deba297be3",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "William Pollich",
+    name: "Terrance Altenwerth",
     type: ConnectorType.FusionAuth,
   },
 };
@@ -2627,23 +2627,23 @@ const sdk = new SDK({
 });
 const consentRequest: ConsentRequest = {
   consent: {
-    consentEmailTemplateId: "df868fd5-2405-4cb3-b1d4-92f4f127fb0e",
+    consentEmailTemplateId: "0df868fd-5240-45cb-b31d-492f4f127fb0",
     countryMinimumAgeForSelfConsent: {},
     data: {
-      "voluptatem": {},
+      "saepe": {},
     },
-    defaultMinimumAgeForSelfConsent: 745422,
+    defaultMinimumAgeForSelfConsent: 27863,
     emailPlus: {
-      emailTemplateId: "f1f82179-78d0-4acc-a77a-eb7b7021a520",
+      emailTemplateId: "bf1f8217-978d-40ac-8a77-aeb7b7021a52",
       enabled: false,
-      maximumTimeToSendEmailInHours: 309637,
-      minimumTimeToSendEmailInHours: 382990,
+      maximumTimeToSendEmailInHours: 61197,
+      minimumTimeToSendEmailInHours: 309637,
     },
-    id: "b64e99fb-0e67-4e09-8fdf-ed5540ef53a3",
+    id: "6b64e99f-b0e6-47e0-94fd-fed5540ef53a",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     multipleValuesAllowed: false,
-    name: "Genevieve Boyle",
+    name: "Miss Debbie O'Reilly",
     values: [
       "sapiente",
     ],

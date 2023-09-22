@@ -768,7 +768,6 @@ src/sdk/models/shared/verifyregistrationrequest.ts
 src/sdk/models/shared/security.ts
 src/sdk/models/shared/index.ts
 src/sdk/models/errors/index.ts
-docs/sdks/sdk/README.md
 USAGE.md
 docs/models/operations/actionuserwithidresponse.md
 docs/models/operations/activatereactorwithidresponse.md
@@ -1788,4 +1787,5 @@ docs/models/shared/jwtvendrequestclaims.md
 docs/models/shared/jwtvendrequest.md
 docs/models/shared/verifyregistrationrequest.md
 docs/models/shared/security.md
+docs/sdks/sdk/README.md
 .gitattributes

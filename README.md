@@ -25,8 +25,6 @@ yarn add https://github.com/speakeasy-sdks/fusionauth-ts
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveKeyWithIdRequest, RetrieveKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
@@ -36,7 +34,7 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-const keyId: string = "corrupti";
+const keyId: string = "provident";
 
 sdk.retrieveKeyWithId(keyId).then((res: RetrieveKeyWithIdResponse) => {
   if (res.statusCode == 200) {
@@ -330,6 +328,32 @@ sdk.retrieveKeyWithId(keyId).then((res: RetrieveKeyWithIdResponse) => {
 * [vendJWTWithId](docs/sdks/sdk/README.md#vendjwtwithid) - It's a JWT vending machine!  Issue a new access token (JWT) with the provided claims in the request. This JWT is not scoped to a tenant or user, it is a free form  token that will contain what claims you provide. <p> The iat, exp and jti claims will be added by FusionAuth, all other claims must be provided by the caller.  If a TTL is not provided in the request, the TTL will be retrieved from the default Tenant or the Tenant specified on the request either  by way of the X-FusionAuth-TenantId request header, or a tenant scoped API key.
 * [verifyUserRegistrationWithId](docs/sdks/sdk/README.md#verifyuserregistrationwithid) - Confirms a user's registration.   The request body will contain the verificationId. You may also be required to send a one-time use code based upon your configuration. When  the application is configured to gate a user until their registration is verified, this procedures requires two values instead of one.  The verificationId is a high entropy value and the one-time use code is a low entropy value that is easily entered in a user interactive form. The  two values together are able to confirm a user's registration and mark the user's registration as verified.
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `next` method that can be called to pull down the next group of results. If the
+return value of `next` is `null`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+
+
+<!-- End Pagination -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 
