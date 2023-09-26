@@ -18,6 +18,9 @@ export class CreateMessageTemplateWithIdRequest extends SpeakeasyBase {
 }
 
 export class CreateMessageTemplateWithIdResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -33,9 +36,15 @@ export class CreateMessageTemplateWithIdResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     messageTemplateResponse?: shared.MessageTemplateResponse;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }

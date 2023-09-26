@@ -15,6 +15,9 @@ export class RetrieveLambdaWithIdRequest extends SpeakeasyBase {
 }
 
 export class RetrieveLambdaWithIdResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -30,9 +33,15 @@ export class RetrieveLambdaWithIdResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     lambdaResponse?: shared.LambdaResponse;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }

@@ -18,6 +18,9 @@ export class UpdateKeyWithIdRequest extends SpeakeasyBase {
 }
 
 export class UpdateKeyWithIdResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -33,9 +36,15 @@ export class UpdateKeyWithIdResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     keyResponse?: shared.KeyResponse;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }

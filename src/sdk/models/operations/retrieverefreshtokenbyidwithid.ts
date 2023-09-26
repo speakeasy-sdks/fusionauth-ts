@@ -15,6 +15,9 @@ export class RetrieveRefreshTokenByIdWithIdRequest extends SpeakeasyBase {
 }
 
 export class RetrieveRefreshTokenByIdWithIdResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -30,9 +33,15 @@ export class RetrieveRefreshTokenByIdWithIdResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     refreshTokenResponse?: shared.RefreshTokenResponse;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }

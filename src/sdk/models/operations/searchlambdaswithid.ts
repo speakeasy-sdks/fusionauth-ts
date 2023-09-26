@@ -7,6 +7,9 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class SearchLambdasWithIdResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -22,9 +25,15 @@ export class SearchLambdasWithIdResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     lambdaSearchResponse?: shared.LambdaSearchResponse;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }
