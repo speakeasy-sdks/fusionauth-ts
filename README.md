@@ -34,7 +34,7 @@ const sdk = new SDK({
     apiKeyAuth: "",
   },
 });
-const keyId: string = "provident";
+const keyId: string = "Integrated";
 
 sdk.retrieveKeyWithId(keyId).then((res: RetrieveKeyWithIdResponse) => {
   if (res.statusCode == 200) {
