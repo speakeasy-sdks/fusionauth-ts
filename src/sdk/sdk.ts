@@ -49,9 +49,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.45.1";
-    sdkVersion = "1.27.0";
-    genVersion = "2.142.2";
-    userAgent = "speakeasy-sdk/typescript 1.27.0 2.142.2 1.45.1 speakeasy-sdks/fusionauth";
+    sdkVersion = "1.27.1";
+    genVersion = "2.143.2";
+    userAgent = "speakeasy-sdk/typescript 1.27.1 2.143.2 1.45.1 speakeasy-sdks/fusionauth";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
