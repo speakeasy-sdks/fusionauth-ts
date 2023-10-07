@@ -294,55 +294,33 @@ Takes an action on a user. The user being actioned is called the "actionee" and 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ActionUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.actionUserWithId({
-  action: {
-    actioneeUserId: "05b11f02-bdcd-42e5-8dbb-46f1de51cfba",
-    actionerUserId: "b57558f3-ab03-4f41-8dac-ad67ea82eb62",
-    applicationIds: [
-      "dbf52a72-2500-4ac6-bb76-705f87204289",
-    ],
-    comment: "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-    emailUser: false,
-    expiry: 1659380719000,
-    notifyUser: false,
-    option: "Bluffs Analyst",
-    reasonId: "1c72b4cb-95ca-4e57-91e3-7aee5bc30f25",
-    userActionId: "791278b9-6842-4f41-9e40-5ee43f45bd8e",
-  },
-  broadcast: false,
-  eventInfo: {
-    data: {
-      "assumenda": {},
+  const res = await sdk.sdk.actionUserWithId({
+    action: {
+      applicationIds: [
+        "05b11f02-bdcd-42e5-8dbb-46f1de51cfba",
+      ],
+      expiry: 1659380719000,
     },
-    deviceDescription: "Account",
-    deviceName: "dolor",
-    deviceType: "hm West Southeast",
-    ipAddress: "24.167.115.182",
-    location: {
-      city: "Rheafield",
-      country: "Christmas Island",
-      displayString: "Hermaphrodite",
-      latitude: 789.44,
-      longitude: 6974.37,
-      region: "architectures Metal",
-      zipcode: "18571-4519",
+    eventInfo: {
+      data: {
+        "Director": {},
+      },
+      location: {},
     },
-    os: "Birr parsing turquoise",
-    userAgent: "Quality",
-  },
-}).then((res: ActionUserWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -366,22 +344,20 @@ Activates the FusionAuth Reactor using a license id and optionally a license tex
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ActivateReactorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.activateReactorWithId({
-  license: "extend Bespoke oh",
-  licenseId: "curly Intuitive Hesperia",
-}).then((res: ActivateReactorWithIdResponse) => {
+  const res = await sdk.sdk.activateReactorWithId({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -405,34 +381,33 @@ Adds a user to an existing family. The family id must be specified.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { AddUserToFamilyWithIdRequest, AddUserToFamilyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { AddUserToFamilyWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { FamilyMember, FamilyMemberData, FamilyRequest, FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const familyId: string = "Administrator";
 const familyRequest: FamilyRequest = {
   familyMember: {
     data: {
-      "iusto": {},
+      "er": {},
     },
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    owner: false,
-    role: FamilyRole.Teen,
-    userId: "ee9e9217-ed91-466c-8e4d-75683dac4b3a",
   },
 };
-const xFusionAuthTenantId: string = "Southwest";
+const xFusionAuthTenantId: string = "than blue";
 
-sdk.sdk.addUserToFamilyWithId(familyId, familyRequest, xFusionAuthTenantId).then((res: AddUserToFamilyWithIdResponse) => {
+  const res = await sdk.sdk.addUserToFamilyWithId(familyId, familyRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -458,58 +433,37 @@ Cancels the user action.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CancelActionWithIdRequest, CancelActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CancelActionWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { ActionData, ActionRequest, EventInfo, EventInfoData, Location } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const actionId: string = "solid";
 const actionRequest: ActionRequest = {
   action: {
-    actioneeUserId: "37211dda-3831-42ac-8bbd-29c049f3123c",
-    actionerUserId: "c8294833-5955-4945-91d9-e83ddd3e0779",
     applicationIds: [
-      "d451aad6-866b-49de-a02b-52340a420d27",
+      "37211dda-3831-42ac-8bbd-29c049f3123c",
     ],
-    comment: "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-    emailUser: false,
     expiry: 1659380719000,
-    notifyUser: false,
-    option: "indeed indexing",
-    reasonId: "10b4553c-8ec9-4ab5-8b26-003e9a650cd5",
-    userActionId: "b4a43192-5638-4a3d-9777-6fd9daf62277",
   },
-  broadcast: false,
   eventInfo: {
     data: {
-      "corrupti": {},
+      "sky": {},
     },
-    deviceDescription: "Southwest Convertible",
-    deviceName: "portals",
-    deviceType: "Hryvnia near Southeast",
-    ipAddress: "102.40.241.125",
-    location: {
-      city: "Laruemouth",
-      country: "Austria",
-      displayString: "Berkshire",
-      latitude: 5150.78,
-      longitude: 3589.73,
-      region: "distance nisi",
-      zipcode: "57206",
-    },
-    os: "Folk Configuration",
-    userAgent: "Forward Plastic Card",
+    location: {},
   },
 };
 
-sdk.sdk.cancelActionWithId(actionId, actionRequest).then((res: CancelActionWithIdResponse) => {
+  const res = await sdk.sdk.cancelActionWithId(actionId, actionRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -534,48 +488,27 @@ Changes a user's password using their identity (login id and password). Using a 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ChangePasswordByIdentityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.changePasswordByIdentityWithId({
-  applicationId: "0d04687d-ce7a-4e63-ab11-1e46427694f1",
-  changePasswordId: "consequently",
-  currentPassword: "Missouri",
-  eventInfo: {
-    data: {
-      "consectetur": {},
+  const res = await sdk.sdk.changePasswordByIdentityWithId({
+    eventInfo: {
+      data: {
+        "West": {},
+      },
+      location: {},
     },
-    deviceDescription: "quo",
-    deviceName: "deliverables",
-    deviceType: "moderator",
-    ipAddress: "117.72.221.96",
-    location: {
-      city: "Yostport",
-      country: "Cayman Islands",
-      displayString: "Country Leone",
-      latitude: 8511.87,
-      longitude: 7214.43,
-      region: "Lek",
-      zipcode: "65303",
-    },
-    os: "parsing olive",
-    userAgent: "Tasty",
-  },
-  loginId: "Blues derail",
-  password: "pgA_GpkPwwQq8Bz",
-  refreshToken: "Soul",
-  trustChallenge: "malice woman Arkansas",
-  trustToken: "shrilly Account",
-}).then((res: ChangePasswordByIdentityWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -599,51 +532,31 @@ Changes a user's password using the change password Id. This usually occurs afte
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ChangePasswordWithIdRequest, ChangePasswordWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { ChangePasswordWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { ChangePasswordRequest, EventInfo, EventInfoData, Location } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const changePasswordId: string = "IP";
 const changePasswordRequest: ChangePasswordRequest = {
-  applicationId: "ea2c0d1b-e7bc-4346-a487-cf19814ff97c",
-  changePasswordId: "drat Chief Road",
-  currentPassword: "Architect Group",
   eventInfo: {
     data: {
-      "quia": {},
+      "gadzooks": {},
     },
-    deviceDescription: "West Polonium",
-    deviceName: "Analyst Southeast",
-    deviceType: "initiatives Small white",
-    ipAddress: "198.84.181.9",
-    location: {
-      city: "West Darienfort",
-      country: "Maldives",
-      displayString: "Avon invoice",
-      latitude: 9044.69,
-      longitude: 290.1,
-      region: "sievert",
-      zipcode: "89056",
-    },
-    os: "models brr",
-    userAgent: "Nissan Wagon",
+    location: {},
   },
-  loginId: "base amet Toyota",
-  password: "umDUuqcsYjHBiqa",
-  refreshToken: "Ernser lux",
-  trustChallenge: "Steel",
-  trustToken: "which",
 };
 
-sdk.sdk.changePasswordWithId(changePasswordId, changePasswordRequest).then((res: ChangePasswordWithIdResponse) => {
+  const res = await sdk.sdk.changePasswordWithId(changePasswordId, changePasswordRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -668,23 +581,22 @@ Check to see if the user must obtain a Trust Token Id in order to complete a cha
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  CheckChangePasswordUsingIdWithIdRequest,
-  CheckChangePasswordUsingIdWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CheckChangePasswordUsingIdWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const changePasswordId: string = "Pickup";
 
-sdk.sdk.checkChangePasswordUsingIdWithId(changePasswordId).then((res: CheckChangePasswordUsingIdWithIdResponse) => {
+  const res = await sdk.sdk.checkChangePasswordUsingIdWithId(changePasswordId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -708,30 +620,28 @@ Adds a comment to the user's account.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CommentOnUserWithIdRequest, CommentOnUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CommentOnUserWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { UserComment, UserCommentRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userCommentRequest: UserCommentRequest = {
   userComment: {
-    comment: "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-    commenterId: "d297155b-c5e2-4200-8a1f-4df85ab06504",
-    id: "0a4633b8-cc8b-48f3-9200-d6c2bebbb4c3",
     insertInstant: 1659380719000,
-    userId: "0b604f04-d678-4c45-bb19-85c8a7969d06",
   },
 };
-const xFusionAuthTenantId: string = "Tuckahoe Southwest policy";
+const xFusionAuthTenantId: string = "Bugatti";
 
-sdk.sdk.commentOnUserWithId(userCommentRequest, xFusionAuthTenantId).then((res: CommentOnUserWithIdResponse) => {
+  const res = await sdk.sdk.commentOnUserWithId(userCommentRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -756,59 +666,39 @@ Complete a WebAuthn authentication ceremony by validating the signature against 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CompleteWebAuthnAssertionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.completeWebAuthnAssertionWithId({
-  applicationId: "3ed87f1f-9685-43a5-b68f-7fe63cb719ef",
-  credential: {
-    clientExtensionResults: {
-      credProps: {
-        rk: false,
+  const res = await sdk.sdk.completeWebAuthnAssertionWithId({
+    credential: {
+      clientExtensionResults: {
+        credProps: {},
       },
+      response: {},
     },
-    id: "<ID>",
-    response: {
-      authenticatorData: "Bicycle F2M air",
-      clientDataJSON: "Planner Developer",
-      signature: "Home",
-      userHandle: "connecting",
+    metaData: {
+      data: {
+        "Salad": {},
+      },
+      device: {
+        lastAccessedInstant: 1659380719000,
+      },
+      scopes: [
+        "mammoth",
+      ],
     },
-    rpId: "devolve",
-    type: "good generate",
-  },
-  ipAddress: "38.38.116.36",
-  metaData: {
-    data: {
-      "exercitationem": {},
-    },
-    device: {
-      description: "Configurable systemic circuit",
-      lastAccessedAddress: "Rwanda instruction North",
-      lastAccessedInstant: 1659380719000,
-      name: "Guernsey male",
-      type: DeviceType.Server,
-    },
-    scopes: [
-      "North",
-    ],
-  },
-  newDevice: false,
-  noJWT: false,
-  origin: "frictionless Associate Integration",
-  rpId: "excitedly fuga dolorem",
-  twoFactorTrustId: "hm Tuna International",
-}).then((res: CompleteWebAuthnAssertionWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -832,59 +722,39 @@ Complete a WebAuthn authentication ceremony by validating the signature against 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CompleteWebAuthnLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.completeWebAuthnLoginWithId({
-  applicationId: "16e163b3-372b-48c7-b523-d239fbcd371e",
-  credential: {
-    clientExtensionResults: {
-      credProps: {
-        rk: false,
+  const res = await sdk.sdk.completeWebAuthnLoginWithId({
+    credential: {
+      clientExtensionResults: {
+        credProps: {},
       },
+      response: {},
     },
-    id: "<ID>",
-    response: {
-      authenticatorData: "Chevrolet",
-      clientDataJSON: "compressing North",
-      signature: "um",
-      userHandle: "5th cumque Gasoline",
+    metaData: {
+      data: {
+        "Northwest": {},
+      },
+      device: {
+        lastAccessedInstant: 1659380719000,
+      },
+      scopes: [
+        "commonly",
+      ],
     },
-    rpId: "Northeast",
-    type: "reiciendis",
-  },
-  ipAddress: "189.155.219.116",
-  metaData: {
-    data: {
-      "eum": {},
-    },
-    device: {
-      description: "Inverse multi-tasking instruction set",
-      lastAccessedAddress: "Liaison Folk rue",
-      lastAccessedInstant: 1659380719000,
-      name: "Van orange echidna",
-      type: DeviceType.Desktop,
-    },
-    scopes: [
-      "South",
-    ],
-  },
-  newDevice: false,
-  noJWT: false,
-  origin: "input Hybrid",
-  rpId: "Home",
-  twoFactorTrustId: "Chief",
-}).then((res: CompleteWebAuthnLoginWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -908,40 +778,30 @@ Complete a WebAuthn registration ceremony by validating the client request and s
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CompleteWebAuthnRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.completeWebAuthnRegistrationWithId({
-  credential: {
-    clientExtensionResults: {
-      credProps: {
-        rk: false,
+  const res = await sdk.sdk.completeWebAuthnRegistrationWithId({
+    credential: {
+      clientExtensionResults: {
+        credProps: {},
       },
+      response: {},
+      transports: [
+        "frame",
+      ],
     },
-    id: "<ID>",
-    response: {
-      attestationObject: "SMS Mozambique",
-      clientDataJSON: "ADP Tantalum",
-    },
-    rpId: "Orchestrator North neutral",
-    transports: [
-      "pompom",
-    ],
-    type: "productize",
-  },
-  origin: "Electronics Nebraska phew",
-  rpId: "Web Incredible",
-  userId: "3cc61f4a-0a98-48ee-82d0-224291a47b7d",
-}).then((res: CompleteWebAuthnRegistrationWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -965,42 +825,37 @@ Creates an API key. You can optionally specify a unique Id for the key, if not p
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateAPIKeyResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.createAPIKey({
-  apiKey: {
-    id: "c11880f7-9663-4432-b05d-9d0a98da32fa",
-    insertInstant: 1659380719000,
-    ipAccessControlListId: "bdab3739-177d-4140-a6ca-a96d2f3a7563",
-    key: "<key>",
-    keyManager: false,
-    lastUpdateInstant: 1659380719000,
-    metaData: {
-      attributes: {
-        "ad": "South",
+  const res = await sdk.sdk.createAPIKey({
+    apiKey: {
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+      metaData: {
+        attributes: {
+          "BMX": "quantify",
+        },
+      },
+      permissions: {
+        endpoints: {
+          "Wylie": [
+            "RSS",
+          ],
+        },
       },
     },
-    permissions: {
-      endpoints: {
-        "rerum": [
-          "direct",
-        ],
-      },
-    },
-    tenantId: "e1768a42-fff0-4870-8abb-13fd116a3118",
-  },
-  sourceKeyId: "792ca67e-09f6-49f6-b9f3-dd92b9342ed7",
-}).then((res: CreateAPIKeyResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1024,45 +879,41 @@ Creates an API key. You can optionally specify a unique Id for the key, if not p
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateApiKeyWithIdRequest, CreateApiKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateApiKeyWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { APIKey, APIKeyMetaData, APIKeyPermissions, APIKeyRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const keyId: string = "Luxurious";
 const apiKeyRequest: APIKeyRequest = {
   apiKey: {
-    id: "ce39fae3-17e0-48bc-b752-41926ff2a5db",
     insertInstant: 1659380719000,
-    ipAccessControlListId: "d484c711-7b84-441d-b0cd-12d18b6af362",
-    key: "<key>",
-    keyManager: false,
     lastUpdateInstant: 1659380719000,
     metaData: {
       attributes: {
-        "aspernatur": "Southwest",
+        "azure": "Soap",
       },
     },
     permissions: {
       endpoints: {
-        "perferendis": [
-          "generation",
+        "onto": [
+          "for",
         ],
       },
     },
-    tenantId: "8eec76fd-ca25-4ce3-8265-f0b177d0bacd",
   },
-  sourceKeyId: "9334cdcd-1b95-4ea6-b3ca-a447d60528b6",
 };
 
-sdk.sdk.createApiKeyWithId(keyId, apiKeyRequest).then((res: CreateApiKeyWithIdResponse) => {
+  const res = await sdk.sdk.createApiKeyWithId(keyId, apiKeyRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1087,7 +938,7 @@ Creates an application. You can optionally specify an Id for the application, if
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateApplicationRequest, CreateApplicationResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateApplicationRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   Application,
   ApplicationAccessControlConfiguration,
@@ -1142,264 +993,104 @@ import {
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationRequest: ApplicationRequest = {
   application: {
-    accessControlConfiguration: {
-      uiIPAccessControlListId: "14a20aaf-1c0f-48b8-8bf7-c464d989e614",
-    },
-    active: false,
-    authenticationTokenConfiguration: {
-      enabled: false,
-    },
+    accessControlConfiguration: {},
+    authenticationTokenConfiguration: {},
     cleanSpeakConfiguration: {
-      apiKey: "logistical",
       applicationIds: [
-        "8e92e010-81b4-4ed9-8a96-651f0e406c1a",
+        "14a20aaf-1c0f-48b8-8bf7-c464d989e614",
       ],
-      enabled: false,
-      url: "Account Chicken Latin",
-      usernameModeration: {
-        applicationId: "3853885b-1a90-4066-8b74-65bb2bf8c4d7",
-        enabled: false,
-      },
+      usernameModeration: {},
     },
     data: {
-      "recusandae": {},
+      "Pants": {},
     },
-    emailConfiguration: {
-      emailUpdateEmailTemplateId: "1fbdfd32-756a-4ecf-a2da-c88f6929b513",
-      emailVerificationEmailTemplateId: "32ef7d84-5528-4ab8-9b86-5b3784d1150f",
-      emailVerifiedEmailTemplateId: "8da7f7e3-a992-43f5-afac-d6b7d29ee17d",
-      forgotPasswordEmailTemplateId: "f4ef4c7e-038c-4c0e-a05e-95682086aac0",
-      loginIdInUseOnCreateEmailTemplateId: "7132c751-b79d-4556-9aa1-31996b71eeb3",
-      loginIdInUseOnUpdateEmailTemplateId: "ea2dc3cb-12c5-4479-a2ef-30af8388931c",
-      loginNewDeviceEmailTemplateId: "58f48e99-1d30-4c1e-bf48-7417dbde4fee",
-      loginSuspiciousEmailTemplateId: "9547acd5-cdef-4192-adff-605acd3ff1a8",
-      passwordResetSuccessEmailTemplateId: "a2772473-bfb9-4c0a-9571-566b486453ec",
-      passwordUpdateEmailTemplateId: "b1a87695-7a0b-46a6-b910-b87f9148c089",
-      passwordlessEmailTemplateId: "9b226b25-a782-4509-b00c-ec62ec113aa3",
-      setPasswordEmailTemplateId: "93a3f161-ac01-4596-8626-e0e4011dd77d",
-      twoFactorMethodAddEmailTemplateId: "0d7aee3e-92fe-458b-b2e2-83514206927c",
-      twoFactorMethodRemoveEmailTemplateId: "c333f460-7af2-4722-b69a-aca79473f274",
-    },
-    externalIdentifierConfiguration: {
-      twoFactorTrustIdTimeToLiveInSeconds: 109536,
-    },
+    emailConfiguration: {},
+    externalIdentifierConfiguration: {},
     formConfiguration: {
-      adminRegistrationFormId: "ea2ed8ff-b0b7-4872-a78a-00eecc21ef3b",
-      selfServiceFormConfiguration: {
-        requireCurrentPasswordOnPasswordChange: false,
-      },
-      selfServiceFormId: "feeb4c9e-bb8e-4eae-8b80-1bc4053b714d",
+      selfServiceFormConfiguration: {},
     },
-    id: "0413f0cf-306b-4dc9-a05b-56cbbf040f0d",
     insertInstant: 1659380719000,
     jwtConfiguration: {
-      accessTokenKeyId: "a90158b4-1000-4a42-b4a2-ec9e5f4fc51b",
-      enabled: false,
-      idTokenKeyId: "710c88de-2012-4968-ad39-95bb1b9fcc6b",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.Fixed,
-      refreshTokenRevocationPolicy: {
-        onLoginPrevented: false,
-        onMultiFactorEnable: false,
-        onPasswordChanged: false,
-      },
-      refreshTokenTimeToLiveInMinutes: 498429,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.OneTimeUse,
-      timeToLiveInSeconds: 244465,
+      refreshTokenRevocationPolicy: {},
     },
-    lambdaConfiguration: {
-      accessTokenPopulateId: "b0a3cb3d-2a92-4608-bb36-7200710bc3bc",
-      idTokenPopulateId: "bf1e4220-1fe2-4497-b933-09daa5c3710d",
-      samlv2PopulateId: "7ccb02c4-e609-4ac0-bb9e-0fe20495d701",
-      selfServiceRegistrationValidationId: "207cc04c-2e90-4ed7-a528-f4992d7f71eb",
-    },
+    lambdaConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    loginConfiguration: {
-      allowTokenRefresh: false,
-      generateRefreshTokens: false,
-      requireAuthentication: false,
-    },
+    loginConfiguration: {},
     multiFactorConfiguration: {
-      email: {
-        templateId: "9e2d3573-0d0b-4b75-bc21-2bbc50b158ed",
-      },
-      loginPolicy: MultiFactorLoginPolicy.Disabled,
-      sms: {
-        templateId: "ca916a47-f302-4722-bfe4-6e25dde22b5f",
-      },
-      trustPolicy: ApplicationMultiFactorTrustPolicy.Any,
+      email: {},
+      sms: {},
     },
-    name: "niches",
     oauthConfiguration: {
       authorizedOriginURLs: [
-        "black hertz payment",
+        "program Electronic",
       ],
       authorizedRedirectURLs: [
-        "Diesel feed",
+        "North Luxembourg Northwest",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.ExactMatch,
-      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequired,
-      clientId: "turquoise",
-      clientSecret: "Gasoline",
-      debug: false,
-      deviceVerificationURL: "bluetooth",
       enabledGrants: [
-        "Oxnard",
+        "Fresh",
       ],
-      generateRefreshTokens: false,
-      logoutBehavior: LogoutBehavior.AllApplications,
-      logoutURL: "male Elegant",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.Required,
-      requireClientAuthentication: false,
-      requireRegistration: false,
     },
-    passwordlessConfiguration: {
-      enabled: false,
-    },
+    passwordlessConfiguration: {},
     registrationConfiguration: {
-      birthDate: {
-        enabled: false,
-        required: false,
-      },
-      confirmPassword: false,
-      enabled: false,
-      firstName: {
-        enabled: false,
-        required: false,
-      },
-      formId: "874e922b-251d-41fc-a205-03f7f69c18cb",
-      fullName: {
-        enabled: false,
-        required: false,
-      },
-      lastName: {
-        enabled: false,
-        required: false,
-      },
-      loginIdType: LoginIdType.Username,
-      middleName: {
-        enabled: false,
-        required: false,
-      },
-      mobilePhone: {
-        enabled: false,
-        required: false,
-      },
-      type: RegistrationType.Advanced,
+      birthDate: {},
+      firstName: {},
+      fullName: {},
+      lastName: {},
+      middleName: {},
+      mobilePhone: {},
     },
     registrationDeletePolicy: {
-      unverified: {
-        enabled: false,
-        numberOfDaysToRetain: 936507,
-      },
+      unverified: {},
     },
     roles: [
       {
-        description: "Universal bandwidth-monitored database",
-        id: "8ddddbd4-6c87-4dac-be2f-d4f41004f613",
         insertInstant: 1659380719000,
-        isDefault: false,
-        isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "synthesizing Barrows East",
       },
     ],
     samlv2Configuration: {
-      audience: "Rufiyaa",
       authorizedRedirectURLs: [
-        "Calcium Northeast",
+        "female Jazz flexibility",
       ],
-      callbackURL: "Dakota",
-      debug: false,
-      defaultVerificationKeyId: "fcb100ff-3a7f-4590-8135-1a918f28ddbe",
-      enabled: false,
-      initiatedLogin: {
-        enabled: false,
-        nameIdFormat: "Horizontal Van Orchestrator",
-      },
-      issuer: "orange",
-      keyId: "8b8c0b0a-f59f-45b8-b082-34d6f18fed3d",
+      initiatedLogin: {},
       logout: {
-        behavior: SAMLLogoutBehavior.AllParticipants,
-        defaultVerificationKeyId: "2e2c6db2-d0b6-474a-953d-f332dc697395",
-        keyId: "e837f29a-ae34-4c79-a6c2-76efa4966900",
-        requireSignedRequests: false,
-        singleLogout: {
-          enabled: false,
-          keyId: "7ec896e4-2b92-4593-9af7-68b2062e3fe2",
-          url: "Country Engineer",
-          xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
-        },
-        xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
+        singleLogout: {},
       },
-      logoutURL: "Chicken Land",
-      requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
-      xmlSignatureLocation: XMLSignatureLocation.Response,
     },
-    state: ObjectState.Inactive,
-    tenantId: "24de4c61-d489-4f5c-9c4e-a7ecf2435ac7",
-    themeId: "8a574405-75db-4f9b-8478-286a938b68a5",
-    unverified: {
-      behavior: UnverifiedBehavior.Gated,
-    },
-    verificationEmailTemplateId: "56c97d9c-7e09-41c6-bf8c-3335c8b17d8b",
-    verificationStrategy: VerificationStrategy.ClickableLink,
-    verifyRegistration: false,
+    unverified: {},
     webAuthnConfiguration: {
-      bootstrapWorkflow: {
-        enabled: false,
-      },
-      enabled: false,
-      reauthenticationWorkflow: {
-        enabled: false,
-      },
+      bootstrapWorkflow: {},
+      reauthenticationWorkflow: {},
     },
   },
   eventInfo: {
     data: {
-      "autem": {},
+      "Southwest": {},
     },
-    deviceDescription: "Jewelery",
-    deviceName: "Communications withdrawal upon",
-    deviceType: "Illinois Expanded",
-    ipAddress: "217.196.34.33",
-    location: {
-      city: "Krajcikstead",
-      country: "Yemen",
-      displayString: "sit Bicycle",
-      latitude: 9133.43,
-      longitude: 1092.47,
-      region: "woman payment California",
-      zipcode: "67115",
-    },
-    os: "magnetic male",
-    userAgent: "Silver Producer",
+    location: {},
   },
   role: {
-    description: "Ergonomic dynamic standardization",
-    id: "bc0b0321-d6b5-422c-99a2-8990bf9939b7",
     insertInstant: 1659380719000,
-    isDefault: false,
-    isSuperRole: false,
     lastUpdateInstant: 1659380719000,
-    name: "understated",
   },
-  sourceApplicationId: "eb320e8d-63ad-4a11-aa09-f5cfbd38d7b9",
 };
-const xFusionAuthTenantId: string = "Clothing Human";
+const xFusionAuthTenantId: string = "exotic";
 
-sdk.sdk.createApplication(applicationRequest, xFusionAuthTenantId).then((res: CreateApplicationResponse) => {
+  const res = await sdk.sdk.createApplication(applicationRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1424,7 +1115,7 @@ Creates a new role for an application. You must specify the id of the applicatio
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateApplicationRoleRequest, CreateApplicationRoleResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateApplicationRoleRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   Application,
   ApplicationAccessControlConfiguration,
@@ -1479,265 +1170,105 @@ import {
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "candela";
 const applicationRequest: ApplicationRequest = {
   application: {
-    accessControlConfiguration: {
-      uiIPAccessControlListId: "77c52e2a-45b9-4eb2-aff7-ea2d019b9b81",
-    },
-    active: false,
-    authenticationTokenConfiguration: {
-      enabled: false,
-    },
+    accessControlConfiguration: {},
+    authenticationTokenConfiguration: {},
     cleanSpeakConfiguration: {
-      apiKey: "Plastic Markets Polarised",
       applicationIds: [
-        "90496148-8ace-4e25-b992-669185dc0ab7",
+        "77c52e2a-45b9-4eb2-aff7-ea2d019b9b81",
       ],
-      enabled: false,
-      url: "driver male Gasoline",
-      usernameModeration: {
-        applicationId: "d1309541-f972-4d96-bb71-0789aa9b7e5a",
-        enabled: false,
-      },
+      usernameModeration: {},
     },
     data: {
-      "animi": {},
+      "foolishly": {},
     },
-    emailConfiguration: {
-      emailUpdateEmailTemplateId: "e286a9de-a237-47bb-b9f7-6a4366bf59b6",
-      emailVerificationEmailTemplateId: "c98c8fe7-63dd-42ad-828d-5576a7e50016",
-      emailVerifiedEmailTemplateId: "6e11bc6d-65c9-42ab-b932-00cbafd58d3b",
-      forgotPasswordEmailTemplateId: "103b555f-3237-403d-a6bf-71f3d7b1f9ea",
-      loginIdInUseOnCreateEmailTemplateId: "eeb1a50b-a48d-4cb5-b9d0-13f9f99953d9",
-      loginIdInUseOnUpdateEmailTemplateId: "aa78f1d2-3c8c-4af2-b8ab-c10907c46855",
-      loginNewDeviceEmailTemplateId: "c6af4a30-61a8-4fd7-9b5b-a0d93da5a7a0",
-      loginSuspiciousEmailTemplateId: "1c0030f1-e2ea-4859-b117-7abf650e5995",
-      passwordResetSuccessEmailTemplateId: "88a55da0-24ec-4591-a761-541e3bad6d95",
-      passwordUpdateEmailTemplateId: "65385a49-5cda-48cc-ac4f-d4a1631f7edf",
-      passwordlessEmailTemplateId: "99e69da7-aaca-4a22-9f94-61c70ddafb13",
-      setPasswordEmailTemplateId: "40cf4c0a-b30f-4799-80bc-706efa859b94",
-      twoFactorMethodAddEmailTemplateId: "b80251ed-5410-4665-b7b9-7d3a6a2fbe5d",
-      twoFactorMethodRemoveEmailTemplateId: "df430a4f-75ba-4a64-944b-b7069c49b40a",
-    },
-    externalIdentifierConfiguration: {
-      twoFactorTrustIdTimeToLiveInSeconds: 573245,
-    },
+    emailConfiguration: {},
+    externalIdentifierConfiguration: {},
     formConfiguration: {
-      adminRegistrationFormId: "61dca923-5a3c-4563-96bd-c3180bc80716",
-      selfServiceFormConfiguration: {
-        requireCurrentPasswordOnPasswordChange: false,
-      },
-      selfServiceFormId: "734bd063-e604-4844-93dc-496c947aabeb",
+      selfServiceFormConfiguration: {},
     },
-    id: "d7c25c32-4d58-46ed-898c-bf594a347cd2",
     insertInstant: 1659380719000,
     jwtConfiguration: {
-      accessTokenKeyId: "2610b1f7-cb91-4b8e-9f44-f7ab4fb0ceea",
-      enabled: false,
-      idTokenKeyId: "217dc9e1-f395-4c4b-9222-fcfca26929ea",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.Fixed,
-      refreshTokenRevocationPolicy: {
-        onLoginPrevented: false,
-        onMultiFactorEnable: false,
-        onPasswordChanged: false,
-      },
-      refreshTokenTimeToLiveInMinutes: 854776,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
-      timeToLiveInSeconds: 209176,
+      refreshTokenRevocationPolicy: {},
     },
-    lambdaConfiguration: {
-      accessTokenPopulateId: "912837b5-8ccc-4723-8e23-130d8653be59",
-      idTokenPopulateId: "017bc1e8-d546-4152-902f-e318f3ddf09b",
-      samlv2PopulateId: "7f30a9d0-b6b7-4960-8f24-d436b8029432",
-      selfServiceRegistrationValidationId: "d4864ed7-4a6c-45fb-82a9-95e1762b13a4",
-    },
+    lambdaConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    loginConfiguration: {
-      allowTokenRefresh: false,
-      generateRefreshTokens: false,
-      requireAuthentication: false,
-    },
+    loginConfiguration: {},
     multiFactorConfiguration: {
-      email: {
-        templateId: "dbc40d6b-6f99-4b05-924b-1979d27057e4",
-      },
-      loginPolicy: MultiFactorLoginPolicy.Enabled,
-      sms: {
-        templateId: "0ea43698-3ea8-46b6-93bd-c459615d7233",
-      },
-      trustPolicy: ApplicationMultiFactorTrustPolicy.None,
+      email: {},
+      sms: {},
     },
-    name: "PNG Androgyne",
     oauthConfiguration: {
       authorizedOriginURLs: [
-        "Borders payment virtual",
+        "Markets Polarised",
       ],
       authorizedRedirectURLs: [
-        "Coupe fooey",
+        "Polynesia Boliviano",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.ExactMatch,
-      clientAuthenticationPolicy: ClientAuthenticationPolicy.Required,
-      clientId: "firewall",
-      clientSecret: "City if Vacaville",
-      debug: false,
-      deviceVerificationURL: "invoice 24/365 generate",
       enabledGrants: [
-        "Cis",
+        "generate",
       ],
-      generateRefreshTokens: false,
-      logoutBehavior: LogoutBehavior.AllApplications,
-      logoutURL: "aha North invoice",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequiredWhenUsingClientAuthentication,
-      requireClientAuthentication: false,
-      requireRegistration: false,
     },
-    passwordlessConfiguration: {
-      enabled: false,
-    },
+    passwordlessConfiguration: {},
     registrationConfiguration: {
-      birthDate: {
-        enabled: false,
-        required: false,
-      },
-      confirmPassword: false,
-      enabled: false,
-      firstName: {
-        enabled: false,
-        required: false,
-      },
-      formId: "dd45ffe4-c840-4023-aad1-a3adbbf929f6",
-      fullName: {
-        enabled: false,
-        required: false,
-      },
-      lastName: {
-        enabled: false,
-        required: false,
-      },
-      loginIdType: LoginIdType.Email,
-      middleName: {
-        enabled: false,
-        required: false,
-      },
-      mobilePhone: {
-        enabled: false,
-        required: false,
-      },
-      type: RegistrationType.Advanced,
+      birthDate: {},
+      firstName: {},
+      fullName: {},
+      lastName: {},
+      middleName: {},
+      mobilePhone: {},
     },
     registrationDeletePolicy: {
-      unverified: {
-        enabled: false,
-        numberOfDaysToRetain: 763062,
-      },
+      unverified: {},
     },
     roles: [
       {
-        description: "Customer-focused user-facing hierarchy",
-        id: "c444c017-a0d8-428b-960e-669baaeab6af",
         insertInstant: 1659380719000,
-        isDefault: false,
-        isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "Cranston Saudi",
       },
     ],
     samlv2Configuration: {
-      audience: "neque finished",
       authorizedRedirectURLs: [
-        "Tools Indiana",
+        "cyan but",
       ],
-      callbackURL: "maroon",
-      debug: false,
-      defaultVerificationKeyId: "0ebe8e8e-31ec-4e2e-a2ba-bab00d48d5e4",
-      enabled: false,
-      initiatedLogin: {
-        enabled: false,
-        nameIdFormat: "mole Legacy Audi",
-      },
-      issuer: "Jazz maroon",
-      keyId: "d41f286d-c273-40e1-bcb7-408863a5428b",
+      initiatedLogin: {},
       logout: {
-        behavior: SAMLLogoutBehavior.OnlyOriginator,
-        defaultVerificationKeyId: "046e2927-52ba-4c4e-9d41-eaf2a29f1344",
-        keyId: "50801f95-b178-496a-af3a-94c651c4bdb2",
-        requireSignedRequests: false,
-        singleLogout: {
-          enabled: false,
-          keyId: "bf86314b-8590-4fa0-902a-136480c740fa",
-          url: "Hybrid",
-          xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
-        },
-        xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
+        singleLogout: {},
       },
-      logoutURL: "Elegant definition",
-      requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
-      xmlSignatureLocation: XMLSignatureLocation.Assertion,
     },
-    state: ObjectState.PendingDelete,
-    tenantId: "892cb4e7-e285-4ec6-aba5-390f15abf6c7",
-    themeId: "04cc8dfb-ddef-49a3-8a25-f830740ca097",
-    unverified: {
-      behavior: UnverifiedBehavior.Gated,
-    },
-    verificationEmailTemplateId: "5f6f5aed-a79a-4e69-8fb4-8f704b855216",
-    verificationStrategy: VerificationStrategy.FormField,
-    verifyRegistration: false,
+    unverified: {},
     webAuthnConfiguration: {
-      bootstrapWorkflow: {
-        enabled: false,
-      },
-      enabled: false,
-      reauthenticationWorkflow: {
-        enabled: false,
-      },
+      bootstrapWorkflow: {},
+      reauthenticationWorkflow: {},
     },
   },
   eventInfo: {
     data: {
-      "architecto": {},
+      "Multigender": {},
     },
-    deviceDescription: "Soft local Transmasculine",
-    deviceName: "copy",
-    deviceType: "Hatchback Maryland",
-    ipAddress: "113.208.213.41",
-    location: {
-      city: "Michaelcester",
-      country: "Mozambique",
-      displayString: "Cotton",
-      latitude: 1948.4,
-      longitude: 4425.39,
-      region: "Silicon Senior",
-      zipcode: "42229-8533",
-    },
-    os: "Rock Bedfordshire black",
-    userAgent: "Folk",
+    location: {},
   },
   role: {
-    description: "Balanced even-keeled hardware",
-    id: "42114dcf-1437-434d-9b33-ff17df41a8d0",
     insertInstant: 1659380719000,
-    isDefault: false,
-    isSuperRole: false,
     lastUpdateInstant: 1659380719000,
-    name: "adapter",
   },
-  sourceApplicationId: "f456ed2b-17bc-490c-ae7d-932ae2394560",
 };
-const xFusionAuthTenantId: string = "Touring never gray";
+const xFusionAuthTenantId: string = "groupware";
 
-sdk.sdk.createApplicationRole(applicationId, applicationRequest, xFusionAuthTenantId).then((res: CreateApplicationRoleResponse) => {
+  const res = await sdk.sdk.createApplicationRole(applicationId, applicationRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1763,7 +1294,7 @@ Creates a new role for an application. You must specify the id of the applicatio
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateApplicationRoleWithIdRequest, CreateApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateApplicationRoleWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   Application,
   ApplicationAccessControlConfiguration,
@@ -1818,266 +1349,106 @@ import {
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "communities";
 const roleId: string = "Engineer";
 const applicationRequest: ApplicationRequest = {
   application: {
-    accessControlConfiguration: {
-      uiIPAccessControlListId: "14828f16-ba26-4284-948c-18126c16f050",
-    },
-    active: false,
-    authenticationTokenConfiguration: {
-      enabled: false,
-    },
+    accessControlConfiguration: {},
+    authenticationTokenConfiguration: {},
     cleanSpeakConfiguration: {
-      apiKey: "Branding",
       applicationIds: [
-        "c1d9ac72-b77f-47db-a359-a059280c1ae0",
+        "14828f16-ba26-4284-948c-18126c16f050",
       ],
-      enabled: false,
-      url: "Principal bluetooth",
-      usernameModeration: {
-        applicationId: "822ffd36-c216-4394-b516-7409ead87ba5",
-        enabled: false,
-      },
+      usernameModeration: {},
     },
     data: {
-      "repudiandae": {},
+      "benchmark": {},
     },
-    emailConfiguration: {
-      emailUpdateEmailTemplateId: "ffcba31c-bfd2-48ce-9fd6-fe61b3c14f12",
-      emailVerificationEmailTemplateId: "d9d58565-4532-4d49-818f-761e46ae6771",
-      emailVerifiedEmailTemplateId: "bd9451dd-85ff-494f-817f-1028a88f35a7",
-      forgotPasswordEmailTemplateId: "779b8495-50b6-4b99-b85e-ffdc46b4aa17",
-      loginIdInUseOnCreateEmailTemplateId: "431b610e-c8b2-4d2a-9b37-bbd5796aaf10",
-      loginIdInUseOnUpdateEmailTemplateId: "87783a33-4b7d-495d-83cd-749faf961668",
-      loginNewDeviceEmailTemplateId: "c6daea16-6b26-44fc-876f-d6e123bd83bc",
-      loginSuspiciousEmailTemplateId: "1acbc065-ba3e-45dd-8056-aa030b08cdc9",
-      passwordResetSuccessEmailTemplateId: "4739a8f3-0b7d-4212-8f92-57e378606054",
-      passwordUpdateEmailTemplateId: "4f49bc15-ce94-45da-8662-fc8d2caab609",
-      passwordlessEmailTemplateId: "14ac5306-6c1a-4837-87df-039c21e1ac14",
-      setPasswordEmailTemplateId: "1a7c882e-032f-420f-8f6d-423f0469585f",
-      twoFactorMethodAddEmailTemplateId: "79535ef7-1923-4063-9eb4-1dae94f117a9",
-      twoFactorMethodRemoveEmailTemplateId: "099023b3-8767-4f46-b2c4-a1f33cd1ce4b",
-    },
-    externalIdentifierConfiguration: {
-      twoFactorTrustIdTimeToLiveInSeconds: 324251,
-    },
+    emailConfiguration: {},
+    externalIdentifierConfiguration: {},
     formConfiguration: {
-      adminRegistrationFormId: "296f5a9f-4e9e-4a15-911f-a8864efb84a2",
-      selfServiceFormConfiguration: {
-        requireCurrentPasswordOnPasswordChange: false,
-      },
-      selfServiceFormId: "f222c212-aa39-4d95-8c9d-8ad086610742",
+      selfServiceFormConfiguration: {},
     },
-    id: "2689d378-e3d3-492b-bda8-cfaa483bf28b",
     insertInstant: 1659380719000,
     jwtConfiguration: {
-      accessTokenKeyId: "20a8baa9-a04f-411b-a57e-7e741af10985",
-      enabled: false,
-      idTokenKeyId: "f8e6bcee-9a08-4290-9280-adff54bbb762",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
-      refreshTokenRevocationPolicy: {
-        onLoginPrevented: false,
-        onMultiFactorEnable: false,
-        onPasswordChanged: false,
-      },
-      refreshTokenTimeToLiveInMinutes: 316994,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.OneTimeUse,
-      timeToLiveInSeconds: 597195,
+      refreshTokenRevocationPolicy: {},
     },
-    lambdaConfiguration: {
-      accessTokenPopulateId: "89a634df-f46e-43ba-9928-63de831a7164",
-      idTokenPopulateId: "36a12e66-e09a-4486-a85f-98f429e85dd1",
-      samlv2PopulateId: "5e401bcd-589c-4b8c-afbd-0e18491285d5",
-      selfServiceRegistrationValidationId: "dec83ba8-c721-4e43-b6b2-0fe9e75f2a67",
-    },
+    lambdaConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    loginConfiguration: {
-      allowTokenRefresh: false,
-      generateRefreshTokens: false,
-      requireAuthentication: false,
-    },
+    loginConfiguration: {},
     multiFactorConfiguration: {
-      email: {
-        templateId: "338a2f3f-cf19-46ca-b8f9-03cadd4cb157",
-      },
-      loginPolicy: MultiFactorLoginPolicy.Disabled,
-      sms: {
-        templateId: "15a1be90-4938-40a9-b4b7-6eda68a70073",
-      },
-      trustPolicy: ApplicationMultiFactorTrustPolicy.Any,
+      email: {},
+      sms: {},
     },
-    name: "Northwest",
     oauthConfiguration: {
       authorizedOriginURLs: [
-        "um Hat Liaison",
+        "ampere Maserati",
       ],
       authorizedRedirectURLs: [
-        "Internal Recycled",
+        "coulomb Clothing",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.AllowWildcards,
-      clientAuthenticationPolicy: ClientAuthenticationPolicy.Required,
-      clientId: "F2M Adventure Networked",
-      clientSecret: "Focused connect Lead",
-      debug: false,
-      deviceVerificationURL: "Fresh Account Outdoors",
       enabledGrants: [
-        "Configuration",
+        "Lats",
       ],
-      generateRefreshTokens: false,
-      logoutBehavior: LogoutBehavior.RedirectOnly,
-      logoutURL: "Small",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequiredWhenUsingClientAuthentication,
-      requireClientAuthentication: false,
-      requireRegistration: false,
     },
-    passwordlessConfiguration: {
-      enabled: false,
-    },
+    passwordlessConfiguration: {},
     registrationConfiguration: {
-      birthDate: {
-        enabled: false,
-        required: false,
-      },
-      confirmPassword: false,
-      enabled: false,
-      firstName: {
-        enabled: false,
-        required: false,
-      },
-      formId: "31caf36e-f392-43db-adb8-355c104294fd",
-      fullName: {
-        enabled: false,
-        required: false,
-      },
-      lastName: {
-        enabled: false,
-        required: false,
-      },
-      loginIdType: LoginIdType.Username,
-      middleName: {
-        enabled: false,
-        required: false,
-      },
-      mobilePhone: {
-        enabled: false,
-        required: false,
-      },
-      type: RegistrationType.Advanced,
+      birthDate: {},
+      firstName: {},
+      fullName: {},
+      lastName: {},
+      middleName: {},
+      mobilePhone: {},
     },
     registrationDeletePolicy: {
-      unverified: {
-        enabled: false,
-        numberOfDaysToRetain: 916857,
-      },
+      unverified: {},
     },
     roles: [
       {
-        description: "Visionary composite attitude",
-        id: "49e288c8-7f9f-4cd4-9c51-a51aba2160b6",
         insertInstant: 1659380719000,
-        isDefault: false,
-        isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "Accounts Computers",
       },
     ],
     samlv2Configuration: {
-      audience: "Marketing Volvo",
       authorizedRedirectURLs: [
-        "Awesome",
+        "SUV Hawaii",
       ],
-      callbackURL: "France",
-      debug: false,
-      defaultVerificationKeyId: "1531ca89-bb6a-4fd3-988f-12650713ecbc",
-      enabled: false,
-      initiatedLogin: {
-        enabled: false,
-        nameIdFormat: "obnoxiously neutral malice",
-      },
-      issuer: "Northeast Southwest Algeria",
-      keyId: "a2158cba-34c7-4f11-9d0f-b27f8d66a91b",
+      initiatedLogin: {},
       logout: {
-        behavior: SAMLLogoutBehavior.AllParticipants,
-        defaultVerificationKeyId: "be232e5e-5d76-4a15-82c1-eb95f73715b9",
-        keyId: "c61c1533-e321-419f-b9b7-d0eb14c50b8e",
-        requireSignedRequests: false,
-        singleLogout: {
-          enabled: false,
-          keyId: "f5789c08-11bf-417e-b980-32bcb59f8ba5",
-          url: "lumen Southeast Movies",
-          xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
-        },
-        xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
+        singleLogout: {},
       },
-      logoutURL: "Response Southwest Antimony",
-      requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
-      xmlSignatureLocation: XMLSignatureLocation.Assertion,
     },
-    state: ObjectState.Active,
-    tenantId: "b6a1f4ef-d5aa-4f56-a48e-7a42170cd9e9",
-    themeId: "9d5e55a0-eff8-4643-a895-881c001fe2d7",
-    unverified: {
-      behavior: UnverifiedBehavior.Allow,
-    },
-    verificationEmailTemplateId: "7160ba8a-e506-4e03-946b-7354097c0258",
-    verificationStrategy: VerificationStrategy.ClickableLink,
-    verifyRegistration: false,
+    unverified: {},
     webAuthnConfiguration: {
-      bootstrapWorkflow: {
-        enabled: false,
-      },
-      enabled: false,
-      reauthenticationWorkflow: {
-        enabled: false,
-      },
+      bootstrapWorkflow: {},
+      reauthenticationWorkflow: {},
     },
   },
   eventInfo: {
     data: {
-      "magnam": {},
+      "Persevering": {},
     },
-    deviceDescription: "roar wordy Yuma",
-    deviceName: "ha bypassing 1080p",
-    deviceType: "Northeast Southeast",
-    ipAddress: "100.179.238.62",
-    location: {
-      city: "South Jerodfurt",
-      country: "Reunion",
-      displayString: "Tesla",
-      latitude: 1957.26,
-      longitude: 586.92,
-      region: "Designer bypassing",
-      zipcode: "78978-8399",
-    },
-    os: "North parse",
-    userAgent: "jut SUV female",
+    location: {},
   },
   role: {
-    description: "Synergistic logistical Graphic Interface",
-    id: "45601ea3-337b-4afe-a840-4cea2565c43b",
     insertInstant: 1659380719000,
-    isDefault: false,
-    isSuperRole: false,
     lastUpdateInstant: 1659380719000,
-    name: "Audi deposit",
   },
-  sourceApplicationId: "08b9f3f3-047c-40b4-87ff-b4cec2323a67",
 };
-const xFusionAuthTenantId: string = "zowie wed Madagascar";
+const xFusionAuthTenantId: string = "East fugit";
 
-sdk.sdk.createApplicationRoleWithId(applicationId, roleId, applicationRequest, xFusionAuthTenantId).then((res: CreateApplicationRoleWithIdResponse) => {
+  const res = await sdk.sdk.createApplicationRoleWithId(applicationId, roleId, applicationRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2104,7 +1475,7 @@ Creates an application. You can optionally specify an Id for the application, if
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateApplicationWithIdRequest, CreateApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateApplicationWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   Application,
   ApplicationAccessControlConfiguration,
@@ -2159,265 +1530,105 @@ import {
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "Music";
 const applicationRequest: ApplicationRequest = {
   application: {
-    accessControlConfiguration: {
-      uiIPAccessControlListId: "983fd89a-d18d-4c1f-8e09-3590017880c3",
-    },
-    active: false,
-    authenticationTokenConfiguration: {
-      enabled: false,
-    },
+    accessControlConfiguration: {},
+    authenticationTokenConfiguration: {},
     cleanSpeakConfiguration: {
-      apiKey: "Seaborgium embossing",
       applicationIds: [
-        "a50c4989-50fe-4b17-aa39-6c71ce2b5d26",
+        "983fd89a-d18d-4c1f-8e09-3590017880c3",
       ],
-      enabled: false,
-      url: "backing Electronics",
-      usernameModeration: {
-        applicationId: "f73d9187-9c25-4f3c-b81d-6fd176abea60",
-        enabled: false,
-      },
+      usernameModeration: {},
     },
     data: {
-      "placeat": {},
+      "deliverables": {},
     },
-    emailConfiguration: {
-      emailUpdateEmailTemplateId: "7cc08581-987c-467d-9abe-e51567eebd63",
-      emailVerificationEmailTemplateId: "7f17c554-0331-43bd-91b2-f20abe13863f",
-      emailVerifiedEmailTemplateId: "7d85898e-69bb-4538-8f01-baa887d77647",
-      forgotPasswordEmailTemplateId: "61b820b6-1436-4e93-becb-ea6c6faa6ffb",
-      loginIdInUseOnCreateEmailTemplateId: "ad6d823e-e917-46ba-b4ff-cc07e6059631",
-      loginIdInUseOnUpdateEmailTemplateId: "3cd066f3-a321-4b87-a595-6763d97ea64f",
-      loginNewDeviceEmailTemplateId: "12fd8e5e-fc1f-4a35-84e0-522120f1e34b",
-      loginSuspiciousEmailTemplateId: "60ae6105-19f3-46c2-833b-1b2e020b5e18",
-      passwordResetSuccessEmailTemplateId: "e410acbc-8019-4aa5-bfff-3eecec048da9",
-      passwordUpdateEmailTemplateId: "3967eff1-66ae-424a-b101-05ca0639c056",
-      passwordlessEmailTemplateId: "8b4a7608-ee62-4257-a36e-c87cb4ae35dc",
-      setPasswordEmailTemplateId: "d3b7363b-d9bb-4c8d-bdb0-04c0f15410db",
-      twoFactorMethodAddEmailTemplateId: "3a15787b-e3dc-49eb-8296-fe6ee8cfb2d1",
-      twoFactorMethodRemoveEmailTemplateId: "f3f5b8b0-1da2-4c2e-b2f4-67c54be19dd7",
-    },
-    externalIdentifierConfiguration: {
-      twoFactorTrustIdTimeToLiveInSeconds: 994231,
-    },
+    emailConfiguration: {},
+    externalIdentifierConfiguration: {},
     formConfiguration: {
-      adminRegistrationFormId: "f8a32721-55b8-49e4-bf31-f867e244fad0",
-      selfServiceFormConfiguration: {
-        requireCurrentPasswordOnPasswordChange: false,
-      },
-      selfServiceFormId: "1c799b1d-8b1c-470a-ad67-6c9279f5ec61",
+      selfServiceFormConfiguration: {},
     },
-    id: "d5fd94ff-239d-4f4c-8826-462684eaef07",
     insertInstant: 1659380719000,
     jwtConfiguration: {
-      accessTokenKeyId: "c9574297-7a82-4c18-9066-516a3157db6a",
-      enabled: false,
-      idTokenKeyId: "5dd402e7-f36f-4093-a393-509abe0b4c1c",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
-      refreshTokenRevocationPolicy: {
-        onLoginPrevented: false,
-        onMultiFactorEnable: false,
-        onPasswordChanged: false,
-      },
-      refreshTokenTimeToLiveInMinutes: 36865,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.OneTimeUse,
-      timeToLiveInSeconds: 179483,
+      refreshTokenRevocationPolicy: {},
     },
-    lambdaConfiguration: {
-      accessTokenPopulateId: "78ad99cc-2f04-4a39-9a4b-61dc3f231744",
-      idTokenPopulateId: "7b9cc217-8bb3-46a9-a834-bc17c598c8db",
-      samlv2PopulateId: "936c4a40-b972-4e82-866b-a989ad7fa0e0",
-      selfServiceRegistrationValidationId: "c3eeb5c6-fdba-4acf-9504-8c56e59c1ccd",
-    },
+    lambdaConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    loginConfiguration: {
-      allowTokenRefresh: false,
-      generateRefreshTokens: false,
-      requireAuthentication: false,
-    },
+    loginConfiguration: {},
     multiFactorConfiguration: {
-      email: {
-        templateId: "e901e8ef-0b17-4d61-9c9c-3fb8cf71dfe1",
-      },
-      loginPolicy: MultiFactorLoginPolicy.Enabled,
-      sms: {
-        templateId: "071af5ce-a033-4423-ab08-fa21da2a5738",
-      },
-      trustPolicy: ApplicationMultiFactorTrustPolicy.Any,
+      email: {},
+      sms: {},
     },
-    name: "Gasoline",
     oauthConfiguration: {
       authorizedOriginURLs: [
-        "Coordinator matrix alarm",
+        "embossing Product Infrastructure",
       ],
       authorizedRedirectURLs: [
-        "monitor",
+        "paradigms sweater",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.AllowWildcards,
-      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequired,
-      clientId: "Steel withdrawal",
-      clientSecret: "fuchsia East West",
-      debug: false,
-      deviceVerificationURL: "Wooden Shoes",
       enabledGrants: [
-        "New",
+        "Associate",
       ],
-      generateRefreshTokens: false,
-      logoutBehavior: LogoutBehavior.RedirectOnly,
-      logoutURL: "for SSL finally",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequiredWhenUsingClientAuthentication,
-      requireClientAuthentication: false,
-      requireRegistration: false,
     },
-    passwordlessConfiguration: {
-      enabled: false,
-    },
+    passwordlessConfiguration: {},
     registrationConfiguration: {
-      birthDate: {
-        enabled: false,
-        required: false,
-      },
-      confirmPassword: false,
-      enabled: false,
-      firstName: {
-        enabled: false,
-        required: false,
-      },
-      formId: "e5ed3474-d584-41c4-b05c-85e5ea7a8a35",
-      fullName: {
-        enabled: false,
-        required: false,
-      },
-      lastName: {
-        enabled: false,
-        required: false,
-      },
-      loginIdType: LoginIdType.Email,
-      middleName: {
-        enabled: false,
-        required: false,
-      },
-      mobilePhone: {
-        enabled: false,
-        required: false,
-      },
-      type: RegistrationType.Advanced,
+      birthDate: {},
+      firstName: {},
+      fullName: {},
+      lastName: {},
+      middleName: {},
+      mobilePhone: {},
     },
     registrationDeletePolicy: {
-      unverified: {
-        enabled: false,
-        numberOfDaysToRetain: 550321,
-      },
+      unverified: {},
     },
     roles: [
       {
-        description: "Stand-alone intermediate knowledge base",
-        id: "c7028b89-2ab8-4e9c-a65b-2058beeae817",
         insertInstant: 1659380719000,
-        isDefault: false,
-        isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "Investment",
       },
     ],
     samlv2Configuration: {
-      audience: "Dodge Directives Classical",
       authorizedRedirectURLs: [
-        "Implementation handmaiden alliance",
+        "Technician Soap",
       ],
-      callbackURL: "South",
-      debug: false,
-      defaultVerificationKeyId: "42e4e61a-7e50-4b03-b402-a95677b23f1a",
-      enabled: false,
-      initiatedLogin: {
-        enabled: false,
-        nameIdFormat: "port Gasoline",
-      },
-      issuer: "Guadeloupe East Rover",
-      keyId: "9ad7f916-0214-41dd-b27c-6f61bf2b6e01",
+      initiatedLogin: {},
       logout: {
-        behavior: SAMLLogoutBehavior.OnlyOriginator,
-        defaultVerificationKeyId: "4b71127d-6a9d-40bf-a6ba-3749f1dc37ec",
-        keyId: "4350fed8-5d16-4376-b33b-96c43614d1f0",
-        requireSignedRequests: false,
-        singleLogout: {
-          enabled: false,
-          keyId: "cdfedab5-9cba-4311-a950-3ad06f1a15d0",
-          url: "only",
-          xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
-        },
-        xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
+        singleLogout: {},
       },
-      logoutURL: "Hat Loan Books",
-      requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
-      xmlSignatureLocation: XMLSignatureLocation.Response,
     },
-    state: ObjectState.PendingDelete,
-    tenantId: "2dcdba96-f0ec-4b08-a96c-ba80b63a579f",
-    themeId: "9b5e0899-10f9-4d19-80be-34dd11094fef",
-    unverified: {
-      behavior: UnverifiedBehavior.Gated,
-    },
-    verificationEmailTemplateId: "bfa3b913-4383-41ff-bc06-f7e8773405ec",
-    verificationStrategy: VerificationStrategy.FormField,
-    verifyRegistration: false,
+    unverified: {},
     webAuthnConfiguration: {
-      bootstrapWorkflow: {
-        enabled: false,
-      },
-      enabled: false,
-      reauthenticationWorkflow: {
-        enabled: false,
-      },
+      bootstrapWorkflow: {},
+      reauthenticationWorkflow: {},
     },
   },
   eventInfo: {
     data: {
-      "iure": {},
+      "pricing": {},
     },
-    deviceDescription: "voluptatem",
-    deviceName: "New Hybrid",
-    deviceType: "kilogram",
-    ipAddress: "211.145.168.68",
-    location: {
-      city: "Oro Valley",
-      country: "Oman",
-      displayString: "monitor Hermaphrodite back",
-      latitude: 7344.71,
-      longitude: 8860.52,
-      region: "Account female Burley",
-      zipcode: "99985",
-    },
-    os: "nulla",
-    userAgent: "Sudan And Account",
+    location: {},
   },
   role: {
-    description: "Extended client-server pricing structure",
-    id: "84e02046-dbc0-4368-8517-79328261e215",
     insertInstant: 1659380719000,
-    isDefault: false,
-    isSuperRole: false,
     lastUpdateInstant: 1659380719000,
-    name: "Burundi plug",
   },
-  sourceApplicationId: "c5650eb7-9529-4c8f-b412-af71793122f1",
 };
-const xFusionAuthTenantId: string = "Tasty Club";
+const xFusionAuthTenantId: string = "azure";
 
-sdk.sdk.createApplicationWithId(applicationId, applicationRequest, xFusionAuthTenantId).then((res: CreateApplicationWithIdResponse) => {
+  const res = await sdk.sdk.createApplicationWithId(applicationId, applicationRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2443,52 +1654,35 @@ Creates an audit log with the message and user name (usually an email). Audit lo
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateAuditLogWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.createAuditLogWithId({
-  auditLog: {
-    data: {
-      "aspernatur": {},
+  const res = await sdk.sdk.createAuditLogWithId({
+    auditLog: {
+      data: {
+        "Maryland": {},
+      },
+      insertInstant: 1659380719000,
+      newValue: {},
+      oldValue: {},
     },
-    id: 391905,
-    insertInstant: 1659380719000,
-    insertUser: "deposit",
-    message: "Greenwood",
-    newValue: {},
-    oldValue: {},
-    reason: "pace BMW",
-  },
-  eventInfo: {
-    data: {
-      "consequuntur": {},
+    eventInfo: {
+      data: {
+        "violet": {},
+      },
+      location: {},
     },
-    deviceDescription: "olive",
-    deviceName: "infrastructure",
-    deviceType: "East",
-    ipAddress: "218.113.66.197",
-    location: {
-      city: "Annastad",
-      country: "French Polynesia",
-      displayString: "Fermium",
-      latitude: 2736.56,
-      longitude: 9247,
-      region: "siemens East",
-      zipcode: "88717",
-    },
-    os: "redundant intermediate",
-    userAgent: "azure firewall Northeast",
-  },
-}).then((res: CreateAuditLogWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2512,32 +1706,29 @@ Creates a connector.  You can optionally specify an Id for the connector, if not
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateConnectorResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { ConnectorType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
-
-sdk.sdk.createConnector({
-  connector: {
-    data: {
-      "adipisci": {},
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
     },
-    debug: false,
-    id: "7bc14a1c-aca8-4ad3-ae26-022009526419",
-    insertInstant: 1659380719000,
-    lastUpdateInstant: 1659380719000,
-    name: "West",
-    type: ConnectorType.FusionAuth,
-  },
-}).then((res: CreateConnectorResponse) => {
+  });
+
+  const res = await sdk.sdk.createConnector({
+    connector: {
+      data: {
+        "Modern": {},
+      },
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2561,7 +1752,7 @@ Creates a connector.  You can optionally specify an Id for the connector, if not
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateConnectorWithIdRequest, CreateConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateConnectorWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   BaseConnectorConfiguration,
   BaseConnectorConfigurationData,
@@ -2569,31 +1760,29 @@ import {
   ConnectorType,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const connectorId: string = "Agent";
 const connectorRequest: ConnectorRequest = {
   connector: {
     data: {
-      "iste": {},
+      "man": {},
     },
-    debug: false,
-    id: "2d219d6e-29dc-41e9-86b3-6cd2f2c9a574",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "Elegant farad",
-    type: ConnectorType.FusionAuth,
   },
 };
 
-sdk.sdk.createConnectorWithId(connectorId, connectorRequest).then((res: CreateConnectorWithIdResponse) => {
+  const res = await sdk.sdk.createConnectorWithId(connectorId, connectorRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2618,45 +1807,37 @@ Creates a user consent type. You can optionally specify an Id for the consent ty
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateConsentRequest, CreateConsentResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateConsentRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { Consent, ConsentData, ConsentRequest, EmailPlus, LocalizedIntegers } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const consentRequest: ConsentRequest = {
   consent: {
-    consentEmailTemplateId: "d86ce077-7c71-4c31-afcf-db802b0bffbe",
     countryMinimumAgeForSelfConsent: {},
     data: {
-      "a": {},
+      "modern": {},
     },
-    defaultMinimumAgeForSelfConsent: 719887,
-    emailPlus: {
-      emailTemplateId: "3d9d1de5-aa5c-4fe9-a4aa-c40ff20aada2",
-      enabled: false,
-      maximumTimeToSendEmailInHours: 848385,
-      minimumTimeToSendEmailInHours: 483843,
-    },
-    id: "77c3208a-10a7-4772-93ad-2c17e65d4196",
+    emailPlus: {},
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    multipleValuesAllowed: false,
-    name: "Associate Franc Cambridgeshire",
     values: [
-      "framework",
+      "Account",
     ],
   },
 };
-const xFusionAuthTenantId: string = "Kia";
+const xFusionAuthTenantId: string = "OCR";
 
-sdk.sdk.createConsent(consentRequest, xFusionAuthTenantId).then((res: CreateConsentResponse) => {
+  const res = await sdk.sdk.createConsent(consentRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2681,46 +1862,38 @@ Creates a user consent type. You can optionally specify an Id for the consent ty
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateConsentWithIdRequest, CreateConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateConsentWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { Consent, ConsentData, ConsentRequest, EmailPlus, LocalizedIntegers } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const consentId: string = "Northwest";
 const consentRequest: ConsentRequest = {
   consent: {
-    consentEmailTemplateId: "8db109ae-6fe1-4ff9-a15b-6aeaaff93663",
     countryMinimumAgeForSelfConsent: {},
     data: {
-      "saepe": {},
+      "transmitting": {},
     },
-    defaultMinimumAgeForSelfConsent: 270901,
-    emailPlus: {
-      emailTemplateId: "6b4c7963-ff05-430d-a3a8-6e8ed39f2c6a",
-      enabled: false,
-      maximumTimeToSendEmailInHours: 839494,
-      minimumTimeToSendEmailInHours: 449723,
-    },
-    id: "92d89fa6-e0d1-47ab-a14c-e461f0e6017c",
+    emailPlus: {},
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    multipleValuesAllowed: false,
-    name: "toolset bewitched to",
     values: [
-      "Zimbabwe",
+      "Aluminium",
     ],
   },
 };
-const xFusionAuthTenantId: string = "laborum unbearably after";
+const xFusionAuthTenantId: string = "Classical";
 
-sdk.sdk.createConsentWithId(consentId, consentRequest, xFusionAuthTenantId).then((res: CreateConsentWithIdResponse) => {
+  const res = await sdk.sdk.createConsentWithId(consentId, consentRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2746,38 +1919,33 @@ Creates an email template. You can optionally specify an Id for the template, if
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateEmailTemplateRequest, CreateEmailTemplateResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateEmailTemplateRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { EmailTemplate, EmailTemplateRequest, LocalizedStrings } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const emailTemplateRequest: EmailTemplateRequest = {
   emailTemplate: {
-    defaultFromName: "flashy",
-    defaultHtmlTemplate: "other Forward than",
-    defaultSubject: "ivory Customer Androgynous",
-    defaultTextTemplate: "scalable decoder frenetically",
-    fromEmail: "grandmom",
-    id: "f98d820d-0ebe-46e1-af1c-f271bcabcdc9",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     localizedFromNames: {},
     localizedHtmlTemplates: {},
     localizedSubjects: {},
     localizedTextTemplates: {},
-    name: "California",
   },
 };
-const xFusionAuthTenantId: string = "maroon Assistant";
+const xFusionAuthTenantId: string = "flashy";
 
-sdk.sdk.createEmailTemplate(emailTemplateRequest, xFusionAuthTenantId).then((res: CreateEmailTemplateResponse) => {
+  const res = await sdk.sdk.createEmailTemplate(emailTemplateRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2802,39 +1970,34 @@ Creates an email template. You can optionally specify an Id for the template, if
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateEmailTemplateWithIdRequest, CreateEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateEmailTemplateWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { EmailTemplate, EmailTemplateRequest, LocalizedStrings } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const emailTemplateId: string = "Wiegand";
 const emailTemplateRequest: EmailTemplateRequest = {
   emailTemplate: {
-    defaultFromName: "ohm",
-    defaultHtmlTemplate: "Rand",
-    defaultSubject: "dignissimos Games",
-    defaultTextTemplate: "Creative",
-    fromEmail: "throughput",
-    id: "5c4bff1c-347d-43a6-8a51-3dd1bb567b33",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     localizedFromNames: {},
     localizedHtmlTemplates: {},
     localizedSubjects: {},
     localizedTextTemplates: {},
-    name: "corporis hacking",
   },
 };
-const xFusionAuthTenantId: string = "Incredible Chevrolet emulation";
+const xFusionAuthTenantId: string = "ohm";
 
-sdk.sdk.createEmailTemplateWithId(emailTemplateId, emailTemplateRequest, xFusionAuthTenantId).then((res: CreateEmailTemplateWithIdResponse) => {
+  const res = await sdk.sdk.createEmailTemplateWithId(emailTemplateId, emailTemplateRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2860,7 +2023,7 @@ Creates an Entity. You can optionally specify an Id for the Entity. If not provi
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateEntityRequest, CreateEntityResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateEntityRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   Entity,
   EntityData,
@@ -2872,60 +2035,46 @@ import {
   EntityTypePermissionData,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityRequest: EntityRequest = {
   entity: {
-    clientId: "of",
-    clientSecret: "Future",
     data: {
-      "et": {},
+      "Industrial": {},
     },
-    id: "dcc391d0-303c-43e2-bfc5-9c2d898a8528",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "paradigm synthesizing Maryland",
-    parentId: "01ecc097-fbf6-4676-a791-b0e607179922",
-    tenantId: "0f9b5a19-b666-4f2c-bd56-18dc98521397",
     type: {
       data: {
-        "tenetur": {},
+        "Implementation": {},
       },
-      id: "e40a5fe6-e1ff-4546-b304-c01808344ecf",
       insertInstant: 1659380719000,
-      jwtConfiguration: {
-        accessTokenKeyId: "92f4d6ac-774f-49e0-8533-1766a30fb4aa",
-        enabled: false,
-        timeToLiveInSeconds: 138589,
-      },
+      jwtConfiguration: {},
       lastUpdateInstant: 1659380719000,
-      name: "Female",
       permissions: [
         {
           data: {
-            "non": {},
+            "Future": {},
           },
-          description: "Multi-lateral clear-thinking internet solution",
-          id: "31c7e649-4927-4b12-9e24-f22d486e5d9f",
           insertInstant: 1659380719000,
-          isDefault: false,
           lastUpdateInstant: 1659380719000,
-          name: "duh Folding",
         },
       ],
     },
   },
 };
-const xFusionAuthTenantId: string = "Hybrid";
+const xFusionAuthTenantId: string = "soft";
 
-sdk.sdk.createEntity(entityRequest, xFusionAuthTenantId).then((res: CreateEntityResponse) => {
+  const res = await sdk.sdk.createEntity(entityRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2950,58 +2099,45 @@ Creates a Entity Type. You can optionally specify an Id for the Entity Type, if 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateEntityTypeResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.createEntityType({
-  entityType: {
-    data: {
-      "est": {},
-    },
-    id: "58564e9b-992c-48fe-b431-1d650b45e460",
-    insertInstant: 1659380719000,
-    jwtConfiguration: {
-      accessTokenKeyId: "7615c0fd-be46-425b-a100-459f0b0f0181",
-      enabled: false,
-      timeToLiveInSeconds: 252296,
-    },
-    lastUpdateInstant: 1659380719000,
-    name: "Buckinghamshire revolutionize orange",
-    permissions: [
-      {
-        data: {
-          "quae": {},
-        },
-        description: "Operative secondary benchmark",
-        id: "21ccc95b-b57c-42eb-a95f-2dddc91c8b31",
-        insertInstant: 1659380719000,
-        isDefault: false,
-        lastUpdateInstant: 1659380719000,
-        name: "strategic",
+  const res = await sdk.sdk.createEntityType({
+    entityType: {
+      data: {
+        "Infrastructure": {},
       },
-    ],
-  },
-  permission: {
-    data: {
-      "ea": {},
+      insertInstant: 1659380719000,
+      jwtConfiguration: {},
+      lastUpdateInstant: 1659380719000,
+      permissions: [
+        {
+          data: {
+            "customized": {},
+          },
+          insertInstant: 1659380719000,
+          lastUpdateInstant: 1659380719000,
+        },
+      ],
     },
-    description: "Intuitive national local area network",
-    id: "dc408cbe-6d9e-4723-9951-b4a1a3893a8c",
-    insertInstant: 1659380719000,
-    isDefault: false,
-    lastUpdateInstant: 1659380719000,
-    name: "Caribbean",
-  },
-}).then((res: CreateEntityTypeResponse) => {
+    permission: {
+      data: {
+        "quidem": {},
+      },
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3025,7 +2161,7 @@ Creates a new permission for an entity type. You must specify the id of the enti
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateEntityTypePermissionRequest, CreateEntityTypePermissionResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateEntityTypePermissionRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   EntityJWTConfiguration,
   EntityType,
@@ -3035,58 +2171,46 @@ import {
   EntityTypeRequest,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityTypeId: string = "Steel";
 const entityTypeRequest: EntityTypeRequest = {
   entityType: {
     data: {
-      "error": {},
+      "Applications": {},
     },
-    id: "7f39b8d5-c03f-463b-8860-c37a55d934d4",
     insertInstant: 1659380719000,
-    jwtConfiguration: {
-      accessTokenKeyId: "b646f927-c005-48e2-8e86-425c903afae9",
-      enabled: false,
-      timeToLiveInSeconds: 230915,
-    },
+    jwtConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    name: "pfft",
     permissions: [
       {
         data: {
-          "quam": {},
+          "croon": {},
         },
-        description: "Adaptive tangible infrastructure",
-        id: "8ab9ca4c-fb3c-4ca3-9940-bdf3ddf7bff2",
         insertInstant: 1659380719000,
-        isDefault: false,
         lastUpdateInstant: 1659380719000,
-        name: "Handcrafted copying",
       },
     ],
   },
   permission: {
     data: {
-      "cum": {},
+      "Reggae": {},
     },
-    description: "Upgradable eco-centric capacity",
-    id: "e5e738b7-8fb1-481c-8649-2707412425e2",
     insertInstant: 1659380719000,
-    isDefault: false,
     lastUpdateInstant: 1659380719000,
-    name: "Data Afghani",
   },
 };
 
-sdk.sdk.createEntityTypePermission(entityTypeId, entityTypeRequest).then((res: CreateEntityTypePermissionResponse) => {
+  const res = await sdk.sdk.createEntityTypePermission(entityTypeId, entityTypeRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3111,10 +2235,7 @@ Creates a new permission for an entity type. You must specify the id of the enti
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  CreateEntityTypePermissionWithIdRequest,
-  CreateEntityTypePermissionWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateEntityTypePermissionWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   EntityJWTConfiguration,
   EntityType,
@@ -3124,59 +2245,47 @@ import {
   EntityTypeRequest,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityTypeId: string = "geez";
 const permissionId: string = "like";
 const entityTypeRequest: EntityTypeRequest = {
   entityType: {
     data: {
-      "adipisci": {},
+      "Ergonomic": {},
     },
-    id: "1c21ee04-f688-4c13-b738-c8327b414ab7",
     insertInstant: 1659380719000,
-    jwtConfiguration: {
-      accessTokenKeyId: "f6ca1753-1a21-4715-a826-2b821c659b8a",
-      enabled: false,
-      timeToLiveInSeconds: 386334,
-    },
+    jwtConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    name: "ASCII envisioneer",
     permissions: [
       {
         data: {
-          "neque": {},
+          "Diesel": {},
         },
-        description: "Expanded foreground superstructure",
-        id: "bd727cab-cf72-4f3f-9f67-8e3050fb612e",
         insertInstant: 1659380719000,
-        isDefault: false,
         lastUpdateInstant: 1659380719000,
-        name: "Electric",
       },
     ],
   },
   permission: {
     data: {
-      "iste": {},
+      "Southwest": {},
     },
-    description: "Universal interactive protocol",
-    id: "da2c348a-09fc-41bb-8075-f2324f9689d8",
     insertInstant: 1659380719000,
-    isDefault: false,
     lastUpdateInstant: 1659380719000,
-    name: "unlike invader",
   },
 };
 
-sdk.sdk.createEntityTypePermissionWithId(entityTypeId, permissionId, entityTypeRequest).then((res: CreateEntityTypePermissionWithIdResponse) => {
+  const res = await sdk.sdk.createEntityTypePermissionWithId(entityTypeId, permissionId, entityTypeRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3202,7 +2311,7 @@ Creates a Entity Type. You can optionally specify an Id for the Entity Type, if 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateEntityTypeWithIdRequest, CreateEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateEntityTypeWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   EntityJWTConfiguration,
   EntityType,
@@ -3212,58 +2321,46 @@ import {
   EntityTypeRequest,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityTypeId: string = "Pickup";
 const entityTypeRequest: EntityTypeRequest = {
   entityType: {
     data: {
-      "ut": {},
+      "innovative": {},
     },
-    id: "18d59aae-3b7a-4c5e-b140-926e1affe520",
     insertInstant: 1659380719000,
-    jwtConfiguration: {
-      accessTokenKeyId: "db2c2e9e-c6e6-439b-bfe7-854728c34a3d",
-      enabled: false,
-      timeToLiveInSeconds: 604736,
-    },
+    jwtConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    name: "cyan visualize male",
     permissions: [
       {
         data: {
-          "quisquam": {},
+          "bus": {},
         },
-        description: "Multi-layered zero administration firmware",
-        id: "7ec8db3d-aa19-4418-9bb6-b9f2ea299289",
         insertInstant: 1659380719000,
-        isDefault: false,
         lastUpdateInstant: 1659380719000,
-        name: "administration Ferrari female",
       },
     ],
   },
   permission: {
     data: {
-      "nihil": {},
+      "logistical": {},
     },
-    description: "Progressive human-resource access",
-    id: "ed620bad-bf88-4ced-bae2-7f53017b3eb8",
     insertInstant: 1659380719000,
-    isDefault: false,
     lastUpdateInstant: 1659380719000,
-    name: "Exclusive",
   },
 };
 
-sdk.sdk.createEntityTypeWithId(entityTypeId, entityTypeRequest).then((res: CreateEntityTypeWithIdResponse) => {
+  const res = await sdk.sdk.createEntityTypeWithId(entityTypeId, entityTypeRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3288,7 +2385,7 @@ Creates an Entity. You can optionally specify an Id for the Entity. If not provi
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateEntityWithIdRequest, CreateEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateEntityWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   Entity,
   EntityData,
@@ -3300,61 +2397,47 @@ import {
   EntityTypePermissionData,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityId: string = "exploit";
 const entityRequest: EntityRequest = {
   entity: {
-    clientId: "Rubber deposit Gasoline",
-    clientSecret: "payment Florida Global",
     data: {
-      "expedita": {},
+      "Response": {},
     },
-    id: "1c2b59f1-c589-465c-adda-9c2a8f0c38c0",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "BMW Designer",
-    parentId: "2c241e99-2647-4514-91d1-a221353a8696",
-    tenantId: "878230d1-964e-4a78-a90a-5ec1df83deb6",
     type: {
       data: {
-        "nobis": {},
+        "Buckinghamshire": {},
       },
-      id: "ec79d19b-452b-48fb-874a-676af99f43a0",
       insertInstant: 1659380719000,
-      jwtConfiguration: {
-        accessTokenKeyId: "3d007547-bbdc-4a35-819a-d4cf72e54f88",
-        enabled: false,
-        timeToLiveInSeconds: 276956,
-      },
+      jwtConfiguration: {},
       lastUpdateInstant: 1659380719000,
-      name: "Wooden",
       permissions: [
         {
           data: {
-            "delectus": {},
+            "Branding": {},
           },
-          description: "Universal eco-centric groupware",
-          id: "8f8692a8-fe74-4fc9-8131-7bf9c349ab2a",
           insertInstant: 1659380719000,
-          isDefault: false,
           lastUpdateInstant: 1659380719000,
-          name: "Bicycle attitude",
         },
       ],
     },
   },
 };
-const xFusionAuthTenantId: string = "gosh tesla Blues";
+const xFusionAuthTenantId: string = "hacking olive";
 
-sdk.sdk.createEntityWithId(entityId, entityRequest, xFusionAuthTenantId).then((res: CreateEntityWithIdResponse) => {
+  const res = await sdk.sdk.createEntityWithId(entityId, entityRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3380,33 +2463,32 @@ Creates a family with the user id in the request as the owner and sole member of
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateFamilyRequest, CreateFamilyResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateFamilyRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { FamilyMember, FamilyMemberData, FamilyRequest, FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const familyRequest: FamilyRequest = {
   familyMember: {
     data: {
-      "nobis": {},
+      "newton": {},
     },
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    owner: false,
-    role: FamilyRole.Teen,
-    userId: "c2d23de0-446e-4655-8b86-be23074aee4d",
   },
 };
-const xFusionAuthTenantId: string = "deserunt wherever circuit";
+const xFusionAuthTenantId: string = "gold Scottie Cotton";
 
-sdk.sdk.createFamily(familyRequest, xFusionAuthTenantId).then((res: CreateFamilyResponse) => {
+  const res = await sdk.sdk.createFamily(familyRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3431,34 +2513,33 @@ Creates a family with the user id in the request as the owner and sole member of
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateFamilyWithIdRequest, CreateFamilyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateFamilyWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { FamilyMember, FamilyMemberData, FamilyRequest, FamilyRole } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const familyId: string = "orange";
 const familyRequest: FamilyRequest = {
   familyMember: {
     data: {
-      "eligendi": {},
+      "pascal": {},
     },
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    owner: false,
-    role: FamilyRole.Teen,
-    userId: "b3f5dd20-d652-4736-bce4-26d74f2683a1",
   },
 };
-const xFusionAuthTenantId: string = "Wooden Huntington";
+const xFusionAuthTenantId: string = "Industrial systemic Cadillac";
 
-sdk.sdk.createFamilyWithId(familyId, familyRequest, xFusionAuthTenantId).then((res: CreateFamilyWithIdResponse) => {
+  const res = await sdk.sdk.createFamilyWithId(familyId, familyRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3484,38 +2565,36 @@ Creates a form.  You can optionally specify an Id for the form, if not provided 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateFormResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
-
-sdk.sdk.createForm({
-  form: {
-    data: {
-      "dolores": {},
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
     },
-    id: "8e9ff04a-ef32-47f6-924b-f3de0cd3a288",
-    insertInstant: 1659380719000,
-    lastUpdateInstant: 1659380719000,
-    name: "bucketful Beauty",
-    steps: [
-      {
-        fields: [
-          "5209e3b8-3be7-4a9b-afb2-524399dc55a5",
-        ],
+  });
+
+  const res = await sdk.sdk.createForm({
+    form: {
+      data: {
+        "salmon": {},
       },
-    ],
-    type: FormType.SelfServiceUser,
-  },
-}).then((res: CreateFormResponse) => {
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+      steps: [
+        {
+          fields: [
+            "e9ff04ae-f327-4f65-a4bf-3de0cd3a2886",
+          ],
+        },
+      ],
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3539,69 +2618,46 @@ Creates a form field.  You can optionally specify an Id for the form, if not pro
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateFormFieldResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { FormControl, FormDataType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.createFormField({
-  field: {
-    confirm: false,
-    consentId: "029a39de-8fb3-4c33-ad62-3814eaf7632d",
-    control: FormControl.Number,
-    data: {
-      "neque": {},
-    },
-    description: "Multi-lateral analyzing analyzer",
-    id: "34714c4d-4ac0-4ba5-b6f5-285ed6b8063e",
-    insertInstant: 1659380719000,
-    key: "<key>",
-    lastUpdateInstant: 1659380719000,
-    name: "Reggae withdrawal synergize",
-    options: [
-      "invoice",
-    ],
-    required: false,
-    type: FormDataType.Consent,
-    validator: {
-      enabled: false,
-      expression: "aboard",
-    },
-  },
-  fields: [
-    {
-      confirm: false,
-      consentId: "a88f15f7-21dc-4322-9454-cd1796dd5c6a",
-      control: FormControl.Text,
+  const res = await sdk.sdk.createFormField({
+    field: {
       data: {
-        "soluta": {},
+        "Cambodia": {},
       },
-      description: "Universal explicit task-force",
-      id: "57384602-383e-4dd0-b0ca-7b6f7013ddc5",
       insertInstant: 1659380719000,
-      key: "<key>",
       lastUpdateInstant: 1659380719000,
-      name: "willfully",
       options: [
-        "Hybrid",
+        "Latin",
       ],
-      required: false,
-      type: FormDataType.Bool,
-      validator: {
-        enabled: false,
-        expression: "fervently",
-      },
+      validator: {},
     },
-  ],
-}).then((res: CreateFormFieldResponse) => {
+    fields: [
+      {
+        data: {
+          "Awesome": {},
+        },
+        insertInstant: 1659380719000,
+        lastUpdateInstant: 1659380719000,
+        options: [
+          "Tesla",
+        ],
+        validator: {},
+      },
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3625,7 +2681,7 @@ Creates a form field.  You can optionally specify an Id for the form, if not pro
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateFormFieldWithIdRequest, CreateFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateFormFieldWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   FormControl,
   FormDataType,
@@ -3635,68 +2691,46 @@ import {
   FormFieldValidator,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const fieldId: string = "content";
 const formFieldRequest: FormFieldRequest = {
   field: {
-    confirm: false,
-    consentId: "8e2d669d-69f5-4228-9291-a5217a12f659",
-    control: FormControl.Number,
     data: {
-      "repudiandae": {},
+      "programming": {},
     },
-    description: "Fundamental holistic framework",
-    id: "f1d8ec87-47ee-441b-9450-1906742abc2b",
     insertInstant: 1659380719000,
-    key: "<key>",
     lastUpdateInstant: 1659380719000,
-    name: "Michigan",
     options: [
-      "Rupiah",
+      "fuchsia",
     ],
-    required: false,
-    type: FormDataType.Email,
-    validator: {
-      enabled: false,
-      expression: "Principal convergence",
-    },
+    validator: {},
   },
   fields: [
     {
-      confirm: false,
-      consentId: "3891357a-298f-43bf-86f4-48827cdd4b7e",
-      control: FormControl.Select,
       data: {
-        "voluptatum": {},
+        "Dollar": {},
       },
-      description: "User-centric mobile approach",
-      id: "d11808f7-adf1-4077-81a1-d195f32b3857",
       insertInstant: 1659380719000,
-      key: "<key>",
       lastUpdateInstant: 1659380719000,
-      name: "Agent",
       options: [
-        "leading",
+        "Hyundai",
       ],
-      required: false,
-      type: FormDataType.String,
-      validator: {
-        enabled: false,
-        expression: "Northwest Intranet Rohan",
-      },
+      validator: {},
     },
   ],
 };
 
-sdk.sdk.createFormFieldWithId(fieldId, formFieldRequest).then((res: CreateFormFieldWithIdResponse) => {
+  const res = await sdk.sdk.createFormFieldWithId(fieldId, formFieldRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3721,40 +2755,39 @@ Creates a form.  You can optionally specify an Id for the form, if not provided 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateFormWithIdRequest, CreateFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateFormWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { Form, FormData, FormRequest, FormStep, FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const formId: string = "connecting";
 const formRequest: FormRequest = {
   form: {
     data: {
-      "culpa": {},
+      "Response": {},
     },
-    id: "45ea5bcf-2d06-48ba-a83d-31a2526c4318",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "navigate DNS Southwest",
     steps: [
       {
         fields: [
-          "e1a96edc-9b66-42f1-9d6f-6b45f49e2fc6",
+          "5ea5bcf2-d068-4bae-83d3-1a2526c4318c",
         ],
       },
     ],
-    type: FormType.AdminUser,
   },
 };
 
-sdk.sdk.createFormWithId(formId, formRequest).then((res: CreateFormWithIdResponse) => {
+  const res = await sdk.sdk.createFormWithId(formId, formRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3779,47 +2812,41 @@ Creates a group. You can optionally specify an Id for the group, if not provided
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateGroupRequest, CreateGroupResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateGroupRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { ApplicationRole, Group, GroupData, GroupRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const groupRequest: GroupRequest = {
   group: {
     data: {
-      "laboriosam": {},
+      "parallelism": {},
     },
-    id: "bd5d7374-917d-4aeb-b574-b13e5dac932b",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "analyzer",
     roles: [
       {
-        description: "Quality-focused analyzing firmware",
-        id: "fb147d66-41f7-4a5a-be63-be63a4498523",
         insertInstant: 1659380719000,
-        isDefault: false,
-        isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "Cotton solution between",
       },
     ],
-    tenantId: "35cc4ac5-683c-4ecf-84c2-141fa48cd62f",
   },
   roleIds: [
-    "e41adc28-8321-433a-a2d4-cc3f70c83f4c",
+    "d5d73749-17da-4ebf-974b-13e5dac932b3",
   ],
 };
-const xFusionAuthTenantId: string = "Minivan index Missoula";
+const xFusionAuthTenantId: string = "Papua methodologies";
 
-sdk.sdk.createGroup(groupRequest, xFusionAuthTenantId).then((res: CreateGroupResponse) => {
+  const res = await sdk.sdk.createGroup(groupRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3844,122 +2871,79 @@ Creates a member in a group.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateGroupMembersWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
-
-sdk.sdk.createGroupMembersWithId({
-  members: [
-    {
-      data: {
-        "dignissimos": {},
-      },
-      groupId: "0cc086d6-a8e8-4cf4-af59-1189168959e8",
-      id: "14a8a57c-3901-44bf-931c-eed5890b5a1b",
-      insertInstant: 1659380719000,
-      user: {
-        active: false,
-        birthDate: "2007-12-03",
-        breachedPasswordLastCheckedInstant: 1659380719000,
-        breachedPasswordStatus: BreachedPasswordStatus.ExactMatch,
-        cleanSpeakId: "f6726f9f-62f6-40a6-b060-14b0370fd465",
-        connectorId: "a5d467d5-5ef4-45b4-89dc-b347f8e8804a",
-        data: {
-          "autem": {},
-        },
-        email: "Leann_Armstrong17@hotmail.com",
-        encryptionScheme: "Smart",
-        expiry: 1659380719000,
-        factor: 425334,
-        firstName: "Ariel",
-        fullName: "Franklin Kub",
-        id: "855e776f-13fa-4d29-b9ca-834cb2d41734",
-        imageUrl: "coast Folding",
-        insertInstant: 1659380719000,
-        lastLoginInstant: 1659380719000,
-        lastName: "Lemke",
-        lastUpdateInstant: 1659380719000,
-        memberships: [
-          {},
-        ],
-        middleName: "Jamie",
-        mobilePhone: "impactful microchip Avon",
-        parentEmail: "Coordinator female Northeast",
-        password: "NhsjvQiXHMCWdxs",
-        passwordChangeReason: ChangePasswordReason.Expired,
-        passwordChangeRequired: false,
-        passwordLastUpdateInstant: 1659380719000,
-        preferredLanguages: [
-          "en_US",
-        ],
-        registrations: [
-          {
-            applicationId: "77a9a848-298b-4574-ab55-e3a2f35bf0f8",
-            authenticationToken: "Applications",
-            cleanSpeakId: "6d8a425b-897c-490b-a232-5072238ee0ad",
-            data: {
-              "labore": {},
-            },
-            id: "4be54942-dc28-42dc-95f1-f132a563286f",
-            insertInstant: 1659380719000,
-            lastLoginInstant: 1659380719000,
-            lastUpdateInstant: 1659380719000,
-            preferredLanguages: [
-              "en_US",
-            ],
-            roles: [
-              "Buckinghamshire",
-            ],
-            timezone: "America/Denver",
-            tokens: {
-              "exercitationem": "Cisgender",
-            },
-            username: "Remington_Schiller",
-            usernameStatus: ContentStatus.Pending,
-            verified: false,
-          },
-        ],
-        salt: "feed cranky",
-        tenantId: "43b0be29-48cc-4f2a-8426-771a8babb6de",
-        timezone: "America/Denver",
-        twoFactor: {
-          methods: [
-            {
-              authenticator: {
-                algorithm: TOTPAlgorithm.HmacSha1,
-                codeLength: 97060,
-                timeStep: 145717,
-              },
-              email: "Rosina_Jones8@yahoo.com",
-              id: "<ID>",
-              lastUsed: false,
-              method: "Account Metal male",
-              mobilePhone: "indigo",
-              secret: "Oriental solid",
-            },
-          ],
-          recoveryCodes: [
-            "Kids",
-          ],
-        },
-        uniqueUsername: "du THX Paradigm",
-        username: "Valentina84",
-        usernameStatus: ContentStatus.Pending,
-        verified: false,
-      },
-      userId: "6b1e6c05-364b-41da-89a2-7a6a042e13b0",
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
     },
-  ],
-}).then((res: CreateGroupMembersWithIdResponse) => {
+  });
+
+  const res = await sdk.sdk.createGroupMembersWithId({
+    members: [
+      {
+        data: {
+          "auxiliary": {},
+        },
+        insertInstant: 1659380719000,
+        user: {
+          birthDate: "2007-12-03",
+          breachedPasswordLastCheckedInstant: 1659380719000,
+          data: {
+            "Tandem": {},
+          },
+          expiry: 1659380719000,
+          insertInstant: 1659380719000,
+          lastLoginInstant: 1659380719000,
+          lastUpdateInstant: 1659380719000,
+          memberships: [
+            {},
+          ],
+          passwordLastUpdateInstant: 1659380719000,
+          preferredLanguages: [
+            "en_US",
+          ],
+          registrations: [
+            {
+              data: {
+                "index": {},
+              },
+              insertInstant: 1659380719000,
+              lastLoginInstant: 1659380719000,
+              lastUpdateInstant: 1659380719000,
+              preferredLanguages: [
+                "en_US",
+              ],
+              roles: [
+                "immediate",
+              ],
+              timezone: "America/Denver",
+              tokens: {
+                "Optimization": "once",
+              },
+            },
+          ],
+          timezone: "America/Denver",
+          twoFactor: {
+            methods: [
+              {
+                authenticator: {},
+              },
+            ],
+            recoveryCodes: [
+              "Tricycle",
+            ],
+          },
+        },
+      },
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3983,48 +2967,42 @@ Creates a group. You can optionally specify an Id for the group, if not provided
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateGroupWithIdRequest, CreateGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateGroupWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { ApplicationRole, Group, GroupData, GroupRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const groupId: string = "mesh";
 const groupRequest: GroupRequest = {
   group: {
     data: {
-      "explicabo": {},
+      "Nevada": {},
     },
-    id: "8549be59-288e-41d5-9f1e-b46b3f0b558d",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "Cadillac CLI",
     roles: [
       {
-        description: "Decentralized real-time function",
-        id: "e7117ab1-447c-4481-95cc-ca0aebd8f81f",
         insertInstant: 1659380719000,
-        isDefault: false,
-        isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "deploy invoice",
       },
     ],
-    tenantId: "c6d250d6-a338-41aa-a175-54f6f0831215",
   },
   roleIds: [
-    "45add0c9-e3c3-4a2d-a0c4-427f5a522d30",
+    "549be592-88e1-4d55-b1eb-46b3f0b558d6",
   ],
 };
-const xFusionAuthTenantId: string = "pascal heuristic Licensed";
+const xFusionAuthTenantId: string = "turquoise Delaware Bicycle";
 
-sdk.sdk.createGroupWithId(groupId, groupRequest, xFusionAuthTenantId).then((res: CreateGroupWithIdResponse) => {
+  const res = await sdk.sdk.createGroupWithId(groupId, groupRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -4050,37 +3028,32 @@ Creates an IP Access Control List. You can optionally specify an Id on this crea
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateIPAccessControlListResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { IPAccessControlEntryAction } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
-
-sdk.sdk.createIPAccessControlList({
-  ipAccessControlList: {
-    data: {
-      "sapiente": {},
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
     },
-    entries: [
-      {
-        action: IPAccessControlEntryAction.Block,
-        endIPAddress: "Paradigm Neither",
-        startIPAddress: "database",
+  });
+
+  const res = await sdk.sdk.createIPAccessControlList({
+    ipAccessControlList: {
+      data: {
+        "pork": {},
       },
-    ],
-    id: "2cac6074-602b-4151-a2ca-f8b81741b560",
-    insertInstant: 1659380719000,
-    lastUpdateInstant: 1659380719000,
-    name: "prickly",
-  },
-}).then((res: CreateIPAccessControlListResponse) => {
+      entries: [
+        {},
+      ],
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -4104,7 +3077,7 @@ Creates an IP Access Control List. You can optionally specify an Id on this crea
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateIPAccessControlListWithIdRequest, CreateIPAccessControlListWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateIPAccessControlListWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   IPAccessControlEntry,
   IPAccessControlEntryAction,
@@ -4113,36 +3086,32 @@ import {
   IPAccessControlListRequest,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const accessControlListId: string = "which";
 const ipAccessControlListRequest: IPAccessControlListRequest = {
   ipAccessControlList: {
     data: {
-      "dicta": {},
+      "New": {},
     },
     entries: [
-      {
-        action: IPAccessControlEntryAction.Block,
-        endIPAddress: "mealy deeply",
-        startIPAddress: "Aliso Dynamic",
-      },
+      {},
     ],
-    id: "5eb978d2-e7ef-4d07-ab73-531dcf0d2c45",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "Bicycle",
   },
 };
 
-sdk.sdk.createIPAccessControlListWithId(accessControlListId, ipAccessControlListRequest).then((res: CreateIPAccessControlListWithIdResponse) => {
+  const res = await sdk.sdk.createIPAccessControlListWithId(accessControlListId, ipAccessControlListRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -4167,71 +3136,22 @@ Creates an identity provider. You can optionally specify an Id for the identity 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateIdentityProviderResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  CanonicalizationMethod,
-  ClientAuthenticationMethod,
-  IdentityProviderLinkingStrategy,
-  IdentityProviderLoginMethod,
-  IdentityProviderType,
-  SAMLv2DestinationAssertionPolicy,
-  SteamAPIMode,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.createIdentityProvider({
-  identityProvider: {
-    applicationConfiguration: {
-      "expedita": {
-        buttonText: "fooey",
-        clientId: "itaque toolset",
-        clientSecret: "male",
-        createRegistration: false,
-        data: {
-          "dolore": {},
-        },
-        scope: "programming platforms",
-      },
-    },
-    buttonText: "Bedfordshire",
-    clientId: "aha navigating Director",
-    clientSecret: "Pennsylvania necessitatibus",
-    data: {
-      "quo": {},
-    },
-    debug: false,
-    id: "dfb10598-be1b-4081-8af4-793971d3a369",
-    insertInstant: 1659380719000,
-    lambdaConfiguration: {
-      reconcileId: "7e68e59b-3f2d-421e-bddc-dc4c4852dad8",
-    },
-    lastUpdateInstant: 1659380719000,
-    linkingStrategy: IdentityProviderLinkingStrategy.LinkAnonymously,
-    name: "purple Hawaii",
-    scope: "woman",
-    tenantConfiguration: {
-      "voluptate": {
-        data: {
-          "quas": {},
-        },
-        limitUserLinkCount: {
-          enabled: false,
-          maximumLinks: 724096,
-        },
-      },
-    },
-    type: IdentityProviderType.Hypr,
-  },
-}).then((res: CreateIdentityProviderResponse) => {
+  const res = await sdk.sdk.createIdentityProvider({
+    identityProvider: "Fisher",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -4255,152 +3175,26 @@ Creates an identity provider. You can optionally specify an Id for the identity 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateIdentityProviderWithIdRequest, CreateIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  AppleApplicationConfiguration,
-  AppleApplicationConfigurationData,
-  AppleIdentityProvider,
-  AppleIdentityProviderData,
-  CanonicalizationMethod,
-  ClientAuthenticationMethod,
-  EpicGamesApplicationConfiguration,
-  EpicGamesApplicationConfigurationData,
-  EpicGamesIdentityProvider,
-  EpicGamesIdentityProviderData,
-  ExternalJWTApplicationConfiguration,
-  ExternalJWTApplicationConfigurationData,
-  ExternalJWTIdentityProvider,
-  ExternalJWTIdentityProviderData,
-  FacebookApplicationConfiguration,
-  FacebookApplicationConfigurationData,
-  FacebookIdentityProvider,
-  FacebookIdentityProviderData,
-  GoogleApplicationConfiguration,
-  GoogleApplicationConfigurationData,
-  GoogleIdentityProvider,
-  GoogleIdentityProviderData,
-  GoogleIdentityProviderProperties,
-  HYPRApplicationConfiguration,
-  HYPRApplicationConfigurationData,
-  HYPRIdentityProvider,
-  HYPRIdentityProviderData,
-  IdentityProviderLimitUserLinkingPolicy,
-  IdentityProviderLinkingStrategy,
-  IdentityProviderLoginMethod,
-  IdentityProviderOauth2Configuration,
-  IdentityProviderRequest,
-  IdentityProviderTenantConfiguration,
-  IdentityProviderTenantConfigurationData,
-  IdentityProviderType,
-  LinkedInApplicationConfiguration,
-  LinkedInApplicationConfigurationData,
-  LinkedInIdentityProvider,
-  LinkedInIdentityProviderData,
-  LoginHintConfiguration,
-  NintendoApplicationConfiguration,
-  NintendoApplicationConfigurationData,
-  NintendoIdentityProvider,
-  NintendoIdentityProviderData,
-  OpenIdConnectApplicationConfiguration,
-  OpenIdConnectApplicationConfigurationData,
-  OpenIdConnectIdentityProvider,
-  OpenIdConnectIdentityProviderData,
-  ProviderLambdaConfiguration,
-  SAMLv2AssertionConfiguration,
-  SAMLv2DestinationAssertionConfiguration,
-  SAMLv2DestinationAssertionPolicy,
-  SAMLv2IdentityProvider,
-  SAMLv2IdpInitiatedConfiguration,
-  SAMLv2IdPInitiatedIdentityProvider,
-  SonyPSNApplicationConfiguration,
-  SonyPSNApplicationConfigurationData,
-  SonyPSNIdentityProvider,
-  SonyPSNIdentityProviderData,
-  SteamAPIMode,
-  SteamApplicationConfiguration,
-  SteamApplicationConfigurationData,
-  SteamIdentityProvider,
-  SteamIdentityProviderData,
-  TwitchApplicationConfiguration,
-  TwitchApplicationConfigurationData,
-  TwitchIdentityProvider,
-  TwitchIdentityProviderData,
-  TwitterApplicationConfiguration,
-  TwitterApplicationConfigurationData,
-  TwitterIdentityProvider,
-  TwitterIdentityProviderData,
-  XboxApplicationConfiguration,
-  XboxApplicationConfigurationData,
-  XboxIdentityProvider,
-  XboxIdentityProviderData,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { CreateIdentityProviderWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { IdentityProviderRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const identityProviderId: string = "Pangender";
 const identityProviderRequest: IdentityProviderRequest = {
-  identityProvider: {
-    applicationConfiguration: {
-      "occaecati": {
-        buttonText: "Minivan female Chicken",
-        clientId: "Chrysler Towels",
-        clientSecret: "Hybrid",
-        createRegistration: false,
-        data: {
-          "accusamus": {},
-        },
-        loginMethod: IdentityProviderLoginMethod.UseVendorJavaScript,
-        properties: {
-          api: "Horizontal maximize",
-          button: "ivory Somoni",
-        },
-        scope: "Van Inverse",
-      },
-    },
-    buttonText: "payment",
-    clientId: "odio Knolls",
-    clientSecret: "grey",
-    data: {
-      "quos": {},
-    },
-    debug: false,
-    id: "457e51db-5cdc-47fb-a708-fc7b040a4773",
-    insertInstant: 1659380719000,
-    lambdaConfiguration: {
-      reconcileId: "ef34765e-d7de-4110-aeb2-e0e22b459758",
-    },
-    lastUpdateInstant: 1659380719000,
-    linkingStrategy: IdentityProviderLinkingStrategy.LinkByEmailForExistingUser,
-    loginMethod: IdentityProviderLoginMethod.UseVendorJavaScript,
-    name: "Checking Electric",
-    properties: {
-      api: "steradian Modern",
-      button: "rudely",
-    },
-    scope: "Tennessee Liaison Northeast",
-    tenantConfiguration: {
-      "fugiat": {
-        data: {
-          "nemo": {},
-        },
-        limitUserLinkCount: {
-          enabled: false,
-          maximumLinks: 25271,
-        },
-      },
-    },
-    type: IdentityProviderType.Google,
-  },
+  identityProvider: "occaecati",
 };
 
-sdk.sdk.createIdentityProviderWithId(identityProviderId, identityProviderRequest).then((res: CreateIdentityProviderWithIdResponse) => {
+  const res = await sdk.sdk.createIdentityProviderWithId(identityProviderId, identityProviderRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -4425,31 +3219,26 @@ Creates a Lambda. You can optionally specify an Id for the lambda, if not provid
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateLambdaResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { LambdaEngineType, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.createLambda({
-  lambda: {
-    body: "China Tricycle protocol",
-    debug: false,
-    engineType: LambdaEngineType.Nashorn,
-    id: "2e99f978-dc2a-4c69-8295-c2986dfecf59",
-    insertInstant: 1659380719000,
-    lastUpdateInstant: 1659380719000,
-    name: "Bicycle male concerning",
-    type: LambdaType.EpicGamesReconcile,
-  },
-}).then((res: CreateLambdaResponse) => {
+  const res = await sdk.sdk.createLambda({
+    lambda: {
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -4473,33 +3262,29 @@ Creates a Lambda. You can optionally specify an Id for the lambda, if not provid
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateLambdaWithIdRequest, CreateLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateLambdaWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { Lambda, LambdaEngineType, LambdaRequest, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const lambdaId: string = "Lamborghini";
 const lambdaRequest: LambdaRequest = {
   lambda: {
-    body: "grow ha",
-    debug: false,
-    engineType: LambdaEngineType.Nashorn,
-    id: "2ce10e31-86a2-4f62-b6e3-620fb334051f",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "Handmade Oganesson",
-    type: LambdaType.SelfServiceRegistrationValidation,
   },
 };
 
-sdk.sdk.createLambdaWithId(lambdaId, lambdaRequest).then((res: CreateLambdaWithIdResponse) => {
+  const res = await sdk.sdk.createLambdaWithId(lambdaId, lambdaRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -4524,46 +3309,32 @@ The Logout API is intended to be used to remove the refresh token and access tok
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateLogoutRequest, CreateLogoutResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateLogoutRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { EventInfo, EventInfoData, Location, LogoutRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const logoutRequest: LogoutRequest = {
   eventInfo: {
     data: {
-      "ducimus": {},
+      "wireless": {},
     },
-    deviceDescription: "weapon violet SAS",
-    deviceName: "incidentally",
-    deviceType: "Hybrid azure",
-    ipAddress: "7.80.203.34",
-    location: {
-      city: "Franciscashire",
-      country: "Sri Lanka",
-      displayString: "Palladium apropos",
-      latitude: 4116.19,
-      longitude: 8836.69,
-      region: "SCSI programming",
-      zipcode: "61459",
-    },
-    os: "Reggae",
-    userAgent: "joule",
+    location: {},
   },
-  global: false,
-  refreshToken: "male transform scalable",
 };
-const global: string = "function";
-const refreshToken: string = "Factors";
+const global: string = "weapon";
+const refreshToken: string = "violet";
 
-sdk.sdk.createLogout(logoutRequest, global, refreshToken).then((res: CreateLogoutResponse) => {
+  const res = await sdk.sdk.createLogout(logoutRequest, global, refreshToken);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -4589,31 +3360,29 @@ Creates an message template. You can optionally specify an Id for the template, 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateMessageTemplateResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
-
-sdk.sdk.createMessageTemplate({
-  messageTemplate: {
-    data: {
-      "aspernatur": {},
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
     },
-    id: "feb5d23f-8e82-4ccd-8afc-eef45130addb",
-    insertInstant: 1659380719000,
-    lastUpdateInstant: 1659380719000,
-    name: "Hat",
-    type: MessageType.Sms,
-  },
-}).then((res: CreateMessageTemplateResponse) => {
+  });
+
+  const res = await sdk.sdk.createMessageTemplate({
+    messageTemplate: {
+      data: {
+        "Wisconsin": {},
+      },
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -4637,33 +3406,32 @@ Creates an message template. You can optionally specify an Id for the template, 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateMessageTemplateWithIdRequest, CreateMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateMessageTemplateWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { MessageTemplate, MessageTemplateData, MessageTemplateRequest, MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const messageTemplateId: string = "Electric";
 const messageTemplateRequest: MessageTemplateRequest = {
   messageTemplate: {
     data: {
-      "illo": {},
+      "Berkshire": {},
     },
-    id: "6215142e-fe63-4744-81fb-c7abca201d17",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "Analyst",
-    type: MessageType.Sms,
   },
 };
 
-sdk.sdk.createMessageTemplateWithId(messageTemplateId, messageTemplateRequest).then((res: CreateMessageTemplateWithIdResponse) => {
+  const res = await sdk.sdk.createMessageTemplateWithId(messageTemplateId, messageTemplateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -4688,33 +3456,29 @@ Creates a messenger.  You can optionally specify an Id for the messenger, if not
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateMessengerResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { MessengerType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
-
-sdk.sdk.createMessenger({
-  messenger: {
-    data: {
-      "deserunt": {},
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
     },
-    debug: false,
-    id: "e464120c-b205-4bf8-b1bf-ae72a63a3b77",
-    insertInstant: 1659380719000,
-    lastUpdateInstant: 1659380719000,
-    name: "Legacy male Androgynous",
-    transport: "forecast synthesize navigate",
-    type: MessengerType.Twilio,
-  },
-}).then((res: CreateMessengerResponse) => {
+  });
+
+  const res = await sdk.sdk.createMessenger({
+    messenger: {
+      data: {
+        "Human": {},
+      },
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -4738,7 +3502,7 @@ Creates a messenger.  You can optionally specify an Id for the messenger, if not
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateMessengerWithIdRequest, CreateMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateMessengerWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   BaseMessengerConfiguration,
   BaseMessengerConfigurationData,
@@ -4746,32 +3510,29 @@ import {
   MessengerType,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const messengerId: string = "nor";
 const messengerRequest: MessengerRequest = {
   messenger: {
     data: {
-      "vitae": {},
+      "Southeast": {},
     },
-    debug: false,
-    id: "af572cd1-d289-4aaa-ad07-4eef052b35db",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "Bugatti over",
-    transport: "Nebraska male",
-    type: MessengerType.Generic,
   },
 };
 
-sdk.sdk.createMessengerWithId(messengerId, messengerRequest).then((res: CreateMessengerWithIdResponse) => {
+  const res = await sdk.sdk.createMessengerWithId(messengerId, messengerRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -4796,7 +3557,7 @@ Creates a tenant. You can optionally specify an Id for the tenant, if not provid
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateTenantRequest, CreateTenantResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateTenantRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorAttachmentPreference,
   BreachAction,
@@ -4865,364 +3626,124 @@ import {
   VerificationStrategy,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const tenantRequest: TenantRequest = {
   eventInfo: {
     data: {
-      "nulla": {},
+      "worthless": {},
     },
-    deviceDescription: "cleanse West ea",
-    deviceName: "Electronics Clothing",
-    deviceType: "Electric East Steel",
-    ipAddress: "44.17.210.220",
-    location: {
-      city: "Fort Celia",
-      country: "Guam",
-      displayString: "Seattle West till",
-      latitude: 3181.32,
-      longitude: 2303.68,
-      region: "bandwidth withdrawal male",
-      zipcode: "49232",
-    },
-    os: "Loan black",
-    userAgent: "Refined",
+    location: {},
   },
-  sourceTenantId: "ee25262b-acdf-4d31-a709-ac82f4a41d32",
   tenant: {
-    accessControlConfiguration: {
-      uiIPAccessControlListId: "d29b8342-b0ca-46b8-88fd-c1c19e39e258",
-    },
-    captchaConfiguration: {
-      captchaMethod: CaptchaMethod.HCaptchaEnterprise,
-      enabled: false,
-      secretKey: "Price Peso",
-      siteKey: "up exalted",
-      threshold: 8413.8,
-    },
-    configured: false,
+    accessControlConfiguration: {},
+    captchaConfiguration: {},
     connectorPolicies: [
       {
-        connectorId: "c40d0053-c12b-4779-983c-bfab4aeba90a",
         data: {
-          "repellat": {},
+          "cleanse": {},
         },
         domains: [
-          "morph",
+          "West",
         ],
-        migrate: false,
       },
     ],
     data: {
-      "repellendus": {},
+      "ea": {},
     },
     emailConfiguration: {
       additionalHeaders: [
-        {
-          name: "hmph Bacon Plastic",
-          value: "Bespoke",
-        },
+        {},
       ],
-      debug: false,
-      defaultFromEmail: "payment Southeast Fairfield",
-      defaultFromName: "capacitor deliverables",
-      emailUpdateEmailTemplateId: "001568e6-01f0-4053-83c4-e8c6888b8be4",
-      emailVerifiedEmailTemplateId: "eca0262b-384f-44aa-9a61-f2b71fd7765a",
-      forgotPasswordEmailTemplateId: "919386b0-96b8-4f27-bee8-62bcd7325e92",
-      host: "pleasant-petal.org",
-      implicitEmailVerificationAllowed: false,
-      loginIdInUseOnCreateEmailTemplateId: "8e5782b6-0afd-492f-ac5f-5eb64dd8752d",
-      loginIdInUseOnUpdateEmailTemplateId: "28e2444a-d7ba-458a-b48f-870327af1f53",
-      loginNewDeviceEmailTemplateId: "89e81c32-d00f-439b-b12d-757fe14c54e0",
-      loginSuspiciousEmailTemplateId: "2ce86318-fb40-4623-82aa-a1528d83475d",
-      password: "N3ZhnRARaJCnJTx",
-      passwordResetSuccessEmailTemplateId: "df5ced64-c4cb-4b3b-99b3-d9d35dd32af6",
-      passwordUpdateEmailTemplateId: "273ec6c0-cd06-422a-94c1-6eb5fe4d9284",
-      passwordlessEmailTemplateId: "6d92b8ba-0efd-4d63-a6c1-3ffcd09671ac",
-      port: 16717,
-      properties: "Assistant behind",
-      security: EmailSecurityType.Ssl,
-      setPasswordEmailTemplateId: "e50362f8-554a-422c-881f-c653829e20b5",
-      twoFactorMethodAddEmailTemplateId: "962da1c8-47e1-439a-bb58-eb91f81edfa7",
-      twoFactorMethodRemoveEmailTemplateId: "87689237-46f6-4acc-a88a-9d90ed368645",
-      unverified: {
-        allowEmailChangeWhenGated: false,
-        behavior: UnverifiedBehavior.Gated,
-      },
-      username: "Raul4",
-      verificationEmailTemplateId: "49f922a3-d96b-4563-a559-e670f6426681",
-      verificationStrategy: VerificationStrategy.FormField,
-      verifyEmail: false,
-      verifyEmailWhenChanged: false,
+      unverified: {},
     },
     eventConfiguration: {
       events: {
-        "modi": {
-          enabled: false,
-          transactionType: TransactionType.None,
-        },
+        "Dynamic": {},
       },
     },
     externalIdentifierConfiguration: {
-      authorizationGrantIdTimeToLiveInSeconds: 11415,
-      changePasswordIdGenerator: {
-        length: 880251,
-        type: SecureGeneratorType.RandomBytes,
-      },
-      changePasswordIdTimeToLiveInSeconds: 492778,
-      deviceCodeTimeToLiveInSeconds: 955108,
-      deviceUserCodeIdGenerator: {
-        length: 105648,
-        type: SecureGeneratorType.RandomBytes,
-      },
-      emailVerificationIdGenerator: {
-        length: 934807,
-        type: SecureGeneratorType.RandomAlpha,
-      },
-      emailVerificationIdTimeToLiveInSeconds: 964578,
-      emailVerificationOneTimeCodeGenerator: {
-        length: 461722,
-        type: SecureGeneratorType.RandomAlpha,
-      },
-      externalAuthenticationIdTimeToLiveInSeconds: 901409,
-      oneTimePasswordTimeToLiveInSeconds: 317630,
-      passwordlessLoginGenerator: {
-        length: 4240,
-        type: SecureGeneratorType.RandomDigits,
-      },
-      passwordlessLoginTimeToLiveInSeconds: 89032,
-      pendingAccountLinkTimeToLiveInSeconds: 320434,
-      registrationVerificationIdGenerator: {
-        length: 491656,
-        type: SecureGeneratorType.RandomDigits,
-      },
-      registrationVerificationIdTimeToLiveInSeconds: 810150,
-      registrationVerificationOneTimeCodeGenerator: {
-        length: 557582,
-        type: SecureGeneratorType.RandomAlphaNumeric,
-      },
-      samlv2AuthNRequestIdTimeToLiveInSeconds: 876961,
-      setupPasswordIdGenerator: {
-        length: 409587,
-        type: SecureGeneratorType.RandomDigits,
-      },
-      setupPasswordIdTimeToLiveInSeconds: 657571,
-      trustTokenTimeToLiveInSeconds: 785843,
-      twoFactorIdTimeToLiveInSeconds: 181843,
-      twoFactorOneTimeCodeIdGenerator: {
-        length: 270766,
-        type: SecureGeneratorType.RandomAlpha,
-      },
-      twoFactorOneTimeCodeIdTimeToLiveInSeconds: 516869,
-      twoFactorTrustIdTimeToLiveInSeconds: 754691,
-      webAuthnAuthenticationChallengeTimeToLiveInSeconds: 948387,
-      webAuthnRegistrationChallengeTimeToLiveInSeconds: 323438,
+      changePasswordIdGenerator: {},
+      deviceUserCodeIdGenerator: {},
+      emailVerificationIdGenerator: {},
+      emailVerificationOneTimeCodeGenerator: {},
+      passwordlessLoginGenerator: {},
+      registrationVerificationIdGenerator: {},
+      registrationVerificationOneTimeCodeGenerator: {},
+      setupPasswordIdGenerator: {},
+      twoFactorOneTimeCodeIdGenerator: {},
     },
     failedAuthenticationConfiguration: {
-      actionCancelPolicy: {
-        onPasswordReset: false,
-      },
-      actionDuration: 472778,
-      actionDurationUnit: ExpiryUnit.Years,
-      emailUser: false,
-      resetCountInSeconds: 536635,
-      tooManyAttempts: 773578,
-      userActionId: "7357129b-28cd-41db-b6f6-05ac542d6880",
+      actionCancelPolicy: {},
     },
-    familyConfiguration: {
-      allowChildRegistrations: false,
-      confirmChildEmailTemplateId: "c2cfe6aa-69be-4f1d-b0da-8c1a1cdc7edd",
-      deleteOrphanedAccounts: false,
-      deleteOrphanedAccountsDays: 536775,
-      enabled: false,
-      familyRequestEmailTemplateId: "8c5a615f-e19f-4593-bdf1-023fabc8e9a7",
-      maximumChildAge: 660096,
-      minimumOwnerAge: 747056,
-      parentEmailRequired: false,
-      parentRegistrationEmailTemplateId: "c97cfd93-6476-44b3-a5e9-0ff80b7bd631",
-    },
-    formConfiguration: {
-      adminUserFormId: "09d21d08-a7be-475b-9a7f-0c90d2e725b0",
-    },
-    httpSessionMaxInactiveInterval: 592230,
-    id: "76b2a774-d2af-4df9-84b3-7534720ad6ef",
+    familyConfiguration: {},
+    formConfiguration: {},
     insertInstant: 1659380719000,
-    issuer: "Functionality",
     jwtConfiguration: {
-      accessTokenKeyId: "3962143d-cc48-4ab6-bb90-6fa641587913",
-      enabled: false,
-      idTokenKeyId: "5ff15c51-134b-4425-bc2f-2ad3001ceb88",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.Fixed,
-      refreshTokenRevocationPolicy: {
-        onLoginPrevented: false,
-        onMultiFactorEnable: false,
-        onPasswordChanged: false,
-      },
-      refreshTokenTimeToLiveInMinutes: 497192,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
-      timeToLiveInSeconds: 756506,
+      refreshTokenRevocationPolicy: {},
     },
-    lambdaConfiguration: {
-      scimEnterpriseUserRequestConverterId: "a8ff6be5-fabb-4adc-af68-e689a68ea2c9",
-      scimEnterpriseUserResponseConverterId: "962ebf92-52d9-4d68-bb68-f962bd3d5d39",
-      scimGroupRequestConverterId: "6312bb08-f818-4488-8553-d978ff9efd16",
-      scimGroupResponseConverterId: "844a003d-701f-435e-8acd-ed26bc9d2987",
-      scimUserRequestConverterId: "f55b32ff-0484-43da-9d06-eb4095699a0d",
-      scimUserResponseConverterId: "32b6f332-c629-45f9-a130-1e9fa9edb817",
-    },
+    lambdaConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    loginConfiguration: {
-      requireAuthentication: false,
-    },
-    logoutURL: "female",
-    maximumPasswordAge: {
-      days: 22852,
-      enabled: false,
-    },
-    minimumPasswordAge: {
-      enabled: false,
-      seconds: 801264,
-    },
+    loginConfiguration: {},
+    maximumPasswordAge: {},
+    minimumPasswordAge: {},
     multiFactorConfiguration: {
-      authenticator: {
-        algorithm: TOTPAlgorithm.HmacSha1,
-        codeLength: 208743,
-        enabled: false,
-        timeStep: 318817,
-      },
-      email: {
-        enabled: false,
-        templateId: "c79acf8a-38a4-4a9b-8944-edfc471367ef",
-      },
-      loginPolicy: MultiFactorLoginPolicy.Enabled,
-      sms: {
-        enabled: false,
-        messengerId: "448317f6-6846-4643-8b1a-f5508988dfcf",
-        templateId: "646f5bdf-689f-4866-b0bc-60c8800c1b54",
-      },
+      authenticator: {},
+      email: {},
+      sms: {},
     },
-    name: "female",
-    oauthConfiguration: {
-      clientCredentialsAccessTokenPopulateLambdaId: "24d6cbab-f2f5-4d5f-8b25-07f2876cf23c",
-    },
-    passwordEncryptionConfiguration: {
-      encryptionScheme: "Manager",
-      encryptionSchemeFactor: 111402,
-      modifyEncryptionSchemeOnLogin: false,
-    },
+    oauthConfiguration: {},
+    passwordEncryptionConfiguration: {},
     passwordValidationRules: {
-      breachDetection: {
-        enabled: false,
-        matchMode: BreachMatchMode.Low,
-        notifyUserEmailTemplateId: "98c0724a-e711-461c-930a-a8ea5e29250e",
-        onLogin: BreachAction.Off,
-      },
-      maxLength: 640844,
-      minLength: 602994,
-      rememberPreviousPasswords: {
-        count: 641528,
-        enabled: false,
-      },
-      requireMixedCase: false,
-      requireNonAlpha: false,
-      requireNumber: false,
-      validateOnLogin: false,
+      breachDetection: {},
+      rememberPreviousPasswords: {},
     },
     rateLimitConfiguration: {
-      failedLogin: {
-        enabled: false,
-        limit: 978772,
-        timePeriodInSeconds: 559532,
-      },
-      forgotPassword: {
-        enabled: false,
-        limit: 648723,
-        timePeriodInSeconds: 346226,
-      },
-      sendEmailVerification: {
-        enabled: false,
-        limit: 272470,
-        timePeriodInSeconds: 494479,
-      },
-      sendPasswordless: {
-        enabled: false,
-        limit: 206336,
-        timePeriodInSeconds: 586641,
-      },
-      sendRegistrationVerification: {
-        enabled: false,
-        limit: 237974,
-        timePeriodInSeconds: 209854,
-      },
-      sendTwoFactor: {
-        enabled: false,
-        limit: 74628,
-        timePeriodInSeconds: 458796,
-      },
+      failedLogin: {},
+      forgotPassword: {},
+      sendEmailVerification: {},
+      sendPasswordless: {},
+      sendRegistrationVerification: {},
+      sendTwoFactor: {},
     },
     registrationConfiguration: {
       blockedDomains: [
-        "Minivan",
+        "Electronics",
       ],
     },
     scimServerConfiguration: {
-      clientEntityTypeId: "37ea3e04-876d-4aaf-a281-a2fe988669cb",
-      enabled: false,
       schemas: {
-        "perferendis": {},
+        "male": {},
       },
-      serverEntityTypeId: "62e4d455-9c45-4518-9eb6-8d07e1ae11ec",
     },
-    ssoConfiguration: {
-      deviceTrustTimeToLiveInSeconds: 486836,
-    },
-    state: ObjectState.Active,
-    themeId: "dfbc2d49-8cd7-4fdc-a51b-50a15c4c745a",
+    ssoConfiguration: {},
     userDeletePolicy: {
-      unverified: {
-        enabled: false,
-        numberOfDaysToRetain: 552195,
-      },
+      unverified: {},
     },
     usernameConfiguration: {
-      unique: {
-        enabled: false,
-        numberOfDigits: 535021,
-        separator: "Plastic",
-        strategy: UniqueUsernameStrategy.Always,
-      },
+      unique: {},
     },
     webAuthnConfiguration: {
-      bootstrapWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.CrossPlatform,
-        enabled: false,
-        userVerificationRequirement: UserVerificationRequirement.Discouraged,
-      },
-      debug: false,
-      enabled: false,
-      reauthenticationWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.CrossPlatform,
-        enabled: false,
-        userVerificationRequirement: UserVerificationRequirement.Required,
-      },
-      relyingPartyId: "process",
-      relyingPartyName: "brand ouch East",
+      bootstrapWorkflow: {},
+      reauthenticationWorkflow: {},
     },
   },
   webhookIds: [
-    "63e250bc-250b-488d-a464-4e56ae886d46",
+    "d5134021-dd4e-425c-8d0d-0c59ea53f817",
   ],
 };
-const xFusionAuthTenantId: string = "Coordinator";
+const xFusionAuthTenantId: string = "male astride";
 
-sdk.sdk.createTenant(tenantRequest, xFusionAuthTenantId).then((res: CreateTenantResponse) => {
+  const res = await sdk.sdk.createTenant(tenantRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -5247,7 +3768,7 @@ Creates a tenant. You can optionally specify an Id for the tenant, if not provid
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateTenantWithIdRequest, CreateTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateTenantWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorAttachmentPreference,
   BreachAction,
@@ -5316,365 +3837,125 @@ import {
   VerificationStrategy,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const tenantId: string = "FTP";
 const tenantRequest: TenantRequest = {
   eventInfo: {
     data: {
-      "eaque": {},
+      "Caledonia": {},
     },
-    deviceDescription: "male Soap",
-    deviceName: "Soft",
-    deviceType: "up navigating",
-    ipAddress: "168.229.32.148",
-    location: {
-      city: "East Honolulu",
-      country: "Brunei Darussalam",
-      displayString: "Rubber Directives",
-      latitude: 1882.39,
-      longitude: 1280.4,
-      region: "plus",
-      zipcode: "13523-1489",
-    },
-    os: "aw Bespoke haptic",
-    userAgent: "eos PCI Books",
+    location: {},
   },
-  sourceTenantId: "7d6c0c67-a0d9-4715-b4c5-1e6ceb120158",
   tenant: {
-    accessControlConfiguration: {
-      uiIPAccessControlListId: "030898f2-0692-4410-a825-00aa10393113",
-    },
-    captchaConfiguration: {
-      captchaMethod: CaptchaMethod.HCaptcha,
-      enabled: false,
-      secretKey: "Investor Tactics",
-      siteKey: "Assistant Utah",
-      threshold: 8652.24,
-    },
-    configured: false,
+    accessControlConfiguration: {},
+    captchaConfiguration: {},
     connectorPolicies: [
       {
-        connectorId: "92b526e7-c098-487c-b578-45487eb036b0",
         data: {
-          "sequi": {},
+          "neque": {},
         },
         domains: [
-          "man",
+          "Rock",
         ],
-        migrate: false,
       },
     ],
     data: {
-      "quae": {},
+      "Soft": {},
     },
     emailConfiguration: {
       additionalHeaders: [
-        {
-          name: "Helium Bacon VGA",
-          value: "calculating bandwidth behest",
-        },
+        {},
       ],
-      debug: false,
-      defaultFromEmail: "pink",
-      defaultFromName: "ick Account Human",
-      emailUpdateEmailTemplateId: "e230563e-362f-4b90-9c8d-975c273f6ddb",
-      emailVerifiedEmailTemplateId: "cca48313-f04a-437e-b79f-46dbc45d775b",
-      forgotPasswordEmailTemplateId: "c7ccb928-1582-4e04-bd67-c34cc4625782",
-      host: "useful-station-wagon.com",
-      implicitEmailVerificationAllowed: false,
-      loginIdInUseOnCreateEmailTemplateId: "8b4e8ce0-fa4a-48b5-875e-d10226829edd",
-      loginIdInUseOnUpdateEmailTemplateId: "2645c493-add0-426d-bb1d-068cd24175d2",
-      loginNewDeviceEmailTemplateId: "961992ff-7af4-473c-bae8-7e8bf07d763b",
-      loginSuspiciousEmailTemplateId: "c51a117c-64ee-4662-b2cc-f7f55eb20946",
-      password: "dhF3_7gtJBlA9Y4",
-      passwordResetSuccessEmailTemplateId: "ab4ebe2f-c17c-4ebd-8562-68a33f8682d5",
-      passwordUpdateEmailTemplateId: "431f73bf-2684-4e31-9d29-c6a7ed6bb14c",
-      passwordlessEmailTemplateId: "5a85cd25-103d-40b8-a22f-86765f8d4105",
-      port: 119961,
-      properties: "Bronze continually",
-      security: EmailSecurityType.Tls,
-      setPasswordEmailTemplateId: "c3b32670-9312-4b8c-85e7-918e9b624547",
-      twoFactorMethodAddEmailTemplateId: "08382769-89da-4219-95eb-a69a0b8ec2e3",
-      twoFactorMethodRemoveEmailTemplateId: "8e04e463-8b3e-486c-a3e1-57daca224ac4",
-      unverified: {
-        allowEmailChangeWhenGated: false,
-        behavior: UnverifiedBehavior.Gated,
-      },
-      username: "Mattie_Wiza",
-      verificationEmailTemplateId: "6300087f-5ff2-400f-b19b-0259a396bd64",
-      verificationStrategy: VerificationStrategy.ClickableLink,
-      verifyEmail: false,
-      verifyEmailWhenChanged: false,
+      unverified: {},
     },
     eventConfiguration: {
       events: {
-        "quam": {
-          enabled: false,
-          transactionType: TransactionType.SuperMajority,
-        },
+        "Central": {},
       },
     },
     externalIdentifierConfiguration: {
-      authorizationGrantIdTimeToLiveInSeconds: 228608,
-      changePasswordIdGenerator: {
-        length: 963605,
-        type: SecureGeneratorType.RandomAlpha,
-      },
-      changePasswordIdTimeToLiveInSeconds: 149542,
-      deviceCodeTimeToLiveInSeconds: 242733,
-      deviceUserCodeIdGenerator: {
-        length: 737765,
-        type: SecureGeneratorType.RandomBytes,
-      },
-      emailVerificationIdGenerator: {
-        length: 826758,
-        type: SecureGeneratorType.RandomAlpha,
-      },
-      emailVerificationIdTimeToLiveInSeconds: 122925,
-      emailVerificationOneTimeCodeGenerator: {
-        length: 599121,
-        type: SecureGeneratorType.RandomAlphaNumeric,
-      },
-      externalAuthenticationIdTimeToLiveInSeconds: 162138,
-      oneTimePasswordTimeToLiveInSeconds: 661967,
-      passwordlessLoginGenerator: {
-        length: 275157,
-        type: SecureGeneratorType.RandomAlpha,
-      },
-      passwordlessLoginTimeToLiveInSeconds: 369839,
-      pendingAccountLinkTimeToLiveInSeconds: 836411,
-      registrationVerificationIdGenerator: {
-        length: 696527,
-        type: SecureGeneratorType.RandomAlpha,
-      },
-      registrationVerificationIdTimeToLiveInSeconds: 127195,
-      registrationVerificationOneTimeCodeGenerator: {
-        length: 443499,
-        type: SecureGeneratorType.RandomBytes,
-      },
-      samlv2AuthNRequestIdTimeToLiveInSeconds: 647443,
-      setupPasswordIdGenerator: {
-        length: 721911,
-        type: SecureGeneratorType.RandomAlpha,
-      },
-      setupPasswordIdTimeToLiveInSeconds: 179999,
-      trustTokenTimeToLiveInSeconds: 214996,
-      twoFactorIdTimeToLiveInSeconds: 834651,
-      twoFactorOneTimeCodeIdGenerator: {
-        length: 862437,
-        type: SecureGeneratorType.RandomAlpha,
-      },
-      twoFactorOneTimeCodeIdTimeToLiveInSeconds: 260337,
-      twoFactorTrustIdTimeToLiveInSeconds: 43951,
-      webAuthnAuthenticationChallengeTimeToLiveInSeconds: 135736,
-      webAuthnRegistrationChallengeTimeToLiveInSeconds: 209597,
+      changePasswordIdGenerator: {},
+      deviceUserCodeIdGenerator: {},
+      emailVerificationIdGenerator: {},
+      emailVerificationOneTimeCodeGenerator: {},
+      passwordlessLoginGenerator: {},
+      registrationVerificationIdGenerator: {},
+      registrationVerificationOneTimeCodeGenerator: {},
+      setupPasswordIdGenerator: {},
+      twoFactorOneTimeCodeIdGenerator: {},
     },
     failedAuthenticationConfiguration: {
-      actionCancelPolicy: {
-        onPasswordReset: false,
-      },
-      actionDuration: 583632,
-      actionDurationUnit: ExpiryUnit.Minutes,
-      emailUser: false,
-      resetCountInSeconds: 749435,
-      tooManyAttempts: 890552,
-      userActionId: "454fb812-71c4-4d8a-9e69-24ec69d257c7",
+      actionCancelPolicy: {},
     },
-    familyConfiguration: {
-      allowChildRegistrations: false,
-      confirmChildEmailTemplateId: "feb32705-eab3-41bd-9159-4feed60b290c",
-      deleteOrphanedAccounts: false,
-      deleteOrphanedAccountsDays: 40734,
-      enabled: false,
-      familyRequestEmailTemplateId: "97b8da12-61ec-4010-90c1-eec1106a876c",
-      maximumChildAge: 597421,
-      minimumOwnerAge: 391714,
-      parentEmailRequired: false,
-      parentRegistrationEmailTemplateId: "2955cdef-c701-4611-85f8-4dc692678054",
-    },
-    formConfiguration: {
-      adminUserFormId: "dc72f382-6da6-49e1-939e-39f0b57ea307",
-    },
-    httpSessionMaxInactiveInterval: 573906,
-    id: "08696540-1f39-48c0-ad87-96f43aef18a5",
+    familyConfiguration: {},
+    formConfiguration: {},
     insertInstant: 1659380719000,
-    issuer: "deposit",
     jwtConfiguration: {
-      accessTokenKeyId: "3d75e69d-4fba-463e-8566-6c8ebbca4a66",
-      enabled: false,
-      idTokenKeyId: "a0c1eef2-8636-41a8-bce4-294173493e09",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
-      refreshTokenRevocationPolicy: {
-        onLoginPrevented: false,
-        onMultiFactorEnable: false,
-        onPasswordChanged: false,
-      },
-      refreshTokenTimeToLiveInMinutes: 749038,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
-      timeToLiveInSeconds: 591189,
+      refreshTokenRevocationPolicy: {},
     },
-    lambdaConfiguration: {
-      scimEnterpriseUserRequestConverterId: "01c50b63-1f7d-4943-b528-5a84b942b619",
-      scimEnterpriseUserResponseConverterId: "8d79f0f1-8043-47d2-b92a-beafd1ee9ef0",
-      scimGroupRequestConverterId: "c731066d-b43a-4811-87eb-6371bda912eb",
-      scimGroupResponseConverterId: "2ac102ee-106d-40f8-a5ac-da4b6dd17917",
-      scimUserRequestConverterId: "e557b232-b667-4f67-841f-4a0fb47e9e6e",
-      scimUserResponseConverterId: "b8a3cd2b-59c2-4ba8-8af6-9248be71b542",
-    },
+    lambdaConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    loginConfiguration: {
-      requireAuthentication: false,
-    },
-    logoutURL: "Future paradigms",
-    maximumPasswordAge: {
-      days: 440522,
-      enabled: false,
-    },
-    minimumPasswordAge: {
-      enabled: false,
-      seconds: 973883,
-    },
+    loginConfiguration: {},
+    maximumPasswordAge: {},
+    minimumPasswordAge: {},
     multiFactorConfiguration: {
-      authenticator: {
-        algorithm: TOTPAlgorithm.HmacSha1,
-        codeLength: 229525,
-        enabled: false,
-        timeStep: 217187,
-      },
-      email: {
-        enabled: false,
-        templateId: "04cce5ef-bade-4009-9fb0-7567b146a3dd",
-      },
-      loginPolicy: MultiFactorLoginPolicy.Required,
-      sms: {
-        enabled: false,
-        messengerId: "c159deb9-1778-47fd-bf77-352a392be6c5",
-        templateId: "caa47c48-a1c5-4d63-9a3f-9191d5bd23a3",
-      },
+      authenticator: {},
+      email: {},
+      sms: {},
     },
-    name: "Northwest Health Southeast",
-    oauthConfiguration: {
-      clientCredentialsAccessTokenPopulateLambdaId: "d4a9855e-c74f-4240-b570-ac3b6de79178",
-    },
-    passwordEncryptionConfiguration: {
-      encryptionScheme: "person North",
-      encryptionSchemeFactor: 923870,
-      modifyEncryptionSchemeOnLogin: false,
-    },
+    oauthConfiguration: {},
+    passwordEncryptionConfiguration: {},
     passwordValidationRules: {
-      breachDetection: {
-        enabled: false,
-        matchMode: BreachMatchMode.High,
-        notifyUserEmailTemplateId: "9ebaadf3-2650-47cf-b6ad-e12222442441",
-        onLogin: BreachAction.RecordOnly,
-      },
-      maxLength: 161353,
-      minLength: 942582,
-      rememberPreviousPasswords: {
-        count: 927069,
-        enabled: false,
-      },
-      requireMixedCase: false,
-      requireNonAlpha: false,
-      requireNumber: false,
-      validateOnLogin: false,
+      breachDetection: {},
+      rememberPreviousPasswords: {},
     },
     rateLimitConfiguration: {
-      failedLogin: {
-        enabled: false,
-        limit: 119415,
-        timePeriodInSeconds: 842430,
-      },
-      forgotPassword: {
-        enabled: false,
-        limit: 744583,
-        timePeriodInSeconds: 871461,
-      },
-      sendEmailVerification: {
-        enabled: false,
-        limit: 101450,
-        timePeriodInSeconds: 63517,
-      },
-      sendPasswordless: {
-        enabled: false,
-        limit: 503643,
-        timePeriodInSeconds: 833958,
-      },
-      sendRegistrationVerification: {
-        enabled: false,
-        limit: 610720,
-        timePeriodInSeconds: 889691,
-      },
-      sendTwoFactor: {
-        enabled: false,
-        limit: 223308,
-        timePeriodInSeconds: 158197,
-      },
+      failedLogin: {},
+      forgotPassword: {},
+      sendEmailVerification: {},
+      sendPasswordless: {},
+      sendRegistrationVerification: {},
+      sendTwoFactor: {},
     },
     registrationConfiguration: {
       blockedDomains: [
-        "Manager",
+        "navigating",
       ],
     },
     scimServerConfiguration: {
-      clientEntityTypeId: "c29198b8-5245-438b-b169-250074aaf951",
-      enabled: false,
       schemas: {
-        "libero": {},
+        "Planner": {},
       },
-      serverEntityTypeId: "1ca891e4-fee3-45da-8e99-a048584a2858",
     },
-    ssoConfiguration: {
-      deviceTrustTimeToLiveInSeconds: 769323,
-    },
-    state: ObjectState.PendingDelete,
-    themeId: "5cd5bb93-b448-4af6-be0e-fb2976170e41",
+    ssoConfiguration: {},
     userDeletePolicy: {
-      unverified: {
-        enabled: false,
-        numberOfDaysToRetain: 303492,
-      },
+      unverified: {},
     },
     usernameConfiguration: {
-      unique: {
-        enabled: false,
-        numberOfDigits: 270432,
-        separator: "North",
-        strategy: UniqueUsernameStrategy.Always,
-      },
+      unique: {},
     },
     webAuthnConfiguration: {
-      bootstrapWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.CrossPlatform,
-        enabled: false,
-        userVerificationRequirement: UserVerificationRequirement.Discouraged,
-      },
-      debug: false,
-      enabled: false,
-      reauthenticationWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.Any,
-        enabled: false,
-        userVerificationRequirement: UserVerificationRequirement.Discouraged,
-      },
-      relyingPartyId: "Coordinator Northwest BMX",
-      relyingPartyName: "homogeneous",
+      bootstrapWorkflow: {},
+      reauthenticationWorkflow: {},
     },
   },
   webhookIds: [
-    "f2b0b6ac-c82b-4b6a-954a-1b82fb24d5d0",
+    "4283aac2-1a32-44fb-9368-3626deee8397",
   ],
 };
-const xFusionAuthTenantId: string = "Architect an cohesive";
+const xFusionAuthTenantId: string = "Mountain PCI";
 
-sdk.sdk.createTenantWithId(tenantId, tenantRequest, xFusionAuthTenantId).then((res: CreateTenantWithIdResponse) => {
+  const res = await sdk.sdk.createTenantWithId(tenantId, tenantRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -5700,81 +3981,30 @@ Creates a Theme. You can optionally specify an Id for the theme, if not provided
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateThemeResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.createTheme({
-  sourceThemeId: "28b6cb8f-0b7c-4859-961d-5298b547c7ae",
-  theme: {
-    data: {
-      "sunt": {},
+  const res = await sdk.sdk.createTheme({
+    theme: {
+      data: {
+        "Nebraska": {},
+      },
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+      localizedMessages: {},
+      templates: {},
     },
-    defaultMessages: "Dynamic",
-    id: "12a2c3e2-5875-4610-aae5-e0b4623b54dd",
-    insertInstant: 1659380719000,
-    lastUpdateInstant: 1659380719000,
-    localizedMessages: {},
-    name: "Branding Cordoba",
-    stylesheet: "Senior Central",
-    templates: {
-      accountEdit: "Wooden female",
-      accountIndex: "Chrysler",
-      accountTwoFactorDisable: "untried",
-      accountTwoFactorEnable: "Clothing ROI",
-      accountTwoFactorIndex: "Tallahassee District",
-      accountWebAuthnAdd: "Creative",
-      accountWebAuthnDelete: "bobcat Designer",
-      accountWebAuthnIndex: "Plastic",
-      emailComplete: "Menifee Touring relationships",
-      emailSend: "Island",
-      emailSent: "Road",
-      emailVerificationRequired: "Sri olive",
-      emailVerify: "Bronze",
-      helpers: "North Gasoline cough",
-      index: "Isle UTF8",
-      oauth2Authorize: "hmph",
-      oauth2AuthorizedNotRegistered: "Electronic",
-      oauth2ChildRegistrationNotAllowed: "transmitting",
-      oauth2ChildRegistrationNotAllowedComplete: "Future",
-      oauth2CompleteRegistration: "input gray Manager",
-      oauth2Device: "Recycled",
-      oauth2DeviceComplete: "Niger Nevada",
-      oauth2Error: "sweet",
-      oauth2Logout: "upon",
-      oauth2Passwordless: "purple Coordinator Southeast",
-      oauth2Register: "interactive parachute",
-      oauth2StartIdPLink: "PCI",
-      oauth2TwoFactor: "sievert male nostrum",
-      oauth2TwoFactorEnable: "synergy",
-      oauth2TwoFactorEnableComplete: "Garden Lydia",
-      oauth2TwoFactorMethods: "pink",
-      oauth2Wait: "commonly",
-      oauth2WebAuthn: "less",
-      oauth2WebAuthnReauth: "Industrial perspiciatis",
-      oauth2WebAuthnReauthEnable: "Associate",
-      passwordChange: "Accounts Genderflux doubtfully",
-      passwordComplete: "Director",
-      passwordForgot: "reboot FTP Bedfordshire",
-      passwordSent: "East",
-      registrationComplete: "West",
-      registrationSend: "female International",
-      registrationSent: "definite able",
-      registrationVerificationRequired: "male",
-      registrationVerify: "underneath underneath oh",
-      samlv2Logout: "panel",
-      unauthorized: "azure Mayert",
-    },
-  },
-}).then((res: CreateThemeResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -5798,84 +4028,34 @@ Creates a Theme. You can optionally specify an Id for the theme, if not provided
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateThemeWithIdRequest, CreateThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateThemeWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { LocalizedStrings, Templates, Theme, ThemeData, ThemeRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const themeId: string = "deposit";
 const themeRequest: ThemeRequest = {
-  sourceThemeId: "7c45d23e-5fe5-4cae-bc51-6e93ecbef3e9",
   theme: {
     data: {
-      "quibusdam": {},
+      "SSL": {},
     },
-    defaultMessages: "Steel",
-    id: "830010ad-79bf-46b2-9098-5b516e3dfa1e",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     localizedMessages: {},
-    name: "blue Games portals",
-    stylesheet: "red",
-    templates: {
-      accountEdit: "Celsius Touring enthusiastically",
-      accountIndex: "transmitting Market Central",
-      accountTwoFactorDisable: "Tungsten partnerships",
-      accountTwoFactorEnable: "backing Kentucky",
-      accountTwoFactorIndex: "West",
-      accountWebAuthnAdd: "physically",
-      accountWebAuthnDelete: "Jewelery",
-      accountWebAuthnIndex: "Division",
-      emailComplete: "Dodge",
-      emailSend: "Card Passenger",
-      emailSent: "reboot frame magnam",
-      emailVerificationRequired: "Rhodium lime",
-      emailVerify: "Promethium Mobility",
-      helpers: "Grapevine",
-      index: "conflate",
-      oauth2Authorize: "implementation ha Indiana",
-      oauth2AuthorizedNotRegistered: "reboot South",
-      oauth2ChildRegistrationNotAllowed: "unbearably West female",
-      oauth2ChildRegistrationNotAllowedComplete: "Hutchinson Usability disdain",
-      oauth2CompleteRegistration: "zap",
-      oauth2Device: "Fiat Metal similique",
-      oauth2DeviceComplete: "redundant",
-      oauth2Error: "circuit Rustic",
-      oauth2Logout: "South",
-      oauth2Passwordless: "facilitate Sleek",
-      oauth2Register: "Generic South",
-      oauth2StartIdPLink: "Diesel",
-      oauth2TwoFactor: "withdrawal Hawaii Cloned",
-      oauth2TwoFactorEnable: "Modern database",
-      oauth2TwoFactorEnableComplete: "deposit hardware",
-      oauth2TwoFactorMethods: "Rap Chicken Outdoors",
-      oauth2Wait: "synthesizing",
-      oauth2WebAuthn: "silver",
-      oauth2WebAuthnReauth: "Trans maroon",
-      oauth2WebAuthnReauthEnable: "Berkshire than foreground",
-      passwordChange: "Plastic JBOD deposit",
-      passwordComplete: "generating Cambridgeshire",
-      passwordForgot: "bandwidth synthesize apropos",
-      passwordSent: "Cicero interface",
-      registrationComplete: "Visalia",
-      registrationSend: "Soul",
-      registrationSent: "infomediaries calculating",
-      registrationVerificationRequired: "Gorgeous Northeast",
-      registrationVerify: "static Card",
-      samlv2Logout: "Facilitator Diesel extensible",
-      unauthorized: "West Account Integration",
-    },
+    templates: {},
   },
 };
 
-sdk.sdk.createThemeWithId(themeId, themeRequest).then((res: CreateThemeWithIdResponse) => {
+  const res = await sdk.sdk.createThemeWithId(themeId, themeRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -5900,19 +4080,20 @@ Exchanges an OAuth authorization code and code_verifier for an access token. Mak
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateTokenResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.createToken().then((res: CreateTokenResponse) => {
+  const res = await sdk.sdk.createToken();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -5935,7 +4116,7 @@ Creates a user. You can optionally specify an Id for the user, if not provided o
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserRequest, CreateUserResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateUserRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorConfiguration,
   BreachedPasswordStatus,
@@ -5956,111 +4137,57 @@ import {
   UserTwoFactorConfiguration,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userRequest: UserRequest = {
-  applicationId: "863f0972-20b3-44ed-822f-39d876c35448",
-  currentPassword: "Gorgeous Granite",
-  disableDomainBlock: false,
   eventInfo: {
     data: {
-      "perferendis": {},
+      "navigating": {},
     },
-    deviceDescription: "Diesel",
-    deviceName: "Steel alarm interestingly",
-    deviceType: "Specialist Carson Transexual",
-    ipAddress: "65.123.163.215",
-    location: {
-      city: "Athens-Clarke County",
-      country: "French Southern Territories",
-      displayString: "Avon",
-      latitude: 3258.34,
-      longitude: 2237.45,
-      region: "UTF8 Holmium",
-      zipcode: "56211-1580",
-    },
-    os: "minima",
-    userAgent: "South Customer male",
+    location: {},
   },
-  sendSetPasswordEmail: false,
-  skipVerification: false,
   user: {
-    active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatus.CommonPassword,
-    cleanSpeakId: "bb7702cc-fbda-4376-9b49-5308041a6268",
-    connectorId: "e7f388dc-7e75-435b-a091-53edfa0a45bd",
     data: {
-      "veniam": {},
+      "Sausages": {},
     },
-    email: "Emmanuelle_Kerluke10@gmail.com",
-    encryptionScheme: "wireless Dollar",
     expiry: 1659380719000,
-    factor: 847541,
-    firstName: "Diego",
-    fullName: "Genevieve Moen",
-    id: "51108036-1687-4143-8daf-cc84a9a2f75f",
-    imageUrl: "DNS monetize",
     insertInstant: 1659380719000,
     lastLoginInstant: 1659380719000,
-    lastName: "Goyette",
     lastUpdateInstant: 1659380719000,
     memberships: [
       {
         data: {
-          "perspiciatis": {},
+          "Borders": {},
         },
-        groupId: "2eeb2341-59d2-4874-b8d4-cc505ca929e2",
-        id: "8acd81af-f6b3-4526-99e7-1bdba808921c",
         insertInstant: 1659380719000,
         user: {
-          active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatus.ExactMatch,
-          cleanSpeakId: "84dc1d5d-1455-456f-afa0-b2f6dfd466c8",
-          connectorId: "4277d7b1-94fb-442d-8ba5-712b16d62fa2",
           data: {
-            "distinctio": {},
+            "Arizona": {},
           },
-          email: "Rozella_Wiza59@yahoo.com",
-          encryptionScheme: "huzzah",
           expiry: 1659380719000,
-          factor: 670585,
-          firstName: "Garth",
-          fullName: "Emma Botsford",
-          id: "e8446862-31b6-4db3-9325-219de3b5efd6",
-          imageUrl: "FTP",
           insertInstant: 1659380719000,
           lastLoginInstant: 1659380719000,
-          lastName: "Haag",
           lastUpdateInstant: 1659380719000,
           memberships: [
             {},
           ],
-          middleName: "Reign",
-          mobilePhone: "Chesterfield Shore",
-          parentEmail: "District",
-          password: "gRtJ7q7J5h3gIfF",
-          passwordChangeReason: ChangePasswordReason.Administrative,
-          passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
             "en_US",
           ],
           registrations: [
             {
-              applicationId: "ddf769d2-edde-469a-a257-2806f7c3096f",
-              authenticationToken: "digital integrated",
-              cleanSpeakId: "2e857cbc-0c29-459f-bde7-90daa99564ef",
               data: {
-                "a": {},
+                "female": {},
               },
-              id: "7304019c-bd6d-42ef-bcc6-fbd4c1ce326b",
               insertInstant: 1659380719000,
               lastLoginInstant: 1659380719000,
               lastUpdateInstant: 1659380719000,
@@ -6068,67 +4195,37 @@ const userRequest: UserRequest = {
                 "en_US",
               ],
               roles: [
-                "MTF",
+                "Refined",
               ],
               timezone: "America/Denver",
               tokens: {
-                "alias": "cyan",
+                "silver": "Toys",
               },
-              username: "Melissa44",
-              usernameStatus: ContentStatus.Active,
-              verified: false,
             },
           ],
-          salt: "Northeast",
-          tenantId: "21a11612-846b-424e-86ff-c1f417a87b97",
           timezone: "America/Denver",
           twoFactor: {
             methods: [
               {
-                authenticator: {
-                  algorithm: TOTPAlgorithm.HmacSha1,
-                  codeLength: 279090,
-                  timeStep: 451929,
-                },
-                email: "Dino20@hotmail.com",
-                id: "<ID>",
-                lastUsed: false,
-                method: "Granite Electronics Sports",
-                mobilePhone: "Plastic",
-                secret: "anti Southeast",
+                authenticator: {},
               },
             ],
             recoveryCodes: [
-              "enterprise",
+              "monthly",
             ],
           },
-          uniqueUsername: "Porsche exercitationem generating",
-          username: "Yazmin_Heller6",
-          usernameStatus: ContentStatus.Rejected,
-          verified: false,
         },
-        userId: "90d114c5-31e3-4d30-be4f-b6bc76009563",
       },
     ],
-    middleName: "Leslie",
-    mobilePhone: "Crew how Orchestrator",
-    parentEmail: "Folk",
-    password: "9dh2FIvvKo_ZS4K",
-    passwordChangeReason: ChangePasswordReason.Expired,
-    passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
       "en_US",
     ],
     registrations: [
       {
-        applicationId: "38ab4e87-05a9-4cdd-89b5-177ebfb214c8",
-        authenticationToken: "orchid",
-        cleanSpeakId: "4092b97c-2ed3-43ac-8bd7-6ad1ac93e169",
         data: {
-          "tenetur": {},
+          "redundant": {},
         },
-        id: "5dc43127-0432-401e-8153-7a38933bd26a",
         insertInstant: 1659380719000,
         lastLoginInstant: 1659380719000,
         lastUpdateInstant: 1659380719000,
@@ -6136,53 +4233,35 @@ const userRequest: UserRequest = {
           "en_US",
         ],
         roles: [
-          "systems",
+          "white",
         ],
         timezone: "America/Denver",
         tokens: {
-          "dolor": "fuga",
+          "Expanded": "Bespoke",
         },
-        username: "Jamir_Shields1",
-        usernameStatus: ContentStatus.Active,
-        verified: false,
       },
     ],
-    salt: "Internal interactive",
-    tenantId: "aeec6257-9c9c-470a-bdfa-28eb14486cd2",
     timezone: "America/Denver",
     twoFactor: {
       methods: [
         {
-          authenticator: {
-            algorithm: TOTPAlgorithm.HmacSha512,
-            codeLength: 90347,
-            timeStep: 135663,
-          },
-          email: "Elza60@gmail.com",
-          id: "<ID>",
-          lastUsed: false,
-          method: "Future Bicycle Togo",
-          mobilePhone: "deposit Som",
-          secret: "Reggae",
+          authenticator: {},
         },
       ],
       recoveryCodes: [
-        "Trace",
+        "Latin",
       ],
     },
-    uniqueUsername: "sadly",
-    username: "Meredith_Gutkowski",
-    usernameStatus: ContentStatus.Rejected,
-    verified: false,
   },
 };
-const xFusionAuthTenantId: string = "Steel";
+const xFusionAuthTenantId: string = "Granite";
 
-sdk.sdk.createUser(userRequest, xFusionAuthTenantId).then((res: CreateUserResponse) => {
+  const res = await sdk.sdk.createUser(userRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -6207,7 +4286,7 @@ Creates a user action. This action cannot be taken on a user until this call suc
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserActionRequest, CreateUserActionResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateUserActionRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   LocalizedStrings,
   TransactionType,
@@ -6216,45 +4295,32 @@ import {
   UserActionRequest,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userActionRequest: UserActionRequest = {
   userAction: {
-    active: false,
-    cancelEmailTemplateId: "f3a2647d-dde3-46cf-b927-723ecc8d0ddf",
-    endEmailTemplateId: "04dcf7c0-92d6-4ddd-ab05-f6b40d78dfc4",
-    id: "144b91a0-bd8f-4443-8563-788ed7e3505d",
-    includeEmailInEventJSON: false,
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     localizedNames: {},
-    modifyEmailTemplateId: "86c5a81e-3658-40b8-92be-5f7c519419be",
-    name: "success newton phooey",
     options: [
       {
         localizedNames: {},
-        name: "Berkshire which Convertible",
       },
     ],
-    preventLogin: false,
-    sendEndEvent: false,
-    startEmailTemplateId: "299c2658-da79-4089-bb71-e97eb1d046e1",
-    temporal: false,
-    transactionType: TransactionType.SuperMajority,
-    userEmailingEnabled: false,
-    userNotificationsEnabled: false,
   },
 };
-const xFusionAuthTenantId: string = "JBOD Internal Dinar";
+const xFusionAuthTenantId: string = "Rubber Land Hybrid";
 
-sdk.sdk.createUserAction(userActionRequest, xFusionAuthTenantId).then((res: CreateUserActionResponse) => {
+  const res = await sdk.sdk.createUserAction(userActionRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -6279,28 +4345,26 @@ Creates a user reason. This user action reason cannot be used when actioning a u
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserActionReasonResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.createUserActionReason({
-  userActionReason: {
-    code: "male methodical",
-    id: "96b1c03c-5920-4d10-917f-7dc3c8ec2616",
-    insertInstant: 1659380719000,
-    lastUpdateInstant: 1659380719000,
-    localizedTexts: {},
-    text: "amet white Electronics",
-  },
-}).then((res: CreateUserActionReasonResponse) => {
+  const res = await sdk.sdk.createUserActionReason({
+    userActionReason: {
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+      localizedTexts: {},
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -6324,31 +4388,30 @@ Creates a user reason. This user action reason cannot be used when actioning a u
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserActionReasonWithIdRequest, CreateUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateUserActionReasonWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { LocalizedStrings, UserActionReason, UserActionReasonRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userActionReasonId: string = "West";
 const userActionReasonRequest: UserActionReasonRequest = {
   userActionReason: {
-    code: "firewall",
-    id: "1090e430-f1c1-4a0d-b850-1bd625a1eaaf",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     localizedTexts: {},
-    text: "Dollar",
   },
 };
 
-sdk.sdk.createUserActionReasonWithId(userActionReasonId, userActionReasonRequest).then((res: CreateUserActionReasonWithIdResponse) => {
+  const res = await sdk.sdk.createUserActionReasonWithId(userActionReasonId, userActionReasonRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -6373,7 +4436,7 @@ Creates a user action. This action cannot be taken on a user until this call suc
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserActionWithIdRequest, CreateUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateUserActionWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   LocalizedStrings,
   TransactionType,
@@ -6382,46 +4445,33 @@ import {
   UserActionRequest,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userActionId: string = "limp";
 const userActionRequest: UserActionRequest = {
   userAction: {
-    active: false,
-    cancelEmailTemplateId: "ec9fbb88-a366-4faa-8ea4-8466ce759db8",
-    endEmailTemplateId: "2bb041fc-4f2d-4cc7-a5ca-dafc84d084da",
-    id: "ef0572e5-c49a-4721-9c57-f59bd1955ffe",
-    includeEmailInEventJSON: false,
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     localizedNames: {},
-    modifyEmailTemplateId: "b0cca27c-a543-4f05-9650-de80a0db3a94",
-    name: "Diverse male",
     options: [
       {
         localizedNames: {},
-        name: "Baby Response magenta",
       },
     ],
-    preventLogin: false,
-    sendEndEvent: false,
-    startEmailTemplateId: "0614605c-a8e8-4d61-9c1c-c420ca4308d9",
-    temporal: false,
-    transactionType: TransactionType.Any,
-    userEmailingEnabled: false,
-    userNotificationsEnabled: false,
   },
 };
-const xFusionAuthTenantId: string = "Strategist";
+const xFusionAuthTenantId: string = "Bicycle male firewall";
 
-sdk.sdk.createUserActionWithId(userActionId, userActionRequest, xFusionAuthTenantId).then((res: CreateUserActionWithIdResponse) => {
+  const res = await sdk.sdk.createUserActionWithId(userActionId, userActionRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -6447,58 +4497,44 @@ Creates a single User consent.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserConsentResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { ConsentStatus } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.createUserConsent({
-  userConsent: {
-    consent: {
-      consentEmailTemplateId: "4e5848f9-3197-48e5-b888-19b501674080",
-      countryMinimumAgeForSelfConsent: {},
+  const res = await sdk.sdk.createUserConsent({
+    userConsent: {
+      consent: {
+        countryMinimumAgeForSelfConsent: {},
+        data: {
+          "Frozen": {},
+        },
+        emailPlus: {},
+        insertInstant: 1659380719000,
+        lastUpdateInstant: 1659380719000,
+        values: [
+          "interfaces",
+        ],
+      },
       data: {
-        "pariatur": {},
+        "Sleek": {},
       },
-      defaultMinimumAgeForSelfConsent: 25299,
-      emailPlus: {
-        emailTemplateId: "fd6491c6-0a36-47af-965f-5c165398af02",
-        enabled: false,
-        maximumTimeToSendEmailInHours: 533730,
-        minimumTimeToSendEmailInHours: 311076,
-      },
-      id: "f3770ee4-fa6c-477d-b99a-eb2d7fd9aec2",
       insertInstant: 1659380719000,
       lastUpdateInstant: 1659380719000,
-      multipleValuesAllowed: false,
-      name: "Car connect",
       values: [
-        "pascal",
+        "Southeast",
       ],
     },
-    consentId: "8d1c3ae8-e0e7-44ac-b01b-d64ce80c55be",
-    data: {
-      "porro": {},
-    },
-    giverUserId: "4b960b3f-c30f-40af-9669-d3e4859c00a5",
-    id: "f05bfa41-b48d-4c15-85a9-8ae206dc4da2",
-    insertInstant: 1659380719000,
-    lastUpdateInstant: 1659380719000,
-    status: ConsentStatus.Active,
-    userId: "8334bd0b-f842-49c9-99eb-00f0e3c968df",
-    values: [
-      "Frozen",
-    ],
-  },
-}).then((res: CreateUserConsentResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -6522,7 +4558,7 @@ Creates a single User consent.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserConsentWithIdRequest, CreateUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateUserConsentWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   Consent,
   ConsentData,
@@ -6534,57 +4570,44 @@ import {
   UserConsentRequest,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userConsentId: string = "Darmstadtium";
 const userConsentRequest: UserConsentRequest = {
   userConsent: {
     consent: {
-      consentEmailTemplateId: "2fd479dc-d21b-48c0-b13b-06c8f1d3ee2e",
       countryMinimumAgeForSelfConsent: {},
       data: {
-        "accusantium": {},
+        "Automotive": {},
       },
-      defaultMinimumAgeForSelfConsent: 873688,
-      emailPlus: {
-        emailTemplateId: "030c8153-142c-4da7-8c0c-41dc3eb06f9c",
-        enabled: false,
-        maximumTimeToSendEmailInHours: 518215,
-        minimumTimeToSendEmailInHours: 93717,
-      },
-      id: "9d6d007e-97e5-48ac-91ff-608da116a34f",
+      emailPlus: {},
       insertInstant: 1659380719000,
       lastUpdateInstant: 1659380719000,
-      multipleValuesAllowed: false,
-      name: "Rubber Chief South",
       values: [
-        "Oklahoma",
+        "flippant",
       ],
     },
-    consentId: "24bc8597-61b9-4138-9f89-ce99a594f700",
     data: {
-      "fugiat": {},
+      "sneaky": {},
     },
-    giverUserId: "02c56d64-e01f-4dc1-bafb-2c3aadcc40f5",
-    id: "749c1e59-d8ae-4c36-9dc4-12ce6486bb4c",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    status: ConsentStatus.Active,
-    userId: "c43c419a-6b71-44d1-8047-bb01a85fcebc",
     values: [
-      "Planner",
+      "Cadillac",
     ],
   },
 };
 
-sdk.sdk.createUserConsentWithId(userConsentId, userConsentRequest).then((res: CreateUserConsentWithIdResponse) => {
+  const res = await sdk.sdk.createUserConsentWithId(userConsentId, userConsentRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -6609,54 +4632,34 @@ Link an external user from a 3rd party identity provider to a FusionAuth user.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserLinkWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.createUserLinkWithId({
-  eventInfo: {
-    data: {
-      "facilis": {},
+  const res = await sdk.sdk.createUserLinkWithId({
+    eventInfo: {
+      data: {
+        "male": {},
+      },
+      location: {},
     },
-    deviceDescription: "Moscovium parse coulomb",
-    deviceName: "Shirt Platinum",
-    deviceType: "Nobelium New despite",
-    ipAddress: "79.136.113.127",
-    location: {
-      city: "Hillaryburgh",
-      country: "Mozambique",
-      displayString: "inasmuch",
-      latitude: 4420.5,
-      longitude: 5155.01,
-      region: "Switchable",
-      zipcode: "79309-6427",
+    identityProviderLink: {
+      data: {
+        "Moscovium": {},
+      },
+      insertInstant: 1659380719000,
+      lastLoginInstant: 1659380719000,
     },
-    os: "hastily Pataca",
-    userAgent: "gah optimizing",
-  },
-  identityProviderLink: {
-    data: {
-      "eveniet": {},
-    },
-    displayName: "Common Kia",
-    identityProviderId: "b902291b-9f7e-4802-82f1-3d81d671882d",
-    identityProviderUserId: "quas platforms Oriental",
-    insertInstant: 1659380719000,
-    lastLoginInstant: 1659380719000,
-    tenantId: "98463fb5-5ed7-4a9d-aa01-702fab453cdd",
-    token: "Tools brown",
-    userId: "2e08efef-0168-42d8-a236-25b8ed0dc6e8",
-  },
-  pendingIdPLinkId: "Designer definition Underpass",
-}).then((res: CreateUserLinkWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -6680,43 +4683,27 @@ Administratively verify a user's email address. Use this method to bypass email 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserVerifyEmailResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.createUserVerifyEmail({
-  eventInfo: {
-    data: {
-      "impedit": {},
+  const res = await sdk.sdk.createUserVerifyEmail({
+    eventInfo: {
+      data: {
+        "Cyclocross": {},
+      },
+      location: {},
     },
-    deviceDescription: "South",
-    deviceName: "Integration Cedi navigate",
-    deviceType: "matrix",
-    ipAddress: "72.201.173.252",
-    location: {
-      city: "Watersfurt",
-      country: "Fiji",
-      displayString: "payment Table",
-      latitude: 9175.54,
-      longitude: 82.21,
-      region: "attitude Estonia Electronic",
-      zipcode: "73093",
-    },
-    os: "blue TLS",
-    userAgent: "warmly male interactive",
-  },
-  oneTimeCode: "laborum Adan female",
-  userId: "7982e935-75b4-4507-9747-5901cd72d798",
-  verificationId: "Lithium punctually",
-}).then((res: CreateUserVerifyEmailResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -6740,7 +4727,7 @@ Creates a user. You can optionally specify an Id for the user, if not provided o
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateUserWithIdRequest, CreateUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateUserWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorConfiguration,
   BreachedPasswordStatus,
@@ -6761,112 +4748,58 @@ import {
   UserTwoFactorConfiguration,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "Larkin";
 const userRequest: UserRequest = {
-  applicationId: "974ecfd1-7fcd-4348-a27e-959b369f6146",
-  currentPassword: "neural Dinar",
-  disableDomainBlock: false,
   eventInfo: {
     data: {
-      "ipsam": {},
+      "ducimus": {},
     },
-    deviceDescription: "East",
-    deviceName: "needy",
-    deviceType: "Accountability Kia Wyoming",
-    ipAddress: "150.203.241.80",
-    location: {
-      city: "Morissetteville",
-      country: "United States of America",
-      displayString: "South Loan",
-      latitude: 6905.11,
-      longitude: 7414.85,
-      region: "transparent",
-      zipcode: "41459-1064",
-    },
-    os: "Bridge",
-    userAgent: "JSON meter",
+    location: {},
   },
-  sendSetPasswordEmail: false,
-  skipVerification: false,
   user: {
-    active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatus.ExactMatch,
-    cleanSpeakId: "c91a9b5b-f708-45ed-9bd4-f3525cce5a0e",
-    connectorId: "ae2db1fb-8168-42e0-9e7b-52198481e3f3",
     data: {
-      "nesciunt": {},
+      "iterate": {},
     },
-    email: "Tate_Streich52@hotmail.com",
-    encryptionScheme: "Hampshire Human scale",
     expiry: 1659380719000,
-    factor: 417292,
-    firstName: "Gabe",
-    fullName: "Marion Considine MD",
-    id: "5f0dcebd-3c36-41bf-8b67-fd544eb3b5ef",
-    imageUrl: "Diesel",
     insertInstant: 1659380719000,
     lastLoginInstant: 1659380719000,
-    lastName: "Langworth",
     lastUpdateInstant: 1659380719000,
     memberships: [
       {
         data: {
-          "sed": {},
+          "silver": {},
         },
-        groupId: "1e4a378b-547c-4823-aaea-b0152600da50",
-        id: "ee015441-9e14-43b0-8e34-a92d85994e03",
         insertInstant: 1659380719000,
         user: {
-          active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
-          cleanSpeakId: "bd86a62c-7d1a-40d1-b9b6-1d3c709b3ab8",
-          connectorId: "17b0aab0-433e-41a5-a7f0-1683014f1de4",
           data: {
-            "beatae": {},
+            "BMW": {},
           },
-          email: "June.Dare10@yahoo.com",
-          encryptionScheme: "base bandwidth",
           expiry: 1659380719000,
-          factor: 546999,
-          firstName: "Laverne",
-          fullName: "Nora Bailey",
-          id: "f9882d4b-fe1f-458c-969e-27bdcf65a24c",
-          imageUrl: "pfft Bromine zero",
           insertInstant: 1659380719000,
           lastLoginInstant: 1659380719000,
-          lastName: "Schoen",
           lastUpdateInstant: 1659380719000,
           memberships: [
             {},
           ],
-          middleName: "Noah",
-          mobilePhone: "Future District stingy",
-          parentEmail: "Bike Loan",
-          password: "5IA3ezt4qz8W0ZZ",
-          passwordChangeReason: ChangePasswordReason.Administrative,
-          passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
             "en_US",
           ],
           registrations: [
             {
-              applicationId: "39000256-990c-46d1-bb1b-bdacf62329a3",
-              authenticationToken: "HEX Gourde static",
-              cleanSpeakId: "58248351-826c-4260-8d70-ed59f7eb07ff",
               data: {
-                "possimus": {},
+                "mobile": {},
               },
-              id: "de186145-4d6c-4572-a799-d2f1987437d7",
               insertInstant: 1659380719000,
               lastLoginInstant: 1659380719000,
               lastUpdateInstant: 1659380719000,
@@ -6874,67 +4807,37 @@ const userRequest: UserRequest = {
                 "en_US",
               ],
               roles: [
-                "parse",
+                "Touring",
               ],
               timezone: "America/Denver",
               tokens: {
-                "iusto": "solutions",
+                "efficient": "Colombian",
               },
-              username: "Heath.Grant17",
-              usernameStatus: ContentStatus.Active,
-              verified: false,
             },
           ],
-          salt: "female Transexual Account",
-          tenantId: "f90fdfd9-63dc-47bc-873c-7960e9935e34",
           timezone: "America/Denver",
           twoFactor: {
             methods: [
               {
-                authenticator: {
-                  algorithm: TOTPAlgorithm.HmacSha1,
-                  codeLength: 403507,
-                  timeStep: 428942,
-                },
-                email: "Nathen53@hotmail.com",
-                id: "<ID>",
-                lastUsed: false,
-                method: "capacitor cyan Pawtucket",
-                mobilePhone: "ouch",
-                secret: "invoice",
+                authenticator: {},
               },
             ],
             recoveryCodes: [
-              "Seattle",
+              "properly",
             ],
           },
-          uniqueUsername: "ad",
-          username: "Elinor.Barton13",
-          usernameStatus: ContentStatus.Rejected,
-          verified: false,
         },
-        userId: "db55daf4-a45c-4f8a-9adf-57bee8820571",
       },
     ],
-    middleName: "Taylor",
-    mobilePhone: "Soft Tricycle Cambridgeshire",
-    parentEmail: "truly",
-    password: "VDlhXLSK7xxD1ju",
-    passwordChangeReason: ChangePasswordReason.Breached,
-    passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
       "en_US",
     ],
     registrations: [
       {
-        applicationId: "ad7e0b7d-ee8e-42a2-bce6-fa9f53eb34d1",
-        authenticationToken: "Fish Ford farad",
-        cleanSpeakId: "1dbb0eb8-8244-4dac-8f86-cf4a237ac96a",
         data: {
-          "in": {},
+          "Organized": {},
         },
-        id: "26227009-3c52-40f1-95b5-fd3a8e70a42a",
         insertInstant: 1659380719000,
         lastLoginInstant: 1659380719000,
         lastUpdateInstant: 1659380719000,
@@ -6942,53 +4845,35 @@ const userRequest: UserRequest = {
           "en_US",
         ],
         roles: [
-          "Southeast",
+          "Nickel",
         ],
         timezone: "America/Denver",
         tokens: {
-          "nesciunt": "Balanced",
+          "Peso": "archive",
         },
-        username: "Bryce.Hickle",
-        usernameStatus: ContentStatus.Rejected,
-        verified: false,
       },
     ],
-    salt: "Northeast Cambodia",
-    tenantId: "21847b36-cd47-44a9-947f-817049a2598b",
     timezone: "America/Denver",
     twoFactor: {
       methods: [
         {
-          authenticator: {
-            algorithm: TOTPAlgorithm.HmacSha512,
-            codeLength: 438993,
-            timeStep: 756021,
-          },
-          email: "Mandy1@gmail.com",
-          id: "<ID>",
-          lastUsed: false,
-          method: "silver",
-          mobilePhone: "optimal Lead Fundamental",
-          secret: "Southwest maroon",
+          authenticator: {},
         },
       ],
       recoveryCodes: [
-        "meaning",
+        "killer",
       ],
     },
-    uniqueUsername: "Designer",
-    username: "Curt69",
-    usernameStatus: ContentStatus.Rejected,
-    verified: false,
   },
 };
-const xFusionAuthTenantId: string = "New Cotton Clothing";
+const xFusionAuthTenantId: string = "neural Dinar";
 
-sdk.sdk.createUserWithId(userId, userRequest, xFusionAuthTenantId).then((res: CreateUserWithIdResponse) => {
+  const res = await sdk.sdk.createUserWithId(userId, userRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7014,43 +4899,35 @@ Creates a webhook. You can optionally specify an Id for the webhook, if not prov
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateWebhookResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.createWebhook({
-  webhook: {
-    connectTimeout: 548839,
-    data: {
-      "necessitatibus": {},
+  const res = await sdk.sdk.createWebhook({
+    webhook: {
+      data: {
+        "reboot": {},
+      },
+      eventsEnabled: {
+        "like": false,
+      },
+      headers: {},
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+      tenantIds: [
+        "f63e3b7d-2240-408a-84c5-9d30daac81ad",
+      ],
     },
-    description: "Virtual interactive workforce",
-    eventsEnabled: {
-      "voluptas": false,
-    },
-    global: false,
-    headers: {},
-    httpAuthenticationPassword: "hence",
-    httpAuthenticationUsername: "THX Games Steel",
-    id: "c4c59d30-daac-481a-99fa-b885fa090632",
-    insertInstant: 1659380719000,
-    lastUpdateInstant: 1659380719000,
-    readTimeout: 713463,
-    sslCertificate: "withdrawal Delaware female",
-    tenantIds: [
-      "c0af42f4-f5d4-4cec-9161-2c91aa9dfc1f",
-    ],
-    url: "Cotton Neon",
-  },
-}).then((res: CreateWebhookResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7074,46 +4951,39 @@ Creates a webhook. You can optionally specify an Id for the webhook, if not prov
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { CreateWebhookWithIdRequest, CreateWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { CreateWebhookWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { HTTPHeaders, Webhook, WebhookData, WebhookRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const webhookId: string = "Southeast";
 const webhookRequest: WebhookRequest = {
   webhook: {
-    connectTimeout: 532413,
     data: {
-      "odio": {},
+      "sensor": {},
     },
-    description: "Optimized 24/7 project",
     eventsEnabled: {
-      "quisquam": false,
+      "up": false,
     },
-    global: false,
     headers: {},
-    httpAuthenticationPassword: "substantial",
-    httpAuthenticationUsername: "withdrawal Clemente Pfeffer",
-    id: "1a6211c2-1e4d-4be9-8d6b-7dcc89275297",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    readTimeout: 720247,
-    sslCertificate: "Cambridgeshire always enable",
     tenantIds: [
-      "d52d114a-6e79-440f-aaa8-396aab68714d",
+      "c0edd760-cc2f-4bf3-9a62-11c21e4dbe98",
     ],
-    url: "Tuna",
   },
 };
 
-sdk.sdk.createWebhookWithId(webhookId, webhookRequest).then((res: CreateWebhookWithIdResponse) => {
+  const res = await sdk.sdk.createWebhookWithId(webhookId, webhookRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7138,20 +5008,22 @@ Deletes the API key for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteAPIKeyWithIdRequest, DeleteAPIKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteAPIKeyWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const keyId: string = "matrix";
 
-sdk.sdk.deleteAPIKeyWithId(keyId).then((res: DeleteAPIKeyWithIdResponse) => {
+  const res = await sdk.sdk.deleteAPIKeyWithId(keyId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7175,22 +5047,24 @@ Hard deletes an application role. This is a dangerous operation and should not b
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteApplicationRoleWithIdRequest, DeleteApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteApplicationRoleWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "SDD";
 const roleId: string = "Regional";
 const xFusionAuthTenantId: string = "magenta";
 
-sdk.sdk.deleteApplicationRoleWithId(applicationId, roleId, xFusionAuthTenantId).then((res: DeleteApplicationRoleWithIdResponse) => {
+  const res = await sdk.sdk.deleteApplicationRoleWithId(applicationId, roleId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7216,22 +5090,24 @@ Hard deletes an application. This is a dangerous operation and should not be use
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteApplicationWithIdRequest, DeleteApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteApplicationWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "Southeast";
 const xFusionAuthTenantId: string = "program say";
 const hardDelete: string = "East";
 
-sdk.sdk.deleteApplicationWithId(applicationId, xFusionAuthTenantId, hardDelete).then((res: DeleteApplicationWithIdResponse) => {
+  const res = await sdk.sdk.deleteApplicationWithId(applicationId, xFusionAuthTenantId, hardDelete);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7257,20 +5133,22 @@ Deletes the connector for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteConnectorWithIdRequest, DeleteConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteConnectorWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const connectorId: string = "Computers";
 
-sdk.sdk.deleteConnectorWithId(connectorId).then((res: DeleteConnectorWithIdResponse) => {
+  const res = await sdk.sdk.deleteConnectorWithId(connectorId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7294,21 +5172,23 @@ Deletes the consent for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteConsentWithIdRequest, DeleteConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteConsentWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const consentId: string = "Convertible";
 const xFusionAuthTenantId: string = "Audi Gallium Licensed";
 
-sdk.sdk.deleteConsentWithId(consentId, xFusionAuthTenantId).then((res: DeleteConsentWithIdResponse) => {
+  const res = await sdk.sdk.deleteConsentWithId(consentId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7333,21 +5213,23 @@ Deletes the email template for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteEmailTemplateWithIdRequest, DeleteEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteEmailTemplateWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const emailTemplateId: string = "female";
 const xFusionAuthTenantId: string = "Northwest Steel";
 
-sdk.sdk.deleteEmailTemplateWithId(emailTemplateId, xFusionAuthTenantId).then((res: DeleteEmailTemplateWithIdResponse) => {
+  const res = await sdk.sdk.deleteEmailTemplateWithId(emailTemplateId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7372,23 +5254,25 @@ Deletes an Entity Grant for the given User or Entity.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteEntityGrantWithIdRequest, DeleteEntityGrantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteEntityGrantWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityId: string = "Diesel";
 const xFusionAuthTenantId: string = "Wisozk Metal Soap";
 const recipientEntityId: string = "South";
 const userId: string = "est";
 
-sdk.sdk.deleteEntityGrantWithId(entityId, xFusionAuthTenantId, recipientEntityId, userId).then((res: DeleteEntityGrantWithIdResponse) => {
+  const res = await sdk.sdk.deleteEntityGrantWithId(entityId, xFusionAuthTenantId, recipientEntityId, userId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7415,24 +5299,23 @@ Hard deletes a permission. This is a dangerous operation and should not be used 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  DeleteEntityTypePermissionWithIdRequest,
-  DeleteEntityTypePermissionWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteEntityTypePermissionWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityTypeId: string = "hub";
 const permissionId: string = "tesla";
 
-sdk.sdk.deleteEntityTypePermissionWithId(entityTypeId, permissionId).then((res: DeleteEntityTypePermissionWithIdResponse) => {
+  const res = await sdk.sdk.deleteEntityTypePermissionWithId(entityTypeId, permissionId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7457,20 +5340,22 @@ Deletes the Entity Type for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteEntityTypeWithIdRequest, DeleteEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteEntityTypeWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityTypeId: string = "male";
 
-sdk.sdk.deleteEntityTypeWithId(entityTypeId).then((res: DeleteEntityTypeWithIdResponse) => {
+  const res = await sdk.sdk.deleteEntityTypeWithId(entityTypeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7494,21 +5379,23 @@ Deletes the Entity for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteEntityWithIdRequest, DeleteEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteEntityWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityId: string = "SAS";
 const xFusionAuthTenantId: string = "framework";
 
-sdk.sdk.deleteEntityWithId(entityId, xFusionAuthTenantId).then((res: DeleteEntityWithIdResponse) => {
+  const res = await sdk.sdk.deleteEntityWithId(entityId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7533,20 +5420,22 @@ Deletes the form field for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteFormFieldWithIdRequest, DeleteFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteFormFieldWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const fieldId: string = "regard";
 
-sdk.sdk.deleteFormFieldWithId(fieldId).then((res: DeleteFormFieldWithIdResponse) => {
+  const res = await sdk.sdk.deleteFormFieldWithId(fieldId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7570,20 +5459,22 @@ Deletes the form for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteFormWithIdRequest, DeleteFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteFormWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const formId: string = "Granite";
 
-sdk.sdk.deleteFormWithId(formId).then((res: DeleteFormWithIdResponse) => {
+  const res = await sdk.sdk.deleteFormWithId(formId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7607,26 +5498,27 @@ Removes users as members of a group.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteGroupMembersWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.deleteGroupMembersWithId({
-  memberIds: [
-    "14614b31-364c-442e-9069-f96cd58cd3f0",
-  ],
-  members: [
-    "9abc319d-6d69-4ae6-8db1-af464a8049a4",
-  ],
-}).then((res: DeleteGroupMembersWithIdResponse) => {
+  const res = await sdk.sdk.deleteGroupMembersWithId({
+    memberIds: [
+      "14614b31-364c-442e-9069-f96cd58cd3f0",
+    ],
+    members: [
+      "9abc319d-6d69-4ae6-8db1-af464a8049a4",
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7650,21 +5542,23 @@ Deletes the group for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteGroupWithIdRequest, DeleteGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteGroupWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const groupId: string = "Kazakhstan";
 const xFusionAuthTenantId: string = "cyclooxygenase reboot Mendelevium";
 
-sdk.sdk.deleteGroupWithId(groupId, xFusionAuthTenantId).then((res: DeleteGroupWithIdResponse) => {
+  const res = await sdk.sdk.deleteGroupWithId(groupId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7689,20 +5583,22 @@ Deletes the IP Access Control List for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteIPAccessControlListWithIdRequest, DeleteIPAccessControlListWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteIPAccessControlListWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const accessControlListId: string = "Dodge";
 
-sdk.sdk.deleteIPAccessControlListWithId(accessControlListId).then((res: DeleteIPAccessControlListWithIdResponse) => {
+  const res = await sdk.sdk.deleteIPAccessControlListWithId(accessControlListId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7726,20 +5622,22 @@ Deletes the identity provider for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteIdentityProviderWithIdRequest, DeleteIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteIdentityProviderWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const identityProviderId: string = "yellow";
 
-sdk.sdk.deleteIdentityProviderWithId(identityProviderId).then((res: DeleteIdentityProviderWithIdResponse) => {
+  const res = await sdk.sdk.deleteIdentityProviderWithId(identityProviderId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7763,48 +5661,33 @@ Revoke all refresh tokens that belong to a user by user Id. OR Revoke all refres
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteJwtRequest, DeleteJwtResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteJwtRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { EventInfo, EventInfoData, Location, RefreshTokenRevokeRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const refreshTokenRevokeRequest: RefreshTokenRevokeRequest = {
-  applicationId: "3c2337e9-24ba-4ecc-86b4-a76db07cd5f4",
   eventInfo: {
     data: {
-      "ipsam": {},
+      "Jewelery": {},
     },
-    deviceDescription: "Account",
-    deviceName: "female Serbia Libyan",
-    deviceType: "Northeast",
-    ipAddress: "30.28.74.66",
-    location: {
-      city: "Lake Godfreybury",
-      country: "Cape Verde",
-      displayString: "Latin esse",
-      latitude: 6998.12,
-      longitude: 4565.7,
-      region: "DeKalb",
-      zipcode: "09213-9624",
-    },
-    os: "West Associate",
-    userAgent: "Alaska Customer",
+    location: {},
   },
-  token: "harness",
-  userId: "19432177-4b6c-413d-8c9f-79e88b62d87c",
 };
-const applicationId: string = "Convertible";
-const token: string = "Sausages";
-const userId: string = "bypass";
+const applicationId: string = "teal";
+const token: string = "Health";
+const userId: string = "yippee";
 
-sdk.sdk.deleteJwt(refreshTokenRevokeRequest, applicationId, token, userId).then((res: DeleteJwtResponse) => {
+  const res = await sdk.sdk.deleteJwt(refreshTokenRevokeRequest, applicationId, token, userId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7831,20 +5714,22 @@ Deletes the key for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteKeyWithIdRequest, DeleteKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteKeyWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const keyId: string = "Chips";
 
-sdk.sdk.deleteKeyWithId(keyId).then((res: DeleteKeyWithIdResponse) => {
+  const res = await sdk.sdk.deleteKeyWithId(keyId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7868,20 +5753,22 @@ Deletes the lambda for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteLambdaWithIdRequest, DeleteLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteLambdaWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const lambdaId: string = "Engineer";
 
-sdk.sdk.deleteLambdaWithId(lambdaId).then((res: DeleteLambdaWithIdResponse) => {
+  const res = await sdk.sdk.deleteLambdaWithId(lambdaId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7905,20 +5792,22 @@ Deletes the message template for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteMessageTemplateWithIdRequest, DeleteMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteMessageTemplateWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const messageTemplateId: string = "sexy";
 
-sdk.sdk.deleteMessageTemplateWithId(messageTemplateId).then((res: DeleteMessageTemplateWithIdResponse) => {
+  const res = await sdk.sdk.deleteMessageTemplateWithId(messageTemplateId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7942,20 +5831,22 @@ Deletes the messenger for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteMessengerWithIdRequest, DeleteMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteMessengerWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const messengerId: string = "terrorism";
 
-sdk.sdk.deleteMessengerWithId(messengerId).then((res: DeleteMessengerWithIdResponse) => {
+  const res = await sdk.sdk.deleteMessengerWithId(messengerId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -7979,46 +5870,33 @@ Deletes the tenant based on the given Id on the URL. This permanently deletes al
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteTenantWithIdRequest, DeleteTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteTenantWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { EventInfo, EventInfoData, Location, TenantDeleteRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const tenantId: string = "Rubidium";
 const tenantDeleteRequest: TenantDeleteRequest = {
-  async: false,
   eventInfo: {
     data: {
-      "quas": {},
+      "copy": {},
     },
-    deviceDescription: "Lead",
-    deviceName: "Green",
-    deviceType: "Southeast pariatur",
-    ipAddress: "48.231.50.189",
-    location: {
-      city: "South Santos",
-      country: "Kyrgyz Republic",
-      displayString: "mindshare",
-      latitude: 6147.58,
-      longitude: 9807.34,
-      region: "Avon male tangible",
-      zipcode: "61421",
-    },
-    os: "Architect Quetzal",
-    userAgent: "quantify anxiously",
+    location: {},
   },
 };
-const xFusionAuthTenantId: string = "withdrawal Account Bulgarian";
-const async: string = "while";
+const xFusionAuthTenantId: string = "Dale Southwest";
+const async: string = "Pop";
 
-sdk.sdk.deleteTenantWithId(tenantId, tenantDeleteRequest, xFusionAuthTenantId, async).then((res: DeleteTenantWithIdResponse) => {
+  const res = await sdk.sdk.deleteTenantWithId(tenantId, tenantDeleteRequest, xFusionAuthTenantId, async);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8045,20 +5923,22 @@ Deletes the theme for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteThemeWithIdRequest, DeleteThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteThemeWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const themeId: string = "Northwest";
 
-sdk.sdk.deleteThemeWithId(themeId).then((res: DeleteThemeWithIdResponse) => {
+  const res = await sdk.sdk.deleteThemeWithId(themeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8082,20 +5962,22 @@ Deletes the user action reason for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteUserActionReasonWithIdRequest, DeleteUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteUserActionReasonWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userActionReasonId: string = "West";
 
-sdk.sdk.deleteUserActionReasonWithId(userActionReasonId).then((res: DeleteUserActionReasonWithIdResponse) => {
+  const res = await sdk.sdk.deleteUserActionReasonWithId(userActionReasonId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8119,22 +6001,24 @@ Deactivates the user action with the given Id. OR Deletes the user action for th
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteUserActionWithIdRequest, DeleteUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteUserActionWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userActionId: string = "Troy";
 const xFusionAuthTenantId: string = "Designer Concrete";
 const hardDelete: string = "reboot";
 
-sdk.sdk.deleteUserActionWithId(userActionId, xFusionAuthTenantId, hardDelete).then((res: DeleteUserActionWithIdResponse) => {
+  const res = await sdk.sdk.deleteUserActionWithId(userActionId, xFusionAuthTenantId, hardDelete);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8160,52 +6044,36 @@ Deactivates the users with the given ids. OR Deletes the users with the given id
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteUserBulkRequest, DeleteUserBulkResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteUserBulkRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { EventInfo, EventInfoData, Location, UserDeleteRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userDeleteRequest: UserDeleteRequest = {
-  dryRun: false,
   eventInfo: {
     data: {
-      "sequi": {},
+      "Tools": {},
     },
-    deviceDescription: "viral nearly",
-    deviceName: "Moscovium Convertible",
-    deviceType: "port programming",
-    ipAddress: "154.62.154.164",
-    location: {
-      city: "Maple Grove",
-      country: "Bangladesh",
-      displayString: "Concrete Philippines Unbranded",
-      latitude: 2388.32,
-      longitude: 1304.5,
-      region: "Rubber Road Paradigm",
-      zipcode: "99048-4394",
-    },
-    os: "BMX",
-    userAgent: "actuating BMX",
+    location: {},
   },
-  hardDelete: false,
-  query: "utilize",
-  queryString: "Pennsylvania metrics Kansas",
   userIds: [
-    "efc735c3-1580-4ba9-8350-4815de8e012f",
+    "45e88bfd-1984-48e9-b9af-81f440b3e32c",
   ],
 };
-const dryRun: string = "connecting";
-const hardDelete: string = "green";
-const userIds: string = "Northwest";
+const dryRun: string = "Rubber";
+const hardDelete: string = "Road";
+const userIds: string = "Paradigm";
 
-sdk.sdk.deleteUserBulk(userDeleteRequest, dryRun, hardDelete, userIds).then((res: DeleteUserBulkResponse) => {
+  const res = await sdk.sdk.deleteUserBulk(userDeleteRequest, dryRun, hardDelete, userIds);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8232,22 +6100,24 @@ Remove an existing link that has been made from a 3rd party identity provider to
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteUserLinkWithIdRequest, DeleteUserLinkWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteUserLinkWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const identityProviderId: string = "deposit";
 const identityProviderUserId: string = "eyeballs";
 const userId: string = "typify";
 
-sdk.sdk.deleteUserLinkWithId(identityProviderId, identityProviderUserId, userId).then((res: DeleteUserLinkWithIdResponse) => {
+  const res = await sdk.sdk.deleteUserLinkWithId(identityProviderId, identityProviderUserId, userId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8273,45 +6143,33 @@ Deletes the user registration for the given user and application. OR Deletes the
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteUserRegistrationWithIdRequest, DeleteUserRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteUserRegistrationWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { EventInfo, EventInfoData, Location, RegistrationDeleteRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "pile";
 const userId: string = "Southeast";
 const registrationDeleteRequest: RegistrationDeleteRequest = {
   eventInfo: {
     data: {
-      "ducimus": {},
+      "Toys": {},
     },
-    deviceDescription: "Toys",
-    deviceName: "Account Buckinghamshire PNG",
-    deviceType: "Wagon Frozen",
-    ipAddress: "43.77.233.35",
-    location: {
-      city: "Fort Bradystead",
-      country: "Holy See (Vatican City State)",
-      displayString: "red",
-      latitude: 6783.45,
-      longitude: 2947.92,
-      region: "male application",
-      zipcode: "08927",
-    },
-    os: "Toys South asynchronous",
-    userAgent: "Rubber aside Refined",
+    location: {},
   },
 };
-const xFusionAuthTenantId: string = "Jordan redundant Rolls";
+const xFusionAuthTenantId: string = "Account Buckinghamshire PNG";
 
-sdk.sdk.deleteUserRegistrationWithId(applicationId, userId, registrationDeleteRequest, xFusionAuthTenantId).then((res: DeleteUserRegistrationWithIdResponse) => {
+  const res = await sdk.sdk.deleteUserRegistrationWithId(applicationId, userId, registrationDeleteRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8338,48 +6196,33 @@ Disable two-factor authentication for a user using a JSON body rather than URL p
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteUserTwoFactorWithIdRequest, DeleteUserTwoFactorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteUserTwoFactorWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { EventInfo, EventInfoData, Location, TwoFactorDisableRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "fatally";
 const twoFactorDisableRequest: TwoFactorDisableRequest = {
-  applicationId: "e21cb4f0-b654-48e1-a021-f18773e23f76",
-  code: "fickle astride Account",
   eventInfo: {
     data: {
-      "incidunt": {},
+      "dreamily": {},
     },
-    deviceDescription: "programming",
-    deviceName: "Intersex",
-    deviceType: "Rubber seamless brr",
-    ipAddress: "9.148.161.204",
-    location: {
-      city: "Port Arnulfo",
-      country: "Seychelles",
-      displayString: "ferociously Cadillac",
-      latitude: 1920.9,
-      longitude: 1918.88,
-      region: "HEX Credit East",
-      zipcode: "52708",
-    },
-    os: "um circuit Cisgender",
-    userAgent: "alarm azure Gasoline",
+    location: {},
   },
-  methodId: "unleash",
 };
-const code: string = "exactly";
-const methodId: string = "Music";
+const code: string = "Southeast";
+const methodId: string = "Engineer";
 
-sdk.sdk.deleteUserTwoFactorWithId(userId, twoFactorDisableRequest, code, methodId).then((res: DeleteUserTwoFactorWithIdResponse) => {
+  const res = await sdk.sdk.deleteUserTwoFactorWithId(userId, twoFactorDisableRequest, code, methodId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8406,46 +6249,33 @@ Deletes the user based on the given request (sent to the API as JSON). This perm
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteUserWithIdRequest, DeleteUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteUserWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { EventInfo, EventInfoData, Location, UserDeleteSingleRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "ohm";
 const userDeleteSingleRequest: UserDeleteSingleRequest = {
   eventInfo: {
     data: {
-      "occaecati": {},
+      "Soul": {},
     },
-    deviceDescription: "SUV Industrial",
-    deviceName: "generating",
-    deviceType: "Diesel",
-    ipAddress: "154.63.163.187",
-    location: {
-      city: "South Jamisoncester",
-      country: "Sao Tome and Principe",
-      displayString: "Eastvale Bicycle",
-      latitude: 9424.6,
-      longitude: 6438.63,
-      region: "scalable online secret",
-      zipcode: "98286",
-    },
-    os: "Market",
-    userAgent: "South",
+    location: {},
   },
-  hardDelete: false,
 };
-const xFusionAuthTenantId: string = "Vermont virtual";
-const hardDelete: string = "Wooden";
+const xFusionAuthTenantId: string = "green Hat non";
+const hardDelete: string = "Diesel";
 
-sdk.sdk.deleteUserWithId(userId, userDeleteSingleRequest, xFusionAuthTenantId, hardDelete).then((res: DeleteUserWithIdResponse) => {
+  const res = await sdk.sdk.deleteUserWithId(userId, userDeleteSingleRequest, xFusionAuthTenantId, hardDelete);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8472,20 +6302,22 @@ Deletes the WebAuthn credential for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteWebAuthnCredentialWithIdRequest, DeleteWebAuthnCredentialWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteWebAuthnCredentialWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const id: string = "Executive";
 
-sdk.sdk.deleteWebAuthnCredentialWithId(id).then((res: DeleteWebAuthnCredentialWithIdResponse) => {
+  const res = await sdk.sdk.deleteWebAuthnCredentialWithId(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8509,20 +6341,22 @@ Deletes the webhook for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { DeleteWebhookWithIdRequest, DeleteWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { DeleteWebhookWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const webhookId: string = "Coupe";
 
-sdk.sdk.deleteWebhookWithId(webhookId).then((res: DeleteWebhookWithIdResponse) => {
+  const res = await sdk.sdk.deleteWebhookWithId(webhookId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8546,52 +6380,31 @@ Enable two-factor authentication for a user.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { EnableTwoFactorWithIdRequest, EnableTwoFactorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { EnableTwoFactorWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { EventInfo, EventInfoData, Location, TwoFactorRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "Bike";
 const twoFactorRequest: TwoFactorRequest = {
-  applicationId: "8c1de6e1-4c07-4d94-97ad-ddd557c5c32c",
-  authenticatorId: "Bronze",
-  code: "Soft deposit",
-  email: "Greyson1@hotmail.com",
   eventInfo: {
     data: {
-      "repellat": {},
+      "synthesizing": {},
     },
-    deviceDescription: "Stage katal",
-    deviceName: "Central Frederick Crew",
-    deviceType: "round Awesome",
-    ipAddress: "37.151.204.113",
-    location: {
-      city: "West Damaris",
-      country: "Guernsey",
-      displayString: "rapidly",
-      latitude: 7087.03,
-      longitude: 184.66,
-      region: "parallelism",
-      zipcode: "02936",
-    },
-    os: "Metrics invoice",
-    userAgent: "Convertible second",
+    location: {},
   },
-  method: "drive Burgs Bedfordshire",
-  mobilePhone: "Congolese",
-  secret: "Handcrafted unabashedly",
-  secretBase32Encoded: "Lead bandwidth",
-  twoFactorId: "recklessly navigate upon",
 };
 
-sdk.sdk.enableTwoFactorWithId(userId, twoFactorRequest).then((res: EnableTwoFactorWithIdResponse) => {
+  const res = await sdk.sdk.enableTwoFactorWithId(userId, twoFactorRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8616,42 +6429,27 @@ Exchange a refresh token for a new JWT.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ExchangeRefreshTokenForJWTWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.exchangeRefreshTokenForJWTWithId({
-  eventInfo: {
-    data: {
-      "dolores": {},
+  const res = await sdk.sdk.exchangeRefreshTokenForJWTWithId({
+    eventInfo: {
+      data: {
+        "azure": {},
+      },
+      location: {},
     },
-    deviceDescription: "queerly overriding incidentally",
-    deviceName: "Plastic parse",
-    deviceType: "cultivate Keeling Northeast",
-    ipAddress: "218.253.239.1",
-    location: {
-      city: "Urbana",
-      country: "Russian Federation",
-      displayString: "Product Pine Cisgender",
-      latitude: 3287.1,
-      longitude: 1213,
-      region: "Adventure smite oof",
-      zipcode: "22745-1305",
-    },
-    os: "henry",
-    userAgent: "Digitized fluid Saint",
-  },
-  refreshToken: "Car",
-  token: "connect deliverables Medhurst",
-}).then((res: ExchangeRefreshTokenForJWTWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8675,49 +6473,30 @@ Begins the forgot password sequence, which kicks off an email to the user so tha
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ForgotPasswordWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.forgotPasswordWithId({
-  applicationId: "ee1f34b2-23c2-4b8f-9775-01516562bd98",
-  changePasswordId: "Soul Rwanda Bicycle",
-  email: "Sylvester66@yahoo.com",
-  eventInfo: {
-    data: {
-      "neque": {},
+  const res = await sdk.sdk.forgotPasswordWithId({
+    eventInfo: {
+      data: {
+        "whoever": {},
+      },
+      location: {},
     },
-    deviceDescription: "virtual",
-    deviceName: "Peso wad Fish",
-    deviceType: "to",
-    ipAddress: "180.207.151.81",
-    location: {
-      city: "Cormierport",
-      country: "Cuba",
-      displayString: "foolishly Diesel",
-      latitude: 7915.83,
-      longitude: 5196.54,
-      region: "And",
-      zipcode: "38217-2128",
+    state: {
+      "West": {},
     },
-    os: "Northwest",
-    userAgent: "sky through bluetooth",
-  },
-  loginId: "West steradian whoever",
-  sendForgotPasswordEmail: false,
-  state: {
-    "cumque": {},
-  },
-  username: "Salvatore48",
-}).then((res: ForgotPasswordWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8741,50 +6520,31 @@ Generate a new RSA or EC key pair or an HMAC secret.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { GenerateKeyResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
-
-sdk.sdk.generateKey({
-  key: {
-    algorithm: KeyAlgorithm.Es256,
-    certificate: "Northwest Northwest",
-    certificateInformation: {
-      issuer: "South",
-      md5Fingerprint: "officially",
-      serialNumber: "District thankfully Summerville",
-      sha1Fingerprint: "abaft Republic Facilitator",
-      sha1Thumbprint: "withdrawal",
-      sha256Fingerprint: "turquoise mail Electronic",
-      sha256Thumbprint: "Transexual North behind",
-      subject: "freighter closet",
-      validFrom: 1659380719000,
-      validTo: 1659380719000,
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
     },
-    expirationInstant: 1659380719000,
-    hasPrivateKey: false,
-    id: "146d4658-400a-4811-b94e-e2541dfee92f",
-    insertInstant: 1659380719000,
-    issuer: "Small infrastructures",
-    kid: "didactic Diesel",
-    lastUpdateInstant: 1659380719000,
-    length: 178470,
-    name: "Paraguay Account SSD",
-    privateKey: "Northwest Chrysler",
-    publicKey: "Account",
-    secret: "indigo",
-    type: KeyType.Ec,
-  },
-}).then((res: GenerateKeyResponse) => {
+  });
+
+  const res = await sdk.sdk.generateKey({
+    key: {
+      certificateInformation: {
+        validFrom: 1659380719000,
+        validTo: 1659380719000,
+      },
+      expirationInstant: 1659380719000,
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8808,52 +6568,34 @@ Generate a new RSA or EC key pair or an HMAC secret.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { GenerateKeyWithIdRequest, GenerateKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { GenerateKeyWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { CertificateInformation, Key, KeyAlgorithm, KeyRequest, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const keyId: string = "Universal";
 const keyRequest: KeyRequest = {
   key: {
-    algorithm: KeyAlgorithm.Es384,
-    certificate: "Northeast Mississippi",
     certificateInformation: {
-      issuer: "portal programming",
-      md5Fingerprint: "Terbium",
-      serialNumber: "on Designer chess",
-      sha1Fingerprint: "Genderqueer railroad as",
-      sha1Thumbprint: "East Configuration",
-      sha256Fingerprint: "Cape",
-      sha256Thumbprint: "maroon",
-      subject: "rerum Diesel",
       validFrom: 1659380719000,
       validTo: 1659380719000,
     },
     expirationInstant: 1659380719000,
-    hasPrivateKey: false,
-    id: "41c06d34-f421-4884-8258-cc7e507956cf",
     insertInstant: 1659380719000,
-    issuer: "Northeast azure",
-    kid: "Accounts Refined",
     lastUpdateInstant: 1659380719000,
-    length: 132807,
-    name: "Jeep Pants West",
-    privateKey: "Singapore",
-    publicKey: "Maserati",
-    secret: "base",
-    type: KeyType.Hmac,
   },
 };
 
-sdk.sdk.generateKeyWithId(keyId, keyRequest).then((res: GenerateKeyWithIdResponse) => {
+  const res = await sdk.sdk.generateKeyWithId(keyId, keyRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8878,23 +6620,22 @@ Generate two-factor recovery codes for a user. Generating two-factor recovery co
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  GenerateTwoFactorRecoveryCodesWithIdRequest,
-  GenerateTwoFactorRecoveryCodesWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { GenerateTwoFactorRecoveryCodesWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "guillotine";
 
-sdk.sdk.generateTwoFactorRecoveryCodesWithId(userId).then((res: GenerateTwoFactorRecoveryCodesWithIdResponse) => {
+  const res = await sdk.sdk.generateTwoFactorRecoveryCodesWithId(userId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8918,19 +6659,20 @@ Generate a Two Factor secret that can be used to enable Two Factor authenticatio
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { GenerateTwoFactorSecretUsingJWTWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.generateTwoFactorSecretUsingJWTWithId().then((res: GenerateTwoFactorSecretUsingJWTWithIdResponse) => {
+  const res = await sdk.sdk.generateTwoFactorSecretUsingJWTWithId();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -8953,48 +6695,39 @@ Handles login via third-parties including Social login, external OAuth and OpenI
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { IdentityProviderLoginWithIdRequest, IdentityProviderLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { IdentityProviderLoginWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { DeviceInfo, DeviceType, IdentityProviderLoginRequest, MetaData, MetaDataData } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const identityProviderLoginRequest: IdentityProviderLoginRequest = {
-  applicationId: "f71d979e-856a-4354-b660-4fab0b5cd13d",
   data: {
-    "modi": "digital",
+    "inspect": "Southwest",
   },
-  encodedJWT: "SQL Salad",
-  identityProviderId: "b6fbf03e-643f-41cd-b8af-3e3d15dab024",
-  ipAddress: "197.39.149.247",
   metaData: {
     data: {
-      "ratione": {},
+      "in": {},
     },
     device: {
-      description: "Customizable neutral knowledge base",
-      lastAccessedAddress: "quantify",
       lastAccessedInstant: 1659380719000,
-      name: "payment Books",
-      type: DeviceType.Tv,
     },
     scopes: [
-      "orchestrate",
+      "Music",
     ],
   },
-  newDevice: false,
-  noJWT: false,
-  noLink: false,
 };
-const xFusionAuthTenantId: string = "Soft Southwest Supervisor";
+const xFusionAuthTenantId: string = "Guarani Garden";
 
-sdk.sdk.identityProviderLoginWithId(identityProviderLoginRequest, xFusionAuthTenantId).then((res: IdentityProviderLoginWithIdResponse) => {
+  const res = await sdk.sdk.identityProviderLoginWithId(identityProviderLoginRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -9019,50 +6752,31 @@ Import an existing RSA or EC key pair or an HMAC secret.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ImportKeyResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
-
-sdk.sdk.importKey({
-  key: {
-    algorithm: KeyAlgorithm.Rs512,
-    certificate: "woot joule",
-    certificateInformation: {
-      issuer: "Alfreda Internal engineer",
-      md5Fingerprint: "North orchid",
-      serialNumber: "deposit",
-      sha1Fingerprint: "Supervisor systems Cotton",
-      sha1Thumbprint: "Soap softly Operations",
-      sha256Fingerprint: "Research",
-      sha256Thumbprint: "Steel SCSI female",
-      subject: "parse Reggae",
-      validFrom: 1659380719000,
-      validTo: 1659380719000,
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
     },
-    expirationInstant: 1659380719000,
-    hasPrivateKey: false,
-    id: "995e2c20-2bc3-4128-bd6d-193cf64c7ab6",
-    insertInstant: 1659380719000,
-    issuer: "Utah",
-    kid: "Soap Intuitive Radon",
-    lastUpdateInstant: 1659380719000,
-    length: 86237,
-    name: "female transsexual",
-    privateKey: "Connecticut",
-    publicKey: "Wagon Coordinator indigo",
-    secret: "And",
-    type: KeyType.Rsa,
-  },
-}).then((res: ImportKeyResponse) => {
+  });
+
+  const res = await sdk.sdk.importKey({
+    key: {
+      certificateInformation: {
+        validFrom: 1659380719000,
+        validTo: 1659380719000,
+      },
+      expirationInstant: 1659380719000,
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -9086,52 +6800,34 @@ Import an existing RSA or EC key pair or an HMAC secret.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ImportKeyWithIdRequest, ImportKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { ImportKeyWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { CertificateInformation, Key, KeyAlgorithm, KeyRequest, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const keyId: string = "Designer";
 const keyRequest: KeyRequest = {
   key: {
-    algorithm: KeyAlgorithm.Hs512,
-    certificate: "Northwest sky",
     certificateInformation: {
-      issuer: "driver Planner blah",
-      md5Fingerprint: "quantify purple",
-      serialNumber: "defiantly",
-      sha1Fingerprint: "Soul Chrysler pfft",
-      sha1Thumbprint: "quia",
-      sha256Fingerprint: "Future dutiful",
-      sha256Thumbprint: "iure Steel",
-      subject: "Xenogender",
       validFrom: 1659380719000,
       validTo: 1659380719000,
     },
     expirationInstant: 1659380719000,
-    hasPrivateKey: false,
-    id: "58acf5b0-5343-4856-bfb5-1a3ef8c80da8",
     insertInstant: 1659380719000,
-    issuer: "man Dong hack",
-    kid: "Savings",
     lastUpdateInstant: 1659380719000,
-    length: 392868,
-    name: "Swiss",
-    privateKey: "responsive",
-    publicKey: "Seamless",
-    secret: "Balboa",
-    type: KeyType.Rsa,
   },
 };
 
-sdk.sdk.importKeyWithId(keyId, keyRequest).then((res: ImportKeyWithIdResponse) => {
+  const res = await sdk.sdk.importKeyWithId(keyId, keyRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -9156,51 +6852,42 @@ Bulk imports refresh tokens. This request performs minimal validation and runs b
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ImportRefreshTokensWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
-
-sdk.sdk.importRefreshTokensWithId({
-  refreshTokens: [
-    {
-      applicationId: "68d39fb5-c0b2-421b-b461-e0c2a4a17720",
-      data: {
-        "voluptatibus": {},
-      },
-      id: "7cfbcfea-b6fd-4430-849e-3c82b535b888",
-      insertInstant: 1659380719000,
-      metaData: {
-        data: {
-          "deserunt": {},
-        },
-        device: {
-          description: "Enhanced national Graphical User Interface",
-          lastAccessedAddress: "sapiente Solutions candela",
-          lastAccessedInstant: 1659380719000,
-          name: "supposing",
-          type: DeviceType.Laptop,
-        },
-        scopes: [
-          "Fitness",
-        ],
-      },
-      startInstant: 1659380719000,
-      tenantId: "521996c0-9500-4c4a-a623-43ba2113b8a4",
-      token: "input",
-      userId: "d765efee-06b4-4ab2-9c62-aec2f0278d44",
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
     },
-  ],
-  validateDbConstraints: false,
-}).then((res: ImportRefreshTokensWithIdResponse) => {
+  });
+
+  const res = await sdk.sdk.importRefreshTokensWithId({
+    refreshTokens: [
+      {
+        data: {
+          "Account": {},
+        },
+        insertInstant: 1659380719000,
+        metaData: {
+          data: {
+            "Bespoke": {},
+          },
+          device: {
+            lastAccessedInstant: 1659380719000,
+          },
+          scopes: [
+            "recollect",
+          ],
+        },
+        startInstant: 1659380719000,
+      },
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -9224,234 +6911,133 @@ Bulk imports users. This request performs minimal validation and runs batch inse
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ImportUsersWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.importUsersWithId({
-  encryptionScheme: "synthesize",
-  eventInfo: {
-    data: {
-      "a": {},
-    },
-    deviceDescription: "Southwest",
-    deviceName: "Luxembourg JSON",
-    deviceType: "green Sausages lest",
-    ipAddress: "182.171.252.133",
-    location: {
-      city: "Waylonboro",
-      country: "Botswana",
-      displayString: "Botswana female",
-      latitude: 2002.55,
-      longitude: 5020,
-      region: "fugiat",
-      zipcode: "12984-1814",
-    },
-    os: "Ball",
-    userAgent: "override",
-  },
-  factor: 89300,
-  users: [
-    {
-      active: false,
-      birthDate: "2007-12-03",
-      breachedPasswordLastCheckedInstant: 1659380719000,
-      breachedPasswordStatus: BreachedPasswordStatus.None,
-      cleanSpeakId: "0b6dd8ab-c086-44a9-b15c-09399e57ee3b",
-      connectorId: "cc79d602-871e-4642-abe0-4bd942087d57",
+  const res = await sdk.sdk.importUsersWithId({
+    eventInfo: {
       data: {
-        "maxime": {},
+        "Bespoke": {},
       },
-      email: "Hyman96@hotmail.com",
-      encryptionScheme: "Latin hacking Northeast",
-      expiry: 1659380719000,
-      factor: 16357,
-      firstName: "Jeffery",
-      fullName: "Bruce Kerluke",
-      id: "2a30ab32-593b-4e0b-b6bc-e8085c66d899",
-      imageUrl: "BMX Franc what",
-      insertInstant: 1659380719000,
-      lastLoginInstant: 1659380719000,
-      lastName: "Purdy",
-      lastUpdateInstant: 1659380719000,
-      memberships: [
-        {
-          data: {
-            "inventore": {},
-          },
-          groupId: "88218781-2f92-4753-8857-d1504b3e9afb",
-          id: "a1b3179e-ea96-4fb5-8f2b-15ef9f91df84",
-          insertInstant: 1659380719000,
-          user: {
-            active: false,
-            birthDate: "2007-12-03",
-            breachedPasswordLastCheckedInstant: 1659380719000,
-            breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
-            cleanSpeakId: "3ae3bae0-16f0-4388-b1eb-62dc4acee244",
-            connectorId: "1f7ebd83-f205-48f9-85f5-9cab26297828",
+      location: {},
+    },
+    users: [
+      {
+        birthDate: "2007-12-03",
+        breachedPasswordLastCheckedInstant: 1659380719000,
+        data: {
+          "Representative": {},
+        },
+        expiry: 1659380719000,
+        insertInstant: 1659380719000,
+        lastLoginInstant: 1659380719000,
+        lastUpdateInstant: 1659380719000,
+        memberships: [
+          {
             data: {
-              "quidem": {},
+              "Vena": {},
             },
-            email: "Augusta51@gmail.com",
-            encryptionScheme: "Sedan invoice",
-            expiry: 1659380719000,
-            factor: 690433,
-            firstName: "Cyril",
-            fullName: "Alberto Swift",
-            id: "12d9390d-fa9d-4793-a171-6a132239066a",
-            imageUrl: "invoice",
+            insertInstant: 1659380719000,
+            user: {
+              birthDate: "2007-12-03",
+              breachedPasswordLastCheckedInstant: 1659380719000,
+              data: {
+                "indexing": {},
+              },
+              expiry: 1659380719000,
+              insertInstant: 1659380719000,
+              lastLoginInstant: 1659380719000,
+              lastUpdateInstant: 1659380719000,
+              memberships: [
+                {},
+              ],
+              passwordLastUpdateInstant: 1659380719000,
+              preferredLanguages: [
+                "en_US",
+              ],
+              registrations: [
+                {
+                  data: {
+                    "XML": {},
+                  },
+                  insertInstant: 1659380719000,
+                  lastLoginInstant: 1659380719000,
+                  lastUpdateInstant: 1659380719000,
+                  preferredLanguages: [
+                    "en_US",
+                  ],
+                  roles: [
+                    "green",
+                  ],
+                  timezone: "America/Denver",
+                  tokens: {
+                    "Sausages": "lest",
+                  },
+                },
+              ],
+              timezone: "America/Denver",
+              twoFactor: {
+                methods: [
+                  {
+                    authenticator: {},
+                  },
+                ],
+                recoveryCodes: [
+                  "male",
+                ],
+              },
+            },
+          },
+        ],
+        passwordLastUpdateInstant: 1659380719000,
+        preferredLanguages: [
+          "en_US",
+        ],
+        registrations: [
+          {
+            data: {
+              "masquerade": {},
+            },
             insertInstant: 1659380719000,
             lastLoginInstant: 1659380719000,
-            lastName: "Wolf",
             lastUpdateInstant: 1659380719000,
-            memberships: [
-              {},
-            ],
-            middleName: "Kai",
-            mobilePhone: "Soft Berkshire minty",
-            parentEmail: "GB",
-            password: "VAtL3QwTW7y38VI",
-            passwordChangeReason: ChangePasswordReason.Administrative,
-            passwordChangeRequired: false,
-            passwordLastUpdateInstant: 1659380719000,
             preferredLanguages: [
               "en_US",
             ],
-            registrations: [
-              {
-                applicationId: "2af42898-a9dc-4e16-9efa-8a24c36df9fc",
-                authenticationToken: "poorly IB",
-                cleanSpeakId: "fd6498df-d0c3-461e-bf5c-5a983343e48c",
-                data: {
-                  "quod": {},
-                },
-                id: "daae24c6-9b45-424c-bb6e-905034daa065",
-                insertInstant: 1659380719000,
-                lastLoginInstant: 1659380719000,
-                lastUpdateInstant: 1659380719000,
-                preferredLanguages: [
-                  "en_US",
-                ],
-                roles: [
-                  "budgetary",
-                ],
-                timezone: "America/Denver",
-                tokens: {
-                  "tempora": "cull",
-                },
-                username: "Charles_Raynor",
-                usernameStatus: ContentStatus.Active,
-                verified: false,
-              },
+            roles: [
+              "parsing",
             ],
-            salt: "Boron Uranium Jaguar",
-            tenantId: "5b61008c-7043-49b6-bd9e-c8f6c6e05011",
             timezone: "America/Denver",
-            twoFactor: {
-              methods: [
-                {
-                  authenticator: {
-                    algorithm: TOTPAlgorithm.HmacSha512,
-                    codeLength: 430335,
-                    timeStep: 686382,
-                  },
-                  email: "Una_Brakus@gmail.com",
-                  id: "<ID>",
-                  lastUsed: false,
-                  method: "empower",
-                  mobilePhone: "Representative",
-                  secret: "Steel models ack",
-                },
-              ],
-              recoveryCodes: [
-                "quantify",
-              ],
+            tokens: {
+              "eaque": "Southeast",
             },
-            uniqueUsername: "connecting",
-            username: "Max4",
-            usernameStatus: ContentStatus.Active,
-            verified: false,
-          },
-          userId: "eefda98a-e3ba-4163-b506-e369349c6a1b",
-        },
-      ],
-      middleName: "Jules",
-      mobilePhone: "City whereas Jeep",
-      parentEmail: "yawningly",
-      password: "EcERnBJpC6I3Y7K",
-      passwordChangeReason: ChangePasswordReason.Expired,
-      passwordChangeRequired: false,
-      passwordLastUpdateInstant: 1659380719000,
-      preferredLanguages: [
-        "en_US",
-      ],
-      registrations: [
-        {
-          applicationId: "7060aa82-a367-4347-8bb2-4ddb468a293f",
-          authenticationToken: "Wooden Generic",
-          cleanSpeakId: "4c7b2317-e4f8-4b5b-bd51-6e62e222e917",
-          data: {
-            "quasi": {},
-          },
-          id: "ec4d2cc5-eff3-41f4-bc32-c877c5ae9084",
-          insertInstant: 1659380719000,
-          lastLoginInstant: 1659380719000,
-          lastUpdateInstant: 1659380719000,
-          preferredLanguages: [
-            "en_US",
-          ],
-          roles: [
-            "Hyundai",
-          ],
-          timezone: "America/Denver",
-          tokens: {
-            "labore": "up",
-          },
-          username: "Max45",
-          usernameStatus: ContentStatus.Pending,
-          verified: false,
-        },
-      ],
-      salt: "Accountability unless Towels",
-      tenantId: "71394dc7-7eb2-45d9-b642-cad83af48117",
-      timezone: "America/Denver",
-      twoFactor: {
-        methods: [
-          {
-            authenticator: {
-              algorithm: TOTPAlgorithm.HmacSha512,
-              codeLength: 767424,
-              timeStep: 322735,
-            },
-            email: "Kiel_Treutel@hotmail.com",
-            id: "<ID>",
-            lastUsed: false,
-            method: "Grocery up",
-            mobilePhone: "EXE Frozen Genderflux",
-            secret: "Wagon Wooden",
           },
         ],
-        recoveryCodes: [
-          "praesentium",
-        ],
+        timezone: "America/Denver",
+        twoFactor: {
+          methods: [
+            {
+              authenticator: {},
+            },
+          ],
+          recoveryCodes: [
+            "complexity",
+          ],
+        },
       },
-      uniqueUsername: "Kunze Intelligent Convertible",
-      username: "Idell_Beatty99",
-      usernameStatus: ContentStatus.Pending,
-      verified: false,
-    },
-  ],
-  validateDbConstraints: false,
-}).then((res: ImportUsersWithIdResponse) => {
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -9475,48 +7061,34 @@ Import a WebAuthn credential
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ImportWebAuthnCredentialWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { AttestationType, CoseAlgorithmIdentifier } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
-
-sdk.sdk.importWebAuthnCredentialWithId({
-  credentials: [
-    {
-      algorithm: CoseAlgorithmIdentifier.Ps512,
-      attestationType: AttestationType.Self,
-      authenticatorSupportsUserVerification: false,
-      credentialId: "fuchsia before",
-      data: {
-        "culpa": {},
-      },
-      discoverable: false,
-      displayName: "Inverse",
-      id: "6c22bbc9-0b28-47cd-bc4b-c8cae40c2187",
-      insertInstant: 1659380719000,
-      lastUseInstant: 1659380719000,
-      name: "violet",
-      publicKey: "Borders Boliviano indeed",
-      relyingPartyId: "discount",
-      signCount: 669458,
-      tenantId: "2a8363b6-ae68-4753-aacb-436acb68058d",
-      transports: [
-        "connecting",
-      ],
-      userAgent: "Tandem",
-      userId: "e6b1a6af-9ef3-4ca2-b24b-aadf3f2819c9",
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
     },
-  ],
-  validateDbConstraints: false,
-}).then((res: ImportWebAuthnCredentialWithIdResponse) => {
+  });
+
+  const res = await sdk.sdk.importWebAuthnCredentialWithId({
+    credentials: [
+      {
+        data: {
+          "ew": {},
+        },
+        insertInstant: 1659380719000,
+        lastUseInstant: 1659380719000,
+        transports: [
+          "Directives",
+        ],
+      },
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -9540,19 +7112,20 @@ Inspect an access token issued by FusionAuth.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { IntrospectAccessTokenWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.introspectAccessTokenWithId().then((res: IntrospectAccessTokenWithIdResponse) => {
+  const res = await sdk.sdk.introspectAccessTokenWithId();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -9575,21 +7148,23 @@ Issue a new access token (JWT) for the requested Application after ensuring the 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { IssueJWTWithIdRequest, IssueJWTWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { IssueJWTWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "Bicycle";
 const refreshToken: string = "Bicycle";
 
-sdk.sdk.issueJWTWithId(applicationId, refreshToken).then((res: IssueJWTWithIdResponse) => {
+  const res = await sdk.sdk.issueJWTWithId(applicationId, refreshToken);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -9614,23 +7189,25 @@ Sends a ping to FusionAuth indicating that the user was automatically logged int
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { LoginPingWithIdRequest, LoginPingWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { LoginPingWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "connecting";
 const userId: string = "under";
 const xFusionAuthTenantId: string = "female";
 const callerIPAddress: string = "Markets";
 
-sdk.sdk.loginPingWithId(applicationId, userId, xFusionAuthTenantId, callerIPAddress).then((res: LoginPingWithIdResponse) => {
+  const res = await sdk.sdk.loginPingWithId(applicationId, userId, xFusionAuthTenantId, callerIPAddress);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -9657,43 +7234,36 @@ Sends a ping to FusionAuth indicating that the user was automatically logged int
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { LoginPingWithRequestWithIdRequest, LoginPingWithRequestWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { LoginPingWithRequestWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { DeviceInfo, DeviceType, LoginPingRequest, MetaData, MetaDataData } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const loginPingRequest: LoginPingRequest = {
-  applicationId: "b20b51af-2bbf-4df6-a02b-f8424859b11d",
-  ipAddress: "235.89.110.232",
   metaData: {
     data: {
-      "quis": {},
+      "female": {},
     },
     device: {
-      description: "Self-enabling coherent emulation",
-      lastAccessedAddress: "East Fantastic",
       lastAccessedInstant: 1659380719000,
-      name: "woman Licensed Profound",
-      type: DeviceType.Tablet,
     },
     scopes: [
-      "Account",
+      "Papua",
     ],
   },
-  newDevice: false,
-  noJWT: false,
-  userId: "27c144b9-3cf8-4469-aa06-2098dee7dbd1",
 };
-const xFusionAuthTenantId: string = "Ball";
+const xFusionAuthTenantId: string = "Developer";
 
-sdk.sdk.loginPingWithRequestWithId(loginPingRequest, xFusionAuthTenantId).then((res: LoginPingWithRequestWithIdResponse) => {
+  const res = await sdk.sdk.loginPingWithRequestWithId(loginPingRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -9718,46 +7288,36 @@ Authenticates a user to FusionAuth.   This API optionally requires an API key. S
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { LoginWithIdRequest, LoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { LoginWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { DeviceInfo, DeviceType, LoginRequest, MetaData, MetaDataData } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const loginRequest: LoginRequest = {
-  applicationId: "1fe71a0b-f7a5-4bb1-b6d2-2cc92d020685",
-  ipAddress: "220.203.209.48",
-  loginId: "Unbranded gleam",
   metaData: {
     data: {
-      "dolores": {},
+      "Southwest": {},
     },
     device: {
-      description: "User-friendly didactic alliance",
-      lastAccessedAddress: "Money Personal",
       lastAccessedInstant: 1659380719000,
-      name: "Funk Smart",
-      type: DeviceType.Laptop,
     },
     scopes: [
-      "Southeast",
+      "monthly",
     ],
   },
-  newDevice: false,
-  noJWT: false,
-  oneTimePassword: "Livermorium Transexual",
-  password: "JiAvP5RMZTlzDvt",
-  twoFactorTrustId: "Identity quas index",
 };
-const xFusionAuthTenantId: string = "Transexual Won HEX";
+const xFusionAuthTenantId: string = "Supervisor";
 
-sdk.sdk.loginWithId(loginRequest, xFusionAuthTenantId).then((res: LoginWithIdResponse) => {
+  const res = await sdk.sdk.loginWithId(loginRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -9782,20 +7342,22 @@ Retrieves the identity provider for the given domain. A 200 response code indica
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { LookupIdentityProviderWithIdRequest, LookupIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { LookupIdentityProviderWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const domain: string = "Magnesium";
 
-sdk.sdk.lookupIdentityProviderWithId(domain).then((res: LookupIdentityProviderWithIdResponse) => {
+  const res = await sdk.sdk.lookupIdentityProviderWithId(domain);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -9819,58 +7381,37 @@ Modifies a temporal user action by changing the expiration of the action and opt
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ModifyActionWithIdRequest, ModifyActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { ModifyActionWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { ActionData, ActionRequest, EventInfo, EventInfoData, Location } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const actionId: string = "Chlorine";
 const actionRequest: ActionRequest = {
   action: {
-    actioneeUserId: "b3f85470-9402-4b65-9df2-8873396166b8",
-    actionerUserId: "708cc3c1-068d-45fd-a45a-0fe2b348532e",
     applicationIds: [
-      "8c494085-67be-4b25-95ed-77842aa33693",
+      "b3f85470-9402-4b65-9df2-8873396166b8",
     ],
-    comment: "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-    emailUser: false,
     expiry: 1659380719000,
-    notifyUser: false,
-    option: "Legacy",
-    reasonId: "fd4717d7-fd7e-4911-ae11-492170557f7c",
-    userActionId: "092d49a4-a3cf-40a8-9cf5-1675ce2a73a7",
   },
-  broadcast: false,
   eventInfo: {
     data: {
-      "temporibus": {},
+      "auxiliary": {},
     },
-    deviceDescription: "save blockchains eaque",
-    deviceName: "Lanthanum Copernicium forenenst",
-    deviceType: "THX Northwest Dakota",
-    ipAddress: "254.130.7.7",
-    location: {
-      city: "Lake Madie",
-      country: "Cambodia",
-      displayString: "withdrawal Delano Hatchback",
-      latitude: 1017.39,
-      longitude: 422.73,
-      region: "Savings website",
-      zipcode: "48785",
-    },
-    os: "Paradigm circuit Hybrid",
-    userAgent: "Metrics",
+    location: {},
   },
 };
 
-sdk.sdk.modifyActionWithId(actionId, actionRequest).then((res: ModifyActionWithIdResponse) => {
+  const res = await sdk.sdk.modifyActionWithId(actionId, actionRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -9895,42 +7436,33 @@ Complete a login request using a passwordless code
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PasswordlessLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.passwordlessLoginWithId({
-  applicationId: "2032a554-5bb4-4a81-b9d3-713f4b1c996e",
-  code: "Interactions premier",
-  ipAddress: "159.144.17.241",
-  metaData: {
-    data: {
-      "ex": {},
+  const res = await sdk.sdk.passwordlessLoginWithId({
+    metaData: {
+      data: {
+        "Cove": {},
+      },
+      device: {
+        lastAccessedInstant: 1659380719000,
+      },
+      scopes: [
+        "harness",
+      ],
     },
-    device: {
-      description: "Cross-platform bifurcated leverage",
-      lastAccessedAddress: "Loan",
-      lastAccessedInstant: 1659380719000,
-      name: "Account Gorczany Palladium",
-      type: DeviceType.Tablet,
-    },
-    scopes: [
-      "silver",
-    ],
-  },
-  newDevice: false,
-  noJWT: false,
-  twoFactorTrustId: "networks",
-}).then((res: PasswordlessLoginWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -9954,7 +7486,7 @@ Updates, via PATCH, the application role with the given id for the application.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchApplicationRoleWithIdRequest, PatchApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchApplicationRoleWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   Application,
   ApplicationAccessControlConfiguration,
@@ -10009,266 +7541,106 @@ import {
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "Electric";
 const roleId: string = "Liberia";
 const applicationRequest: ApplicationRequest = {
   application: {
-    accessControlConfiguration: {
-      uiIPAccessControlListId: "8cc72665-0377-4c9c-aa35-0fb6efa0dd77",
-    },
-    active: false,
-    authenticationTokenConfiguration: {
-      enabled: false,
-    },
+    accessControlConfiguration: {},
+    authenticationTokenConfiguration: {},
     cleanSpeakConfiguration: {
-      apiKey: "offensively",
       applicationIds: [
-        "7f4c0b6c-25c5-4e86-9875-c72f9208af61",
+        "8cc72665-0377-4c9c-aa35-0fb6efa0dd77",
       ],
-      enabled: false,
-      url: "Isle underneath relationships",
-      usernameModeration: {
-        applicationId: "9dc242f1-0a56-448f-bbf2-8a065ae0fff6",
-        enabled: false,
-      },
+      usernameModeration: {},
     },
     data: {
-      "non": {},
+      "Lakes": {},
     },
-    emailConfiguration: {
-      emailUpdateEmailTemplateId: "9341cb5c-faee-4446-8d3a-863d12238446",
-      emailVerificationEmailTemplateId: "43efa5d0-20d1-4997-a40a-5794f41f9521",
-      emailVerifiedEmailTemplateId: "68d1a355-0f06-4903-bb4d-9651f199d377",
-      forgotPasswordEmailTemplateId: "a3f95678-65ea-493c-9dbc-260d9c2060cc",
-      loginIdInUseOnCreateEmailTemplateId: "c8bd6084-1d39-4c9e-a246-ef3de10c31b9",
-      loginIdInUseOnUpdateEmailTemplateId: "514a3678-83da-4459-9d72-4f5865b5bfd2",
-      loginNewDeviceEmailTemplateId: "c9c24102-36af-4413-a923-84caf3ac7be6",
-      loginSuspiciousEmailTemplateId: "5ccbf6d2-efab-4a7c-b689-68b62ab6d260",
-      passwordResetSuccessEmailTemplateId: "8723a37a-e7ec-4fbd-97b0-aaab33b5a5d4",
-      passwordUpdateEmailTemplateId: "f0eeaa80-f85c-42ba-aa3e-ffa70b8c0b04",
-      passwordlessEmailTemplateId: "b22a2955-bdbd-4822-b6c9-7e539e4f81d9",
-      setPasswordEmailTemplateId: "7d37b55d-9bb8-4406-a34d-e79bbfc3a039",
-      twoFactorMethodAddEmailTemplateId: "0d9498a4-5df8-4a3b-b3b4-94321308f5e3",
-      twoFactorMethodRemoveEmailTemplateId: "46bfaee5-8718-4c4c-92dd-35dd0f7d25fb",
-    },
-    externalIdentifierConfiguration: {
-      twoFactorTrustIdTimeToLiveInSeconds: 920568,
-    },
+    emailConfiguration: {},
+    externalIdentifierConfiguration: {},
     formConfiguration: {
-      adminRegistrationFormId: "b36f561e-ae33-40e0-933f-b5c8cb88bc0c",
-      selfServiceFormConfiguration: {
-        requireCurrentPasswordOnPasswordChange: false,
-      },
-      selfServiceFormId: "a925cfa4-ce59-4a40-a3fa-0ea86611417d",
+      selfServiceFormConfiguration: {},
     },
-    id: "1773dd20-5028-4806-938f-8a5d0b6fc35f",
     insertInstant: 1659380719000,
     jwtConfiguration: {
-      accessTokenKeyId: "b02c4bda-c328-4726-891b-0c625f14d1fd",
-      enabled: false,
-      idTokenKeyId: "b37959b6-d339-4e88-a5c1-acb5a668c379",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
-      refreshTokenRevocationPolicy: {
-        onLoginPrevented: false,
-        onMultiFactorEnable: false,
-        onPasswordChanged: false,
-      },
-      refreshTokenTimeToLiveInMinutes: 580459,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.OneTimeUse,
-      timeToLiveInSeconds: 225304,
+      refreshTokenRevocationPolicy: {},
     },
-    lambdaConfiguration: {
-      accessTokenPopulateId: "49d5b87b-d571-41c1-acf5-b028bb6d0d12",
-      idTokenPopulateId: "c120bed6-41b6-445e-9505-97c3f488f74b",
-      samlv2PopulateId: "2ccb51c6-1d9c-45d0-87c2-778dbd5e57ef",
-      selfServiceRegistrationValidationId: "d704103e-ebe5-4998-b0a9-2bf8e0ba755a",
-    },
+    lambdaConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    loginConfiguration: {
-      allowTokenRefresh: false,
-      generateRefreshTokens: false,
-      requireAuthentication: false,
-    },
+    loginConfiguration: {},
     multiFactorConfiguration: {
-      email: {
-        templateId: "6b1f2acf-0afa-479f-9735-2da8d5350930",
-      },
-      loginPolicy: MultiFactorLoginPolicy.Enabled,
-      sms: {
-        templateId: "78337372-3aef-4fc8-94aa-d8eeec589337",
-      },
-      trustPolicy: ApplicationMultiFactorTrustPolicy.This,
+      email: {},
+      sms: {},
     },
-    name: "coral quantifying Coordinator",
     oauthConfiguration: {
       authorizedOriginURLs: [
-        "Games",
+        "Bicycle",
       ],
       authorizedRedirectURLs: [
-        "indexing",
+        "Cruiser Electric",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.AllowWildcards,
-      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequiredWhenUsingPKCE,
-      clientId: "F2M",
-      clientSecret: "till East blue",
-      debug: false,
-      deviceVerificationURL: "Designer henry hacking",
       enabledGrants: [
-        "eventually",
+        "only",
       ],
-      generateRefreshTokens: false,
-      logoutBehavior: LogoutBehavior.RedirectOnly,
-      logoutURL: "Bacon Cheektowaga grey",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequired,
-      requireClientAuthentication: false,
-      requireRegistration: false,
     },
-    passwordlessConfiguration: {
-      enabled: false,
-    },
+    passwordlessConfiguration: {},
     registrationConfiguration: {
-      birthDate: {
-        enabled: false,
-        required: false,
-      },
-      confirmPassword: false,
-      enabled: false,
-      firstName: {
-        enabled: false,
-        required: false,
-      },
-      formId: "fc286aab-c728-41d8-bc1b-4d8e9d64fb02",
-      fullName: {
-        enabled: false,
-        required: false,
-      },
-      lastName: {
-        enabled: false,
-        required: false,
-      },
-      loginIdType: LoginIdType.Username,
-      middleName: {
-        enabled: false,
-        required: false,
-      },
-      mobilePhone: {
-        enabled: false,
-        required: false,
-      },
-      type: RegistrationType.Basic,
+      birthDate: {},
+      firstName: {},
+      fullName: {},
+      lastName: {},
+      middleName: {},
+      mobilePhone: {},
     },
     registrationDeletePolicy: {
-      unverified: {
-        enabled: false,
-        numberOfDaysToRetain: 18954,
-      },
+      unverified: {},
     },
     roles: [
       {
-        description: "Intuitive tangible data-warehouse",
-        id: "1308c97f-7892-449e-b495-41bbbb626523",
         insertInstant: 1659380719000,
-        isDefault: false,
-        isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "Manager cohesive",
       },
     ],
     samlv2Configuration: {
-      audience: "Ergonomic Mini",
       authorizedRedirectURLs: [
-        "systems Brand Plastic",
+        "Hatchback Kuna",
       ],
-      callbackURL: "Northwest SMS",
-      debug: false,
-      defaultVerificationKeyId: "7a061937-0852-4524-a6d3-7b34866478c6",
-      enabled: false,
-      initiatedLogin: {
-        enabled: false,
-        nameIdFormat: "violet",
-      },
-      issuer: "Gold Specialist",
-      keyId: "d17730f8-cc9c-410c-8c15-b6052c63c249",
+      initiatedLogin: {},
       logout: {
-        behavior: SAMLLogoutBehavior.OnlyOriginator,
-        defaultVerificationKeyId: "065a41d3-04ba-49a7-b581-dcfa15de4df3",
-        keyId: "5731cf88-50cd-491b-aafb-4e11a4cfaf1d",
-        requireSignedRequests: false,
-        singleLogout: {
-          enabled: false,
-          keyId: "77d674a9-784b-45c4-ada0-ba50397e0ee4",
-          url: "Elegant",
-          xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
-        },
-        xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
+        singleLogout: {},
       },
-      logoutURL: "drat",
-      requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
-      xmlSignatureLocation: XMLSignatureLocation.Response,
     },
-    state: ObjectState.Inactive,
-    tenantId: "10faa5c5-9f96-45c1-8bd0-4f5400888cf6",
-    themeId: "abbd5fab-cf77-4336-9833-fc4499211d95",
-    unverified: {
-      behavior: UnverifiedBehavior.Allow,
-    },
-    verificationEmailTemplateId: "162e14e9-bdca-40f1-9341-2fc015c02427",
-    verificationStrategy: VerificationStrategy.FormField,
-    verifyRegistration: false,
+    unverified: {},
     webAuthnConfiguration: {
-      bootstrapWorkflow: {
-        enabled: false,
-      },
-      enabled: false,
-      reauthenticationWorkflow: {
-        enabled: false,
-      },
+      bootstrapWorkflow: {},
+      reauthenticationWorkflow: {},
     },
   },
   eventInfo: {
     data: {
-      "sed": {},
+      "deposit": {},
     },
-    deviceDescription: "Producer Palm",
-    deviceName: "homogeneous Louisiana woman",
-    deviceType: "Rhode Cis",
-    ipAddress: "228.12.144.83",
-    location: {
-      city: "Jeramymouth",
-      country: "Norway",
-      displayString: "thankfully",
-      latitude: 255.88,
-      longitude: 4470.45,
-      region: "Jersey Circle methodical",
-      zipcode: "06991",
-    },
-    os: "system indigo",
-    userAgent: "virtual New",
+    location: {},
   },
   role: {
-    description: "Robust reciprocal encryption",
-    id: "ad129b34-0fd6-4e43-ba63-f35917dbfc54",
     insertInstant: 1659380719000,
-    isDefault: false,
-    isSuperRole: false,
     lastUpdateInstant: 1659380719000,
-    name: "ping Southeast",
   },
-  sourceApplicationId: "4a97e8b6-5b88-4721-9bf9-5a3a35b661b8",
 };
-const xFusionAuthTenantId: string = "Guarani Sedan";
+const xFusionAuthTenantId: string = "Cisgender feed considering";
 
-sdk.sdk.patchApplicationRoleWithId(applicationId, roleId, applicationRequest, xFusionAuthTenantId).then((res: PatchApplicationRoleWithIdResponse) => {
+  const res = await sdk.sdk.patchApplicationRoleWithId(applicationId, roleId, applicationRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -10295,7 +7667,7 @@ Updates, via PATCH, the application with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchApplicationWithIdRequest, PatchApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchApplicationWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   Application,
   ApplicationAccessControlConfiguration,
@@ -10350,265 +7722,105 @@ import {
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "Liaison";
 const applicationRequest: ApplicationRequest = {
   application: {
-    accessControlConfiguration: {
-      uiIPAccessControlListId: "d75c79f3-675c-4956-bf63-bc6fa4bd3f0a",
-    },
-    active: false,
-    authenticationTokenConfiguration: {
-      enabled: false,
-    },
+    accessControlConfiguration: {},
+    authenticationTokenConfiguration: {},
     cleanSpeakConfiguration: {
-      apiKey: "Wagon Architect Jaguar",
       applicationIds: [
-        "e7709644-f3d6-4ef6-a1f8-8ce32073baab",
+        "d75c79f3-675c-4956-bf63-bc6fa4bd3f0a",
       ],
-      enabled: false,
-      url: "Strategist Metal why",
-      usernameModeration: {
-        applicationId: "fbee0a8f-1591-4a9c-9d0e-30a3e5d03c5e",
-        enabled: false,
-      },
+      usernameModeration: {},
     },
     data: {
-      "quibusdam": {},
+      "fuchsia": {},
     },
-    emailConfiguration: {
-      emailUpdateEmailTemplateId: "e2cd6f82-5b86-41aa-8681-58d5d13c0195",
-      emailVerificationEmailTemplateId: "0427f012-6a0f-44e3-a75f-30b79d0103c8",
-      emailVerifiedEmailTemplateId: "b1881ec9-9e9e-4f4f-8a6b-abd62b645f23",
-      forgotPasswordEmailTemplateId: "41767814-f2e2-4684-bfbe-e5f6a388b150",
-      loginIdInUseOnCreateEmailTemplateId: "0e48c8d9-2307-4ff5-8c3a-d5fb0e269370",
-      loginIdInUseOnUpdateEmailTemplateId: "9202b793-c2e9-4b53-a41a-3b65b99711b0",
-      loginNewDeviceEmailTemplateId: "e6534e24-e798-440d-9cd0-815ebfdb358a",
-      loginSuspiciousEmailTemplateId: "75cedbf7-e01c-420a-ab40-9644636482d2",
-      passwordResetSuccessEmailTemplateId: "e48f771d-53dd-4421-a2e2-ab2922cf8c8b",
-      passwordUpdateEmailTemplateId: "20672029-e09c-4b12-87e0-8d40b2c2967f",
-      passwordlessEmailTemplateId: "26500883-9c46-4ac8-9a0b-98bde31fca8a",
-      setPasswordEmailTemplateId: "9a7b281f-f4b0-4685-bcb4-4490c10105bb",
-      twoFactorMethodAddEmailTemplateId: "8ca41182-11bd-42a8-b692-b9ebd8eb3747",
-      twoFactorMethodRemoveEmailTemplateId: "095a9e96-781d-4ba7-b956-c1ecca0bf3a9",
-    },
-    externalIdentifierConfiguration: {
-      twoFactorTrustIdTimeToLiveInSeconds: 639460,
-    },
+    emailConfiguration: {},
+    externalIdentifierConfiguration: {},
     formConfiguration: {
-      adminRegistrationFormId: "14763f8a-53ee-40c1-9f00-c034e2098a15",
-      selfServiceFormConfiguration: {
-        requireCurrentPasswordOnPasswordChange: false,
-      },
-      selfServiceFormId: "9988bc45-41d6-4263-b46e-3d42318d2f2b",
+      selfServiceFormConfiguration: {},
     },
-    id: "076e8e1f-38e9-413f-a5ba-0ff129544ca5",
     insertInstant: 1659380719000,
     jwtConfiguration: {
-      accessTokenKeyId: "faa37de0-5415-4bf7-b979-569fafe4e4f0",
-      enabled: false,
-      idTokenKeyId: "8ad8fb6c-a548-4d7f-9325-c99f49322153",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
-      refreshTokenRevocationPolicy: {
-        onLoginPrevented: false,
-        onMultiFactorEnable: false,
-        onPasswordChanged: false,
-      },
-      refreshTokenTimeToLiveInMinutes: 969509,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.OneTimeUse,
-      timeToLiveInSeconds: 756341,
+      refreshTokenRevocationPolicy: {},
     },
-    lambdaConfiguration: {
-      accessTokenPopulateId: "1e1d8f1d-7719-4802-85ee-a1d0f307c412",
-      idTokenPopulateId: "57e07897-3423-41da-b0b9-c70d79e02186",
-      samlv2PopulateId: "0dfb6a8a-0493-4062-b9d2-973a0399468e",
-      selfServiceRegistrationValidationId: "914a39d3-d203-4c6b-b723-366efb0923cc",
-    },
+    lambdaConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    loginConfiguration: {
-      allowTokenRefresh: false,
-      generateRefreshTokens: false,
-      requireAuthentication: false,
-    },
+    loginConfiguration: {},
     multiFactorConfiguration: {
-      email: {
-        templateId: "192db609-9c86-428b-a714-ceedadff74cf",
-      },
-      loginPolicy: MultiFactorLoginPolicy.Enabled,
-      sms: {
-        templateId: "2672c580-5a2c-481f-9fc4-5e4f5c13bb98",
-      },
-      trustPolicy: ApplicationMultiFactorTrustPolicy.This,
+      email: {},
+      sms: {},
     },
-    name: "proactive Metrics",
     oauthConfiguration: {
       authorizedOriginURLs: [
-        "Dynamic",
+        "Architect Jaguar once",
       ],
       authorizedRedirectURLs: [
-        "Fantastic matrix",
+        "Mountain Bike",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.ExactMatch,
-      clientAuthenticationPolicy: ClientAuthenticationPolicy.Required,
-      clientId: "whether Polonium",
-      clientSecret: "Credit collaborative olive",
-      debug: false,
-      deviceVerificationURL: "sympathetically",
       enabledGrants: [
-        "Factors",
+        "excluding",
       ],
-      generateRefreshTokens: false,
-      logoutBehavior: LogoutBehavior.RedirectOnly,
-      logoutURL: "array",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.Required,
-      requireClientAuthentication: false,
-      requireRegistration: false,
     },
-    passwordlessConfiguration: {
-      enabled: false,
-    },
+    passwordlessConfiguration: {},
     registrationConfiguration: {
-      birthDate: {
-        enabled: false,
-        required: false,
-      },
-      confirmPassword: false,
-      enabled: false,
-      firstName: {
-        enabled: false,
-        required: false,
-      },
-      formId: "9af07ec8-c141-48cc-a5b6-9c0e30335ea2",
-      fullName: {
-        enabled: false,
-        required: false,
-      },
-      lastName: {
-        enabled: false,
-        required: false,
-      },
-      loginIdType: LoginIdType.Email,
-      middleName: {
-        enabled: false,
-        required: false,
-      },
-      mobilePhone: {
-        enabled: false,
-        required: false,
-      },
-      type: RegistrationType.Basic,
+      birthDate: {},
+      firstName: {},
+      fullName: {},
+      lastName: {},
+      middleName: {},
+      mobilePhone: {},
     },
     registrationDeletePolicy: {
-      unverified: {
-        enabled: false,
-        numberOfDaysToRetain: 118316,
-      },
+      unverified: {},
     },
     roles: [
       {
-        description: "Operative logistical methodology",
-        id: "b46278a6-f575-4623-8778-167625bca36a",
         insertInstant: 1659380719000,
-        isDefault: false,
-        isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "Electric",
       },
     ],
     samlv2Configuration: {
-      audience: "animi canonize",
       authorizedRedirectURLs: [
-        "Gasoline Northeast",
+        "Cambridgeshire connecting Hybrid",
       ],
-      callbackURL: "educated deposit Cadmium",
-      debug: false,
-      defaultVerificationKeyId: "77048a76-6717-4634-bbe3-5a8fc558bc19",
-      enabled: false,
-      initiatedLogin: {
-        enabled: false,
-        nameIdFormat: "above International Keyboard",
-      },
-      issuer: "newton Blues",
-      keyId: "61137d2f-5cee-4f72-8717-27006af43a58",
+      initiatedLogin: {},
       logout: {
-        behavior: SAMLLogoutBehavior.OnlyOriginator,
-        defaultVerificationKeyId: "057a14b7-581a-46e8-aade-4c4768c49cf6",
-        keyId: "4bc3e2e5-da5a-465d-9d5e-a77914ef9cb1",
-        requireSignedRequests: false,
-        singleLogout: {
-          enabled: false,
-          keyId: "dc4910fe-3fc8-4827-9f44-3e912480694e",
-          url: "project",
-          xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
-        },
-        xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
+        singleLogout: {},
       },
-      logoutURL: "male pixel Fish",
-      requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
-      xmlSignatureLocation: XMLSignatureLocation.Assertion,
     },
-    state: ObjectState.PendingDelete,
-    tenantId: "7d76bc1c-924b-4f94-b7d5-c6678993d624",
-    themeId: "b6513e67-eed5-4fc4-b715-d4019c6f949a",
-    unverified: {
-      behavior: UnverifiedBehavior.Allow,
-    },
-    verificationEmailTemplateId: "74e7a21f-c955-4525-a0e8-afc9912b1a21",
-    verificationStrategy: VerificationStrategy.ClickableLink,
-    verifyRegistration: false,
+    unverified: {},
     webAuthnConfiguration: {
-      bootstrapWorkflow: {
-        enabled: false,
-      },
-      enabled: false,
-      reauthenticationWorkflow: {
-        enabled: false,
-      },
+      bootstrapWorkflow: {},
+      reauthenticationWorkflow: {},
     },
   },
   eventInfo: {
     data: {
-      "ducimus": {},
+      "Keyboard": {},
     },
-    deviceDescription: "transmitter",
-    deviceName: "Tasty Cotton Books",
-    deviceType: "Southwest",
-    ipAddress: "59.155.39.248",
-    location: {
-      city: "East Quinn",
-      country: "Bolivia",
-      displayString: "orchestrate",
-      latitude: 6338.41,
-      longitude: 7775.92,
-      region: "benchmark",
-      zipcode: "63558",
-    },
-    os: "yieldingly parsing",
-    userAgent: "Flatley",
+    location: {},
   },
   role: {
-    description: "Innovative leading edge array",
-    id: "597a2829-8b33-4c49-9082-de3da771b565",
     insertInstant: 1659380719000,
-    isDefault: false,
-    isSuperRole: false,
     lastUpdateInstant: 1659380719000,
-    name: "mid tan",
   },
-  sourceApplicationId: "9d7eb7b3-9c0b-40e2-a32f-9dc03672444d",
 };
-const xFusionAuthTenantId: string = "wombat inspection";
+const xFusionAuthTenantId: string = "deposit";
 
-sdk.sdk.patchApplicationWithId(applicationId, applicationRequest, xFusionAuthTenantId).then((res: PatchApplicationWithIdResponse) => {
+  const res = await sdk.sdk.patchApplicationWithId(applicationId, applicationRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -10634,7 +7846,7 @@ Updates, via PATCH, the connector with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchConnectorWithIdRequest, PatchConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchConnectorWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   BaseConnectorConfiguration,
   BaseConnectorConfigurationData,
@@ -10642,31 +7854,29 @@ import {
   ConnectorType,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const connectorId: string = "Dodge";
 const connectorRequest: ConnectorRequest = {
   connector: {
     data: {
-      "quae": {},
+      "Avon": {},
     },
-    debug: false,
-    id: "0a1d1e9e-0064-4a28-86ec-1796a5b4f87c",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "Mouse Diesel fuchsia",
-    type: ConnectorType.Generic,
   },
 };
 
-sdk.sdk.patchConnectorWithId(connectorId, connectorRequest).then((res: PatchConnectorWithIdResponse) => {
+  const res = await sdk.sdk.patchConnectorWithId(connectorId, connectorRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -10691,46 +7901,38 @@ Updates, via PATCH, the consent with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchConsentWithIdRequest, PatchConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchConsentWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { Consent, ConsentData, ConsentRequest, EmailPlus, LocalizedIntegers } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const consentId: string = "Assurance";
 const consentRequest: ConsentRequest = {
   consent: {
-    consentEmailTemplateId: "1e079a79-7c0e-4782-ac60-b242f254fe36",
     countryMinimumAgeForSelfConsent: {},
     data: {
-      "corporis": {},
+      "Southwest": {},
     },
-    defaultMinimumAgeForSelfConsent: 810261,
-    emailPlus: {
-      emailTemplateId: "2e757c60-df8f-4257-92fa-c3f16331330b",
-      enabled: false,
-      maximumTimeToSendEmailInHours: 758113,
-      minimumTimeToSendEmailInHours: 93940,
-    },
-    id: "9a8478a6-6870-49ac-aadc-8e17567cffb0",
+    emailPlus: {},
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    multipleValuesAllowed: false,
-    name: "disintermediate bypassing",
     values: [
-      "Future",
+      "Lakes",
     ],
   },
 };
-const xFusionAuthTenantId: string = "Diesel navigate";
+const xFusionAuthTenantId: string = "bluetooth 1080p";
 
-sdk.sdk.patchConsentWithId(consentId, consentRequest, xFusionAuthTenantId).then((res: PatchConsentWithIdResponse) => {
+  const res = await sdk.sdk.patchConsentWithId(consentId, consentRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -10756,39 +7958,34 @@ Updates, via PATCH, the email template with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchEmailTemplateWithIdRequest, PatchEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchEmailTemplateWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { EmailTemplate, EmailTemplateRequest, LocalizedStrings } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const emailTemplateId: string = "round";
 const emailTemplateRequest: EmailTemplateRequest = {
   emailTemplate: {
-    defaultFromName: "farm CSS",
-    defaultHtmlTemplate: "Cadmium",
-    defaultSubject: "Passenger",
-    defaultTextTemplate: "noisily brand Direct",
-    fromEmail: "West VGA",
-    id: "37828e33-8416-4662-b226-c99284ade666",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     localizedFromNames: {},
     localizedHtmlTemplates: {},
     localizedSubjects: {},
     localizedTextTemplates: {},
-    name: "missile Van",
   },
 };
-const xFusionAuthTenantId: string = "outlying Bicycle Toys";
+const xFusionAuthTenantId: string = "farm CSS";
 
-sdk.sdk.patchEmailTemplateWithId(emailTemplateId, emailTemplateRequest, xFusionAuthTenantId).then((res: PatchEmailTemplateWithIdResponse) => {
+  const res = await sdk.sdk.patchEmailTemplateWithId(emailTemplateId, emailTemplateRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -10814,7 +8011,7 @@ Updates, via PATCH, the Entity Type with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchEntityTypeWithIdRequest, PatchEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchEntityTypeWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   EntityJWTConfiguration,
   EntityType,
@@ -10824,58 +8021,46 @@ import {
   EntityTypeRequest,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityTypeId: string = "Southwest";
 const entityTypeRequest: EntityTypeRequest = {
   entityType: {
     data: {
-      "ea": {},
+      "Account": {},
     },
-    id: "ef0a56de-c804-48ab-a079-fdc73b45cfa8",
     insertInstant: 1659380719000,
-    jwtConfiguration: {
-      accessTokenKeyId: "a693c9f4-9582-4e0c-932c-a16f6daa539c",
-      enabled: false,
-      timeToLiveInSeconds: 270788,
-    },
+    jwtConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    name: "Volvo Washington Cadmium",
     permissions: [
       {
         data: {
-          "deserunt": {},
+          "South": {},
         },
-        description: "Decentralized content-based moratorium",
-        id: "159ed26b-a5dc-4486-a9a8-3b898b5b6835",
         insertInstant: 1659380719000,
-        isDefault: false,
         lastUpdateInstant: 1659380719000,
-        name: "gray Egypt",
       },
     ],
   },
   permission: {
     data: {
-      "rerum": {},
+      "Intuitive": {},
     },
-    description: "Distributed incremental standardization",
-    id: "e5027a2f-38f6-42de-8ae4-f6afdbd687e0",
     insertInstant: 1659380719000,
-    isDefault: false,
     lastUpdateInstant: 1659380719000,
-    name: "untrue",
   },
 };
 
-sdk.sdk.patchEntityTypeWithId(entityTypeId, entityTypeRequest).then((res: PatchEntityTypeWithIdResponse) => {
+  const res = await sdk.sdk.patchEntityTypeWithId(entityTypeId, entityTypeRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -10900,48 +8085,42 @@ Updates, via PATCH, the group with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchGroupWithIdRequest, PatchGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchGroupWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { ApplicationRole, Group, GroupData, GroupRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const groupId: string = "Wooden";
 const groupRequest: GroupRequest = {
   group: {
     data: {
-      "inventore": {},
+      "Cambridgeshire": {},
     },
-    id: "f074256e-1db6-48d8-8f09-09a7e7996d0c",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "Northwest Concrete",
     roles: [
       {
-        description: "Optional real-time matrix",
-        id: "f78c7fa7-2640-4535-961b-9de61ab5a92d",
         insertInstant: 1659380719000,
-        isDefault: false,
-        isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "Huntington transmit Sleek",
       },
     ],
-    tenantId: "be516d06-5c50-427c-87b1-849ba4201efa",
   },
   roleIds: [
-    "565f0fee-0b41-441d-86fe-d853c2cf61c7",
+    "074256e1-db68-4d84-b090-9a7e7996d0c6",
   ],
 };
-const xFusionAuthTenantId: string = "Sweden";
+const xFusionAuthTenantId: string = "incentivize";
 
-sdk.sdk.patchGroupWithId(groupId, groupRequest, xFusionAuthTenantId).then((res: PatchGroupWithIdResponse) => {
+  const res = await sdk.sdk.patchGroupWithId(groupId, groupRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -10967,135 +8146,26 @@ Updates, via PATCH, the identity provider with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchIdentityProviderWithIdRequest, PatchIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  AppleApplicationConfiguration,
-  AppleApplicationConfigurationData,
-  AppleIdentityProvider,
-  AppleIdentityProviderData,
-  CanonicalizationMethod,
-  ClientAuthenticationMethod,
-  EpicGamesApplicationConfiguration,
-  EpicGamesApplicationConfigurationData,
-  EpicGamesIdentityProvider,
-  EpicGamesIdentityProviderData,
-  ExternalJWTApplicationConfiguration,
-  ExternalJWTApplicationConfigurationData,
-  ExternalJWTIdentityProvider,
-  ExternalJWTIdentityProviderData,
-  FacebookApplicationConfiguration,
-  FacebookApplicationConfigurationData,
-  FacebookIdentityProvider,
-  FacebookIdentityProviderData,
-  GoogleApplicationConfiguration,
-  GoogleApplicationConfigurationData,
-  GoogleIdentityProvider,
-  GoogleIdentityProviderData,
-  GoogleIdentityProviderProperties,
-  HYPRApplicationConfiguration,
-  HYPRApplicationConfigurationData,
-  HYPRIdentityProvider,
-  HYPRIdentityProviderData,
-  IdentityProviderLimitUserLinkingPolicy,
-  IdentityProviderLinkingStrategy,
-  IdentityProviderLoginMethod,
-  IdentityProviderOauth2Configuration,
-  IdentityProviderRequest,
-  IdentityProviderTenantConfiguration,
-  IdentityProviderTenantConfigurationData,
-  IdentityProviderType,
-  LinkedInApplicationConfiguration,
-  LinkedInApplicationConfigurationData,
-  LinkedInIdentityProvider,
-  LinkedInIdentityProviderData,
-  LoginHintConfiguration,
-  NintendoApplicationConfiguration,
-  NintendoApplicationConfigurationData,
-  NintendoIdentityProvider,
-  NintendoIdentityProviderData,
-  OpenIdConnectApplicationConfiguration,
-  OpenIdConnectApplicationConfigurationData,
-  OpenIdConnectIdentityProvider,
-  OpenIdConnectIdentityProviderData,
-  ProviderLambdaConfiguration,
-  SAMLv2AssertionConfiguration,
-  SAMLv2DestinationAssertionConfiguration,
-  SAMLv2DestinationAssertionPolicy,
-  SAMLv2IdentityProvider,
-  SAMLv2IdpInitiatedConfiguration,
-  SAMLv2IdPInitiatedIdentityProvider,
-  SonyPSNApplicationConfiguration,
-  SonyPSNApplicationConfigurationData,
-  SonyPSNIdentityProvider,
-  SonyPSNIdentityProviderData,
-  SteamAPIMode,
-  SteamApplicationConfiguration,
-  SteamApplicationConfigurationData,
-  SteamIdentityProvider,
-  SteamIdentityProviderData,
-  TwitchApplicationConfiguration,
-  TwitchApplicationConfigurationData,
-  TwitchIdentityProvider,
-  TwitchIdentityProviderData,
-  TwitterApplicationConfiguration,
-  TwitterApplicationConfigurationData,
-  TwitterIdentityProvider,
-  TwitterIdentityProviderData,
-  XboxApplicationConfiguration,
-  XboxApplicationConfigurationData,
-  XboxIdentityProvider,
-  XboxIdentityProviderData,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { PatchIdentityProviderWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { IdentityProviderRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const identityProviderId: string = "Triathlon/Time";
 const identityProviderRequest: IdentityProviderRequest = {
-  identityProvider: {
-    assertionConfiguration: {
-      destination: {
-        alternates: [
-          "infomediaries",
-        ],
-        policy: SAMLv2DestinationAssertionPolicy.AllowAlternates,
-      },
-    },
-    buttonImageURL: "deposit",
-    buttonText: "digital",
-    domains: [
-      "calculate",
-    ],
-    emailClaim: "Granite Representative",
-    idpEndpoint: "Programmable Non Eugene",
-    idpInitiatedConfiguration: {
-      enabled: false,
-      issuer: "gray feed Woman",
-    },
-    issuer: "Kazakhstan",
-    keyId: "8e977ec2-cbb3-4bf8-af77-4dcebc67fbe0",
-    loginHintConfiguration: {
-      enabled: false,
-      parameterName: "orchid Southeast",
-    },
-    nameIdFormat: "handle Petaluma",
-    postRequest: false,
-    requestSigningKeyId: "ef36f2ae-15e5-43a5-adfa-cf27175c6024",
-    signRequest: false,
-    uniqueIdClaim: "chino",
-    useNameIdForEmail: false,
-    usernameClaim: "Cheese Islands, Refined",
-    xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
-  },
+  identityProvider: "Elegant",
 };
 
-sdk.sdk.patchIdentityProviderWithId(identityProviderId, identityProviderRequest).then((res: PatchIdentityProviderWithIdResponse) => {
+  const res = await sdk.sdk.patchIdentityProviderWithId(identityProviderId, identityProviderRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -11120,41 +8190,34 @@ Updates, via PATCH, the available integrations.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchIntegrationsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.patchIntegrationsWithId({
-  integrations: {
-    cleanspeak: {
-      apiKey: "Toyota",
-      applicationIds: [
-        "f03e64aa-03fa-4820-92f6-ddf3be1a13f1",
-      ],
-      enabled: false,
-      url: "gosh",
-      usernameModeration: {
-        applicationId: "34eee0d8-86cb-47d8-aa7f-da947250b4d7",
-        enabled: false,
+  const res = await sdk.sdk.patchIntegrationsWithId({
+    integrations: {
+      cleanspeak: {
+        applicationIds: [
+          "4def03e6-4aa0-43fa-820d-2f6ddf3be1a1",
+        ],
+        usernameModeration: {},
+      },
+      kafka: {
+        producer: {
+          "Chips": "Northeast",
+        },
       },
     },
-    kafka: {
-      defaultTopic: "Reggae Tools",
-      enabled: false,
-      producer: {
-        "soluta": "Salina",
-      },
-    },
-  },
-}).then((res: PatchIntegrationsWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -11178,33 +8241,29 @@ Updates, via PATCH, the lambda with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchLambdaWithIdRequest, PatchLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchLambdaWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { Lambda, LambdaEngineType, LambdaRequest, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const lambdaId: string = "Hybrid";
 const lambdaRequest: LambdaRequest = {
   lambda: {
-    body: "Money besides",
-    debug: false,
-    engineType: LambdaEngineType.Nashorn,
-    id: "9ff38fe1-28a2-4825-be2e-b590892c13b3",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "methodologies schema",
-    type: LambdaType.SCIMServerUserResponseConverter,
   },
 };
 
-sdk.sdk.patchLambdaWithId(lambdaId, lambdaRequest).then((res: PatchLambdaWithIdResponse) => {
+  const res = await sdk.sdk.patchLambdaWithId(lambdaId, lambdaRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -11229,33 +8288,32 @@ Updates, via PATCH, the message template with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchMessageTemplateWithIdRequest, PatchMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchMessageTemplateWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { MessageTemplate, MessageTemplateData, MessageTemplateRequest, MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const messageTemplateId: string = "West";
 const messageTemplateRequest: MessageTemplateRequest = {
   messageTemplate: {
     data: {
-      "recusandae": {},
+      "brr": {},
     },
-    id: "5eb4a70c-a68a-423a-870d-e3d4a3b50026",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "Dakota",
-    type: MessageType.Sms,
   },
 };
 
-sdk.sdk.patchMessageTemplateWithId(messageTemplateId, messageTemplateRequest).then((res: PatchMessageTemplateWithIdResponse) => {
+  const res = await sdk.sdk.patchMessageTemplateWithId(messageTemplateId, messageTemplateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -11280,7 +8338,7 @@ Updates, via PATCH, the messenger with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchMessengerWithIdRequest, PatchMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchMessengerWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   BaseMessengerConfiguration,
   BaseMessengerConfigurationData,
@@ -11288,32 +8346,29 @@ import {
   MessengerType,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const messengerId: string = "plus";
 const messengerRequest: MessengerRequest = {
   messenger: {
     data: {
-      "assumenda": {},
+      "Audi": {},
     },
-    debug: false,
-    id: "02883331-beb2-446f-90f7-00947d56ae8c",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "Pants Adventure magenta",
-    transport: "aside willfully interesting",
-    type: MessengerType.Kafka,
   },
 };
 
-sdk.sdk.patchMessengerWithId(messengerId, messengerRequest).then((res: PatchMessengerWithIdResponse) => {
+  const res = await sdk.sdk.patchMessengerWithId(messengerId, messengerRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -11338,7 +8393,7 @@ Updates, via PATCH, the registration for the user with the given id and the appl
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchRegistrationWithIdRequest, PatchRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchRegistrationWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorConfiguration,
   BreachedPasswordStatus,
@@ -11359,43 +8414,24 @@ import {
   UserTwoFactorConfiguration,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "dolorem";
 const registrationRequest: RegistrationRequest = {
-  disableDomainBlock: false,
   eventInfo: {
     data: {
-      "soluta": {},
+      "ohm": {},
     },
-    deviceDescription: "Solutions Fantastic",
-    deviceName: "tesla naturalize",
-    deviceType: "Soap indexing ubiquitous",
-    ipAddress: "195.28.220.27",
-    location: {
-      city: "Lake Eulahmouth",
-      country: "Congo",
-      displayString: "Honda Thulium",
-      latitude: 7494.17,
-      longitude: 3766.97,
-      region: "officia Hyundai Diesel",
-      zipcode: "55968-3848",
-    },
-    os: "Fresh",
-    userAgent: "Shirt Principal",
+    location: {},
   },
-  generateAuthenticationToken: false,
   registration: {
-    applicationId: "61b90b66-c5c5-4339-b60b-9e6872f66f60",
-    authenticationToken: "yowza",
-    cleanSpeakId: "347331ab-bd78-449e-8e96-0ed18fd8cc1b",
     data: {
-      "quos": {},
+      "Solutions": {},
     },
-    id: "1c4ce111-8ea5-4f43-800b-3823d2041d83",
     insertInstant: 1659380719000,
     lastLoginInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
@@ -11403,93 +8439,51 @@ const registrationRequest: RegistrationRequest = {
       "en_US",
     ],
     roles: [
-      "Wagon",
+      "Fantastic",
     ],
     timezone: "America/Denver",
     tokens: {
-      "beatae": "installation",
+      "input": "World",
     },
-    username: "Jeanie_Gusikowski69",
-    usernameStatus: ContentStatus.Rejected,
-    verified: false,
   },
-  sendSetPasswordEmail: false,
-  skipRegistrationVerification: false,
-  skipVerification: false,
   user: {
-    active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
-    cleanSpeakId: "6b30c391-d4d0-4fe0-bbde-1b695116f364",
-    connectorId: "14afd8b4-310c-42db-afed-5ef08d47fbdc",
     data: {
-      "excepturi": {},
+      "katal": {},
     },
-    email: "Koby_Buckridge@gmail.com",
-    encryptionScheme: "Tools",
     expiry: 1659380719000,
-    factor: 36138,
-    firstName: "Chance",
-    fullName: "Ada Hermann",
-    id: "1dca1ad5-bd50-40cf-a0c3-80831ef79d87",
-    imageUrl: "Bike indexing laborum",
     insertInstant: 1659380719000,
     lastLoginInstant: 1659380719000,
-    lastName: "Stracke",
     lastUpdateInstant: 1659380719000,
     memberships: [
       {
         data: {
-          "autem": {},
+          "program": {},
         },
-        groupId: "4db7bfe0-0de6-4476-900a-7b61414ac9e5",
-        id: "fe0e29bf-a67b-4fec-b0bb-df8e20ab8d82",
         insertInstant: 1659380719000,
         user: {
-          active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatus.CommonPassword,
-          cleanSpeakId: "bdd7b620-d33b-43aa-83ad-47053c3056d9",
-          connectorId: "dd3a6de9-7a66-4c87-ab01-dc98a796747e",
           data: {
-            "hic": {},
+            "Soap": {},
           },
-          email: "Gino95@gmail.com",
-          encryptionScheme: "maximize distributed male",
           expiry: 1659380719000,
-          factor: 403146,
-          firstName: "Tamara",
-          fullName: "Angelina Wiza",
-          id: "38f0476c-da92-4bd9-a4fd-57f24c6b275c",
-          imageUrl: "Moscovium",
           insertInstant: 1659380719000,
           lastLoginInstant: 1659380719000,
-          lastName: "Lehner",
           lastUpdateInstant: 1659380719000,
           memberships: [
             {},
           ],
-          middleName: "Parker",
-          mobilePhone: "Card shady",
-          parentEmail: "Global azure",
-          password: "aqvR5S22bM_naPO",
-          passwordChangeReason: ChangePasswordReason.Breached,
-          passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
             "en_US",
           ],
           registrations: [
             {
-              applicationId: "3750d297-5a61-4eb4-9030-3fd50c794b6b",
-              authenticationToken: "Pop Electric",
-              cleanSpeakId: "ed3668aa-98ba-4675-bf8e-4457cdc1bb2b",
               data: {
-                "ea": {},
+                "indexing": {},
               },
-              id: "021d2d34-4501-44fb-bc72-48557bdb1dab",
               insertInstant: 1659380719000,
               lastLoginInstant: 1659380719000,
               lastUpdateInstant: 1659380719000,
@@ -11497,67 +8491,37 @@ const registrationRequest: RegistrationRequest = {
                 "en_US",
               ],
               roles: [
-                "recharge",
+                "ubiquitous",
               ],
               timezone: "America/Denver",
               tokens: {
-                "quos": "green",
+                "Bicycle": "Northeast",
               },
-              username: "Anya85",
-              usernameStatus: ContentStatus.Rejected,
-              verified: false,
             },
           ],
-          salt: "Vermont specialise huzzah",
-          tenantId: "95fa6fed-f4d3-4564-aac5-d5085e194f2a",
           timezone: "America/Denver",
           twoFactor: {
             methods: [
               {
-                authenticator: {
-                  algorithm: TOTPAlgorithm.HmacSha512,
-                  codeLength: 133050,
-                  timeStep: 139109,
-                },
-                email: "Lucienne.Kozey82@yahoo.com",
-                id: "<ID>",
-                lastUsed: false,
-                method: "justly tan kitty",
-                mobilePhone: "salmon incentivize Tools",
-                secret: "circuit Pickup South",
+                authenticator: {},
               },
             ],
             recoveryCodes: [
-              "Credit",
+              "National",
             ],
           },
-          uniqueUsername: "Folk helplessly blockchains",
-          username: "Ezekiel_Jacobi",
-          usernameStatus: ContentStatus.Rejected,
-          verified: false,
         },
-        userId: "fd50f47d-5a6e-41fa-b9a5-12e02be1fa4e",
       },
     ],
-    middleName: "Phoenix",
-    mobilePhone: "hastily Principal coulomb",
-    parentEmail: "Scandium hertz Shoal",
-    password: "v3UH6AazQLEiXmy",
-    passwordChangeReason: ChangePasswordReason.Administrative,
-    passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
       "en_US",
     ],
     registrations: [
       {
-        applicationId: "95afcb43-8ada-4d1c-8665-6605f85591b7",
-        authenticationToken: "haptic like",
-        cleanSpeakId: "c7819e81-fcd3-4fe6-b74e-b72adef31194",
         data: {
-          "repudiandae": {},
+          "overriding": {},
         },
-        id: "b7f7fca9-864d-4236-a9fa-cb70f3dc96dd",
         insertInstant: 1659380719000,
         lastLoginInstant: 1659380719000,
         lastUpdateInstant: 1659380719000,
@@ -11565,53 +8529,35 @@ const registrationRequest: RegistrationRequest = {
           "en_US",
         ],
         roles: [
-          "Metal",
+          "Tanzanian",
         ],
         timezone: "America/Denver",
         tokens: {
-          "accusamus": "green",
+          "Thulium": "pascal",
         },
-        username: "Judson.Streich45",
-        usernameStatus: ContentStatus.Rejected,
-        verified: false,
       },
     ],
-    salt: "less quantifying Bicycle",
-    tenantId: "97dafd2a-1e25-4a0f-b283-06185e5c5c59",
     timezone: "America/Denver",
     twoFactor: {
       methods: [
         {
-          authenticator: {
-            algorithm: TOTPAlgorithm.HmacSha256,
-            codeLength: 148049,
-            timeStep: 938773,
-          },
-          email: "Mable72@yahoo.com",
-          id: "<ID>",
-          lastUsed: false,
-          method: "Hatchback Cyclocross Utah",
-          mobilePhone: "thong ipsa Integration",
-          secret: "duh unaccountably Reichel",
+          authenticator: {},
         },
       ],
       recoveryCodes: [
-        "doze",
+        "Folding",
       ],
     },
-    uniqueUsername: "Northwest",
-    username: "Lavina_Greenfelder",
-    usernameStatus: ContentStatus.Pending,
-    verified: false,
   },
 };
-const xFusionAuthTenantId: string = "slowly";
+const xFusionAuthTenantId: string = "Internal Trinidad";
 
-sdk.sdk.patchRegistrationWithId(userId, registrationRequest, xFusionAuthTenantId).then((res: PatchRegistrationWithIdResponse) => {
+  const res = await sdk.sdk.patchRegistrationWithId(userId, registrationRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -11637,67 +8583,52 @@ Updates, via PATCH, the system configuration.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchSystemConfigurationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { HTTPMethod } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.patchSystemConfigurationWithId({
-  systemConfiguration: {
-    auditLogConfiguration: {
-      delete: {
-        enabled: false,
-        numberOfDaysToRetain: 726786,
+  const res = await sdk.sdk.patchSystemConfigurationWithId({
+    systemConfiguration: {
+      auditLogConfiguration: {
+        delete: {},
       },
-    },
-    corsConfiguration: {
-      allowCredentials: false,
-      allowedHeaders: [
-        "bypassing",
-      ],
-      allowedMethods: [
-        HTTPMethod.Delete,
-      ],
-      allowedOrigins: [
-        "humiliating synthesize",
-      ],
-      debug: false,
-      enabled: false,
-      exposedHeaders: [
-        "ohm",
-      ],
-      preflightMaxAgeInSeconds: 215288,
-    },
-    data: {
-      "blanditiis": {},
-    },
-    eventLogConfiguration: {
-      numberToRetain: 398422,
-    },
-    insertInstant: 1659380719000,
-    lastUpdateInstant: 1659380719000,
-    loginRecordConfiguration: {
-      delete: {
-        enabled: false,
-        numberOfDaysToRetain: 884619,
+      corsConfiguration: {
+        allowedHeaders: [
+          "Neodymium",
+        ],
+        allowedMethods: [
+          HTTPMethod.Get,
+        ],
+        allowedOrigins: [
+          "program intranet",
+        ],
+        exposedHeaders: [
+          "Radium",
+        ],
       },
+      data: {
+        "program": {},
+      },
+      eventLogConfiguration: {},
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+      loginRecordConfiguration: {
+        delete: {},
+      },
+      reportTimezone: "America/Denver",
+      uiConfiguration: {},
     },
-    reportTimezone: "America/Denver",
-    uiConfiguration: {
-      headerColor: "Music withdrawal",
-      logoURL: "temporibus Fresh",
-      menuFontColor: "Incredible National North",
-    },
-  },
-}).then((res: PatchSystemConfigurationWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -11721,7 +8652,7 @@ Updates, via PATCH, the tenant with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchTenantWithIdRequest, PatchTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchTenantWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorAttachmentPreference,
   BreachAction,
@@ -11790,365 +8721,125 @@ import {
   VerificationStrategy,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const tenantId: string = "Fiji";
 const tenantRequest: TenantRequest = {
   eventInfo: {
     data: {
-      "beatae": {},
+      "Northeast": {},
     },
-    deviceDescription: "unleash",
-    deviceName: "politicise",
-    deviceType: "Rock South",
-    ipAddress: "214.128.181.62",
-    location: {
-      city: "Braincester",
-      country: "Micronesia",
-      displayString: "flexibility",
-      latitude: 8606.65,
-      longitude: 6406.34,
-      region: "matrix UDP that",
-      zipcode: "43614",
-    },
-    os: "instead",
-    userAgent: "Bhutanese",
+    location: {},
   },
-  sourceTenantId: "b28248b2-dbf5-4a3d-a216-39dea8cae280",
   tenant: {
-    accessControlConfiguration: {
-      uiIPAccessControlListId: "8ecc0ad2-458f-450c-b719-300b0617d296",
-    },
-    captchaConfiguration: {
-      captchaMethod: CaptchaMethod.GoogleRecaptchaV2,
-      enabled: false,
-      secretKey: "Carolina bail ha",
-      siteKey: "Funk geez",
-      threshold: 2584.62,
-    },
-    configured: false,
+    accessControlConfiguration: {},
+    captchaConfiguration: {},
     connectorPolicies: [
       {
-        connectorId: "594672bb-cbd5-4bc2-b5b6-5d093cea8a3c",
         data: {
-          "molestias": {},
+          "unleash": {},
         },
         domains: [
-          "Auto",
+          "Wyoming",
         ],
-        migrate: false,
       },
     ],
     data: {
-      "aperiam": {},
+      "Markets": {},
     },
     emailConfiguration: {
       additionalHeaders: [
-        {
-          name: "Chips male Singapore",
-          value: "male Southeast",
-        },
+        {},
       ],
-      debug: false,
-      defaultFromEmail: "Bronze overriding Rubber",
-      defaultFromName: "midst",
-      emailUpdateEmailTemplateId: "adaccd9d-4978-4252-8c3e-b8dc494082ed",
-      emailVerifiedEmailTemplateId: "c10dbbcf-61ec-4cb9-9ee8-3fb9eaf48f55",
-      forgotPasswordEmailTemplateId: "bffe6443-48b8-44cc-b375-d4ed9bb25e71",
-      host: "affectionate-horror.biz",
-      implicitEmailVerificationAllowed: false,
-      loginIdInUseOnCreateEmailTemplateId: "9836a49d-4784-429a-86c3-b2cbc8227778",
-      loginIdInUseOnUpdateEmailTemplateId: "31cf2553-9e86-4707-b361-df4ba6f9c510",
-      loginNewDeviceEmailTemplateId: "a96628f2-2f19-475b-9923-709c09db6318",
-      loginSuspiciousEmailTemplateId: "3f5300af-b08a-43f1-82ca-27f3cf3b7e37",
-      password: "kDcPs9te4D6J6qL",
-      passwordResetSuccessEmailTemplateId: "569df2ef-71b3-4c18-a233-52a690672618",
-      passwordUpdateEmailTemplateId: "5364efed-1de2-4081-b158-63e4620ee55f",
-      passwordlessEmailTemplateId: "879e8d6f-8274-44cf-9438-6b11faae4012",
-      port: 621467,
-      properties: "ranger Loan Florida",
-      security: EmailSecurityType.Ssl,
-      setPasswordEmailTemplateId: "8f42be6e-9618-4a0b-af5e-94c2057bfc21",
-      twoFactorMethodAddEmailTemplateId: "8f27fd73-7332-4755-a2e8-a875c51502e1",
-      twoFactorMethodRemoveEmailTemplateId: "1e7ceac5-5542-43a8-b21b-fc741646d049",
-      unverified: {
-        allowEmailChangeWhenGated: false,
-        behavior: UnverifiedBehavior.Gated,
-      },
-      username: "Ashton66",
-      verificationEmailTemplateId: "5ea0954c-699c-47d1-8e59-304c8aadfbdc",
-      verificationStrategy: VerificationStrategy.ClickableLink,
-      verifyEmail: false,
-      verifyEmailWhenChanged: false,
+      unverified: {},
     },
     eventConfiguration: {
       events: {
-        "cupiditate": {
-          enabled: false,
-          transactionType: TransactionType.SimpleMajority,
-        },
+        "Rock": {},
       },
     },
     externalIdentifierConfiguration: {
-      authorizationGrantIdTimeToLiveInSeconds: 869040,
-      changePasswordIdGenerator: {
-        length: 252512,
-        type: SecureGeneratorType.RandomDigits,
-      },
-      changePasswordIdTimeToLiveInSeconds: 995945,
-      deviceCodeTimeToLiveInSeconds: 550236,
-      deviceUserCodeIdGenerator: {
-        length: 751626,
-        type: SecureGeneratorType.RandomAlpha,
-      },
-      emailVerificationIdGenerator: {
-        length: 169788,
-        type: SecureGeneratorType.RandomBytes,
-      },
-      emailVerificationIdTimeToLiveInSeconds: 115621,
-      emailVerificationOneTimeCodeGenerator: {
-        length: 540873,
-        type: SecureGeneratorType.RandomAlphaNumeric,
-      },
-      externalAuthenticationIdTimeToLiveInSeconds: 244726,
-      oneTimePasswordTimeToLiveInSeconds: 78842,
-      passwordlessLoginGenerator: {
-        length: 981009,
-        type: SecureGeneratorType.RandomBytes,
-      },
-      passwordlessLoginTimeToLiveInSeconds: 429055,
-      pendingAccountLinkTimeToLiveInSeconds: 145167,
-      registrationVerificationIdGenerator: {
-        length: 172892,
-        type: SecureGeneratorType.RandomAlphaNumeric,
-      },
-      registrationVerificationIdTimeToLiveInSeconds: 158698,
-      registrationVerificationOneTimeCodeGenerator: {
-        length: 138756,
-        type: SecureGeneratorType.RandomDigits,
-      },
-      samlv2AuthNRequestIdTimeToLiveInSeconds: 884830,
-      setupPasswordIdGenerator: {
-        length: 368485,
-        type: SecureGeneratorType.RandomBytes,
-      },
-      setupPasswordIdTimeToLiveInSeconds: 352317,
-      trustTokenTimeToLiveInSeconds: 679523,
-      twoFactorIdTimeToLiveInSeconds: 798707,
-      twoFactorOneTimeCodeIdGenerator: {
-        length: 545152,
-        type: SecureGeneratorType.RandomAlpha,
-      },
-      twoFactorOneTimeCodeIdTimeToLiveInSeconds: 995427,
-      twoFactorTrustIdTimeToLiveInSeconds: 567944,
-      webAuthnAuthenticationChallengeTimeToLiveInSeconds: 400581,
-      webAuthnRegistrationChallengeTimeToLiveInSeconds: 736910,
+      changePasswordIdGenerator: {},
+      deviceUserCodeIdGenerator: {},
+      emailVerificationIdGenerator: {},
+      emailVerificationOneTimeCodeGenerator: {},
+      passwordlessLoginGenerator: {},
+      registrationVerificationIdGenerator: {},
+      registrationVerificationOneTimeCodeGenerator: {},
+      setupPasswordIdGenerator: {},
+      twoFactorOneTimeCodeIdGenerator: {},
     },
     failedAuthenticationConfiguration: {
-      actionCancelPolicy: {
-        onPasswordReset: false,
-      },
-      actionDuration: 671252,
-      actionDurationUnit: ExpiryUnit.Days,
-      emailUser: false,
-      resetCountInSeconds: 488689,
-      tooManyAttempts: 972043,
-      userActionId: "8f36d931-4f73-4554-8c36-849f12db7bd3",
+      actionCancelPolicy: {},
     },
-    familyConfiguration: {
-      allowChildRegistrations: false,
-      confirmChildEmailTemplateId: "0fe893e1-d120-4e41-b720-8d80722ff163",
-      deleteOrphanedAccounts: false,
-      deleteOrphanedAccountsDays: 961207,
-      enabled: false,
-      familyRequestEmailTemplateId: "c2ca803c-509d-4974-9b6e-f7ae879edc7a",
-      maximumChildAge: 983000,
-      minimumOwnerAge: 742507,
-      parentEmailRequired: false,
-      parentRegistrationEmailTemplateId: "50511c1c-5f54-4155-ade8-4091bce4f3f2",
-    },
-    formConfiguration: {
-      adminUserFormId: "cc935102-6d27-495e-b2f1-5ddb141023b3",
-    },
-    httpSessionMaxInactiveInterval: 520953,
-    id: "72211497-df07-4da8-9822-ef59d57ca914",
+    familyConfiguration: {},
+    formConfiguration: {},
     insertInstant: 1659380719000,
-    issuer: "Xenogender black",
     jwtConfiguration: {
-      accessTokenKeyId: "76423bc4-a1bc-4e36-be99-85483d9830ce",
-      enabled: false,
-      idTokenKeyId: "74cc01f6-4d61-432a-9dca-6792c73f88de",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.Fixed,
-      refreshTokenRevocationPolicy: {
-        onLoginPrevented: false,
-        onMultiFactorEnable: false,
-        onPasswordChanged: false,
-      },
-      refreshTokenTimeToLiveInMinutes: 202868,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
-      timeToLiveInSeconds: 364792,
+      refreshTokenRevocationPolicy: {},
     },
-    lambdaConfiguration: {
-      scimEnterpriseUserRequestConverterId: "6541f700-45d7-4e4a-b22b-2c41f1795b1d",
-      scimEnterpriseUserResponseConverterId: "e472fa7b-aa17-4d72-899b-612998b0fdce",
-      scimGroupRequestConverterId: "471a4c78-9dcf-49e8-a242-1adba1b0c2e4",
-      scimGroupResponseConverterId: "73f5ec8b-8323-474a-83c5-7165756a3d00",
-      scimUserRequestConverterId: "5ffa66b9-e5da-4577-9d3e-52338228f728",
-      scimUserResponseConverterId: "1d460eb3-03a2-42fd-9e19-1de488d90151",
-    },
+    lambdaConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    loginConfiguration: {
-      requireAuthentication: false,
-    },
-    logoutURL: "East Diesel",
-    maximumPasswordAge: {
-      days: 861432,
-      enabled: false,
-    },
-    minimumPasswordAge: {
-      enabled: false,
-      seconds: 231316,
-    },
+    loginConfiguration: {},
+    maximumPasswordAge: {},
+    minimumPasswordAge: {},
     multiFactorConfiguration: {
-      authenticator: {
-        algorithm: TOTPAlgorithm.HmacSha512,
-        codeLength: 935120,
-        enabled: false,
-        timeStep: 410788,
-      },
-      email: {
-        enabled: false,
-        templateId: "339a3781-db52-4ef7-bdce-dd1c33faa6f0",
-      },
-      loginPolicy: MultiFactorLoginPolicy.Required,
-      sms: {
-        enabled: false,
-        messengerId: "dfeab2aa-a56e-4508-ac04-4368d23177cf",
-        templateId: "a3fd608c-bcf0-4d51-b2a0-81939e5bc704",
-      },
+      authenticator: {},
+      email: {},
+      sms: {},
     },
-    name: "digital Cambridgeshire Versatile",
-    oauthConfiguration: {
-      clientCredentialsAccessTokenPopulateLambdaId: "58b4fb3e-aeb8-4399-837e-28a1d80fdec2",
-    },
-    passwordEncryptionConfiguration: {
-      encryptionScheme: "sunt withdrawal",
-      encryptionSchemeFactor: 816090,
-      modifyEncryptionSchemeOnLogin: false,
-    },
+    oauthConfiguration: {},
+    passwordEncryptionConfiguration: {},
     passwordValidationRules: {
-      breachDetection: {
-        enabled: false,
-        matchMode: BreachMatchMode.High,
-        notifyUserEmailTemplateId: "e0fe0abb-ba89-434d-b725-11babc9870e2",
-        onLogin: BreachAction.RecordOnly,
-      },
-      maxLength: 548332,
-      minLength: 401997,
-      rememberPreviousPasswords: {
-        count: 82159,
-        enabled: false,
-      },
-      requireMixedCase: false,
-      requireNonAlpha: false,
-      requireNumber: false,
-      validateOnLogin: false,
+      breachDetection: {},
+      rememberPreviousPasswords: {},
     },
     rateLimitConfiguration: {
-      failedLogin: {
-        enabled: false,
-        limit: 32897,
-        timePeriodInSeconds: 636351,
-      },
-      forgotPassword: {
-        enabled: false,
-        limit: 380143,
-        timePeriodInSeconds: 228369,
-      },
-      sendEmailVerification: {
-        enabled: false,
-        limit: 535485,
-        timePeriodInSeconds: 82044,
-      },
-      sendPasswordless: {
-        enabled: false,
-        limit: 849183,
-        timePeriodInSeconds: 864109,
-      },
-      sendRegistrationVerification: {
-        enabled: false,
-        limit: 484808,
-        timePeriodInSeconds: 667881,
-      },
-      sendTwoFactor: {
-        enabled: false,
-        limit: 135673,
-        timePeriodInSeconds: 481529,
-      },
+      failedLogin: {},
+      forgotPassword: {},
+      sendEmailVerification: {},
+      sendPasswordless: {},
+      sendRegistrationVerification: {},
+      sendTwoFactor: {},
     },
     registrationConfiguration: {
       blockedDomains: [
-        "hateful",
+        "South",
       ],
     },
     scimServerConfiguration: {
-      clientEntityTypeId: "018389c2-771f-4fb4-82e1-57ef4dd648dc",
-      enabled: false,
       schemas: {
-        "ipsa": {},
+        "Kia": {},
       },
-      serverEntityTypeId: "e44553e3-b402-4190-93f6-c29c529ef04d",
     },
-    ssoConfiguration: {
-      deviceTrustTimeToLiveInSeconds: 233474,
-    },
-    state: ObjectState.Active,
-    themeId: "0be9ff87-cfa7-4289-97d1-3df30c679222",
+    ssoConfiguration: {},
     userDeletePolicy: {
-      unverified: {
-        enabled: false,
-        numberOfDaysToRetain: 571704,
-      },
+      unverified: {},
     },
     usernameConfiguration: {
-      unique: {
-        enabled: false,
-        numberOfDigits: 44700,
-        separator: "Developer Ergonomic transmitter",
-        strategy: UniqueUsernameStrategy.OnCollision,
-      },
+      unique: {},
     },
     webAuthnConfiguration: {
-      bootstrapWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.Platform,
-        enabled: false,
-        userVerificationRequirement: UserVerificationRequirement.Preferred,
-      },
-      debug: false,
-      enabled: false,
-      reauthenticationWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.CrossPlatform,
-        enabled: false,
-        userVerificationRequirement: UserVerificationRequirement.Required,
-      },
-      relyingPartyId: "unleash male",
-      relyingPartyName: "while Frozen",
+      bootstrapWorkflow: {},
+      reauthenticationWorkflow: {},
     },
   },
   webhookIds: [
-    "67d757b5-1195-4b55-b940-d2cefb02fef4",
+    "b372b906-5dae-4798-b7de-a6759264e646",
   ],
 };
-const xFusionAuthTenantId: string = "transitional Helena withdrawal";
+const xFusionAuthTenantId: string = "Handmade Mouse";
 
-sdk.sdk.patchTenantWithId(tenantId, tenantRequest, xFusionAuthTenantId).then((res: PatchTenantWithIdResponse) => {
+  const res = await sdk.sdk.patchTenantWithId(tenantId, tenantRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -12174,84 +8865,34 @@ Updates, via PATCH, the theme with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchThemeWithIdRequest, PatchThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchThemeWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { LocalizedStrings, Templates, Theme, ThemeData, ThemeRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const themeId: string = "hacking";
 const themeRequest: ThemeRequest = {
-  sourceThemeId: "fc44e184-2f83-4c3f-b56b-d3e942844788",
   theme: {
     data: {
-      "culpa": {},
+      "scram": {},
     },
-    defaultMessages: "Dollar",
-    id: "479d864c-e78b-41f4-b8c7-712ff0715cbc",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     localizedMessages: {},
-    name: "eius",
-    stylesheet: "Account Beauty Morocco",
-    templates: {
-      accountEdit: "ouch Hybrid Southeast",
-      accountIndex: "Tasty generating",
-      accountTwoFactorDisable: "Representative backing zoo",
-      accountTwoFactorEnable: "unleash",
-      accountTwoFactorIndex: "primary",
-      accountWebAuthnAdd: "holistic Rock",
-      accountWebAuthnDelete: "what",
-      accountWebAuthnIndex: "hub",
-      emailComplete: "granular of fuga",
-      emailSend: "male",
-      emailSent: "sustenance",
-      emailVerificationRequired: "given online Books",
-      emailVerify: "regional",
-      helpers: "kilogram Technician Frozen",
-      index: "Awesome",
-      oauth2Authorize: "enhance Livermorium South",
-      oauth2AuthorizedNotRegistered: "Jazz orange",
-      oauth2ChildRegistrationNotAllowed: "Wyoming blue",
-      oauth2ChildRegistrationNotAllowedComplete: "purple Tactics ivory",
-      oauth2CompleteRegistration: "Toys Forward Cargo",
-      oauth2Device: "array",
-      oauth2DeviceComplete: "smoothly Bicycle Monitored",
-      oauth2Error: "Trial Configuration",
-      oauth2Logout: "SUV except",
-      oauth2Passwordless: "Southeast",
-      oauth2Register: "functionalities",
-      oauth2StartIdPLink: "Missouri",
-      oauth2TwoFactor: "Car",
-      oauth2TwoFactorEnable: "verbally National where",
-      oauth2TwoFactorEnableComplete: "Northwest infrastructures",
-      oauth2TwoFactorMethods: "Account Shoals regarding",
-      oauth2Wait: "New Representative",
-      oauth2WebAuthn: "next IB Sedan",
-      oauth2WebAuthnReauth: "whereas incidunt",
-      oauth2WebAuthnReauthEnable: "invoice",
-      passwordChange: "Granite",
-      passwordComplete: "RAM Jazz",
-      passwordForgot: "interface male",
-      passwordSent: "North Investment",
-      registrationComplete: "productize",
-      registrationSend: "bifurcated katal",
-      registrationSent: "Nevada Bronze Mountain",
-      registrationVerificationRequired: "impedit female determined",
-      registrationVerify: "Trial lavender",
-      samlv2Logout: "viciously male Clothing",
-      unauthorized: "Extended",
-    },
+    templates: {},
   },
 };
 
-sdk.sdk.patchThemeWithId(themeId, themeRequest).then((res: PatchThemeWithIdResponse) => {
+  const res = await sdk.sdk.patchThemeWithId(themeId, themeRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -12276,31 +8917,30 @@ Updates, via PATCH, the user action reason with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchUserActionReasonWithIdRequest, PatchUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchUserActionReasonWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { LocalizedStrings, UserActionReason, UserActionReasonRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userActionReasonId: string = "vitae";
 const userActionReasonRequest: UserActionReasonRequest = {
   userActionReason: {
-    code: "Tuna Investor",
-    id: "f5cfbbec-b86c-4fb8-8801-8a8fa3b81e23",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     localizedTexts: {},
-    text: "Grenada newton",
   },
 };
 
-sdk.sdk.patchUserActionReasonWithId(userActionReasonId, userActionReasonRequest).then((res: PatchUserActionReasonWithIdResponse) => {
+  const res = await sdk.sdk.patchUserActionReasonWithId(userActionReasonId, userActionReasonRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -12325,7 +8965,7 @@ Updates, via PATCH, the user action with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchUserActionWithIdRequest, PatchUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchUserActionWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   LocalizedStrings,
   TransactionType,
@@ -12334,46 +8974,33 @@ import {
   UserActionRequest,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userActionId: string = "Computer";
 const userActionRequest: UserActionRequest = {
   userAction: {
-    active: false,
-    cancelEmailTemplateId: "6c024928-b43a-4e22-83e7-b34de4b32c8a",
-    endEmailTemplateId: "463c14c1-e7f4-4b9d-993d-76758c77e95c",
-    id: "e37f4a06-5694-49ee-98f0-a19f3a50a766",
-    includeEmailInEventJSON: false,
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     localizedNames: {},
-    modifyEmailTemplateId: "d828f678-204e-4b79-adc9-c9002640daa8",
-    name: "DRAM",
     options: [
       {
         localizedNames: {},
-        name: "saepe North",
       },
     ],
-    preventLogin: false,
-    sendEndEvent: false,
-    startEmailTemplateId: "368e3a9e-b774-41c6-b56d-5e409df1fb89",
-    temporal: false,
-    transactionType: TransactionType.SuperMajority,
-    userEmailingEnabled: false,
-    userNotificationsEnabled: false,
   },
 };
-const xFusionAuthTenantId: string = "fumbling Benz Bicycle";
+const xFusionAuthTenantId: string = "second Divide";
 
-sdk.sdk.patchUserActionWithId(userActionId, userActionRequest, xFusionAuthTenantId).then((res: PatchUserActionWithIdResponse) => {
+  const res = await sdk.sdk.patchUserActionWithId(userActionId, userActionRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -12399,7 +9026,7 @@ Updates, via PATCH, a single User consent by Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchUserConsentWithIdRequest, PatchUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchUserConsentWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   Consent,
   ConsentData,
@@ -12411,57 +9038,44 @@ import {
   UserConsentRequest,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userConsentId: string = "invoice";
 const userConsentRequest: UserConsentRequest = {
   userConsent: {
     consent: {
-      consentEmailTemplateId: "a20c1a1c-2de4-4d74-b36b-75f55f132fcc",
       countryMinimumAgeForSelfConsent: {},
       data: {
-        "molestiae": {},
+        "Corporate": {},
       },
-      defaultMinimumAgeForSelfConsent: 717583,
-      emailPlus: {
-        emailTemplateId: "1e2d08e3-d9aa-4e8a-9524-3c8119484c7d",
-        enabled: false,
-        maximumTimeToSendEmailInHours: 137948,
-        minimumTimeToSendEmailInHours: 641273,
-      },
-      id: "bbac87ed-f28d-4c9d-aa95-cee7eeffcd54",
+      emailPlus: {},
       insertInstant: 1659380719000,
       lastUpdateInstant: 1659380719000,
-      multipleValuesAllowed: false,
-      name: "port",
       values: [
-        "Virginia",
+        "San",
       ],
     },
-    consentId: "8dcf2572-4f8f-4e0d-99c2-280e422d66ee",
     data: {
-      "laboriosam": {},
+      "Security": {},
     },
-    giverUserId: "64faf653-65aa-4efd-8fb8-6efdccf61703",
-    id: "ffb2ea87-a69d-4065-a407-eb2aec5c1e37",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    status: ConsentStatus.Revoked,
-    userId: "a05f3828-6a53-4bbf-80a2-f941353fe91b",
     values: [
-      "Lionel",
+      "kelvin",
     ],
   },
 };
 
-sdk.sdk.patchUserConsentWithId(userConsentId, userConsentRequest).then((res: PatchUserConsentWithIdResponse) => {
+  const res = await sdk.sdk.patchUserConsentWithId(userConsentId, userConsentRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -12486,7 +9100,7 @@ Updates, via PATCH, the user with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { PatchUserWithIdRequest, PatchUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { PatchUserWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorConfiguration,
   BreachedPasswordStatus,
@@ -12507,112 +9121,58 @@ import {
   UserTwoFactorConfiguration,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "frame";
 const userRequest: UserRequest = {
-  applicationId: "7cd1110d-62b4-4655-a16c-e492daee7262",
-  currentPassword: "production",
-  disableDomainBlock: false,
   eventInfo: {
     data: {
-      "aliquam": {},
+      "invoice": {},
     },
-    deviceDescription: "Bedfordshire Borders Astatine",
-    deviceName: "Cargo Calcium Missouri",
-    deviceType: "Tasty",
-    ipAddress: "196.176.121.47",
-    location: {
-      city: "Scarletttown",
-      country: "Finland",
-      displayString: "Northeast linear",
-      latitude: 8591.68,
-      longitude: 7849.87,
-      region: "PNG Dysprosium Blues",
-      zipcode: "59263",
-    },
-    os: "Pickup Architect",
-    userAgent: "Infrastructure",
+    location: {},
   },
-  sendSetPasswordEmail: false,
-  skipVerification: false,
   user: {
-    active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatus.CommonPassword,
-    cleanSpeakId: "9f40d3b2-43bc-4497-8446-47ebb133178f",
-    connectorId: "56aa51d8-b12d-4972-8a70-a4cc1a11aa7b",
     data: {
-      "quibusdam": {},
+      "boiling": {},
     },
-    email: "Suzanne_Mertz30@gmail.com",
-    encryptionScheme: "granular male disintermediate",
     expiry: 1659380719000,
-    factor: 863648,
-    firstName: "Selina",
-    fullName: "Eileen Cronin",
-    id: "2db97dc9-5b85-4685-8c14-c8ce5e88383f",
-    imageUrl: "Jewelery Industrial Platinum",
     insertInstant: 1659380719000,
     lastLoginInstant: 1659380719000,
-    lastName: "Leannon",
     lastUpdateInstant: 1659380719000,
     memberships: [
       {
         data: {
-          "quos": {},
+          "North": {},
         },
-        groupId: "8a2daa5b-9fda-4de7-b515-73afd2619af4",
-        id: "6a875469-cdc7-4d36-9f65-7cc5265cfdc5",
         insertInstant: 1659380719000,
         user: {
-          active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatus.PasswordOnly,
-          cleanSpeakId: "055c0652-8d02-4739-8a42-58cf2884c290",
-          connectorId: "7e7f4bfb-a722-4476-b4cc-9604ab17d7b5",
           data: {
-            "quibusdam": {},
+            "Suriname": {},
           },
-          email: "Isaac.Cummerata45@yahoo.com",
-          encryptionScheme: "Avon",
           expiry: 1659380719000,
-          factor: 493069,
-          firstName: "Amber",
-          fullName: "Stephanie Hudson",
-          id: "f8904941-07b4-4f1a-b2a2-552ebdfc9b8d",
-          imageUrl: "light blue silver",
           insertInstant: 1659380719000,
           lastLoginInstant: 1659380719000,
-          lastName: "West",
           lastUpdateInstant: 1659380719000,
           memberships: [
             {},
           ],
-          middleName: "Skyler",
-          mobilePhone: "architecto South Sausages",
-          parentEmail: "postbox North Diesel",
-          password: "I3u9qMgb4sK6rLx",
-          passwordChangeReason: ChangePasswordReason.Breached,
-          passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
             "en_US",
           ],
           registrations: [
             {
-              applicationId: "bcba1da7-eb65-4449-87a8-e5f78259a785",
-              authenticationToken: "provided",
-              cleanSpeakId: "8f74c846-f155-432a-9b33-0c1b1bf35c99",
               data: {
-                "eaque": {},
+                "Account": {},
               },
-              id: "faf7c9ea-30d8-4a1f-a1ca-09d16f168495",
               insertInstant: 1659380719000,
               lastLoginInstant: 1659380719000,
               lastUpdateInstant: 1659380719000,
@@ -12620,67 +9180,37 @@ const userRequest: UserRequest = {
                 "en_US",
               ],
               roles: [
-                "Bedfordshire",
+                "24/365",
               ],
               timezone: "America/Denver",
               tokens: {
-                "quos": "man",
+                "bravely": "Account",
               },
-              username: "Clemens_Morar",
-              usernameStatus: ContentStatus.Pending,
-              verified: false,
             },
           ],
-          salt: "Executive Electronic",
-          tenantId: "1bc4e962-7ce6-4b2e-8790-4ecff33a5901",
           timezone: "America/Denver",
           twoFactor: {
             methods: [
               {
-                authenticator: {
-                  algorithm: TOTPAlgorithm.HmacSha256,
-                  codeLength: 847879,
-                  timeStep: 960372,
-                },
-                email: "Dandre_Mills16@yahoo.com",
-                id: "<ID>",
-                lastUsed: false,
-                method: "dedication",
-                mobilePhone: "Market",
-                secret: "payment Cotton Hatchback",
+                authenticator: {},
               },
             ],
             recoveryCodes: [
-              "Legacy",
+              "benchmark",
             ],
           },
-          uniqueUsername: "Smitham functionalities",
-          username: "Eliane.Romaguera",
-          usernameStatus: ContentStatus.Active,
-          verified: false,
         },
-        userId: "55825d4e-8c00-43b4-b0df-8677d732f5f8",
       },
     ],
-    middleName: "Quinn",
-    mobilePhone: "Monitored Cotton Tasty",
-    parentEmail: "architect male Bronze",
-    password: "ALakWEIk8CrjdWi",
-    passwordChangeReason: ChangePasswordReason.Breached,
-    passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
       "en_US",
     ],
     registrations: [
       {
-        applicationId: "925a84a3-6dce-41b2-b09f-744ace51d241",
-        authenticationToken: "silver",
-        cleanSpeakId: "b2565f69-b752-4ccb-9ba0-0443b440a799",
         data: {
-          "possimus": {},
+          "Tennessee": {},
         },
-        id: "dcb77ffa-4520-4c5d-b4f4-40581259df9c",
         insertInstant: 1659380719000,
         lastLoginInstant: 1659380719000,
         lastUpdateInstant: 1659380719000,
@@ -12688,53 +9218,35 @@ const userRequest: UserRequest = {
           "en_US",
         ],
         roles: [
-          "female",
+          "Chief",
         ],
         timezone: "America/Denver",
         tokens: {
-          "recusandae": "toward",
+          "now": "Ford",
         },
-        username: "Blanca.Aufderhar61",
-        usernameStatus: ContentStatus.Pending,
-        verified: false,
       },
     ],
-    salt: "Soul fuchsia",
-    tenantId: "d7d4c6fe-1725-4376-84e0-833f1137fb71",
     timezone: "America/Denver",
     twoFactor: {
       methods: [
         {
-          authenticator: {
-            algorithm: TOTPAlgorithm.HmacSha1,
-            codeLength: 937,
-            timeStep: 435018,
-          },
-          email: "Tyree84@hotmail.com",
-          id: "<ID>",
-          lastUsed: false,
-          method: "bluetooth",
-          mobilePhone: "as Harbors omnis",
-          secret: "Northwest Unbranded psst",
+          authenticator: {},
         },
       ],
       recoveryCodes: [
-        "Account",
+        "Specialist",
       ],
     },
-    uniqueUsername: "bluetooth",
-    username: "Dax.Torp",
-    usernameStatus: ContentStatus.Active,
-    verified: false,
   },
 };
-const xFusionAuthTenantId: string = "Chrysler deposit Park";
+const xFusionAuthTenantId: string = "Bedfordshire Borders Astatine";
 
-sdk.sdk.patchUserWithId(userId, userRequest, xFusionAuthTenantId).then((res: PatchUserWithIdResponse) => {
+  const res = await sdk.sdk.patchUserWithId(userId, userRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -12760,46 +9272,36 @@ Reconcile a User to FusionAuth using JWT issued from another Identity Provider.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ReconcileJWTWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.reconcileJWTWithId({
-  applicationId: "d1d4ec5d-61e2-45f3-a917-2680fa68154f",
-  data: {
-    "quae": "which",
-  },
-  encodedJWT: "Decatur Concrete",
-  identityProviderId: "6040c205-f317-4a32-bc0e-d3719d145310",
-  ipAddress: "15.93.160.166",
-  metaData: {
+  const res = await sdk.sdk.reconcileJWTWithId({
     data: {
-      "rerum": {},
+      "Convertible": "expert",
     },
-    device: {
-      description: "Multi-layered actuating neural-net",
-      lastAccessedAddress: "Small Electronic",
-      lastAccessedInstant: 1659380719000,
-      name: "Borders",
-      type: DeviceType.Tv,
+    metaData: {
+      data: {
+        "phew": {},
+      },
+      device: {
+        lastAccessedInstant: 1659380719000,
+      },
+      scopes: [
+        "metrics",
+      ],
     },
-    scopes: [
-      "bread",
-    ],
-  },
-  newDevice: false,
-  noJWT: false,
-  noLink: false,
-}).then((res: ReconcileJWTWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -12823,7 +9325,7 @@ Registers a user for an application. If you provide the User and the UserRegistr
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RegisterRequest, RegisterResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RegisterRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorConfiguration,
   BreachedPasswordStatus,
@@ -12844,42 +9346,23 @@ import {
   UserTwoFactorConfiguration,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const registrationRequest: RegistrationRequest = {
-  disableDomainBlock: false,
   eventInfo: {
     data: {
-      "neque": {},
+      "Keyboard": {},
     },
-    deviceDescription: "Music",
-    deviceName: "Implemented deposit Southwest",
-    deviceType: "till delectus",
-    ipAddress: "97.102.109.39",
-    location: {
-      city: "Zandershire",
-      country: "Mayotte",
-      displayString: "cyan Central",
-      latitude: 4122.39,
-      longitude: 950.09,
-      region: "Bronze",
-      zipcode: "74887-3329",
-    },
-    os: "Honda Cheese Jeep",
-    userAgent: "paradigms Granite Metal",
+    location: {},
   },
-  generateAuthenticationToken: false,
   registration: {
-    applicationId: "e6857faf-4592-4060-a037-6b07e82f0ed4",
-    authenticationToken: "diluted",
-    cleanSpeakId: "ee658f35-bac2-4d24-adcb-7a0dd26e8c62",
     data: {
-      "occaecati": {},
+      "Music": {},
     },
-    id: "0b915ad5-c270-4cef-83b1-87a46709222a",
     insertInstant: 1659380719000,
     lastLoginInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
@@ -12887,93 +9370,51 @@ const registrationRequest: RegistrationRequest = {
       "en_US",
     ],
     roles: [
-      "Roentgenium",
+      "Fitness",
     ],
     timezone: "America/Denver",
     tokens: {
-      "totam": "Folk",
+      "deposit": "Southwest",
     },
-    username: "Macey.Steuber9",
-    usernameStatus: ContentStatus.Active,
-    verified: false,
   },
-  sendSetPasswordEmail: false,
-  skipRegistrationVerification: false,
-  skipVerification: false,
   user: {
-    active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatus.CommonPassword,
-    cleanSpeakId: "4a1628ef-54c6-466f-bea1-1236f7c94105",
-    connectorId: "9a0e0ba6-1293-4f98-a3f4-286191172990",
     data: {
-      "quidem": {},
+      "state": {},
     },
-    email: "Shanel21@yahoo.com",
-    encryptionScheme: "female Account",
     expiry: 1659380719000,
-    factor: 175270,
-    firstName: "Porter",
-    fullName: "Byron Heathcote",
-    id: "006c7706-30cc-4561-a55d-cb861b477318",
-    imageUrl: "Tulare Dynamic withdrawal",
     insertInstant: 1659380719000,
     lastLoginInstant: 1659380719000,
-    lastName: "Osinski",
     lastUpdateInstant: 1659380719000,
     memberships: [
       {
         data: {
-          "ex": {},
+          "delectus": {},
         },
-        groupId: "7dcbbd83-58c5-464d-a755-160e2b972ffa",
-        id: "6fc29149-43df-4af3-8a74-2c23752cfdb7",
         insertInstant: 1659380719000,
         user: {
-          active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatus.CommonPassword,
-          cleanSpeakId: "4e228cbe-cdb2-492b-a253-2d595910a5f6",
-          connectorId: "8bafc9fb-66bd-4d21-b30c-6139f6515be1",
           data: {
-            "cum": {},
+            "Graphic": {},
           },
-          email: "Kylie.Bins@hotmail.com",
-          encryptionScheme: "engine Keyboard iste",
           expiry: 1659380719000,
-          factor: 722058,
-          firstName: "Noemy",
-          fullName: "Nadine Corkery",
-          id: "39e79182-c0be-438c-8eff-b2c6366d3a00",
-          imageUrl: "Verde",
           insertInstant: 1659380719000,
           lastLoginInstant: 1659380719000,
-          lastName: "Baumbach",
           lastUpdateInstant: 1659380719000,
           memberships: [
             {},
           ],
-          middleName: "Shiloh",
-          mobilePhone: "ut Palestinian",
-          parentEmail: "Omnigender eek South",
-          password: "v0CePJNpQM_7HdF",
-          passwordChangeReason: ChangePasswordReason.Expired,
-          passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
             "en_US",
           ],
           registrations: [
             {
-              applicationId: "560c6d26-f251-4f53-8e2a-101da7db507d",
-              authenticationToken: "blond",
-              cleanSpeakId: "b7171243-b574-4adf-8327-631548e2deb9",
               data: {
-                "rem": {},
+                "View": {},
               },
-              id: "80a12a47-945e-4d72-ad84-c6f038be149f",
               insertInstant: 1659380719000,
               lastLoginInstant: 1659380719000,
               lastUpdateInstant: 1659380719000,
@@ -12981,67 +9422,37 @@ const registrationRequest: RegistrationRequest = {
                 "en_US",
               ],
               roles: [
-                "jacket",
+                "navigate",
               ],
               timezone: "America/Denver",
               tokens: {
-                "qui": "barring",
+                "Florida": "probable",
               },
-              username: "Estrella.Hoeger58",
-              usernameStatus: ContentStatus.Active,
-              verified: false,
             },
           ],
-          salt: "North synthesizing",
-          tenantId: "99a5290f-695f-46d2-92d5-df779df72f96",
           timezone: "America/Denver",
           twoFactor: {
             methods: [
               {
-                authenticator: {
-                  algorithm: TOTPAlgorithm.HmacSha256,
-                  codeLength: 975656,
-                  timeStep: 649102,
-                },
-                email: "Clotilde51@hotmail.com",
-                id: "<ID>",
-                lastUsed: false,
-                method: "addle",
-                mobilePhone: "minus",
-                secret: "Northwest",
+                authenticator: {},
               },
             ],
             recoveryCodes: [
-              "inexperienced",
+              "navigating",
             ],
           },
-          uniqueUsername: "management ugh female",
-          username: "Kody.Luettgen12",
-          usernameStatus: ContentStatus.Rejected,
-          verified: false,
         },
-        userId: "a8730b5d-d148-469f-b262-e5bd3e1a1745",
       },
     ],
-    middleName: "Reign",
-    mobilePhone: "Leannon",
-    parentEmail: "Southwest Kip",
-    password: "5WnOPeY8F1OA0uC",
-    passwordChangeReason: ChangePasswordReason.Expired,
-    passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
       "en_US",
     ],
     registrations: [
       {
-        applicationId: "f4314cb1-23ed-41c7-88f3-352ca8459ddd",
-        authenticationToken: "Investor projection voluptate",
-        cleanSpeakId: "96ebe820-c700-43ac-84eb-c68719d43b35",
         data: {
-          "aperiam": {},
+          "East": {},
         },
-        id: "87d6c108-1974-48db-8c41-11a00dc878cb",
         insertInstant: 1659380719000,
         lastLoginInstant: 1659380719000,
         lastUpdateInstant: 1659380719000,
@@ -13049,53 +9460,35 @@ const registrationRequest: RegistrationRequest = {
           "en_US",
         ],
         roles: [
-          "Applications",
+          "Bronze",
         ],
         timezone: "America/Denver",
         tokens: {
-          "omnis": "3rd",
+          "synthesizing": "Lira",
         },
-        username: "Viviane75",
-        usernameStatus: ContentStatus.Rejected,
-        verified: false,
       },
     ],
-    salt: "Diverse",
-    tenantId: "d9ddb3d8-3485-4833-a006-3085425e4e34",
     timezone: "America/Denver",
     twoFactor: {
       methods: [
         {
-          authenticator: {
-            algorithm: TOTPAlgorithm.HmacSha512,
-            codeLength: 484512,
-            timeStep: 499423,
-          },
-          email: "Kariane_Skiles@yahoo.com",
-          id: "<ID>",
-          lastUsed: false,
-          method: "during mole utilisation",
-          mobilePhone: "Steel",
-          secret: "Money",
+          authenticator: {},
         },
       ],
       recoveryCodes: [
-        "digital",
+        "female",
       ],
     },
-    uniqueUsername: "navigating",
-    username: "Bernhard.Fahey",
-    usernameStatus: ContentStatus.Rejected,
-    verified: false,
   },
 };
-const xFusionAuthTenantId: string = "Polestar";
+const xFusionAuthTenantId: string = "Frozen";
 
-sdk.sdk.register(registrationRequest, xFusionAuthTenantId).then((res: RegisterResponse) => {
+  const res = await sdk.sdk.register(registrationRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13120,7 +9513,7 @@ Registers a user for an application. If you provide the User and the UserRegistr
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RegisterWithIdRequest, RegisterWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RegisterWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorConfiguration,
   BreachedPasswordStatus,
@@ -13141,43 +9534,24 @@ import {
   UserTwoFactorConfiguration,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "AI";
 const registrationRequest: RegistrationRequest = {
-  disableDomainBlock: false,
   eventInfo: {
     data: {
-      "quibusdam": {},
+      "Cab": {},
     },
-    deviceDescription: "asynchronous Chicken",
-    deviceName: "Card coulomb Fitness",
-    deviceType: "Neither",
-    ipAddress: "33.176.34.236",
-    location: {
-      city: "Port Loyville",
-      country: "Cuba",
-      displayString: "silver",
-      latitude: 7824.25,
-      longitude: 1076.65,
-      region: "indexing male Money",
-      zipcode: "72311",
-    },
-    os: "park",
-    userAgent: "lavender Cambridgeshire generating",
+    location: {},
   },
-  generateAuthenticationToken: false,
   registration: {
-    applicationId: "00aa3bc1-3239-4970-b731-406601447913",
-    authenticationToken: "entitle",
-    cleanSpeakId: "d3ad0707-edc3-4388-9c48-9ca259f308c4",
     data: {
-      "velit": {},
+      "South": {},
     },
-    id: "91af6d64-4146-49c2-b429-82a378af3e84",
     insertInstant: 1659380719000,
     lastLoginInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
@@ -13185,93 +9559,51 @@ const registrationRequest: RegistrationRequest = {
       "en_US",
     ],
     roles: [
-      "card",
+      "son",
     ],
     timezone: "America/Denver",
     tokens: {
-      "non": "synergize",
+      "Assistant": "female",
     },
-    username: "Annabelle87",
-    usernameStatus: ContentStatus.Pending,
-    verified: false,
   },
-  sendSetPasswordEmail: false,
-  skipRegistrationVerification: false,
-  skipVerification: false,
   user: {
-    active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatus.PasswordOnly,
-    cleanSpeakId: "3ca6e3ba-7386-49e0-93ef-0edd8ef4e1e1",
-    connectorId: "d09fbd9d-775b-4c46-a3fc-01f2d1312426",
     data: {
-      "vel": {},
+      "Architect": {},
     },
-    email: "Halie.Hoeger77@gmail.com",
-    encryptionScheme: "Southwest Virginia lime",
     expiry: 1659380719000,
-    factor: 425002,
-    firstName: "Caterina",
-    fullName: "Lillie Schroeder",
-    id: "3b59aa34-0dbf-4341-9f5e-e690c2073f61",
-    imageUrl: "Brunei variable South",
     insertInstant: 1659380719000,
     lastLoginInstant: 1659380719000,
-    lastName: "Nicolas",
     lastUpdateInstant: 1659380719000,
     memberships: [
       {
         data: {
-          "non": {},
+          "Courts": {},
         },
-        groupId: "e9db2cf7-bbaf-44b6-b942-d5d552cbd179",
-        id: "f015c974-0137-4279-b6e2-04dfc8127b37",
         insertInstant: 1659380719000,
         user: {
-          active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
-          cleanSpeakId: "8d55727c-7b01-41ca-81fb-910b32f20419",
-          connectorId: "ec3e050b-9aca-48e0-b0ca-a94c396fb371",
           data: {
-            "praesentium": {},
+            "Washington": {},
           },
-          email: "Lorenzo.Lueilwitz98@hotmail.com",
-          encryptionScheme: "Isle",
           expiry: 1659380719000,
-          factor: 149152,
-          firstName: "Janiya",
-          fullName: "Alberta Armstrong",
-          id: "009f1202-b4c1-4c07-a243-f62efd39da16",
-          imageUrl: "EXE",
           insertInstant: 1659380719000,
           lastLoginInstant: 1659380719000,
-          lastName: "Beier",
           lastUpdateInstant: 1659380719000,
           memberships: [
             {},
           ],
-          middleName: "Kyle",
-          mobilePhone: "Peso",
-          parentEmail: "Northwest South",
-          password: "MjK9Pw6khIwiM5N",
-          passwordChangeReason: ChangePasswordReason.Breached,
-          passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
             "en_US",
           ],
           registrations: [
             {
-              applicationId: "8d824462-31f2-49af-a9e2-187be7145fd4",
-              authenticationToken: "program",
-              cleanSpeakId: "0baa63e7-ba09-48ab-bbea-3bd333c68729",
               data: {
-                "vel": {},
+                "San": {},
               },
-              id: "b4d962bf-5038-4c49-8d5e-5cd711021a2b",
               insertInstant: 1659380719000,
               lastLoginInstant: 1659380719000,
               lastUpdateInstant: 1659380719000,
@@ -13279,67 +9611,37 @@ const registrationRequest: RegistrationRequest = {
                 "en_US",
               ],
               roles: [
-                "primary",
+                "Curve",
               ],
               timezone: "America/Denver",
               tokens: {
-                "iusto": "but",
+                "yellow": "plum",
               },
-              username: "Filiberto55",
-              usernameStatus: ContentStatus.Pending,
-              verified: false,
             },
           ],
-          salt: "meh Aruban PNG",
-          tenantId: "d706b856-ba32-40bf-814d-3bb9168c9cc7",
           timezone: "America/Denver",
           twoFactor: {
             methods: [
               {
-                authenticator: {
-                  algorithm: TOTPAlgorithm.HmacSha256,
-                  codeLength: 261718,
-                  timeStep: 867545,
-                },
-                email: "Sarah90@yahoo.com",
-                id: "<ID>",
-                lastUsed: false,
-                method: "Electric Transgender Focused",
-                mobilePhone: "Zimbabwe farad South",
-                secret: "Intelligent",
+                authenticator: {},
               },
             ],
             recoveryCodes: [
-              "punctually",
+              "Sleek",
             ],
           },
-          uniqueUsername: "Promethium expedite while",
-          username: "Marlon98",
-          usernameStatus: ContentStatus.Rejected,
-          verified: false,
         },
-        userId: "cfa29aa6-e4cf-446a-89aa-e7ca1f851454",
       },
     ],
-    middleName: "North",
-    mobilePhone: "salmon West Hat",
-    parentEmail: "Bacon",
-    password: "l_dwvYuR5SbbSlo",
-    passwordChangeReason: ChangePasswordReason.Breached,
-    passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
       "en_US",
     ],
     registrations: [
       {
-        applicationId: "af1e94cc-3aba-4056-8f0a-5ff2d77af3b9",
-        authenticationToken: "Luxurious",
-        cleanSpeakId: "96b7560b-a888-4135-8029-516497eb7345",
         data: {
-          "eaque": {},
+          "payment": {},
         },
-        id: "e25f63b7-120f-4f5b-9071-93f7dc44271a",
         insertInstant: 1659380719000,
         lastLoginInstant: 1659380719000,
         lastUpdateInstant: 1659380719000,
@@ -13347,53 +9649,35 @@ const registrationRequest: RegistrationRequest = {
           "en_US",
         ],
         roles: [
-          "input",
+          "lest",
         ],
         timezone: "America/Denver",
         tokens: {
-          "temporibus": "Bespoke",
+          "Ergonomic": "Auto",
         },
-        username: "Cesar12",
-        usernameStatus: ContentStatus.Rejected,
-        verified: false,
       },
     ],
-    salt: "sensor Southwest",
-    tenantId: "404d247b-cf52-4285-bb31-b34980b9895f",
     timezone: "America/Denver",
     twoFactor: {
       methods: [
         {
-          authenticator: {
-            algorithm: TOTPAlgorithm.HmacSha512,
-            codeLength: 520380,
-            timeStep: 291428,
-          },
-          email: "Domenick_Abbott55@gmail.com",
-          id: "<ID>",
-          lastUsed: false,
-          method: "lime",
-          mobilePhone: "volt",
-          secret: "Mexican Borders ack",
+          authenticator: {},
         },
       ],
       recoveryCodes: [
-        "bypassing",
+        "leverage",
       ],
     },
-    uniqueUsername: "beatae",
-    username: "Leola_Lang",
-    usernameStatus: ContentStatus.Pending,
-    verified: false,
   },
 };
-const xFusionAuthTenantId: string = "female Northeast generating";
+const xFusionAuthTenantId: string = "Bacon";
 
-sdk.sdk.registerWithId(userId, registrationRequest, xFusionAuthTenantId).then((res: RegisterWithIdResponse) => {
+  const res = await sdk.sdk.registerWithId(userId, registrationRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13419,21 +9703,20 @@ Requests Elasticsearch to delete and rebuild the index for FusionAuth users or e
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ReindexWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.reindexWithId({
-  index: "hunker feed",
-}).then((res: ReindexWithIdResponse) => {
+  const res = await sdk.sdk.reindexWithId({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13457,22 +9740,24 @@ Removes a user from the family with the given id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RemoveUserFromFamilyWithIdRequest, RemoveUserFromFamilyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RemoveUserFromFamilyWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const familyId: string = "Metical";
 const userId: string = "Diesel";
 const xFusionAuthTenantId: string = "Ethiopian";
 
-sdk.sdk.removeUserFromFamilyWithId(familyId, userId, xFusionAuthTenantId).then((res: RemoveUserFromFamilyWithIdResponse) => {
+  const res = await sdk.sdk.removeUserFromFamilyWithId(familyId, userId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13498,20 +9783,22 @@ Retrieves an authentication API key for the given id
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveAPIKeyWithIdRequest, RetrieveAPIKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveAPIKeyWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const keyId: string = "Jazz";
 
-sdk.sdk.retrieveAPIKeyWithId(keyId).then((res: RetrieveAPIKeyWithIdResponse) => {
+  const res = await sdk.sdk.retrieveAPIKeyWithId(keyId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13535,20 +9822,22 @@ Retrieves a single action log (the log of a user action that was taken on a user
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveActionWithIdRequest, RetrieveActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveActionWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const actionId: string = "eaque";
 
-sdk.sdk.retrieveActionWithId(actionId).then((res: RetrieveActionWithIdResponse) => {
+  const res = await sdk.sdk.retrieveActionWithId(actionId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13572,21 +9861,23 @@ Retrieves the application for the given id or all of the applications if the id 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveApplicationRequest, RetrieveApplicationResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveApplicationRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const xFusionAuthTenantId: string = "Automated Intelligent Hybrid";
 const inactive: string = "Southeast";
 
-sdk.sdk.retrieveApplication(xFusionAuthTenantId, inactive).then((res: RetrieveApplicationResponse) => {
+  const res = await sdk.sdk.retrieveApplication(xFusionAuthTenantId, inactive);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13611,21 +9902,23 @@ Retrieves the application for the given id or all of the applications if the id 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveApplicationWithIdRequest, RetrieveApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveApplicationWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "Southwest";
 const xFusionAuthTenantId: string = "Kenya Cruiser";
 
-sdk.sdk.retrieveApplicationWithId(applicationId, xFusionAuthTenantId).then((res: RetrieveApplicationWithIdResponse) => {
+  const res = await sdk.sdk.retrieveApplicationWithId(applicationId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13650,20 +9943,22 @@ Retrieves a single audit log for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveAuditLogWithIdRequest, RetrieveAuditLogWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveAuditLogWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const auditLogId: string = "qua";
 
-sdk.sdk.retrieveAuditLogWithId(auditLogId).then((res: RetrieveAuditLogWithIdResponse) => {
+  const res = await sdk.sdk.retrieveAuditLogWithId(auditLogId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13687,20 +9982,22 @@ Retrieves the connector with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveConnectorWithIdRequest, RetrieveConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveConnectorWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const connectorId: string = "Folk";
 
-sdk.sdk.retrieveConnectorWithId(connectorId).then((res: RetrieveConnectorWithIdResponse) => {
+  const res = await sdk.sdk.retrieveConnectorWithId(connectorId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13724,21 +10021,23 @@ Retrieves the Consent for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveConsentWithIdRequest, RetrieveConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveConsentWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const consentId: string = "face";
 const xFusionAuthTenantId: string = "Venezuelan Garden";
 
-sdk.sdk.retrieveConsentWithId(consentId, xFusionAuthTenantId).then((res: RetrieveConsentWithIdResponse) => {
+  const res = await sdk.sdk.retrieveConsentWithId(consentId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13763,22 +10062,24 @@ Retrieves the daily active user report between the two instants. If you specify 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveDailyActiveReportWithIdRequest, RetrieveDailyActiveReportWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveDailyActiveReportWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "Face";
 const end: string = "laborum";
 const start: string = "auxiliary";
 
-sdk.sdk.retrieveDailyActiveReportWithId(applicationId, end, start).then((res: RetrieveDailyActiveReportWithIdResponse) => {
+  const res = await sdk.sdk.retrieveDailyActiveReportWithId(applicationId, end, start);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13804,20 +10105,22 @@ Retrieves the email template for the given Id. If you don't specify the id, this
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveEmailTemplateRequest, RetrieveEmailTemplateResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveEmailTemplateRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const xFusionAuthTenantId: string = "Copernicium South";
 
-sdk.sdk.retrieveEmailTemplate(xFusionAuthTenantId).then((res: RetrieveEmailTemplateResponse) => {
+  const res = await sdk.sdk.retrieveEmailTemplate(xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13841,36 +10144,30 @@ Creates a preview of the email template provided in the request. This allows you
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveEmailTemplatePreviewWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.retrieveEmailTemplatePreviewWithId({
-  emailTemplate: {
-    defaultFromName: "Martin azure orchid",
-    defaultHtmlTemplate: "Bulgarian",
-    defaultSubject: "huzzah UDP Rupiah",
-    defaultTextTemplate: "IP",
-    fromEmail: "Computer",
-    id: "04acc9bb-771a-47dc-997a-8fd7310d9ed7",
-    insertInstant: 1659380719000,
-    lastUpdateInstant: 1659380719000,
-    localizedFromNames: {},
-    localizedHtmlTemplates: {},
-    localizedSubjects: {},
-    localizedTextTemplates: {},
-    name: "Northwest cyan",
-  },
-  locale: "en_US",
-}).then((res: RetrieveEmailTemplatePreviewWithIdResponse) => {
+  const res = await sdk.sdk.retrieveEmailTemplatePreviewWithId({
+    emailTemplate: {
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+      localizedFromNames: {},
+      localizedHtmlTemplates: {},
+      localizedSubjects: {},
+      localizedTextTemplates: {},
+    },
+    locale: "en_US",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13894,21 +10191,23 @@ Retrieves the email template for the given Id. If you don't specify the id, this
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveEmailTemplateWithIdRequest, RetrieveEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveEmailTemplateWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const emailTemplateId: string = "Chief";
 const xFusionAuthTenantId: string = "Frozen";
 
-sdk.sdk.retrieveEmailTemplateWithId(emailTemplateId, xFusionAuthTenantId).then((res: RetrieveEmailTemplateWithIdResponse) => {
+  const res = await sdk.sdk.retrieveEmailTemplateWithId(emailTemplateId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13933,23 +10232,25 @@ Retrieves an Entity Grant for the given Entity and User/Entity.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveEntityGrantWithIdRequest, RetrieveEntityGrantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveEntityGrantWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityId: string = "Supervisor";
 const xFusionAuthTenantId: string = "systematic";
 const recipientEntityId: string = "Tennessine";
 const userId: string = "seize";
 
-sdk.sdk.retrieveEntityGrantWithId(entityId, xFusionAuthTenantId, recipientEntityId, userId).then((res: RetrieveEntityGrantWithIdResponse) => {
+  const res = await sdk.sdk.retrieveEntityGrantWithId(entityId, xFusionAuthTenantId, recipientEntityId, userId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -13976,20 +10277,22 @@ Retrieves the Entity Type for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveEntityTypeWithIdRequest, RetrieveEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveEntityTypeWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityTypeId: string = "Wooden";
 
-sdk.sdk.retrieveEntityTypeWithId(entityTypeId).then((res: RetrieveEntityTypeWithIdResponse) => {
+  const res = await sdk.sdk.retrieveEntityTypeWithId(entityTypeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14013,21 +10316,23 @@ Retrieves the Entity for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveEntityWithIdRequest, RetrieveEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveEntityWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityId: string = "granular";
 const xFusionAuthTenantId: string = "Corvallis gray esse";
 
-sdk.sdk.retrieveEntityWithId(entityId, xFusionAuthTenantId).then((res: RetrieveEntityWithIdResponse) => {
+  const res = await sdk.sdk.retrieveEntityWithId(entityId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14052,20 +10357,22 @@ Retrieves a single event log for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveEventLogWithIdRequest, RetrieveEventLogWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveEventLogWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const eventLogId: string = "relationships";
 
-sdk.sdk.retrieveEventLogWithId(eventLogId).then((res: RetrieveEventLogWithIdResponse) => {
+  const res = await sdk.sdk.retrieveEventLogWithId(eventLogId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14089,21 +10396,23 @@ Retrieves all the families that a user belongs to.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveFamiliesWithIdRequest, RetrieveFamiliesWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveFamiliesWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const xFusionAuthTenantId: string = "female";
 const userId: string = "neural";
 
-sdk.sdk.retrieveFamiliesWithId(xFusionAuthTenantId, userId).then((res: RetrieveFamiliesWithIdResponse) => {
+  const res = await sdk.sdk.retrieveFamiliesWithId(xFusionAuthTenantId, userId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14128,24 +10437,23 @@ Retrieves all the members of a family by the unique Family Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  RetrieveFamilyMembersByFamilyIdWithIdRequest,
-  RetrieveFamilyMembersByFamilyIdWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveFamilyMembersByFamilyIdWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const familyId: string = "Road";
 const xFusionAuthTenantId: string = "Plastic Savings";
 
-sdk.sdk.retrieveFamilyMembersByFamilyIdWithId(familyId, xFusionAuthTenantId).then((res: RetrieveFamilyMembersByFamilyIdWithIdResponse) => {
+  const res = await sdk.sdk.retrieveFamilyMembersByFamilyIdWithId(familyId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14170,20 +10478,22 @@ Retrieves the form field with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveFormFieldWithIdRequest, RetrieveFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveFormFieldWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const fieldId: string = "Functionality";
 
-sdk.sdk.retrieveFormFieldWithId(fieldId).then((res: RetrieveFormFieldWithIdResponse) => {
+  const res = await sdk.sdk.retrieveFormFieldWithId(fieldId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14207,20 +10517,22 @@ Retrieves the form with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveFormWithIdRequest, RetrieveFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveFormWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const formId: string = "Gorgeous";
 
-sdk.sdk.retrieveFormWithId(formId).then((res: RetrieveFormWithIdResponse) => {
+  const res = await sdk.sdk.retrieveFormWithId(formId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14244,21 +10556,23 @@ Retrieves the group for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveGroupWithIdRequest, RetrieveGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveGroupWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const groupId: string = "lavender";
 const xFusionAuthTenantId: string = "orchid";
 
-sdk.sdk.retrieveGroupWithId(groupId, xFusionAuthTenantId).then((res: RetrieveGroupWithIdResponse) => {
+  const res = await sdk.sdk.retrieveGroupWithId(groupId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14283,23 +10597,22 @@ Retrieves the IP Access Control List with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  RetrieveIPAccessControlListWithIdRequest,
-  RetrieveIPAccessControlListWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveIPAccessControlListWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const accessControlListId: string = "Berkelium";
 
-sdk.sdk.retrieveIPAccessControlListWithId(accessControlListId).then((res: RetrieveIPAccessControlListWithIdResponse) => {
+  const res = await sdk.sdk.retrieveIPAccessControlListWithId(accessControlListId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14323,22 +10636,24 @@ Retrieve a single Identity Provider user (link). OR Retrieve all Identity Provid
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveIdentityProviderRequest, RetrieveIdentityProviderResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveIdentityProviderRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const identityProviderId: string = "Oman";
 const identityProviderUserId: string = "Fantastic";
 const userId: string = "Incredible";
 
-sdk.sdk.retrieveIdentityProvider(identityProviderId, identityProviderUserId, userId).then((res: RetrieveIdentityProviderResponse) => {
+  const res = await sdk.sdk.retrieveIdentityProvider(identityProviderId, identityProviderUserId, userId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14364,23 +10679,22 @@ Retrieves one or more identity provider for the given type. For types such as Go
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  RetrieveIdentityProviderByTypeWithIdRequest,
-  RetrieveIdentityProviderByTypeWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveIdentityProviderByTypeWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const type: string = "lug";
 
-sdk.sdk.retrieveIdentityProviderByTypeWithId(type).then((res: RetrieveIdentityProviderByTypeWithIdResponse) => {
+  const res = await sdk.sdk.retrieveIdentityProviderByTypeWithId(type);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14404,20 +10718,22 @@ Retrieves the identity provider for the given id or all of the identity provider
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveIdentityProviderWithIdRequest, RetrieveIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveIdentityProviderWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const identityProviderId: string = "Outdoors";
 
-sdk.sdk.retrieveIdentityProviderWithId(identityProviderId).then((res: RetrieveIdentityProviderWithIdResponse) => {
+  const res = await sdk.sdk.retrieveIdentityProviderWithId(identityProviderId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14441,21 +10757,23 @@ Retrieves the Public Key configured for verifying JSON Web Tokens (JWT) by the k
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveJwtRequest, RetrieveJwtResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveJwtRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "Plastic";
 const keyId: string = "West";
 
-sdk.sdk.retrieveJwt(applicationId, keyId).then((res: RetrieveJwtResponse) => {
+  const res = await sdk.sdk.retrieveJwt(applicationId, keyId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14480,20 +10798,22 @@ Retrieves the key for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveKeyWithIdRequest, RetrieveKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveKeyWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const keyId: string = "Integrated";
 
-sdk.sdk.retrieveKeyWithId(keyId).then((res: RetrieveKeyWithIdResponse) => {
+  const res = await sdk.sdk.retrieveKeyWithId(keyId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14517,20 +10837,22 @@ Retrieves the lambda for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveLambdaWithIdRequest, RetrieveLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveLambdaWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const lambdaId: string = "phooey";
 
-sdk.sdk.retrieveLambdaWithId(lambdaId).then((res: RetrieveLambdaWithIdResponse) => {
+  const res = await sdk.sdk.retrieveLambdaWithId(lambdaId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14554,20 +10876,22 @@ Retrieves all the lambdas for the provided type.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveLambdasByTypeWithIdRequest, RetrieveLambdasByTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveLambdasByTypeWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const type: string = "male";
 
-sdk.sdk.retrieveLambdasByTypeWithId(type).then((res: RetrieveLambdasByTypeWithIdResponse) => {
+  const res = await sdk.sdk.retrieveLambdasByTypeWithId(type);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14591,19 +10915,20 @@ Retrieves the message template for the given Id. If you don't specify the id, th
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveMessageTemplateResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.retrieveMessageTemplate().then((res: RetrieveMessageTemplateResponse) => {
+  const res = await sdk.sdk.retrieveMessageTemplate();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14626,32 +10951,30 @@ Creates a preview of the message template provided in the request, normalized to
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveMessageTemplatePreviewWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
-
-sdk.sdk.retrieveMessageTemplatePreviewWithId({
-  locale: "en_US",
-  messageTemplate: {
-    data: {
-      "quae": {},
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
     },
-    id: "33c4cccb-49f7-43a3-8bee-239d9227d493",
-    insertInstant: 1659380719000,
-    lastUpdateInstant: 1659380719000,
-    name: "generate reorder over",
-    type: MessageType.Sms,
-  },
-}).then((res: RetrieveMessageTemplatePreviewWithIdResponse) => {
+  });
+
+  const res = await sdk.sdk.retrieveMessageTemplatePreviewWithId({
+    locale: "en_US",
+    messageTemplate: {
+      data: {
+        "Bedfordshire": {},
+      },
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14675,20 +10998,22 @@ Retrieves the message template for the given Id. If you don't specify the id, th
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveMessageTemplateWithIdRequest, RetrieveMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveMessageTemplateWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const messageTemplateId: string = "Van";
 
-sdk.sdk.retrieveMessageTemplateWithId(messageTemplateId).then((res: RetrieveMessageTemplateWithIdResponse) => {
+  const res = await sdk.sdk.retrieveMessageTemplateWithId(messageTemplateId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14712,20 +11037,22 @@ Retrieves the messenger with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveMessengerWithIdRequest, RetrieveMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveMessengerWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const messengerId: string = "transmitting";
 
-sdk.sdk.retrieveMessengerWithId(messengerId).then((res: RetrieveMessengerWithIdResponse) => {
+  const res = await sdk.sdk.retrieveMessengerWithId(messengerId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14749,25 +11076,24 @@ Retrieves the monthly active user report between the two instants. If you specif
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  RetrieveMonthlyActiveReportWithIdRequest,
-  RetrieveMonthlyActiveReportWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveMonthlyActiveReportWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "Hat";
 const end: string = "gadzooks";
 const start: string = "Account";
 
-sdk.sdk.retrieveMonthlyActiveReportWithId(applicationId, end, start).then((res: RetrieveMonthlyActiveReportWithIdResponse) => {
+  const res = await sdk.sdk.retrieveMonthlyActiveReportWithId(applicationId, end, start);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14793,24 +11119,23 @@ Retrieves the Oauth2 configuration for the application for the given Application
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  RetrieveOauthConfigurationWithIdRequest,
-  RetrieveOauthConfigurationWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveOauthConfigurationWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "Bicycle";
 const xFusionAuthTenantId: string = "Martin Vatu";
 
-sdk.sdk.retrieveOauthConfigurationWithId(applicationId, xFusionAuthTenantId).then((res: RetrieveOauthConfigurationWithIdResponse) => {
+  const res = await sdk.sdk.retrieveOauthConfigurationWithId(applicationId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14835,23 +11160,22 @@ Retrieves the password validation rules for a specific tenant.  This API does no
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  RetrievePasswordValidationRulesWithTenantIdWithIdRequest,
-  RetrievePasswordValidationRulesWithTenantIdWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrievePasswordValidationRulesWithTenantIdWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const tenantId: string = "Internal";
 
-sdk.sdk.retrievePasswordValidationRulesWithTenantIdWithId(tenantId).then((res: RetrievePasswordValidationRulesWithTenantIdWithIdResponse) => {
+  const res = await sdk.sdk.retrievePasswordValidationRulesWithTenantIdWithId(tenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14875,20 +11199,22 @@ Retrieves all the children for the given parent email address.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrievePendingChildrenWithIdRequest, RetrievePendingChildrenWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrievePendingChildrenWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const parentEmail: string = "capacitor";
 
-sdk.sdk.retrievePendingChildrenWithId(parentEmail).then((res: RetrievePendingChildrenWithIdResponse) => {
+  const res = await sdk.sdk.retrievePendingChildrenWithId(parentEmail);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14912,20 +11238,22 @@ Retrieves a single refresh token by unique Id. This is not the same thing as the
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveRefreshTokenByIdWithIdRequest, RetrieveRefreshTokenByIdWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveRefreshTokenByIdWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const tokenId: string = "male";
 
-sdk.sdk.retrieveRefreshTokenByIdWithId(tokenId).then((res: RetrieveRefreshTokenByIdWithIdResponse) => {
+  const res = await sdk.sdk.retrieveRefreshTokenByIdWithId(tokenId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14949,20 +11277,22 @@ Retrieves the refresh tokens that belong to the user with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveRefreshTokensWithIdRequest, RetrieveRefreshTokensWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveRefreshTokensWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "Maryland";
 
-sdk.sdk.retrieveRefreshTokensWithId(userId).then((res: RetrieveRefreshTokensWithIdResponse) => {
+  const res = await sdk.sdk.retrieveRefreshTokensWithId(userId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -14986,25 +11316,24 @@ Retrieves the registration report between the two instants. If you specify an ap
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  RetrieveRegistrationReportWithIdRequest,
-  RetrieveRegistrationReportWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveRegistrationReportWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "Sleek";
 const end: string = "dedicated";
 const start: string = "Northwest";
 
-sdk.sdk.retrieveRegistrationReportWithId(applicationId, end, start).then((res: RetrieveRegistrationReportWithIdResponse) => {
+  const res = await sdk.sdk.retrieveRegistrationReportWithId(applicationId, end, start);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15030,22 +11359,24 @@ Retrieves the user registration for the user with the given id and the given app
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveRegistrationWithIdRequest, RetrieveRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveRegistrationWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "Mongolia";
 const userId: string = "Southwest";
 const xFusionAuthTenantId: string = "Generic Angeles";
 
-sdk.sdk.retrieveRegistrationWithId(applicationId, userId, xFusionAuthTenantId).then((res: RetrieveRegistrationWithIdResponse) => {
+  const res = await sdk.sdk.retrieveRegistrationWithId(applicationId, userId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15071,25 +11402,20 @@ Retrieves the login report between the two instants. If you specify an applicati
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveReportResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.retrieveReport({
-  applicationId: "wherever",
-  end: "Orchestrator East hack",
-  loginId: "Paradigm Gold",
-  start: "Frozen",
-  userId: "Diesel flawed",
-}).then((res: RetrieveReportResponse) => {
+  const res = await sdk.sdk.retrieveReport({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15113,21 +11439,23 @@ Retrieves the tenant for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveTenantWithIdRequest, RetrieveTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveTenantWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const tenantId: string = "1080p";
 const xFusionAuthTenantId: string = "empty";
 
-sdk.sdk.retrieveTenantWithId(tenantId, xFusionAuthTenantId).then((res: RetrieveTenantWithIdResponse) => {
+  const res = await sdk.sdk.retrieveTenantWithId(tenantId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15152,20 +11480,22 @@ Retrieves the theme for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveThemeWithIdRequest, RetrieveThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveThemeWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const themeId: string = "Metal";
 
-sdk.sdk.retrieveThemeWithId(themeId).then((res: RetrieveThemeWithIdResponse) => {
+  const res = await sdk.sdk.retrieveThemeWithId(themeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15189,23 +11519,22 @@ Retrieve two-factor recovery codes for a user.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  RetrieveTwoFactorRecoveryCodesWithIdRequest,
-  RetrieveTwoFactorRecoveryCodesWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveTwoFactorRecoveryCodesWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "harm";
 
-sdk.sdk.retrieveTwoFactorRecoveryCodesWithId(userId).then((res: RetrieveTwoFactorRecoveryCodesWithIdResponse) => {
+  const res = await sdk.sdk.retrieveTwoFactorRecoveryCodesWithId(userId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15229,22 +11558,24 @@ Retrieve a user's two-factor status.  This can be used to see if a user will nee
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveTwoFactorStatusWithIdRequest, RetrieveTwoFactorStatusWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveTwoFactorStatusWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const twoFactorTrustId: string = "Internal";
 const applicationId: string = "teal";
 const userId: string = "to";
 
-sdk.sdk.retrieveTwoFactorStatusWithId(twoFactorTrustId, applicationId, userId).then((res: RetrieveTwoFactorStatusWithIdResponse) => {
+  const res = await sdk.sdk.retrieveTwoFactorStatusWithId(twoFactorTrustId, applicationId, userId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15270,26 +11601,20 @@ Retrieves the user for the given username. OR Retrieves the user by a verificati
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.retrieveUser({
-  xFusionAuthTenantId: "Bedfordshire Run",
-  changePasswordId: "Blues",
-  email: "Lauryn_Effertz@yahoo.com",
-  loginId: "Southwest TLS",
-  username: "Janae34",
-  verificationId: "Grady impress",
-}).then((res: RetrieveUserResponse) => {
+  const res = await sdk.sdk.retrieveUser({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15313,21 +11638,23 @@ Retrieves all the user actions that are currently inactive. OR Retrieves the use
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserActionRequest, RetrieveUserActionResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserActionRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const xFusionAuthTenantId: string = "Wyoming";
 const inactive: string = "Yttrium";
 
-sdk.sdk.retrieveUserAction(xFusionAuthTenantId, inactive).then((res: RetrieveUserActionResponse) => {
+  const res = await sdk.sdk.retrieveUserAction(xFusionAuthTenantId, inactive);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15352,19 +11679,20 @@ Retrieves the user action reason for the given Id. If you pass in null for the i
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserActionReasonResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.retrieveUserActionReason().then((res: RetrieveUserActionReasonResponse) => {
+  const res = await sdk.sdk.retrieveUserActionReason();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15387,20 +11715,22 @@ Retrieves the user action reason for the given Id. If you pass in null for the i
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserActionReasonWithIdRequest, RetrieveUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserActionReasonWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userActionReasonId: string = "solution";
 
-sdk.sdk.retrieveUserActionReasonWithId(userActionReasonId).then((res: RetrieveUserActionReasonWithIdResponse) => {
+  const res = await sdk.sdk.retrieveUserActionReasonWithId(userActionReasonId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15424,21 +11754,23 @@ Retrieves the user action for the given Id. If you pass in null for the id, this
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserActionWithIdRequest, RetrieveUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserActionWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userActionId: string = "Northeast";
 const xFusionAuthTenantId: string = "Wagon between JBOD";
 
-sdk.sdk.retrieveUserActionWithId(userActionId, xFusionAuthTenantId).then((res: RetrieveUserActionWithIdResponse) => {
+  const res = await sdk.sdk.retrieveUserActionWithId(userActionId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15463,22 +11795,24 @@ Retrieves all the actions for the user with the given Id that are currently prev
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserActioningRequest, RetrieveUserActioningResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserActioningRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const active: string = "Southeast";
 const preventingLogin: string = "Oriental";
 const userId: string = "Runolfsson";
 
-sdk.sdk.retrieveUserActioning(active, preventingLogin, userId).then((res: RetrieveUserActioningResponse) => {
+  const res = await sdk.sdk.retrieveUserActioning(active, preventingLogin, userId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15504,20 +11838,22 @@ Check to see if the user must obtain a Trust Request Id in order to complete a c
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserChangePasswordRequest, RetrieveUserChangePasswordResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserChangePasswordRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const loginId: string = "Legacy";
 
-sdk.sdk.retrieveUserChangePassword(loginId).then((res: RetrieveUserChangePasswordResponse) => {
+  const res = await sdk.sdk.retrieveUserChangePassword(loginId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15541,21 +11877,23 @@ Retrieves all the comments for the user with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserCommentsWithIdRequest, RetrieveUserCommentsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserCommentsWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "Rubber";
 const xFusionAuthTenantId: string = "up";
 
-sdk.sdk.retrieveUserCommentsWithId(userId, xFusionAuthTenantId).then((res: RetrieveUserCommentsWithIdResponse) => {
+  const res = await sdk.sdk.retrieveUserCommentsWithId(userId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15580,20 +11918,22 @@ Retrieve a single User consent by Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserConsentWithIdRequest, RetrieveUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserConsentWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userConsentId: string = "male";
 
-sdk.sdk.retrieveUserConsentWithId(userConsentId).then((res: RetrieveUserConsentWithIdResponse) => {
+  const res = await sdk.sdk.retrieveUserConsentWithId(userConsentId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15617,20 +11957,22 @@ Retrieves all the consents for a User.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserConsentsWithIdRequest, RetrieveUserConsentsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserConsentsWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "Spurs";
 
-sdk.sdk.retrieveUserConsentsWithId(userId).then((res: RetrieveUserConsentsWithIdResponse) => {
+  const res = await sdk.sdk.retrieveUserConsentsWithId(userId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15654,19 +11996,20 @@ Call the UserInfo endpoint to retrieve User Claims from the access token issued 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserInfoFromAccessTokenWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.retrieveUserInfoFromAccessTokenWithId().then((res: RetrieveUserInfoFromAccessTokenWithIdResponse) => {
+  const res = await sdk.sdk.retrieveUserInfoFromAccessTokenWithId();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15689,22 +12032,24 @@ Retrieves the last number of login records. OR Retrieves the last number of logi
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserRecentLoginRequest, RetrieveUserRecentLoginResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserRecentLoginRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const limit: string = "Marketing";
 const offset: string = "East";
 const userId: string = "Gasoline";
 
-sdk.sdk.retrieveUserRecentLogin(limit, offset, userId).then((res: RetrieveUserRecentLoginResponse) => {
+  const res = await sdk.sdk.retrieveUserRecentLogin(limit, offset, userId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15730,21 +12075,23 @@ Retrieves the user for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveUserWithIdRequest, RetrieveUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveUserWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "quasi";
 const xFusionAuthTenantId: string = "Supervisor National Bulgarian";
 
-sdk.sdk.retrieveUserWithId(userId, xFusionAuthTenantId).then((res: RetrieveUserWithIdResponse) => {
+  const res = await sdk.sdk.retrieveUserWithId(userId, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15769,23 +12116,22 @@ Retrieves the WebAuthn credential for the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  RetrieveWebAuthnCredentialWithIdRequest,
-  RetrieveWebAuthnCredentialWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveWebAuthnCredentialWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const id: string = "phooey";
 
-sdk.sdk.retrieveWebAuthnCredentialWithId(id).then((res: RetrieveWebAuthnCredentialWithIdResponse) => {
+  const res = await sdk.sdk.retrieveWebAuthnCredentialWithId(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15809,23 +12155,22 @@ Retrieves all WebAuthn credentials for the given user.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  RetrieveWebAuthnCredentialsForUserWithIdRequest,
-  RetrieveWebAuthnCredentialsForUserWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveWebAuthnCredentialsForUserWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "Littel";
 
-sdk.sdk.retrieveWebAuthnCredentialsForUserWithId(userId).then((res: RetrieveWebAuthnCredentialsForUserWithIdResponse) => {
+  const res = await sdk.sdk.retrieveWebAuthnCredentialsForUserWithId(userId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15849,19 +12194,20 @@ Retrieves the webhook for the given Id. If you pass in null for the id, this wil
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveWebhookResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.retrieveWebhook().then((res: RetrieveWebhookResponse) => {
+  const res = await sdk.sdk.retrieveWebhook();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15884,20 +12230,22 @@ Retrieves the webhook for the given Id. If you pass in null for the id, this wil
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveWebhookWithIdRequest, RetrieveWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RetrieveWebhookWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const webhookId: string = "Computer";
 
-sdk.sdk.retrieveWebhookWithId(webhookId).then((res: RetrieveWebhookWithIdResponse) => {
+  const res = await sdk.sdk.retrieveWebhookWithId(webhookId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15921,20 +12269,22 @@ Revokes a single refresh token by the unique Id. The unique Id is not sensitive 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RevokeRefreshTokenByIdWithIdRequest, RevokeRefreshTokenByIdWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RevokeRefreshTokenByIdWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const tokenId: string = "Southeast";
 
-sdk.sdk.revokeRefreshTokenByIdWithId(tokenId).then((res: RevokeRefreshTokenByIdWithIdResponse) => {
+  const res = await sdk.sdk.revokeRefreshTokenByIdWithId(tokenId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15958,20 +12308,22 @@ Revokes a single User consent by Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RevokeUserConsentWithIdRequest, RevokeUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { RevokeUserConsentWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userConsentId: string = "program";
 
-sdk.sdk.revokeUserConsentWithId(userConsentId).then((res: RevokeUserConsentWithIdResponse) => {
+  const res = await sdk.sdk.revokeUserConsentWithId(userConsentId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -15995,29 +12347,23 @@ Searches applications with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchApplicationsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { ObjectState } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchApplicationsWithId({
-  search: {
-    name: "Bedfordshire",
-    numberOfResults: 881204,
-    orderBy: "than New",
-    startRow: 442876,
-    state: ObjectState.Inactive,
-    tenantId: "bdad0af7-2802-44d1-a7f5-16490164c8f6",
-  },
-}).then((res: SearchApplicationsWithIdResponse) => {
+  const res = await sdk.sdk.searchApplicationsWithId({
+    search: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16041,32 +12387,25 @@ Searches the audit logs with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchAuditLogsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchAuditLogsWithId({
-  search: {
-    end: 1659380719000,
-    message: "connecting Soft",
-    newValue: "after",
-    numberOfResults: 403512,
-    oldValue: "iusto",
-    orderBy: "Avon",
-    reason: "empower lux Analyst",
-    start: 1659380719000,
-    startRow: 68445,
-    user: "Jazmyn.Ferry68",
-  },
-}).then((res: SearchAuditLogsWithIdResponse) => {
+  const res = await sdk.sdk.searchAuditLogsWithId({
+    search: {
+      end: 1659380719000,
+      start: 1659380719000,
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16090,26 +12429,22 @@ Searches consents with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchConsentsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchConsentsWithId({
-  search: {
-    name: "calculate",
-    numberOfResults: 349684,
-    orderBy: "Southeast payment",
-    startRow: 723781,
-  },
-}).then((res: SearchConsentsWithIdResponse) => {
+  const res = await sdk.sdk.searchConsentsWithId({
+    search: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16133,26 +12468,22 @@ Searches email templates with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchEmailTemplatesWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchEmailTemplatesWithId({
-  search: {
-    name: "Other navigating",
-    numberOfResults: 845481,
-    orderBy: "port Convertible Forward",
-    startRow: 356831,
-  },
-}).then((res: SearchEmailTemplatesWithIdResponse) => {
+  const res = await sdk.sdk.searchEmailTemplatesWithId({
+    search: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16176,20 +12507,22 @@ Retrieves the entities for the given ids. If any id is invalid, it is ignored.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchEntitiesByIdsWithIdRequest, SearchEntitiesByIdsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { SearchEntitiesByIdsWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const ids: string = "Grocery";
 
-sdk.sdk.searchEntitiesByIdsWithId(ids).then((res: SearchEntitiesByIdsWithIdResponse) => {
+  const res = await sdk.sdk.searchEntitiesByIdsWithId(ids);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16213,36 +12546,30 @@ Searches entities with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchEntitiesWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { Sort } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchEntitiesWithId({
-  search: {
-    accurateTotal: false,
-    ids: [
-      "cd642c71-bccf-4316-8757-297ab5e74900",
-    ],
-    query: "Future",
-    queryString: "Copernicium",
-    sortFields: [
-      {
-        missing: "USB Moldova",
-        name: "lavender male",
-        order: Sort.Asc,
-      },
-    ],
-  },
-}).then((res: SearchEntitiesWithIdResponse) => {
+  const res = await sdk.sdk.searchEntitiesWithId({
+    search: {
+      ids: [
+        "cd642c71-bccf-4316-8757-297ab5e74900",
+      ],
+      sortFields: [
+        {},
+      ],
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16266,28 +12593,22 @@ Searches Entity Grants with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchEntityGrantsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchEntityGrantsWithId({
-  search: {
-    entityId: "fc9d8a98-0fb7-41ff-b479-0575f0b40b10",
-    name: "aspernatur deposit",
-    numberOfResults: 189306,
-    orderBy: "until Bicycle functionalities",
-    startRow: 483464,
-    userId: "91491fbf-3390-427f-b396-44a347343d13",
-  },
-}).then((res: SearchEntityGrantsWithIdResponse) => {
+  const res = await sdk.sdk.searchEntityGrantsWithId({
+    search: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16311,26 +12632,22 @@ Searches the entity types with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchEntityTypesWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchEntityTypesWithId({
-  search: {
-    name: "SQL",
-    numberOfResults: 559974,
-    orderBy: "Persistent Cotton male",
-    startRow: 773130,
-  },
-}).then((res: SearchEntityTypesWithIdResponse) => {
+  const res = await sdk.sdk.searchEntityTypesWithId({
+    search: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16354,30 +12671,26 @@ Searches the event logs with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchEventLogsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { EventLogType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchEventLogsWithId({
-  search: {
-    end: 1659380719000,
-    message: "Gadolinium Southeast",
-    numberOfResults: 226031,
-    orderBy: "understated tertiary Crew",
-    start: 1659380719000,
-    startRow: 571943,
-    type: EventLogType.Information,
-  },
-}).then((res: SearchEventLogsWithIdResponse) => {
+  const res = await sdk.sdk.searchEventLogsWithId({
+    search: {
+      end: 1659380719000,
+      start: 1659380719000,
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16401,28 +12714,22 @@ Searches group members with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchGroupMembersWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchGroupMembersWithId({
-  search: {
-    groupId: "8f61f55b-cb67-462c-a3f7-19c7f97e2409",
-    numberOfResults: 956025,
-    orderBy: "Southeast Gilbert",
-    startRow: 787256,
-    tenantId: "2f8b58ea-7a93-4cd9-bdae-e43311d6173c",
-    userId: "d41b63a8-00be-4cf9-9318-fbfc7a5220d1",
-  },
-}).then((res: SearchGroupMembersWithIdResponse) => {
+  const res = await sdk.sdk.searchGroupMembersWithId({
+    search: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16446,27 +12753,22 @@ Searches groups with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchGroupsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchGroupsWithId({
-  search: {
-    name: "24/7",
-    numberOfResults: 273122,
-    orderBy: "Investment radical mobile",
-    startRow: 677567,
-    tenantId: "2b09b46c-7354-4935-9903-304e9d4441e6",
-  },
-}).then((res: SearchGroupsWithIdResponse) => {
+  const res = await sdk.sdk.searchGroupsWithId({
+    search: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16490,26 +12792,22 @@ Searches the IP Access Control Lists with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchIPAccessControlListsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchIPAccessControlListsWithId({
-  search: {
-    name: "Lanthanum fleece",
-    numberOfResults: 769751,
-    orderBy: "Carolina Bedfordshire Computers",
-    startRow: 548648,
-  },
-}).then((res: SearchIPAccessControlListsWithIdResponse) => {
+  const res = await sdk.sdk.searchIPAccessControlListsWithId({
+    search: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16533,29 +12831,23 @@ Searches identity providers with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchIdentityProvidersWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { IdentityProviderType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchIdentityProvidersWithId({
-  search: {
-    applicationId: "5c933880-102d-4991-9dc9-96b3e3b21675",
-    name: "Jeep",
-    numberOfResults: 848363,
-    orderBy: "Luxurious infrastructures Wagon",
-    startRow: 294141,
-    type: IdentityProviderType.Facebook,
-  },
-}).then((res: SearchIdentityProvidersWithIdResponse) => {
+  const res = await sdk.sdk.searchIdentityProvidersWithId({
+    search: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16579,29 +12871,23 @@ Searches keys with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchKeysWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { KeyAlgorithm, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchKeysWithId({
-  search: {
-    algorithm: KeyAlgorithm.Hs512,
-    name: "Northeast Integrated Investor",
-    numberOfResults: 640753,
-    orderBy: "zither JBOD Salad",
-    startRow: 872378,
-    type: KeyType.Rsa,
-  },
-}).then((res: SearchKeysWithIdResponse) => {
+  const res = await sdk.sdk.searchKeysWithId({
+    search: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16625,29 +12911,23 @@ Searches lambdas with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchLambdasWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchLambdasWithId({
-  search: {
-    body: "a pixel Account",
-    name: "Electric Claud static",
-    numberOfResults: 264739,
-    orderBy: "feed Hybrid",
-    startRow: 303132,
-    type: LambdaType.AppleReconcile,
-  },
-}).then((res: SearchLambdasWithIdResponse) => {
+  const res = await sdk.sdk.searchLambdasWithId({
+    search: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16671,30 +12951,25 @@ Searches the login records with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchLoginRecordsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchLoginRecordsWithId({
-  retrieveTotal: false,
-  search: {
-    applicationId: "3fca1f7b-12c8-4252-acef-8f0a351d4514",
-    end: 1659380719000,
-    numberOfResults: 667986,
-    orderBy: "Dynamic",
-    start: 1659380719000,
-    startRow: 480455,
-    userId: "a280b212-d1ee-4dff-9fdf-7d22f90c34e9",
-  },
-}).then((res: SearchLoginRecordsWithIdResponse) => {
+  const res = await sdk.sdk.searchLoginRecordsWithId({
+    search: {
+      end: 1659380719000,
+      start: 1659380719000,
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16718,26 +12993,22 @@ Searches tenants with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchTenantsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchTenantsWithId({
-  search: {
-    name: "Home",
-    numberOfResults: 148794,
-    orderBy: "magni Direct lime",
-    startRow: 924482,
-  },
-}).then((res: SearchTenantsWithIdResponse) => {
+  const res = await sdk.sdk.searchTenantsWithId({
+    search: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16761,26 +13032,22 @@ Searches themes with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchThemesWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchThemesWithId({
-  search: {
-    name: "Northwest",
-    numberOfResults: 943735,
-    orderBy: "Kenosha Triathlon/Time Southeast",
-    startRow: 341989,
-  },
-}).then((res: SearchThemesWithIdResponse) => {
+  const res = await sdk.sdk.searchThemesWithId({
+    search: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16804,29 +13071,22 @@ Searches user comments with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchUserCommentsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchUserCommentsWithId({
-  search: {
-    comment: "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-    commenterId: "112fd667-bdc3-4251-9c7a-364435748eab",
-    numberOfResults: 110870,
-    orderBy: "whose Nobelium reintermediate",
-    startRow: 530071,
-    tenantId: "4f96c7ba-9b7c-43cd-ae7f-613a6896f606",
-    userId: "704f12f8-8056-4435-8313-37f91bd3eff4",
-  },
-}).then((res: SearchUserCommentsWithIdResponse) => {
+  const res = await sdk.sdk.searchUserCommentsWithId({
+    search: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16850,20 +13110,22 @@ Retrieves the users for the given ids. If any id is invalid, it is ignored.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchUsersByIdsWithIdRequest, SearchUsersByIdsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { SearchUsersByIdsWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const ids: string = "Oriental";
 
-sdk.sdk.searchUsersByIdsWithId(ids).then((res: SearchUsersByIdsWithIdResponse) => {
+  const res = await sdk.sdk.searchUsersByIdsWithId(ids);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16887,36 +13149,30 @@ Retrieves the users for the given search criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchUsersByQueryWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { Sort } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchUsersByQueryWithId({
-  search: {
-    accurateTotal: false,
-    ids: [
-      "e6087d5e-34ab-4542-98e7-a0b86cea7a4c",
-    ],
-    query: "Sulfur Andorra Shirt",
-    queryString: "Recumbent",
-    sortFields: [
-      {
-        missing: "Gasoline",
-        name: "huzzah Camp Unbranded",
-        order: Sort.Asc,
-      },
-    ],
-  },
-}).then((res: SearchUsersByQueryWithIdResponse) => {
+  const res = await sdk.sdk.searchUsersByQueryWithId({
+    search: {
+      ids: [
+        "e6087d5e-34ab-4542-98e7-a0b86cea7a4c",
+      ],
+      sortFields: [
+        {},
+      ],
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16940,28 +13196,22 @@ Searches webhooks with the specified criteria and pagination.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SearchWebhooksWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.searchWebhooksWithId({
-  search: {
-    description: "Managed fault-tolerant conglomeration",
-    numberOfResults: 606686,
-    orderBy: "Concrete Cargo",
-    startRow: 50058,
-    tenantId: "34e390ec-fd8f-411d-9291-296cff4e8405",
-    url: "https://tall-instance.com",
-  },
-}).then((res: SearchWebhooksWithIdResponse) => {
+  const res = await sdk.sdk.searchWebhooksWithId({
+    search: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -16985,45 +13235,43 @@ Send an email using an email template id. You can optionally provide <code>reque
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SendEmailWithIdRequest, SendEmailWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { SendEmailWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { EmailAddress, SendRequest, SendRequestRequestData } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const emailTemplateId: string = "copying";
 const sendRequest: SendRequest = {
-  applicationId: "1ae965f5-395d-4f9c-922c-5d7806efdfcf",
   bccAddresses: [
-    "Marketing",
+    "Northwest",
   ],
   ccAddresses: [
-    "capacitor",
+    "opulent",
   ],
   preferredLanguages: [
     "en_US",
   ],
   requestData: {
-    "dicta": {},
+    "Account": {},
   },
   toAddresses: [
-    {
-      address: "77438 O'Reilly Lock",
-      display: "Usability quickly",
-    },
+    {},
   ],
   userIds: [
-    "3999dcc4-7649-452d-bfb5-128eb1eac9ab",
+    "5395df9c-522c-45d7-806e-fdfcfa28f13b",
   ],
 };
 
-sdk.sdk.sendEmailWithId(emailTemplateId, sendRequest).then((res: SendEmailWithIdResponse) => {
+  const res = await sdk.sdk.sendEmailWithId(emailTemplateId, sendRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -17048,21 +13296,20 @@ Sends out an email to a parent that they need to register and create a family or
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SendFamilyRequestEmailWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.sendFamilyRequestEmailWithId({
-  parentEmail: "steradian",
-}).then((res: SendFamilyRequestEmailWithIdResponse) => {
+  const res = await sdk.sdk.sendFamilyRequestEmailWithId({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -17086,26 +13333,24 @@ Send a passwordless authentication code in an email to complete login.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SendPasswordlessCodeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.sendPasswordlessCodeWithId({
-  applicationId: "a5f710e7-2459-4720-9204-023b4e9a260c",
-  code: "Genderqueer",
-  loginId: "hardware",
-  state: {
-    "nulla": {},
-  },
-}).then((res: SendPasswordlessCodeWithIdResponse) => {
+  const res = await sdk.sdk.sendPasswordlessCodeWithId({
+    state: {
+      "National": {},
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -17129,25 +13374,20 @@ Send a Two Factor authentication code to assist in setting up Two Factor authent
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { SendTwoFactorCodeForEnableDisableWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.sendTwoFactorCodeForEnableDisableWithId({
-  email: "Elvera.Pagac@gmail.com",
-  method: "scale Sedan",
-  methodId: "networks",
-  mobilePhone: "deposit heuristic Developer",
-  userId: "870451df-da32-42fc-a9b2-656976a4547b",
-}).then((res: SendTwoFactorCodeForEnableDisableWithIdResponse) => {
+  const res = await sdk.sdk.sendTwoFactorCodeForEnableDisableWithId({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -17171,31 +13411,24 @@ Send a Two Factor authentication code to allow the completion of Two Factor auth
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  SendTwoFactorCodeForLoginUsingMethodWithIdRequest,
-  SendTwoFactorCodeForLoginUsingMethodWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { SendTwoFactorCodeForLoginUsingMethodWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { TwoFactorSendRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const twoFactorId: string = "Cadillac";
-const twoFactorSendRequest: TwoFactorSendRequest = {
-  email: "Colby_OKeefe36@yahoo.com",
-  method: "Yuan compressing",
-  methodId: "Supervisor weber Hybrid",
-  mobilePhone: "Handmade Bicycle Berkshire",
-  userId: "4a0e3aa6-9e21-4029-9d6c-e49df0f45f6a",
-};
+const twoFactorSendRequest: TwoFactorSendRequest = {};
 
-sdk.sdk.sendTwoFactorCodeForLoginUsingMethodWithId(twoFactorId, twoFactorSendRequest).then((res: SendTwoFactorCodeForLoginUsingMethodWithIdResponse) => {
+  const res = await sdk.sdk.sendTwoFactorCodeForLoginUsingMethodWithId(twoFactorId, twoFactorSendRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -17220,48 +13453,39 @@ Begins a login request for a 3rd party login that requires user interaction such
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { StartIdentityProviderLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.startIdentityProviderLoginWithId({
-  applicationId: "b3fe02ba-d5d3-4fed-a86f-e6bdef1b61f9",
-  data: {
-    "nisi": "Directives",
-  },
-  identityProviderId: "fd59e9e0-41dd-402c-8853-716ee9a0d100",
-  ipAddress: "161.30.236.98",
-  loginId: "toward",
-  metaData: {
+  const res = await sdk.sdk.startIdentityProviderLoginWithId({
     data: {
-      "hic": {},
+      "Manager": "tuba",
     },
-    device: {
-      description: "Open-source fresh-thinking moratorium",
-      lastAccessedAddress: "beneath",
-      lastAccessedInstant: 1659380719000,
-      name: "Platinum",
-      type: DeviceType.Desktop,
+    metaData: {
+      data: {
+        "Bulgaria": {},
+      },
+      device: {
+        lastAccessedInstant: 1659380719000,
+      },
+      scopes: [
+        "becquerel",
+      ],
     },
-    scopes: [
-      "boastfully",
-    ],
-  },
-  newDevice: false,
-  noJWT: false,
-  state: {
-    "maiores": {},
-  },
-}).then((res: StartIdentityProviderLoginWithIdResponse) => {
+    state: {
+      "gummy": {},
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -17285,25 +13509,24 @@ Start a passwordless login request by generating a passwordless code. This code 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { StartPasswordlessLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.startPasswordlessLoginWithId({
-  applicationId: "318b5917-b2a2-4534-9b4f-293bfae8a3e2",
-  loginId: "payment programming",
-  state: {
-    "explicabo": {},
-  },
-}).then((res: StartPasswordlessLoginWithIdResponse) => {
+  const res = await sdk.sdk.startPasswordlessLoginWithId({
+    state: {
+      "Music": {},
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -17327,28 +13550,24 @@ Start a Two-Factor login request by generating a two-factor identifier. This cod
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { StartTwoFactorLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.startTwoFactorLoginWithId({
-  applicationId: "0fc893c1-3bf6-4b13-ab89-ac465841ebe2",
-  code: "visualize Costa",
-  loginId: "Mountains Home Cliff",
-  state: {
-    "veniam": {},
-  },
-  trustChallenge: "indigo",
-  userId: "b5dfa5a7-b4d6-483f-b5fc-8a785dd45020",
-}).then((res: StartTwoFactorLoginWithIdResponse) => {
+  const res = await sdk.sdk.startTwoFactorLoginWithId({
+    state: {
+      "Sahara": {},
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -17372,29 +13591,25 @@ Start a WebAuthn authentication ceremony by generating a new challenge for the u
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { StartWebAuthnLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { WebAuthnWorkflow } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.startWebAuthnLoginWithId({
-  applicationId: "1c51f51c-a084-4bc1-8efa-b8aa453eb349",
-  credentialId: "db5fc4ea-74da-426d-8fe7-85289f79dd97",
-  loginId: "Volvo methodical",
-  state: {
-    "blanditiis": {},
-  },
-  userId: "5eb0047d-e310-4eea-80fc-a1e81e9f3d3c",
-  workflow: WebAuthnWorkflow.Bootstrap,
-}).then((res: StartWebAuthnLoginWithIdResponse) => {
+  const res = await sdk.sdk.startWebAuthnLoginWithId({
+    state: {
+      "Southwest": {},
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -17418,26 +13633,21 @@ Start a WebAuthn registration ceremony by generating a new challenge for the use
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { StartWebAuthnRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { WebAuthnWorkflow } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.startWebAuthnRegistrationWithId({
-  displayName: "Future",
-  name: "array",
-  userAgent: "Convertible",
-  userId: "c99fc610-7af8-4941-8c8b-365f42d4eaee",
-  workflow: WebAuthnWorkflow.Reauthentication,
-}).then((res: StartWebAuthnRegistrationWithIdResponse) => {
+  const res = await sdk.sdk.startWebAuthnRegistrationWithId({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -17461,44 +13671,33 @@ Complete login using a 2FA challenge
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { TwoFactorLoginWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { DeviceType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.twoFactorLoginWithId({
-  applicationId: "c9bfbe6e-bc1a-46c9-9d3c-5a01c20fc6ab",
-  code: "Progressive redefine Belarus",
-  ipAddress: "92.227.91.20",
-  metaData: {
-    data: {
-      "suscipit": {},
+  const res = await sdk.sdk.twoFactorLoginWithId({
+    metaData: {
+      data: {
+        "plum": {},
+      },
+      device: {
+        lastAccessedInstant: 1659380719000,
+      },
+      scopes: [
+        "Representative",
+      ],
     },
-    device: {
-      description: "Focused interactive archive",
-      lastAccessedAddress: "Pop orchid Sulfur",
-      lastAccessedInstant: 1659380719000,
-      name: "second",
-      type: DeviceType.Other,
-    },
-    scopes: [
-      "Hybrid",
-    ],
-  },
-  newDevice: false,
-  noJWT: false,
-  trustComputer: false,
-  twoFactorId: "Bar multimedia SUV",
-  userId: "686e4f7a-a715-4348-8935-916182e8acca",
-}).then((res: TwoFactorLoginWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -17522,45 +13721,41 @@ Updates an API key by given id
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateAPIKeyWithIdRequest, UpdateAPIKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateAPIKeyWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { APIKey, APIKeyMetaData, APIKeyPermissions, APIKeyRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const keyId: string = "pixel";
 const apiKeyRequest: APIKeyRequest = {
   apiKey: {
-    id: "6476e6ce-e197-4ce5-8e6a-b32cd84fc297",
     insertInstant: 1659380719000,
-    ipAccessControlListId: "33af967e-99a6-49bd-a778-191c0067ad76",
-    key: "<key>",
-    keyManager: false,
     lastUpdateInstant: 1659380719000,
     metaData: {
       attributes: {
-        "natus": "Courts",
+        "Market": "Gold",
       },
     },
     permissions: {
       endpoints: {
-        "veritatis": [
-          "Touring",
+        "productivity": [
+          "vainly",
         ],
       },
     },
-    tenantId: "7e3e948c-d9ed-4cfd-aa79-c7ce982c7ca5",
   },
-  sourceKeyId: "de44f049-6b4f-4cb3-8ad5-bfe63b5f6e1a",
 };
 
-sdk.sdk.updateAPIKeyWithId(keyId, apiKeyRequest).then((res: UpdateAPIKeyWithIdResponse) => {
+  const res = await sdk.sdk.updateAPIKeyWithId(keyId, apiKeyRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -17585,7 +13780,7 @@ Updates the application role with the given id for the application.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateApplicationRoleWithIdRequest, UpdateApplicationRoleWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateApplicationRoleWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   Application,
   ApplicationAccessControlConfiguration,
@@ -17640,266 +13835,106 @@ import {
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "calculate";
 const roleId: string = "card";
 const applicationRequest: ApplicationRequest = {
   application: {
-    accessControlConfiguration: {
-      uiIPAccessControlListId: "fb4ea56c-dc94-47e0-b723-0da1dbd1d343",
-    },
-    active: false,
-    authenticationTokenConfiguration: {
-      enabled: false,
-    },
+    accessControlConfiguration: {},
+    authenticationTokenConfiguration: {},
     cleanSpeakConfiguration: {
-      apiKey: "neutral",
       applicationIds: [
-        "c1b649d5-a61b-4648-aea6-8d5576e4b99c",
+        "fb4ea56c-dc94-47e0-b723-0da1dbd1d343",
       ],
-      enabled: false,
-      url: "withdrawal Rubber",
-      usernameModeration: {
-        applicationId: "1b11e455-69b5-43bd-8bf8-e524be320e04",
-        enabled: false,
-      },
+      usernameModeration: {},
     },
     data: {
-      "nemo": {},
+      "Tools": {},
     },
-    emailConfiguration: {
-      emailUpdateEmailTemplateId: "749f4765-43ae-440e-8c33-114249b1bc81",
-      emailVerificationEmailTemplateId: "32a6e5e4-fd87-42b9-8ffd-b989071ec1e9",
-      emailVerifiedEmailTemplateId: "27cfc481-dbd0-43f2-934d-8a36bf7acfa7",
-      forgotPasswordEmailTemplateId: "9810379e-eac5-4d40-910d-c0a14885a22e",
-      loginIdInUseOnCreateEmailTemplateId: "2350310c-e2ab-4868-b7f6-2296c983f0f0",
-      loginIdInUseOnUpdateEmailTemplateId: "1f0ad310-bee5-4171-9be4-686a37b98cd2",
-      loginNewDeviceEmailTemplateId: "cd685280-0da6-4a54-a002-4aa3cdfc5098",
-      loginSuspiciousEmailTemplateId: "9be0147f-f005-45a5-8c51-6665b1ff0850",
-      passwordResetSuccessEmailTemplateId: "f0da5cb1-0528-4d40-aa35-7dbcdb5b9278",
-      passwordUpdateEmailTemplateId: "7374575a-bb75-483e-89dc-0c2bad6f07cc",
-      passwordlessEmailTemplateId: "ebbae521-f3c0-41d7-954c-5b6df39dc8c5",
-      setPasswordEmailTemplateId: "838fcb44-f118-4fd3-ad77-630bbac71d6e",
-      twoFactorMethodAddEmailTemplateId: "3a9b82cf-fa31-44ce-9df4-f5568ec9f2ef",
-      twoFactorMethodRemoveEmailTemplateId: "3cc7e8a2-a429-48b1-83f8-4f51cac9ee9a",
-    },
-    externalIdentifierConfiguration: {
-      twoFactorTrustIdTimeToLiveInSeconds: 310519,
-    },
+    emailConfiguration: {},
+    externalIdentifierConfiguration: {},
     formConfiguration: {
-      adminRegistrationFormId: "17a2c4e6-fef3-4ce9-b6ec-1b42c414f9d0",
-      selfServiceFormConfiguration: {
-        requireCurrentPasswordOnPasswordChange: false,
-      },
-      selfServiceFormId: "edbb5297-e910-4bcd-880c-2110ebb36989",
+      selfServiceFormConfiguration: {},
     },
-    id: "b7e2b9b3-b8dc-4a83-b859-fa00607f44d6",
     insertInstant: 1659380719000,
     jwtConfiguration: {
-      accessTokenKeyId: "f7a63c21-6226-4bef-8d7e-d9e8171c25f8",
-      enabled: false,
-      idTokenKeyId: "1a179df9-348e-43e0-b495-70d28b568334",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.Fixed,
-      refreshTokenRevocationPolicy: {
-        onLoginPrevented: false,
-        onMultiFactorEnable: false,
-        onPasswordChanged: false,
-      },
-      refreshTokenTimeToLiveInMinutes: 403018,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
-      timeToLiveInSeconds: 291976,
+      refreshTokenRevocationPolicy: {},
     },
-    lambdaConfiguration: {
-      accessTokenPopulateId: "6b3f5310-a10b-4db0-ba13-1e9a2bd58b5a",
-      idTokenPopulateId: "727a6543-e049-4db7-8a48-aca020f4e2b2",
-      samlv2PopulateId: "3c5e1114-a7ac-4956-8a70-f6438839f152",
-      selfServiceRegistrationValidationId: "7ef5a00e-c9ab-4038-8bc8-02848f1c7b49",
-    },
+    lambdaConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    loginConfiguration: {
-      allowTokenRefresh: false,
-      generateRefreshTokens: false,
-      requireAuthentication: false,
-    },
+    loginConfiguration: {},
     multiFactorConfiguration: {
-      email: {
-        templateId: "83ac73db-527e-4d3f-ab44-4309e5727650",
-      },
-      loginPolicy: MultiFactorLoginPolicy.Disabled,
-      sms: {
-        templateId: "21d3003b-a24d-4216-bb0d-5a8ea01381a8",
-      },
-      trustPolicy: ApplicationMultiFactorTrustPolicy.Any,
+      email: {},
+      sms: {},
     },
-    name: "farad studious",
     oauthConfiguration: {
       authorizedOriginURLs: [
-        "Rubber Triathlon/Time vitae",
+        "Bicycle directional facere",
       ],
       authorizedRedirectURLs: [
-        "wrongly",
+        "Brand syndicate",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.ExactMatch,
-      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequired,
-      clientId: "Providence group Practical",
-      clientSecret: "purple",
-      debug: false,
-      deviceVerificationURL: "Iraqi Shoes",
       enabledGrants: [
-        "daily",
+        "Interactions",
       ],
-      generateRefreshTokens: false,
-      logoutBehavior: LogoutBehavior.RedirectOnly,
-      logoutURL: "throughput facilis Pataca",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.Required,
-      requireClientAuthentication: false,
-      requireRegistration: false,
     },
-    passwordlessConfiguration: {
-      enabled: false,
-    },
+    passwordlessConfiguration: {},
     registrationConfiguration: {
-      birthDate: {
-        enabled: false,
-        required: false,
-      },
-      confirmPassword: false,
-      enabled: false,
-      firstName: {
-        enabled: false,
-        required: false,
-      },
-      formId: "7ec499cc-3fb6-4119-af6f-c7b8138390b6",
-      fullName: {
-        enabled: false,
-        required: false,
-      },
-      lastName: {
-        enabled: false,
-        required: false,
-      },
-      loginIdType: LoginIdType.Email,
-      middleName: {
-        enabled: false,
-        required: false,
-      },
-      mobilePhone: {
-        enabled: false,
-        required: false,
-      },
-      type: RegistrationType.Basic,
+      birthDate: {},
+      firstName: {},
+      fullName: {},
+      lastName: {},
+      middleName: {},
+      mobilePhone: {},
     },
     registrationDeletePolicy: {
-      unverified: {
-        enabled: false,
-        numberOfDaysToRetain: 482224,
-      },
+      unverified: {},
     },
     roles: [
       {
-        description: "Stand-alone exuding product",
-        id: "fcc03540-f97d-437b-b444-5728f69ceba7",
         insertInstant: 1659380719000,
-        isDefault: false,
-        isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "Regional Route",
       },
     ],
     samlv2Configuration: {
-      audience: "huzzah methodical Metal",
       authorizedRedirectURLs: [
-        "searchingly Car",
+        "interface good",
       ],
-      callbackURL: "Diesel",
-      debug: false,
-      defaultVerificationKeyId: "e6ed3fc2-4a62-4d54-af55-a380328db00f",
-      enabled: false,
-      initiatedLogin: {
-        enabled: false,
-        nameIdFormat: "Luxurious",
-      },
-      issuer: "bandwidth encompassing",
-      keyId: "4ada420e-9b43-44e7-92dd-38c668ca7399",
+      initiatedLogin: {},
       logout: {
-        behavior: SAMLLogoutBehavior.OnlyOriginator,
-        defaultVerificationKeyId: "832fd503-1d2a-49c5-b34e-dbb50bee602f",
-        keyId: "16677ec4-61a6-4495-9068-8525883696e3",
-        requireSignedRequests: false,
-        singleLogout: {
-          enabled: false,
-          keyId: "770fd797-e823-4be6-9360-a86d08780894",
-          url: "misname moonshine Extended",
-          xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
-        },
-        xmlSignatureC14nMethod: CanonicalizationMethod.Exclusive,
+        singleLogout: {},
       },
-      logoutURL: "systemic Account eligendi",
-      requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethod.InclusiveWithComments,
-      xmlSignatureLocation: XMLSignatureLocation.Response,
     },
-    state: ObjectState.Inactive,
-    tenantId: "2c295ecc-0cc8-4cac-9d9c-e2a775fb655d",
-    themeId: "cf4aaa0b-73ee-4400-988a-114ea2b47912",
-    unverified: {
-      behavior: UnverifiedBehavior.Gated,
-    },
-    verificationEmailTemplateId: "a4f70f38-fb76-441e-9747-2fb78124dc02",
-    verificationStrategy: VerificationStrategy.ClickableLink,
-    verifyRegistration: false,
+    unverified: {},
     webAuthnConfiguration: {
-      bootstrapWorkflow: {
-        enabled: false,
-      },
-      enabled: false,
-      reauthenticationWorkflow: {
-        enabled: false,
-      },
+      bootstrapWorkflow: {},
+      reauthenticationWorkflow: {},
     },
   },
   eventInfo: {
     data: {
-      "praesentium": {},
+      "CFA": {},
     },
-    deviceDescription: "Integration Personal",
-    deviceName: "kelvin Muller",
-    deviceType: "male Data",
-    ipAddress: "82.61.48.115",
-    location: {
-      city: "Florence-Graham",
-      country: "United Kingdom",
-      displayString: "Diesel",
-      latitude: 9343.69,
-      longitude: 6163.14,
-      region: "Human",
-      zipcode: "64658",
-    },
-    os: "Bay red",
-    userAgent: "transparent",
+    location: {},
   },
   role: {
-    description: "Compatible demand-driven groupware",
-    id: "baa77868-ce9f-4e37-a109-33c8b0e670c2",
     insertInstant: 1659380719000,
-    isDefault: false,
-    isSuperRole: false,
     lastUpdateInstant: 1659380719000,
-    name: "Quality target Dynamic",
   },
-  sourceApplicationId: "b000b0d2-fcc1-4c0e-8e37-35e6a6a64cf6",
 };
-const xFusionAuthTenantId: string = "Shirt";
+const xFusionAuthTenantId: string = "unde turquoise withdrawal";
 
-sdk.sdk.updateApplicationRoleWithId(applicationId, roleId, applicationRequest, xFusionAuthTenantId).then((res: UpdateApplicationRoleWithIdResponse) => {
+  const res = await sdk.sdk.updateApplicationRoleWithId(applicationId, roleId, applicationRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -17926,7 +13961,7 @@ Updates the application with the given Id. OR Reactivates the application with t
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateApplicationWithIdRequest, UpdateApplicationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateApplicationWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   Application,
   ApplicationAccessControlConfiguration,
@@ -17981,266 +14016,106 @@ import {
   XMLSignatureLocation,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "Optional";
 const applicationRequest: ApplicationRequest = {
   application: {
-    accessControlConfiguration: {
-      uiIPAccessControlListId: "03c307c8-cad5-4d0b-93c9-a4b92e30870e",
-    },
-    active: false,
-    authenticationTokenConfiguration: {
-      enabled: false,
-    },
+    accessControlConfiguration: {},
+    authenticationTokenConfiguration: {},
     cleanSpeakConfiguration: {
-      apiKey: "Markets boo Tools",
       applicationIds: [
-        "ac094920-7fc8-4f55-864a-30564bd7f8ef",
+        "03c307c8-cad5-4d0b-93c9-a4b92e30870e",
       ],
-      enabled: false,
-      url: "SMTP",
-      usernameModeration: {
-        applicationId: "d64607b5-82b2-4147-9dbd-56758456be96",
-        enabled: false,
-      },
+      usernameModeration: {},
     },
     data: {
-      "est": {},
+      "Mazda": {},
     },
-    emailConfiguration: {
-      emailUpdateEmailTemplateId: "48981e04-1bcd-41a5-9c9a-4455a02dfb5d",
-      emailVerificationEmailTemplateId: "59ccf3f6-c4ba-4acf-a019-d2610f9b6e82",
-      emailVerifiedEmailTemplateId: "b4748d58-dbac-4bf2-a37e-a8e21e429f0c",
-      forgotPasswordEmailTemplateId: "b7805345-3597-47be-b9f1-cc2b30494352",
-      loginIdInUseOnCreateEmailTemplateId: "7c49c499-0f1b-4bab-b007-af63d148dd82",
-      loginIdInUseOnUpdateEmailTemplateId: "12a750b3-948b-417e-a42e-c3afbc870fb3",
-      loginNewDeviceEmailTemplateId: "ca23b60b-dfa3-47ca-ae35-805b15c65d6e",
-      loginSuspiciousEmailTemplateId: "3dcad6ae-5be1-467b-afc2-172adf0887b4",
-      passwordResetSuccessEmailTemplateId: "2d53eaeb-9e9c-4f8a-afba-3daa1aca22dc",
-      passwordUpdateEmailTemplateId: "b7168f1c-b1a8-4807-921d-742f8066ae87",
-      passwordlessEmailTemplateId: "5ced2bbe-442c-42a5-a31f-1b10923967da",
-      setPasswordEmailTemplateId: "96fc2860-dd70-4b19-a77a-2cc17cb1ecff",
-      twoFactorMethodAddEmailTemplateId: "5c8e6f6c-23d2-4f15-86f8-e010065330f9",
-      twoFactorMethodRemoveEmailTemplateId: "9dd0bae7-0f04-4725-a590-10e6b4be05bf",
-    },
-    externalIdentifierConfiguration: {
-      twoFactorTrustIdTimeToLiveInSeconds: 983452,
-    },
+    emailConfiguration: {},
+    externalIdentifierConfiguration: {},
     formConfiguration: {
-      adminRegistrationFormId: "80fdcc69-4a13-491e-bccf-de920c592d99",
-      selfServiceFormConfiguration: {
-        requireCurrentPasswordOnPasswordChange: false,
-      },
-      selfServiceFormId: "f0fec997-92a6-4fe4-9224-a6d194086e33",
+      selfServiceFormConfiguration: {},
     },
-    id: "c46576ed-df3b-4836-8016-fb9f7d6123ea",
     insertInstant: 1659380719000,
     jwtConfiguration: {
-      accessTokenKeyId: "a6c5bbf3-2248-4d65-b7d2-7b60064230b2",
-      enabled: false,
-      idTokenKeyId: "62f7b2b5-4882-4c96-a7cc-787802e50e20",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.Fixed,
-      refreshTokenRevocationPolicy: {
-        onLoginPrevented: false,
-        onMultiFactorEnable: false,
-        onPasswordChanged: false,
-      },
-      refreshTokenTimeToLiveInMinutes: 78127,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.OneTimeUse,
-      timeToLiveInSeconds: 67346,
+      refreshTokenRevocationPolicy: {},
     },
-    lambdaConfiguration: {
-      accessTokenPopulateId: "394db929-59af-4d0c-b53a-ab1492a4d823",
-      idTokenPopulateId: "17f89ed9-34b2-4448-8f42-cb004d49a108",
-      samlv2PopulateId: "d5c30549-6249-4f70-b143-da778a3852e2",
-      selfServiceRegistrationValidationId: "a20fc5a9-a35e-48bd-ae79-13bf2ca79bac",
-    },
+    lambdaConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    loginConfiguration: {
-      allowTokenRefresh: false,
-      generateRefreshTokens: false,
-      requireAuthentication: false,
-    },
+    loginConfiguration: {},
     multiFactorConfiguration: {
-      email: {
-        templateId: "98d945fb-0713-459b-bc3f-94805c9e831b",
-      },
-      loginPolicy: MultiFactorLoginPolicy.Enabled,
-      sms: {
-        templateId: "58f11479-2c8a-48bd-9743-cc517b14f7d1",
-      },
-      trustPolicy: ApplicationMultiFactorTrustPolicy.None,
+      email: {},
+      sms: {},
     },
-    name: "up syndicate strategic",
     oauthConfiguration: {
       authorizedOriginURLs: [
-        "male",
+        "boo Tools",
       ],
       authorizedRedirectURLs: [
-        "Modern",
+        "Road Granite Wells",
       ],
-      authorizedURLValidationPolicy: Oauth2AuthorizedURLValidationPolicy.ExactMatch,
-      clientAuthenticationPolicy: ClientAuthenticationPolicy.NotRequiredWhenUsingPKCE,
-      clientId: "eligendi",
-      clientSecret: "Division likely",
-      debug: false,
-      deviceVerificationURL: "platforms",
       enabledGrants: [
-        "flexibility",
+        "parse",
       ],
-      generateRefreshTokens: false,
-      logoutBehavior: LogoutBehavior.AllApplications,
-      logoutURL: "oblong",
-      proofKeyForCodeExchangePolicy: ProofKeyForCodeExchangePolicy.NotRequiredWhenUsingClientAuthentication,
-      requireClientAuthentication: false,
-      requireRegistration: false,
     },
-    passwordlessConfiguration: {
-      enabled: false,
-    },
+    passwordlessConfiguration: {},
     registrationConfiguration: {
-      birthDate: {
-        enabled: false,
-        required: false,
-      },
-      confirmPassword: false,
-      enabled: false,
-      firstName: {
-        enabled: false,
-        required: false,
-      },
-      formId: "470a8d59-8369-4c2c-93fe-a6ed43e16034",
-      fullName: {
-        enabled: false,
-        required: false,
-      },
-      lastName: {
-        enabled: false,
-        required: false,
-      },
-      loginIdType: LoginIdType.Email,
-      middleName: {
-        enabled: false,
-        required: false,
-      },
-      mobilePhone: {
-        enabled: false,
-        required: false,
-      },
-      type: RegistrationType.Advanced,
+      birthDate: {},
+      firstName: {},
+      fullName: {},
+      lastName: {},
+      middleName: {},
+      mobilePhone: {},
     },
     registrationDeletePolicy: {
-      unverified: {
-        enabled: false,
-        numberOfDaysToRetain: 621874,
-      },
+      unverified: {},
     },
     roles: [
       {
-        description: "Seamless zero tolerance projection",
-        id: "7bbbcd4a-8a50-4627-a174-c78a053b3bca",
         insertInstant: 1659380719000,
-        isDefault: false,
-        isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "Corporate",
       },
     ],
     samlv2Configuration: {
-      audience: "female indigo green",
       authorizedRedirectURLs: [
-        "Palladium",
+        "users",
       ],
-      callbackURL: "black",
-      debug: false,
-      defaultVerificationKeyId: "d45f0300-7d29-419b-bec3-b11bc7143df8",
-      enabled: false,
-      initiatedLogin: {
-        enabled: false,
-        nameIdFormat: "fawn",
-      },
-      issuer: "Cambridgeshire Radon",
-      keyId: "6e2308fa-46f2-408e-8997-d9788fb14424",
+      initiatedLogin: {},
       logout: {
-        behavior: SAMLLogoutBehavior.AllParticipants,
-        defaultVerificationKeyId: "45c5a5c8-4c83-4c4b-a68a-e0ef6717e94c",
-        keyId: "e1d2f5ba-460c-4393-b125-39ed58c1169c",
-        requireSignedRequests: false,
-        singleLogout: {
-          enabled: false,
-          keyId: "85d4d550-3e87-4f8d-b99c-26bdcc699251",
-          url: "cyan microchip",
-          xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
-        },
-        xmlSignatureC14nMethod: CanonicalizationMethod.ExclusiveWithComments,
+        singleLogout: {},
       },
-      logoutURL: "platforms Folk asynchronous",
-      requireSignedRequests: false,
-      xmlSignatureC14nMethod: CanonicalizationMethod.Inclusive,
-      xmlSignatureLocation: XMLSignatureLocation.Assertion,
     },
-    state: ObjectState.Inactive,
-    tenantId: "0b53d7b9-269d-4cde-83dc-9ff9334b1b5b",
-    themeId: "692eb777-ed28-47b8-9b80-ac8a9e5d8026",
-    unverified: {
-      behavior: UnverifiedBehavior.Allow,
-    },
-    verificationEmailTemplateId: "e8264541-7879-4be8-b4a9-dd34a8264077",
-    verificationStrategy: VerificationStrategy.ClickableLink,
-    verifyRegistration: false,
+    unverified: {},
     webAuthnConfiguration: {
-      bootstrapWorkflow: {
-        enabled: false,
-      },
-      enabled: false,
-      reauthenticationWorkflow: {
-        enabled: false,
-      },
+      bootstrapWorkflow: {},
+      reauthenticationWorkflow: {},
     },
   },
   eventInfo: {
     data: {
-      "aperiam": {},
+      "directional": {},
     },
-    deviceDescription: "bandwidth benchmark Account",
-    deviceName: "Account payment steradian",
-    deviceType: "analyzing North",
-    ipAddress: "191.67.54.75",
-    location: {
-      city: "New Jaysonland",
-      country: "Vietnam",
-      displayString: "studious teal target",
-      latitude: 6613.95,
-      longitude: 756.5,
-      region: "Handmade",
-      zipcode: "83723-2680",
-    },
-    os: "Electronic programming",
-    userAgent: "withdrawal reintermediate Islands",
+    location: {},
   },
   role: {
-    description: "Customer-focused content-based internet solution",
-    id: "cc350b32-6d72-4a8e-9253-1621a517e204",
     insertInstant: 1659380719000,
-    isDefault: false,
-    isSuperRole: false,
     lastUpdateInstant: 1659380719000,
-    name: "within",
   },
-  sourceApplicationId: "4b9b5bc3-29aa-421e-ad6f-376ff56ac7aa",
 };
-const xFusionAuthTenantId: string = "bluetooth Branding Livermorium";
-const reactivate: string = "copying";
+const xFusionAuthTenantId: string = "Ergonomic portals";
+const reactivate: string = "Metal";
 
-sdk.sdk.updateApplicationWithId(applicationId, applicationRequest, xFusionAuthTenantId, reactivate).then((res: UpdateApplicationWithIdResponse) => {
+  const res = await sdk.sdk.updateApplicationWithId(applicationId, applicationRequest, xFusionAuthTenantId, reactivate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -18267,7 +14142,7 @@ Updates the connector with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateConnectorWithIdRequest, UpdateConnectorWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateConnectorWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   BaseConnectorConfiguration,
   BaseConnectorConfigurationData,
@@ -18275,31 +14150,29 @@ import {
   ConnectorType,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const connectorId: string = "calculate";
 const connectorRequest: ConnectorRequest = {
   connector: {
     data: {
-      "et": {},
+      "Northwest": {},
     },
-    debug: false,
-    id: "b550f8f8-8186-4e51-a6b3-68bc1a282499",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "Internal indigo benchmark",
-    type: ConnectorType.Generic,
   },
 };
 
-sdk.sdk.updateConnectorWithId(connectorId, connectorRequest).then((res: UpdateConnectorWithIdResponse) => {
+  const res = await sdk.sdk.updateConnectorWithId(connectorId, connectorRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -18324,46 +14197,38 @@ Updates the consent with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateConsentWithIdRequest, UpdateConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateConsentWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { Consent, ConsentData, ConsentRequest, EmailPlus, LocalizedIntegers } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const consentId: string = "Franey";
 const consentRequest: ConsentRequest = {
   consent: {
-    consentEmailTemplateId: "13630dfa-73c2-45c2-9748-0cbc574156df",
     countryMinimumAgeForSelfConsent: {},
     data: {
-      "odio": {},
+      "Bedfordshire": {},
     },
-    defaultMinimumAgeForSelfConsent: 764969,
-    emailPlus: {
-      emailTemplateId: "3142b901-32d7-4096-9982-012e12ff43c1",
-      enabled: false,
-      maximumTimeToSendEmailInHours: 987588,
-      minimumTimeToSendEmailInHours: 467652,
-    },
-    id: "c0e11ea7-c0e2-4005-948f-4aeb016a8a13",
+    emailPlus: {},
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    multipleValuesAllowed: false,
-    name: "Pop",
     values: [
-      "Account",
+      "Savings",
     ],
   },
 };
-const xFusionAuthTenantId: string = "vibrant Loan";
+const xFusionAuthTenantId: string = "preload EXE City";
 
-sdk.sdk.updateConsentWithId(consentId, consentRequest, xFusionAuthTenantId).then((res: UpdateConsentWithIdResponse) => {
+  const res = await sdk.sdk.updateConsentWithId(consentId, consentRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -18389,39 +14254,34 @@ Updates the email template with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateEmailTemplateWithIdRequest, UpdateEmailTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateEmailTemplateWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { EmailTemplate, EmailTemplateRequest, LocalizedStrings } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const emailTemplateId: string = "Southeast";
 const emailTemplateRequest: EmailTemplateRequest = {
   emailTemplate: {
-    defaultFromName: "Borders Devolved",
-    defaultHtmlTemplate: "drive",
-    defaultSubject: "Agent henry",
-    defaultTextTemplate: "bus Tantalum delightfully",
-    fromEmail: "likewise monitor Northeast",
-    id: "4f7c95c9-4a53-4409-9fce-84de77413bb0",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     localizedFromNames: {},
     localizedHtmlTemplates: {},
     localizedSubjects: {},
     localizedTextTemplates: {},
-    name: "China Principal",
   },
 };
-const xFusionAuthTenantId: string = "Pangender";
+const xFusionAuthTenantId: string = "Borders Devolved";
 
-sdk.sdk.updateEmailTemplateWithId(emailTemplateId, emailTemplateRequest, xFusionAuthTenantId).then((res: UpdateEmailTemplateWithIdResponse) => {
+  const res = await sdk.sdk.updateEmailTemplateWithId(emailTemplateId, emailTemplateRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -18447,10 +14307,7 @@ Updates the permission with the given id for the entity type.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import {
-  UpdateEntityTypePermissionWithIdRequest,
-  UpdateEntityTypePermissionWithIdResponse,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateEntityTypePermissionWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   EntityJWTConfiguration,
   EntityType,
@@ -18460,59 +14317,47 @@ import {
   EntityTypeRequest,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityTypeId: string = "calculate";
 const permissionId: string = "City";
 const entityTypeRequest: EntityTypeRequest = {
   entityType: {
     data: {
-      "similique": {},
+      "Communications": {},
     },
-    id: "97ac1726-b5bf-48e1-be5a-6c9d2f538234",
     insertInstant: 1659380719000,
-    jwtConfiguration: {
-      accessTokenKeyId: "061b23dd-8eb9-43f9-ad51-73455d7b8cb3",
-      enabled: false,
-      timeToLiveInSeconds: 446697,
-    },
+    jwtConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    name: "West blah",
     permissions: [
       {
         data: {
-          "totam": {},
+          "payment": {},
         },
-        description: "Streamlined content-based structure",
-        id: "4ccdd9b7-3e03-4b05-87b3-158de1a29419",
         insertInstant: 1659380719000,
-        isDefault: false,
         lastUpdateInstant: 1659380719000,
-        name: "South Shoal",
       },
     ],
   },
   permission: {
     data: {
-      "aut": {},
+      "yellow": {},
     },
-    description: "Progressive value-added migration",
-    id: "49ae13ef-432a-4725-8eb1-4f1e0fbf6b7a",
     insertInstant: 1659380719000,
-    isDefault: false,
     lastUpdateInstant: 1659380719000,
-    name: "Kenya",
   },
 };
 
-sdk.sdk.updateEntityTypePermissionWithId(entityTypeId, permissionId, entityTypeRequest).then((res: UpdateEntityTypePermissionWithIdResponse) => {
+  const res = await sdk.sdk.updateEntityTypePermissionWithId(entityTypeId, permissionId, entityTypeRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -18538,7 +14383,7 @@ Updates the Entity Type with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateEntityTypeWithIdRequest, UpdateEntityTypeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateEntityTypeWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   EntityJWTConfiguration,
   EntityType,
@@ -18548,58 +14393,46 @@ import {
   EntityTypeRequest,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityTypeId: string = "Bronze";
 const entityTypeRequest: EntityTypeRequest = {
   entityType: {
     data: {
-      "doloribus": {},
+      "institutionalize": {},
     },
-    id: "7d02e5dd-7e73-45cb-ae31-83b6629d5f6e",
     insertInstant: 1659380719000,
-    jwtConfiguration: {
-      accessTokenKeyId: "e0eaf2c1-a5c4-4708-a80c-243c18061302",
-      enabled: false,
-      timeToLiveInSeconds: 634482,
-    },
+    jwtConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    name: "Functionality between Communications",
     permissions: [
       {
         data: {
-          "at": {},
+          "Audi": {},
         },
-        description: "Right-sized uniform product",
-        id: "d68a48f9-db7d-4d7a-bc87-1f639614d908",
         insertInstant: 1659380719000,
-        isDefault: false,
         lastUpdateInstant: 1659380719000,
-        name: "including",
       },
     ],
   },
   permission: {
     data: {
-      "aspernatur": {},
+      "azure": {},
     },
-    description: "Centralized web-enabled product",
-    id: "a8916518-15a3-426b-a9c7-d3a3898fafe0",
     insertInstant: 1659380719000,
-    isDefault: false,
     lastUpdateInstant: 1659380719000,
-    name: "Northwest East male",
   },
 };
 
-sdk.sdk.updateEntityTypeWithId(entityTypeId, entityTypeRequest).then((res: UpdateEntityTypeWithIdResponse) => {
+  const res = await sdk.sdk.updateEntityTypeWithId(entityTypeId, entityTypeRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -18624,7 +14457,7 @@ Updates the Entity with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateEntityWithIdRequest, UpdateEntityWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateEntityWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   Entity,
   EntityData,
@@ -18636,61 +14469,47 @@ import {
   EntityTypePermissionData,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityId: string = "Screen";
 const entityRequest: EntityRequest = {
   entity: {
-    clientId: "Dubnium Shoes Columbus",
-    clientSecret: "diffuse Chief",
     data: {
-      "exercitationem": {},
+      "SUV": {},
     },
-    id: "04892327-e673-4cc3-977e-bae403d11a21",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "variant",
-    parentId: "042d2da5-0f4a-41ea-bd30-f22dac0f7f50",
-    tenantId: "ee467cdc-b8dd-45e4-b182-a921b64cae09",
     type: {
       data: {
-        "quae": {},
+        "eventually": {},
       },
-      id: "7c957485-32cd-4af3-b9d6-1d2a37ba1cdd",
       insertInstant: 1659380719000,
-      jwtConfiguration: {
-        accessTokenKeyId: "74f9072d-3c77-40e3-b777-6778916520fa",
-        enabled: false,
-        timeToLiveInSeconds: 38376,
-      },
+      jwtConfiguration: {},
       lastUpdateInstant: 1659380719000,
-      name: "Dobra up program",
       permissions: [
         {
           data: {
-            "ex": {},
+            "auxiliary": {},
           },
-          description: "Enhanced tertiary application",
-          id: "fa839a18-ba50-4734-b336-9eef6abf013d",
           insertInstant: 1659380719000,
-          isDefault: false,
           lastUpdateInstant: 1659380719000,
-          name: "Gloves",
         },
       ],
     },
   },
 };
-const xFusionAuthTenantId: string = "Compatible Fields";
+const xFusionAuthTenantId: string = "mobile";
 
-sdk.sdk.updateEntityWithId(entityId, entityRequest, xFusionAuthTenantId).then((res: UpdateEntityWithIdResponse) => {
+  const res = await sdk.sdk.updateEntityWithId(entityId, entityRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -18716,7 +14535,7 @@ Updates the form field with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateFormFieldWithIdRequest, UpdateFormFieldWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateFormFieldWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   FormControl,
   FormDataType,
@@ -18726,68 +14545,46 @@ import {
   FormFieldValidator,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const fieldId: string = "Missouri";
 const formFieldRequest: FormFieldRequest = {
   field: {
-    confirm: false,
-    consentId: "6a6d28a1-b4b0-44da-bee4-983d52f8a9d5",
-    control: FormControl.Number,
     data: {
-      "sunt": {},
+      "moderator": {},
     },
-    description: "Optimized web-enabled application",
-    id: "6b37482c-0b72-44ad-a3f1-8ff627f93d07",
     insertInstant: 1659380719000,
-    key: "<key>",
     lastUpdateInstant: 1659380719000,
-    name: "Industrial patron",
     options: [
-      "connect",
+      "Auto",
     ],
-    required: false,
-    type: FormDataType.Date,
-    validator: {
-      enabled: false,
-      expression: "Northeast",
-    },
+    validator: {},
   },
   fields: [
     {
-      confirm: false,
-      consentId: "7db1b8c3-01f3-47a7-8568-600e464ed866",
-      control: FormControl.Checkbox,
       data: {
-        "fuga": {},
+        "quantifying": {},
       },
-      description: "Customer-focused directional structure",
-      id: "77751b6e-02e5-4f1c-bb62-a303d778b6c2",
       insertInstant: 1659380719000,
-      key: "<key>",
       lastUpdateInstant: 1659380719000,
-      name: "Convertible Intelligent connect",
       options: [
-        "withdrawal",
+        "Buckinghamshire",
       ],
-      required: false,
-      type: FormDataType.Number,
-      validator: {
-        enabled: false,
-        expression: "Northeast Soap",
-      },
+      validator: {},
     },
   ],
 };
 
-sdk.sdk.updateFormFieldWithId(fieldId, formFieldRequest).then((res: UpdateFormFieldWithIdResponse) => {
+  const res = await sdk.sdk.updateFormFieldWithId(fieldId, formFieldRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -18812,40 +14609,39 @@ Updates the form with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateFormWithIdRequest, UpdateFormWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateFormWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { Form, FormData, FormRequest, FormStep, FormType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const formId: string = "JBOD";
 const formRequest: FormRequest = {
   form: {
     data: {
-      "laborum": {},
+      "Director": {},
     },
-    id: "be5f3e0e-5350-4c22-be42-69da58a65c94",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "ivory payment",
     steps: [
       {
         fields: [
-          "b119f6c1-1e68-43b7-b6e6-f2c8341407ea",
+          "3e0e5350-c22b-4e42-a9da-58a65c947cb7",
         ],
       },
     ],
-    type: FormType.Registration,
   },
 };
 
-sdk.sdk.updateFormWithId(formId, formRequest).then((res: UpdateFormWithIdResponse) => {
+  const res = await sdk.sdk.updateFormWithId(formId, formRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -18870,122 +14666,79 @@ Creates a member in a group.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateGroupMembersWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { BreachedPasswordStatus, ChangePasswordReason, ContentStatus, TOTPAlgorithm } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
-
-sdk.sdk.updateGroupMembersWithId({
-  members: [
-    {
-      data: {
-        "exercitationem": {},
-      },
-      groupId: "170edcfd-0609-4037-90d4-b68a4d66cf2b",
-      id: "9809825f-3489-42ca-908c-962af0476f65",
-      insertInstant: 1659380719000,
-      user: {
-        active: false,
-        birthDate: "2007-12-03",
-        breachedPasswordLastCheckedInstant: 1659380719000,
-        breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
-        cleanSpeakId: "dc8a8df8-67a7-4ebe-958f-27b92f95d283",
-        connectorId: "5ddf6533-fe5f-46d5-a611-64980b83ca21",
-        data: {
-          "recusandae": {},
-        },
-        email: "Brant_Wolff70@gmail.com",
-        encryptionScheme: "invoice",
-        expiry: 1659380719000,
-        factor: 913081,
-        firstName: "Elliot",
-        fullName: "Constance Kilback",
-        id: "0a4647b5-2182-4264-a7a0-262155017f2c",
-        imageUrl: "Dynamic",
-        insertInstant: 1659380719000,
-        lastLoginInstant: 1659380719000,
-        lastName: "Cartwright",
-        lastUpdateInstant: 1659380719000,
-        memberships: [
-          {},
-        ],
-        middleName: "Micah",
-        mobilePhone: "Regional",
-        parentEmail: "Operative geez encompassing",
-        password: "5mv7PoBGVOc6XxJ",
-        passwordChangeReason: ChangePasswordReason.Breached,
-        passwordChangeRequired: false,
-        passwordLastUpdateInstant: 1659380719000,
-        preferredLanguages: [
-          "en_US",
-        ],
-        registrations: [
-          {
-            applicationId: "07b55be2-2488-4115-8f6d-777c82316897",
-            authenticationToken: "Switchable",
-            cleanSpeakId: "1a49e660-0312-4b5b-9d41-0367ab4572a5",
-            data: {
-              "est": {},
-            },
-            id: "7bb34f8b-212c-4da6-b5b4-706faeb95e98",
-            insertInstant: 1659380719000,
-            lastLoginInstant: 1659380719000,
-            lastUpdateInstant: 1659380719000,
-            preferredLanguages: [
-              "en_US",
-            ],
-            roles: [
-              "fireplace",
-            ],
-            timezone: "America/Denver",
-            tokens: {
-              "rerum": "haptic",
-            },
-            username: "Katlyn.Donnelly45",
-            usernameStatus: ContentStatus.Rejected,
-            verified: false,
-          },
-        ],
-        salt: "Avon Rupee",
-        tenantId: "aa67cc0d-8792-4d2d-bbf2-15b084d35b12",
-        timezone: "America/Denver",
-        twoFactor: {
-          methods: [
-            {
-              authenticator: {
-                algorithm: TOTPAlgorithm.HmacSha1,
-                codeLength: 695124,
-                timeStep: 437696,
-              },
-              email: "Taylor.Shields38@hotmail.com",
-              id: "<ID>",
-              lastUsed: false,
-              method: "gold",
-              mobilePhone: "navigate female drat",
-              secret: "capacitor Branding Configuration",
-            },
-          ],
-          recoveryCodes: [
-            "East",
-          ],
-        },
-        uniqueUsername: "Savings",
-        username: "Hyman_Schaefer",
-        usernameStatus: ContentStatus.Active,
-        verified: false,
-      },
-      userId: "cb037b1b-c1a2-4bb2-9e4a-fc88a4a5cfc5",
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
     },
-  ],
-}).then((res: UpdateGroupMembersWithIdResponse) => {
+  });
+
+  const res = await sdk.sdk.updateGroupMembersWithId({
+    members: [
+      {
+        data: {
+          "Centralized": {},
+        },
+        insertInstant: 1659380719000,
+        user: {
+          birthDate: "2007-12-03",
+          breachedPasswordLastCheckedInstant: 1659380719000,
+          data: {
+            "deposit": {},
+          },
+          expiry: 1659380719000,
+          insertInstant: 1659380719000,
+          lastLoginInstant: 1659380719000,
+          lastUpdateInstant: 1659380719000,
+          memberships: [
+            {},
+          ],
+          passwordLastUpdateInstant: 1659380719000,
+          preferredLanguages: [
+            "en_US",
+          ],
+          registrations: [
+            {
+              data: {
+                "unimpressively": {},
+              },
+              insertInstant: 1659380719000,
+              lastLoginInstant: 1659380719000,
+              lastUpdateInstant: 1659380719000,
+              preferredLanguages: [
+                "en_US",
+              ],
+              roles: [
+                "lavender",
+              ],
+              timezone: "America/Denver",
+              tokens: {
+                "altruistic": "Account",
+              },
+            },
+          ],
+          timezone: "America/Denver",
+          twoFactor: {
+            methods: [
+              {
+                authenticator: {},
+              },
+            ],
+            recoveryCodes: [
+              "North",
+            ],
+          },
+        },
+      },
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -19009,48 +14762,42 @@ Updates the group with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateGroupWithIdRequest, UpdateGroupWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateGroupWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { ApplicationRole, Group, GroupData, GroupRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const groupId: string = "Tricycle";
 const groupRequest: GroupRequest = {
   group: {
     data: {
-      "atque": {},
+      "connect": {},
     },
-    id: "7ddb763e-6e5b-4332-aeb1-4ff4416c0b5c",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "gray Iowa",
     roles: [
       {
-        description: "User-friendly analyzing interface",
-        id: "17756b02-6fcb-448e-9ffe-58cd59fef8c1",
         insertInstant: 1659380719000,
-        isDefault: false,
-        isSuperRole: false,
         lastUpdateInstant: 1659380719000,
-        name: "yellow Functionality SMTP",
       },
     ],
-    tenantId: "76fe93e0-6586-4eba-b047-5de600814cb9",
   },
   roleIds: [
-    "7e070300-92d4-4f70-a80f-509031a1a11f",
+    "ddb763e6-e5b3-432a-ab14-ff4416c0b5c7",
   ],
 };
-const xFusionAuthTenantId: string = "moral Southeast Luxurious";
+const xFusionAuthTenantId: string = "female compelling Borders";
 
-sdk.sdk.updateGroupWithId(groupId, groupRequest, xFusionAuthTenantId).then((res: UpdateGroupWithIdResponse) => {
+  const res = await sdk.sdk.updateGroupWithId(groupId, groupRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -19076,7 +14823,7 @@ Updates the IP Access Control List with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateIPAccessControlListWithIdRequest, UpdateIPAccessControlListWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateIPAccessControlListWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   IPAccessControlEntry,
   IPAccessControlEntryAction,
@@ -19085,36 +14832,32 @@ import {
   IPAccessControlListRequest,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const accessControlListId: string = "female";
 const ipAccessControlListRequest: IPAccessControlListRequest = {
   ipAccessControlList: {
     data: {
-      "odio": {},
+      "auxiliary": {},
     },
     entries: [
-      {
-        action: IPAccessControlEntryAction.Allow,
-        endIPAddress: "Grocery",
-        startIPAddress: "Northwest",
-      },
+      {},
     ],
-    id: "bb788324-3b52-4900-b843-a86c07561cfe",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "Sausages Leandro",
   },
 };
 
-sdk.sdk.updateIPAccessControlListWithId(accessControlListId, ipAccessControlListRequest).then((res: UpdateIPAccessControlListWithIdResponse) => {
+  const res = await sdk.sdk.updateIPAccessControlListWithId(accessControlListId, ipAccessControlListRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -19139,142 +14882,26 @@ Updates the identity provider with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateIdentityProviderWithIdRequest, UpdateIdentityProviderWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import {
-  AppleApplicationConfiguration,
-  AppleApplicationConfigurationData,
-  AppleIdentityProvider,
-  AppleIdentityProviderData,
-  CanonicalizationMethod,
-  ClientAuthenticationMethod,
-  EpicGamesApplicationConfiguration,
-  EpicGamesApplicationConfigurationData,
-  EpicGamesIdentityProvider,
-  EpicGamesIdentityProviderData,
-  ExternalJWTApplicationConfiguration,
-  ExternalJWTApplicationConfigurationData,
-  ExternalJWTIdentityProvider,
-  ExternalJWTIdentityProviderData,
-  FacebookApplicationConfiguration,
-  FacebookApplicationConfigurationData,
-  FacebookIdentityProvider,
-  FacebookIdentityProviderData,
-  GoogleApplicationConfiguration,
-  GoogleApplicationConfigurationData,
-  GoogleIdentityProvider,
-  GoogleIdentityProviderData,
-  GoogleIdentityProviderProperties,
-  HYPRApplicationConfiguration,
-  HYPRApplicationConfigurationData,
-  HYPRIdentityProvider,
-  HYPRIdentityProviderData,
-  IdentityProviderLimitUserLinkingPolicy,
-  IdentityProviderLinkingStrategy,
-  IdentityProviderLoginMethod,
-  IdentityProviderOauth2Configuration,
-  IdentityProviderRequest,
-  IdentityProviderTenantConfiguration,
-  IdentityProviderTenantConfigurationData,
-  IdentityProviderType,
-  LinkedInApplicationConfiguration,
-  LinkedInApplicationConfigurationData,
-  LinkedInIdentityProvider,
-  LinkedInIdentityProviderData,
-  LoginHintConfiguration,
-  NintendoApplicationConfiguration,
-  NintendoApplicationConfigurationData,
-  NintendoIdentityProvider,
-  NintendoIdentityProviderData,
-  OpenIdConnectApplicationConfiguration,
-  OpenIdConnectApplicationConfigurationData,
-  OpenIdConnectIdentityProvider,
-  OpenIdConnectIdentityProviderData,
-  ProviderLambdaConfiguration,
-  SAMLv2AssertionConfiguration,
-  SAMLv2DestinationAssertionConfiguration,
-  SAMLv2DestinationAssertionPolicy,
-  SAMLv2IdentityProvider,
-  SAMLv2IdpInitiatedConfiguration,
-  SAMLv2IdPInitiatedIdentityProvider,
-  SonyPSNApplicationConfiguration,
-  SonyPSNApplicationConfigurationData,
-  SonyPSNIdentityProvider,
-  SonyPSNIdentityProviderData,
-  SteamAPIMode,
-  SteamApplicationConfiguration,
-  SteamApplicationConfigurationData,
-  SteamIdentityProvider,
-  SteamIdentityProviderData,
-  TwitchApplicationConfiguration,
-  TwitchApplicationConfigurationData,
-  TwitchIdentityProvider,
-  TwitchIdentityProviderData,
-  TwitterApplicationConfiguration,
-  TwitterApplicationConfigurationData,
-  TwitterIdentityProvider,
-  TwitterIdentityProviderData,
-  XboxApplicationConfiguration,
-  XboxApplicationConfigurationData,
-  XboxIdentityProvider,
-  XboxIdentityProviderData,
-} from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { UpdateIdentityProviderWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { IdentityProviderRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const identityProviderId: string = "female";
 const identityProviderRequest: IdentityProviderRequest = {
-  identityProvider: {
-    applicationConfiguration: {
-      "molestias": {
-        buttonText: "1080p possimus Volvo",
-        clientId: "male bypassing",
-        clientSecret: "transparent",
-        createRegistration: false,
-        data: {
-          "molestias": {},
-        },
-        scope: "Pizza Cab",
-      },
-    },
-    buttonText: "Southeast sample",
-    clientId: "overriding",
-    clientSecret: "Organized male",
-    data: {
-      "accusantium": {},
-    },
-    debug: false,
-    id: "8c694e10-98dc-4582-a840-447a5c1cd6a2",
-    insertInstant: 1659380719000,
-    lambdaConfiguration: {
-      reconcileId: "0997f878-4a4b-4633-bb53-86b6083d5e56",
-    },
-    lastUpdateInstant: 1659380719000,
-    linkingStrategy: IdentityProviderLinkingStrategy.LinkAnonymously,
-    name: "harmful implement Southeast",
-    scope: "vertical",
-    tenantConfiguration: {
-      "et": {
-        data: {
-          "autem": {},
-        },
-        limitUserLinkCount: {
-          enabled: false,
-          maximumLinks: 600202,
-        },
-      },
-    },
-    type: IdentityProviderType.SAMLv2IdPInitiated,
-  },
+  identityProvider: "Gasoline",
 };
 
-sdk.sdk.updateIdentityProviderWithId(identityProviderId, identityProviderRequest).then((res: UpdateIdentityProviderWithIdResponse) => {
+  const res = await sdk.sdk.updateIdentityProviderWithId(identityProviderId, identityProviderRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -19299,41 +14926,34 @@ Updates the available integrations.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateIntegrationsWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.updateIntegrationsWithId({
-  integrations: {
-    cleanspeak: {
-      apiKey: "Bike Central West",
-      applicationIds: [
-        "f8a1bc2f-2769-4317-9491-ada419ffb6a3",
-      ],
-      enabled: false,
-      url: "Salad",
-      usernameModeration: {
-        applicationId: "b254b991-5097-475a-87be-31d15725ad2b",
-        enabled: false,
+  const res = await sdk.sdk.updateIntegrationsWithId({
+    integrations: {
+      cleanspeak: {
+        applicationIds: [
+          "b4663ca7-0ff8-4a1b-82f2-7693171491ad",
+        ],
+        usernameModeration: {},
+      },
+      kafka: {
+        producer: {
+          "Orchestrator": "refloat",
+        },
       },
     },
-    kafka: {
-      defaultTopic: "compelling Gasoline dryer",
-      enabled: false,
-      producer: {
-        "tempora": "Holmium",
-      },
-    },
-  },
-}).then((res: UpdateIntegrationsWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -19357,52 +14977,34 @@ Updates the key with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateKeyWithIdRequest, UpdateKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateKeyWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { CertificateInformation, Key, KeyAlgorithm, KeyRequest, KeyType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const keyId: string = "South";
 const keyRequest: KeyRequest = {
   key: {
-    algorithm: KeyAlgorithm.Es256,
-    certificate: "gold Granite Pop",
     certificateInformation: {
-      issuer: "lecture Rustic success",
-      md5Fingerprint: "now",
-      serialNumber: "Borders obese",
-      sha1Fingerprint: "XSS",
-      sha1Thumbprint: "Bicycle state",
-      sha256Fingerprint: "Future bypassing Diesel",
-      sha256Thumbprint: "bureau national worth",
-      subject: "HTTP",
       validFrom: 1659380719000,
       validTo: 1659380719000,
     },
     expirationInstant: 1659380719000,
-    hasPrivateKey: false,
-    id: "543d8032-ca47-44aa-b593-97e5c5fb9560",
     insertInstant: 1659380719000,
-    issuer: "New",
-    kid: "Shoes",
     lastUpdateInstant: 1659380719000,
-    length: 933593,
-    name: "Blues Steel Diesel",
-    privateKey: "carelessly Bicycle",
-    publicKey: "paradigms",
-    secret: "Chevrolet silver",
-    type: KeyType.Rsa,
   },
 };
 
-sdk.sdk.updateKeyWithId(keyId, keyRequest).then((res: UpdateKeyWithIdResponse) => {
+  const res = await sdk.sdk.updateKeyWithId(keyId, keyRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -19427,33 +15029,29 @@ Updates the lambda with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateLambdaWithIdRequest, UpdateLambdaWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateLambdaWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { Lambda, LambdaEngineType, LambdaRequest, LambdaType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const lambdaId: string = "Corporate";
 const lambdaRequest: LambdaRequest = {
   lambda: {
-    body: "Cheese",
-    debug: false,
-    engineType: LambdaEngineType.GraalJS,
-    id: "60725b7e-5856-46ec-8751-2b22aaa735e0",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "Soap ugh",
-    type: LambdaType.SAMLv2Reconcile,
   },
 };
 
-sdk.sdk.updateLambdaWithId(lambdaId, lambdaRequest).then((res: UpdateLambdaWithIdResponse) => {
+  const res = await sdk.sdk.updateLambdaWithId(lambdaId, lambdaRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -19478,33 +15076,32 @@ Updates the message template with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateMessageTemplateWithIdRequest, UpdateMessageTemplateWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateMessageTemplateWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { MessageTemplate, MessageTemplateData, MessageTemplateRequest, MessageType } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const messageTemplateId: string = "Legacy";
 const messageTemplateRequest: MessageTemplateRequest = {
   messageTemplate: {
     data: {
-      "unde": {},
+      "Folk": {},
     },
-    id: "3ee335d8-cc3e-41e4-8e9b-b92171ba33c8",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "hyphenation Direct",
-    type: MessageType.Sms,
   },
 };
 
-sdk.sdk.updateMessageTemplateWithId(messageTemplateId, messageTemplateRequest).then((res: UpdateMessageTemplateWithIdResponse) => {
+  const res = await sdk.sdk.updateMessageTemplateWithId(messageTemplateId, messageTemplateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -19529,7 +15126,7 @@ Updates the messenger with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateMessengerWithIdRequest, UpdateMessengerWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateMessengerWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   BaseMessengerConfiguration,
   BaseMessengerConfigurationData,
@@ -19537,32 +15134,29 @@ import {
   MessengerType,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const messengerId: string = "auxiliary";
 const messengerRequest: MessengerRequest = {
   messenger: {
     data: {
-      "rem": {},
+      "transmitter": {},
     },
-    debug: false,
-    id: "ca214bb7-2f2b-45bb-89d3-9601dbc9734f",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    name: "magnetic content female",
-    transport: "Southeast",
-    type: MessengerType.Twilio,
   },
 };
 
-sdk.sdk.updateMessengerWithId(messengerId, messengerRequest).then((res: UpdateMessengerWithIdResponse) => {
+  const res = await sdk.sdk.updateMessengerWithId(messengerId, messengerRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -19587,7 +15181,7 @@ Updates the registration for the user with the given id and the application defi
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateRegistrationWithIdRequest, UpdateRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateRegistrationWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorConfiguration,
   BreachedPasswordStatus,
@@ -19608,43 +15202,24 @@ import {
   UserTwoFactorConfiguration,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "Northwest";
 const registrationRequest: RegistrationRequest = {
-  disableDomainBlock: false,
   eventInfo: {
     data: {
-      "blanditiis": {},
+      "copying": {},
     },
-    deviceDescription: "National Data",
-    deviceName: "Communications Developer Tools",
-    deviceType: "Southeast",
-    ipAddress: "90.37.73.149",
-    location: {
-      city: "Lake Stephon",
-      country: "Antarctica (the territory South of 60 deg S)",
-      displayString: "Bacon synthesize",
-      latitude: 6971.43,
-      longitude: 3413.02,
-      region: "Configuration Lead moist",
-      zipcode: "70309-5936",
-    },
-    os: "Hempstead Planner",
-    userAgent: "Baby",
+    location: {},
   },
-  generateAuthenticationToken: false,
   registration: {
-    applicationId: "1b29516c-499b-44fd-bde9-f461a82bfc9b",
-    authenticationToken: "Crew",
-    cleanSpeakId: "0ccac456-0e61-4296-b3bd-f72be87fffdb",
     data: {
-      "animi": {},
+      "National": {},
     },
-    id: "5d1c46e7-8b39-48ef-be7e-b3669be34270",
     insertInstant: 1659380719000,
     lastLoginInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
@@ -19652,93 +15227,51 @@ const registrationRequest: RegistrationRequest = {
       "en_US",
     ],
     roles: [
-      "Northeast",
+      "Data",
     ],
     timezone: "America/Denver",
     tokens: {
-      "saepe": "Liaison",
+      "pile": "Latin",
     },
-    username: "Adalberto60",
-    usernameStatus: ContentStatus.Rejected,
-    verified: false,
   },
-  sendSetPasswordEmail: false,
-  skipRegistrationVerification: false,
-  skipVerification: false,
   user: {
-    active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
-    cleanSpeakId: "b7fbec47-708b-4813-8497-ec76caa61d3d",
-    connectorId: "ab56b5b7-4251-4959-8cf3-3f5107af6386",
     data: {
-      "doloremque": {},
+      "female": {},
     },
-    email: "Kayleigh16@yahoo.com",
-    encryptionScheme: "Data",
     expiry: 1659380719000,
-    factor: 284335,
-    firstName: "Rylee",
-    fullName: "Michele Berge",
-    id: "5affc531-d9f0-4915-b8d8-3b3c83c71922",
-    imageUrl: "Markets complexity Bohrium",
     insertInstant: 1659380719000,
     lastLoginInstant: 1659380719000,
-    lastName: "Waelchi",
     lastUpdateInstant: 1659380719000,
     memberships: [
       {
         data: {
-          "tempore": {},
+          "Checking": {},
         },
-        groupId: "f5b66468-c511-44e4-ab14-5aa0f2476c80",
-        id: "6257f836-4ace-49eb-8c9e-ac9d399eb125",
         insertInstant: 1659380719000,
         user: {
-          active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatus.None,
-          cleanSpeakId: "2962e917-a80a-4ab7-a690-24e6e4654f19",
-          connectorId: "c9d46640-c7ac-4688-bbfd-fe2df0f3cf9a",
           data: {
-            "debitis": {},
+            "Director": {},
           },
-          email: "Jayda_Bernhard79@hotmail.com",
-          encryptionScheme: "Baht Mendelevium",
           expiry: 1659380719000,
-          factor: 438164,
-          firstName: "Norbert",
-          fullName: "Miss Howard Roberts",
-          id: "5a11cac5-9800-4a4c-b026-6bc1811486a3",
-          imageUrl: "Home Porsche input",
           insertInstant: 1659380719000,
           lastLoginInstant: 1659380719000,
-          lastName: "Greenfelder",
           lastUpdateInstant: 1659380719000,
           memberships: [
             {},
           ],
-          middleName: "Robin",
-          mobilePhone: "female",
-          parentEmail: "Hatchback",
-          password: "A1FlwB9cLjow9E5",
-          passwordChangeReason: ChangePasswordReason.Administrative,
-          passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
             "en_US",
           ],
           registrations: [
             {
-              applicationId: "1566a75d-eca3-4497-88a2-c5921bfb0e1c",
-              authenticationToken: "coordinated",
-              cleanSpeakId: "318b2052-b453-4dad-82c2-1e2dda1a8f2d",
               data: {
-                "cumque": {},
+                "Forks": {},
               },
-              id: "633152ab-a87b-4a0f-bb5f-3398cd2dc1ca",
               insertInstant: 1659380719000,
               lastLoginInstant: 1659380719000,
               lastUpdateInstant: 1659380719000,
@@ -19746,67 +15279,37 @@ const registrationRequest: RegistrationRequest = {
                 "en_US",
               ],
               roles: [
-                "aha",
+                "although",
               ],
               timezone: "America/Denver",
               tokens: {
-                "velit": "magnetic",
+                "Franc": "synthesize",
               },
-              username: "Esmeralda55",
-              usernameStatus: ContentStatus.Rejected,
-              verified: false,
             },
           ],
-          salt: "driver Sports Southwest",
-          tenantId: "9c669da0-8f5f-4bbe-8b17-766ed6e6f758",
           timezone: "America/Denver",
           twoFactor: {
             methods: [
               {
-                authenticator: {
-                  algorithm: TOTPAlgorithm.HmacSha256,
-                  codeLength: 915450,
-                  timeStep: 678472,
-                },
-                email: "Lavern44@hotmail.com",
-                id: "<ID>",
-                lastUsed: false,
-                method: "Northeast accusamus synergistic",
-                mobilePhone: "maroon",
-                secret: "UDP Awesome",
+                authenticator: {},
               },
             ],
             recoveryCodes: [
-              "henry",
+              "Director",
             ],
           },
-          uniqueUsername: "North Shirt",
-          username: "Maryam0",
-          usernameStatus: ContentStatus.Pending,
-          verified: false,
         },
-        userId: "cc887c79-e71b-4497-af45-63c0b006878b",
       },
     ],
-    middleName: "Ryan",
-    mobilePhone: "Innovative",
-    parentEmail: "Grocery",
-    password: "B_kr9t9ASPrxj6x",
-    passwordChangeReason: ChangePasswordReason.Validation,
-    passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
       "en_US",
     ],
     registrations: [
       {
-        applicationId: "043039ab-262c-48f3-980a-c5cb672eb84d",
-        authenticationToken: "Northeast South",
-        cleanSpeakId: "10733566-3889-40c6-9967-6ed7dbc613c8",
         data: {
-          "beatae": {},
+          "lumen": {},
         },
-        id: "369528cb-f2c3-42d8-a856-980639acb01c",
         insertInstant: 1659380719000,
         lastLoginInstant: 1659380719000,
         lastUpdateInstant: 1659380719000,
@@ -19814,53 +15317,35 @@ const registrationRequest: RegistrationRequest = {
           "en_US",
         ],
         roles: [
-          "Chips",
+          "Mazda",
         ],
         timezone: "America/Denver",
         tokens: {
-          "quae": "moccasins",
+          "Stockton": "transmit",
         },
-        username: "Sid_Langosh59",
-        usernameStatus: ContentStatus.Active,
-        verified: false,
       },
     ],
-    salt: "male sexy Woman",
-    tenantId: "0f9dcfc3-4c19-4b61-ac0f-1326564661e9",
     timezone: "America/Denver",
     twoFactor: {
       methods: [
         {
-          authenticator: {
-            algorithm: TOTPAlgorithm.HmacSha256,
-            codeLength: 376417,
-            timeStep: 16337,
-          },
-          email: "Jovan_Aufderhar62@gmail.com",
-          id: "<ID>",
-          lastUsed: false,
-          method: "ampere IB",
-          mobilePhone: "card",
-          secret: "inasmuch synthesize",
+          authenticator: {},
         },
       ],
       recoveryCodes: [
-        "athwart",
+        "red",
       ],
     },
-    uniqueUsername: "male Southwest Designer",
-    username: "Gabriel49",
-    usernameStatus: ContentStatus.Active,
-    verified: false,
   },
 };
-const xFusionAuthTenantId: string = "Montana Minnesota";
+const xFusionAuthTenantId: string = "West earum";
 
-sdk.sdk.updateRegistrationWithId(userId, registrationRequest, xFusionAuthTenantId).then((res: UpdateRegistrationWithIdResponse) => {
+  const res = await sdk.sdk.updateRegistrationWithId(userId, registrationRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -19886,67 +15371,52 @@ Updates the system configuration.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateSystemConfigurationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { HTTPMethod } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.updateSystemConfigurationWithId({
-  systemConfiguration: {
-    auditLogConfiguration: {
-      delete: {
-        enabled: false,
-        numberOfDaysToRetain: 54866,
+  const res = await sdk.sdk.updateSystemConfigurationWithId({
+    systemConfiguration: {
+      auditLogConfiguration: {
+        delete: {},
       },
-    },
-    corsConfiguration: {
-      allowCredentials: false,
-      allowedHeaders: [
-        "Toyota",
-      ],
-      allowedMethods: [
-        HTTPMethod.Patch,
-      ],
-      allowedOrigins: [
-        "Rwanda",
-      ],
-      debug: false,
-      enabled: false,
-      exposedHeaders: [
-        "second",
-      ],
-      preflightMaxAgeInSeconds: 733212,
-    },
-    data: {
-      "velit": {},
-    },
-    eventLogConfiguration: {
-      numberToRetain: 947864,
-    },
-    insertInstant: 1659380719000,
-    lastUpdateInstant: 1659380719000,
-    loginRecordConfiguration: {
-      delete: {
-        enabled: false,
-        numberOfDaysToRetain: 534446,
+      corsConfiguration: {
+        allowedHeaders: [
+          "Spain",
+        ],
+        allowedMethods: [
+          HTTPMethod.Patch,
+        ],
+        allowedOrigins: [
+          "Armenia Actinium Buckinghamshire",
+        ],
+        exposedHeaders: [
+          "Frozen",
+        ],
       },
+      data: {
+        "alarm": {},
+      },
+      eventLogConfiguration: {},
+      insertInstant: 1659380719000,
+      lastUpdateInstant: 1659380719000,
+      loginRecordConfiguration: {
+        delete: {},
+      },
+      reportTimezone: "America/Denver",
+      uiConfiguration: {},
     },
-    reportTimezone: "America/Denver",
-    uiConfiguration: {
-      headerColor: "Ruble Berkshire",
-      logoURL: "Ville",
-      menuFontColor: "digital moderator",
-    },
-  },
-}).then((res: UpdateSystemConfigurationWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -19970,7 +15440,7 @@ Updates the tenant with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateTenantWithIdRequest, UpdateTenantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateTenantWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorAttachmentPreference,
   BreachAction,
@@ -20039,365 +15509,125 @@ import {
   VerificationStrategy,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const tenantId: string = "auxiliary";
 const tenantRequest: TenantRequest = {
   eventInfo: {
     data: {
-      "maxime": {},
+      "Gasoline": {},
     },
-    deviceDescription: "pixel Loan",
-    deviceName: "auxiliary Avon",
-    deviceType: "um Borders",
-    ipAddress: "183.130.213.125",
-    location: {
-      city: "Houston",
-      country: "Belgium",
-      displayString: "blanditiis",
-      latitude: 9800.82,
-      longitude: 9419.63,
-      region: "Metrics Security",
-      zipcode: "77520",
-    },
-    os: "South",
-    userAgent: "Music repellat",
+    location: {},
   },
-  sourceTenantId: "4c23f69c-3f53-4c2a-a93b-51731c7d146e",
   tenant: {
-    accessControlConfiguration: {
-      uiIPAccessControlListId: "4c5fddf7-5a11-45ca-832f-150837613ba4",
-    },
-    captchaConfiguration: {
-      captchaMethod: CaptchaMethod.GoogleRecaptchaV2,
-      enabled: false,
-      secretKey: "North",
-      siteKey: "Bicycle",
-      threshold: 6661.8,
-    },
-    configured: false,
+    accessControlConfiguration: {},
+    captchaConfiguration: {},
     connectorPolicies: [
       {
-        connectorId: "ebfbc19c-45cf-40cc-b663-f257e4400abb",
         data: {
-          "magni": {},
+          "pixel": {},
         },
         domains: [
-          "Coupe",
+          "Loan",
         ],
-        migrate: false,
       },
     ],
     data: {
-      "aspernatur": {},
+      "Funk": {},
     },
     emailConfiguration: {
       additionalHeaders: [
-        {
-          name: "roast aw",
-          value: "Metrics Account Diesel",
-        },
+        {},
       ],
-      debug: false,
-      defaultFromEmail: "or Manager",
-      defaultFromName: "North Hatchback",
-      emailUpdateEmailTemplateId: "127831d5-e6cb-4192-8cd2-c421f8c67d67",
-      emailVerifiedEmailTemplateId: "bdea835f-306e-4aa8-873e-056e23d4ca71",
-      forgotPasswordEmailTemplateId: "a3843a68-a85c-4e69-beb5-6cadefc85c38",
-      host: "gorgeous-release.biz",
-      implicitEmailVerificationAllowed: false,
-      loginIdInUseOnCreateEmailTemplateId: "597a7354-8d97-4047-9253-7a2797db48ac",
-      loginIdInUseOnUpdateEmailTemplateId: "b7b407da-7240-4cc7-b0f3-e49f6d78ddd3",
-      loginNewDeviceEmailTemplateId: "2625ae30-3b4e-4039-863f-9799a3f2f6aa",
-      loginSuspiciousEmailTemplateId: "420b0a75-501b-42d8-bed4-a6eb83f1af05",
-      password: "0yy5vGg2JA4m5M7",
-      passwordResetSuccessEmailTemplateId: "1c0722ac-117a-44d7-be9f-69a788c2d7f1",
-      passwordUpdateEmailTemplateId: "c7eb07e1-0f29-4978-b5a7-aff7b976b149",
-      passwordlessEmailTemplateId: "6cd0a324-12ce-452e-9fe0-859040a0c528",
-      port: 694111,
-      properties: "Principal",
-      security: EmailSecurityType.None,
-      setPasswordEmailTemplateId: "5a5db701-2ab7-4d87-86f5-accc5388eb29",
-      twoFactorMethodAddEmailTemplateId: "b9f11fbd-2a2f-433c-baad-2cd416abc0cf",
-      twoFactorMethodRemoveEmailTemplateId: "0f4dd932-4d2f-4839-805b-358482a0b7d6",
-      unverified: {
-        allowEmailChangeWhenGated: false,
-        behavior: UnverifiedBehavior.Gated,
-      },
-      username: "Kayleigh.Deckow",
-      verificationEmailTemplateId: "c1d96d48-d85c-435d-9537-92fdc50f8638",
-      verificationStrategy: VerificationStrategy.FormField,
-      verifyEmail: false,
-      verifyEmailWhenChanged: false,
+      unverified: {},
     },
     eventConfiguration: {
       events: {
-        "odit": {
-          enabled: false,
-          transactionType: TransactionType.None,
-        },
+        "Beavercreek": {},
       },
     },
     externalIdentifierConfiguration: {
-      authorizationGrantIdTimeToLiveInSeconds: 891100,
-      changePasswordIdGenerator: {
-        length: 5068,
-        type: SecureGeneratorType.RandomAlphaNumeric,
-      },
-      changePasswordIdTimeToLiveInSeconds: 70455,
-      deviceCodeTimeToLiveInSeconds: 633926,
-      deviceUserCodeIdGenerator: {
-        length: 548311,
-        type: SecureGeneratorType.RandomAlphaNumeric,
-      },
-      emailVerificationIdGenerator: {
-        length: 757752,
-        type: SecureGeneratorType.RandomDigits,
-      },
-      emailVerificationIdTimeToLiveInSeconds: 562815,
-      emailVerificationOneTimeCodeGenerator: {
-        length: 675582,
-        type: SecureGeneratorType.RandomAlphaNumeric,
-      },
-      externalAuthenticationIdTimeToLiveInSeconds: 759454,
-      oneTimePasswordTimeToLiveInSeconds: 22942,
-      passwordlessLoginGenerator: {
-        length: 783290,
-        type: SecureGeneratorType.RandomDigits,
-      },
-      passwordlessLoginTimeToLiveInSeconds: 258256,
-      pendingAccountLinkTimeToLiveInSeconds: 419381,
-      registrationVerificationIdGenerator: {
-        length: 519232,
-        type: SecureGeneratorType.RandomBytes,
-      },
-      registrationVerificationIdTimeToLiveInSeconds: 818720,
-      registrationVerificationOneTimeCodeGenerator: {
-        length: 197760,
-        type: SecureGeneratorType.RandomDigits,
-      },
-      samlv2AuthNRequestIdTimeToLiveInSeconds: 826103,
-      setupPasswordIdGenerator: {
-        length: 427079,
-        type: SecureGeneratorType.RandomAlphaNumeric,
-      },
-      setupPasswordIdTimeToLiveInSeconds: 879119,
-      trustTokenTimeToLiveInSeconds: 928503,
-      twoFactorIdTimeToLiveInSeconds: 219604,
-      twoFactorOneTimeCodeIdGenerator: {
-        length: 526918,
-        type: SecureGeneratorType.RandomBytes,
-      },
-      twoFactorOneTimeCodeIdTimeToLiveInSeconds: 683681,
-      twoFactorTrustIdTimeToLiveInSeconds: 696777,
-      webAuthnAuthenticationChallengeTimeToLiveInSeconds: 180550,
-      webAuthnRegistrationChallengeTimeToLiveInSeconds: 269335,
+      changePasswordIdGenerator: {},
+      deviceUserCodeIdGenerator: {},
+      emailVerificationIdGenerator: {},
+      emailVerificationOneTimeCodeGenerator: {},
+      passwordlessLoginGenerator: {},
+      registrationVerificationIdGenerator: {},
+      registrationVerificationOneTimeCodeGenerator: {},
+      setupPasswordIdGenerator: {},
+      twoFactorOneTimeCodeIdGenerator: {},
     },
     failedAuthenticationConfiguration: {
-      actionCancelPolicy: {
-        onPasswordReset: false,
-      },
-      actionDuration: 196876,
-      actionDurationUnit: ExpiryUnit.Weeks,
-      emailUser: false,
-      resetCountInSeconds: 356633,
-      tooManyAttempts: 451682,
-      userActionId: "e5f61027-9510-4704-b473-fbdaf2c59a6c",
+      actionCancelPolicy: {},
     },
-    familyConfiguration: {
-      allowChildRegistrations: false,
-      confirmChildEmailTemplateId: "b819d12a-896c-4057-9250-3b22f461ae5a",
-      deleteOrphanedAccounts: false,
-      deleteOrphanedAccountsDays: 100521,
-      enabled: false,
-      familyRequestEmailTemplateId: "d0475794-8ec6-4aec-8f57-8e99a3068bd7",
-      maximumChildAge: 781973,
-      minimumOwnerAge: 46718,
-      parentEmailRequired: false,
-      parentRegistrationEmailTemplateId: "66bf61c1-2b41-4d50-b125-fcb8ccd4f868",
-    },
-    formConfiguration: {
-      adminUserFormId: "b473bd74-da9d-473d-8d40-9f093e89e695",
-    },
-    httpSessionMaxInactiveInterval: 635266,
-    id: "03869be6-f854-42be-bea7-c3728ea92220",
+    familyConfiguration: {},
+    formConfiguration: {},
     insertInstant: 1659380719000,
-    issuer: "Berkshire",
     jwtConfiguration: {
-      accessTokenKeyId: "dfc06cd4-cd2b-47d9-b2ec-776462b9925a",
-      enabled: false,
-      idTokenKeyId: "d00d783d-3546-460f-a8ad-ed9f99473bdd",
-      refreshTokenExpirationPolicy: RefreshTokenExpirationPolicy.SlidingWindow,
-      refreshTokenRevocationPolicy: {
-        onLoginPrevented: false,
-        onMultiFactorEnable: false,
-        onPasswordChanged: false,
-      },
-      refreshTokenTimeToLiveInMinutes: 813632,
-      refreshTokenUsagePolicy: RefreshTokenUsagePolicy.Reusable,
-      timeToLiveInSeconds: 153482,
+      refreshTokenRevocationPolicy: {},
     },
-    lambdaConfiguration: {
-      scimEnterpriseUserRequestConverterId: "58877d9a-97b9-4a33-947f-7b72e1fc0740",
-      scimEnterpriseUserResponseConverterId: "15d5dbed-a39c-4833-86e0-6945cccdf5fd",
-      scimGroupRequestConverterId: "80a77055-ab5f-4d57-ade6-bc4d99138e0c",
-      scimGroupResponseConverterId: "d6be9717-61c3-43df-bfe5-e6d389910258",
-      scimUserRequestConverterId: "84b0b630-8d8a-4aa0-aaeb-aa2dde477df6",
-      scimUserResponseConverterId: "576b21da-b3d9-4c1d-9f0c-830135a857dd",
-    },
+    lambdaConfiguration: {},
     lastUpdateInstant: 1659380719000,
-    loginConfiguration: {
-      requireAuthentication: false,
-    },
-    logoutURL: "Doyle panel youthfully",
-    maximumPasswordAge: {
-      days: 843745,
-      enabled: false,
-    },
-    minimumPasswordAge: {
-      enabled: false,
-      seconds: 233123,
-    },
+    loginConfiguration: {},
+    maximumPasswordAge: {},
+    minimumPasswordAge: {},
     multiFactorConfiguration: {
-      authenticator: {
-        algorithm: TOTPAlgorithm.HmacSha256,
-        codeLength: 498370,
-        enabled: false,
-        timeStep: 837109,
-      },
-      email: {
-        enabled: false,
-        templateId: "76a84cbc-9c41-4405-a99b-f5bdcfb126cf",
-      },
-      loginPolicy: MultiFactorLoginPolicy.Enabled,
-      sms: {
-        enabled: false,
-        messengerId: "ad98e12d-d18a-4e6d-9ced-b7aa0f1d265d",
-        templateId: "e2dd7e72-bf0c-4b8e-8128-408e0935a3fe",
-      },
+      authenticator: {},
+      email: {},
+      sms: {},
     },
-    name: "doloribus",
-    oauthConfiguration: {
-      clientCredentialsAccessTokenPopulateLambdaId: "5a58baab-b650-4fbc-a923-4e1402e6067e",
-    },
-    passwordEncryptionConfiguration: {
-      encryptionScheme: "farad Cab",
-      encryptionSchemeFactor: 525481,
-      modifyEncryptionSchemeOnLogin: false,
-    },
+    oauthConfiguration: {},
+    passwordEncryptionConfiguration: {},
     passwordValidationRules: {
-      breachDetection: {
-        enabled: false,
-        matchMode: BreachMatchMode.High,
-        notifyUserEmailTemplateId: "75f69e37-b0d9-4c90-bf0f-ceb4c5a0a88c",
-        onLogin: BreachAction.NotifyUser,
-      },
-      maxLength: 210206,
-      minLength: 166284,
-      rememberPreviousPasswords: {
-        count: 732030,
-        enabled: false,
-      },
-      requireMixedCase: false,
-      requireNonAlpha: false,
-      requireNumber: false,
-      validateOnLogin: false,
+      breachDetection: {},
+      rememberPreviousPasswords: {},
     },
     rateLimitConfiguration: {
-      failedLogin: {
-        enabled: false,
-        limit: 673533,
-        timePeriodInSeconds: 143941,
-      },
-      forgotPassword: {
-        enabled: false,
-        limit: 354873,
-        timePeriodInSeconds: 31978,
-      },
-      sendEmailVerification: {
-        enabled: false,
-        limit: 580230,
-        timePeriodInSeconds: 505825,
-      },
-      sendPasswordless: {
-        enabled: false,
-        limit: 83800,
-        timePeriodInSeconds: 136546,
-      },
-      sendRegistrationVerification: {
-        enabled: false,
-        limit: 142295,
-        timePeriodInSeconds: 995576,
-      },
-      sendTwoFactor: {
-        enabled: false,
-        limit: 719322,
-        timePeriodInSeconds: 25577,
-      },
+      failedLogin: {},
+      forgotPassword: {},
+      sendEmailVerification: {},
+      sendPasswordless: {},
+      sendRegistrationVerification: {},
+      sendTwoFactor: {},
     },
     registrationConfiguration: {
       blockedDomains: [
-        "Northwest",
+        "Myanmar",
       ],
     },
     scimServerConfiguration: {
-      clientEntityTypeId: "e6309b08-2516-41e1-8e10-e52e755c23f5",
-      enabled: false,
       schemas: {
-        "nam": {},
+        "um": {},
       },
-      serverEntityTypeId: "351325a1-1546-4c81-a68d-e766340bbfdc",
     },
-    ssoConfiguration: {
-      deviceTrustTimeToLiveInSeconds: 277827,
-    },
-    state: ObjectState.PendingDelete,
-    themeId: "f6466ee2-eaeb-4fdb-989b-26871ed47da7",
+    ssoConfiguration: {},
     userDeletePolicy: {
-      unverified: {
-        enabled: false,
-        numberOfDaysToRetain: 378170,
-      },
+      unverified: {},
     },
     usernameConfiguration: {
-      unique: {
-        enabled: false,
-        numberOfDigits: 831944,
-        separator: "woman",
-        strategy: UniqueUsernameStrategy.Always,
-      },
+      unique: {},
     },
     webAuthnConfiguration: {
-      bootstrapWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.Any,
-        enabled: false,
-        userVerificationRequirement: UserVerificationRequirement.Preferred,
-      },
-      debug: false,
-      enabled: false,
-      reauthenticationWorkflow: {
-        authenticatorAttachmentPreference: AuthenticatorAttachmentPreference.Any,
-        enabled: false,
-        userVerificationRequirement: UserVerificationRequirement.Discouraged,
-      },
-      relyingPartyId: "override",
-      relyingPartyName: "indeed Wagon Gasoline",
+      bootstrapWorkflow: {},
+      reauthenticationWorkflow: {},
     },
   },
   webhookIds: [
-    "1bed70c3-12d3-4de1-915e-31149e3f1c7e",
+    "19b8d7d6-1398-4ff9-afa1-4cc93140889e",
   ],
 };
-const xFusionAuthTenantId: string = "overriding pish unless";
+const xFusionAuthTenantId: string = "repellat Bike network";
 
-sdk.sdk.updateTenantWithId(tenantId, tenantRequest, xFusionAuthTenantId).then((res: UpdateTenantWithIdResponse) => {
+  const res = await sdk.sdk.updateTenantWithId(tenantId, tenantRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -20423,84 +15653,34 @@ Updates the theme with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateThemeWithIdRequest, UpdateThemeWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateThemeWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { LocalizedStrings, Templates, Theme, ThemeData, ThemeRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const themeId: string = "helplessly";
 const themeRequest: ThemeRequest = {
-  sourceThemeId: "27d1a083-5211-4753-a24a-d5172584790c",
   theme: {
     data: {
-      "necessitatibus": {},
+      "turquoise": {},
     },
-    defaultMessages: "Arsenic",
-    id: "dbae6f53-6023-4bdd-ba62-1c56f21fe19a",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     localizedMessages: {},
-    name: "olive",
-    stylesheet: "usefully Baby",
-    templates: {
-      accountEdit: "Plastic Hybrid",
-      accountIndex: "methodology abaft",
-      accountTwoFactorDisable: "Trans victoriously Granite",
-      accountTwoFactorEnable: "eek Diesel Walk",
-      accountTwoFactorIndex: "Washington Steel payment",
-      accountWebAuthnAdd: "OCR tesla",
-      accountWebAuthnDelete: "Southeast Bedfordshire",
-      accountWebAuthnIndex: "Chief Cambridgeshire",
-      emailComplete: "whoa transmit suspicious",
-      emailSend: "synthesize",
-      emailSent: "Berkshire Baby",
-      emailVerificationRequired: "asynchronous cyan",
-      emailVerify: "Organized Russian deer",
-      helpers: "South",
-      index: "extranet",
-      oauth2Authorize: "ack fooey TLS",
-      oauth2AuthorizedNotRegistered: "female crest",
-      oauth2ChildRegistrationNotAllowed: "given",
-      oauth2ChildRegistrationNotAllowedComplete: "worst Iceland incubate",
-      oauth2CompleteRegistration: "Wagon deposit portals",
-      oauth2Device: "Colorado",
-      oauth2DeviceComplete: "metrics Grocery North",
-      oauth2Error: "male Total Djibouti",
-      oauth2Logout: "tangible Intelligent asperiores",
-      oauth2Passwordless: "Table",
-      oauth2Register: "Northwest",
-      oauth2StartIdPLink: "transmit",
-      oauth2TwoFactor: "diligently Bicycle Analyst",
-      oauth2TwoFactorEnable: "weber superficial",
-      oauth2TwoFactorEnableComplete: "Washington Technician repudiandae",
-      oauth2TwoFactorMethods: "pascal",
-      oauth2Wait: "withdrawal",
-      oauth2WebAuthn: "Miami tan",
-      oauth2WebAuthnReauth: "feed Car viral",
-      oauth2WebAuthnReauthEnable: "than stinger Bicycle",
-      passwordChange: "Legacy onion",
-      passwordComplete: "Sedan Soap Kris",
-      passwordForgot: "necessitatibus",
-      passwordSent: "Awesome Clothing",
-      registrationComplete: "Auto Customer",
-      registrationSend: "Bicycle East accusantium",
-      registrationSent: "accurate roasted Steel",
-      registrationVerificationRequired: "Pants ha white",
-      registrationVerify: "Buckinghamshire",
-      samlv2Logout: "Internal",
-      unauthorized: "hastily matrix",
-    },
+    templates: {},
   },
 };
 
-sdk.sdk.updateThemeWithId(themeId, themeRequest).then((res: UpdateThemeWithIdResponse) => {
+  const res = await sdk.sdk.updateThemeWithId(themeId, themeRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -20525,31 +15705,30 @@ Updates the user action reason with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateUserActionReasonWithIdRequest, UpdateUserActionReasonWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateUserActionReasonWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { LocalizedStrings, UserActionReason, UserActionReasonRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userActionReasonId: string = "Quality";
 const userActionReasonRequest: UserActionReasonRequest = {
   userActionReason: {
-    code: "wireless Bicycle",
-    id: "21605532-ee5c-43be-8b81-07f8693fe44a",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     localizedTexts: {},
-    text: "male",
   },
 };
 
-sdk.sdk.updateUserActionReasonWithId(userActionReasonId, userActionReasonRequest).then((res: UpdateUserActionReasonWithIdResponse) => {
+  const res = await sdk.sdk.updateUserActionReasonWithId(userActionReasonId, userActionReasonRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -20574,7 +15753,7 @@ Reactivates the user action with the given Id. OR Updates the user action with t
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateUserActionWithIdRequest, UpdateUserActionWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateUserActionWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   LocalizedStrings,
   TransactionType,
@@ -20583,47 +15762,34 @@ import {
   UserActionRequest,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userActionId: string = "Delaware";
 const userActionRequest: UserActionRequest = {
   userAction: {
-    active: false,
-    cancelEmailTemplateId: "af214102-162d-4438-8db9-a020c078dd62",
-    endEmailTemplateId: "7ac572bb-4e9d-4633-a9d6-aeea23816ce6",
-    id: "7dc79bad-85fb-40ba-83cb-c4daa5346134",
-    includeEmailInEventJSON: false,
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     localizedNames: {},
-    modifyEmailTemplateId: "86ab55bd-ac29-4dab-8d3a-9a34885475b4",
-    name: "viral",
     options: [
       {
         localizedNames: {},
-        name: "infomediaries",
       },
     ],
-    preventLogin: false,
-    sendEndEvent: false,
-    startEmailTemplateId: "8edd46b4-f343-45dc-9560-14cb2e2699fa",
-    temporal: false,
-    transactionType: TransactionType.Any,
-    userEmailingEnabled: false,
-    userNotificationsEnabled: false,
   },
 };
-const xFusionAuthTenantId: string = "Leora Nebraska China";
-const reactivate: string = "Koruna";
+const xFusionAuthTenantId: string = "communist Bedfordshire Avon";
+const reactivate: string = "Dale";
 
-sdk.sdk.updateUserActionWithId(userActionId, userActionRequest, xFusionAuthTenantId, reactivate).then((res: UpdateUserActionWithIdResponse) => {
+  const res = await sdk.sdk.updateUserActionWithId(userActionId, userActionRequest, xFusionAuthTenantId, reactivate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -20650,7 +15816,7 @@ Updates a single User consent by Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateUserConsentWithIdRequest, UpdateUserConsentWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateUserConsentWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   Consent,
   ConsentData,
@@ -20662,57 +15828,44 @@ import {
   UserConsentRequest,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userConsentId: string = "Lead";
 const userConsentRequest: UserConsentRequest = {
   userConsent: {
     consent: {
-      consentEmailTemplateId: "4015490f-0a69-46f1-a457-6fe2bc7c0fc8",
       countryMinimumAgeForSelfConsent: {},
       data: {
-        "laudantium": {},
+        "proactive": {},
       },
-      defaultMinimumAgeForSelfConsent: 179998,
-      emailPlus: {
-        emailTemplateId: "ec9d2ef2-841b-4793-a52a-12e11cc18f9f",
-        enabled: false,
-        maximumTimeToSendEmailInHours: 441481,
-        minimumTimeToSendEmailInHours: 863000,
-      },
-      id: "27f30ded-aa1e-4afd-8a1d-64d1f056ed23",
+      emailPlus: {},
       insertInstant: 1659380719000,
       lastUpdateInstant: 1659380719000,
-      multipleValuesAllowed: false,
-      name: "VGA drive",
       values: [
-        "crackle",
+        "Bedfordshire",
       ],
     },
-    consentId: "6c516544-10db-4809-b0a8-bb55abb566bf",
     data: {
-      "provident": {},
+      "Rubber": {},
     },
-    giverUserId: "5fd6cb92-07aa-4c6a-9b0b-0bcf87867495",
-    id: "55377dfe-1421-4e7c-b378-bf7c8a74445f",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    status: ConsentStatus.Active,
-    userId: "11d0a0cf-3da5-41c0-991b-9b8ac2d5e45b",
     values: [
-      "North",
+      "Yucaipa",
     ],
   },
 };
 
-sdk.sdk.updateUserConsentWithId(userConsentId, userConsentRequest).then((res: UpdateUserConsentWithIdResponse) => {
+  const res = await sdk.sdk.updateUserConsentWithId(userConsentId, userConsentRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -20737,22 +15890,24 @@ Re-sends the verification email to the user. OR Re-sends the verification email 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateUserVerifyEmailRequest, UpdateUserVerifyEmailResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateUserVerifyEmailRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "Guyana";
 const email: string = "applications";
 const sendVerifyEmail: string = "Handcrafted";
 
-sdk.sdk.updateUserVerifyEmail(applicationId, email, sendVerifyEmail).then((res: UpdateUserVerifyEmailResponse) => {
+  const res = await sdk.sdk.updateUserVerifyEmail(applicationId, email, sendVerifyEmail);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -20778,22 +15933,24 @@ Generate a new Application Registration Verification Id to be used with the Veri
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateUserVerifyRegistrationRequest, UpdateUserVerifyRegistrationResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateUserVerifyRegistrationRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const applicationId: string = "Bronze";
 const email: string = "Genderqueer";
 const sendVerifyPasswordEmail: string = "Rock";
 
-sdk.sdk.updateUserVerifyRegistration(applicationId, email, sendVerifyPasswordEmail).then((res: UpdateUserVerifyRegistrationResponse) => {
+  const res = await sdk.sdk.updateUserVerifyRegistration(applicationId, email, sendVerifyPasswordEmail);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -20819,7 +15976,7 @@ Reactivates the user with the given Id. OR Updates the user with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateUserWithIdRequest, UpdateUserWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateUserWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   AuthenticatorConfiguration,
   BreachedPasswordStatus,
@@ -20840,112 +15997,58 @@ import {
   UserTwoFactorConfiguration,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const userId: string = "Gasoline";
 const userRequest: UserRequest = {
-  applicationId: "9e59ffa8-89cc-4e22-9c93-23d796e47335",
-  currentPassword: "Multigender Bedfordshire Southwest",
-  disableDomainBlock: false,
   eventInfo: {
     data: {
-      "sed": {},
+      "Transmasculine": {},
     },
-    deviceDescription: "joule productivity Plastic",
-    deviceName: "Southeast Avon",
-    deviceType: "analyzer BMX intuitive",
-    ipAddress: "53.1.130.90",
-    location: {
-      city: "Abshirefurt",
-      country: "Myanmar",
-      displayString: "Analyst Smyrna",
-      latitude: 6843.88,
-      longitude: 555.51,
-      region: "Bicycle jumpy",
-      zipcode: "02595",
-    },
-    os: "National",
-    userAgent: "East",
+    location: {},
   },
-  sendSetPasswordEmail: false,
-  skipVerification: false,
   user: {
-    active: false,
     birthDate: "2007-12-03",
     breachedPasswordLastCheckedInstant: 1659380719000,
-    breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
-    cleanSpeakId: "d6110d3d-8039-42a0-a15c-d135a1be816e",
-    connectorId: "a357fa1d-4ab2-46dd-9859-7b192a181202",
     data: {
-      "praesentium": {},
+      "within": {},
     },
-    email: "Gianni.Carter@yahoo.com",
-    encryptionScheme: "Dynamic Future Borders",
     expiry: 1659380719000,
-    factor: 123299,
-    firstName: "Carey",
-    fullName: "Preston Bartell",
-    id: "41b9ad2b-a512-46d4-8ccc-5708ac118d60",
-    imageUrl: "engage report Electronics",
     insertInstant: 1659380719000,
     lastLoginInstant: 1659380719000,
-    lastName: "Carter",
     lastUpdateInstant: 1659380719000,
     memberships: [
       {
         data: {
-          "corrupti": {},
+          "Planner": {},
         },
-        groupId: "bca88e33-a6c4-4de8-ac3d-35a3d1bc2ec8",
-        id: "7f00c560-d523-452b-8d55-14923285decd",
         insertInstant: 1659380719000,
         user: {
-          active: false,
           birthDate: "2007-12-03",
           breachedPasswordLastCheckedInstant: 1659380719000,
-          breachedPasswordStatus: BreachedPasswordStatus.SubAddressMatch,
-          cleanSpeakId: "2ea19337-10a9-44f7-9dbc-f4d6fa58bcb2",
-          connectorId: "5db7f564-da12-4fb7-922f-c2fbf5a37b1d",
           data: {
-            "culpa": {},
+            "Hybrid": {},
           },
-          email: "Allene_Emmerich@yahoo.com",
-          encryptionScheme: "West",
           expiry: 1659380719000,
-          factor: 736039,
-          firstName: "Joan",
-          fullName: "Matt Beier",
-          id: "7f551e4a-a275-4b1e-a307-449dfc554d3a",
-          imageUrl: "Funk responsive Stage",
           insertInstant: 1659380719000,
           lastLoginInstant: 1659380719000,
-          lastName: "Pacocha",
           lastUpdateInstant: 1659380719000,
           memberships: [
             {},
           ],
-          middleName: "Nico",
-          mobilePhone: "Table",
-          parentEmail: "AGP Berkshire Boliviano",
-          password: "HDUkeJuPP85zXP0",
-          passwordChangeReason: ChangePasswordReason.Validation,
-          passwordChangeRequired: false,
           passwordLastUpdateInstant: 1659380719000,
           preferredLanguages: [
             "en_US",
           ],
           registrations: [
             {
-              applicationId: "acbdb65a-f683-4361-8a92-a195e5d0b845",
-              authenticationToken: "Blues Soft",
-              cleanSpeakId: "31fdf507-62b6-419f-82ba-16d51da3ba5a",
               data: {
-                "officiis": {},
+                "Spring": {},
               },
-              id: "56542a51-7de9-453f-8306-bcf7b247f0c6",
               insertInstant: 1659380719000,
               lastLoginInstant: 1659380719000,
               lastUpdateInstant: 1659380719000,
@@ -20953,67 +16056,37 @@ const userRequest: UserRequest = {
                 "en_US",
               ],
               roles: [
-                "Secured",
+                "Keyboard",
               ],
               timezone: "America/Denver",
               tokens: {
-                "quia": "owlishly",
+                "Bacon": "RAM",
               },
-              username: "Alexie99",
-              usernameStatus: ContentStatus.Pending,
-              verified: false,
             },
           ],
-          salt: "North",
-          tenantId: "596f57cc-5c14-494e-ac23-8f28ab68d169",
           timezone: "America/Denver",
           twoFactor: {
             methods: [
               {
-                authenticator: {
-                  algorithm: TOTPAlgorithm.HmacSha512,
-                  codeLength: 684866,
-                  timeStep: 931178,
-                },
-                email: "Shemar_Kertzmann1@hotmail.com",
-                id: "<ID>",
-                lastUsed: false,
-                method: "Strategist Gorgeous",
-                mobilePhone: "Frozen",
-                secret: "monitor Ferne",
+                authenticator: {},
               },
             ],
             recoveryCodes: [
-              "Northeast",
+              "brand",
             ],
           },
-          uniqueUsername: "Stravenue magenta",
-          username: "Katharina72",
-          usernameStatus: ContentStatus.Active,
-          verified: false,
         },
-        userId: "72b2a2d1-284f-4735-bd6b-9edbaae79127",
       },
     ],
-    middleName: "James",
-    mobilePhone: "disposer Senegal",
-    parentEmail: "lavender",
-    password: "qAyijZg4umPKPzQ",
-    passwordChangeReason: ChangePasswordReason.Validation,
-    passwordChangeRequired: false,
     passwordLastUpdateInstant: 1659380719000,
     preferredLanguages: [
       "en_US",
     ],
     registrations: [
       {
-        applicationId: "8156ca34-4421-4ce1-9e38-b5e8de5b1b2a",
-        authenticationToken: "Product",
-        cleanSpeakId: "ae28e7f4-c471-4ab0-a101-fa47ca9fc2b5",
         data: {
-          "eaque": {},
+          "Bike": {},
         },
-        id: "ebb14836-487d-40a9-a72a-e1a853b1165e",
         insertInstant: 1659380719000,
         lastLoginInstant: 1659380719000,
         lastUpdateInstant: 1659380719000,
@@ -21021,54 +16094,36 @@ const userRequest: UserRequest = {
           "en_US",
         ],
         roles: [
-          "yahoo",
+          "Multigender",
         ],
         timezone: "America/Denver",
         tokens: {
-          "ipsum": "firmware",
+          "Bedfordshire": "Southwest",
         },
-        username: "Gino.Stamm",
-        usernameStatus: ContentStatus.Active,
-        verified: false,
       },
     ],
-    salt: "Iraq male",
-    tenantId: "857eb952-54a2-4ab9-ba49-430115446d33",
     timezone: "America/Denver",
     twoFactor: {
       methods: [
         {
-          authenticator: {
-            algorithm: TOTPAlgorithm.HmacSha1,
-            codeLength: 463627,
-            timeStep: 389951,
-          },
-          email: "Claudine.Murray@hotmail.com",
-          id: "<ID>",
-          lastUsed: false,
-          method: "poor",
-          mobilePhone: "Granite Designer",
-          secret: "website",
+          authenticator: {},
         },
       ],
       recoveryCodes: [
-        "Kansas",
+        "Rowe",
       ],
     },
-    uniqueUsername: "maximized Southeast",
-    username: "Mark_Schamberger",
-    usernameStatus: ContentStatus.Pending,
-    verified: false,
   },
 };
-const xFusionAuthTenantId: string = "Audi";
-const reactivate: string = "for";
+const xFusionAuthTenantId: string = "Plastic Metal South";
+const reactivate: string = "analyzer";
 
-sdk.sdk.updateUserWithId(userId, userRequest, xFusionAuthTenantId, reactivate).then((res: UpdateUserWithIdResponse) => {
+  const res = await sdk.sdk.updateUserWithId(userId, userRequest, xFusionAuthTenantId, reactivate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -21095,46 +16150,39 @@ Updates the webhook with the given Id.
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpdateWebhookWithIdRequest, UpdateWebhookWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpdateWebhookWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import { HTTPHeaders, Webhook, WebhookData, WebhookRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const webhookId: string = "internal";
 const webhookRequest: WebhookRequest = {
   webhook: {
-    connectTimeout: 652123,
     data: {
-      "ex": {},
+      "Regional": {},
     },
-    description: "Compatible responsive productivity",
     eventsEnabled: {
-      "non": false,
+      "Southeast": false,
     },
-    global: false,
     headers: {},
-    httpAuthenticationPassword: "Steel last Robust",
-    httpAuthenticationUsername: "array Bedfordshire",
-    id: "afee9eaf-db4f-46e9-9998-9ffbabb9f451",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
-    readTimeout: 101139,
-    sslCertificate: "Investor man Guinea",
     tenantIds: [
-      "4537b925-316d-4494-8e64-d69c8984333e",
+      "c3e30f75-c785-45c1-8afe-e9eafdb4f6e9",
     ],
-    url: "systemic male",
   },
 };
 
-sdk.sdk.updateWebhookWithId(webhookId, webhookRequest).then((res: UpdateWebhookWithIdResponse) => {
+  const res = await sdk.sdk.updateWebhookWithId(webhookId, webhookRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -21159,7 +16207,7 @@ Creates or updates an Entity Grant. This is when a User/Entity is granted permis
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { UpsertEntityGrantWithIdRequest, UpsertEntityGrantWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { UpsertEntityGrantWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 import {
   Entity,
   EntityData,
@@ -21173,74 +16221,57 @@ import {
   EntityTypePermissionData,
 } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const entityId: string = "Mongolia";
 const entityGrantRequest: EntityGrantRequest = {
   grant: {
     data: {
-      "tempora": {},
+      "Salad": {},
     },
     entity: {
-      clientId: "Agent silver",
-      clientSecret: "Hybrid yellow systemic",
       data: {
-        "nam": {},
+        "truly": {},
       },
-      id: "fb6c287b-544a-4399-b5f5-f3e7517fa475",
       insertInstant: 1659380719000,
       lastUpdateInstant: 1659380719000,
-      name: "Practical Berkshire",
-      parentId: "47485815-861c-4b8d-b992-a56592f40089",
-      tenantId: "e395f73a-bea4-4201-910e-2e076becb5da",
       type: {
         data: {
-          "explicabo": {},
+          "silver": {},
         },
-        id: "901f9bb6-c5f0-4a42-a936-a15b2896d77d",
         insertInstant: 1659380719000,
-        jwtConfiguration: {
-          accessTokenKeyId: "f85a3cf4-8b27-4c47-b477-d0046c90bb30",
-          enabled: false,
-          timeToLiveInSeconds: 663930,
-        },
+        jwtConfiguration: {},
         lastUpdateInstant: 1659380719000,
-        name: "Diesel complex",
         permissions: [
           {
             data: {
-              "perferendis": {},
+              "Assistant": {},
             },
-            description: "Persistent impactful flexibility",
-            id: "f8ba5097-500d-4b07-a99e-9d100f5e9286",
             insertInstant: 1659380719000,
-            isDefault: false,
             lastUpdateInstant: 1659380719000,
-            name: "azure Folk",
           },
         ],
       },
     },
-    id: "a260632e-e42c-48e7-b60d-622c0e8ca9da",
     insertInstant: 1659380719000,
     lastUpdateInstant: 1659380719000,
     permissions: [
-      "sedately",
+      "Cadillac",
     ],
-    recipientEntityId: "3cf9077b-a5da-4a9c-9b5e-48e505149d65",
-    userId: "3bfbb25e-24f1-461a-b294-cfbcc0d0efa0",
   },
 };
-const xFusionAuthTenantId: string = "Southwest as";
+const xFusionAuthTenantId: string = "systemic";
 
-sdk.sdk.upsertEntityGrantWithId(entityId, entityGrantRequest, xFusionAuthTenantId).then((res: UpsertEntityGrantWithIdResponse) => {
+  const res = await sdk.sdk.upsertEntityGrantWithId(entityId, entityGrantRequest, xFusionAuthTenantId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -21266,21 +16297,23 @@ Validates the end-user provided user_code from the user-interaction of the Devic
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ValidateDeviceWithIdRequest, ValidateDeviceWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
+import { ValidateDeviceWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 const clientId: string = "Copernicium";
 const userCode: string = "Corporate";
 
-sdk.sdk.validateDeviceWithId(clientId, userCode).then((res: ValidateDeviceWithIdResponse) => {
+  const res = await sdk.sdk.validateDeviceWithId(clientId, userCode);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -21305,19 +16338,20 @@ Validates the provided JWT (encoded JWT string) to ensure the token is valid. A 
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { ValidateJWTWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.validateJWTWithId().then((res: ValidateJWTWithIdResponse) => {
+  const res = await sdk.sdk.validateJWTWithId();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -21340,25 +16374,24 @@ It's a JWT vending machine!  Issue a new access token (JWT) with the provided cl
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { VendJWTWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.vendJWTWithId({
-  claims: {
-    "non": {},
-  },
-  keyId: "3f646906-a16f-4e42-8f95-9dbe8cab0446",
-  timeToLiveInSeconds: 998893,
-}).then((res: VendJWTWithIdResponse) => {
+  const res = await sdk.sdk.vendJWTWithId({
+    claims: {
+      "Wooden": {},
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -21382,42 +16415,27 @@ Confirms a user's registration.   The request body will contain the verification
 
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { VerifyUserRegistrationWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "",
-  },
-});
+(async() => {
+  const sdk = new SDK({
+    security: {
+      apiKeyAuth: "",
+    },
+  });
 
-sdk.sdk.verifyUserRegistrationWithId({
-  eventInfo: {
-    data: {
-      "et": {},
+  const res = await sdk.sdk.verifyUserRegistrationWithId({
+    eventInfo: {
+      data: {
+        "Southwest": {},
+      },
+      location: {},
     },
-    deviceDescription: "Bespoke person Directives",
-    deviceName: "dolore",
-    deviceType: "state",
-    ipAddress: "172.220.108.222",
-    location: {
-      city: "New Jerrold",
-      country: "Portugal",
-      displayString: "Polarised Coupe alongside",
-      latitude: 9553.67,
-      longitude: 6711.25,
-      region: "blue neural",
-      zipcode: "85745",
-    },
-    os: "dolore",
-    userAgent: "et Northeast yahoo",
-  },
-  oneTimeCode: "female Forward",
-  verificationId: "accidentally red",
-}).then((res: VerifyUserRegistrationWithIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
