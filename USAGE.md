@@ -5,19 +5,20 @@
 import { SDK } from "speakeasy-sdks/fusionauth";
 import { RetrieveKeyWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-(async() => {
-  const sdk = new SDK({
-    security: {
-      apiKeyAuth: "",
-    },
-  });
-const keyId: string = "Integrated";
+(async () => {
+    const sdk = new SDK({
+        security: {
+            apiKeyAuth: "",
+        },
+    });
+    const keyId: string = "Integrated";
 
-  const res = await sdk.retrieveKeyWithId(keyId);
+    const res = await sdk.sdk.retrieveKeyWithId(keyId);
 
-  if (res.statusCode == 200) {
-    // handle response
-  }
+    if (res.statusCode == 200) {
+        // handle response
+    }
 })();
+
 ```
 <!-- End SDK Example Usage -->
