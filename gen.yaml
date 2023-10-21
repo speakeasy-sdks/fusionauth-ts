@@ -2,22 +2,25 @@ configVersion: 1.0.0
 management:
   docChecksum: b1efcc81fa48585c25a56a2295f4dd91
   docVersion: 1.45.1
-  speakeasyVersion: 1.101.0
-  generationVersion: 2.161.0
+  speakeasyVersion: 1.104.0
+  generationVersion: 2.169.0
 generation:
+  repoURL: https://github.com/speakeasy-sdks/fusionauth-ts.git
   sdkClassName: SDK
   singleTagPerOp: false
   telemetryEnabled: false
 features:
   typescript:
-    core: 2.90.4
+    core: 2.93.0
     examples: 2.81.3
     flattening: 2.81.1
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
 typescript:
-  version: 1.28.1
+  version: 1.29.0
   author: Speakeasy
   flattenGlobalSecurity: false
+  installationURL: https://github.com/speakeasy-sdks/fusionauth-ts
   maxMethodParams: 4
   packageName: speakeasy-sdks/fusionauth
+  repoSubDirectory: .

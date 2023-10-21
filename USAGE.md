@@ -11,7 +11,7 @@ import { RetrieveKeyWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/mod
             apiKeyAuth: "",
         },
     });
-    const keyId: string = "Integrated";
+    const keyId: string = "string";
 
     const res = await sdk.sdk.retrieveKeyWithId(keyId);
 
