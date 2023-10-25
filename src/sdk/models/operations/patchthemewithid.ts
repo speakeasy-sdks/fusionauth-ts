@@ -7,37 +7,44 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class PatchThemeWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the theme to update.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=themeId",
-  })
-  themeId: string;
+    /**
+     * The Id of the theme to update.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=themeId" })
+    themeId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  themeRequest?: shared.ThemeRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    themeRequest?: shared.ThemeRequest;
 }
 
 export class PatchThemeWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  themeResponse?: shared.ThemeResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    themeResponse?: shared.ThemeResponse;
 }

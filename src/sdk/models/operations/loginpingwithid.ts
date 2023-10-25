@@ -7,58 +7,59 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class LoginPingWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the application that they logged into.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=applicationId",
-  })
-  applicationId: string;
+    /**
+     * The Id of the application that they logged into.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=applicationId" })
+    applicationId: string;
 
-  /**
-   * The Id of the user that was logged in.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=userId",
-  })
-  userId: string;
+    /**
+     * The Id of the user that was logged in.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=userId" })
+    userId: string;
 
-  /**
-   * The unique Id of the tenant used to scope this API request. Only required when there is more than one tenant and the API key is not tenant-scoped.
-   */
-  @SpeakeasyMetadata({
-    data: "header, style=simple;explode=false;name=X-FusionAuth-TenantId",
-  })
-  xFusionAuthTenantId?: string;
+    /**
+     * The unique Id of the tenant used to scope this API request. Only required when there is more than one tenant and the API key is not tenant-scoped.
+     */
+    @SpeakeasyMetadata({ data: "header, style=simple;explode=false;name=X-FusionAuth-TenantId" })
+    xFusionAuthTenantId?: string;
 
-  /**
-   * The IP address of the end-user that is logging in. If a null value is provided the IP address will be that of the client or last proxy that sent the request.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=callerIPAddress",
-  })
-  callerIPAddress?: string;
+    /**
+     * The IP address of the end-user that is logging in. If a null value is provided the IP address will be that of the client or last proxy that sent the request.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=callerIPAddress" })
+    callerIPAddress?: string;
 }
 
 export class LoginPingWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  loginResponse?: shared.LoginResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    loginResponse?: shared.LoginResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

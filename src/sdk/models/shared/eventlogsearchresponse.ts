@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Event log response.
  */
 export class EventLogSearchResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: EventLog })
-  @Expose({ name: "eventLogs" })
-  @Type(() => EventLog)
-  eventLogs?: EventLog[];
+    @SpeakeasyMetadata({ elemType: EventLog })
+    @Expose({ name: "eventLogs" })
+    @Type(() => EventLog)
+    eventLogs?: EventLog[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 }

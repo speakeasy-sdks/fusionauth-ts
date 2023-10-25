@@ -6,30 +6,35 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 
 export class ValidateDeviceWithIdRequest extends SpeakeasyBase {
-  /**
-   * The client id.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=client_id",
-  })
-  clientId?: string;
+    /**
+     * The client id.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=client_id" })
+    clientId?: string;
 
-  /**
-   * The end-user verification code.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=user_code",
-  })
-  userCode?: string;
+    /**
+     * The end-user verification code.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=user_code" })
+    userCode?: string;
 }
 
 export class ValidateDeviceWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

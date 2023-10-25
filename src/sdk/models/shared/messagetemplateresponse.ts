@@ -6,20 +6,17 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { MessageTemplate } from "./messagetemplate";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Success
- */
 export class MessageTemplateResponse extends SpeakeasyBase {
-  /**
-   * Stores an message template used to distribute messages;
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "messageTemplate" })
-  @Type(() => MessageTemplate)
-  messageTemplate?: MessageTemplate;
+    /**
+     * Stores an message template used to distribute messages;
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "messageTemplate" })
+    @Type(() => MessageTemplate)
+    messageTemplate?: MessageTemplate;
 
-  @SpeakeasyMetadata({ elemType: MessageTemplate })
-  @Expose({ name: "messageTemplates" })
-  @Type(() => MessageTemplate)
-  messageTemplates?: MessageTemplate[];
+    @SpeakeasyMetadata({ elemType: MessageTemplate })
+    @Expose({ name: "messageTemplates" })
+    @Type(() => MessageTemplate)
+    messageTemplates?: MessageTemplate[];
 }

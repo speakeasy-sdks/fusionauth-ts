@@ -9,11 +9,11 @@ import { Expose } from "class-transformer";
  * A policy for deleting Users.
  */
 export class TimeBasedDeletePolicy extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "numberOfDaysToRetain" })
-  numberOfDaysToRetain?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "numberOfDaysToRetain" })
+    numberOfDaysToRetain?: number;
 }

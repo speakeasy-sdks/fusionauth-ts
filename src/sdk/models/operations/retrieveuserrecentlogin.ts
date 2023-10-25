@@ -7,48 +7,53 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveUserRecentLoginRequest extends SpeakeasyBase {
-  /**
-   * (Optional, defaults to 10) The number of records to retrieve.
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
-  limit?: string;
+    /**
+     * (Optional, defaults to 10) The number of records to retrieve.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
+    limit?: string;
 
-  /**
-   * The initial record. e.g. 0 is the last login, 100 will be the 100th most recent login.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=offset",
-  })
-  offset?: string;
+    /**
+     * The initial record. e.g. 0 is the last login, 100 will be the 100th most recent login.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=offset" })
+    offset?: string;
 
-  /**
-   * The Id of the user.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=userId",
-  })
-  userId?: string;
+    /**
+     * The Id of the user.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=userId" })
+    userId?: string;
 }
 
 export class RetrieveUserRecentLoginResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  recentLoginResponse?: shared.RecentLoginResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    recentLoginResponse?: shared.RecentLoginResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

@@ -3,24 +3,24 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { BreachActionEnum } from "./breachactionenum";
-import { BreachMatchModeEnum } from "./breachmatchmodeenum";
+import { BreachAction } from "./breachaction";
+import { BreachMatchMode } from "./breachmatchmode";
 import { Expose } from "class-transformer";
 
 export class PasswordBreachDetection extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "matchMode" })
-  matchMode?: BreachMatchModeEnum;
+    @SpeakeasyMetadata()
+    @Expose({ name: "matchMode" })
+    matchMode?: BreachMatchMode;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "notifyUserEmailTemplateId" })
-  notifyUserEmailTemplateId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "notifyUserEmailTemplateId" })
+    notifyUserEmailTemplateId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "onLogin" })
-  onLogin?: BreachActionEnum;
+    @SpeakeasyMetadata()
+    @Expose({ name: "onLogin" })
+    onLogin?: BreachAction;
 }

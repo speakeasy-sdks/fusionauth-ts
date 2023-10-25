@@ -7,28 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveUserChangePasswordRequest extends SpeakeasyBase {
-  /**
-   * The loginId of the User that you intend to change the password for.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=loginId",
-  })
-  loginId?: string;
+    /**
+     * The loginId of the User that you intend to change the password for.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=loginId" })
+    loginId?: string;
 }
 
 export class RetrieveUserChangePasswordResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

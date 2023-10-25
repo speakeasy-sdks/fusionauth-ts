@@ -7,37 +7,44 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class CreateIdentityProviderWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the identity provider. If not provided a secure random UUID will be generated.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=identityProviderId",
-  })
-  identityProviderId: string;
+    /**
+     * The Id of the identity provider. If not provided a secure random UUID will be generated.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=identityProviderId" })
+    identityProviderId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  identityProviderRequest?: shared.IdentityProviderRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    identityProviderRequest?: shared.IdentityProviderRequest;
 }
 
 export class CreateIdentityProviderWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  identityProviderResponse?: shared.IdentityProviderResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    identityProviderResponse?: shared.IdentityProviderResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

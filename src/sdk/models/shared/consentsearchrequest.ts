@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * Search request for Consents
  */
 export class ConsentSearchRequest extends SpeakeasyBase {
-  /**
-   * Search criteria for Consents
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "search" })
-  @Type(() => ConsentSearchCriteria)
-  search?: ConsentSearchCriteria;
+    /**
+     * Search criteria for Consents
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "search" })
+    @Type(() => ConsentSearchCriteria)
+    search?: ConsentSearchCriteria;
 }

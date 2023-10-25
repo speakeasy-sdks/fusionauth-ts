@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Response for the daily active user report.
  */
 export class DailyActiveUserReportResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: Count })
-  @Expose({ name: "dailyActiveUsers" })
-  @Type(() => Count)
-  dailyActiveUsers?: Count[];
+    @SpeakeasyMetadata({ elemType: Count })
+    @Expose({ name: "dailyActiveUsers" })
+    @Type(() => Count)
+    dailyActiveUsers?: Count[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 }

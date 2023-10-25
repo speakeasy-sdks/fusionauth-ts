@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class APIKeyPermissions extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "endpoints" })
-  endpoints?: Record<string, any[]>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "endpoints" })
+    endpoints?: Record<string, any[]>;
 }

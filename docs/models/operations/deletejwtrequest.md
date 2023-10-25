@@ -1,0 +1,11 @@
+# DeleteJwtRequest
+
+
+## Fields
+
+| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `refreshTokenRevokeRequest`                                                          | [shared.RefreshTokenRevokeRequest](../../models/shared/refreshtokenrevokerequest.md) | :heavy_minus_sign:                                                                   | N/A                                                                                  |
+| `applicationId`                                                                      | *string*                                                                             | :heavy_minus_sign:                                                                   | The unique Id of the application that you want to delete refresh tokens for.         |
+| `token`                                                                              | *string*                                                                             | :heavy_minus_sign:                                                                   | The refresh token to delete.                                                         |
+| `userId`                                                                             | *string*                                                                             | :heavy_minus_sign:                                                                   | The unique Id of the user that you want to delete all refresh tokens for.            |

@@ -7,36 +7,41 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class DeleteEntityTypePermissionWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the entityType the the permission belongs to.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=entityTypeId",
-  })
-  entityTypeId: string;
+    /**
+     * The Id of the entityType the the permission belongs to.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=entityTypeId" })
+    entityTypeId: string;
 
-  /**
-   * The Id of the permission to delete.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=permissionId",
-  })
-  permissionId: string;
+    /**
+     * The Id of the permission to delete.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=permissionId" })
+    permissionId: string;
 }
 
 export class DeleteEntityTypePermissionWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

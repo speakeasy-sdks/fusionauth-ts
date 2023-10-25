@@ -7,44 +7,47 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveUserActioningRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=active",
-  })
-  active?: string;
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=active" })
+    active?: string;
 
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=preventingLogin",
-  })
-  preventingLogin?: string;
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=preventingLogin" })
+    preventingLogin?: string;
 
-  /**
-   * The Id of the user to fetch the actions for.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=userId",
-  })
-  userId?: string;
+    /**
+     * The Id of the user to fetch the actions for.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=userId" })
+    userId?: string;
 }
 
 export class RetrieveUserActioningResponse extends SpeakeasyBase {
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  actionResponse?: shared.ActionResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    actionResponse?: shared.ActionResponse;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

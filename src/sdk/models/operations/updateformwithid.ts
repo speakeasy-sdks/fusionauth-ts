@@ -7,37 +7,44 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class UpdateFormWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the form to update.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=formId",
-  })
-  formId: string;
+    /**
+     * The Id of the form to update.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=formId" })
+    formId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  formRequest?: shared.FormRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    formRequest?: shared.FormRequest;
 }
 
 export class UpdateFormWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  formResponse?: shared.FormResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    formResponse?: shared.FormResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * API request for managing families and members.
  */
 export class FamilyRequest extends SpeakeasyBase {
-  /**
-   * Models a single family member.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "familyMember" })
-  @Type(() => FamilyMember)
-  familyMember?: FamilyMember;
+    /**
+     * Models a single family member.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "familyMember" })
+    @Type(() => FamilyMember)
+    familyMember?: FamilyMember;
 }

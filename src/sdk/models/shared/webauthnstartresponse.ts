@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * API response for starting a WebAuthn authentication ceremony
  */
 export class WebAuthnStartResponse extends SpeakeasyBase {
-  /**
-   * Provides the <i>authenticator<i> with the data it needs to generate an assertion.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "options" })
-  @Type(() => PublicKeyCredentialRequestOptions)
-  options?: PublicKeyCredentialRequestOptions;
+    /**
+     * Provides the <i>authenticator<i> with the data it needs to generate an assertion.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "options" })
+    @Type(() => PublicKeyCredentialRequestOptions)
+    options?: PublicKeyCredentialRequestOptions;
 }
