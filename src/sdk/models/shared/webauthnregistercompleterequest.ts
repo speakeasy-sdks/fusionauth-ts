@@ -10,23 +10,23 @@ import { Expose, Type } from "class-transformer";
  * Request to complete the WebAuthn registration ceremony for a new credential,.
  */
 export class WebAuthnRegisterCompleteRequest extends SpeakeasyBase {
-  /**
-   * Request to register a new public key with WebAuthn
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "credential" })
-  @Type(() => WebAuthnPublicKeyRegistrationRequest)
-  credential?: WebAuthnPublicKeyRegistrationRequest;
+    /**
+     * Request to register a new public key with WebAuthn
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "credential" })
+    @Type(() => WebAuthnPublicKeyRegistrationRequest)
+    credential?: WebAuthnPublicKeyRegistrationRequest;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "origin" })
-  origin?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "origin" })
+    origin?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "rpId" })
-  rpId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "rpId" })
+    rpId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userId" })
-  userId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userId" })
+    userId?: string;
 }

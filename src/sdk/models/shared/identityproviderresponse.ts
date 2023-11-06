@@ -5,15 +5,12 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Success
- */
 export class IdentityProviderResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "identityProvider" })
-  identityProvider?: any;
+    @SpeakeasyMetadata()
+    @Expose({ name: "identityProvider" })
+    identityProvider?: any;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "identityProviders" })
-  identityProviders?: any[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "identityProviders" })
+    identityProviders?: any[];
 }

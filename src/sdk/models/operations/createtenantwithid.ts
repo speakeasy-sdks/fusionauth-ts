@@ -7,45 +7,50 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class CreateTenantWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id for the tenant. If not provided a secure random UUID will be generated.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=tenantId",
-  })
-  tenantId: string;
+    /**
+     * The Id for the tenant. If not provided a secure random UUID will be generated.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=tenantId" })
+    tenantId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  tenantRequest?: shared.TenantRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    tenantRequest?: shared.TenantRequest;
 
-  /**
-   * The unique Id of the tenant used to scope this API request. Only required when there is more than one tenant and the API key is not tenant-scoped.
-   */
-  @SpeakeasyMetadata({
-    data: "header, style=simple;explode=false;name=X-FusionAuth-TenantId",
-  })
-  xFusionAuthTenantId?: string;
+    /**
+     * The unique Id of the tenant used to scope this API request. Only required when there is more than one tenant and the API key is not tenant-scoped.
+     */
+    @SpeakeasyMetadata({ data: "header, style=simple;explode=false;name=X-FusionAuth-TenantId" })
+    xFusionAuthTenantId?: string;
 }
 
 export class CreateTenantWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  tenantResponse?: shared.TenantResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    tenantResponse?: shared.TenantResponse;
 }

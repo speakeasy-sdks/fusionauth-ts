@@ -7,34 +7,41 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveAuditLogWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the audit log to retrieve.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=auditLogId",
-  })
-  auditLogId: string;
+    /**
+     * The Id of the audit log to retrieve.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=auditLogId" })
+    auditLogId: string;
 }
 
 export class RetrieveAuditLogWithIdResponse extends SpeakeasyBase {
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  auditLogResponse?: shared.AuditLogResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    auditLogResponse?: shared.AuditLogResponse;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

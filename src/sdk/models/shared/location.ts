@@ -9,31 +9,31 @@ import { Expose } from "class-transformer";
  * Location information. Useful for IP addresses and other displayable data objects.
  */
 export class Location extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "city" })
-  city?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "city" })
+    city?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "country" })
-  country?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "country" })
+    country?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "displayString" })
-  displayString?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "displayString" })
+    displayString?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "latitude" })
-  latitude?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "latitude" })
+    latitude?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "longitude" })
-  longitude?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "longitude" })
+    longitude?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "region" })
-  region?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "region" })
+    region?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "zipcode" })
-  zipcode?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "zipcode" })
+    zipcode?: string;
 }

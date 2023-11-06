@@ -9,15 +9,15 @@ import { Expose } from "class-transformer";
  * JWT Configuration for entities.
  */
 export class EntityJWTConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "accessTokenKeyId" })
-  accessTokenKeyId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "accessTokenKeyId" })
+    accessTokenKeyId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "timeToLiveInSeconds" })
-  timeToLiveInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "timeToLiveInSeconds" })
+    timeToLiveInSeconds?: number;
 }

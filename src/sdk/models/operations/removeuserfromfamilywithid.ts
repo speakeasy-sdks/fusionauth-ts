@@ -7,44 +7,47 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RemoveUserFromFamilyWithIdRequest extends SpeakeasyBase {
-  /**
-   * The id of the family to remove the user from.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=familyId",
-  })
-  familyId: string;
+    /**
+     * The id of the family to remove the user from.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=familyId" })
+    familyId: string;
 
-  /**
-   * The id of the user to remove from the family.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=userId",
-  })
-  userId: string;
+    /**
+     * The id of the user to remove from the family.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=userId" })
+    userId: string;
 
-  /**
-   * The unique Id of the tenant used to scope this API request. Only required when there is more than one tenant and the API key is not tenant-scoped.
-   */
-  @SpeakeasyMetadata({
-    data: "header, style=simple;explode=false;name=X-FusionAuth-TenantId",
-  })
-  xFusionAuthTenantId?: string;
+    /**
+     * The unique Id of the tenant used to scope this API request. Only required when there is more than one tenant and the API key is not tenant-scoped.
+     */
+    @SpeakeasyMetadata({ data: "header, style=simple;explode=false;name=X-FusionAuth-TenantId" })
+    xFusionAuthTenantId?: string;
 }
 
 export class RemoveUserFromFamilyWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

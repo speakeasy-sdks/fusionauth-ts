@@ -10,13 +10,13 @@ import { Expose, Type } from "class-transformer";
  * Form response.
  */
 export class FormResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "form" })
-  @Type(() => Form)
-  form?: Form;
+    @SpeakeasyMetadata()
+    @Expose({ name: "form" })
+    @Type(() => Form)
+    form?: Form;
 
-  @SpeakeasyMetadata({ elemType: Form })
-  @Expose({ name: "forms" })
-  @Type(() => Form)
-  forms?: Form[];
+    @SpeakeasyMetadata({ elemType: Form })
+    @Expose({ name: "forms" })
+    @Type(() => Form)
+    forms?: Form[];
 }

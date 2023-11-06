@@ -7,18 +7,18 @@ import { EmailTemplate } from "./emailtemplate";
 import { Expose, Type } from "class-transformer";
 
 export class PreviewRequest extends SpeakeasyBase {
-  /**
-   * Stores an email template used to send emails to users.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "emailTemplate" })
-  @Type(() => EmailTemplate)
-  emailTemplate?: EmailTemplate;
+    /**
+     * Stores an email template used to send emails to users.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "emailTemplate" })
+    @Type(() => EmailTemplate)
+    emailTemplate?: EmailTemplate;
 
-  /**
-   * A Locale object represents a specific geographical, political, or cultural region.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "locale" })
-  locale?: string;
+    /**
+     * A Locale object represents a specific geographical, political, or cultural region.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "locale" })
+    locale?: string;
 }

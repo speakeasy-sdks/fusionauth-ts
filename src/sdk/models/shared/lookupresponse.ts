@@ -6,12 +6,9 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { IdentityProviderDetails } from "./identityproviderdetails";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Success
- */
 export class LookupResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "identityProvider" })
-  @Type(() => IdentityProviderDetails)
-  identityProvider?: IdentityProviderDetails;
+    @SpeakeasyMetadata()
+    @Expose({ name: "identityProvider" })
+    @Type(() => IdentityProviderDetails)
+    identityProvider?: IdentityProviderDetails;
 }

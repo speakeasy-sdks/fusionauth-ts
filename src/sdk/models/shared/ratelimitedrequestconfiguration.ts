@@ -6,15 +6,15 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class RateLimitedRequestConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "limit" })
-  limit?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "limit" })
+    limit?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "timePeriodInSeconds" })
-  timePeriodInSeconds?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "timePeriodInSeconds" })
+    timePeriodInSeconds?: number;
 }

@@ -7,34 +7,41 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveActionWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the action to retrieve.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=actionId",
-  })
-  actionId: string;
+    /**
+     * The Id of the action to retrieve.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=actionId" })
+    actionId: string;
 }
 
 export class RetrieveActionWithIdResponse extends SpeakeasyBase {
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  actionResponse?: shared.ActionResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    actionResponse?: shared.ActionResponse;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

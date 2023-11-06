@@ -7,34 +7,41 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveRefreshTokensWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the user.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=userId",
-  })
-  userId?: string;
+    /**
+     * The Id of the user.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=userId" })
+    userId?: string;
 }
 
 export class RetrieveRefreshTokensWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  refreshTokenResponse?: shared.RefreshTokenResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    refreshTokenResponse?: shared.RefreshTokenResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

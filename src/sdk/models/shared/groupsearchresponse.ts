@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Search response for Groups
  */
 export class GroupSearchResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: Group })
-  @Expose({ name: "groups" })
-  @Type(() => Group)
-  groups?: Group[];
+    @SpeakeasyMetadata({ elemType: Group })
+    @Expose({ name: "groups" })
+    @Type(() => Group)
+    groups?: Group[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 }

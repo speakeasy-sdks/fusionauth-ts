@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * The Integration Response
  */
 export class IntegrationResponse extends SpeakeasyBase {
-  /**
-   * Available Integrations
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "integrations" })
-  @Type(() => Integrations)
-  integrations?: Integrations;
+    /**
+     * Available Integrations
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "integrations" })
+    @Type(() => Integrations)
+    integrations?: Integrations;
 }

@@ -7,26 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveLambdasByTypeWithIdRequest extends SpeakeasyBase {
-  /**
-   * The type of the lambda to return.
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=type" })
-  type?: string;
+    /**
+     * The type of the lambda to return.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=type" })
+    type?: string;
 }
 
 export class RetrieveLambdasByTypeWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  lambdaResponse?: shared.LambdaResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    lambdaResponse?: shared.LambdaResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

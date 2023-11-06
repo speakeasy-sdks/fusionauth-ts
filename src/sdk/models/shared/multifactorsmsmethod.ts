@@ -6,15 +6,15 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class MultiFactorSMSMethod extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "messengerId" })
-  messengerId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "messengerId" })
+    messengerId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "templateId" })
-  templateId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "templateId" })
+    templateId?: string;
 }

@@ -7,23 +7,20 @@ import { Email } from "./email";
 import { Errors } from "./errors";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Success
- */
 export class PreviewResponse extends SpeakeasyBase {
-  /**
-   * This class is an abstraction of a simple email message.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  @Type(() => Email)
-  email?: Email;
+    /**
+     * This class is an abstraction of a simple email message.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    @Type(() => Email)
+    email?: Email;
 
-  /**
-   * Standard error domain object that can also be used as the response from an API call.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "errors" })
-  @Type(() => Errors)
-  errors?: Errors;
+    /**
+     * Standard error domain object that can also be used as the response from an API call.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "errors" })
+    @Type(() => Errors)
+    errors?: Errors;
 }

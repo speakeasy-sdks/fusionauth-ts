@@ -6,17 +6,14 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { IdentityProviderLink } from "./identityproviderlink";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Success
- */
 export class IdentityProviderLinkResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "identityProviderLink" })
-  @Type(() => IdentityProviderLink)
-  identityProviderLink?: IdentityProviderLink;
+    @SpeakeasyMetadata()
+    @Expose({ name: "identityProviderLink" })
+    @Type(() => IdentityProviderLink)
+    identityProviderLink?: IdentityProviderLink;
 
-  @SpeakeasyMetadata({ elemType: IdentityProviderLink })
-  @Expose({ name: "identityProviderLinks" })
-  @Type(() => IdentityProviderLink)
-  identityProviderLinks?: IdentityProviderLink[];
+    @SpeakeasyMetadata({ elemType: IdentityProviderLink })
+    @Expose({ name: "identityProviderLinks" })
+    @Type(() => IdentityProviderLink)
+    identityProviderLinks?: IdentityProviderLink[];
 }

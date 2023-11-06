@@ -9,15 +9,15 @@ import { Expose } from "class-transformer";
  * API response for refreshing a JWT with a Refresh Token.  <p>  Using a different response object from RefreshTokenResponse because the retrieve response will return an object for refreshToken, and this is a  string.
  */
 export class JWTRefreshResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "refreshToken" })
-  refreshToken?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "refreshToken" })
+    refreshToken?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "refreshTokenId" })
-  refreshTokenId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "refreshTokenId" })
+    refreshTokenId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "token" })
-  token?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "token" })
+    token?: string;
 }

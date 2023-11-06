@@ -7,28 +7,35 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveFormWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id of the form.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=formId",
-  })
-  formId: string;
+    /**
+     * The Id of the form.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=formId" })
+    formId: string;
 }
 
 export class RetrieveFormWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  formResponse?: shared.FormResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    formResponse?: shared.FormResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

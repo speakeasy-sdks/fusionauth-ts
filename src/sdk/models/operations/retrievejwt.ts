@@ -7,34 +7,41 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveJwtRequest extends SpeakeasyBase {
-  /**
-   * The Id of the Application for which this key is used.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=applicationId",
-  })
-  applicationId?: string;
+    /**
+     * The Id of the Application for which this key is used.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=applicationId" })
+    applicationId?: string;
 
-  /**
-   * The Id of the public key (kid).
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=keyId" })
-  keyId?: string;
+    /**
+     * The Id of the public key (kid).
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=keyId" })
+    keyId?: string;
 }
 
 export class RetrieveJwtResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  publicKeyResponse?: shared.PublicKeyResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    publicKeyResponse?: shared.PublicKeyResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

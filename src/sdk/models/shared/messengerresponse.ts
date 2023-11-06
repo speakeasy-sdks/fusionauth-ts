@@ -6,20 +6,17 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { BaseMessengerConfiguration } from "./basemessengerconfiguration";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Success
- */
 export class MessengerResponse extends SpeakeasyBase {
-  /**
-   * Do not require a setter for 'type', it is defined by the concrete class and is not mutable
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "messenger" })
-  @Type(() => BaseMessengerConfiguration)
-  messenger?: BaseMessengerConfiguration;
+    /**
+     * Do not require a setter for 'type', it is defined by the concrete class and is not mutable
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "messenger" })
+    @Type(() => BaseMessengerConfiguration)
+    messenger?: BaseMessengerConfiguration;
 
-  @SpeakeasyMetadata({ elemType: BaseMessengerConfiguration })
-  @Expose({ name: "messengers" })
-  @Type(() => BaseMessengerConfiguration)
-  messengers?: BaseMessengerConfiguration[];
+    @SpeakeasyMetadata({ elemType: BaseMessengerConfiguration })
+    @Expose({ name: "messengers" })
+    @Type(() => BaseMessengerConfiguration)
+    messengers?: BaseMessengerConfiguration[];
 }

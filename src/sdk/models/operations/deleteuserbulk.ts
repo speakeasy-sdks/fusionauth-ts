@@ -7,47 +7,50 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class DeleteUserBulkRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  userDeleteRequest?: shared.UserDeleteRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    userDeleteRequest?: shared.UserDeleteRequest;
 
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=dryRun",
-  })
-  dryRun?: string;
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=dryRun" })
+    dryRun?: string;
 
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=hardDelete",
-  })
-  hardDelete?: string;
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=hardDelete" })
+    hardDelete?: string;
 
-  /**
-   * The ids of the users to deactivate.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=userIds",
-  })
-  userIds?: string;
+    /**
+     * The ids of the users to deactivate.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=userIds" })
+    userIds?: string;
 }
 
 export class DeleteUserBulkResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  userDeleteResponse?: shared.UserDeleteResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    userDeleteResponse?: shared.UserDeleteResponse;
 }

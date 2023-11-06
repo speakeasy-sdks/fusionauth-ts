@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * Search request for Identity Providers
  */
 export class IdentityProviderSearchRequest extends SpeakeasyBase {
-  /**
-   * Search criteria for Identity Providers.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "search" })
-  @Type(() => IdentityProviderSearchCriteria)
-  search?: IdentityProviderSearchCriteria;
+    /**
+     * Search criteria for Identity Providers.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "search" })
+    @Type(() => IdentityProviderSearchCriteria)
+    search?: IdentityProviderSearchCriteria;
 }

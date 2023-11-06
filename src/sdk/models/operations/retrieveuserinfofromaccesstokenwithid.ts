@@ -7,24 +7,33 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RetrieveUserInfoFromAccessTokenWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  oAuthError?: shared.OAuthError;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    oAuthError?: shared.OAuthError;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  userinfoResponse?: Record<string, any>;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    userinfoResponse?: shared.UserinfoResponse;
 }

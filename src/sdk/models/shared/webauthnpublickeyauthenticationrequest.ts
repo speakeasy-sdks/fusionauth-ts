@@ -11,31 +11,31 @@ import { Expose, Type } from "class-transformer";
  * Request to authenticate with WebAuthn
  */
 export class WebAuthnPublicKeyAuthenticationRequest extends SpeakeasyBase {
-  /**
-   * Contains extension output for requested extensions during a WebAuthn ceremony
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "clientExtensionResults" })
-  @Type(() => WebAuthnExtensionsClientOutputs)
-  clientExtensionResults?: WebAuthnExtensionsClientOutputs;
+    /**
+     * Contains extension output for requested extensions during a WebAuthn ceremony
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "clientExtensionResults" })
+    @Type(() => WebAuthnExtensionsClientOutputs)
+    clientExtensionResults?: WebAuthnExtensionsClientOutputs;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  /**
-   * The <i>authenticator's<i> response for the authentication ceremony in its encoded format
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "response" })
-  @Type(() => WebAuthnAuthenticatorAuthenticationResponse)
-  response?: WebAuthnAuthenticatorAuthenticationResponse;
+    /**
+     * The <i>authenticator's<i> response for the authentication ceremony in its encoded format
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "response" })
+    @Type(() => WebAuthnAuthenticatorAuthenticationResponse)
+    response?: WebAuthnAuthenticatorAuthenticationResponse;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "rpId" })
-  rpId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "rpId" })
+    rpId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type?: string;
 }

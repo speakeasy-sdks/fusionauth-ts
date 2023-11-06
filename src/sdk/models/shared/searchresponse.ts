@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Search API response.
  */
 export class SearchResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "total" })
-  total?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "total" })
+    total?: number;
 
-  @SpeakeasyMetadata({ elemType: User })
-  @Expose({ name: "users" })
-  @Type(() => User)
-  users?: User[];
+    @SpeakeasyMetadata({ elemType: User })
+    @Expose({ name: "users" })
+    @Type(() => User)
+    users?: User[];
 }

@@ -1,19 +1,22 @@
 <!-- Start SDK Example Usage -->
+
+
 ```typescript
 import { SDK } from "speakeasy-sdks/fusionauth";
-import { RetrieveKeyWithIdResponse } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
-import { KeyAlgorithmEnum, KeyTypeEnum } from "speakeasy-sdks/fusionauth/dist/sdk/models/shared";
+import { RetrieveKeyWithIdRequest } from "speakeasy-sdks/fusionauth/dist/sdk/models/operations";
 
-const sdk = new SDK({
-  security: {
-    apiKeyAuth: "YOUR_API_KEY_HERE",
-  },
-});
+(async () => {
+    const sdk = new SDK({
+        apiKeyAuth: "",
+    });
+    const keyId: string = "string";
 
-sdk.retrieveKeyWithId("corrupti").then((res: RetrieveKeyWithIdResponse) => {
-  if (res.statusCode == 200) {
-    // handle response
-  }
-});
+    const res = await sdk.sdk.retrieveKeyWithId(keyId);
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
 ```
 <!-- End SDK Example Usage -->

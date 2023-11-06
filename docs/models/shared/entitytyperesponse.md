@@ -1,0 +1,12 @@
+# EntityTypeResponse
+
+Entity Type API response object.
+
+
+## Fields
+
+| Field                                                                                                                  | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `entityType`                                                                                                           | [EntityType](../../models/shared/entitytype.md)                                                                        | :heavy_minus_sign:                                                                                                     | Models an entity type that has a specific set of permissions. These are global objects and can be used across tenants. |
+| `entityTypes`                                                                                                          | [EntityType](../../models/shared/entitytype.md)[]                                                                      | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |
+| `permission`                                                                                                           | [EntityTypePermission](../../models/shared/entitytypepermission.md)                                                    | :heavy_minus_sign:                                                                                                     | Models a specific entity type permission. This permission can be granted to users or other entities.                   |

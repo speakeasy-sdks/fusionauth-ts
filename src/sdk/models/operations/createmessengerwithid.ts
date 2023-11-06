@@ -7,37 +7,44 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class CreateMessengerWithIdRequest extends SpeakeasyBase {
-  /**
-   * The Id for the messenger. If not provided a secure random UUID will be generated.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=messengerId",
-  })
-  messengerId: string;
+    /**
+     * The Id for the messenger. If not provided a secure random UUID will be generated.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=messengerId" })
+    messengerId: string;
 
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  messengerRequest?: shared.MessengerRequest;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    messengerRequest?: shared.MessengerRequest;
 }
 
 export class CreateMessengerWithIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Error
-   */
-  @SpeakeasyMetadata()
-  errors?: shared.Errors;
+    /**
+     * Error
+     */
+    @SpeakeasyMetadata()
+    errors?: shared.Errors;
 
-  /**
-   * Success
-   */
-  @SpeakeasyMetadata()
-  messengerResponse?: shared.MessengerResponse;
+    /**
+     * Success
+     */
+    @SpeakeasyMetadata()
+    messengerResponse?: shared.MessengerResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

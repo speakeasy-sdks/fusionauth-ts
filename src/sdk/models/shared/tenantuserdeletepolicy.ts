@@ -10,11 +10,11 @@ import { Expose, Type } from "class-transformer";
  * A Tenant-level policy for deleting Users.
  */
 export class TenantUserDeletePolicy extends SpeakeasyBase {
-  /**
-   * A policy for deleting Users.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "unverified" })
-  @Type(() => TimeBasedDeletePolicy)
-  unverified?: TimeBasedDeletePolicy;
+    /**
+     * A policy for deleting Users.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "unverified" })
+    @Type(() => TimeBasedDeletePolicy)
+    unverified?: TimeBasedDeletePolicy;
 }

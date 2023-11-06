@@ -4,11 +4,11 @@
 
 import "reflect-metadata";
 
-import { getSimplePathParams, ppMetadataKey } from "./pathparams";
+import {getSimplePathParams, ppMetadataKey} from "./pathparams";
 
-import { plainToInstance } from "class-transformer";
-import { RFCDate } from "../../sdk/types";
-import { requestMetadataKey } from "./requestbody";
+import {plainToInstance} from "class-transformer";
+import {RFCDate} from "../../sdk/types";
+import {requestMetadataKey} from "./requestbody";
 
 export const SerializationMethodToContentType: Record<string, string> = {
   json: "application/json",
@@ -26,7 +26,7 @@ export interface PropInfo {
 }
 
 function isSpeakeasyBase(type: any): boolean {
-  return type && Object.getPrototypeOf(type)?.name == "SpeakeasyBase";
+  return type && Object.getPrototypeOf(type)?.name == SpeakeasyBase.name;
 }
 
 function handleArray(value: any, elemType: any, elemDepth: number): any {
@@ -81,7 +81,7 @@ export class SpeakeasyBase {
       for (const prop of props) {
         if (payload && payload.hasOwnProperty(prop.key)) {
           const value = payload[prop.key];
-          if (isSpeakeasyBase(prop.type)) {
+          if (isSpeakeasyBase(prop.type) && value != null) {
             (this as any)[prop.key] = new prop.type(value);
           } else if (
             prop.type.name == "Array" &&
@@ -176,10 +176,12 @@ export function templateUrl(
   params: Record<string, string>
 ): string {
   let res: string = stringWithParams;
-  Object.entries(params).forEach(([key, value]) => {
-    const match: string = "{" + key + "}";
-    res = res.replaceAll(match, value);
-  });
+  if(params) {
+    Object.entries(params).forEach(([key, value]) => {
+      const match: string = "{" + key + "}";
+      res = res.replaceAll(match, value);
+    });
+  }
   return res;
 }
 
@@ -395,4 +397,8 @@ export function valToString(value: any): string {
   }
 
   return value.toString();
+}
+
+export function shouldQueryParamSerialize(value: any): boolean {
+  return !(value === undefined || value === null || value === "")
 }

@@ -11,39 +11,39 @@ import { Expose, Type } from "class-transformer";
  * User API request object.
  */
 export class UserRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "applicationId" })
-  applicationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "applicationId" })
+    applicationId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "currentPassword" })
-  currentPassword?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "currentPassword" })
+    currentPassword?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "disableDomainBlock" })
-  disableDomainBlock?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "disableDomainBlock" })
+    disableDomainBlock?: boolean;
 
-  /**
-   * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "eventInfo" })
-  @Type(() => EventInfo)
-  eventInfo?: EventInfo;
+    /**
+     * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "eventInfo" })
+    @Type(() => EventInfo)
+    eventInfo?: EventInfo;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "sendSetPasswordEmail" })
-  sendSetPasswordEmail?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "sendSetPasswordEmail" })
+    sendSetPasswordEmail?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "skipVerification" })
-  skipVerification?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "skipVerification" })
+    skipVerification?: boolean;
 
-  /**
-   * The global view of a User. This object contains all global information about the user including birth date, registration information  preferred languages, global attributes, etc.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "user" })
-  @Type(() => User)
-  user?: User;
+    /**
+     * The global view of a User. This object contains all global information about the user including birth date, registration information  preferred languages, global attributes, etc.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "user" })
+    @Type(() => User)
+    user?: User;
 }

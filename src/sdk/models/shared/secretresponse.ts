@@ -5,15 +5,12 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Success
- */
 export class SecretResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "secret" })
-  secret?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "secret" })
+    secret?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "secretBase32Encoded" })
-  secretBase32Encoded?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "secretBase32Encoded" })
+    secretBase32Encoded?: string;
 }

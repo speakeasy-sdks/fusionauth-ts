@@ -10,29 +10,29 @@ import { Expose, Type } from "class-transformer";
  * Tenant-level configuration for WebAuthn
  */
 export class TenantWebAuthnConfiguration extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "bootstrapWorkflow" })
-  @Type(() => TenantWebAuthnWorkflowConfiguration)
-  bootstrapWorkflow?: TenantWebAuthnWorkflowConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "bootstrapWorkflow" })
+    @Type(() => TenantWebAuthnWorkflowConfiguration)
+    bootstrapWorkflow?: TenantWebAuthnWorkflowConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "debug" })
-  debug?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "debug" })
+    debug?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "enabled" })
-  enabled?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "enabled" })
+    enabled?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "reauthenticationWorkflow" })
-  @Type(() => TenantWebAuthnWorkflowConfiguration)
-  reauthenticationWorkflow?: TenantWebAuthnWorkflowConfiguration;
+    @SpeakeasyMetadata()
+    @Expose({ name: "reauthenticationWorkflow" })
+    @Type(() => TenantWebAuthnWorkflowConfiguration)
+    reauthenticationWorkflow?: TenantWebAuthnWorkflowConfiguration;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "relyingPartyId" })
-  relyingPartyId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "relyingPartyId" })
+    relyingPartyId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "relyingPartyName" })
-  relyingPartyName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "relyingPartyName" })
+    relyingPartyName?: string;
 }
